@@ -70,8 +70,10 @@ def insert_sort(l):
 
 def bubble_sort(l):
     for i in range(0, len(l) - 1):
-        for j in range(len(l) - 1, i + 1, -1):
+        for j in range(len(l) - 1, i, -1):
             if l[j] < l[j - 1]:
+                print("Swapping " + str(l[j]) + " and "
+                        + str(l[j - 1]))
                 temp = l[j]
                 l[j] = l[j - 1]
                 l[j - 1] = temp
