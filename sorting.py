@@ -14,6 +14,7 @@ are not too complex.
 """
 
 import sys
+import random
 
 SENTINEL = sys.maxsize
 
@@ -22,8 +23,9 @@ def swap(l, i, j):
     """
     Since several sort algorithms need to swap list
     elements, we provide a swap function.
-    l: the list
-    i, j: the indices of the elements to swap.
+    Args:
+        l: the list
+        i, j: the indices of the elements to swap.
     """
     temp = l[i]
     l[i] = l[j]
@@ -32,7 +34,8 @@ def swap(l, i, j):
 
 def merge_sort(l):
     """
-    l: the list to sort
+    Args:
+        l: the list to sort
     Returns: a sorted list
     Performance: Θ(n * log n) 
     """
@@ -76,7 +79,8 @@ def merge(left, right):
 
 def insert_sort(l):
     """
-    l: the list to sort
+    Args:
+        l: the list to sort
     Returns: a sorted list.
     Performance: Θ(n**2) 
     """
@@ -94,7 +98,8 @@ def insert_sort(l):
 
 def bubble_sort(l):
     """
-    l: the list to sort
+    Args:
+        l: the list to sort
     Returns: a sorted list.
     Performance: Θ(n**2) 
     """
@@ -107,11 +112,12 @@ def bubble_sort(l):
     print(l)
 
 
-def quick_sort(l, p=None, r=None):
+def quicksort(l, p=None, r=None):
     """
-    l: the list to sort
-    p: the first index in a partition
-    r: the last index in a partition
+    Args:
+        l: the list to sort
+        p: the first index in a partition
+        r: the last index in a partition
     Returns: a sorted list.
     Performance:
         Worst case: Θ(n**2) 
@@ -126,12 +132,12 @@ def quick_sort(l, p=None, r=None):
         q = partition(l, p, r)
         print("Partitioning list at index " + str(q))
         print("The list is now: " + str(l))
-        quick_sort(l, p, q - 1)
-        quick_sort(l, q + 1, r)
+        quicksort(l, p, q - 1)
+        quicksort(l, q + 1, r)
 
 def partition(l, p, r):
     """
-    Helper function for quick_sort.
+    Helper function for quicksort.
     Returns: the new partition index.
     """
     x = l[r]
@@ -150,3 +156,46 @@ def partition(l, p, r):
         print("Swapping elements " + str(l[i + 1]) + " and "
               + str(l[r]))
     return i + 1
+
+
+def rand_quicksort(l, p=None, r=None):
+    """
+    Args:
+        l: the list to sort
+        p: the first index in a partition
+        r: the last index in a partition
+    Returns: a sorted list.
+    Performance:
+        Worst case: Θ(n**2) 
+        Expected case: Θ(n * log n) 
+        Sorts in place.
+    This is a version of quicksort where the pivot
+    element is chosen randomly. I randomly choosing the pivot,
+    we expect a better balanced split of the input 
+    list on average.
+    quicksort() and rand_quicksort() could easily be
+    rewritten as a single function taking a pointer
+    to the partition function to be used.
+    """
+    if p is None:
+        p = 0
+    if r is None:
+        r = len(l) - 1
+    if p < r:
+        q = rand_partition(l, p, r)
+        print("Partitioning list at index " + str(q))
+        print("The list is now: " + str(l))
+        rand_quicksort(l, p, q - 1)
+        rand_quicksort(l, q + 1, r)
+
+def rand_partition(l, p, r):
+    """
+    This function simply chooses a random index value between
+    p and r, swaps that value with the one at r,
+    and then calls partition on the new List.
+    """
+    i = random.randint(p, r)
+    print("We have randomly chosen between values " + str(p) +
+            " and " + str(r) + ": " + str(i) + " as our pivot.")
+    swap(l, i, r)
+    return partition(l, p, r)
