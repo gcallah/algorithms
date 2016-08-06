@@ -4,13 +4,20 @@ Intro to Algorithms (Cormen et al.)
 The aim here is not efficient Python implementations (we'd just call
 the native sort if we wanted that) but to duplicate the pseudo-code
 in the book as closely as possible.
-Also, since the goal is to bring students to see how the algorithm
+Also, since the goal is to help students to see how the algorithm
 works, there are print statements placed at key points in the code.
 I have been helped by code from http://interactivepython.org/
 in creating these examples.
 The performance of each sort is stated in the docstring, and
 loop invariants are expressed as assert statements when they
 are not too complex.
+This file contains:
+    quicksort()
+    rand_quicksort()
+    insert_sort()
+    merge_sort()
+    bubble_sort()
+    And auxilliary functions that these sorts use.
 """
 
 import sys
