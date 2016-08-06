@@ -30,6 +30,7 @@ def swap(l, i, j):
     """
     Since several sort algorithms need to swap list
     elements, we provide a swap function.
+
     Args:
         l: the list
         i, j: the indices of the elements to swap.
@@ -43,7 +44,9 @@ def merge_sort(l):
     """
     Args:
         l: the list to sort
+    
     Returns: a sorted list
+    
     Performance: Θ(n * log n) 
     """
     length = len(l)
@@ -62,8 +65,9 @@ def merge(left, right):
     """
     Helper function for merge_sort: this actually
     merges the split and already sorted sub-lists.
-    left: a sorted list
-    right: a sorted list
+    Args:
+        left: a sorted list
+        right: a sorted list
     """
     sorted = []
     left.append(SENTINEL)
@@ -88,7 +92,9 @@ def insert_sort(l):
     """
     Args:
         l: the list to sort
+
     Returns: a sorted list.
+
     Performance: Θ(n**2) 
     """
     for j in range(1, len(l)):
@@ -107,7 +113,9 @@ def bubble_sort(l):
     """
     Args:
         l: the list to sort
+
     Returns: a sorted list.
+
     Performance: Θ(n**2) 
     """
     for i in range(0, len(l) - 1):
@@ -125,7 +133,9 @@ def quicksort(l, p=None, r=None):
         l: the list to sort
         p: the first index in a partition
         r: the last index in a partition
+
     Returns: a sorted list.
+
     Performance:
         Worst case: Θ(n**2) 
         Expected case: Θ(n * log n) 
@@ -145,6 +155,7 @@ def quicksort(l, p=None, r=None):
 def partition(l, p, r):
     """
     Helper function for quicksort.
+
     Returns: the new partition index.
     """
     x = l[r]
@@ -171,13 +182,16 @@ def rand_quicksort(l, p=None, r=None):
         l: the list to sort
         p: the first index in a partition
         r: the last index in a partition
+
     Returns: a sorted list.
+
     Performance:
         Worst case: Θ(n**2) 
         Expected case: Θ(n * log n) 
         Sorts in place.
+
     This is a version of quicksort where the pivot
-    element is chosen randomly. I randomly choosing the pivot,
+    element is chosen randomly. By randomly choosing the pivot,
     we expect a better balanced split of the input 
     list on average.
     quicksort() and rand_quicksort() could easily be

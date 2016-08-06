@@ -9,6 +9,9 @@ the book, and again, print statements will be interleaved into the code to help
 students understand how the algorithms works.
 We will allow max or min heaps based on a passed comparison operator.
 This file contains:
+    parent()
+    left()
+    right()
     heapify()
     build_heap()
     heapsort()
@@ -18,11 +21,65 @@ This file contains:
     heap_maximum()
 """
 
-import sorting   # so we don't have to duplicate swap!
+import sorting as srt   # so we don't have to duplicate swap!
 
 
-def heapify(l, i):
-    pass
+"""
+Next come three functions to navigate the heap:
+"""
+def parent(i):
+    """
+        Args:
+            i: the index of the child
+
+        Returns:
+            The index of the parent.
+
+    """
+    return i // 2
+
+def left(i):
+    """
+        Args:
+            i: the index of the parent
+
+        Returns:
+            The index of the left child.
+
+    """
+    return 2 * i
+
+def right(i):
+    """
+        Args:
+            i: the index of the parent
+
+        Returns:
+            The index of the right child.
+
+    """
+    return 2 * i + 1
+
+
+def heapify(h, i):
+    """
+        Args:
+            h: the list containing the heap.
+            i: the node that might violate max-heap.
+
+        Returns:
+            None
+    """
+    l = left(i)
+    r = right(i)
+    largest = i
+    if l <= len(h) && h[l] > h[i]:
+        largest = l
+    if r <= len(h) && h[r] > h[largest]:
+        largest = r
+    if largest != i:
+        srt.swap(h[i], h[largest])
+        heapify(h, largest)
 
 
 def build__heap(l):
