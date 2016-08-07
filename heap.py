@@ -61,11 +61,21 @@ def right(i):
     return 2 * i + 1
 
 
-def heapify(h, i):
+def heapify(h, i, heapsize):
     """
+        In the text book, there is a max-heapify function.
+        and a separate function would be needed for min-heapify.
+        But we can easily combine them into one function, and
+        just pass in the operator we need to differentiate 
+        a max heap from a min heap.
+        for my first crack, I am just assuming max, but I will return
+        to these functions, and rewrite them with a passed
+        in operator.
+
         Args:
             h: the list containing the heap.
-            i: the node that might violate max-heap.
+            i: the node that might violate the heap property.
+            heapsize: the size of the heap
 
         Returns:
             None
@@ -73,18 +83,48 @@ def heapify(h, i):
     l = left(i)
     r = right(i)
     largest = i
-    if l <= len(h) && h[l] > h[i]:
+    print("heapifying with i = " + str(i) + " and " +
+            "left = " + str(l) + " and right = " + str(r))
+    if l < heapsize and h[l] > h[i]:
         largest = l
-    if r <= len(h) && h[r] > h[largest]:
+    if r < heapsize and h[r] > h[largest]:
         largest = r
     if largest != i:
-        srt.swap(h[i], h[largest])
-        heapify(h, largest)
+        print("Swapping elements " + str(i) + " and " +
+                str(largest))
+        srt.swap(h, i, largest)
+        heapify(h, largest, heapsize)
 
 
-def build__heap(l):
-    pass
+def build_heap(h, heapsize=None):
+    """
+        Args:
+            h: the list to heapify.
+
+        Returns:
+            None
+            The heap is built in place.
+    """
+    if heapsize is None:
+        heapsize = len(h)
+    for i in range((heapsize // 2) - 1, 0, -1):
+        print("heapifying with i = " + str(i))
+        heapify(h, i, heapsize)
 
 
-def heapsort(l):
-    pass
+def heapsort(h):
+    """
+        Args:
+            h: the list to heap sort
+
+        Returns:
+            None
+            Sorts in place.
+    """
+    heapsize = len(h)
+    build_heap(h, heapsize)
+    for i in range(len(h) - 1, 1, -1):
+        print("Swapping " + str(h[0]) + " and " + str(h[i]))
+        srt.swap(h, 0, i)
+        heapsize -= 1
+        heapify(h, 0, heapsize)
