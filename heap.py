@@ -36,7 +36,7 @@ def parent(i):
             The index of the parent.
 
     """
-    return i // 2
+    return (i - 1) // 2
 
 def left(i):
     """
@@ -47,7 +47,7 @@ def left(i):
             The index of the left child.
 
     """
-    return 2 * i
+    return 2 * i + 1
 
 def right(i):
     """
@@ -58,7 +58,7 @@ def right(i):
             The index of the right child.
 
     """
-    return 2 * i + 1
+    return 2 * i + 2
 
 
 def heapify(h, i, heapsize):
@@ -86,8 +86,12 @@ def heapify(h, i, heapsize):
     print("heapifying with i = " + str(i) + " and " +
             "left = " + str(l) + " and right = " + str(r))
     if l < heapsize and h[l] > h[i]:
+        print("Largest was: " + str(largest)
+                + " setting largest to: " + str(l))
         largest = l
     if r < heapsize and h[r] > h[largest]:
+        print("Largest was: " + str(largest)
+                + " setting largest to: " + str(r))
         largest = r
     if largest != i:
         print("Swapping elements " + str(i) + " and " +
@@ -107,8 +111,7 @@ def build_heap(h, heapsize=None):
     """
     if heapsize is None:
         heapsize = len(h)
-    for i in range((heapsize // 2) - 1, 0, -1):
-        print("heapifying with i = " + str(i))
+    for i in range((heapsize // 2), -1, -1):
         heapify(h, i, heapsize)
 
 
@@ -118,13 +121,14 @@ def heapsort(h):
             h: the list to heap sort
 
         Returns:
-            None
-            Sorts in place.
+            sorted: sorted list
     """
-    heapsize = len(h)
-    build_heap(h, heapsize)
-    for i in range(len(h) - 1, 1, -1):
-        print("Swapping " + str(h[0]) + " and " + str(h[i]))
-        srt.swap(h, 0, i)
-        heapsize -= 1
-        heapify(h, 0, heapsize)
+    sorted = []
+    while len(h) > 0:
+        print("heapsort; heapsize = " + str(len(h)))
+        build_heap(h, len(h))
+        # put the max item in sorted
+        sorted.append(h[0])
+        # then trim the max item out of the list
+        h = h[1:]
+    return sorted
