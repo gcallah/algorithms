@@ -16,13 +16,19 @@ This file contains:
     build_heap()
     heapsort()
     heap_insert()
-    heap_extract_max()
+    heap_extract()
     heap_increase_key()
     heap_maximum()
 """
 
+import operator as op
+
 import sorting as srt   # so we don't have to duplicate swap!
 
+
+# do we have a max heap or min heap?
+MIN = 0
+MAX = 1
 
 """
 Next come three functions to navigate the heap:
@@ -61,7 +67,7 @@ def right(i):
     return 2 * i + 2
 
 
-def heapify(h, i, heapsize):
+def heapify(h, i, heapsize, min_or_max=MAX):
     """
         In the text book, there is a max-heapify function.
         and a separate function would be needed for min-heapify.
@@ -80,16 +86,21 @@ def heapify(h, i, heapsize):
         Returns:
             None
     """
+    if min_or_max == MAX:
+        comp = op.gt
+    else:
+        comp = op.lt
+
     l = left(i)
     r = right(i)
     largest = i
     print("heapifying with i = " + str(i) + " and " +
             "left = " + str(l) + " and right = " + str(r))
-    if l < heapsize and h[l] > h[i]:
+    if l < heapsize and comp(h[l], h[i]):
         print("Largest was: " + str(largest)
                 + " setting largest to: " + str(l))
         largest = l
-    if r < heapsize and h[r] > h[largest]:
+    if r < heapsize and comp(h[r], h[largest]):
         print("Largest was: " + str(largest)
                 + " setting largest to: " + str(r))
         largest = r
@@ -100,10 +111,11 @@ def heapify(h, i, heapsize):
         heapify(h, largest, heapsize)
 
 
-def build_heap(h, heapsize=None):
+def build_heap(h, heapsize=None, min_or_max=MAX):
     """
         Args:
             h: the list to heapify.
+            min_or_max: are we creating a max heap or a min heap?
 
         Returns:
             None
@@ -112,13 +124,14 @@ def build_heap(h, heapsize=None):
     if heapsize is None:
         heapsize = len(h)
     for i in range((heapsize // 2), -1, -1):
-        heapify(h, i, heapsize)
+        heapify(h, i, heapsize, min_or_max)
 
 
-def heapsort(h):
+def heapsort(h, min_or_max=MAX):
     """
         Args:
             h: the list to heap sort
+            min_or_max: are we creating a max heap or a min heap?
 
         Returns:
             sorted: sorted list
@@ -126,7 +139,7 @@ def heapsort(h):
     sorted = []
     while len(h) > 0:
         print("heapsort; heapsize = " + str(len(h)))
-        build_heap(h, len(h))
+        build_heap(h, len(h), min_or_max)
         # put the max item in sorted
         sorted.append(h[0])
         # then trim the max item out of the list
