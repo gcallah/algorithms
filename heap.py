@@ -16,7 +16,7 @@ This file contains:
     build_heap()
     heapsort()
     heap_insert()
-    heap_extract()
+    heap_extract_next()
     heap_increase_key()
     heap_maximum()
 """
@@ -67,33 +67,37 @@ def right(i):
     return 2 * i + 2
 
 
-def heapify(h, i, heapsize, min_or_max=MAX):
+def heapify(h, i, heapsize=None, min_or_max=MAX):
     """
         In the text book, there is a max-heapify function.
         and a separate function would be needed for min-heapify.
         But we can easily combine them into one function, and
         just pass in the operator we need to differentiate 
         a max heap from a min heap.
-        for my first crack, I am just assuming max, but I will return
-        to these functions, and rewrite them with a passed
-        in operator.
 
         Args:
             h: the list containing the heap.
             i: the node that might violate the heap property.
             heapsize: the size of the heap
+            min_or_max: are we dealing with a max heap or min heap?
 
         Returns:
             None
     """
+    if heapsize is None:
+        heapsize = len(h)
+
     if min_or_max == MAX:
+        print("Max heapifying.")
         comp = op.gt
     else:
+        print("Min heapifying.")
         comp = op.lt
 
     l = left(i)
     r = right(i)
     largest = i
+    print("heap = " + str(h))
     print("heapifying with i = " + str(i) + " and " +
             "left = " + str(l) + " and right = " + str(r))
     if l < heapsize and comp(h[l], h[i]):
@@ -131,10 +135,12 @@ def heapsort(h, min_or_max=MAX):
     """
         Args:
             h: the list to heap sort
-            min_or_max: are we creating a max heap or a min heap?
+            min_or_max: are we sorting a max heap or a min heap?
 
         Returns:
             sorted: sorted list
+
+        Performance: O(n log n)
     """
     sorted = []
     while len(h) > 0:
@@ -145,3 +151,47 @@ def heapsort(h, min_or_max=MAX):
         # then trim the max item out of the list
         h = h[1:]
     return sorted
+
+"""
+The functions from here down are used for priority queues.
+"""
+
+def heap_min_or_max(h):
+    """
+        Args:
+            h: the heap
+            
+        Returns:
+            The minimum or maximum value, depending on whether we
+            have a min or max heap.
+
+    """
+    return h[0]
+
+
+def heap_extract_next(h, min_or_max=MAX):
+    """
+        The book calls heapify in this function. But I found
+        calling build_heap() works, while calling heapify()
+        does not!
+
+        Args:
+            h: the heap
+            min_or_max: are we dealing with a max heap or a min heap?
+            We need this parameter to pass on to heapify().
+
+        Returns:
+            The minimum or maximum value, depending on whether we
+            have a min or max heap.
+            Since we are here implementing priority queues, we can
+            call this the "next" item.
+    """
+    if len(h) < 1:
+        print("Heap empty!")
+        return None
+
+    m = h[0]
+    h[0] = h[len(h) - 1]
+    del h[len(h) - 1]
+    build_heap(h, min_or_max=min_or_max)
+    return m
