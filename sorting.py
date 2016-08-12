@@ -23,7 +23,8 @@ This file contains:
 import sys
 import random
 
-SENTINEL = sys.maxsize
+MAX_SENTINEL = sys.maxsize
+MIN_SENTINEL = -1 * sys.maxsize
 
 
 def swap(l, i, j):
@@ -61,6 +62,7 @@ def merge_sort(l):
         right = merge_sort(right)
         return merge(left, right)
 
+
 def merge(left, right):
     """
     Helper function for merge_sort: this actually
@@ -70,8 +72,8 @@ def merge(left, right):
         right: a sorted list
     """
     sorted = []
-    left.append(SENTINEL)
-    right.append(SENTINEL)
+    left.append(MAX_SENTINEL)
+    right.append(MAX_SENTINEL)
     i = 0
     j = 0
     for k in range(len(right) + len(left) - 2):

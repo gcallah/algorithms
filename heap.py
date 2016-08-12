@@ -30,6 +30,21 @@ import sorting as srt   # so we don't have to duplicate swap!
 MIN = 0
 MAX = 1
 
+
+def get_sentinel(min_or_max=MAX):
+    """
+        Args:
+            min_or_max: max heap or min heap?
+
+        Returns:
+            Which sentinel we need to use.
+
+    """
+    if min_or_max == MAX:
+        return srt.MIN_SENTINEL
+    else:
+        return srt.MAX_SENTINEL
+
 """
 Next come three functions to navigate the heap:
 """
@@ -67,6 +82,20 @@ def right(i):
     return 2 * i + 2
 
 
+def get_opt(min_or_max):
+    """
+        Args:
+            min_or_max: Are we dealing with a min or max heap?
+
+        Returns:
+            The proper operator to deal with our heap type.
+    """
+    if min_or_max == MAX:
+        return op.gt
+    else:
+        return op.lt
+
+
 def heapify(h, i, heapsize=None, min_or_max=MAX):
     """
         In the text book, there is a max-heapify function.
@@ -87,12 +116,7 @@ def heapify(h, i, heapsize=None, min_or_max=MAX):
     if heapsize is None:
         heapsize = len(h)
 
-    if min_or_max == MAX:
-        print("Max heapifying.")
-        comp = op.gt
-    else:
-        print("Min heapifying.")
-        comp = op.lt
+    comp = get_opt(min_or_max)
 
     l = left(i)
     r = right(i)
@@ -195,3 +219,46 @@ def heap_extract_next(h, min_or_max=MAX):
     del h[len(h) - 1]
     build_heap(h, min_or_max=min_or_max)
     return m
+
+
+def heap_find_place(h, i, key, min_or_max=MAX):
+    """
+        Args:
+            h: the heap.
+            i: the starting index for the key we are inserting.
+            key: the new value we are inserting.
+            min_or_max: are we dealing with a min or max heap?
+
+        Returns:
+            None (re-arranges the existing list).
+    """
+    # we have to reverse the ordinary comparison here,
+    # since we are working bottom up!
+    comp = get_opt(not min_or_max)
+
+    if key < h[i]:
+        print("New key is smaller than current key.")
+        return None
+
+    h[i] = key
+    while i > 0 and comp(h[parent(i)], h[i]):
+        print("Swapping " + str(h[i]) +
+            " and " + str(h[parent(i)]))
+        srt.swap(h, i, parent(i))
+        i = parent(i)
+
+
+def heap_insert(h, key, min_or_max=MAX):
+    """
+        Inserts a new value in its proper place in the heap.
+
+        Args:
+            h: the heap.
+            key: the new value we are inserting.
+            min_or_max: are we dealing with a min or max heap?
+
+        Returns:
+            None (inserts in the existing heap).
+    """
+    h.append(get_sentinel(min_or_max))
+    heap_find_place(h, len(h) - 1, key, min_or_max)
