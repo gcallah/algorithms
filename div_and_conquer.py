@@ -23,6 +23,8 @@ def find_max_crossing_subarray(l, low, high, mid):
             A tuple containing the low and high indices
             of the max crossing subarray, and its sum.
     """
+    print("find_max_crossing_subarray called with low, high, mid = %i, %i, %i"
+            % (low, high, mid))
     max_left = None
     max_right = None
     left_sum = NEG_INF
@@ -44,7 +46,7 @@ def find_max_crossing_subarray(l, low, high, mid):
     return (max_left, max_right, left_sum + right_sum)
 
 
-def find_max_subarray(l, low, high):
+def find_max_subarray(l, low=None, high=None):
     """
         Args:
             l: the list to search.
@@ -53,17 +55,31 @@ def find_max_subarray(l, low, high):
 
         Returns:
             A tuple containing the low and high indices
-            of the max crossing subarray, and its sum.
+            of the max subarray, and its sum.
     """
+    if low is None:
+        low = 0
+    if high is None:
+        high = len(l) - 1
+
     if low == high:
+        print("At base case with low = " + str(low)
+                + " and high = " + str(high))
         return (low, high, l[low])  # base case: only one element!
     else:
         mid = (low + high) // 2
+        print("Setting mid to " + str(mid))
         (left_low, left_high, left_sum) = find_max_subarray(l, low, mid)
+        print("Left low, high, sum = %i, %i, %i" % (left_low, left_high,
+            left_sum))
         (right_low, right_high, right_sum) = find_max_subarray(l, mid + 1,
                                                                high)
+        print("Right low, high, sum = %i, %i, %i" % (right_low, right_high,
+            right_sum))
         (cross_low, cross_high, cross_sum) = \
-                find_max_crossing_subarray(l, low, mid, high)
+                find_max_crossing_subarray(l, low, high, mid)
+        print("Cross low, high, sum = %i, %i, %i" % (cross_low, cross_high,
+            cross_sum))
         if left_sum >= right_sum and left_sum >= cross_sum:
             return (left_low, left_high, left_sum)
         elif right_sum >= left_sum and right_sum >= cross_sum:
