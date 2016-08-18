@@ -5,6 +5,7 @@
         find_max_subarray()
         find_max_crossing_subarray()
         square_matrix_multiply()
+        square_matrix_multiply_recursive()
 """
 
 import sys
@@ -108,3 +109,61 @@ def square_matrix_multiply(m1, m2):
             for k in range(0, n):
                 result[i][j] += m1[i][k] * m2[k][j]
     return result
+
+
+def square_matrix_multiply_recursive(m1, m2):
+    """
+        Args:
+            m1, m2: the two matrices to multiply. (Must be square matrices
+            of the same size. Additionally, their size must be a power
+            of 2, at least for now.)
+
+        Returns:
+            The resulting matrix.
+
+        Performance: Θ(n ** 3) 
+    """
+    n = len(m1)  # we could use either m1 or m2!
+    result = [[] for i in range(n)]
+    if n == 1:
+        result[0].append(m1[0][0] * m2[0][0])
+    else:
+        pass
+    return result
+
+
+def partition_matrix(m):
+    """
+        Args:
+            m: the matrix to partition.
+
+        Returns:
+            m11, m12, m21, and m22: four equally sized partitions of m
+    """
+    n = len(m)
+    partition = (n // 2)
+    print("partition = " + str(partition))
+
+    m11 = [m[i][0:partition] for i in range(0, partition)]
+    m12 = [m[i][partition:n] for i in range(0, partition)]
+    m21 = [m[i][0:partition] for i in range(partition, n)]
+    m22 = [m[i][partition:n] for i in range(partition, n)]
+    return (m11, m12, m21, m22)
+
+
+def assemble_matrix(matrix_list):
+    """
+        Args:
+            matrix_list: a list of four equally sized square matrices
+
+        Returns:
+            m, the four list elements built back into one matrix
+    """
+    sample = matrix_list[0]  # get the dims of our result
+    n = len(sample) * 2  # the number of rows in the result
+    m = [[] for i in range(n)]
+    for i in range(0, n // 2):  # the first half of the rows
+        for j in range(0, 1):   # the first two sub-matrices
+            for k in range(0, len(sample)):
+                m[j].append(matrix_list[i][j][k])
+    return m
