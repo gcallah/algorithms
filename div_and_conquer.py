@@ -4,6 +4,7 @@
     Contains:
         find_max_subarray()
         find_max_crossing_subarray()
+        square_matrix_multiply()
 """
 
 import sys
@@ -86,3 +87,22 @@ def find_max_subarray(l, low=None, high=None):
             return (right_low, right_high, right_sum)
         else:
             return (cross_low, cross_high, cross_sum)
+
+
+def square_matrix_multiply(m1, m2):
+    """
+        Args:
+            m1, m2: the two matrices to multiply. (Must be square matrices
+            of the same size.)
+
+        Returns:
+            The resulting matrix.
+    """
+    n = len(m1)  # we could use either m1 or m2!
+    result = [[] for i in range(n)]
+    for i in range(0, n):
+        for j in range(0, n):
+            result[i].append(0)
+            for k in range(0, n):
+                result[i][j] += m1[i][k] * m2[k][j]
+    return result
