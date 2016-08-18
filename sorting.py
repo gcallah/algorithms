@@ -48,7 +48,7 @@ def merge_sort(l):
     
     Returns: a sorted list
     
-    Performance: Θ(n * log n) 
+    Performance: Θ(n * lg n) 
     """
     length = len(l)
     if length <= 1:
@@ -140,7 +140,7 @@ def quicksort(l, p=None, r=None):
 
     Performance:
         Worst case: Θ(n**2) 
-        Expected case: Θ(n * log n) 
+        Expected case: Θ(n * lg n) 
         Sorts in place.
     """
     if p is None:
@@ -189,7 +189,7 @@ def rand_quicksort(l, p=None, r=None):
 
     Performance:
         Worst case: Θ(n**2) 
-        Expected case: Θ(n * log n) 
+        Expected case: Θ(n * lg n) 
         Sorts in place.
 
     This is a version of quicksort where the pivot

@@ -165,7 +165,7 @@ def heapsort(h, min_or_max=MAX):
         Returns:
             sorted: sorted list
 
-        Performance: O(n log n)
+        Performance: O(n lg n)
     """
     sorted = []
     while len(h) > 0:

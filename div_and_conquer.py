@@ -97,6 +97,8 @@ def square_matrix_multiply(m1, m2):
 
         Returns:
             The resulting matrix.
+
+        Performance: Θ(n ** 3) 
     """
     n = len(m1)  # we could use either m1 or m2!
     result = [[] for i in range(n)]
