@@ -6,9 +6,11 @@ so here we have routines to establish and maintain the heap, as well as
 heapsort itself and a priority queue function.
 As in sorting.pY, the intention is to closely duplicate the pseudocode from
 the book, and again, print statements will be interleaved into the code to help
-students understand how the algorithms works.
+students understand how the algorithms work.
 We will allow max or min heaps based on a passed comparison operator.
 This file contains:
+    get_sentinel()
+    get_opt()
     parent()
     left()
     right()
@@ -17,8 +19,7 @@ This file contains:
     heapsort()
     heap_insert()
     heap_extract_next()
-    heap_increase_key()
-    heap_maximum()
+    heap_find_place()
 """
 
 import operator as op
