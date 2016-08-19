@@ -111,7 +111,7 @@ def square_matrix_multiply(m1, m2):
     return result
 
 
-def square_matrix_multiply_recursive(m1, m2):
+def square_matrix_multiply_recursive(a, b):
     """
         Args:
             m1, m2: the two matrices to multiply. (Must be square matrices
@@ -123,13 +123,49 @@ def square_matrix_multiply_recursive(m1, m2):
 
         Performance: Θ(n ** 3) 
     """
-    n = len(m1)  # we could use either m1 or m2!
-    result = [[] for i in range(n)]
+    n = len(a)  # we could use either a or b!
+    c = [[] for i in range(n)]
     if n == 1:
-        result[0].append(m1[0][0] * m2[0][0])
+        print("In base case; multiplying " + str(a[0][0])
+                + " and " + str(b[0][0]))
+        c[0].append(a[0][0] * b[0][0])
     else:
-        pass
-    return result
+        (a11, a12, a21, a22) = partition_matrix(a)
+        print("partitioned a into: " + str(a11) + "; "
+                + str(a12) + "; " + str(a21) + "; " + str(a22))
+        (b11, b12, b21, b22) = partition_matrix(b)
+        print("partitioned b into: " + str(b11) + "; "
+                + str(b12) + "; " + str(b21) + "; " + str(b22))
+        c11 = madd(square_matrix_multiply_recursive(a11, b11),
+                square_matrix_multiply_recursive(a12, b21))
+        c12 = madd(square_matrix_multiply_recursive(a11, b12),
+                square_matrix_multiply_recursive(a12, b22))
+        c21 = madd(square_matrix_multiply_recursive(a21, b11),
+                square_matrix_multiply_recursive(a22, b21))
+        c22 = madd(square_matrix_multiply_recursive(a21, b12),
+                square_matrix_multiply_recursive(a22, b22))
+        print("assembling c from: " + str(c11) + "; "
+                + str(c12) + "; " + str(c21) + "; " + str(c22))
+        c = assemble_matrix([c11, c12, c21, c22])
+    return c
+
+
+def madd(m1, m2):
+    """
+        Matrix add.
+
+        Args:
+            m1, m2: the matrices to add
+
+        Returns:
+            m: the result
+    """
+    n = len(m1)  # or m2!
+    m = [[] for i in range(n)]
+    for i in range(0, n):
+        for j in range(0, n):
+            m[i].append(m1[i][j] + m2[i][j])
+    return m
 
 
 def partition_matrix(m):
@@ -159,11 +195,22 @@ def assemble_matrix(matrix_list):
         Returns:
             m, the four list elements built back into one matrix
     """
-    sample = matrix_list[0]  # get the dims of our result
-    n = len(sample) * 2  # the number of rows in the result
+    sub_len = len(matrix_list[0])  # get the dims of our result
+    n = sub_len * 2  # the number of rows in the result
     m = [[] for i in range(n)]
-    for i in range(0, n // 2):  # the first half of the rows
-        for j in range(0, 1):   # the first two sub-matrices
-            for k in range(0, len(sample)):
-                m[j].append(matrix_list[i][j][k])
+
+    # first we loop over m's rows
+    for row in range(0, len(m)):
+        bottom = 0
+        if row >= sub_len:
+            bottom = 1
+        # now loop over each subarray that has entries for this row:
+        for i in range(0, 2):
+            sub_matrix = matrix_list[(bottom * 2) + i]
+            sub_row = row
+            if bottom == 1:
+                sub_row -= sub_len
+            for elem in sub_matrix[sub_row]:
+                m[row].append(elem)
+
     return m
