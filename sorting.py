@@ -126,7 +126,7 @@ def bubble_sort(l):
                 print("Swapping " + str(l[j]) + " and "
                         + str(l[j - 1]))
                 swap(l, j, j - 1)
-    print(l)
+    return l
 
 
 def quicksort(l, p=None, r=None):
