@@ -1,19 +1,21 @@
 <html>
     <body>
-        <h1>Lecture 1 (Sept 14, 2015): Introduction and preliminaries</h1>
+        <h1>Lecture 1 (Sept 12, 2016): Introduction and preliminaries<a
+                href="#note1">*</a></h1>
 
-    <b>What actually happened:</b>
     <ul>
       <li>Introduction.
       <br>
       Syllabus: Logistics, grading, exams, homeworks, cheating. 
-      <li>We will study algorithms. What's an algorithm: a carefully written recipe.
-      We need to agree what steps are allowed in a recipe.
+      <li>We will study algorithms.
+      <br><b>What's an algorithm?</b>
+      A carefully written recipe.<br>
+      We need to agree what steps are allowed in a recipe.<br>
       We need to agree what problem the recipe is solving, ahead of time.
       <li>Things to keep in mind about algorithms (when analyzing and/or designing them): <ul>
         <li>Termination: On any legal (meaning, consistent with algorithm specification) input,
         the procedure you are describing should always eventually stop, or <i>terminate</i>.
-        (We will not in this course talk about algorithms that are intended to run "forever,"
+        (In this course we will not talk about algorithms that are intended to run "forever,"
         such as the scheduler in an operating system.)
         <li>Correctness: On any legal input, provided the procedure has terminated,
         the result that it produces has to be correct. Not <em>sometimes</em> correct,
@@ -57,37 +59,32 @@
       algorithm requires $$4n^2-4n+24$$ operations to sort $$n$$ items.
       <li>In order to make life easier, we will not be focusing on the exact value of
       such function, but on its <i>asymptotic</i> behavior.
+      <br>
+      <br>
+        <center>
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Comparison_computational_complexity.svg/250px-Comparison_computational_complexity.svg.png">
+        </center>
+        <hr>
+      <br>
       A quick review:
+        <br>
+        <br>
         <ul>
-            <li> big-Oh ($$O$$)
+            <li> big-Oh: O
             <br>
             <img
-            src=<"https://upload.wikimedia.org/wikipedia/commons/8/89/Big-O-notation.png">
-            <li> big-Theta ($$\Theta$$)
-            <li> big-Omega ($$\Omega$$)
-            <li>little-oh ($$o$$)
-            <li>little-omega ($$\omega$$).
+            src="https://upload.wikimedia.org/wikipedia/commons/8/89/Big-O-notation.png">
+            <li> big-Theta: &Theta;
+            <li> big-Omega: &Omega;
+            <li>little-oh: o
+            <li>little-omega: &omega;
         </ul>
       You should review them in the book.
       It's a language I am going to use throughout the course. If you are not
       comfortable with it, you will be lost. 
-      <li>... I ran out of time here ...
-    </ul>
-    All the material covered can be found in the textbook.
-    Please review the material on asymptotic notation very carefully,
-    as it will be used as the language in algorithmic analysis throughout the course.
-    
-    <b>Plan was:</b>
-    <ul>
-        <li>Introduction. Logistics. Syllabus.
-        <li>We study algorithms. Why? What is it? What will we study?
-        <li>Termination. Correctness. Performance.
-        <li>How to measure stuff. Levels of abstraction. Abstract machine. Abstract performance.
-        <li>Worst/best/average case.
-        <li>Asymptotics. Big-oh. Quick review.
         <li>An example of a toy algorithmic problem and how to solve it, analyze it etc etc.
-        <li>... I will surely run out of time long before I get here ...
     </ul>
-
+    <a name="note1">* Based on Prof. Boris Aronov's lecture notes. </a>
     </body>
 </html>
