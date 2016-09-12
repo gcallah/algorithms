@@ -1,14 +1,60 @@
 <html>
     <head>
         <style>
-            <link rel="stylesheet" type="text/css" href="style.css">
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 16px;
+                color: #333;
+                background: #fff;
+            }
 
             table, th, td {
                 border: 1px solid black;
                 }
                 th, td {
                         padding: 15px;
-                    }
+                }
+            p, ol, ul, dl, li {
+                margin: 10px 8px 16px 8px;
+            }
+
+            p {
+                padding: 0;
+                line-height: 140%;
+            }
+
+            h1,h2,h3,h4,h5 {
+                font-weight: bold;
+            }
+
+            h1 {
+                margin: 0 0 24px;
+                font-weight: 300;
+                font-size: 20px;
+                color: #339;
+            }
+
+            h2 {
+                font-size: 20px;
+                margin: 4px 8px 4px 8px;
+                color: #096;
+            }
+
+            h2.subhead {
+                font-weight:
+                normal;
+                margin-top:
+                0;
+            }
+
+            h3 {
+                font-size: 18px;
+                margin: .8em 0 .3em 0;
+                color: #633;
+                font-weight: bold;
+            }
+
         </style>
     </head>
     <body>
@@ -16,23 +62,33 @@
                 href="#note1">*</a></h1>
 
     <ul>
-      <li>Introduction.
+        <li><h2>Introduction.</h2>
       <br>
       Syllabus: Logistics, grading, exams, homeworks, cheating. 
-      <li>We will study algorithms.
+      <li><h2>We will study algorithms.</h2>
       <br><b>What's an algorithm?</b>
       A carefully written recipe.<br>
       We need to agree what steps are allowed in a recipe.<br>
-      We need to agree what problem the recipe is solving, ahead of time.
-      <li>Things to keep in mind about algorithms (when analyzing and/or designing them): <ul>
-        <li>Termination: On any legal (meaning, consistent with algorithm specification) input,
+      We need to agree what problem the recipe is solving, ahead of time.<br>
+      <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Euclid_flowchart.svg/220px-Euclid_flowchart.svg.png">
+      <li><h2>Important considerations</h2>
+      <br>
+      Things to keep in mind about algorithms (when analyzing and/or designing them): <ul>
+          <li><h3>Termination:</h3>
+          <br>
+          On any legal (meaning, consistent with algorithm specification) input,
         the procedure you are describing should always eventually stop, or <i>terminate</i>.
         (In this course we will not talk about algorithms that are intended to run "forever,"
         such as the scheduler in an operating system.)
-        <li>Correctness: On any legal input, provided the procedure has terminated,
+        <li><h3>Correctness:</h3>
+          <br>
+        On any legal input, provided the procedure has terminated,
         the result that it produces has to be correct. Not <em>sometimes</em> correct,
         not <em>mostly</em> correct, but <em>always</em> correct.
-        <li>And finally, performance: You can measure performance in many different ways.
+        <li><h3>Performance:</h3>
+          <br>
+        You can measure performance in many different ways.
         The course will focus on the running time,
         but there are many others: space (memory use),
         disk use, amount of disk-memory communication,
@@ -46,7 +102,9 @@
       make sure it always produces correct answers, and only after that worry about how
       efficient it is. (Depending on the algorithm, some or all of these are very
       easy, and some may not be obvious at all. We will see examples later.)
-     <li>Focusing on running time, we surely do not want to talk about actual time
+      <li><h2>Running time</h2>
+      <br>
+      We surely do not want to talk about actual time
      in nanoseconds, as that depends on too many external things: what other
      processes are running, details of the hardware, compiler switches, etc, etc. 
     So instead we come up with a very primitive <em>abstract machine</em> (RAM=the
@@ -55,7 +113,8 @@
     in the CPU, such as address arithmetic, additions, multiplications, divisions,
     etc. Our idea of "running time" is then simply the number of operations
     performed when the program runs.
-      <li>More trouble: even for inputs of a fixed size (saying, your favorite program
+    <li><h2>More trouble</h2>
+    Even for inputs of a fixed size (saying, your favorite program
       sorting 10 numbers), different specific inputs will produce different performance.
       For example, a clever algorithm may notice that the input is already sorted
       and not try sorting it again. So, we distinguish between best- and worst-case
@@ -65,11 +124,15 @@
       means: technically, you need to specify a <i>distribution</i> of the inputs.
       We will mostly stay away from average-case analysis and focus on the worst case;
       we will occasionally look at the best case too.)
-      <li>What we really want, is not the running time (as the number of operations,
+      <li><h2>Generalized statement of running time</h2>
+      <br>
+      What we really want, is not the running time (as the number of operations,
       say, in the worst case), for a specific input size, but as a function of the
       input size, over all sizes. For example, it may be that a given sorting
       algorithm requires <em>4n<sup>2</sup> + 4n + 24</em> operations to sort <em>n</em> items.
-      <li>In order to make life easier, we will not be focusing on the exact value of
+      <li><h2>Asymptotic behavior</h2>
+      <br>
+      In order to make life easier, we will not be focusing on the exact value of
       such function, but on its <i>asymptotic</i> behavior.
       <br>
       <br>
@@ -78,7 +141,9 @@
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Comparison_computational_complexity.svg/250px-Comparison_computational_complexity.svg.png">
         </center>
       <br>
-      <li>In particular, we want to focus on the highest power of n in any
+      <li><h2>Highest power of n</h2>
+      <br>
+      In particular, we want to focus on the highest power of n in any
       function expressing the run time of an algorithm. That is because, as
       input size grows, that power will dwarf all others in significance.
       Consider the contribution of <em>4n<sup>2</sup></em>
@@ -125,33 +190,174 @@
       <em>n<sup>2</sup></em> factor involved to sort them?
       </p>
       <hr>
-      <li>A quick review:
+      <li><h2>A quick review:<a href="#note2">**</a></h2>
         <br>
         <br>
         <ul>
-            <li> big-Oh: O
+            <li><h3>Big O</h3>
             <br>
             <img src="https://cdn.kastatic.org/ka-cs-algorithms/O_fn.png">
             <br>
-            <li> big-Theta: &Theta;
+            <table>
+                <tr>
+                    <th style="background-color:#9999DD">
+                        Notation
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Intuition
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Definition
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <em>f(n) = O(g(n))</em>
+                    </td>
+                    <td>
+                        <em>f</em> is bounded above by <em>g</em>
+                        (up to constant factor) asymptotically
+                    </td>
+                    <td>
+                        <em>f(n) <= k*g(n)</em> for some positive <em>k</em>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <li><h3>Big &Theta;</h3>
             <br>
             <img src="https://cdn.kastatic.org/ka-cs-algorithms/theta_fn.png">
             <br>
-            <li> big-Omega: &Omega;
+            <table>
+                <tr>
+                    <th style="background-color:#9999DD">
+                        Notation
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Intuition
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Definition
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <em>f(n) = &Theta;(g(n))</em>
+                    </td>
+                    <td>
+                        <em>f</em> is bounded above and below by <em>g</em>
+                        asymptotically
+                    </td>
+                    <td>
+                        <em>k<sub>2</sub>*g(n) <=
+                        f(n) <= k<sub>2</sub>*g(n)</em>
+                        for some positive
+                        <em>k<sub>1</sub></en>,
+                            <em>k<sub>2</sub></em>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <li><h3>Big &Omega;</h3>
             <br>
             <img src="https://cdn.kastatic.org/ka-cs-algorithms/Omega_fn.png">
             <br>
-            <li>little-oh: o
-            <li>little-omega: &omega;
+            <table>
+                <tr>
+                    <th style="background-color:#9999DD">
+                        Notation
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Intuition
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Definition
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <em>f(n) = &Omega;(g(n))</em>
+                    </td>
+                    <td>
+                        <em>f</em> is bounded below by <em>g</em>
+                        asymptotically
+                    </td>
+                    <td>
+                        <em>f(n) >= k*g(n)</em> for some positive <em>k</em>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <li><h3>Little o</h3>
+            <br>
+            <table>
+                <tr>
+                    <th style="background-color:#9999DD">
+                        Notation
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Intuition
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Definition
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <em>f(n) = o(g(n))</em>
+                    </td>
+                    <td>
+                        <em>f</em> is dominated by <em>g</em>
+                        asymptotically
+                    </td>
+                    <td>
+                        <em>f(n) <= k*g(n)</em> for every positive <em>k</em>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <li><h3>Little &omega;</h3>
+            <br>
+            <table>
+                <tr>
+                    <th style="background-color:#9999DD">
+                        Notation
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Intuition
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Definition
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <em>f(n) = &omega;(g(n))</em>
+                    </td>
+                    <td>
+                        <em>f</em> dominates <em>g</em>
+                        asymptotically
+                    </td>
+                    <td>
+                        <em>f(n) >= k*g(n)</em> for every positive <em>k</em>
+                    </td>
+                </tr>
+            </table>
         </ul>
         <br>
       You should review them in the book.
         <br>
-      It's a language I am going to use throughout the course. If you are not
+      It's a language we will use throughout the course. If you are not
       comfortable with it, you will be lost. 
         <br>
         <li>An example of a toy algorithmic problem and how to solve it, analyze it etc etc.
     </ul>
     <a name="note1">* Based on Prof. Boris Aronov's lecture notes. </a>
+    <a name="note2">** Material drawn from Khan Academy and
+        https://en.wikipedia.org/wiki/Big_O_notation.</a>
     </body>
 </html>
