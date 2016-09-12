@@ -1,4 +1,16 @@
 <html>
+    <head>
+        <style>
+            <link rel="stylesheet" type="text/css" href="style.css">
+
+            table, th, td {
+                border: 1px solid black;
+                }
+                th, td {
+                        padding: 15px;
+                    }
+        </style>
+    </head>
     <body>
         <h1>Lecture 1 (Sept 12, 2016): Introduction and preliminaries<a
                 href="#note1">*</a></h1>
@@ -56,7 +68,7 @@
       <li>What we really want, is not the running time (as the number of operations,
       say, in the worst case), for a specific input size, but as a function of the
       input size, over all sizes. For example, it may be that a given sorting
-      algorithm requires $$4n^2-4n+24$$ operations to sort $$n$$ items.
+      algorithm requires <em>4n<sup>2</sup> + 4n + 24</em> operations to sort <em>n</em> items.
       <li>In order to make life easier, we will not be focusing on the exact value of
       such function, but on its <i>asymptotic</i> behavior.
       <br>
@@ -65,24 +77,79 @@
         <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Comparison_computational_complexity.svg/250px-Comparison_computational_complexity.svg.png">
         </center>
-        <hr>
       <br>
-      A quick review:
+      <li>In particular, we want to focus on the highest power of n in any
+      function expressing the run time of an algorithm. That is because, as
+      input size grows, that power will dwarf all others in significance.
+      Consider the contribution of <em>4n<sup>2</sup></em>
+      and <em>4n</em> in the runtime of the
+      sorting algorithm mentioned above for various values of <em>n</em>:
+      <br>
+      <br>
+      <center>
+      <table>
+          <tr>
+              <th style="background-color:#9999DD">
+                  n
+              </th>
+              <th style="background-color:#9999DD">
+                  n<sup>2</sup>
+              </th>
+          </tr>
+          <tr>
+              <td>10</td>
+              <td>100</td>
+          </tr>
+          <tr>
+              <td>100</td>
+              <td>10,000</td>
+          </tr>
+          <tr>
+              <td>1000</td>
+              <td>1,000,000</td>
+          </tr>
+          <tr>
+              <td>10,000</td>
+              <td>100,000,000</td>
+          </tr>
+          <tr>
+              <td>100,000</td>
+              <td>10,000,000,000</td>
+          </tr>
+      </table>
+      </center>
+      <p>
+      Now consider that Amazon is processing tens of millions of transactions
+      per day: of what significance is the <em>n</em> factor in the performance
+      of their servers, if they are using an algorithm with an
+      <em>n<sup>2</sup></em> factor involved to sort them?
+      </p>
+      <hr>
+      <li>A quick review:
         <br>
         <br>
         <ul>
             <li> big-Oh: O
             <br>
-            <img
-            src="https://upload.wikimedia.org/wikipedia/commons/8/89/Big-O-notation.png">
+            <img src="https://cdn.kastatic.org/ka-cs-algorithms/O_fn.png">
+            <br>
             <li> big-Theta: &Theta;
+            <br>
+            <img src="https://cdn.kastatic.org/ka-cs-algorithms/theta_fn.png">
+            <br>
             <li> big-Omega: &Omega;
+            <br>
+            <img src="https://cdn.kastatic.org/ka-cs-algorithms/Omega_fn.png">
+            <br>
             <li>little-oh: o
             <li>little-omega: &omega;
         </ul>
+        <br>
       You should review them in the book.
+        <br>
       It's a language I am going to use throughout the course. If you are not
       comfortable with it, you will be lost. 
+        <br>
         <li>An example of a toy algorithmic problem and how to solve it, analyze it etc etc.
     </ul>
     <a name="note1">* Based on Prof. Boris Aronov's lecture notes. </a>
