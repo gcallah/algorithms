@@ -27,7 +27,7 @@ def naive_fib(n, first_call=True):
         ops = 0  # make sure we don't count some other call's operations!
 
     if n < 0:
-        print("n must be > 0!")
+        print("n must be >= 0!")
         return -1
     elif n == 0:
         return 0
@@ -38,3 +38,28 @@ def naive_fib(n, first_call=True):
         ops += 3  # one for the addition and two for the function calls
         return naive_fib(n - 1, False) + naive_fib(n - 2, False)
 
+
+def iter_fib(n):
+    """
+        An iterative approach to getting the n-th fibonacci number.
+        Args:
+            n: the fibonacci number to return
+        Returns:
+            The n-th fibonacci number.
+    """
+    ops = 0
+    if n < 0:
+        print("n must be >= 0!")
+        return -1
+    elif n == 0:
+        return 0
+    else:
+        v = [0, 1]
+        ops += 1
+        for i in range(1, n):
+            temp = v[0]
+            v[0] = v[1]
+            v[1] = v[1] + temp
+            ops += 4  # three asignments and an addition
+        print("Ops = " + str(ops))
+        return v[1]
