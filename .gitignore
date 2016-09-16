@@ -87,3 +87,10 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# vi backup file
+*~
+
+# some sub-dirs
+aronov_lectures
+graphics
