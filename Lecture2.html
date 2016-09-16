@@ -1,0 +1,166 @@
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 16px;
+                color: #333;
+                background: #fff;
+            }
+
+            table, th, td {
+                border: 1px solid black;
+                }
+                th, td {
+                        padding: 15px;
+                }
+            p, ol, ul, dl, li {
+                margin: 10px 8px 16px 8px;
+            }
+
+            p {
+                padding: 0;
+                line-height: 140%;
+            }
+
+            h1,h2,h3,h4,h5 {
+                font-weight: bold;
+            }
+
+            h1 {
+                margin: 0 0 24px;
+                font-weight: 300;
+                font-size: 20px;
+                color: #339;
+            }
+
+            h2 {
+                font-size: 20px;
+                margin: 4px 8px 4px 8px;
+                color: #096;
+            }
+
+            h2.subhead {
+                font-weight:
+                normal;
+                margin-top:
+                0;
+            }
+
+            h3 {
+                font-size: 18px;
+                margin: .8em 0 .3em 0;
+                color: #633;
+                font-weight: bold;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Lecture 2 (Sept 19, 2016): A Review of Big-O, Summation and Algebra<a
+                href="#note1">*</a></h1>
+
+<ul><li><h2>A review of big-Oh, summations and algebra. </h2>
+    <h3>Highest-order term</h3>
+        <p>
+            More graphics on why we only care about the highest-order
+        </p>
+      <img
+      src="https://cdn.kastatic.org/ka-cs-algorithms/6n2_vs_100n%2B300.png">
+      <br>
+      <img
+      src="https://cdn.kastatic.org/ka-cs-algorithms/0.6n2_vs_1000n%2B3000.png">
+    <h3>Meaning of constants in O, &Theta; and &Omega; expressions</h3>
+        <p>
+        Let's say we posit a search operating in <em>2n + 3</em> time.<br>
+        We want to show that this has &Theta;(n) complexity.<br>
+        We must find <em>k<sub>1</sub></em>, <em>k<sub>2</sub></em>, 
+        and <em>n<sub>0</sub></em>, so that:
+        <em>k<sub>1</sub> * n < 2n + 3 < k<sub>2</sub> * n</em>
+        <br>
+        One solution is <em>k<sub>1</sub> = 1</em>, <em>k<sub>2</sub> = 3</em>,
+        and <em>n<sub>0</sub> = 4</em>.
+        <br>
+        Let's demonstrate!
+        </p>
+
+  <li><h2>Algorithmic design in action:</h2>
+  <h3>Fibonacci numbers</h3> 
+The problem of computing, given <em>n >= 0</em>,
+ the <em>n</em><sup>th</sup> Fibonacci number <em>F<sub>n</sub></em>.
+<p>
+    The Fibonacci discussion is not in the textbook. 
+One place where it is presented in a nice way similar to what I will do in class is in
+section 0.2 of the DasGupta, Papadimitriou, Vazirani <em>Algorithms</em> book.
+</p>
+
+<p>
+Talked about the obvious recursive algorithm;
+how it is very slow, intuitively due to recomputing the same subproblems. 
+Proved that the recursion tree grows at least as fast as the Fibonacci sequence itself. 
+</p>
+
+<h4>Sketch of Proof</h4>
+<p>
+Note that every leaf of the recursion tree returns one. The sum of the value
+of all of these leaves is going to be the Fibonacci number we return.
+Therefore, there must be at least as many operations as the Fibonacci number
+itself.
+</p>
+
+
+<p>
+Showed how to speed the recursive algorithm algorithm up by "memoization":
+Using a table to store answers for subproblems already computed. 
+Analyzed the running time and space of the recursive memoized version and of
+the iterative algorithm that fills the table going in the forward direction. 
+Pointed out how to reduce space to constant.
+</p>
+
+<p>
+    Mentioned that there is a closed-form formula for computing Fibonacci numbers. 
+</p>
+<p>
+
+So why can't we claim we can compute <em>n</em>th Fibonacci number in constant time?
+Did not go into details, but this is related to our inability to directly represent
+irrational numbers such as square roots, maybe related to precision/rounding,
+and generally related to what operations are allowed and what are not, in an algorithm. 
+</p>
+<p>
+Mentioned that using some tricks one can construct <em>n</em>th Fibonacci number
+in <em>O(log n)</em> arithmetic operations, where we count additions/subtractions/multiplications
+and do not worry about the fact that eventually the numbers get too large to manipulate
+in constant time.
+</p>
+    
+<li>
+<h2>Data structures</h2>
+Data structures form a very important part of algorithmic research. 
+<p>
+However, this course does not focus on data structures. 
+We will only devote a couple of lectures, total, to this subject. 
+(There are algorithms courses that spend their entire time on data structures. 
+We have an advanced data structures expert in the department, Prof. John Iacono.)
+</p>
+    <ul><li>A quick reminder of basic data structures: Arrays, linked and doubly-linked lists. 
+Stacks, queues, deques (double-ended queues). 
+      <li>The notion of an ADT (<i>abstract data type</i>): the set of operations a data structure promises to provide and the rules that they have to obey.
+      <li>Detailed case study: Priority Queue as an ADT. 
+Basic operations. 
+Extended operations. 
+Simple, straightforward implementations. 
+Heaps. 
+Specifically, <i>implicit binary heap</i>. 
+A not so short reminder of how it works.
+    </ul> 
+
+
+    </ul>
+    <a name="note1">* Based on Prof. Boris Aronov's lecture notes. </a>
+    <br>
+    <a name="note2">** Material drawn from Khan Academy.</a>
+
+    </body>
+</html>
