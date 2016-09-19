@@ -16,7 +16,7 @@
                         padding: 15px;
                 }
             p, ol, ul, dl, li {
-                margin: 10px 8px 16px 8px;
+                margin: 10px 16px 16px 8px;
             }
 
             p {
@@ -50,8 +50,15 @@
 
             h3 {
                 font-size: 18px;
-                margin: .8em 0 .3em 0;
+                margin: 4px 12px 4px 8px;
                 color: #633;
+                font-weight: bold;
+            }
+
+            h4 {
+                font-size: 16px;
+                margin: 4px 16px 4px 8px;
+                color: #339;
                 font-weight: bold;
             }
 
@@ -61,7 +68,35 @@
         <h1>Lecture 2 (Sept 19, 2016): A Review of Big-O, Summation and Algebra<a
                 href="#note1">*</a></h1>
 
-<ul><li><h2>A review of big-Oh, summations and algebra. </h2>
+    <h2>A review of big-Oh, summations and algebra. </h2>
+    <h3>Why have different notations?</h3> 
+    <p>
+    Why not just Big-&Theta;?
+    </p>
+    <p>
+    From the Khan Academy site:<br>
+    <blockquote>
+    We use big-Θ notation to asymptotically bound the 
+    growth of a running time to
+    within constant factors above and below. 
+    Sometimes we want to bound from only
+    above. For example, although the worst-case 
+    running time of binary search is Θ lg n Θ(lgn),
+    it would be incorrect to say that binary search runs in 
+    Θ lg n Θ(lgn) time in all cases.
+    What if we find the target value upon the first
+    guess? Then it runs in Θ 1 Θ(1) time. 
+    The running time of binary search is never worse than Θ lg n
+    Θ(lgn), but it's sometimes better. 
+    It would be convenient to have a form of
+    asymptotic notation that means 
+    "the running time grows at most this much, but
+    it could grow more slowly."
+    We use "big-O" notation for just such occasions.
+    </blockquote>
+    </p>
+
+
     <h3>Highest-order term</h3>
         <p>
             More graphics on why we only care about the highest-order
@@ -85,7 +120,7 @@
         Let's demonstrate!
         </p>
 
-  <li><h2>Algorithmic design in action:</h2>
+  <h2>Algorithmic design in action:</h2>
   <h3>Fibonacci numbers</h3> 
 The problem of computing, given <em>n >= 0</em>,
  the <em>n</em><sup>th</sup> Fibonacci number <em>F<sub>n</sub></em>.
@@ -121,6 +156,9 @@ Pointed out how to reduce space to constant.
 <a href="https://github.com/gcallah/algorithms/blob/master/fibonacci.py">
     Naive and faster Fibonacci code.</a>
 </p>
+<p>
+By the way, this is an open-source project: you may contribute!
+</p>
 
 <p>
 There is a closed-form formula for computing Fibonacci numbers. 
@@ -139,19 +177,40 @@ and do not worry about the fact that eventually the numbers get too large to man
 in constant time.
 </p>
     
-<li>
 <h2>Data structures</h2>
+<p>
 Data structures form a very important part of algorithmic research. 
+</p>
+
 <p>
 However, this course does not focus on data structures. 
 We will only devote a couple of lectures, total, to this subject. 
 (There are algorithms courses that spend their entire time on data structures. 
 We have an advanced data structures expert in the department, Prof. John Iacono.)
 </p>
-    <ul><li>A quick reminder of basic data structures: Arrays, linked and doubly-linked lists. 
-Stacks, queues, deques (double-ended queues). 
-      <li>The notion of an ADT (<i>abstract data type</i>): the set of operations a data structure promises to provide and the rules that they have to obey.
-      <li>
+<ul><li>A quick reminder of basic data structures:
+    <ul>
+        <li>Arrays
+        <li>Linked list
+        <br><img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/408px-Singly-linked-list.svg.png">
+        <li>Doubly-linked list
+        <br>
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png">
+        <li>Stacks
+        <br>
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Lifo_stack.png">
+        <li>Queues
+        <br>
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/405px-Data_Queue.svg.png">
+        <li>Double-ended queues
+        <li>ADT (<i>abstract data type</i>):
+        <br>the set of operations a data structure promises to provide 
+        and the rules that they have to obey.
+    </ul>
       <h3>
       Detailed case study: Iterables as an ADT. 
       </h3>
@@ -173,6 +232,7 @@ Extended operations.
               Rewind? We may ot be able to if the iterator is exhausted in iterating
               through it.
           <li>Iterate in reverse?
+          <li>Access an arbitrary element? (By index, say.)
       </ul>
       <h4>
         Implementations. 
@@ -185,9 +245,17 @@ Extended operations.
              </a> 
       </ul>
     </ul> 
-
-
+    <h2>Homework</h2>
+    <p>
+    <ul>
+        <li>
+    Write the recursive "memo-ized" version of Fibonacci that I did not write.
+    You may use pseudo-code or actually write real code in... Python, Perl,
+    Java, C++... or you suggest a language!
+        <li>Write a queue.
     </ul>
+    </p>
+
     <a name="note1">* Based on Prof. Boris Aronov's lecture notes. </a>
     <br>
     <a name="note2">** Material drawn from Khan Academy.</a>
