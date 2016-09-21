@@ -18,6 +18,7 @@ def naive_fib(n, first_call=True):
         takes to execute.
         Args:
             n: the fibonacci number to return
+            first_call: Is this the top-level call to this function?
         Returns:
             The n-th fibonacci number.
 
@@ -30,13 +31,67 @@ def naive_fib(n, first_call=True):
         print("n must be >= 0!")
         return -1
     elif n == 0:
+        ops += 1
         return 0
     elif n == 1:
         ops += 1
         return 1
     else:
-        ops += 3  # one for the addition and two for the function calls
+        ops += 5  # one for the addition, two for the function calls
+                  # and two for the subtractions
         return naive_fib(n - 1, False) + naive_fib(n - 2, False)
+
+
+results = []
+
+def memo_fib(n, first_call=True):
+    """
+        A memo-ized version of naive fib, that runs much faster.
+
+        Args:
+            n: the fibonacci number to return
+            first_call: Is this the top-level call to this function?
+        Returns:
+            The n-th fibonacci number.
+    """
+    global ops
+    global results
+    if first_call:
+        ops = 0  # make sure we don't count some other call's operations!
+        results = [-1 for x in range(1000)]
+
+    if n < 0:
+        print("n must be >= 0!")
+        return -1
+    elif n == 0:
+        ops += 1
+        return 0
+    elif n == 1:
+        ops += 1
+        return 1
+    else:
+        # Here we check and see if we have calculated the results
+        # we need earlier. If so, use them. If not, calculate and
+        # then store ("memo-ize") them.
+        n_minus_one = 0
+        n_minus_two = 0
+        if results[n - 1] >= 0:
+            ops += 3  # if, assignment, and subtraction
+            n_minus_one = results[n - 1]
+        else:
+            ops += 5  # two assignments, two subtractions, function call
+            n_minus_one = memo_fib(n - 1, False)
+            results[n - 1] = n_minus_one
+        if results[n - 2] >= 0:
+            ops += 3  # if, assignment, and subtraction
+            n_minus_two = results[n - 2]
+        else:
+            ops += 5  # two assignments, two subtractions, function call
+            n_minus_two = memo_fib(n - 2, False)
+            results[n - 2] = n_minus_two
+
+        ops += 1
+        return n_minus_one + n_minus_two
 
 
 def iter_fib(n):
