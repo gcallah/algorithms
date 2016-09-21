@@ -14,7 +14,99 @@
         <p>
             Last class, I asked you to memo-ize the naive, recursive
             Fibonacci algorithm. Let's take a look at how to do that.
+            <br>
+            <a href="https://github.com/gcallah/algorithms/blob/master/fibonacci.py">Here</a>
+            is the Fibonacci code, now including memo-ization.
         </p>
+        <h2>Dictionaries</h2>
+        <h3>
+        The searching problem. 
+        </h3>
+        <h4>
+        Dictionary ADT.
+        </h4>
+        <p>
+        Operations associated with this data type allow:
+        <ul>
+            <li>the addition of a pair to the collection
+            <li>the removal of a pair from the collection
+            <li>the modification of an existing pair
+            <li>the lookup of a value associated with a particular key
+        </ul>
+            <p>
+            (<a href="https://en.wikipedia.org/wiki/Associative_array">Source</a>)
+            </p>
+
+        </p>
+
+        <p>
+        (Ordered Dictionary ADT next time.) 
+        </p>
+        <h4>
+        Simple dictionary implementations:
+        </h4>
+        <p>
+        Always some operation is slow. 
+        Direct addressing. 
+        </p>
+        <h3>
+        Hashing
+        </h3>
+        <p>
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hash_table_4_1_1_0_0_1_0_LL.svg/300px-Hash_table_4_1_1_0_0_1_0_LL.svg.png">
+        <br>
+        Review of hashing: Open addressing. Linear probing. Quadratic probing,
+        double hashing. 
+        </p>
+        <h3>
+        How to analyze hashing?
+        </h3>
+        <p>
+        Analysis of expected algorithm behavior under
+        some assumptions on the input.
+
+        </p>
+        <h3>
+        Introducing randomization into an algorithm.
+        </h3>
+        <p>
+        What happens to the usual
+        assumptions? Correctness: always, most of the time?
+        Termination:
+        always, or almost always? What does "performance" mean if the running
+        time/answer/even termination change from one run to the next. 
+        </p>
+        <h3>
+        Review of basic probability stuff.
+        </h3>
+        <p>
+        Expectation. Indicator variables.
+        <br>
+        Expectation of an indicator variable. Linearity of expectation. 
+        </p>
+        <h3>
+        Simple uniform hashing assumption.
+        </h3>
+        <p>
+        Analysis of chaining under this
+        assumption. Cost of a successful and unsuccessful search as a function
+        of the table's load factor. 
+        </p>
+        <h3>
+        Universal sets of hash functions
+        </h3>
+        <p>
+        Miraculously much of the analysis
+        works here too, even though model is completely different. 
+        <br>
+        Static perfect hashing. 
+        <br>
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Hash_table_4_1_0_0_0_0_0_LL.svg/300px-Hash_table_4_1_0_0_0_0_0_LL.svg.png">
+
+        </p>
+
 
     </body>
 </html>
