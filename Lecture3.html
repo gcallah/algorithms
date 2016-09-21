@@ -81,10 +81,265 @@
         Review of basic probability stuff.
         </h3>
         <p>
-        Expectation. Indicator variables.
+        I am assuming that everyone is familiar with the basic concept of
+        probability (do not want to be very formal): what an EVENT is and what
+        Prob(EVENT) is.  For example: We are using a fair die.  The usual,
+        with six sides and numbers 1, 2, 3, 4, 5, 6 on its sides.  We throw it
+        once.  Then the probability of the event A:"4 came out" is 1/6.  The
+        probability of the event B:"5 came out" is 1/6. The probability of the
+        event C:"an even number came out" is 1/2.  Etc.
         <br>
-        Expectation of an indicator variable. Linearity of expectation. 
+        <br>
+
+        Very basic rules/laws/definitions of probability:
+        <br>
+        <br>
+
+        For any two events A, B: Prob(A or B) = Prob(A) + Prob(B) - Prob(A and
+        B).
+        ["inclusion-exclusion"]
+        <br>
+        <br>
+
+        From this comes a crude way to estimate probabilities:
+          Prob(A or B) <= Prob(A) + Prob(B)
+          or more generally
+          <br>
+            Prob(A_1 or A_2 or ... or A_n) <= sum Prob (A_i)
+            <br>
+            <br>
+
+            Two events A, B are _mutually exclusive_ if Prob(A and B) = 0.
+            <br>
+            <br>
+
+            Two events are _independent_ if Prob(A and B) = Prob(A) times
+            Prob(B).
+            <br>
+            <br>
+
+            Expectations [=expected values]:
+            <br>
+            <br>
+
+            Expected value of a real variable X is defined as
+            <br>
+                     E[X]=sum_{x} Prob[X=x] times x,
+                     where the sum is taken over all values x that X can take.
+                     <br>
+                     In words:
+                     <br>
+                     the expected value of a variable is the weighted sum of
+                     all its
+                     values, weighted according to the probability that they
+                     happen.
+                     <br>
+                     <br>
+
+                     Example: You throw a die and get $10 if it comes out 1 and
+                     $0 if not.
+                     <br>
+                     <br>
+
+                     The expected value of your reward is $10 times 1/6 plus $0
+                     times 5/6 = $10/6.
+                     <br>
+                     <br>
+
+                     You play the lottery.  You pay $1 for the ticket and win
+                     one million
+                     dollars with probability 1/(1 billion).  How much do you
+                     expect to
+                     win?  What's the expected balance?
+                     <br>
+                     <br>
+
+                     Expected balance = -$1 + Expected win.
+                     <br>
+                     <br>
+
+                     Expected win = $1,000,000 times 1/(1 billion) plus $0
+                     times (the
+                     probability I do not win) = $1/1000 = 0.1cent.
+                     <br>
+                     <br>
+
+                     So expected balance = you lose 99.999 cents.
+                     <br>
+                     <br>
+
+                     Useful properties of expectations:
+                     <br>
+                     <br>
+
+                     Linearity of expectation:
+                     <br>
+                     <br>
+
+                     E[a X + b Y] = a E[X] + b E[Y], for any two events X, Y
+                     [there are
+                     some mild requirements on X and Y, but INDEPENDENCE IS NOT
+                     REQIURED!]
+                     and constants a, b.
+                     Generalizes to bigger sums.
+                     <br>
+                     <br>
+
+                     Indicator variables:
+                     <br>
+                     <br>
+
+                     X is an _indicator variable_ for an event A if
+                     <br>
+                     <br>
+
+                     X = 1 if A happens
+                     X = 0 if A does not happen
+                     <br>
+                     <br>
+
+                     Useful properties of indicator variables:
+                     <br>
+                     <br>
+
+                     If X is an indicator variable for A, then
+                     Exp[X]=Prob[X=1]=Prob[A happens].
+                     This easily follows from the definition:
+                     Exp[X]=1 times Prob[X=1] + 0 times
+                     Prob[X=0]=Prob[X=1]=Prob[A happens]
+                     <br>
+                     <br>
+
+                     Example:
+                     <br>
+                     <br>
+
+                     We throw a fair die 100 times.  What is the expect number
+                     of times we
+                     get 1 or 6?
+                     <br>
+                     <br>
+
+                     Let X_i be the indicator variable of the event "in ith
+                     throw we got 1 or 6".
+                     Then notice that the number of times we get 1 or 6 is
+                     exactly
+                     <br>
+                     <br>
+
+                     sum_{i=1}^{100} X_i
+                     <br>
+                     <br>
+
+                     and we want the expectation of this.  By linearity of
+                     expectation:
+                     <br>
+                     <br>
+
+                     E[sum_{i=1}^{100} X_i] = sum_{i=1}^{100} E[X_i]
+                     <br>
+                     <br>
+
+                     and by the indicator variable properties:
+                     <br>
+                     <br>
+
+                     E[X_i]=Prob[X_i=1]=Prob[we got 1 or 6]=2/6=1/3
+                     <br>
+                     <br>
+
+                     To summarize:
+                     <br>
+                     <br>
+
+                     E[sum_{i=1}^{100} X_i] = sum_{i=1}^{100} 1/3 = 100/3 =
+                     33.3333...
+                     <br>
+                     <br>
+
+                     So we expect to get 1 or 6 about 33.33 times.
+                     <br>
+                     <br>
+
+                     Finally, something that comes up very frequently:
+                     <br>
+                     <br>
+
+                     Suppose you have a sequence of events, each of which
+                     happens with
+                     probability p, independent of the previous ones.  What is
+                     the expected
+                     number of tries in the sequence you must observe until you
+                     see an
+                     event you like.
+                     <br>
+                     <br>
+
+                     Examples:
+                     <br>
+                     <br>
+
+                     Flip a coin several times.  How many tries until it comes
+                     out heads.
+                     <br>
+                     <br>
+
+                     Throw a pair of die.  How many tries until they give you
+                     {6,6}?
+                     <br>
+                     <br>
+
+                     Play the lottery.  How many tries until you win?
+                     <br>
+                     <br>
+
+                     Probability event i happens is (1-p)^{i-1}p.  In this case
+                     you need to
+                     wait i steps.  So the expected number of steps to wait is
+                     <br>
+                     <br>
+
+                     sum_{i=1}^\infty i(1-p)^{i-1}p
+                     <br>
+                     <br>
+
+                     It's a standard summation that adds up to 1/p. [A cute or
+                     painful
+                     algebra exercise, depending on how you do it, I guess...]
+                     <br>
+                     <br>
+
+                     so:
+                     <br>
+                     <br>
+
+                     Fact: If you have a sequence of independent events, each
+                     succeeding
+                     with probability p, the expected number of tries until the
+                     first
+                     success is 1/p.
+                     <br>
+                     <br>
+
+                     Or slightly more generally:
+                     <br>
+                     <br>
+
+                     Fact: If you have a sequence of independent events, each
+                     succeeding
+                     with probability at least p, the expected number of tries
+                     until the
+                     first success is at most 1/p.
+                     <br>
+                     <br>
+
+                     [The last one is useful if you are doing sampling without
+                     replacement,
+                     so the probabilities changes as you go along.]
+                     <br>
+                     <br>
         </p>
+
         <h3>
         Simple uniform hashing assumption.
         </h3>

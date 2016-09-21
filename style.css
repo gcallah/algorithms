@@ -27,16 +27,17 @@ h1,h2,h3,h4,h5 {
 }
 
 h1 {
-    margin: 4px 8px 4px 8px;
+    margin: 12px 8px 24px 8px;
     text-align: center;
     font-weight: 300;
     font-size: 24px;
-    color: #339;
+    background-color: #339;
+    color: #cfc;
 }
 
 h2 {
     font-size: 20px;
-    margin: 4px 8px 4px 8px;
+    margin: 12px 8px 12px 8px;
     color: #096;
 }
 
@@ -49,14 +50,15 @@ h2.subhead {
 
 h3 {
     font-size: 18px;
-    margin: 4px 12px 4px 8px;
+    margin: 8px 12px 8px 8px;
     color: #633;
     font-weight: bold;
 }
 
 h4 {
     font-size: 16px;
-    margin: 4px 16px 4px 8px;
+    margin: 8px 16px 8px 8px;
     color: #339;
     font-weight: bold;
 }
+
