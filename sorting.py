@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- 
 """
 This file contains Python implementations of sorting algorithms from
 Intro to Algorithms (Cormen et al.)
