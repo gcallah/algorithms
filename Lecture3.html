@@ -20,11 +20,8 @@
         </p>
         <h2>Dictionaries</h2>
         <h3>
-        The searching problem. 
-        </h3>
-        <h4>
         Dictionary ADT.
-        </h4>
+        </h3>
         <p>
         Operations associated with this data type allow:
         <ul>
@@ -42,13 +39,21 @@
         <p>
         (Ordered Dictionary ADT next time.) 
         </p>
-        <h4>
-        Simple dictionary implementations:
-        </h4>
-        <p>
-        Always some operation is slow. 
+        <h3>
         Direct addressing. 
-        </p>
+        </h3>
+        <ul>
+            <li> <em>O(1)</em> time for lookup.
+            <li> Uses:
+            <ul>
+                <li> Memo-ization
+                <li> Bingo
+                <li> Sieve of Eratosthenes
+                <li> Mark zipcodes seen
+            </ul>
+            <li> Downside: wastes space. If you have no idea how many possible
+            keys you need, direct addressing is not a good choice.
+        </ul>
         <h3>
         Hashing
         </h3>
@@ -59,17 +64,17 @@
         Review of hashing: Open addressing. Linear probing. Quadratic probing,
         double hashing. 
         </p>
-        <h3>
+        <h4>
         How to analyze hashing?
-        </h3>
+        </h4>
         <p>
         Analysis of expected algorithm behavior under
         some assumptions on the input.
 
         </p>
-        <h3>
+        <h4>
         Introducing randomization into an algorithm.
-        </h3>
+        </h4>
         <p>
         What happens to the usual
         assumptions? Correctness: always, most of the time?
@@ -77,9 +82,9 @@
         always, or almost always? What does "performance" mean if the running
         time/answer/even termination change from one run to the next. 
         </p>
-        <h3>
+        <h4>
         Review of basic probability stuff.
-        </h3>
+        </h4>
         <p>
         I am assuming that everyone is familiar with the basic concept of
         probability (do not want to be very formal): what an EVENT is and what
@@ -334,23 +339,22 @@
                      <br>
 
                      [The last one is useful if you are doing sampling without
-                     replacement,
-                     so the probabilities changes as you go along.]
+                     replacement, so the probabilities changes as you go along.]
                      <br>
                      <br>
         </p>
 
-        <h3>
+        <h4>
         Simple uniform hashing assumption.
-        </h3>
+        </h4>
         <p>
         Analysis of chaining under this
         assumption. Cost of a successful and unsuccessful search as a function
         of the table's load factor. 
         </p>
-        <h3>
+        <h4>
         Universal sets of hash functions
-        </h3>
+        </h4>
         <p>
         Miraculously much of the analysis
         works here too, even though model is completely different. 

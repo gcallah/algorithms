@@ -13,8 +13,12 @@ table, th, td {
             padding: 15px;
     }
 
-p, ol, ul, dl, li {
-    margin: 10px 16px 16px 8px;
+p {
+    margin: 8px 8px 8px 40px;
+}
+
+ol, ul, dl, li {
+    margin: 8px 8px 8px 12px;
 }
 
 p {
@@ -30,14 +34,14 @@ h1 {
     margin: 12px 8px 24px 8px;
     text-align: center;
     font-weight: 300;
-    font-size: 28px;
+    font-size: 32px;
     background-color: #339;
     color: #cfc;
 }
 
 h2 {
-    font-size: 20px;
-    margin: 12px 8px 12px 8px;
+    font-size: 24px;
+    margin: 12px 8px 12px 16px;
     color: #096;
 }
 
@@ -49,15 +53,15 @@ h2.subhead {
 }
 
 h3 {
-    font-size: 18px;
-    margin: 8px 12px 8px 8px;
+    font-size: 20px;
+    margin: 8px 8px 8px 24px;
     color: #633;
     font-weight: bold;
 }
 
 h4 {
-    font-size: 16px;
-    margin: 8px 16px 8px 8px;
+    font-size: 18px;
+    margin: 8px 8px 8px 32px;
     color: #339;
     font-weight: bold;
 }
