@@ -109,19 +109,28 @@
         <br>
         <br>
 
-        For any two events A, B: Prob(A or B) = Prob(A) + Prob(B) - Prob(A and
-        B).
+        For any two events A, B:
+        <br>
+        <em>
+            Prob(A or B) = Prob(A) + Prob(B) - Prob(A and B).
+        </em>
+        <br>
+        <br>
         ["inclusion-exclusion"]
         <br>
         <br>
 
         From this comes a crude way to estimate probabilities:
           Prob(A or B) <= Prob(A) + Prob(B)
-          or more generally
+          or more generally:
           <br>
-            Prob(A_1 or A_2 or ... or A_n) <= sum Prob (A<sub>i</sub>)
-            <br>
-            <br>
+          <br>
+          <em>
+            Prob(A<sub>1</sub> or A<sub>2</sub> or ... or A<sub>n</sub>)
+            <= sum Prob (A<sub>i</sub>)
+          </em>
+          <br>
+          <br>
 
             Two events A, B are <em>mutually exclusive</em> if Prob(A and B) = 0.
             <br>
@@ -138,7 +147,11 @@
 
             Expected value of a real variable <em>X</em> is defined as
             <br>
-            <em>E[X]=&Sigma;{x} Prob[X=x] * x</em>
+            <br>
+            <em>
+                E[X]=sum_{x} Prob[X=x] times x
+            </em>
+             <br>
              <br>
              where the sum is taken over all values <em>x</em> that <em>X</em> can take.
              <br>
@@ -190,10 +203,13 @@
              <br>
              <br>
 
-             <em>E[a X + b Y] = a E[X] + b E[Y]</em>, for any two events X, Y
-             [there are
-             some mild requirements on X and Y, but INDEPENDENCE IS NOT
-             REQIURED!]
+             <em>
+                 E[a X + b Y] = a E[X] + b E[Y]
+             </em>
+             <br>
+             <br>
+             for any two events X, Y
+             [there are some mild requirements on X and Y, but INDEPENDENCE IS NOT REQIURED!]
              and constants a, b.
              <br>
              <br>
@@ -202,7 +218,7 @@
              <br>
              <br>
 
-             X is an <sub>i</sub>ndicator variable_ for an event A if
+             X is an <em>indicator variable</em> for an event A if
              <br>
              <br>
 
@@ -216,12 +232,16 @@
              <br>
 
              If X is an indicator variable for A, then
-             Exp[X]=Prob[X=1]=Prob[A happens].
+             <em>
+                 Exp[X]=Prob[X=1]=Prob[A happens]
+             </em>
+             .
              <br>
              This easily follows from the definition:
              <br>
-             Exp[X]=1 * Prob[X=1] + 0 *
-             Prob[X=0]=Prob[X=1]=Prob[A happens]
+             <em>
+                 Exp[X]=1 * Prob[X=1] + 0 * Prob[X=0]=Prob[X=1]=Prob[A happens]
+             </em>
              <br>
              <br>
 
@@ -229,9 +249,8 @@
              <br>
              <br>
 
-             We throw a fair die 100 times  What is the expect number
-             of times we
-             get 1 or 6?
+             We throw a fair die 100 times  What is the expected number
+             of times we get 1 or 6?
              <br>
              <br>
 
@@ -242,16 +261,19 @@
              <br>
              <br>
 
-             &Sigma;{i=1}^{100} X<sub>i</sub>
+             <em>
+                 sum_{i=1}^{100} X_i
+             </em>
              <br>
              <br>
 
-             and we want the expectation of this.  By linearity of
-             expectation:
+             and we want the expectation of this.  By linearity of expectations:
              <br>
              <br>
 
-             E[&Sigma;{i=1}^{100} X<sub>i</sub>] = &Sigma;{i=1}^{100} E[X<sub>i</sub>]
+             <em>
+                 E[sum_{i=1}^{100} X_i] = sum_{i=1}^{100} E[X_i]
+             </em>
              <br>
              <br>
 
@@ -259,7 +281,9 @@
              <br>
              <br>
 
-             E[X<sub>i</sub>]=Prob[X<sub>i</sub>=1]=Prob[we got 1 or 6]=2/6=1/3
+             <em>
+                 E[X_i]=Prob[X_i=1]=Prob[we got 1 or 6]=2/6=1/3
+             </em>
              <br>
              <br>
 
@@ -267,8 +291,10 @@
              <br>
              <br>
 
-             E[&Sigma;{i=1}^{100} X<sub>i</sub>] = &Sigma;{i=1}^{100} 1/3 = 100/3 =
-             33.3333...
+             <em>
+                 E[sum_{i=1}^{100} X_i] = sum_{i=1}^{100} 1/3 = 100/3 =
+                 33.3333...
+             </em>
              <br>
              <br>
 
@@ -285,8 +311,7 @@
              probability p, independent of the previous ones.  What is
              the expected
              number of tries in the sequence you must observe until you
-             see an
-             event you like.
+             see an event you like.
              <br>
              <br>
 
@@ -308,19 +333,23 @@
              <br>
              <br>
 
-             Probability event i happens is (1-p)^{i-1}p.  In this case
-             you need to
-             wait i steps.  So the expected number of steps to wait is
+             Probability event i happens is 
+             <em>
+                 (1-p)^<sup>i-1</sup>p
+             </em>.
+             In this case you need to
+             wait i steps.  So the expected number of steps to wait is:
              <br>
              <br>
 
-             &Sigma;{i=1}^\infty i(1-p)^{i-1}p
+             <em>
+                 sum_{i=1}^\infty i(1-p)^{i-1}p
+             </em>
              <br>
              <br>
 
              It's a standard summation that adds up to 1/p. [A cute or
-             painful
-             algebra exercise, depending on how you do it, I guess...]
+             painful algebra exercise, depending on how you do it, I guess...]
              <br>
              <br>
 
