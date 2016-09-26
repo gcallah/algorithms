@@ -41,8 +41,17 @@
             <p>
             (<a href="https://en.wikipedia.org/wiki/Associative_array">Source</a>)
             </p>
-
         </p>
+        <p>
+        Typical uses:
+        <ul>
+            <li> Symbol lookup in a programming language
+            <li> Counting words in a book
+            <li> Store colors by name as key and their numeric equivalent as
+            the value. Then we can write <b>set_text(colors["red"])</b>.
+        </ul>
+        </p>
+
 
         <p>
         (Ordered Dictionary ADT next time.) 
@@ -111,10 +120,30 @@
         </ul>
         </p>
         <h4>
-        How to analyze hashing?
+        Introducing probability into an algorithm.
         </h4>
         <p>
-        <b>Chaining</b>.
+        What happens to the usual assumptions?
+        <br>
+        <b>Correctness</b>: always, most of the time?
+        <br>
+        <b>Termination</b>: always, or almost always?
+        What does "performance" mean if the running
+        time/answer/even termination change from one run to the next?
+        </p>
+        <h4>Probability Basics</h4>
+        <p>
+        <a
+            href="http://htmlpreview.github.io/?https://github.com/gcallah/algorithms/blob/master/Probability.html">
+            Reviewed in this document.
+        </a>
+        </p>
+        <h4>
+        Simple uniform hashing 
+        </h4>
+        <p>
+        This employs <b>chaining</b>. Furthermore, we assume that the
+        distribution of elements is uniform across hash table slots.
         <br>
         <img
         src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Hasq_hash_chains.png"
@@ -161,34 +190,7 @@
             <br><em>h(k) = [m (k A mod 1)]</em>,
             where <em>0 < A < 1</em>.
         </ul>
-        <h4>
-        Introducing probability into an algorithm.
-        </h4>
-        <p>
-        What happens to the usual assumptions?
-        <br>
-        <b>Correctness</b>: always, most of the time?
-        <br>
-        <b>Termination</b>: always, or almost always?
-        What does "performance" mean if the running
-        time/answer/even termination change from one run to the next?
-        </p>
-        <h4>Probability Basics</h4>
-        <p>
-        <a
-            href="http://htmlpreview.github.io/?https://github.com/gcallah/algorithms/blob/master/Probability.html">
-            Reviewed in this document.
-        </a>
-        </p>
 
-        <h4>
-        Simple uniform hashing assumption.
-        </h4>
-        <p>
-        Analysis of chaining under this
-        assumption. Cost of a successful and unsuccessful search as a function
-        of the table's load factor. 
-        </p>
         <h4>
         Universal sets of hash functions
         </h4>
@@ -208,6 +210,16 @@
         Devise three possible hash functions. Analyze each for size of hash
         table necessary and possibility of collisions.
         </p>
+        <p>
+        Let's say our hash function is <em>h(k) = k mod 11</em> and we resolve
+        conflicts with chaining. Analyze what happens if our data values are
+        23, 34, 12, 8, 19, 33, 2, 5, 15, 4, 31, 9, 3, 6, 18, 8, 19 and 22.
+        </p>
+        <p>
+        Homework to be handed in on paper at the beginning of the next class.
+        </p>
+
+
 
     <a name="note1">* Based on Prof. Boris Aronov's lecture notes. </a>
     <br>
