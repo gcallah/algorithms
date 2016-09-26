@@ -88,13 +88,16 @@
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hash_table_4_1_1_0_0_1_0_LL.svg/300px-Hash_table_4_1_1_0_0_1_0_LL.svg.png">
         <br>
         <h4>
-        Review of hashing:
+        Basic Hashing:
         </h4>
         <ul>
             <li> <em>O(1)</em> <em>average</em> case time for lookup.
             <li> Universe of keys <em>U</em> mapped into slots of a <em>hash table</em>
             of size <em>m</em> by hash function <em>h</em>.
-            <li> Because <em>size(U) > m</em>, collisions are always possible
+            <li> Because <em>size(U) > m</em>, collisions are always possible.
+            <br>Imagine we hash by word length: 'mark' and 'beam' both hash to
+            4. (Stupid hash function, but it illustrates the idea.) We must
+            resolve this collision somehow.
             <li> Resolve collisions by chaining:
             <br> Each slot holds a linked list of values.
             <li> <a
@@ -112,11 +115,6 @@
                     <li> <a href="http://www.phash.org">
                         Perceptual hashing
                     </a>
-            <li> Open addressing
-            <br> All elements are stored directly in the table; no chaining.
-            <li> Linear probing
-            <li> Quadratic probing
-            <li> Double hashing
         </ul>
         </p>
         <h4>
@@ -192,29 +190,43 @@
         </ul>
 
         <h4>
-        Universal sets of hash functions
+        Universal hashing
         </h4>
-        <p>
-        Miraculously much of the analysis
-        works here too, even though model is completely different. 
-        <br>
-        Static perfect hashing. 
-        <br>
-        <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Hash_table_4_1_0_0_0_0_0_LL.svg/300px-Hash_table_4_1_0_0_0_0_0_LL.svg.png">
+        <ul>
+            <li>Establish a <em>family</em> of hash functions.
+            <li>Choose so that <em>Prob[h(x) = h(y)] <= 1/m</em>.
+            <li>Choose one at random each "execution."
+            <br>Tricky: what if we store hash values?
+            <li>Good average case behavior
+            <br>If a "bad" function handles some
+            data once, a "good" one will handle it another time.
+        </ul>
 
-        </p>
+        <h4>Open addressing</h4>
+        <ul>
+            <li>All elements are stored directly in the table; no chaining.
+            <li>Linear probing
+            <br>Easy: just move along array indices!
+            <br>Prone to clustering
+            <li>Quadratic probing
+            <li><a href="https://en.wikipedia.org/wiki/Double_hashing">
+                Double hashing
+            </a>
+            <br>Uses two hash functions to search array for key.
+        </ul>
+
 
         <h3>Homework</h3>
         <p>
-        Devise three possible hash functions. Analyze each for size of hash
-        table necessary and possibility of collisions.
         </p>
-        <p>
-        Let's say our hash function is <em>h(k) = k mod 11</em> and we resolve
-        conflicts with chaining. Analyze what happens if our data values are
-        23, 34, 12, 8, 19, 33, 2, 5, 15, 4, 31, 9, 3, 6, 18, 8, 19 and 22.
-        </p>
+        <ul>
+            <li> Devise three possible hash functions. Analyze each for size of hash
+            table necessary and possibility of collisions.
+            <li> Let's say our hash function is <em>h(k) = k mod 11</em> and we resolve
+            conflicts with chaining. Analyze what happens if our data values are
+            23, 34, 12, 8, 19, 33, 2, 5, 15, 4, 31, 9, 3, 6, 18, 8, 19 and 22.
+            <li>Write (pseudo) code to resolve collisions with chaining. 
+        </ul>
         <p>
         Homework to be handed in on paper at the beginning of the next class.
         </p>
