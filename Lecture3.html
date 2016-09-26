@@ -11,10 +11,12 @@
             Introduction to Algorithms, Lecture 3
             <a href="#note1">*</a>
         </h1>
-        <h2>Looking at Memo-ization</h2>
+        <h2>Looking at Memoization</h2>
         <p>
-            Last class, I asked you to memo-ize the naive, recursive
-            Fibonacci algorithm. Let's take a look at how to do that.
+            Last class, I asked you to <a
+                href="https://en.wikipedia.org/wiki/Memoization">
+            memoize</a>
+            the naive, recursive Fibonacci algorithm. Let's take a look at how to do that.
             <br>
             <a href="https://github.com/gcallah/algorithms/blob/master/fibonacci.py">Here</a>
             is the Fibonacci code, now including memo-ization.
@@ -45,6 +47,11 @@
         <p>
         (Ordered Dictionary ADT next time.) 
         </p>
+        <p>
+        <em>Direct addressing</em> and <em>Hashing</em> are two ways of implementing a
+        dictionary. Are there others?
+        </p>
+
         <h3>
         Direct addressing. 
         </h3>
@@ -52,7 +59,7 @@
             <li> <em>O(1)</em> <em>worst</em> case time for lookup.
             <li> Uses:
             <ul>
-                <li> Memo-ization
+                <li> Memoization
                 <li> Bingo
                 <li> Sieve of Eratosthenes
                 <li> Mark zipcodes seen
@@ -71,32 +78,100 @@
         <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hash_table_4_1_1_0_0_1_0_LL.svg/300px-Hash_table_4_1_1_0_0_1_0_LL.svg.png">
         <br>
+        <h4>
         Review of hashing:
+        </h4>
         <ul>
             <li> <em>O(1)</em> <em>average</em> case time for lookup.
-            <li> Open addressing.
-            <li> Linear probing.
-            <li> Quadratic probing.
-            <li> Double hashing. 
+            <li> Universe of keys <em>U</em> mapped into slots of a <em>hash table</em>
+            of size <em>m</em> by hash function <em>h</em>.
+            <li> Because <em>size(U) > m</em>, collisions are always possible
+            <li> Resolve collisions by chaining:
+            <br> Each slot holds a linked list of values.
+            <li> <a
+                href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">
+            Cryptographic hashing
+            </a>
+            <br> Use large hash keys:
+                <a href="https://en.wikipedia.org/wiki/SHA-1">
+                    SHA-1</a> uses 160 bit keys. <a
+                    href="https://en.wikipedia.org/wiki/SHA-2">SHA-2</a> uses
+                    keys of up to 512 bits.
+                    <br>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/SHA-2.svg/400px-SHA-2.svg.png">
+                    <li> <a href="http://www.phash.org">
+                        Perceptual hashing
+                    </a>
+            <li> Open addressing
+            <br> All elements are stored directly in the table; no chaining.
+            <li> Linear probing
+            <li> Quadratic probing
+            <li> Double hashing
         </ul>
         </p>
         <h4>
         How to analyze hashing?
         </h4>
         <p>
-        Analysis of expected algorithm behavior under
-        some assumptions on the input.
-
+        <b>Chaining</b>.
+        <br>
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Hasq_hash_chains.png"
+        height="210" width="240">
+            <ul>
+                <li> Hash table <em>T</em> with <em>m</em> slots storing <em>n</em> elements.
+                <li> <b>Load factor</b>: <em>&alpha; = n / m</em>
+                <br> <em>&alpha;</em> is the average number of elements stored in a
+                chain.
+                <li> Our analysis is in terms of <em>&alpha;</em>, which can be
+                less than, equal to, or greater than one.
+                <li><b>Worst case</b> is very bad:
+                <br>All <em>n</em> keys hash to the same slot.
+                <br>Worst case for searching becomes <em>&Theta;(n)</em> plus
+                time to compute hash function.
+                <br>We could have just used a linked list directly!
+                <li><b>Average case</b>:
+                <br>Assuming any given element is equally likely to hash into
+                any slot...
+                <br>We get average case <em>&Theta;(1 + &alpha;)</em> time.
+                <br>See proofs in our textbook.
+            </ul>
         </p>
+
+        <h4>Hash functions</h4>
+        <ul>
+            <li> First, convert key to an integer.
+            <br> E.g., we can interpret characters in a string by their ASCII values.
+            <br> Then treat each value as a digit in a radix-128 integer.
+            <br>
+            (<a
+                href="http://www.drdobbs.com/database/generating-sequential-keys-in-an-arbitra/184409688">
+                See this article for more on radices.</a>)
+            <li> Keys could be many other things besides strings.
+            <br> E.g., genomes:
+            <br>
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/63/Part_of_DNA_sequence_prototypification_of_complete_genome_of_virus_5418_nucleotides.gif"
+            height="320" width="340">
+            <li> Division method:
+            <br><em>h(k) = k mod P</em>, where <em>P</em> is a
+            suitably-chosen prime number.
+            <li> Multiplication method:
+            <br><em>h(k) = [m (k A mod 1)]</em>,
+            where <em>0 < A < 1</em>.
+        </ul>
         <h4>
-        Introducing randomization into an algorithm.
+        Introducing probability into an algorithm.
         </h4>
         <p>
-        What happens to the usual
-        assumptions? Correctness: always, most of the time?
-        Termination:
-        always, or almost always? What does "performance" mean if the running
-        time/answer/even termination change from one run to the next. 
+        What happens to the usual assumptions?
+        <br>
+        <b>Correctness</b>: always, most of the time?
+        <br>
+        <b>Termination</b>: always, or almost always?
+        What does "performance" mean if the running
+        time/answer/even termination change from one run to the next?
         </p>
         <h4>Probability Basics</h4>
         <p>
@@ -105,7 +180,6 @@
             Reviewed in this document.
         </a>
         </p>
-
 
         <h4>
         Simple uniform hashing assumption.
@@ -127,6 +201,12 @@
         <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Hash_table_4_1_0_0_0_0_0_LL.svg/300px-Hash_table_4_1_0_0_0_0_0_LL.svg.png">
 
+        </p>
+
+        <h3>Homework</h3>
+        <p>
+        Devise three possible hash functions. Analyze each for size of hash
+        table necessary and possibility of collisions.
         </p>
 
     <a name="note1">* Based on Prof. Boris Aronov's lecture notes. </a>

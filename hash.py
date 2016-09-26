@@ -18,6 +18,9 @@ This file contains:
     direct_address_insert()
     direct_address_delete()
     direct_address_guessing()
+    chained_hash_insert()
+    chained_hash_search()
+    chained_hash_delete()
 """
 
 import random
@@ -90,4 +93,44 @@ def direct_address_guessing(n):
                     direct_address_insert(guesses, guess, True)
             else:
                 print("You already guessed that!")
+
+
+def chained_hash_insert(t, k, x):
+    """
+        Inserts an element into a chained hash table.
+        Args:
+            t: our dictionary
+            k: our key
+            x: the value to insert at k
+
+        Returns:
+            None
+
+    """
+    pass
+
+
+def chained_hash_search(t, k):
+    """
+        Find a value in our hash table.
+        Args:
+            t: our dictionary
+            k: our key
+
+        Returns:
+            The value associated with k or None.
+
+    """
+
+
+def chained_hash_delete(t, k):
+    """
+        Args:
+            t: our dictionary
+            k: our key
+
+        Returns:
+            None
+
+    """
 
