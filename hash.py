@@ -115,7 +115,6 @@ def string_to_int(s):
         i += 1
     return int_val
 
-
 TABLE_SIZE = 13  # we want a prime not near a power of two
                  # we are making table small deliberately to get collisions!
 htable = [[] for x in range(TABLE_SIZE)]
@@ -135,23 +134,24 @@ def clear_htable(t):
     t = [[] for x in range(TABLE_SIZE)]
 
 
-def div_hash(k):
+def div_hash(k,TS):
     """
         Hashing using the division method.
         Args:
             k: the key to hash
-
+			TS: Table Size
         Returns:
             The hashed version of the key.
     """
-    return k % TABLE_SIZE
+    return k % TS
 
 
-def mult_hash():
+def mult_hash(k,TS):
     """
         Hashing using the multiplication method.
         Args:
             k: the key to hash
+			TS:Table size
 
         Returns:
             The hashed version of the key.
@@ -164,53 +164,65 @@ DIV = 0
 MULT = 1
 
 
-def h(k, div_or_mult=DIV):
+def h(k,TS,div_or_mult=DIV):
     """
         Our hash function.
         Args:
             k: key to hash (for now, we only accept strings!)
+			TS: Table Size
         Returns:
             Hashed version of k.
     """
-    return div_hash(string_to_int(k))
+    return div_hash(string_to_int(k),TS)
 
 
-def chained_hash_insert(t, k, x):
-	hindex = h(k)
-	l = t[hindex]
-	q = 0
-	if len(l)  == 0:
-		print("Inserting at index: " + str(hindex))
-		t[hindex].append((k, x))  # we must append both k and x!
-	else:
+def chained_hash_insert(t, TS,k, x):
+    """
+        Args:
+            t: our dictionary
+            k: our key (for now, we only accept strings!)
+			TS: Table size
+			x:the value to insert at k
+
+        Returns:
+            None
+    """
+    hindex = h(k,TS)
+    l = t[hindex]
+    key_exists = False
+    if len(l)  == 0:
+    	print("Inserting at index: " + str(hindex))
+	t[hindex].append((k, x))  # we must append both k and x!
+    else:
 		for kv_pair in l:
 			if kv_pair[K] == k and kv_pair[X] == x:
-				q = q+1
+				key_exists = True
+				break
 			else:
-				q = q
-		if q == 0:
+				key_exists = False
+		if not key_exists:
 			print("Inserting at index: " + str(hindex))
 			t[hindex].append((k, x))  # we must append both k and x!
 		else:
-			print("Element already exists")
-			
+			print("Element already exists")			
 
 K = 0
 X = 1
 
 
-def chained_hash_search(t, k):
+def chained_hash_search(t,TS, k):
     """
         Find a value in our hash table.
         Args:
             t: our dictionary
             k: our key (for now, we only accept strings!)
+			TS: Table size
 
         Returns:
             The value associated with k or None.
 
     """
-    hindex = h(k)
+    hindex = h(k,TS)
     l = t[hindex]
     for kv_pair in l:
         print("Looking at key: " + kv_pair[K])
@@ -220,17 +232,18 @@ def chained_hash_search(t, k):
     return None
 
 
-def chained_hash_delete(t, k):
+def chained_hash_delete(t,TS, k):
     """
         Args:
             t: our dictionary
             k: our key (for now, we only accept strings!)
+			TS: Table size
 
         Returns:
             None
 
     """
-    hindex = h(k)
+    hindex = h(k,TS)
     l = t[hindex]
     i = 0
     for kv_pair in l:
