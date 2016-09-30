@@ -9,22 +9,27 @@
     <body>
         <h1>
             Introduction to Algorithms, Lecture 3
+            <a href="#note1">*</a>
         </h1>
-        <h2>Looking at Memo-ization</h2>
+        <h2>Looking at Memoization</h2>
         <p>
-            Last class, I asked you to memo-ize the naive, recursive
-            Fibonacci algorithm. Let's take a look at how to do that.
+            Last class, I asked you to <a
+                href="https://en.wikipedia.org/wiki/Memoization">
+            memoize</a>
+            the naive, recursive Fibonacci algorithm. Let's take a look at how to do that.
             <br>
             <a href="https://github.com/gcallah/algorithms/blob/master/fibonacci.py">Here</a>
             is the Fibonacci code, now including memo-ization.
         </p>
         <h2>Dictionaries</h2>
+        <p>
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/English-English_and_English-Persian_dictionaries.JPG/350px-English-English_and_English-Persian_dictionaries.JPG">
+        </p>
+
         <h3>
-        The searching problem. 
-        </h3>
-        <h4>
         Dictionary ADT.
-        </h4>
+        </h3>
         <p>
         Operations associated with this data type allow:
         <ul>
@@ -36,19 +41,45 @@
             <p>
             (<a href="https://en.wikipedia.org/wiki/Associative_array">Source</a>)
             </p>
-
         </p>
+        <p>
+        Typical uses:
+        <ul>
+            <li> Symbol lookup in a programming language
+            <li> Counting words in a book
+            <li> Store colors by name as key and their numeric equivalent as
+            the value. Then we can write <b>set_text(colors["red"])</b>.
+        </ul>
+        </p>
+
 
         <p>
         (Ordered Dictionary ADT next time.) 
         </p>
-        <h4>
-        Simple dictionary implementations:
-        </h4>
         <p>
-        Always some operation is slow. 
-        Direct addressing. 
+        <em>Direct addressing</em> and <em>Hashing</em> are two ways of implementing a
+        dictionary. Are there others?
         </p>
+
+        <h3>
+        Direct addressing. 
+        </h3>
+        <ul>
+            <li> <em>O(1)</em> <em>worst</em> case time for lookup.
+            <li> Uses:
+            <ul>
+                <li> Memoization
+                <li> Bingo
+                <li> Sieve of Eratosthenes
+                <li> Mark zipcodes seen
+            </ul>
+            <li> Downside: wastes space. If you have no idea how many possible
+            keys you need, direct addressing is not a good choice.
+            <br>For instance, if your key is an arbitrary string!
+            <li><a href="https://github.com/gcallah/algorithms/blob/master/hash.py">
+                Example code here.
+                </a>
+        </ul>
         <h3>
         Hashing
         </h3>
@@ -56,312 +87,155 @@
         <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hash_table_4_1_1_0_0_1_0_LL.svg/300px-Hash_table_4_1_1_0_0_1_0_LL.svg.png">
         <br>
-        Review of hashing: Open addressing. Linear probing. Quadratic probing,
-        double hashing. 
+        <h4>
+        Basic Hashing:
+        </h4>
+        <ul>
+            <li> <em>O(1)</em> <em>average</em> case time for lookup.
+            <li> Universe of keys <em>U</em> mapped into slots of a <em>hash table</em>
+            of size <em>m</em> by hash function <em>h</em>.
+            <li> Because <em>size(U) > m</em>, collisions are always possible.
+            <br>Imagine we hash by word length: 'mark' and 'beam' both hash to
+            4. (Stupid hash function, but it illustrates the idea.) We must
+            resolve this collision somehow.
+            <li> Resolve collisions by chaining:
+            <br> Each slot holds a linked list of values.
+            <li> <a
+                href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">
+            Cryptographic hashing
+            </a>
+            <br> Use large hash keys:
+                <a href="https://en.wikipedia.org/wiki/SHA-1">
+                    SHA-1</a> uses 160 bit keys. <a
+                    href="https://en.wikipedia.org/wiki/SHA-2">SHA-2</a> uses
+                    keys of up to 512 bits.
+                    <br>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/SHA-2.svg/400px-SHA-2.svg.png">
+                    <li> <a href="http://www.phash.org">
+                        Perceptual hashing
+                    </a>
+        </ul>
         </p>
-        <h3>
-        How to analyze hashing?
-        </h3>
+        <h4>
+        Introducing probability into an algorithm.
+        </h4>
         <p>
-        Analysis of expected algorithm behavior under
-        some assumptions on the input.
-
+        What happens to the usual assumptions?
+        <br>
+        <b>Correctness</b>: always, most of the time?
+        <br>
+        <b>Termination</b>: always, or almost always?
+        What does "performance" mean if the running
+        time/answer/even termination change from one run to the next?
         </p>
-        <h3>
-        Introducing randomization into an algorithm.
-        </h3>
+        <h4>Probability Basics</h4>
         <p>
-        What happens to the usual
-        assumptions? Correctness: always, most of the time?
-        Termination:
-        always, or almost always? What does "performance" mean if the running
-        time/answer/even termination change from one run to the next. 
+        <a
+            href="http://htmlpreview.github.io/?https://github.com/gcallah/algorithms/blob/master/Probability.html">
+            Reviewed in this document.
+        </a>
         </p>
-        <h3>
-        Review of basic probability stuff.
-        </h3>
+        <h4>
+        Simple uniform hashing 
+        </h4>
         <p>
-        I am assuming that everyone is familiar with the basic concept of
-        probability (do not want to be very formal): what an EVENT is and what
-        Prob(EVENT) is.  For example: We are using a fair die.  The usual,
-        with six sides and numbers 1, 2, 3, 4, 5, 6 on its sides.  We throw it
-        once.  Then the probability of the event A:"4 came out" is 1/6.  The
-        probability of the event B:"5 came out" is 1/6. The probability of the
-        event C:"an even number came out" is 1/2.  Etc.
-        <br>
-        <br>
-
-        Very basic rules/laws/definitions of probability:
-        <br>
-        <br>
-
-        For any two events A, B: Prob(A or B) = Prob(A) + Prob(B) - Prob(A and
-        B).
-        ["inclusion-exclusion"]
-        <br>
-        <br>
-
-        From this comes a crude way to estimate probabilities:
-          Prob(A or B) <= Prob(A) + Prob(B)
-          or more generally
-          <br>
-            Prob(A_1 or A_2 or ... or A_n) <= sum Prob (A_i)
-            <br>
-            <br>
-
-            Two events A, B are _mutually exclusive_ if Prob(A and B) = 0.
-            <br>
-            <br>
-
-            Two events are _independent_ if Prob(A and B) = Prob(A) times
-            Prob(B).
-            <br>
-            <br>
-
-            Expectations [=expected values]:
-            <br>
-            <br>
-
-            Expected value of a real variable X is defined as
-            <br>
-                     E[X]=sum_{x} Prob[X=x] times x,
-                     where the sum is taken over all values x that X can take.
-                     <br>
-                     In words:
-                     <br>
-                     the expected value of a variable is the weighted sum of
-                     all its
-                     values, weighted according to the probability that they
-                     happen.
-                     <br>
-                     <br>
-
-                     Example: You throw a die and get $10 if it comes out 1 and
-                     $0 if not.
-                     <br>
-                     <br>
-
-                     The expected value of your reward is $10 times 1/6 plus $0
-                     times 5/6 = $10/6.
-                     <br>
-                     <br>
-
-                     You play the lottery.  You pay $1 for the ticket and win
-                     one million
-                     dollars with probability 1/(1 billion).  How much do you
-                     expect to
-                     win?  What's the expected balance?
-                     <br>
-                     <br>
-
-                     Expected balance = -$1 + Expected win.
-                     <br>
-                     <br>
-
-                     Expected win = $1,000,000 times 1/(1 billion) plus $0
-                     times (the
-                     probability I do not win) = $1/1000 = 0.1cent.
-                     <br>
-                     <br>
-
-                     So expected balance = you lose 99.999 cents.
-                     <br>
-                     <br>
-
-                     Useful properties of expectations:
-                     <br>
-                     <br>
-
-                     Linearity of expectation:
-                     <br>
-                     <br>
-
-                     E[a X + b Y] = a E[X] + b E[Y], for any two events X, Y
-                     [there are
-                     some mild requirements on X and Y, but INDEPENDENCE IS NOT
-                     REQIURED!]
-                     and constants a, b.
-                     Generalizes to bigger sums.
-                     <br>
-                     <br>
-
-                     Indicator variables:
-                     <br>
-                     <br>
-
-                     X is an _indicator variable_ for an event A if
-                     <br>
-                     <br>
-
-                     X = 1 if A happens
-                     X = 0 if A does not happen
-                     <br>
-                     <br>
-
-                     Useful properties of indicator variables:
-                     <br>
-                     <br>
-
-                     If X is an indicator variable for A, then
-                     Exp[X]=Prob[X=1]=Prob[A happens].
-                     This easily follows from the definition:
-                     Exp[X]=1 times Prob[X=1] + 0 times
-                     Prob[X=0]=Prob[X=1]=Prob[A happens]
-                     <br>
-                     <br>
-
-                     Example:
-                     <br>
-                     <br>
-
-                     We throw a fair die 100 times.  What is the expect number
-                     of times we
-                     get 1 or 6?
-                     <br>
-                     <br>
-
-                     Let X_i be the indicator variable of the event "in ith
-                     throw we got 1 or 6".
-                     Then notice that the number of times we get 1 or 6 is
-                     exactly
-                     <br>
-                     <br>
-
-                     sum_{i=1}^{100} X_i
-                     <br>
-                     <br>
-
-                     and we want the expectation of this.  By linearity of
-                     expectation:
-                     <br>
-                     <br>
-
-                     E[sum_{i=1}^{100} X_i] = sum_{i=1}^{100} E[X_i]
-                     <br>
-                     <br>
-
-                     and by the indicator variable properties:
-                     <br>
-                     <br>
-
-                     E[X_i]=Prob[X_i=1]=Prob[we got 1 or 6]=2/6=1/3
-                     <br>
-                     <br>
-
-                     To summarize:
-                     <br>
-                     <br>
-
-                     E[sum_{i=1}^{100} X_i] = sum_{i=1}^{100} 1/3 = 100/3 =
-                     33.3333...
-                     <br>
-                     <br>
-
-                     So we expect to get 1 or 6 about 33.33 times.
-                     <br>
-                     <br>
-
-                     Finally, something that comes up very frequently:
-                     <br>
-                     <br>
-
-                     Suppose you have a sequence of events, each of which
-                     happens with
-                     probability p, independent of the previous ones.  What is
-                     the expected
-                     number of tries in the sequence you must observe until you
-                     see an
-                     event you like.
-                     <br>
-                     <br>
-
-                     Examples:
-                     <br>
-                     <br>
-
-                     Flip a coin several times.  How many tries until it comes
-                     out heads.
-                     <br>
-                     <br>
-
-                     Throw a pair of die.  How many tries until they give you
-                     {6,6}?
-                     <br>
-                     <br>
-
-                     Play the lottery.  How many tries until you win?
-                     <br>
-                     <br>
-
-                     Probability event i happens is (1-p)^{i-1}p.  In this case
-                     you need to
-                     wait i steps.  So the expected number of steps to wait is
-                     <br>
-                     <br>
-
-                     sum_{i=1}^\infty i(1-p)^{i-1}p
-                     <br>
-                     <br>
-
-                     It's a standard summation that adds up to 1/p. [A cute or
-                     painful
-                     algebra exercise, depending on how you do it, I guess...]
-                     <br>
-                     <br>
-
-                     so:
-                     <br>
-                     <br>
-
-                     Fact: If you have a sequence of independent events, each
-                     succeeding
-                     with probability p, the expected number of tries until the
-                     first
-                     success is 1/p.
-                     <br>
-                     <br>
-
-                     Or slightly more generally:
-                     <br>
-                     <br>
-
-                     Fact: If you have a sequence of independent events, each
-                     succeeding
-                     with probability at least p, the expected number of tries
-                     until the
-                     first success is at most 1/p.
-                     <br>
-                     <br>
-
-                     [The last one is useful if you are doing sampling without
-                     replacement,
-                     so the probabilities changes as you go along.]
-                     <br>
-                     <br>
-        </p>
-
-        <h3>
-        Simple uniform hashing assumption.
-        </h3>
-        <p>
-        Analysis of chaining under this
-        assumption. Cost of a successful and unsuccessful search as a function
-        of the table's load factor. 
-        </p>
-        <h3>
-        Universal sets of hash functions
-        </h3>
-        <p>
-        Miraculously much of the analysis
-        works here too, even though model is completely different. 
-        <br>
-        Static perfect hashing. 
+        This employs <b>chaining</b>. Furthermore, we assume that the
+        distribution of elements is uniform across hash table slots.
         <br>
         <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Hash_table_4_1_0_0_0_0_0_LL.svg/300px-Hash_table_4_1_0_0_0_0_0_LL.svg.png">
-
+        src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Hasq_hash_chains.png"
+        height="210" width="240">
+            <ul>
+                <li> Hash table <em>T</em> with <em>m</em> slots storing <em>n</em> elements.
+                <li> <b>Load factor</b>: <em>&alpha; = n / m</em>
+                <br> <em>&alpha;</em> is the average number of elements stored in a
+                chain.
+                <li> Our analysis is in terms of <em>&alpha;</em>, which can be
+                less than, equal to, or greater than one.
+                <li><b>Worst case</b> is very bad:
+                <br>All <em>n</em> keys hash to the same slot.
+                <br>Worst case for searching becomes <em>&Theta;(n)</em> plus
+                time to compute hash function.
+                <br>We could have just used a linked list directly!
+                <li><b>Average case</b>:
+                <br>Assuming any given element is equally likely to hash into
+                any slot...
+                <br>We get average case <em>&Theta;(1 + &alpha;)</em> time.
+                <br>See proofs in our textbook.
+            </ul>
         </p>
 
+        <h4>Hash functions</h4>
+        <ul>
+            <li> First, convert key to an integer.
+            <br> E.g., we can interpret characters in a string by their ASCII values.
+            <br> Then treat each value as a digit in a radix-128 integer.
+            <br>
+            (<a
+                href="http://www.drdobbs.com/database/generating-sequential-keys-in-an-arbitra/184409688">
+                See this article for more on radices.</a>)
+            <li> Keys could be many other things besides strings.
+            <br> E.g., genomes:
+            <br>
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/63/Part_of_DNA_sequence_prototypification_of_complete_genome_of_virus_5418_nucleotides.gif"
+            height="320" width="340">
+            <li> Division method:
+            <br><em>h(k) = k mod P</em>, where <em>P</em> is a
+            suitably-chosen prime number.
+            <li> Multiplication method:
+            <br><em>h(k) = [m (k A mod 1)]</em>,
+            where <em>0 < A < 1</em>.
+        </ul>
+
+        <h4>
+        Universal hashing
+        </h4>
+        <ul>
+            <li>Establish a <em>family</em> of hash functions.
+            <li>Choose so that <em>Prob[h(x) = h(y)] <= 1/m</em>.
+            <li>Choose one at random each "execution."
+            <br>Tricky: what if we store hash values?
+            <li>Good average case behavior
+            <br>If a "bad" function handles some
+            data once, a "good" one will handle it another time.
+        </ul>
+
+        <h4>Open addressing</h4>
+        <ul>
+            <li>All elements are stored directly in the table; no chaining.
+            <li>Linear probing
+            <br>Easy: just move along array indices!
+            <br>Prone to clustering
+            <li>Quadratic probing
+            <li><a href="https://en.wikipedia.org/wiki/Double_hashing">
+                Double hashing
+            </a>
+            <br>Uses two hash functions to search array for key.
+        </ul>
+
+
+        <h3>Homework</h3>
+        <p>
+        </p>
+        <ul>
+            <li> Devise three possible hash functions. Analyze each for size of hash
+            table necessary and possibility of collisions.
+            <li> Let's say our hash function is <em>h(k) = k mod 11</em> and we resolve
+            conflicts with chaining. Analyze what happens if our data values are
+            23, 34, 12, 8, 19, 33, 2, 5, 15, 4, 31, 9, 3, 6, 18, 8, 19 and 22.
+            <br>What will happen when we look up 19?
+            <li>Write (pseudo) code to resolve collisions with chaining. 
+        </ul>
+        <p>
+        Homework to be handed in on paper at the beginning of the next class.
+        </p>
+
+
+
+    <a name="note1">* Based on Prof. Boris Aronov's lecture notes. </a>
+    <br>
 
     </body>
 </html>
