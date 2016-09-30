@@ -121,8 +121,18 @@ TABLE_SIZE = 13  # we want a prime not near a power of two
 htable = [[] for x in range(TABLE_SIZE)]
 
 
-def clear_htable():
-    htable = [[] for x in range(TABLE_SIZE)]
+def clear_htable(t):
+    """
+        Clears a hash table.
+        Args:
+            t: our dictionary
+
+        Returns:
+            None
+
+    """
+
+    t = [[] for x in range(TABLE_SIZE)]
 
 
 def div_hash(k):
@@ -166,21 +176,24 @@ def h(k, div_or_mult=DIV):
 
 
 def chained_hash_insert(t, k, x):
-    """
-        Inserts an element into a chained hash table.
-        Args:
-            t: our dictionary
-            k: our key (for now, we only accept strings!)
-            x: the value to insert at k
-
-        Returns:
-            None
-
-    """
-    hindex = h(k)
-    print("Inserting at index: " + str(hindex))
-    htable[hindex].append((k, x))  # we must append both k and x!
-
+	hindex = h(k)
+	l = t[hindex]
+	q = 0
+	if len(l)  == 0:
+		print("Inserting at index: " + str(hindex))
+		t[hindex].append((k, x))  # we must append both k and x!
+	else:
+		for kv_pair in l:
+			if kv_pair[K] == k and kv_pair[X] == x:
+				q = q+1
+			else:
+				q = q
+		if q == 0:
+			print("Inserting at index: " + str(hindex))
+			t[hindex].append((k, x))  # we must append both k and x!
+		else:
+			print("Element already exists")
+			
 
 K = 0
 X = 1
@@ -198,7 +211,7 @@ def chained_hash_search(t, k):
 
     """
     hindex = h(k)
-    l = htable[hindex]
+    l = t[hindex]
     for kv_pair in l:
         print("Looking at key: " + kv_pair[K])
         if kv_pair[K] == k:
@@ -218,7 +231,7 @@ def chained_hash_delete(t, k):
 
     """
     hindex = h(k)
-    l = htable[hindex]
+    l = t[hindex]
     i = 0
     for kv_pair in l:
         if kv_pair[K] == k:
