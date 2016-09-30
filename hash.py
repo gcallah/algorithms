@@ -134,24 +134,24 @@ def clear_htable(t):
     t = [[] for x in range(TABLE_SIZE)]
 
 
-def div_hash(k,TS):
+def div_hash(k,ts):
     """
         Hashing using the division method.
         Args:
             k: the key to hash
-			TS: Table Size
+			ts: Table Size
         Returns:
             The hashed version of the key.
     """
-    return k % TS
+    return k % ts
 
 
-def mult_hash(k,TS):
+def mult_hash(k,ts):
     """
         Hashing using the multiplication method.
         Args:
             k: the key to hash
-			TS:Table size
+			ts:Table size
 
         Returns:
             The hashed version of the key.
@@ -164,30 +164,30 @@ DIV = 0
 MULT = 1
 
 
-def h(k,TS,div_or_mult=DIV):
+def h(k,ts,div_or_mult=DIV):
     """
         Our hash function.
         Args:
             k: key to hash (for now, we only accept strings!)
-			TS: Table Size
+			ts: Table Size
         Returns:
             Hashed version of k.
     """
-    return div_hash(string_to_int(k),TS)
+    return div_hash(string_to_int(k),ts)
 
 
-def chained_hash_insert(t, TS,k, x):
+def chained_hash_insert(t,k, x):
     """
         Args:
             t: our dictionary
             k: our key (for now, we only accept strings!)
-			TS: Table size
+			
 			x:the value to insert at k
 
         Returns:
             None
     """
-    hindex = h(k,TS)
+    hindex = h(k,len(t))
     l = t[hindex]
     key_exists = False
     if len(l)  == 0:
@@ -210,19 +210,19 @@ K = 0
 X = 1
 
 
-def chained_hash_search(t,TS, k):
+def chained_hash_search(t, k):
     """
         Find a value in our hash table.
         Args:
             t: our dictionary
             k: our key (for now, we only accept strings!)
-			TS: Table size
+			
 
         Returns:
             The value associated with k or None.
 
     """
-    hindex = h(k,TS)
+    hindex = h(k,len(t))
     l = t[hindex]
     for kv_pair in l:
         print("Looking at key: " + kv_pair[K])
@@ -232,18 +232,17 @@ def chained_hash_search(t,TS, k):
     return None
 
 
-def chained_hash_delete(t,TS, k):
+def chained_hash_delete(t,k):
     """
         Args:
             t: our dictionary
             k: our key (for now, we only accept strings!)
-			TS: Table size
-
+			
         Returns:
             None
 
     """
-    hindex = h(k,TS)
+    hindex = h(k,len(t))
     l = t[hindex]
     i = 0
     for kv_pair in l:
