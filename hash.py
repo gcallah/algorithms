@@ -193,19 +193,17 @@ def chained_hash_insert(t, k, x):
     key_exists = False
     if len(chain)  == 0:
         print("Inserting at index: " + str(hindex))
-        chain.append((k, x))  # we must append both k and x!
+        chain.append([k, x])  # we must append both k and x!
     else:
         for kv_pair in chain:
             print("Checking key: " + str(kv_pair[K]))
             if kv_pair[K] == k:
                 key_exists = True
-                break
+                kv_pair[X] = x
 
         if not key_exists:
             print("Inserting at index: " + str(hindex))
-            chain.append((k, x))  # we must append both k and x!
-        else:
-            print("Element already exists")
+            chain.append([k, x])  # we must append both k and x!
 
 K = 0
 X = 1
