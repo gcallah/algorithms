@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- 
 """
 This file contains Python implementations of hashing algorithms from
-Intro to Algorithms direct_addr_search(Cormen et al.)
+Intro to Algorithms (Cormen et al.).
 The aim here is not efficient Python implementations (we'd just call
 the native sort if we wanted that) but to duplicate the pseudo-code
 in the book as closely as possible.
