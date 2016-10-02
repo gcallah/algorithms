@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            Randomized Algorithms
+        </title>
+    </head>
+
+    <body>
+        <h1>
+            Randomized Algorithms
+        </h1>
+
+        <center>
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/6sided_dice.jpg/300px-6sided_dice.jpg">
+        </center>
+        <br>
+
+        <h2>
+            The hiring problem
+        </h2>
+
+        <p>
+        <a href="https://github.com/gcallah/algorithms/blob/master/rand.py">
+            Source code here.
+        </a>
+        </p>
+
+        <h3>
+            Worst-case analysis
+        </h3>
+
+        <h3>
+            Probabilistic anaysis
+        </h3>
+
+        <h3>
+            Randomized algorithms
+        </h3>
+        <p>
+
+        </p>
+
+
+        <h2>
+            Indicator random variables
+        </h2>
+             <p>
+             (Note: <a href="https://en.wikipedia.org/wiki/Random_variable">
+                 random variables</a> are actually functions.)
+             <br>
+             X is an <em>indicator variable</em> for an event A if
+             <br>
+             <br>
+
+             X = 1 if A happens
+             X = 0 if A does not happen
+             <br>
+             <br>
+
+             Useful properties of indicator variables:
+             <br>
+             <br>
+
+             If X is an indicator variable for A, then
+             <em>
+                 Exp[X]=Prob[X=1]=Prob[A happens]
+             </em>
+             .
+             <br>
+             This easily follows from the definition:
+             <br>
+             <em>
+                 Exp[X]=1 * Prob[X=1] + 0 * Prob[X=0]=Prob[X=1]=Prob[A happens]
+             </em>
+             <br>
+             <br>
+
+             Example:
+             <br>
+             <br>
+
+             We throw a fair die 100 times  What is the expected number
+             of times we get 1 or 6?
+             <br>
+             <br>
+
+             Let X<sub>i</sub> be the indicator variable of the event "in ith
+             throw we got 1 or 6".
+             Then notice that the number of times we get 1 or 6 is
+             exactly
+             <br>
+             <br>
+
+             <img
+             src=
+             "https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/Lec3Eq1.gif">
+             <br>
+             <br>
+
+             and we want the expectation of this.  By linearity of expectations:
+             <br>
+             <br>
+             <img
+             src=
+             "https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/Lec3Eq2.gif">
+
+             <br>
+             <br>
+
+             and by the indicator variable properties:
+             <br>
+             <br>
+             <img
+             src=
+             "https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/Lec3Eq3.gif">
+
+             <br>
+             <br>
+
+             To summarize:
+             <br>
+             <br>
+             <img
+             src=
+             "https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/Lec3Eq4.gif">
+
+             <br>
+             <br>
+
+             So we expect to get 1 or 6 about 33.33 times.
+             </p>
+
+             <h3>
+                Analysis of hiring problem using undicator random variables
+             </h3>
+             <p>
+
+             <img
+             src=
+             "https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/RandEq1.gif">
+             </p>
+
+             <h2>
+                Homework
+             </h2>
+             <ul>
+                 <li>
+             </ul>
+
+    </body>
+</html>
