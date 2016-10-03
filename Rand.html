@@ -30,17 +30,34 @@
         <h3>
             Worst-case analysis
         </h3>
+        <p>
+        The worst case: the employment agency sets us up, and sends us
+        candidates in worst-to-best order, so we hire every single one.
+        </p>
+
 
         <h3>
             Probabilistic anaysis
         </h3>
+        <p>
+        We use probability theory to find an <em>average-case running
+            time</em>.
+        </p>
+
 
         <h3>
             Randomized algorithms
         </h3>
         <p>
-
+        We best the employment agency by shuffling their list of candidates,
+        and seeing them in random order: we get a much lower average cost, as we shall
+        prove.
         </p>
+        <p>
+        When we randomize the algorithm we speak of an <em>expected 
+            running time</em>.
+        </p>
+
 
 
         <h2>
@@ -50,13 +67,15 @@
              (Note: <a href="https://en.wikipedia.org/wiki/Random_variable">
                  random variables</a> are actually functions.)
              <br>
-             X is an <em>indicator variable</em> for an event A if
              <br>
+             X is an <em>indicator variable</em> for an event A if:
              <br>
-
-             X = 1 if A happens
-             X = 0 if A does not happen
-             <br>
+             </p>
+             <ul>
+                 <li>X = 1 if A happens
+                 <li>X = 0 if A does not happen
+             </ul>
+             <p>
              <br>
 
              Useful properties of indicator variables:
@@ -133,7 +152,19 @@
                 Analysis of hiring problem using indicator random variables
              </h3>
              <p>
-
+                The first candidate we always hire. The second candidate will
+                be better half the time, the third one will be better than the
+                first two one third of the time, and so on, so we get the
+                series:
+                <br>
+                <em>1 + 1/2 + 1/3 + 1/4...</em>
+                <br>
+                (Or <em>y = 1/x</em>.)
+             <br>
+             <br>
+             So:
+             <br>
+             <br>
              <img
              src=
              "https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/RandEq1.gif">
@@ -148,6 +179,8 @@
              src=
              "https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/RandEq3.gif">
              <br>
+             (By linearity of expectations.)
+             <br>
              <br>
              <img
              src=
@@ -158,8 +191,67 @@
              <img
              src=
              "https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/RandEq5.gif">
+             <br>
+             <br>
+             Why is the last step true? <a
+                 href="https://www.khanacademy.org/math/ap-calculus-ab/indefinite-integrals-ab/indefinite-integrals-of-common-functions-ab/v/antiderivative-of-x-1">
+                 Video here.</a>
+             <br>
+             <br>
+             Basically, the anti-derivative of <em>1/x</em> is ln <em>x</em>:
+             <br>
+
+             <img
+             src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Integral_Test.svg/250px-Integral_Test.svg.png">
+             </p>
+             <p>
+             And what is that <em>O(1)</em> about?
+             <br>It means that the sum - ln n is always bounded by a constant.
+
              </p>
 
+             <h2>
+             Randomized algorithms
+             </h2>
+             <p>
+
+             </p>
+
+
+             <h3>
+             Randomly permuting arrays
+             </h3>
+             <p>
+
+             </p>
+
+             <h2>
+                Probabilistic analysis and further uses of indicator random
+                variables
+             </h2>
+
+             <h3>
+             The birthday paradox
+             </h3>
+
+             <h3>
+             Balls and bins
+             </h3>
+
+
+             <h3>
+             Streaks
+             </h3>
+
+
+             <h3>
+             The on-line hiring problem
+             </h3>
+             <p>
+
+             </p>
+
+             <hr>
              <h2>
                 Homework
              </h2>
