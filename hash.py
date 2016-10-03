@@ -310,12 +310,10 @@ def open_hash_insert(t, k, x):
             k: our key (for now, we only accept strings!)
             x: the value to insert at k
         Returns:
-            The index at which we have inserted (k, x).
+            The index at which we have inserted (k, x) or None.
     """
     m = len(t)
     i = 0
-    print("Launching search with i = " + str(i)
-          + " and m = " + str(m))
 
     while i <= m:
         j = linear_h(k, i, m)
@@ -326,10 +324,12 @@ def open_hash_insert(t, k, x):
         else:
             i += 1
     print("Hash table is full!")
+    return None
 
 
 def open_hash_search(t, k):
     """
+        Implements open addressing with linear probing.
         Args:
             t: our dictionary
             k: our key (for now, we only accept strings!)
@@ -337,12 +337,74 @@ def open_hash_search(t, k):
             The value at t(k).
     """
     m = len(t)
-    i = 0
-    while i <= m:
+    for i in range(0, m):
         j = linear_h(k, i, m)
+        print("Looking for " + k + " in slot " + str(j))
         if t[j] is None:
             return None
         elif t[j][KEY] == k:
             return t[j][VAL]
         i += 1
     return None
+
+
+def double_hash_insert(t, k, x):
+    """
+        Args:
+            t: our dictionary
+            k: our key (for now, we only accept strings!)
+            x: the value to insert at k
+        Returns:
+            The index at which we have inserted (k, x) or None.
+    """
+    global dm
+    dm = MULT
+    m = len(t)
+    hindex = h(k, m)
+    print("Trying slot from h1: " + str(hindex))
+    if t[hindex] is None:
+        t[hindex] = [k, x]
+        return hindex
+    else:
+        dm = DIV
+        for i in range(1, m):
+            hindex = (i * h(k, m)) % m
+            print("Trying slot from h2: " + str(hindex))
+            if t[hindex] is None:
+                t[hindex] = [k, x]
+                return hindex
+        print("Table is full?")
+        return None
+
+
+def double_hash_search(t, k):
+    """
+        Implements open addressing with double hashing.
+        Args:
+            t: our dictionary
+            k: our key (for now, we only accept strings!)
+        Returns:
+            The value at t(k).
+    """
+    global dm
+    dm = MULT
+    m = len(t)
+    hindex = h(k, m)
+    print("Searching slot from h1: " + str(hindex))
+    if t[hindex] is None:
+        return None   # key not in table
+    elif t[hindex][KEY] == k:
+        return t[hindex][VAL]
+    else:
+        dm = DIV
+        for i in range(1, m):
+            hindex = (i * h(k, m)) % m
+            print("Searching slot from h2: " + str(hindex))
+            if t[hindex] is None:
+                return None   # key not in table
+            elif t[hindex][KEY] == k:
+                return t[hindex][VAL]
+
+    return None
+
+
