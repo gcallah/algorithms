@@ -389,21 +389,21 @@ def double_hash_search(t, k):
     global dm
     dm = MULT
     m = len(t)
-    hindex = h(k, m)
-    print("Searching slot from h1: " + str(hindex))
-    if t[hindex] is None:
+    h1 = h(k, m)
+    print("Searching slot from h1: " + str(h1))
+    if t[h1] is None:
         return None   # key not in table
-    elif t[hindex][KEY] == k:
-        return t[hindex][VAL]
+    elif t[h1][KEY] == k:
+        return t[h1][VAL]
     else:
         dm = DIV
         for i in range(1, m):
-            hindex = (i * h(k, m)) % m
-            print("Searching slot from h2: " + str(hindex))
-            if t[hindex] is None:
+            h2 = h1 + (i * h(k, m)) % m
+            print("Searching slot from h2: " + str(h2))
+            if t[h2] is None:
                 return None   # key not in table
-            elif t[hindex][KEY] == k:
-                return t[hindex][VAL]
+            elif t[h2][KEY] == k:
+                return t[h2][VAL]
 
     return None
 
