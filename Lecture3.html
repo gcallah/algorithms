@@ -194,7 +194,10 @@
         </h4>
         <ul>
             <li>Establish a <em>family</em> of hash functions.
-            <li>Choose so that <em>Prob[h(x) = h(y)] <= 1/m</em>.
+            <li>Choose so that <em>Prob[h(x) = h(y)] <= 1/m</em>, where m is
+                the size of our hash table.
+            <br>In other words, the hash functions have no more chance of
+            collision than simply randomly choosing to slots between 1 and m.
             <li>Choose one at random each execution.
             <br>Tricky: what if we store hash values?
             <li>Good average case behavior
