@@ -45,13 +45,13 @@ end
 # Returns a number.
 def memo_fib(number, hash)
   return -1 if number < 0
-	return 0 if number == 0
-	return 1 if number == 1
+  return 0 if number == 0
+  return 1 if number == 1
 
-	prev_fib = hash[number-1] || (hash[number-1] = memo_fib(number-1, hash))
+  prev_fib = hash[number-1] || (hash[number-1] = memo_fib(number-1, hash))
   prev_prev_fib = hash[number-2] || (hash[number-2] = memo_fib(number-2, hash))
 
-	prev_fib + prev_prev_fib
+  prev_fib + prev_prev_fib
 end
 
 # Internal: Calculates the nth fibonacci of a number iteratively
