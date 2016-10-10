@@ -59,13 +59,13 @@ class Integer
   # Returns a number.
   def memo_fib(hash={})
     return -1 if self < 0
-  	return 0 if self == 0
-  	return 1 if self == 1
+    return 0 if self == 0
+    return 1 if self == 1
 
-  	prev_fib = hash[self-1] || (hash[self-1] = (self-1).memo_fib(hash))
+    prev_fib = hash[self-1] || (hash[self-1] = (self-1).memo_fib(hash))
     prev_prev_fib = hash[self-2] || (hash[self-2] = (self-2).memo_fib(hash))
 
-  	prev_fib + prev_prev_fib
+    prev_fib + prev_prev_fib
   end
 
   # Internal: Calculates the nth fibonacci of a number iteratively

@@ -3,7 +3,6 @@
 # Internal: Computes the sum of the left, right halves and their index where max is reached
 #
 # Examples
-#
 #   find_max_crossing_subarray([-2, -3, 4, -1, -2, 1, 5, -3], 0, 3, 7)
 #   => [2, 6, 7]
 #
@@ -36,7 +35,6 @@ end
 # Internal: Computes the maximum sub array which returns maximum sum over a range
 #
 # Examples
-#
 #   find_max_subarray([-2, -3, 4, -1, -2, 1, 5, -3], 0, 7)
 #   find_max_subarray([-2, -3, 4, -1, -2, 1, 5, -3])
 #   => [2, 6, 7]
@@ -60,8 +58,12 @@ end
 # Internal: Square matrix multiplication
 #           Brute force iteration strategy
 #
-# Examples
+# COMPLEXITY: Θ(n^3)
 #
+# m1 - Matrix 1
+# m2 - Matrix 2
+#
+# Examples
 #   square_matrix_multiply([[1, 2], [3, 4]], [[1, 0], [0, 1]])
 #   => [[1, 2], [3, 4]]
 #
@@ -82,10 +84,70 @@ def square_matrix_multiply(m1, m2)
 end
 
 # Internal: Square matrix multiplication
+#           Recursive strategy - STRASSEN's METHOD
+#
+# COMPLEXITY: Θ(n^log7)
+#
+# a - Matrix 1
+# b - Matrix 2
+#
+# Examples
+#   strassen_multiplication([[1, 2], [3, 4]], [[1, 0], [0, 1]])
+#   => [[1, 2], [3, 4]]
+#
+# Returns an Array (a*b).
+def strassen_multiplication(a, b)
+  a11, a12, a21, a22 = matrix_partitioner(a)
+  b11, b12, b21, b22 = matrix_partitioner(b)
+
+  # 10 helper matrices
+  s1 = mat_add_or_subtract(b12, b22, '-')
+  s2 = mat_add_or_subtract(a11, a12, '+')
+  s3 = mat_add_or_subtract(a21, a22, '+')
+  s4 = mat_add_or_subtract(b21, b11, '-')
+  s5 = mat_add_or_subtract(a11, a22, '+')
+  s6 = mat_add_or_subtract(b11, b22, '+')
+  s7 = mat_add_or_subtract(a12, a22, '-')
+  s8 = mat_add_or_subtract(b21, b22, '+')
+  s9 = mat_add_or_subtract(a11, a21, '-')
+  s10 = mat_add_or_subtract(b11, b12, '+')
+
+  # 7 recursive calls
+  p1 = square_matrix_multiply_recursive(a11, s1)
+  p2 = square_matrix_multiply_recursive(s2, b22)
+  p3 = square_matrix_multiply_recursive(s3, b11)
+  p4 = square_matrix_multiply_recursive(a22, s4)
+  p5 = square_matrix_multiply_recursive(s5, s6)
+  p6 = square_matrix_multiply_recursive(s7, s8)
+  p7 = square_matrix_multiply_recursive(s9, s10)
+
+  # mat_add_or_subtract does not support multiplication of multiple matrices,
+  # hence the additional two calculations
+  c111 = mat_add_or_subtract(p5, p6, '+')
+  c112 = mat_add_or_subtract(p4, p2, '-')
+  c11 = mat_add_or_subtract(c111, c112, '+')
+
+  c12 = mat_add_or_subtract(p1, p2, '+')
+
+  c21 = mat_add_or_subtract(p3, p4, '+')
+
+  # mat_add_or_subtract does not support multiplication of multiple matrices,
+  # hence the additional two calculations
+  c221 = mat_add_or_subtract(p5, p3, '-')
+  c222 = mat_add_or_subtract(p1, p7, '-')
+  c22 = mat_add_or_subtract(c221, c222, '+')
+
+  assemble_matrix([c11, c12, c21, c22])
+end
+
+# Internal: Square matrix multiplication
 #           Recursive strategy
 # NOTE: SIZE OF MATRICES SHOULD BE A POWER OF 2
-# Examples
 #
+# a - Matrix 1
+# b - Matrix 2
+#
+# Examples
 #   square_matrix_multiply([[1, 2], [3, 4]], [[1, 0], [0, 1]])
 #   => [[1, 2], [3, 4]]
 #
@@ -99,17 +161,17 @@ def square_matrix_multiply_recursive(a, b)
     a11, a12, a21, a22 = matrix_partitioner(a)
     b11, b12, b21, b22 = matrix_partitioner(b)
 
-    c11 = mat_add(square_matrix_multiply_recursive(a11, b11),
-                  square_matrix_multiply_recursive(a12, b21))
+    c11 = mat_add_or_subtract(square_matrix_multiply_recursive(a11, b11),
+                              square_matrix_multiply_recursive(a12, b21))
 
-    c12 = mat_add(square_matrix_multiply_recursive(a11, b12),
-                  square_matrix_multiply_recursive(a12, b22))
+    c12 = mat_add_or_subtract(square_matrix_multiply_recursive(a11, b12),
+                              square_matrix_multiply_recursive(a12, b22))
 
-    c21 = mat_add(square_matrix_multiply_recursive(a21, b11),
-                  square_matrix_multiply_recursive(a22, b21))
+    c21 = mat_add_or_subtract(square_matrix_multiply_recursive(a21, b11),
+                              square_matrix_multiply_recursive(a22, b21))
 
-    c22 = mat_add(square_matrix_multiply_recursive(a21, b12),
-                  square_matrix_multiply_recursive(a22, b22))
+    c22 = mat_add_or_subtract(square_matrix_multiply_recursive(a21, b12),
+                              square_matrix_multiply_recursive(a22, b22))
     c = assemble_matrix([c11, c12, c21, c22])
   end
   c
@@ -118,27 +180,25 @@ end
 # Internal: Add matrix elements
 #
 # Examples
-#
-#   mat_add([[1, 2], [3, 4]], [[1, 0], [0, 1]])
+#   mat_add_or_subtract([[1, 2], [3, 4]], [[1, 0], [0, 1]])
 #   => [[1, 2], [3, 4]]
 #
 # Returns an Array.
-def mat_add(mat1, mat2)
+def mat_add_or_subtract(mat1, mat2, operation='+')
   n = mat1.size
   result = n.times.map{ |x| [] }
   (0..n-1).each do |i|
     (0..n-1).each do |j|
-      result[i] << (mat1[i][j] + mat2[i][j])
+      result[i] << (operation == '+' ? (mat1[i][j] + mat2[i][j]) : (mat1[i][j] - mat2[i][j]))
     end
   end
   result
 end
 
 # Internal: Divides the given square matrix into sub matrices
-#
 # NOTE: SIZE OF MATRICES SHOULD BE A POWER OF 2
-# Examples
 #
+# Examples
 #   matrix_partitioner([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])
 #             a11               a12                a21                   a22
 #   => [[1, 2], [5, 6]], [[3, 4], [7, 8]], [[9, 10], [13, 14]], [[11, 12], [15, 16]]
@@ -159,7 +219,6 @@ end
 # Internal: Assembles the partitioned matrix
 #
 # Examples
-#
 #   assemble_matrix([[1], [2], [3], [4]])
 #   => [[1, 2], [3, 4]]
 #
