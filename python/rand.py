@@ -3,8 +3,8 @@
 """
 This file contains Python implementations of randomized algorithms from
 Intro to Algorithms (Cormen et al.).
-The aim here is not efficient Python implementations (we'd just call
-the native sort if we wanted that) but to duplicate the pseudo-code
+The aim here is not efficient Python implementations
+but to duplicate the pseudo-code
 in the book as closely as possible.
 Also, since the goal is to help students to see how the algorithm
 works, there are print statements placed at key points in the code.

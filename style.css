@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-size: 16px;
     color: #333;
-    background: #fff;
+    background: #ddf;
 }
 
 table, th, td {
@@ -13,17 +13,21 @@ table, th, td {
             padding: 15px;
     }
 
-p {
-    margin: 8px 8px 8px 40px;
-}
-
 ol, ul, dl, li {
     margin: 8px 8px 8px 12px;
 }
 
 p {
+    margin: 8px 8px 8px 40px;
     padding: 0;
     line-height: 140%;
+}
+
+blockquote {
+    margin: 12px 8px 12px 48px;
+    padding: 0;
+    line-height: 140%;
+    font-weight: bold;
 }
 
 h1,h2,h3,h4,h5 {
