@@ -16,6 +16,8 @@ This file contains:
     tree_insert()
     inorder_tree_walk()
     tree_search()
+    tree_minimum()
+    tree_maximum()
     Plus auxilliary functions that support the above.
 """
 
@@ -106,5 +108,35 @@ def tree_search(x, k):
         return tree_search(x.right, k)
 
 
+def tree_minimum(x):
+    """
+        Searches a tree for the node with the max key.
+        Args:
+            x: the node at which to start the search
+        Returns:
+            The node with the max key in the tree, or
+            None if the tree is empty.
+    """
+    if x is None:
+        return None
+    while x.left is not None:
+        x = x.left
+    return x
+
+
+def tree_maximum(x):
+    """
+        Searches a tree for the node with the max key.
+        Args:
+            x: the node at which to start the search
+        Returns:
+            The node with the max key in the tree, or
+            None if the tree is empty.
+    """
+    if x is None:
+        return None
+    while x.right is not None:
+        x = x.right
+    return x
 
 
