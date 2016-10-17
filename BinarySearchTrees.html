@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            Introduction to Algorithms: Binary Search Trees
+        </title>
+    </head>
+
+    <body>
+        <h1>
+            Introduction to Algorithms: Binary Search Trees
+        </h1>
+
+            <center>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/BinaryTreeRotations.svg/405px-BinaryTreeRotations.svg.png">
+            </center>
+
+            <h2>
+                What is a binary search tree?
+            </h2>
+
+            <blockquote>
+                Let x be a node in a binary search tree. If y is a node in the
+                left subtree of x, then y.key &le; x.key. If y is a node in the
+                right subtree of x, then y.key &le; x.key.
+            </blockquote>
+    
+            <h2>
+                Querying a binary search tree
+            </h2>
+            <p>
+                Why do we pass in a node rather than the tree itself?
+                <br>
+                Note why CLRS pseudo-code for max and min is contains mistake
+                from practical point of view.
+                <br>
+                Library code versus application code.
+                <br>
+                Library must protect itself against both malicious and merely
+                inept users. So, need to check for NIL input!
+                <br>
+                <br>
+                Recursive versus loop: compare the two searches.
+                <br>
+                <br>
+                All searching functions (search, minimum, maximum, predecessor,
+                successor run in <em>O(h)</em> time.
+            </p>
+
+    
+            <h2>
+                Insertion and deletion
+            </h2>
+    
+            <h2>
+                Randomly built binary search trees
+            </h2>
+    
+            <h2>
+                Source Code
+            </h2>
+            <p>
+            <a
+                href="https://github.com/gcallah/algorithms/blob/master/python/binary_trees.py">
+                Python
+            </a>
+            <br>
+            <a
+                href="https://github.com/gcallah/algorithms/blob/master/ruby/binary_trees.rb">
+                Ruby
+            </a>
+            </p>
+
+            <h2>
+                Homework
+            </h2>
+            <ul>
+                <li>Sequence of nodes examined.
+                <li>Write recursive versions of TREE-MINIMUM and
+                    TREE-MAXIMUM.
+            </ul>
+    </body>
+</html>
