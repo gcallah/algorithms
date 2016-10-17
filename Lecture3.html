@@ -194,12 +194,17 @@
         </h4>
         <ul>
             <li>Establish a <em>family</em> of hash functions.
-            <li>Choose so that <em>Prob[h(x) = h(y)] <= 1/m</em>.
-            <li>Choose one at random each "execution."
+            <li>Choose so that <em>Prob[h(x) = h(y)] <= 1/m</em>, where m is
+                the size of our hash table.
+            <br>In other words, the hash functions have no more chance of
+            collision than simply randomly choosing to slots between 1 and m.
+            <li>Choose one at random each execution.
             <br>Tricky: what if we store hash values?
             <li>Good average case behavior
             <br>If a "bad" function handles some
             data once, a "good" one will handle it another time.
+            <br>So a "bad" set of programming variable names one run will turn
+            into a good set the next run.
         </ul>
 
         <h4>Open addressing</h4>

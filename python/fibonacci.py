@@ -5,7 +5,9 @@ This is not from the Introduction to Algorithms book, but was part of Prof.
 Boris Aronov's syllabus, so I include it in this repository.
 Functions:
     naive_fib()
-
+    memo_fib()
+    iter_fib()
+    closed_form_fib(n):
 """
 
 ops = 0
@@ -118,3 +120,17 @@ def iter_fib(n):
             ops += 4  # three asignments and an addition
         print("Ops = " + str(ops))
         return v[1]
+
+
+def closed_form_fib(n):
+    """
+        Closed form method to get the n-th fibonacci number.
+        Args:
+            n: the fibonacci number to return
+        Returns:
+            The n-th fibonacci number.
+    """
+    sqrt_five = 5 ** .5
+    return (1 / sqrt_five) * (((1 + sqrt_five) / 2) ** n
+                              - ((1 - sqrt_five) / 2) ** n)
+

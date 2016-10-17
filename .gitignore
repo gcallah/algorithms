@@ -90,6 +90,7 @@ ENV/
 
 # vi backup file
 *~
+.*swp
 
 # some sub-dirs
 aronov_lectures

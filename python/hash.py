@@ -184,7 +184,7 @@ VAL = 1
 
 DIV = 0
 MULT = 1
-dm = DIV
+hash_method = DIV
 
 
 def h(k, ts):
@@ -196,7 +196,7 @@ def h(k, ts):
         Returns:
             Hashed version of k.
     """
-    if dm == DIV:
+    if hash_method == DIV:
         return div_hash(string_to_int(k), ts)
     else:
         return mult_hash(string_to_int(k), ts)
@@ -285,7 +285,7 @@ We also want our own table for the open addressing functions, since we want to
 initialize to None, not an empty list.
 """
 
-TABLE_SIZE = 15
+TABLE_SIZE = 11
 otable = [None for x in range(TABLE_SIZE)]
 
 
@@ -348,8 +348,39 @@ def open_hash_search(t, k):
     return None
 
 
+def h1(k, m):
+    """
+        The first hash function for double hashing.
+        Args:
+            k: our key (for now, we only accept strings!)
+            m: the size of our table
+        Returns:
+            A new index value.
+    """
+    global hash_method
+    hash_method = MULT
+    return h(k, m)
+
+
+def h2(k1, k, m, i):
+    """
+        The second hash function for double hashing.
+        Args:
+            k1: our first hashed key
+            k: our key (for now, we only accept strings!)
+            m: the size of our table
+            i: multiplicative factor for hash function
+        Returns:
+            A new index value.
+    """
+    global hash_method
+    hash_method = DIV
+    return (k1 + (i * h(k, m))) % m
+
+
 def double_hash_insert(t, k, x):
     """
+        Implements open address inserting with double hashing.
         Args:
             t: our dictionary
             k: our key (for now, we only accept strings!)
@@ -357,53 +388,47 @@ def double_hash_insert(t, k, x):
         Returns:
             The index at which we have inserted (k, x) or None.
     """
-    global dm
-    dm = MULT
     m = len(t)
-    hindex = h(k, m)
-    print("Trying slot from h1: " + str(hindex))
-    if t[hindex] is None:
-        t[hindex] = [k, x]
-        return hindex
+    k1 = h1(k, m)
+    print("Trying slot from h1: " + str(k1))
+    if t[k1] is None:
+        t[k1] = [k, x]
+        return k1
     else:
-        dm = DIV
         for i in range(1, m):
-            hindex = (i * h(k, m)) % m
-            print("Trying slot from h2: " + str(hindex))
-            if t[hindex] is None:
-                t[hindex] = [k, x]
-                return hindex
+            k2 = h2(k1, k, m, i)
+            print("Trying slot from h2: " + str(k2))
+            if t[k2] is None:
+                t[k2] = [k, x]
+                return k2
         print("Table is full?")
         return None
 
 
 def double_hash_search(t, k):
     """
-        Implements open addressing with double hashing.
+        Implements open address searching with double hashing.
         Args:
             t: our dictionary
             k: our key (for now, we only accept strings!)
         Returns:
             The value at t(k).
     """
-    global dm
-    dm = MULT
     m = len(t)
-    hindex = h(k, m)
-    print("Searching slot from h1: " + str(hindex))
-    if t[hindex] is None:
+    k1 = h1(k, m)
+    print("Searching slot from h1: " + str(k1))
+    if t[k1] is None:
         return None   # key not in table
-    elif t[hindex][KEY] == k:
-        return t[hindex][VAL]
+    elif t[k1][KEY] == k:
+        return t[k1][VAL]
     else:
-        dm = DIV
         for i in range(1, m):
-            hindex = (i * h(k, m)) % m
-            print("Searching slot from h2: " + str(hindex))
-            if t[hindex] is None:
+            k2 = h2(k1, k, m)
+            print("Searching slot from h2: " + str(k2))
+            if t[k2] is None:
                 return None   # key not in table
-            elif t[hindex][KEY] == k:
-                return t[hindex][VAL]
+            elif t[k2][KEY] == k:
+                return t[k2][VAL]
 
     return None
 

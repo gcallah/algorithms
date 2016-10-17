@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            Design and Analysis of Algorithms: Homework 3
+        </title>
+    </head>
+
+    <body>
+        <h1>
+            Design and Analysis of Algorithms: Homework 3
+        </h1>
+        <ol>
+            <li>Demonstrate, in a double hashing situation, how the choice of the
+                table size can lead to the algorithm working as designed, or
+                completely failing. Buy "demonstrate", I mean show how a small
+                table of the right size will fill up properly in double hashing
+                while a table with a badly chosen size will stop accepting
+                data before it is filled. Your answer should be something like,
+                "First we will insert x and that will go in slot y... But when
+                we come to insert z that will fail because..."
+
+            <li>In the hiring problem with a randomized candidate list, please
+                explain why the odds of hiring the i<sup>th</sup> candidate are
+                1 / i.
+
+            <li>Explain the difference between implementing a dictionary using
+                direct addressing and simply using array indices to access some
+                piece of data.
+
+            <li>Explain why linear probing will tend to produce clusters.
+
+            <li>Consider the following hashing scheme:
+                <br>
+                <em>h(k) = k mod m</em>
+                <br>
+                <em>m = 7</em>
+                <br>We convert a string into a hashable key by treating it as a
+                base-8 number.
+                <br>So 'abc', where a = 1, b = 2, and c = 3, is converted to a
+                key as follows: 1 * 8<sup>2</sup> + 2 * 8 + 3 = 83.
+                <br>In this hashing scheme, what do the strings 'cba' and 'bac'
+                hash to?
+                <br>Can you write a more general statement about a pattern we
+                can detect here? Something along the lines of, "If the table
+                size is 2<sup>P</sup> - 1, and strings are interpreted in radix
+                2<sup>P</sup>..."
+        </ol>
+    </body>
+</html>
