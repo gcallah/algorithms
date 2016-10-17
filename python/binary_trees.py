@@ -16,8 +16,10 @@ This file contains:
     tree_insert()
     inorder_tree_walk()
     tree_search()
+    iter_tree_search()
     tree_minimum()
     tree_maximum()
+    tree_successor()
     Plus auxilliary functions that support the above.
 """
 
@@ -92,7 +94,7 @@ def inorder_tree_walk(x):
     
 def tree_search(x, k):
     """
-        Searches a binary tree for a particular key.
+        Recursively searches a binary tree for a particular key.
         Args:
             x: the node at which to start the search
         Returns:
@@ -108,6 +110,22 @@ def tree_search(x, k):
         return tree_search(x.right, k)
 
 
+def iter_tree_search(x, k):
+    """
+        Iteratively searches a binary tree for a particular key.
+        Args:
+            x: the node at which to start the search
+        Returns:
+            None, or the node containing the key.
+    """
+    while x is not None and k != x.key:
+        if k < x.key:
+            x = x.left
+        else:
+            x = x.right
+    return x
+
+
 def tree_minimum(x):
     """
         Searches a tree for the node with the max key.
@@ -121,6 +139,7 @@ def tree_minimum(x):
         return None
     while x.left is not None:
         x = x.left
+    print("min is " + str(x.key))
     return x
 
 
@@ -137,6 +156,33 @@ def tree_maximum(x):
         return None
     while x.right is not None:
         x = x.right
+    print("max is " + str(x.key))
     return x
 
 
+def tree_successor(x):
+
+    """
+        Searches a tree for the node with the smallest key
+        greater than x.key.
+        Args:
+            x: the node at which to start the search
+        Returns:
+            The node with the successor key, or
+            None if x has the largest key.
+    """
+    if x is None:
+        return None
+    elif x.right is not None:
+        return tree_minimum(x.right)
+    else:
+        orig_x = x
+        y = x.p
+        if y is not None:
+            print("Climbing tree to check " + str(y.key))
+        while y is not None and x == y.right:
+            x = y
+            y = y.p
+        print("successor of x (" + str(x.key)
+              + ") is " + str(y.key))
+        return y
