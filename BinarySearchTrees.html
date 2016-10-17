@@ -73,14 +73,54 @@
                 successor run in <em>O(h)</em> time, where <em>h</em> is the height of
                 the tree.
                 <br>
-                <br>
             </p>
+            <h3>
+                Search
+            </h3>
+            <p>
+                We search by starting with the root node. If it's key is equal
+                to the key for which we are searching, we are done: that is the
+                key we want.
+                <br>
+                On the other hand, if we have a NIL node at hand, we are also done,
+                but have failed to find the key.
+                <br>
+                Finally, if neither is true, we check the key at hand against
+                the key sought for.
+                <ul>
+                    <li>If k &lt; curr.key, recursively call tree search on curr.left.
+                    <li>Else recursively call tree search on curr.right.
+                </ul>
+            </p>
+            <p>
+                <br>
+                <b>Example:</b>
+                <br>Let's search for 4 in the tree above.
+                <ul>
+                    <li>4 &lt; 8; move left
+                    <li>4 &gt; 3; move right
+                    <li>4 &lt; 6; move left
+                    <li>Voila!
+                </ul>
+            </p>
+
+            
+            <h3>
+                Minimum and maximum
+            </h3>
+
+            <p>
+            To find the minimum, we simply walk down the left side of the tree.
+            <br>
+            To find the maximum, we simply walk down the right side of the tree.
+            </p>
+
 
             <h3>
                 Successor
             </h3>
             <p>
-                Let's walk through successor for our tree above.
+                Similarly, let's walk through successor for our tree above.
                 <br>
                 <br>
                 Imagine we are seeking the successor of 3. The right tree of
@@ -88,16 +128,44 @@
                 which is the leftmost node in the tree, in this case, 4.
                 <br>
                 <br>
+                On the other hand, take this tree, and start with node 10.
+                <br>
+                <br>
+                <img 
+                src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/BinTree1.png">
             </p>
 
     
             <h2>
                 Insertion and deletion
             </h2>
+
+            <h3>
+                Insert
+            </h3>
+            <p>
+                Let's walk through insert for our tree above.
+                <br>
+                <br>
+                We will insert 5. (When I say "Insert x," you should take that
+                to be shorthand for "Insert a node with key x.")
+                <ul>
+                    <li>5 &lt; 8, so we move left.
+                    <li>5 &gt; 3, so we move right. 
+                    <li>5 &lt; 6, so we move left.
+                    <li>5 &gt; 4, so we move right and insert. 
+                </ul>
+            </p>
     
             <h2>
                 Randomly built binary search trees
             </h2>
+            <p>
+                We insert the keys randomly. (We would have to have all keys at
+                hand at the start, and then do a random shuffle on the set of
+                keys.) The expected height of such a tree is O(lg n).
+            </p>
+
     
             <h2>
                 Source Code
@@ -128,9 +196,11 @@
                 Homework
             </h2>
             <ul>
-                <li>Sequence of nodes examined.
+                <li>For the first tree above, writes the steps that will take place
+                    when we insert 11.
                 <li>Write recursive versions of TREE-MINIMUM and
                     TREE-MAXIMUM.
+                <li>Sequence of nodes examined.
             </ul>
     </body>
 </html>
