@@ -1,5 +1,16 @@
 # THESE METHODS RESEMBLE TEXTBOOK PSEUDO CODE OR PROFESSOR CALLAHAN'S PYTHON CODE
 
+# INDEX
+#      find_max_crossing_subarray
+#      find_max_subarray
+#
+#      square_matrix_multiply
+#      strassen_multiplication
+#      square_matrix_multiply_recursive
+#      mat_add_or_subtract
+#      matrix_partitioner
+#      assemble_matrix
+
 # Internal: Computes the sum of the left, right halves and their index where max is reached
 #
 # Examples
