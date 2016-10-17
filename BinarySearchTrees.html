@@ -48,6 +48,8 @@
 
             <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.svg.png">
+            <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <em>(Tree 1)</em>
             </p>
 
     
@@ -133,6 +135,9 @@
                 <br>
                 <img 
                 src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/BinTree1.png">
+                <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <em>(Tree 2)</em>
+                <br>
             </p>
 
     
@@ -144,7 +149,7 @@
                 Insert
             </h3>
             <p>
-                Let's walk through insert for our tree above.
+                Let's walk through insert for tree 1 above.
                 <br>
                 <br>
                 We will insert 5. (When I say "Insert x," you should take that
@@ -156,6 +161,40 @@
                     <li>5 &gt; 4, so we move right and insert. 
                 </ul>
             </p>
+
+            <h3>
+                Delete
+            </h3>
+            <p>
+                Deletion is by far the most complicated coding of any of these
+                functions. There are four cases (and z is the node to delete):
+            </p>
+            <ol>
+                <li>
+                <li>z has no left child. (This handles two cases!)
+                    <br>
+                    <b>Action:</b> Replace z by its right child, which might be
+                    NIL.
+                <li>z has only a left child.
+                    <br>
+                    <b>Action:</b> Replace z by its left child.
+                <li>z has two children.
+                    <br>
+                    <b>Action:</b> Find z's successor y, which lies in its
+                    right sub-tree.
+                    <ul>
+                        <li>If y is z's right child, replace z by y.
+                        <li>Otherwise, replace y by its own right child, then
+                            replace z by y.
+                    </ul>
+
+            </ol>
+            <p>
+                Let's walk through deleting 8 in tree 2 above.
+            </p>
+
+
+
     
             <h2>
                 Randomly built binary search trees
