@@ -20,11 +20,36 @@
                 What is a binary search tree?
             </h2>
 
+            <h3>
+                Running time
+            </h3>
+            <p>
+                <b>Worst case:</b> &Theta;(n)
+                <br>
+                This occurs when the tree simply makes one long chain.
+                <br>
+                <br>
+                <b>Average case:</b> &Theta;(lg n)
+                <br>
+                That is because the expected height of a randomly built binary
+                search tree is O(lg n).
+            </p>
+
+
+            <h3>
+                Binary Search Tree Property
+            </h3>
             <blockquote>
                 Let x be a node in a binary search tree. If y is a node in the
                 left subtree of x, then y.key &le; x.key. If y is a node in the
                 right subtree of x, then y.key &le; x.key.
             </blockquote>
+            <p>
+
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.svg.png">
+            </p>
+
     
             <h2>
                 Querying a binary search tree
@@ -32,7 +57,7 @@
             <p>
                 Why do we pass in a node rather than the tree itself?
                 <br>
-                Note why CLRS pseudo-code for max and min is contains mistake
+                Note why CLRS pseudo-code for max and min contains mistake
                 from practical point of view.
                 <br>
                 Library code versus application code.
@@ -45,7 +70,24 @@
                 <br>
                 <br>
                 All searching functions (search, minimum, maximum, predecessor,
-                successor run in <em>O(h)</em> time.
+                successor run in <em>O(h)</em> time, where <em>h</em> is the height of
+                the tree.
+                <br>
+                <br>
+            </p>
+
+            <h3>
+                Successor
+            </h3>
+            <p>
+                Let's walk through successor for our tree above.
+                <br>
+                <br>
+                Imagine we are seeking the successor of 3. The right tree of
+                three is non-empty. So we simply seek the minimum of that tree,
+                which is the leftmost node in the tree, in this case, 4.
+                <br>
+                <br>
             </p>
 
     
@@ -72,6 +114,16 @@
             </a>
             </p>
 
+            <h2>
+                External Links
+            </h2>
+            <ul>
+                <li><a
+                        href="https://www.cs.usfca.edu/~galles/visualization/BST.html">
+                        Binary search tree visualizer
+                    </a>
+            </ul>
+            
             <h2>
                 Homework
             </h2>
