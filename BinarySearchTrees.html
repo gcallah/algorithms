@@ -217,6 +217,11 @@
                 We insert the keys randomly. (We would have to have all keys at
                 hand at the start, and then do a random shuffle on the set of
                 keys.) The expected height of such a tree is O(lg n).
+                <br>
+                <br>
+                This handles the situation where we believe we might get handed
+                input that is already sorted, which would create a worst-case
+                scenario.
             </p>
 
     
@@ -253,11 +258,21 @@
                 Homework
             </h2>
             <ul>
-                <li>For the first tree above, writes the steps that will take place
+                <li>For the first tree above, write the steps that will take place
                     when we insert 11.
                 <li>Write recursive versions of TREE-MINIMUM and
                     TREE-MAXIMUM.
-                <li>Sequence of nodes examined.
+                <li>Compare the deletion of the node with key == 8
+                    in Tree 2 that takes place following our
+                    textbook's algorithm with what the first visualizer linked
+                    to above actually does in this situation. Clearly, two
+                    different binary trees result. What algorithm is being used
+                    by the visualizer? (You could build different trees and see
+                    what it does: this is called <b>reverse engineering</b>.)
+                    If both algorithms always build valid BSTs, is there some
+                    reason we should prefer one algorithm or the other?
+                <li>Some problems involving the sequence of nodes examined,
+                    where nodes will be inserted, etc.
             </ul>
     </body>
 </html>
