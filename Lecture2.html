@@ -18,18 +18,18 @@
     <p>
     From the Khan Academy site:<br>
     <blockquote>
-    We use big-Θ notation to asymptotically bound the 
+    We use big-&Theta; notation to asymptotically bound the 
     growth of a running time to
     within constant factors above and below. 
     Sometimes we want to bound from only
     above. For example, although the worst-case 
-    running time of binary search is Θ lg n Θ(lgn),
+    running time of binary search is &Theta;(lg n),
     it would be incorrect to say that binary search runs in 
-    Θ lg n Θ(lgn) time in all cases.
+    &Theta;(lg n) time in all cases.
     What if we find the target value upon the first
-    guess? Then it runs in Θ 1 Θ(1) time. 
-    The running time of binary search is never worse than Θ lg n
-    Θ(lgn), but it's sometimes better. 
+    guess? Then it runs in &Theta;(1) time. 
+    The running time of binary search is never worse than 
+    &Theta;(lg n), but it's sometimes better. 
     It would be convenient to have a form of
     asymptotic notation that means 
     "the running time grows at most this much, but
@@ -43,11 +43,16 @@
         <p>
             More graphics on why we only care about the highest-order
         </p>
-      <img
-      src="https://cdn.kastatic.org/ka-cs-algorithms/6n2_vs_100n%2B300.png">
-      <br>
-      <img
-      src="https://cdn.kastatic.org/ka-cs-algorithms/0.6n2_vs_1000n%2B3000.png">
+        <p>
+          <img
+          src="https://cdn.kastatic.org/ka-cs-algorithms/6n2_vs_100n%2B300.png"
+            height="300" width="450">
+          <br>
+          <br>
+          <img
+          src="https://cdn.kastatic.org/ka-cs-algorithms/0.6n2_vs_1000n%2B3000.png"
+            height="300" width="450">
+        </p>
     <h3>Meaning of constants in O, &Theta; and &Omega; expressions</h3>
         <p>
         Let's say we posit a search operating in <em>2n + 3</em> time.<br>
