@@ -476,4 +476,4 @@ def binary_tree_test
 end
 
 # Uncomment the line below to run the minimal unit tests
-binary_tree_test
+# binary_tree_test
