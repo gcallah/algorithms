@@ -13,6 +13,9 @@
 #      tree_delete -> transplant
 #
 
+# Comment the below line while running the tests. Installation steps for ruby-graphviz
+# and GraphViz will be added soon to a readme file
+require 'ruby-graphviz'
 # Public: Analogous to a struct in C/C++ for building linked lists.
 # This class only contains an initialize method which acts a constructor for
 # setting and accessing the object properties
@@ -125,7 +128,7 @@ end
 #   tree_search(F, 'I')
 #   => I
 def tree_search(x, k)
-  return x if x.nil? || k == x.key
+  return x if (x.nil? || k == x.key)
   return (k < x.key) ? tree_search(x.left, k) : tree_search(x.right, k)
 end
 
@@ -157,6 +160,7 @@ end
 #   tree_minimum(F)
 #   => A
 def tree_minimum(x)
+  return if x.nil?
   while !x.left.nil?
     x = x.left
   end
@@ -173,6 +177,7 @@ end
 #   tree_maximum(F)
 #   => H
 def tree_maximum(x)
+  return if x.nil?
   while !x.right.nil?
     x = x.right
   end
@@ -188,6 +193,7 @@ end
 #   tree_successor(F)
 #   => G
 def tree_successor(x)
+  return if x.nil?
   return tree_minimum(x.right) unless x.right.nil?
   y = x.p
   while !y.nil? && x == y.right
@@ -215,6 +221,7 @@ end
 #              /  \   /  \
 #             C   E  H    J(INSERTED NODE)
 def tree_insert(t, z)
+  return if (t.nil? || z.nil?)
   y = nil
   x = t.root
   while !x.nil?
@@ -229,6 +236,51 @@ def tree_insert(t, z)
     y.left = z
   else
     y.right = z
+  end
+end
+
+# TODO: Add documentation on how to install GRAPHVIZ AND RUBY-GRAPHVIZ GEM
+# Public: Same as tree_insert method only here this generates a graphical image(.PNG)
+#         for tree visualization. Added a new method to not mix the actual logic with
+#         this gem specific code
+#
+# NOTE: Images are generated at a location where the code is executed
+#       Eg: If you are at /Users/whoami/Documents directory and ran the code
+#           by executing ruby /algorithms/ruby/binary_trees/binary_tree.rb, then
+#           images will be generated at /Users/whoami/Documents location and not
+#           at the location of the ruby file
+#
+# t - Tree structure
+# z - Node to be INSERTED
+# g - GraphViz instance to draw and update the graph
+def tree_insert_graphical(t, z, g)
+  return if (t.nil? || z.nil? || g.nil?)
+  y = nil
+  x = t.root
+  while !x.nil?
+    y = x
+    (z.key < x.key) ? (x = x.left) : (x = x.right)
+  end
+  z.p = y
+
+  # TODO: Document this
+  if y.nil?
+    t.root = z
+    g.add_nodes( "#{z.key}", "shape" => "record", "label" => "<left> left|<key> #{z.key}|<p> p|<right> right" )
+  elsif z.key < y.key
+    y.left = z
+    g.add_nodes( "#{y.key}", "shape" => "record", "label" => "<left> left|<key> #{y.key}|<p> parent|<right> right" )
+    g.add_nodes( "#{z.key}", "shape" => "record", "label" => "<left> left|<key> #{z.key}|<p> parent|<right> right" )
+
+    g.add_edges( { "#{y.key}" => :left}, {"#{z.key}" => :key} )
+    g.add_edges( { "#{z.key}" => :p}, {"#{y.key}" => :key} )
+  else
+    y.right = z
+    g.add_nodes( "#{y.key}", "shape" => "record", "label" => "<left> left|<key> #{y.key}|<p> parent|<right> right" )
+    g.add_nodes( "#{z.key}", "shape" => "record", "label" => "<left> left|<key> #{z.key}|<p> parent|<right> right" )
+
+    g.add_edges( { "#{y.key}" => :right}, {"#{z.key}" => :key} )
+    g.add_edges( { "#{z.key}" => :p}, {"#{y.key}" => :key} )
   end
 end
 
@@ -249,6 +301,7 @@ end
 #              / \
 #             C   E
 def transplant(t, u, v)
+  return if (u.nil? || v.nil? || t.nil?)
   if u.p.nil?
     t.root = v
   elsif u == u.p.left
@@ -284,6 +337,7 @@ end
 #     / \                        \   / \                   /     / \
 #    C   E                        E H   J                 C     H   J
 def tree_delete(t, z)
+  return if z.nil?
   if z.left.nil?
     transplant(t, z, z.right)
   elsif z.right.nil?
@@ -324,9 +378,17 @@ def binary_tree_test
   node_j = Node.new('J', nil, nil, nil)
 
   tree = Tree.new(nil)
+  tree_graphical = Tree.new(nil)
+
+  # Comment the below line while running the tests.
+  g = GraphViz.new( :G, :type => :digraph )
+
   p "--------------------  BEGIN CONSTRUCTING TREE -------------------- "
-  [node_f, node_b, node_g, node_a, node_d, node_c, node_e, node_i, node_h].each do |x|
-    tree_insert(tree, x)
+  [node_f, node_b, node_g, node_a, node_d, node_c, node_e, node_i, node_h].each_with_index do |x, i|
+    tree_insert(tree, x.clone)
+    # Comment the below line while running the tests.
+    tree_insert_graphical(tree_graphical, x.clone, g) # For image generation
+    g.output( :png => "Order #{i.to_i} - Inserted #{x.key}.png", :canon => nil)
   end
   p "                              F                      "
   p "                            // \\                    "
@@ -358,21 +420,21 @@ def binary_tree_test
 
   print "\n"
 
-  p "--------------------  BEGIN TREE SEARCH -------------------- "
+  p "--------------------  BEGIN RECURSIVE TREE SEARCH -------------------- "
   p tree_search(tree.root, 'I')
-  p "--------------------  END TREE SEARCH -------------------- "
+  p "--------------------  END RECURSIVE TREE SEARCH -------------------- "
 
   print "\n"
 
-  p "--------------------  BEGIN TREE SEARCH -------------------- "
+  p "--------------------  BEGIN ITERATIVE TREE SEARCH -------------------- "
   p iterative_tree_search(tree.root, 'I')
-  p "--------------------  END TREE SEARCH -------------------- "
+  p "--------------------  END ITERATIVETREE SEARCH -------------------- "
 
   print "\n"
 
-  p "--------------------  BEGIN SEARCHING TREE MIN -------------------- "
+  p "--------------------  BEGIN SEARCHING FOR TREE MIN -------------------- "
   p tree_minimum(tree.root)
-  p "--------------------  END SEARCHING TREE MIN -------------------- "
+  p "--------------------  END SEARCHING FOR TREE MIN -------------------- "
 
   print "\n"
 
@@ -382,9 +444,9 @@ def binary_tree_test
 
   print "\n"
 
-  p "--------------------  BEGIN SEARCHING SUCCESSOR -------------------- "
+  p "--------------------  BEGIN SEARCHING FOR SUCCESSOR -------------------- "
   p tree_successor(node_g)
-  p "--------------------  END SEARCHING SUCCESSOR -------------------- "
+  p "--------------------  END SEARCHING FOR SUCCESSOR -------------------- "
 
   print "\n"
 
@@ -414,4 +476,4 @@ def binary_tree_test
 end
 
 # Uncomment the line below to run the minimal unit tests
-# binary_tree_test
+binary_tree_test
