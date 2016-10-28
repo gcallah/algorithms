@@ -73,7 +73,7 @@ end
 # x - Node, Preferably a root node
 #
 # Examples
-#   NOTE: Based on the mock tree structure at LINE:43
+#   NOTE: Based on the mock tree structure at LINE:61
 #   inorder_tree_walk(F)
 #   => A B C D E F G H I
 def inorder_tree_walk(x)
@@ -89,7 +89,7 @@ end
 # x - Node, Preferably a root node
 #
 # Examples
-#   NOTE: Based on the mock tree structure at LINE:43
+#   NOTE: Based on the mock tree structure at LINE:61
 #   preoder_tree_walk(F)
 #   => F B A D C E G I H
 def preoder_tree_walk(x)
@@ -105,7 +105,7 @@ end
 # x - Node, Preferably a root node
 #
 # Examples
-#   NOTE: Based on the mock tree structure at LINE:43
+#   NOTE: Based on the mock tree structure at LINE:61
 #   postorder_tree_walk(F)
 #   => A C E D B H I G F
 def postorder_tree_walk(x)
@@ -124,7 +124,7 @@ end
 # k - Key to be searched
 #
 # Examples
-#   NOTE: Based on the mock tree structure at LINE:43
+#   NOTE: Based on the mock tree structure at LINE:61
 #   tree_search(F, 'I')
 #   => I
 def tree_search(x, k)
@@ -140,7 +140,7 @@ end
 # k - Key to be searched
 #
 # Examples
-#   NOTE: Based on the mock tree structure at LINE:43
+#   NOTE: Based on the mock tree structure at LINE:61
 #   tree_search(F, 'I')
 #   => I
 def iterative_tree_search(x, k)
@@ -156,7 +156,7 @@ end
 # Node, Root/Subtree node
 #
 # Examples
-#   NOTE: Based on the mock tree structure at LINE:43
+#   NOTE: Based on the mock tree structure at LINE:61
 #   tree_minimum(F)
 #   => A
 def tree_minimum(x)
@@ -173,7 +173,7 @@ end
 # Node, Root/Subtree node
 #
 # Examples
-#   NOTE: Based on the mock tree structure at LINE:43
+#   NOTE: Based on the mock tree structure at LINE:61
 #   tree_maximum(F)
 #   => H
 def tree_maximum(x)
@@ -189,7 +189,7 @@ end
 # Node, Root/Subtree node
 #
 # Examples
-#   NOTE: Based on the mock tree structure at LINE:43
+#   NOTE: Based on the mock tree structure at LINE:61
 #   tree_successor(F)
 #   => G
 def tree_successor(x)
@@ -203,6 +203,25 @@ def tree_successor(x)
   y
 end
 
+# Public: Finds the highest element that is just smaller than the provided node
+#
+# Node, Root/Subtree node
+#
+# Examples
+#   NOTE: Based on the mock tree structure at LINE:61
+#   tree_predecessor(F)
+#   => E
+def tree_predecessor(x)
+  return if x.nil?
+  return tree_maximum(x.left) unless x.left.nil?
+  y = x.p
+  while !y.nil? && x == y.left
+    x = y
+    y = y.p
+  end
+  y
+end
+
 # Public: Inserts a node at the appropriate location in the tree without not disturbing
 #         Binary search tree property
 #
@@ -210,7 +229,7 @@ end
 # z - Node to be INSERTED
 #
 # Examples
-#   NOTE: Based on the mock tree structure at LINE:43
+#   NOTE: Based on the mock tree structure at LINE:61
 #   tree_insert(t, J)
 #             TREE structure
 #                  F
@@ -291,7 +310,7 @@ end
 # v - Node which replaces u
 #
 # Examples
-#   NOTE: Based on the mock tree structure at LINE:43 with an inserted node J
+#   NOTE: Based on the mock tree structure at LINE:61 with an inserted node J
 #        transplant(t, G, I)
 #                F
 #              /   \
@@ -312,14 +331,15 @@ def transplant(t, u, v)
   v.p = u.p unless v.nil?
 end
 
-# Public: Deletes a node at the appropriate location in the tree without not disturbing
+# Public: Deletes a node at the appropriate location in the tree without disturbing
 #         Binary search tree property
+# NOTE: Uses SUCCESSOR transplant i.e next largest element to the deletable node
 #
 # t - Tree structure
 # z - Node to be DELETED
 #
 # Examples
-#   NOTE: Based on the mock tree structure at LINE:43 with an inserted node J
+#   NOTE: Based on the mock tree structure at LINE:61 with an inserted node J
 #                        TREE structure
 #                                F
 #                              /   \
@@ -355,6 +375,49 @@ def tree_delete(t, z)
   end
 end
 
+# Public: Deletes a node at the appropriate location in the tree without disturbing
+#         Binary search tree property
+# NOTE: Uses PREDECESSOR transplant i.e next largest element to the deletable node
+#
+# t - Tree structure
+# z - Node to be DELETED
+#
+# Examples
+#   NOTE: Based on the mock tree structure at LINE:61 with an inserted node J
+#                        TREE structure
+#                                F
+#                              /   \
+#                             B     G
+#                            / \     \
+#                           A   D     I
+#                              / \   / \
+#                             C   E H   J
+# tree_delete(t, F)        tree_delete(t, B)           tree_delete(t, D)
+#       E                        F                           F
+#     /   \                    /   \                       /   \
+#    B     G                  A     G                     B     G
+#   / \     \                  \     \                   / \     \
+#  A   D     I                  D     I                 A   C     I
+#     /     / \                / \   / \                     \   / \
+#    C     H   J              C  E H   J                     E   H   J
+def tree_delete_predecessor(t, z)
+  if z.left.nil?
+    transplant(t, z, z.right)
+  elsif z.right.nil?
+    transplant(t, z, z.left)
+  else
+    y = tree_maximum(z.left)
+    if y.p != z
+      transplant(t, y, y.left)
+      y.left = z.left
+      y.left.p = y
+    end
+    transplant(t, z, y)
+    y.right = z.right
+    y.right.p = y
+  end
+end
+
 # TEST inorder_tree_walk
 #      preoder_tree_walk
 #      postorder_tree_walk
@@ -363,8 +426,10 @@ end
 #      tree_minimum
 #      tree_maximum
 #      tree_successor
+#      tree_predecessor
 #      tree_insert
 #      tree_delete
+#      tree_delete_predecessor
 def binary_tree_test
   node_a = Node.new('A', nil, nil, nil)
   node_b = Node.new('B', nil, nil, nil)
@@ -385,10 +450,7 @@ def binary_tree_test
 
   p "--------------------  BEGIN CONSTRUCTING TREE -------------------- "
   [node_f, node_b, node_g, node_a, node_d, node_c, node_e, node_i, node_h].each_with_index do |x, i|
-    tree_insert(tree, x.clone)
-    # Comment the below line while running the tests.
-    tree_insert_graphical(tree_graphical, x.clone, g) # For image generation
-    g.output( :png => "Order #{i.to_i} - Inserted #{x.key}.png", :canon => nil)
+    tree_insert(tree, x)
   end
   p "                              F                      "
   p "                            // \\                    "
@@ -450,6 +512,12 @@ def binary_tree_test
 
   print "\n"
 
+  p "--------------------  BEGIN SEARCHING FOR PREDECESSOR -------------------- "
+  p tree_predecessor(node_g)
+  p "--------------------  END SEARCHING FOR PREDECESSOR -------------------- "
+
+  print "\n"
+
   p "--------------------  BEGIN NODE INSERTION -------------------- "
   tree_insert(tree, node_j)
   p "                              F                      "
@@ -463,7 +531,7 @@ def binary_tree_test
 
   print "\n"
 
-  p "--------------------  BEGIN NODE DELETION -------------------- "
+  p "--------------------  BEGIN NODE DELETION (SUCCESSOR) -------------------- "
   tree_delete(tree, node_d)
   p "                              F                      "
   p "                            // \\                    "
@@ -472,8 +540,56 @@ def binary_tree_test
   p "                         A   E     I                 "
   p "                           //    // \\               "
   p "                           C     H   J               "
-  p "--------------------  END NODE DELETION -------------------- "
+  p "--------------------  END NODE DELETION (SUCCESSOR) -------------------- "
+  preoder_tree_walk(tree.root)
+
+  print "\n"
+
+  p "--------------------  BEGIN NODE DELETION (PREDECESSOR) -------------------- "
+  tree_delete_predecessor(tree, node_b)
+  p "                              F                      "
+  p "                            // \\                    "
+  p "                           A     G                   "
+  p "                            \\    \\                 "
+  p "                             E     I                 "
+  p "                           //    // \\               "
+  p "                           C     H   J               "
+  p "--------------------  END NODE DELETION (PREDECESSOR) -------------------- "
+  preoder_tree_walk(tree.root)
 end
 
-# Uncomment the line below to run the minimal unit tests
-# binary_tree_test
+def build_visualization_images
+  node_a = Node.new('A', nil, nil, nil)
+  node_b = Node.new('B', nil, nil, nil)
+  node_c = Node.new('C', nil, nil, nil)
+  node_d = Node.new('D', nil, nil, nil)
+  node_e = Node.new('E', nil, nil, nil)
+  node_f = Node.new('F', nil, nil, nil)
+  node_g = Node.new('G', nil, nil, nil)
+  node_h = Node.new('H', nil, nil, nil)
+  node_i = Node.new('I', nil, nil, nil)
+  node_j = Node.new('J', nil, nil, nil)
+
+  tree_graphical = Tree.new(nil)
+
+  g = GraphViz.new( :G, :type => :digraph )
+
+  p "--------------------  BEGIN GENERATING IMAGES -------------------- "
+  [node_f, node_b, node_g, node_a, node_d, node_c, node_e, node_i, node_h].each_with_index do |x, i|
+    tree_insert_graphical(tree_graphical, x, g) # For image generation
+    g.output( :png => "Order #{i.to_i} - Inserted #{x.key}.png", :canon => nil)
+  end
+  p "                              F                      "
+  p "                            // \\                    "
+  p "                           B     G                   "
+  p "                         // \\    \\                 "
+  p "                         A   D     I                 "
+  p "                           // \\ //                  "
+  p "                           C   E H                   "
+
+  p "--------------------  END GENERATING IMAGES -------------------- "
+end
+
+# Uncomment the lines below to run the minimal unit tests
+binary_tree_test
+build_visualization_images
