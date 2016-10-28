@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-size: 16px;
     color: #333;
-    background: #edf;
+    background: #ffd;
 }
 
 table, th, td {
@@ -40,7 +40,7 @@ h1 {
     font-weight: 300;
     font-size: 32px;
     background-color: #339;
-    color: #cfc;
+    color: #ffc;
 }
 
 h2 {
