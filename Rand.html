@@ -242,7 +242,11 @@
              <br>
              <br>
              <br>
-             Probability that two people of the same birthday: 1/365
+             Probability that two people have the same birthday: 1/365
+             <br>
+             <br>
+             To generalize the problem, and see it doesn't just apply to
+             birthdays, let's call the # of days in the year <em>n</em>.
              <br>
              <br>
              Let's set up an indicator random variable so that
@@ -254,6 +258,8 @@
              <br>
              Let <em>X</em> count the number of pairs of people who 
              have the same birthday.
+             <br> <br>
+             <em>k</em> is the number of people in the room.
              <br> <br>
              <img
              src=
@@ -271,11 +277,11 @@
              <br> <br>
              <img
              src=
-             "https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/RandEq9.gif">
+             "graphics/RandEq9.gif">
              <br> <br>
              <img
              src=
-             "https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/RandEq10.gif">
+             "graphics/RandEq10.gif">
              <br>
              <br>
              So we are looking at <em>&Theta;(n<sup>1/2</sup>)</em>,
@@ -286,6 +292,12 @@
              <h3>
              Balls and bins
              </h3>
+
+             <p>
+             The above problem is equivalent to asking, "How many balls will I
+             toss into <em>n</em> bins before two balls wind up in the same
+             bin?"
+             </p>
 
 
              <h3>
