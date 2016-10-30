@@ -202,6 +202,8 @@ def partition(arr, p, r)
 		if arr[j] <= key
 			i += 1
 			arr[i], arr[j] = arr[j], arr[i]
+			p "SWAPPING #{arr[i]} with #{arr[j]}"
+			sleep(1.0)
 		end
 	end
 	arr[i+1], arr[r] = arr[r], arr[i+1]
@@ -253,4 +255,9 @@ def randomized_partition(arr, p, r)
 	i = rand(p..r)
 	arr[r], arr[i] = arr[i], arr[r]
 	partition(arr, p, r)
+end
+
+
+def test_sorting
+
 end
