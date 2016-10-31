@@ -8,7 +8,6 @@
 # v2  - Location of element in the array
 #
 # Examples
-#
 #   swap([5, 3, 8, 7, 9, 6, 2, 4, 1], 2, 5)
 #   => [5, 3, 6, 7, 9, 8, 2, 4, 1]
 #
@@ -23,12 +22,11 @@ end
 # v2  - Location of element in the array
 #
 # Examples
-#
 #   swap([5, 3, 8, 7, 9, 6, 2, 4, 1], 2, 5)
 #   => [5, 3, 6, 7, 9, 8, 2, 4, 1]
 #
 def swap(arr, v1, v2)
-	temp = array[v1]
+	temp = arr[v1]
 	arr[v1] = arr[v2]
 	arr[v2] = temp
 end
@@ -42,8 +40,8 @@ end
 # COMPLEXITY: Θ(n^2)
 # TODO: Update the code to handle any kind of datatype
 #       Make it a more sleek
-# Examples
 #
+# Examples
 #   bubble_sort([5, 3, 8, 7, 9, 6, 2, 4, 1])
 #   => [1, 2, 3, 4, 5, 6, 7, 8, 9]
 #
@@ -63,8 +61,8 @@ end
 #
 # COMPLEXITY: Θ(n^2)
 # TODO: Update the code to handle any kind of datatype
-# Examples
 #
+# Examples
 #   insertion_sort([5, 3, 8, 7, 9, 6, 2, 4, 1])
 #   => [1, 2, 3, 4, 5, 6, 7, 8, 9]
 #
@@ -78,10 +76,6 @@ def insertion_sort(array)
 			j = j-1
 		end
 		array[j+1] = key
-
-		# PRINT THE ARRAY TO SEE WHAT IS HAPPENED
-		p array
-		sleep(1.0)
 	end
 	array
 end
@@ -98,8 +92,8 @@ end
 # COMPLEXITY: Θ(nlogn)
 # TODO: Update the code to handle any kind of datatype
 #       Make it a more sleek
-# Examples
 #
+# Examples
 #   merge_sort([5, 3, 8, 7, 9, 6, 2, 4, 1], 0, 8)
 #   merge_sort([5, 3, 8, 7, 9, 6, 2, 4, 1])
 #   => [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -125,7 +119,6 @@ end
 #       Make it a more sleek
 #
 # Examples
-#
 #   merge_sort([5, 3, 8, 7, 9, 6, 2, 4, 1])
 #   => [1, 2, 3, 4, 5, 6, 7, 8, 9]
 #
@@ -165,8 +158,8 @@ end
 # COMPLEXITY: Θ(nlogn)
 # TODO: Update the code to handle any kind of datatype
 #       Make it a more sleek
-# Examples
 #
+# Examples
 #   quick_sort([5, 3, 8, 7, 9, 6, 2, 4, 1], 0, 8)
 #   quick_sort([5, 3, 8, 7, 9, 6, 2, 4, 1])
 #   => [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -190,7 +183,6 @@ end
 # COMPLEXITY: Θ(n)
 #
 # Examples
-#
 #   partition([1, 3, 8, 7, 9, 6, 2, 4, 5], 0, 8)
 #   => 4
 #
@@ -202,8 +194,9 @@ def partition(arr, p, r)
 		if arr[j] <= key
 			i += 1
 			arr[i], arr[j] = arr[j], arr[i]
-			p "SWAPPING #{arr[i]} with #{arr[j]}"
-			sleep(1.0)
+			# TODO: Show each step more clearly
+			# p "SWAPPING #{arr[i]} with #{arr[j]}"
+			# sleep(1.0)
 		end
 	end
 	arr[i+1], arr[r] = arr[r], arr[i+1]
@@ -221,8 +214,8 @@ end
 # COMPLEXITY: Θ(nlogn)
 # TODO: Update the code to handle any kind of datatype
 #       Make it a more sleek
-# Examples
 #
+# Examples
 #   randomized_quick_sort([5, 3, 8, 7, 9, 6, 2, 4, 1], 0, 8)
 #   randomized_quick_sort([5, 3, 8, 7, 9, 6, 2, 4, 1])
 #   => [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -246,7 +239,6 @@ end
 # COMPLEXITY: Θ(n)
 #
 # Examples
-#
 #   randomized_partition([1, 3, 8, 7, 9, 6, 2, 4, 5], 0, 8)
 #   => 4 (could be this, cannot be predicted due to the randomness)
 #
@@ -257,7 +249,64 @@ def randomized_partition(arr, p, r)
 	partition(arr, p, r)
 end
 
+@sorted_arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-def test_sorting
-
+def unit_test_sorting
+	test('Swap', swap_test)
+	test('Bubble sort', bubble_sort_test)
+	test('Insertion sort', insertion_sort_test)
+	test('Merge sort', merge_sort_test)
+	test('Partition', partition_test)
+	test('Quick sort', quick_sort_test)
+	test('Randomized Quick sort', randomized_quick_sort_test)
 end
+
+def test(method_name, method_test)
+  if method_test
+    p "#{method_name} OK"
+  else
+    p "#{method_name} FAIL"
+  end
+end
+
+def swap_test
+	arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
+	swap(arr, 1, 2)
+	arr[1] == 8 && arr[2] == 3
+end
+
+def bubble_sort_test
+	arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
+	bubble_sort(arr)
+	arr == @sorted_arr
+end
+
+def insertion_sort_test
+	arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
+	insertion_sort(arr)
+	arr == @sorted_arr
+end
+
+def merge_sort_test
+	arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
+	merge_sort(arr)
+	arr == @sorted_arr
+end
+
+def quick_sort_test
+	arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
+	quick_sort(arr)
+	arr == @sorted_arr
+end
+
+def partition_test
+	4 == partition([1, 3, 8, 7, 9, 6, 2, 4, 5], 0, 8)
+end
+
+def randomized_quick_sort_test
+	arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
+	randomized_quick_sort(arr)
+	arr == @sorted_arr
+end
+
+unit_test_sorting
