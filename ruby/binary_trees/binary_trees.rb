@@ -430,7 +430,7 @@ end
 #      tree_insert
 #      tree_delete
 #      tree_delete_predecessor
-def binary_tree_test
+def unit_test_binary_tree
   node_a = Node.new('A', nil, nil, nil)
   node_b = Node.new('B', nil, nil, nil)
   node_c = Node.new('C', nil, nil, nil)
@@ -443,10 +443,6 @@ def binary_tree_test
   node_j = Node.new('J', nil, nil, nil)
 
   tree = Tree.new(nil)
-  tree_graphical = Tree.new(nil)
-
-  # Comment the below line while running the tests.
-  g = GraphViz.new( :G, :type => :digraph )
 
   p "--------------------  BEGIN CONSTRUCTING TREE -------------------- "
   [node_f, node_b, node_g, node_a, node_d, node_c, node_e, node_i, node_h].each_with_index do |x, i|
@@ -591,5 +587,5 @@ def build_visualization_images
 end
 
 # Uncomment the lines below to run the minimal unit tests
-binary_tree_test
+unit_test_binary_tree
 build_visualization_images
