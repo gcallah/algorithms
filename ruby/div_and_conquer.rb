@@ -258,3 +258,22 @@ def assemble_matrix(mat_list)
   end
   m
 end
+
+def div_and_conquer_test
+  find_max_subarray_test
+  square_matrix_multiply_test
+  square_matrix_multiply_recursive_test
+  strassen_multiplication_test
+end
+
+def find_max_subarray_test
+end
+
+def square_matrix_multiply_test
+end
+
+def square_matrix_multiply_recursive_test
+end
+
+def strassen_multiplication_test
+end

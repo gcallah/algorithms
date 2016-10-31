@@ -11,7 +11,6 @@
 #         Methods are invoked on an integer
 #
 # Examples
-#
 #   40.cool_iterative_fib
 #   # => 102334155
 class Integer
@@ -34,7 +33,6 @@ class Integer
   #           Recursive strategy
   #
   # Examples
-  #
   #   40.naive_fib
   #   => 102334155
   #
@@ -52,7 +50,6 @@ class Integer
   # number - Number of Fibonacci to be found
   #
   # Examples
-  #
   #   40.memo_fib
   #   => 102334155
   #
@@ -74,7 +71,6 @@ class Integer
   # number - Number of Fibonacci to be found
   #
   # Examples
-  #
   #   40.iter_fib
   #   => 102334155
   #
