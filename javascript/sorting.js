@@ -1,3 +1,10 @@
+/**
+ * Returns an array with elements populated between the specified range(INCLUSIVE)
+ * @extends Array
+ * @function rangeArray
+ * @param {number} startIndex - Start element of the array to be built
+ * @param {number} endIndex - End element of the array to be built
+ */
 Array.prototype.rangeArray = function (startIndex, endIndex) {
   var arr = []
   for(var i=startIndex; i<=endIndex; i++) {
@@ -6,6 +13,14 @@ Array.prototype.rangeArray = function (startIndex, endIndex) {
   return arr;
 }
 
+/**
+ * Returns an array with elements populated between the specified range(INCLUSIVE)
+ * in a REVERSE Order
+ * @extends Array
+ * @function reverseRangeArray
+ * @param {number} startIndex - Start element of the array to be built
+ * @param {number} endIndex - End element of the array to be built
+ */
 Array.prototype.reverseRangeArray = function(startIndex, endIndex) {
   var arr = []
   for(var i=endIndex; i>=startIndex; i--) {
@@ -14,16 +29,38 @@ Array.prototype.reverseRangeArray = function(startIndex, endIndex) {
   return arr;
 }
 
+/**
+ * Swaps the elements of the array at the specified indices
+ * @function coolSwap
+ * @param {array} arr - Array in which the swapping is to be performed
+ * @param {number} v1 - Index of the element to be swapped with v2
+ * @param {number} v2 - Index of the element to be swapped with v1
+ */
 function coolSwap(arr, v1, v2) {
   [arr[v1], arr[v2]] = [arr[v2], arr[v1]];
 }
 
+/**
+ * Swaps the elements of the array at the specified indices
+ * @function swap
+ * @param {array} arr - Array in which the swapping is to be performed
+ * @param {number} v1 - Index of the element to be swapped with v2
+ * @param {number} v2 - Index of the element to be swapped with v1
+ */
 function swap(arr, v1, v2) {
   var temp = arr[v1];
   arr[v1] = arr[v2];
   arr[v2] = temp;
 }
 
+/**
+ * Sorts the elements of the array using BUBBLE sort algorithm
+ * Divide and Conquer strategy
+ *
+ * @function bubbleSort
+ * @param {array} arr - Array to be bubble sorted
+ * @param {number} n - Index of the last element in the array
+ */
 function bubbleSort(arr, n=arr.length-1) {
   (new Array()).rangeArray(0, n).forEach(function(i) {
     (new Array()).reverseRangeArray(i, n).forEach(function(j) {
@@ -35,6 +72,12 @@ function bubbleSort(arr, n=arr.length-1) {
   return arr;
 }
 
+/**
+ * Sorts the elements of the array using INSERTION sort algorithm
+ *
+ * @function insertionSort
+ * @param {array} arr - Array to be bubble sorted
+ */
 function insertionSort(arr) {
   for(var i=1; i<arr.length; i++) {
     var j = i-1;
@@ -48,6 +91,15 @@ function insertionSort(arr) {
   return arr;
 }
 
+/**
+ * Creates and merges two arrays into a sorted array
+ *
+ * @function merge
+ * @param {array} arr - Array to be bubble sorted
+ * @param {number} p - Index of the first element in the array
+ * @param {number} n - Index of the middle element in the array
+ * @param {number} r - Index of the last element in the array
+ */
 function merge(arr, p, n, r) {
   var l1 = [];
   var l2 = [];
@@ -76,6 +128,14 @@ function merge(arr, p, n, r) {
   }
 }
 
+/**
+ * Sorts the elements of the array using MERGE sort algorithm
+ *
+ * @function mergeSort
+ * @param {array} arr - Array to be bubble sorted
+ * @param {number} p - Index of the first element in the array
+ * @param {number} r - Index of the last element in the array
+ */
 function mergeSort(arr, p=0, r=arr.length-1) {
   var n = Math.floor((p+r)/2);
   if(p < r) {
@@ -86,6 +146,14 @@ function mergeSort(arr, p=0, r=arr.length-1) {
   return arr;
 }
 
+/**
+ * Divides the array into two segments by selecting last element as the key
+ *
+ * @function partition
+ * @param {array} arr - Array to be bubble sorted
+ * @param {number} p - Index of the first element in the array
+ * @param {number} r - Index of the last element in the array
+ */
 function partition(arr, p, r) {
   var key = arr[r], i = p-1;
   (new Array()).rangeArray(p, r-1).forEach(function(j) {
@@ -98,6 +166,15 @@ function partition(arr, p, r) {
   return i+1;
 }
 
+/**
+ * Sorts the elements of the array using QUICK sort algorithm
+ * Divide and conquer strategy
+ *
+ * @function quickSort
+ * @param {array} arr - Array to be bubble sorted
+ * @param {number} p - Index of the first element in the array
+ * @param {number} r - Index of the last element in the array
+ */
 function quickSort(arr, p=0, r=arr.length-1) {
   if(p < r) {
     var q = partition(arr, p, r);
