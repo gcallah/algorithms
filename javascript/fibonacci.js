@@ -15,7 +15,7 @@
 Array.prototype.rangeArray = function (startIndex, endIndex) {
   var arr = []
   for(var i=startIndex; i<endIndex; i++) {
-    arr.push(i)
+    arr.push(i);
   }
   return arr;
 }
@@ -39,7 +39,7 @@ Number.prototype.naiveFib = function () {
     case 1:
       return 1;
     default:
-      return (this-1).naiveFib() + (this-2).naiveFib()
+      return (this-1).naiveFib() + (this-2).naiveFib();
   }
 }
 
@@ -79,7 +79,35 @@ Number.prototype.iterFib = function () {
   (new Array()).rangeArray(0, this-1).forEach(function(index) {
     temp = v2;
     v2 = v2 + v1;
-    v1 = temp
+    v1 = temp;
   });
-  return v2
+  return v2;
 }
+
+function unitTestFibonacci() {
+  test("Naive Fib", naiveFibTest());
+  test("Memo Fib", memoFibTest());
+  test("Iter Fib", iterFibTest());
+}
+
+function test(functionName, functionTest) {
+  if(functionTest) {
+    console.log(functionName + " OK");
+  } else {
+    console.log(functionName + " FAIL");
+  }
+}
+
+function naiveFibTest() {
+  return Number(10).naiveFib() === 55;
+}
+
+function memoFibTest() {
+  return Number(20).memoFib() === 6765;
+}
+
+function iterFibTest() {
+  return Number(30).iterFib() === 832040;
+}
+
+unitTestFibonacci()
