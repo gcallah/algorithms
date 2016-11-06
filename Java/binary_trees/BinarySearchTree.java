@@ -30,14 +30,15 @@ public class BinarySearchTree<T> {
 	BinarySearchTree<String> bst = new BinarySearchTree<>();
 
 	/****** insertion ******/
-        bst.insert(new Node<String>(5, "foo"));
-        bst.insert(new Node<String>(2, "bar"));
-        bst.insert(new Node<String>(1, "java"));
-        bst.insert(new Node<String>(3, "c"));
-        bst.insert(new Node<String>(7, "c++"));
-        bst.insert(new Node<String>(6, "python"));
-        bst.insert(new Node<String>(8, "ruby"));
-        bst.insert(new Node<String>(9, "javascript"));
+        bst.insert(5, "foo");
+        bst.insert(2, "bar");
+        bst.insert(1, "java");
+        bst.insert(3, "c");
+        bst.insert(7, "c++");
+        bst.insert(6, "python");
+        bst.insert(8, "ruby");
+        bst.insert(9, "javascript");
+	bst.insert(4, "tree");
 
 
 	/****** tree graph ******/
@@ -96,7 +97,7 @@ public class BinarySearchTree<T> {
 	
     }
 
-    private Tree<T> tree;
+    private final Tree<T> tree;
 
     public BinarySearchTree() {
 	tree = new Tree<T>();
@@ -220,6 +221,10 @@ public class BinarySearchTree<T> {
 	    p = root.p;
 	}
 	return p;
+    }
+
+    public void insert(int key, T data) {
+	insert(new Node<T>(key, data));
     }
 
     public void insert(Node<T> node) {

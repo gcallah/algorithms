@@ -101,15 +101,10 @@ public class TreePrinter {
 	}
     }
 
-    private void printNodes(IndexNode indexNode, int space) {
-	for (int j = 0; j < space; ++j) {
-	    System.out.print(" ");
-	}
+    private void printNodes(final IndexNode indexNode, final int space) {
+	printSpaces(space);
 	String key = indexNode.node == null ? " " : String.valueOf(indexNode.node.key);
 	System.out.print(key);
-	for (int j = 0; j < space; ++j) {
-	    System.out.print(" ");
-	}
-	System.out.print(" ");
+	printSpaces(space + 1); 
     }
 }
