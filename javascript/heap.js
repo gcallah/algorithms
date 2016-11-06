@@ -224,3 +224,36 @@ function heapSort(arr) {
   });
   return arr;
 }
+
+function unitTestHeap() {
+  test("Max Heapify", maxHeapifyTest());
+  test("Build Max Heap", buildMaxHeapTest());
+  test("Heap Sort", heapSortTest())
+}
+
+function test(functionName, functionTest) {
+  if(functionTest) {
+    console.log(functionName + " OK");
+  } else {
+    console.log(functionName + " FAIL");
+  }
+}
+
+function maxHeapifyTest() {
+  var arr = [5, 3, 8, 7, 9, 6, 2, 4, 1];
+  maxHeapify(arr, 2);
+  return JSON.stringify(arr) === JSON.stringify([5, 3, 9, 7, 8, 6, 2, 4, 1]);
+}
+
+function buildMaxHeapTest() {
+  var arr = [5, 3, 8, 7, 9, 6, 2, 4, 1];
+  buildMaxHeap(arr);
+  return JSON.stringify(arr) === JSON.stringify([9, 8, 6, 7, 3, 5, 2, 4, 1]);
+}
+
+function heapSortTest() {
+  var arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
+  return JSON.stringify(heapSort(arr)) === JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+}
+
+unitTestHeap();
