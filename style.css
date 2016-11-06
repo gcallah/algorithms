@@ -13,6 +13,10 @@ table, th, td {
             padding: 15px;
     }
 
+th {
+    background: #afd;
+}
+
 ol, ul, dl, li {
     margin: 8px 12px 8px 12px;
 }
