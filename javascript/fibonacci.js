@@ -1,9 +1,16 @@
 /**
  * Returns an array with elements populated between the specified range(INCLUSIVE)
+ *
  * @extends Array
  * @function rangeArray
  * @param {number} startIndex - Start element of the array to be built
  * @param {number} endIndex - End element of the array to be built
+ * @return {array}
+ *
+ * Examples:
+ *    (new Array()).rangeArray(0, 5);
+ *    ([]).rangeArray(0, 5);
+ *    => [0, 1, 2, 3, 4, 5]
  */
 Array.prototype.rangeArray = function (startIndex, endIndex) {
   var arr = []
@@ -17,6 +24,11 @@ Array.prototype.rangeArray = function (startIndex, endIndex) {
  * Returns the Nth fibonacci number.
  * @extends Number
  * @function naiveFib
+ * @return {number}
+ *
+ * Examples:
+ *     Number(10).naiveFib();
+ *     => 55
  */
 Number.prototype.naiveFib = function () {
   if (Number(this) < 0)
@@ -35,6 +47,11 @@ Number.prototype.naiveFib = function () {
  * Returns the Nth fibonacci number.
  * @extends Number
  * @function memoFib
+ * @return {number}
+ *
+ * Examples:
+ *     Number(20).memoFib();
+ *     => 6765
  */
 Number.prototype.memoFib = function (hash={}) {
   if (Number(this) < 0) return -1;
@@ -51,6 +68,11 @@ Number.prototype.memoFib = function (hash={}) {
  * Returns the Nth fibonacci number.
  * @extends Number
  * @function iterFib
+ * @return {number}
+ *
+ * Examples:
+ *     Number(30).iterFib();
+ *     => 832040
  */
 Number.prototype.iterFib = function () {
   var v1 = 0, v2 = 1, temp = 0;
