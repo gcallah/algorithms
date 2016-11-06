@@ -241,3 +241,66 @@ function quickSort(arr, p=0, r=arr.length-1) {
   }
   return arr;
 }
+
+function unitTestSorting() {
+  test('Swap', swapTest());
+  test('Cool Swap', coolSwapTest());
+  test('Bubble Sort', bubbleSortTest());
+  test('Insertion Sort', insertionSortTest());
+  test('Merge', mergeTest());
+  test('Merge Sort', mergeSortTest());
+  test('Partition', partitionTest());
+  test('Quick Sort', quickSortTest());
+}
+
+function test(functionName, functionTest) {
+  if(functionTest) {
+    console.log(functionName + " OK");
+  } else {
+    console.log(functionName + " FAIL");
+  }
+}
+
+function swapTest() {
+  var arr = [5, 3, 8, 7, 9, 6, 2, 4, 1];
+	swap(arr, 1, 2);
+	return (arr[1] === 8 && arr[2] === 3);
+}
+
+function coolSwapTest() {
+  var arr = [5, 3, 8, 7, 9, 6, 2, 4, 1];
+	coolSwap(arr, 1, 2);
+	return (arr[1] === 8 && arr[2] === 3);
+}
+
+function bubbleSortTest() {
+  var arr = [5, 3, 8, 7, 9, 6, 2, 4, 1];
+  return JSON.stringify(bubbleSort(arr)) === JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+}
+
+function insertionSortTest() {
+  var arr = [5, 3, 8, 7, 9, 6, 2, 4, 1];
+  return JSON.stringify(insertionSort(arr)) === JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+}
+
+function mergeTest() {
+  var arr = [5, 3, 8, 7, 9, 6, 2, 4, 1];
+  merge(arr, 0, 4, 8);
+  return JSON.stringify(arr) === JSON.stringify([5, 3, 6, 2, 4, 1, 8, 7, 9]);
+}
+
+function mergeSortTest() {
+  var arr = [5, 3, 8, 7, 9, 6, 2, 4, 1];
+  return JSON.stringify(mergeSort(arr)) === JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+}
+
+function partitionTest() {
+  return partition([1, 3, 8, 7, 9, 6, 2, 4, 5], 0, 8) === 4;
+}
+
+function quickSortTest() {
+  var arr = [5, 3, 8, 7, 9, 6, 2, 4, 1];
+  return JSON.stringify(quickSort(arr)) === JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+}
+
+unitTestSorting();
