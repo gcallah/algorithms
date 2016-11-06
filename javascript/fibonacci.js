@@ -1,3 +1,10 @@
+/**
+ * Returns an array with elements populated between the specified range(INCLUSIVE)
+ * @extends Array
+ * @function rangeArray
+ * @param {number} startIndex - Start element of the array to be built
+ * @param {number} endIndex - End element of the array to be built
+ */
 Array.prototype.rangeArray = function (startIndex, endIndex) {
   var arr = []
   for(var i=startIndex; i<endIndex; i++) {
@@ -6,6 +13,11 @@ Array.prototype.rangeArray = function (startIndex, endIndex) {
   return arr;
 }
 
+/**
+ * Returns the Nth fibonacci number.
+ * @extends Number
+ * @function naiveFib
+ */
 Number.prototype.naiveFib = function () {
   if (Number(this) < 0)
     return -1;
@@ -19,6 +31,11 @@ Number.prototype.naiveFib = function () {
   }
 }
 
+/**
+ * Returns the Nth fibonacci number.
+ * @extends Number
+ * @function memoFib
+ */
 Number.prototype.memoFib = function (hash={}) {
   if (Number(this) < 0) return -1;
   else if (Number(this) === 0) return 0;
@@ -30,6 +47,11 @@ Number.prototype.memoFib = function (hash={}) {
   }
 }
 
+/**
+ * Returns the Nth fibonacci number.
+ * @extends Number
+ * @function iterFib
+ */
 Number.prototype.iterFib = function () {
   var v1 = 0, v2 = 1, temp = 0;
   (new Array()).rangeArray(0, this-1).forEach(function(index) {
@@ -38,14 +60,4 @@ Number.prototype.iterFib = function () {
     v1 = temp
   });
   return v2
-}
-
-function celebName(firstName) {
-  var name = "The celebrity is ";
-
-  function lastName(theLastName) {
-    return name + firstName + " " + theLastName;
-  }
-
-  return lastName;
 }
