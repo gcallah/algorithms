@@ -255,6 +255,7 @@ def unit_test_sorting
 	test('Swap', swap_test)
 	test('Bubble sort', bubble_sort_test)
 	test('Insertion sort', insertion_sort_test)
+	test('Merge', merge_test)
 	test('Merge sort', merge_sort_test)
 	test('Partition', partition_test)
 	test('Quick sort', quick_sort_test)
@@ -285,6 +286,12 @@ def insertion_sort_test
 	arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
 	insertion_sort(arr)
 	arr == @sorted_arr
+end
+
+def merge_test
+	arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
+	merge(arr, 0, 4, 8)
+	arr  == [5, 3, 6, 2, 4, 1, 8, 7, 9]	
 end
 
 def merge_sort_test
