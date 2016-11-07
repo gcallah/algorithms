@@ -22,6 +22,21 @@ Array.prototype.rangeArray = function (startIndex, endIndex) {
   return arr;
 }
 
+/**
+ * Returns an array with elements populated between the specified range(INCLUSIVE)
+ * in a REVERSE Order
+ *
+ * @extends Array
+ * @function reverseRangeArray
+ * @param {number} startIndex - Start element of the array to be built
+ * @param {number} endIndex - End element of the array to be built
+ * @return {array}
+ *
+ * Examples:
+ *    (new Array()).reverseRangeArray(0, 5);
+ *    ([]).reverseRangeArray(0, 5);
+ *    => [5, 4, 3, 2, 1, 0]
+ */
 Array.prototype.reverseRangeArray = function(startIndex, endIndex) {
   var arr = []
   for(var i=endIndex; i>=startIndex; i--) {
@@ -30,14 +45,48 @@ Array.prototype.reverseRangeArray = function(startIndex, endIndex) {
   return arr;
 }
 
+/**
+ * Returns an array with specified number of empty arrays as elements
+ *
+ * @extends Array
+ * @function arrayOfArrays
+ * @param {number} n - Number of empty arrays to be stubbed inside
+ * @return {array}
+ *
+ * Examples:
+ *    (new Array()).arrayOfArrays(5);
+ *    => [[], [], [], [], []]
+ */
 Array.prototype.arrayOfArrays = function(n) {
   return (new Array()).rangeArray(0, n-1).map(function() { return []; });
 }
 
+/**
+* Flattens all the array elements and returns a one dimensional array
+ *
+ * @extends Array
+ * @function flatten
+ * @return {array}
+ *
+ * Examples:
+ *    var arr = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]
+ *    arr.flatten();
+ *    => [1, 2, 3, 4 ,5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+ */
 Array.prototype.flatten = function() {
   return this.reduce(function (a, b) {
     return a.concat(Array.isArray(b) ? flatten(b) : b);
   }, []);
+}
+
+Array.prototype.chunk = function(rowStart, rowEnd, columnStart, columnEnd) {
+  return [].rangeArray(rowStart, rowEnd).map(function(x) {
+    var xArray = [];
+    [].rangeArray(columnStart, columnEnd).forEach(function(i) {
+      xArray.push(this[x][i]);
+    }.bind(this));
+    return xArray;
+  }.bind(this));
 }
 
 function findMaxCrossingSubArray(arr, low, mid, high) {
@@ -74,7 +123,8 @@ function findMaxSubArray(arr, low=0, high=arr.length-1) {
 }
 
 function squareMatrixMultiply(m1, m2) {
-  var n = m1.length, c = (new Array()).arrayOfArrays(n);
+  var n = m1.length,
+      c = (new Array()).arrayOfArrays(n);
 
   (new Array()).rangeArray(0, n-1).forEach(function(i) {
     (new Array()).rangeArray(0, n-1).forEach(function(j) {
@@ -88,39 +138,11 @@ function squareMatrixMultiply(m1, m2) {
 }
 
 function matrixPartitioner(mat) {
-  var n = (mat.length-1), nHalf = mat.length/2;
-
-  m11 = (new Array()).rangeArray(0, nHalf-1).map(function(x) {
-    var xArray = [];
-    (new Array()).rangeArray(0, nHalf-1).forEach(function(i) {
-      xArray.push(mat[x][i]);
-    });
-    return xArray;
-  });
-
-  m12 = (new Array()).rangeArray(0, nHalf-1).map(function(x) {
-    var xArray = [];
-    (new Array()).rangeArray(nHalf, n).forEach(function(i) {
-      xArray.push(mat[x][i]);
-    });
-    return xArray;
-  });
-
-  m21 = (new Array()).rangeArray(nHalf, n).map(function(x) {
-    var xArray = [];
-    (new Array()).rangeArray(0, nHalf-1).forEach(function(i) {
-      xArray.push(mat[x][i]);
-    });
-    return xArray;
-  });
-
-  m22 = (new Array()).rangeArray(nHalf, n).map(function(x) {
-    var xArray = [];
-    (new Array()).rangeArray(nHalf, n).forEach(function(i) {
-      xArray.push(mat[x][i]);
-    });
-    return xArray;
-  });
+  var n = (mat.length-1), nHalf = mat.length/2,
+      m11 = mat.chunk(0, nHalf-1, 0, nHalf-1),
+      m12 = mat.chunk(0, nHalf-1, nHalf, n),
+      m21 = mat.chunk(nHalf, n, 0, nHalf-1),
+      m22 = mat.chunk(nHalf, n, nHalf, n);
 
   return [m11, m12, m21, m22];
 }
@@ -188,6 +210,37 @@ function squareMatrixMultiplyRecursive(a, b) {
   return c;
 }
 
+function strassenMultiplication(a, b) {
+  var aParted = matrixPartitioner(a);
+      bParted = matrixPartitioner(b);
+
+      s1 = matAddOrSubtract(bParted[1], bParted[3], '-');
+      s2 = matAddOrSubtract(aParted[0], aParted[1], '+');
+      s3 = matAddOrSubtract(aParted[2], aParted[3], '+');
+      s4 = matAddOrSubtract(bParted[2], bParted[0], '-');
+      s5 = matAddOrSubtract(aParted[0], aParted[3], '+');
+      s6 = matAddOrSubtract(bParted[0], bParted[3], '+');
+      s7 = matAddOrSubtract(aParted[1], aParted[3], '-');
+      s8 = matAddOrSubtract(bParted[2], bParted[3], '+');
+      s9 = matAddOrSubtract(aParted[0], aParted[2], '-');
+      s10 = matAddOrSubtract(bParted[0], bParted[1], '+');
+
+      p1 = squareMatrixMultiplyRecursive(aParted[0], s1);
+      p2 = squareMatrixMultiplyRecursive(s2, bParted[3]);
+      p3 = squareMatrixMultiplyRecursive(s3, bParted[0]);
+      p4 = squareMatrixMultiplyRecursive(aParted[3], s4);
+      p5 = squareMatrixMultiplyRecursive(s5, s6);
+      p6 = squareMatrixMultiplyRecursive(s7, s8);
+      p7 = squareMatrixMultiplyRecursive(s9, s10);
+
+      c11 = matAddOrSubtract(matAddOrSubtract(p5, p6, '+'), matAddOrSubtract(p4, p2, '-'), '+');
+      c12 = matAddOrSubtract(p1, p2, '+');
+      c21 = matAddOrSubtract(p3, p4, '+');
+      c22 = matAddOrSubtract(matAddOrSubtract(p5, p3, '-'), matAddOrSubtract(p1, p7, '-'), '+');
+
+  return assembleMatrix([c11, c12, c21, c22]);
+}
+
 function unitTestDivAndConquer() {
   test('Find max crossing subarray', findMaxCrossingSubArrayTest());
   test('Find max subarray', findMaxSubArrayTest());
@@ -195,7 +248,7 @@ function unitTestDivAndConquer() {
   test('Matrix partitioner', matrixPartitionerTest());
   test('Assemble matrix', assembleMatrixTest());
   test('Square matrix multiply Recursive', squareMatrixMultiplyRecursiveTest());
-  // test('Strassen muliplication', strassen_multiplication_test)
+  test('Strassen muliplication', strassenMultiplicationTest());
 }
 
 function test(functionName, functionTest) {
@@ -235,8 +288,8 @@ function squareMatrixMultiplyRecursiveTest() {
   return JSON.stringify(squareMatrixMultiplyRecursive(mat1, mat2)) === JSON.stringify(mat1Xmat2);
 }
 
-// def strassen_multiplication_test
-//   strassen_multiplication(@mat1, @mat2) == @mat1Xmat2
-// end
+function strassenMultiplicationTest() {
+  return JSON.stringify(strassenMultiplication(mat1, mat2)) === JSON.stringify(mat1Xmat2);
+}
 
 unitTestDivAndConquer();
