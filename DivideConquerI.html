@@ -115,9 +115,35 @@
                 A transformation
             </h4>
 
+            <p>
+            We look at the problem differently: let's find the nonempty,
+            contiguous subarray of our array whose values have the largest sum.
+            We call this the <b>maximum subarray</b>.
+            </p>
+
             <h4>
                 A solution using divide-and-conquer
             </h4>
+            <p>
+            To solve this problem, we divide an array A into three subarrays,
+            and ask what is the maximum subarray in each:
+            </p>
+            <ol>
+                <li>From A[low] to A[midpoint - 1].
+                <li>Crossing the mid-point.
+                <li>From A[midpoint + 1] to A[high]
+            </ol>
+
+            <p>
+            Problems 1 and 3 are simply this same problem on a smaller array!
+            Problem 2 can be solved by finding the maximum subarrays in
+            low-to-mid and in mid+1-to-high.
+            <br>
+            <br>
+            The recurrence is the same as for merge sort.
+            </p>
+
+
 
             <h3>
                 Strassen's algorithm for matrix multiplication
