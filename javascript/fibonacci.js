@@ -1,3 +1,4 @@
+// THESE METHODS RESEMBLE TEXTBOOK PSEUDO CODE OR RUBY CODE
 /**
  * Returns an array with elements populated between the specified range(INCLUSIVE)
  *

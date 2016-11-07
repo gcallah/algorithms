@@ -1,3 +1,4 @@
+// THESE METHODS RESEMBLE TEXTBOOK PSEUDO CODE OR RUBY CODE
 /**
  * Returns half the provided number
  *
