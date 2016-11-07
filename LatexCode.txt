@@ -3,6 +3,13 @@ Recurrence:
 T(n) =
     \begin{cases}
       \Theta (1)\qquad\qquad\quad  \mbox{if}\ n=1\\
-      2t(n/2) + \Theta (n))\ \mbox{if}\ n>1
+      2T(n/2) + \Theta (n))\ \mbox{if}\ n>1
     \end{cases}
+
+T(n) =
+    \begin{cases}
+      c \qquad\qquad\qquad\qquad\quad\quad\quad \  \mbox{if}\ n=0\\
+      T(n / 2) + T(n / 2) + \Theta(n) \quad  \mbox{if}\ n>0
+    \end{cases}
+
 
