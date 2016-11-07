@@ -187,3 +187,56 @@ function squareMatrixMultiplyRecursive(a, b) {
   }
   return c;
 }
+
+function unitTestDivAndConquer() {
+  test('Find max crossing subarray', findMaxCrossingSubArrayTest());
+  test('Find max subarray', findMaxSubArrayTest());
+  test('Square matix multiply', squareMatrixMultiplyTest());
+  test('Matrix partitioner', matrixPartitionerTest());
+  test('Assemble matrix', assembleMatrixTest());
+  test('Square matrix multiply Recursive', squareMatrixMultiplyRecursiveTest());
+  // test('Strassen muliplication', strassen_multiplication_test)
+}
+
+function test(functionName, functionTest) {
+  if(functionTest) {
+    console.log(functionName + " OK");
+  } else {
+    console.log(functionName + " FAIL");
+  }
+}
+
+var mat1 = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]],
+    mat2 = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]],
+    mat1Xmat2 = [[90, 100, 110, 120], [202, 228, 254, 280], [314, 356, 398, 440], [426, 484, 542, 600]];
+
+function findMaxCrossingSubArrayTest() {
+  return JSON.stringify(findMaxCrossingSubArray([-2, -3, 4, -1, -2, 1, 5, -3], 0, 3, 7)) === JSON.stringify([2, 6, 7]);
+}
+
+function findMaxSubArrayTest() {
+  return JSON.stringify(findMaxSubArray([-2, -3, 4, -1, -2, 1, 5, -3])) === JSON.stringify([2, 6, 7]);
+}
+
+function squareMatrixMultiplyTest() {
+  return JSON.stringify(squareMatrixMultiply(mat1, mat2)) === JSON.stringify(mat1Xmat2);
+}
+
+function matrixPartitionerTest() {
+  return JSON.stringify(matrixPartitioner(mat1)) == JSON.stringify([[[1, 2], [5, 6]], [[3, 4], [7, 8]], [[9, 10], [13, 14]], [[11, 12], [15, 16]]]);
+}
+
+function assembleMatrixTest() {
+  var partitionedMat = [[[1, 2], [5, 6]], [[3, 4], [7, 8]], [[9, 10], [13, 14]], [[11, 12], [15, 16]]]
+  return JSON.stringify(assembleMatrix(partitionedMat)) === JSON.stringify(mat1);
+}
+
+function squareMatrixMultiplyRecursiveTest() {
+  return JSON.stringify(squareMatrixMultiplyRecursive(mat1, mat2)) === JSON.stringify(mat1Xmat2);
+}
+
+// def strassen_multiplication_test
+//   strassen_multiplication(@mat1, @mat2) == @mat1Xmat2
+// end
+
+unitTestDivAndConquer();
