@@ -41,61 +41,84 @@
             <h4>
                 Recurrences
             </h4>
-            <p>
-            Merge sort recurrence:
-            <br>
-            <br>
-            <img src="graphics/RecEq1.gif">
-            <br>
-            <br>
-            We sove these by determing a single equation that describes the
-            algorithm.
-            <br>
-            <b>Solution</b>: T(n) = &Theta;(n lg n)
+                <p>
+                Merge sort recurrence:
+                <br>
+                <br>
+                <img src="graphics/RecEq1.gif">
+                <br>
+                <br>
+                We "solve" these by finding a closed-form equation that
+                describes the recurrence but without recursion.
+                <br>
+                <b>Solution</b>: T(n) = &Theta;(n lg n)
+    
+                <br>
+                <br>
+                <b>Methods</b>:
+                <br>
+                </p>
+                <ul>
+                    <li><b>Substitution method</b>: Guess a solution and then use
+                        induction to prove it.
+                    <li><b>Recursive-tree method</b>: Convert the recurrence into a
+                        tree whose nodes represent costs incurred at each level.
+                    <li><b>Master method</b>:
+                        <br>
+                        Solves recurrences of the form:
+                        <br>
+                        T(n) = aT(n / b) + f(n)
+                        <br>
+                        where a &ge; 1, b &gt; 1.
+                </ul>
 
-            <br>
-            <br>
-            <b>Methods</b>:
-            <br>
-            </p>
-            <ul>
-                <li><b>Substitution method</b>: Guess a solution and then use
-                    induction to prove it.
-                <li><b>Recursive-tree method</b>: Convert the recurrence into a
-                    tree whose nodes represent costs incurred at each level.
-                <li><b>Master method</b>:
-                    <br>
-                    Solves recurrences of the form:
-                    <br>
-                    T(n) = aT(n / b) + f(n)
-                    <br>
-                    where a &ge; 1, b &gt; 1.
-            </ul>
-            <p>
+                <p>
+                <br>
+                <br>
+                <b>Technicalities</b>
+                <br>
+                We often omit floors, ceilings, and boundary conditions. For
+                instance, if n is odd, we may say n / 2 anyway.
+                </p>
+    
+    
+                <h3>
+                    The maximum-subarray problem
+                </h3>
+                <p>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Maximum_Subarray_Visualization.svg/220px-Maximum_Subarray_Visualization.svg.png">
+                <br>
+                <br>
+                Only makes since in an array with both negative and positive
+                values: otherwise the answer is either the whole array of the
+                maximum member.
+                <br>
+                <br>
+                </p>
 
-            <br>
-            <br>
-            <b>Technicalities</b>
-            <br>
-            We often omit floors, ceilings, and boundary conditions. For
-            instance, if n is odd, we may say n / 2 anyway.
-            </p>
+            <h4>
+                Brute-force solution
+            </h4>
+                <p>
+                Try every combination of two elements!
+                <br>
+                A k choose 2 problem, so order of &Omega;(n<sup>2</sup>).
+                <br>
+                k choose 2 will be about 1/2 k<sup>2</sup>, since it equals
+                n(n - 1) / 2. So we can establish a lower bound by setting c =
+                1/3, for instance, and k choose 2 will always be bounded from
+                below by k<sup>2</sup>.
+    
+                </p>
 
+            <h4>
+                A transformation
+            </h4>
 
-            <h3>
-                The maximum-subarray problem
-            </h3>
-            <p>
-            <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Maximum_Subarray_Visualization.svg/220px-Maximum_Subarray_Visualization.svg.png">
-            <br>
-            <br>
-            Only makes since in an array with both negative and positive
-            values: otherwise the answer is either the whole array of the
-            maximum member.
-
-            </p>
-
+            <h4>
+                A solution using divide-and-conquer
+            </h4>
 
             <h3>
                 Strassen's algorithm for matrix multiplication
@@ -104,6 +127,94 @@
             <h3>
                 The substitution method for solving recurrences
             </h3>
+                <h4>
+                    Towers of Hanoi
+                </h4>
+                    <p>
+                    <br>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Tower_of_Hanoi.jpeg/300px-Tower_of_Hanoi.jpeg">
+                    <br>
+                    The monks in a temple have the job of moving all of the
+                    disks on one peg to another, constrained by these rules:
+                    <br>
+					1) Only one disk can be moved at a time.
+                    <br>
+					2) Each move consists of taking the upper disk from 
+					one of the stacks and placing it on top of another stack 
+					i.e. a disk can only be moved if it is the 
+                    uppermost disk on a stack.
+                    <br>
+                    3) No disk may be placed on top of a smaller disk.
+                    <br>
+                    (
+                    <a href="https://en.wikipedia.org/wiki/Tower_of_Hanoi">
+                        Source
+                    </a>
+                    )
+                    <br>
+    
+                    <br>
+                    Recurrence:
+                    <br>
+                    <img src="graphics/RecEq2.gif">
+                    <br>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Tower_of_Hanoi_recursion_SMIL.svg/220px-Tower_of_Hanoi_recursion_SMIL.svg.png">
+                    <br>
+                    <br>
+                    Why is this the recurrence? Well, to move disk <em>n</em>,
+                    we first move disks 1 to <em>n</em> - 1 to the spare peg,
+                    then move <em>n</em> to the target peg, then move disks 1
+                    to <em>n</em> - 1 to the target peg.
+                    <br>
+                    <br>
+                    So we guess the closed-form solution is something like
+                    2<sup>n</sup>. Why? Well, we multiply by a factor of 2 each
+                    recursion!
+                    <br>
+                    Now, let's try writing out a few elements of the sequence:
+                    <br>
+                    T(0) = 0
+                    <br>
+                    T(1) = 2*0 + 1 = 1
+                    <br>
+                    T(2) = 2*1 + 1 = 3
+                    <br>
+                    T(3) = 2*3 + 1 = 7
+                    <br>
+                    T(4) = 2*7 + 1 = 15
+                    <br>
+                    T(5) = 2*15 + 1 = 31
+                    <br>
+                    So is the answer 2<sup>n</sup> - 1?
+                    <br>
+                    Base case: T(0) = 0 = 2<sup>0</sup> - 1.
+                    <br>
+                    Yes!
+                    <br>
+                    Now induction: we want to show that, <em>if</em> T(n - 1) =
+                    2<sup>(n - 1)</sup> - 1, <em>then</em> T(n) will equal
+                    2<sup>(n)</sup> - 1.
+                    <br>
+                    How proof by induction works: we have proved our base case.
+                    Now we try to prove that for any n, if for n - 1 our
+                    hypothesis is true, then it is true for n as well. And since we
+                    have already proved that for n = 0 it is true, that will
+                    mean it will be true for all n whatsoever.
+                    <br>
+                    So we substitute in for n - 1:
+                    <br>
+                    T(n) = 2(2<sup>(n - 1)</sup> - 1) + 1
+                    <br>
+                    = 2 * 2<sup>(n - 1) - 2 + 1
+                    <br>
+                    = 2<sup>(n) - 1
+                    <br>
+                    And we are done!
+
+    
+                    </p>
 
             <h3>
                 The recursion-tree method for solving recurrences
@@ -136,6 +247,16 @@
                 <li>
                     <a href="https://en.wikipedia.org/wiki/Master_theorem">
                         The Master Theorem
+                    </a>
+                <li>
+                    <a
+                        href="https://en.wikipedia.org/wiki/Maximum_subarray_problem">
+                        Maximum Subarray Problem
+                    </a>
+                <li>
+                    <a
+                        href="https://www.khanacademy.org/computing/computer-science/algorithms/towers-of-hanoi/a/towers-of-hanoi">
+                        The Towers of Hanoi
                     </a>
             </ul>
             
