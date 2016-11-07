@@ -23,8 +23,79 @@
             </h2>
 
             <h3>
+                Introduction
+            </h3>
+            <p>
+            What is this?
+            <ul>
+                <li><b>Divide</b> the problem into a number of sub problems that are
+                    smaller instances of the same problem.
+                <li><b>Conquer</b> the sub problems by solving them recursively. If
+                    the subproblem sizes are small enough, however, just solve
+                    the subproblems in a straightforward manner.
+                <li><b>Combine</b> the solutions for the sub problems into the
+                    solution for the original problem.
+            </ul>
+            </p>
+
+            <h4>
+                Recurrences
+            </h4>
+            <p>
+            Merge sort recurrence:
+            <br>
+            <br>
+            <img src="graphics/RecEq1.gif">
+            <br>
+            <br>
+            We sove these by determing a single equation that describes the
+            algorithm.
+            <br>
+            <b>Solution</b>: T(n) = &Theta;(n lg n)
+
+            <br>
+            <br>
+            <b>Methods</b>:
+            <br>
+            </p>
+            <ul>
+                <li><b>Substitution method</b>: Guess a solution and then use
+                    induction to prove it.
+                <li><b>Recursive-tree method</b>: Convert the recurrence into a
+                    tree whose nodes represent costs incurred at each level.
+                <li><b>Master method</b>:
+                    <br>
+                    Solves recurrences of the form:
+                    <br>
+                    T(n) = aT(n / b) + f(n)
+                    <br>
+                    where a &ge; 1, b &gt; 1.
+            </ul>
+            <p>
+
+            <br>
+            <br>
+            <b>Technicalities</b>
+            <br>
+            We often omit floors, ceilings, and boundary conditions. For
+            instance, if n is odd, we may say n / 2 anyway.
+            </p>
+
+
+            <h3>
                 The maximum-subarray problem
             </h3>
+            <p>
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Maximum_Subarray_Visualization.svg/220px-Maximum_Subarray_Visualization.svg.png">
+            <br>
+            <br>
+            Only makes since in an array with both negative and positive
+            values: otherwise the answer is either the whole array of the
+            maximum member.
+
+            </p>
+
 
             <h3>
                 Strassen's algorithm for matrix multiplication
