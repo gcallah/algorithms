@@ -1,5 +1,27 @@
 # THESE METHODS RESEMBLE TEXTBOOK PSEUDO CODE OR PROFESSOR CALLAHAN'S PYTHON CODE
 
+# INDEX
+#      direct_addressing_search
+#      direct_addressing_insert
+#      direct_addressing_delete
+#
+#      chained_hash_insert
+#      chained_hash_search
+#      chained_hash_delete
+#
+#      h
+#      h1
+#      h2
+#      division_h
+#      multilpication_h
+#
+#      linear_probing
+#      quadratic_probing
+#      double_hasing
+#
+#      open_addressing_insert
+#      open_addressing_search
+
 # Public: Analogous to a struct in C/C++ for building linked lists.
 # This class only contains an initialize method which acts a constructor for
 # setting and accessing the object properties

@@ -45,6 +45,68 @@
                 can detect here? Something along the lines of, "If the table
                 size is 2<sup>P</sup> - 1, and strings are interpreted in radix
                 2<sup>P</sup>..."
-        </ol>
+                <br>
+                <br>
+                <b>Answer:</b>
+                <br>
+                <br>
+                If <em>h(k) = k mod m</em>, where <em>m = 2<sup>P</sup> -
+                    1</em>, and <em>k</em> is a character string interpreted in
+                radix 2<sup>P</sup>, then all permutations of a given string
+                will hash to the same value. So in the example above, 'abc',
+                'cba', and 'bac' all hash to the same value.
+                <br>
+                <br>
+                <b>Proof</b>:
+                <br>
+                <br>
+                Assumed (could be proven, but we won't do it here):
+                <ol>
+                    <li> (x + y) mod z == 
+                            (x mod z + y mod z) mod z
+                        <br><b>Example:</b> (10 + 12) mod 7 ==
+                        (10 mod 7 + 12 mod 7) mod 7
+                    <li> (x * y) mod z == 
+                            (x mod z) * (y mod z)
+                        mod z
+                        <br><b>Example:</b> (10 * 12) mod 7 ==
+                        (10 mod 7) * (12 mod 7) mod 7
+                        <br>(7 * 17 = 119)
+                    <li>if x mod z == 1, then x<sup>n</sup> mod z == 1
+                        <br><b>Example:</b> 8 mod 7 == 1, and
+                        8<sup>2</sup> mod 7 == 1
+                        <br>This is a special case of 2!
+                </ol>
+                <br>
+                So, we have:
+                <br>
+                <br>
+                <img src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq1.gif">
+                <br>
+                <br>
+                <img src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq2.gif">
+                <br>
+                <br>
+                <img src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq3.gif">
+                <br>
+                <br>
+                <img
+                src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq4.gif">
+                &nbsp;&nbsp;(By 1)
+                <br>
+                <br>
+                <img
+                src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq5.gif">
+                &nbsp;&nbsp;(By 2)
+                <br>
+                <br>
+                <img
+                src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq6.gif">
+                &nbsp;&nbsp;(By 3)
+                <br>
+                <br>
+                <img
+                src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq7.gif">
+              </ol>
     </body>
 </html>

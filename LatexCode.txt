@@ -1,0 +1,8 @@
+
+Recurrence:
+T(n) =
+    \begin{cases}
+      \Theta (1)\qquad\qquad\quad  \mbox{if}\ n=1\\
+      2t(n/2) + \Theta (n))\ \mbox{if}\ n>1
+    \end{cases}
+
