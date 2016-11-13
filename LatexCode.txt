@@ -12,4 +12,9 @@ T(n) =
       T(n / 2) + T(n / 2) + \Theta(n) \quad  \mbox{if}\ n>0
     \end{cases}
 
+Geometric series:
+n^{2} + \frac{n^{2}}{2} + \frac{n^{2}}{4}  + \frac{n^{2}}{8}...
+
+a + ar + ar^{2} + ar^{3} +...+ + ar^{n - 1} = \sum_{k = 0}^{\infty}ar^{k} =
+\frac{a}{1 - r},\ for \left | r \right | < 1
 
