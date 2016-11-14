@@ -144,10 +144,101 @@
             </p>
 
 
-
             <h3>
                 Strassen's algorithm for matrix multiplication
             </h3>
+
+                <h4>
+                    Recursive Square-Matrix Multiply
+                </h4>
+                <p>
+                    We divide each of our initial matrices into four
+                    sub-matrices, and multiply them. Which we do by dividing
+                    each of them into four...
+                    <br>
+                    <br>
+                    In the base case when each matrix has only one member, we
+                    just multiply them and return the result.
+                    <br>
+                    <br>
+                    So what is our recurrence? Each step except the base case
+                    multiplies eight matrices of size n / 2. So they
+                    contribute 8T(n / 2) to running time. There are also four
+                    matrix additions of matrices containing n<sup>2</sup> / 4
+                    entries -- squared because n specifies an n x n matrix. So
+                    this contributes &Theta;(n<sup>2</sup>) time.
+                    <br>
+                    <br>
+                    So our recurrence is:
+                    <br>
+                    <br>
+                    <img src="graphics/RecEq6.gif">
+                    <br>
+                    <br>
+                    The master method will show us that the solution to this
+                    recurrence is:
+                    <br>
+                    T(n) = &Theta;(n<sup>3</sup>) 
+                </p>
+
+                <h4>
+                    Strassen's Algorithm
+                </h4>
+                <p>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Strassen_algorithm.svg/800px-Strassen_algorithm.svg.png">
+                <br>
+                <br>
+                    By adding ten additions, we can cut the divide portion of
+                    our algorithm down to seven multiplications instead of
+                    eight.
+                    <br>
+                    <br>
+                    Let's try one!
+                    <br>
+                    <br>
+                    Here is the method:
+                    <br>
+                    <br>
+                    <img src="graphics/RecEq8.gif">
+                    <br>
+                    <br>
+                    P<sub>1</sub> = A(F - H)
+                    <br>
+                    P<sub>2</sub> = H(A + B)
+                    <br>
+                    P<sub>3</sub> = E(C + D)
+                    <br>
+                    P<sub>4</sub> = D(G - E)
+                    <br>
+                    P<sub>5</sub> = (A + D) * (E + H)
+                    <br>
+                    P<sub>6</sub> = (B - D) * (G + H)
+                    <br>
+                    P<sub>7</sub> = (A - C) * (E + F)
+                    <br>
+                    <br>
+                    So let's try this example:
+                    <br>
+                    <br>
+                    <img src="graphics/RecEq7.gif">
+
+
+                    <br>
+                    <br>
+                    <b>Important Lesson</b>
+                    <br>
+                    <br>
+                    There are often serious trade-offs between set-up time and
+                    aymptotic run-time. One must carefully consider how large
+                    one's inputs are likely to be before opting for a complex
+                    algorithm like Strassen's. On modern hardware optimized for
+                    matrix multiplication, matrix sizes often need to be in the
+                    thousands before Strassen's algorithm yields significant
+                    gains.
+                </p>
+
+
 
             <h3>
                 The substitution method for solving recurrences
@@ -279,9 +370,16 @@
                 <img src="graphics/RecEq4.gif">
                 <br>
                 <br>
+                If we set a = n<sup>2</sup> and r = 1/2, then we have the
+                general sum of a converging geometric series:
+                <br>
+                <br>
                 <img src="graphics/RecEq5.gif">
                 <br>
                 <br>
+                So the solution here is O(n<sup>2</sup>). The amount of work at
+                each level is reduced by a power of two, and so is
+                just a constant factor times the root.
 
                 </p>
 
@@ -303,6 +401,16 @@
                 href="https://github.com/gcallah/algorithms/blob/master/ruby/div_and_conquer.rb">
                 Ruby
             </a>
+            <br>
+            <a
+                href="https://github.com/gcallah/algorithms/blob/master/javascript/divideAndConquer.js">
+                JavaScript
+            </a>
+            <br>
+            <a
+                href="https://github.com/gcallah/algorithms/blob/master/Java/matrixMult.java">
+                Java
+            </a>
             </p>
 
             <h2>
@@ -322,6 +430,10 @@
                     <a
                         href="https://www.khanacademy.org/computing/computer-science/algorithms/towers-of-hanoi/a/towers-of-hanoi">
                         The Towers of Hanoi
+                    </a>
+                <li>
+                    <a href="https://en.wikipedia.org/wiki/Strassen_algorithm">
+                        Strassen's Algorithm
                     </a>
             </ul>
             
