@@ -200,7 +200,13 @@
                     Here is the method:
                     <br>
                     <br>
+                    For two matrices:
+                    <br>
+                    <br>
                     <img src="graphics/RecEq8.gif">
+                    <br>
+                    <br>
+                    Define:
                     <br>
                     <br>
                     P<sub>1</sub> = A(F - H)
@@ -216,6 +222,12 @@
                     P<sub>6</sub> = (B - D) * (G + H)
                     <br>
                     P<sub>7</sub> = (A - C) * (E + F)
+                    <br>
+                    <br>
+                    Then:
+                    <br>
+                    <br>
+                    <img src="graphics/RecEq9.gif">
                     <br>
                     <br>
                     So let's try this example:
@@ -380,6 +392,20 @@
                 So the solution here is O(n<sup>2</sup>). The amount of work at
                 each level is reduced by a power of two, and so is
                 just a constant factor times the root.
+                <br>
+                <br>
+                <b>Another example</b>:
+                <br>
+                <br>
+                In our textbook, we have the recurrence:
+                <br>
+                T(n) = 3T(n / 4) + cn<sup>2</sup>, c > 0
+                <br>
+                <br>
+                <img src="graphics/ThreeTree.png" height="440" width="700">
+                <br>
+                <br>
+                a<sup>log<sub>b</sub>c</sup> = c<sup>log<sub>b</sub>a</sup>
 
                 </p>
 
@@ -388,6 +414,29 @@
                 The master method for solving recurrences
             </h3>
     
+                <p>
+                    <b>Form</b>: T(n) = aT(n / b) + f(n). 
+                    <br>
+                    Where a &ge; 1 and b &gt; 1 and f(n) asymptotically positive.
+                    <br>
+                    <br>
+                    <b>Three cases</b>
+                    <br>
+                    Compare n<sup>log<sub>b</sub>a</sup> and f(n):
+                </p>
+                <ol>
+                    <li>f(n) = O(n<sup>log<sub>b</sub>a-&epsilon;</sup>),
+                        &epsilon; > 0
+                        <br><b>Solution</b>: T(n) =
+                        &Theta;(n<sup>log<sub>b</sub>a</sup>)
+                    <li>f(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>)
+                        <br><b>Solution</b>: T(n) =
+                        &Theta;(n<sup>log<sub>b</sub>a</sup> lg n)
+                    <li>f(n) = &Omega;(n<sup>log<sub>b</sub>a-&epsilon;</sup>),
+                        &epsilon; > 0
+                        <br><b>Solution</b>: T(n) = &Theta;(f(n))
+                </ol>
+
             <h2>
                 Source Code
             </h2>
