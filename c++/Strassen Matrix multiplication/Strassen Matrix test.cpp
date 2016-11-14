@@ -9,10 +9,7 @@ void inputMatrixValue(Matrix &x) {
 		cout << "Input Matrix row " << i + 1 << ":" << endl;
 		for (int j = 0; j < x.col; j++) {
 			double val;
-			cout << "column " << j + 1
-				<< " value:";
-			cin >> val;
-			x.matrix[i][j] = val;
+			x.matrix[i][j] = 1;
 		}
 	}
 	cout << "End" << endl;
@@ -30,8 +27,8 @@ int main() {
 		cin >> row >> col;
 		Matrix B(row, col);
 		inputMatrixValue(B);
-		Matrix dotSum = A.dot(B);
-		Matrix sDotSum = A.sdot(B);
+		Matrix dotSum = A * (B);
+		Matrix sDotSum = A % (B);
 	}
 	return 0;
 }

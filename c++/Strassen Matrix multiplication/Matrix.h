@@ -27,7 +27,7 @@ public:
 	/*
 		Recursive Method for computing Matrix Dot
 	*/
-	Matrix dot(Matrix& B) {
+	Matrix operator * (Matrix& B) {
 		if (row == col == B.col == B.row == 1) {
 			return Matrix(matrix[0][0] * B.matrix[0][0]);
 		}
@@ -43,10 +43,10 @@ public:
 		Matrix B21 = B.sub(3);
 		Matrix B22 = B.sub(4);
 
-		Matrix C11 = A11.dot(B11) + A12.dot(B21);
-		Matrix C12 = A11.dot(B12) + A12.dot(B22);
-		Matrix C21 = A21.dot(B11) + A22.dot(B21);
-		Matrix C22 = A21.dot(B12) + A22.dot(B22);
+		Matrix C11 = A11 * (B11) + A12 * (B21);
+		Matrix C12 = A11 * (B12) + A12 * (B22);
+		Matrix C21 = A21 * (B11) + A22 *(B21);
+		Matrix C22 = A21 * (B12) + A22 * (B22);
 
 		return merge(C11, C12, C21, C22, row, B.col);
 	}
@@ -54,7 +54,7 @@ public:
 	/*
 		Strassen Method for computing Matrix Dot
 	*/
-	Matrix sDot(Matrix& B) {
+	Matrix operator % (Matrix& B) {
 		if (row == col == B.col == B.row == 1) {
 			return Matrix(matrix[0][0] * B.matrix[0][0]);
 		}
@@ -81,13 +81,13 @@ public:
 		Matrix S9 = A11 - A21;
 		Matrix S10 = B11 + B12;
 
-		Matrix P1 = A11.sDot(S1);
-		Matrix P2 = S2.sDot(B22);
-		Matrix P3 = S3.sDot(B11);
-		Matrix P4 = A22.sDot(S4);
-		Matrix P5 = S5.sDot(S6);
-		Matrix P6 = S7.sDot(S8);
-		Matrix P7 = S9.sDot(S10);
+		Matrix P1 = A11 % (S1);
+		Matrix P2 = S2 %(B22);
+		Matrix P3 = S3 % (B11);
+		Matrix P4 = A22 % (S4);
+		Matrix P5 = S5 % (S6);
+		Matrix P6 = S7 % (S8);
+		Matrix P7 = S9 % (S10);
 
 
 		Matrix C11 = P5 + P4 - P2 + P6;
