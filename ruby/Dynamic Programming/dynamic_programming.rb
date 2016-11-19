@@ -2,6 +2,18 @@ class DynamicProgramming
 
 end
 
+
+# Internal: Method to calculate the maximum and optimal solution for cutting a
+#           rod of a particular length
+#           Recursive Strategy
+#
+# p - Price list to cut a rod of certain length
+# n - Length of rod to be cut
+#
+# Examples
+#   p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
+#   cut_rod(p, 9)
+#   => 31
 def cut_rod(p, n)
   return 0 if n == 0
   q = -Float::INFINITY
@@ -9,10 +21,22 @@ def cut_rod(p, n)
   return q
 end
 
+# Internal: Method to calculate the maximum and optimal solution for cutting a
+#           rod of a particular length
+#           Recursive Memoization Technique
+#
+# p - Price list to cut a rod of certain length
+# n - Length of rod to be cut
+#
+# Examples
+#   p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
+#   memoized_cut_rod(p, 9)
+#   => 31
 def memoized_cut_rod(p, n)
   r = n.times.map { |x| -Float::INFINITY }
   memoized_cut_rod_aux(p, n, r)
 end
+
 
 def memoized_cut_rod_aux(p, n, r)
   return r[n-1] if r[n-1] >= 0
@@ -71,9 +95,48 @@ def print_cut_rod_solution(p, n)
   end
 end
 
-p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
+def matrix_chain_order(p)
+  n = p.length - 1
+  m = n.times.map { |x| [] }
+  s = n.times.map { |x| [] }
+  n.times.each do |i|
+    m[i][i] = 0
+  end
+  (2..n).each do |l|
+    (0..n-l).each do |i|
+      j = i + l - 1
+      m[i][j] = Float::INFINITY
+      (i..j-1).each do |k|
+        q = m[i][k] + m[k+1][j] + (p[i] * p[k+1] * p[j+1])
+        if q < m[i][j]
+          m[i][j] = q
+          s[i][j] = k
+        end
+      end
+    end
+  end
+  [m, s]
+end
+
+def print_optimal_parens(s, i, j)
+  if i == j
+    print "#{i+1}"
+  else
+    print "("
+    print_optimal_parens(s, i, s[i][j])
+    print_optimal_parens(s, s[i][j]+1, j)
+    print ")"
+  end
+end
+
+# p = [30, 35, 15, 5, 10, 20, 25]
+# p matrix_chain_order(p)[0][1][4]
+# print_optimal_parens(matrix_chain_order(p)[1], 0, 5)
+
+
+# p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
 # p cut_rod(p, 9)
 # p memoized_cut_rod(p, 9)
 # p sleek_memoized_cut_rod_aux(p, 9)
-p bottom_up_cut_rod(p, 9)
-p extended_bottom_up_cut_rod(p, 10)
+# p bottom_up_cut_rod(p, 9)
+# p extended_bottom_up_cut_rod(p, 10)
