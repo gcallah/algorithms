@@ -118,6 +118,40 @@ def matrix_chain_order(p)
   [m, s]
 end
 
+def recursive_matrix_chain(p, i, j, m = p.length.times.map { |x| [] })
+  return 0 if i == j
+  m[i][j] = Float::INFINITY
+  (i..j-1).each do |k|
+    q = recursive_matrix_chain(p, i, k, m) + recursive_matrix_chain(p, k+1, j, m) + p[i]*p[k+1]*p[j+1]
+    m[i][j] = q if q < m[i][j]
+  end
+  m[i][j]
+end
+
+def memoized_matrix_chain(p)
+  n = p.length - 1
+  m = n.times.map { |x| [] }
+  (0..n-1).each do |i|
+    (0..n-1).each do |j|
+      m[i][j] = Float::INFINITY
+    end
+  end
+  return lookup_chain(m, p, 1, 4)
+end
+
+def lookup_chain(m, p, i, j)
+  return m[i][j] if m[i][j] < Float::INFINITY
+  if i == j
+    m[i][j] = 0
+  else
+    (i..j-1).each do |k|
+      q = lookup_chain(m, p, i, k) + lookup_chain(m, p, k+1, j) + p[i]*p[k+1]*p[j+1]
+      m[i][j] = q if q < m[i][j]
+    end
+  end
+  m[i][j]
+end
+
 def print_optimal_parens(s, i, j)
   if i == j
     print "#{i+1}"
@@ -129,7 +163,57 @@ def print_optimal_parens(s, i, j)
   end
 end
 
-# p = [30, 35, 15, 5, 10, 20, 25]
+def LCS_length(x, y)
+  m = x.length
+  n = y.length
+  b = Array.new(m+1) { Array.new(n+1) }
+  c = Array.new(m+1) { Array.new(n+1) }
+
+  (0..m).each do |i|
+    c[i][0] = 0
+  end
+  (0..n).each do |j|
+    c[0][j] = 0
+  end
+
+  (1..m).each do |i|
+    (1..n).each do |j|
+      if x[i-1] == y[j-1]
+        c[i][j] = c[i-1][j-1] + 1
+        b[i][j] = "CROSS"
+      elsif c[i-1][j] >= c[i][j-1]
+        c[i][j] = c[i-1][j]
+        b[i][j] = "UP"
+      else
+        c[i][j] = c[i][j-1]
+        b[i][j] = "LEFT"
+      end
+    end
+  end
+  [c, b]
+end
+
+def print_LCS(b, x, i, j)
+  return if (i == 0) || (j == 0)
+  if b[i][j] == "CROSS"
+    print_LCS(b, x, i-1, j-1)
+    print x[i-1]
+  elsif b[i][j] == "UP"
+    print_LCS(b, x, i-1, j)
+  else
+    print_LCS(b, x, i, j-1)
+  end
+end
+
+x = "ABCBDAB"
+y = "BDCABA"
+
+# p LCS_length(x, y).last
+# print_LCS(LCS_length(x, y).last, x, x.length, y.length)
+
+p = [30, 35, 15, 5, 10, 20, 25]
+p memoized_matrix_chain(p)
+# p recursive_matrix_chain(p, 1, 4)
 # p matrix_chain_order(p)[0][1][4]
 # print_optimal_parens(matrix_chain_order(p)[1], 0, 5)
 
