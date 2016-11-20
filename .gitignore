@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# misc:
+.DS_Store
+
 # C extensions
 *.so
 
@@ -90,6 +93,7 @@ ENV/
 
 # vi backup file
 *~
+.*swp
 
 # some sub-dirs
 aronov_lectures

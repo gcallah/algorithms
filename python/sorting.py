@@ -225,3 +225,18 @@ def rand_partition(l, p, r):
             " and " + str(r) + ": " + str(i) + " as our pivot.")
     swap(l, i, r)
     return partition(l, p, r)
+	
+	
+
+def selectionsort(list):
+    for i in range(0, len(list)-1):
+        min = i
+        j = i + 1
+        for j in range(j, len(list)):
+            if (list[j] < list[min]):
+                min = j
+        temp = list[min]
+        list[min] = list[i]
+        list[i] = temp
+
+
