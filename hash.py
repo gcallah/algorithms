@@ -134,3 +134,14 @@ def chained_hash_delete(t, k):
 
     """
 
+
+def perfect_hash_insert():
+    """
+        Args:
+
+        Returns:
+
+    """
+
+
+
