@@ -158,6 +158,19 @@
                         Analysis
                     </h4>
 
+                        <ul>
+                            <li>After initialization, BFS never whitens a
+                                vertex. So each Will go on and off the queue at
+                                most once. So queue time is O(V).
+                            <li>The adjacency List for each vertex is scanned
+                                once, when the vertex is dequeued. The length
+                                of all adjacency lists is the number of edges,
+                                E. So this runs in O(E).
+                            <li>The overhead for initialization is O(V).
+                            <li>Thus, we get a running time for BFS of O(V +
+                                E).
+                        </ul>
+
                     <h4>
                         Shortest paths
                     </h4>
@@ -232,7 +245,7 @@
                     in the topological ordering.
                     <br>
                     <br>
-                    Our books topological sort algorithm is somewhat weird:
+                    Our book's topological sort algorithm is somewhat weird:
                     <br>
                     TOPOLOGICAL-SORT(G)
                     </p>
@@ -296,6 +309,20 @@
             <h2>
                 Homework
             </h2>
+                <ol>
+                    <li>Master Theorem problems:
+                        <ol type="a">
+                            <li>T(n) = .2T(n / 2) + 5n
+                            <li>T(n) = 32T(n / 8) + n!
+                            <li>T(n) = &radic;2T(n / 2) + log n
+                            <li>T(n) = 7/2T(n / 2) + n
+                            <li>T(n) = 4T(n / 4) + &radic;n
+                            <li>T(n) = 23T(n / 7) - n<sup>2</sup> log n
+                        </ol>
+                    <li>Work out a better implementation of the graph data
+                        structure than I did in the Python code linked to
+                        above.
+                </ol>
 
 
             <h2>
