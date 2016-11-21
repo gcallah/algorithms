@@ -43,7 +43,7 @@ module DynamicProgramming
             m[i][j] = Float::INFINITY
           end
         end
-        return lookup_chain(m, p, 1, 4)
+        return lookup_chain(m, p, 0, n-1)
       end
 
       def lookup_chain(m, p, i, j)
@@ -69,13 +69,13 @@ module DynamicProgramming
           print ")"
         end
       end
-      
+
     end
   end
 end
 
 p = [30, 35, 15, 5, 10, 20, 25]
-p memoized_matrix_chain(p)
+# p memoized_matrix_chain(p)
 # p recursive_matrix_chain(p, 1, 4)
 # p matrix_chain_order(p)[0][1][4]
 # print_optimal_parens(matrix_chain_order(p)[1], 0, 5)

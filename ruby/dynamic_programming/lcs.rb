@@ -31,22 +31,22 @@ module DynamicProgramming
         [c, b]
       end
 
-      def print_LCS(b, x, i, j)
-        return if (i == 0) || (j == 0)
+      def print_LCS(b, x, i, j, output="")
+        return output.reverse if ((i == 0) || (j == 0))
         if b[i][j] == "CROSS"
-          print_LCS(b, x, i-1, j-1)
-          print x[i-1]
+          output += x[i-1]
+          print_LCS(b, x, i-1, j-1, output)
+          # print x[i-1]
         elsif b[i][j] == "UP"
-          print_LCS(b, x, i-1, j)
+          print_LCS(b, x, i-1, j, output)
         else
-          print_LCS(b, x, i, j-1)
+          print_LCS(b, x, i, j-1, output)
         end
       end
+
     end
   end
 end
-x = "ABCBDAB"
-y = "BDCABA"
 
 # DynamicProgramming::LCS.LCS_length(x, y).last
-DynamicProgramming::LCS.print_LCS(DynamicProgramming::LCS.LCS_length(x, y).last, x, x.length, y.length)
+# DynamicProgramming::LCS.print_LCS(DynamicProgramming::LCS.LCS_length(x, y).last, x, x.length, y.length)

@@ -36,7 +36,6 @@ module DynamicProgramming
         memoized_cut_rod_aux(p, n, r)
       end
 
-
       def memoized_cut_rod_aux(p, n, r)
         return r[n-1] if r[n-1] >= 0
         if n == 0
@@ -47,6 +46,11 @@ module DynamicProgramming
         end
         r[n-1] = q
         q
+      end
+
+      def sleek_cut_rod(p, n)
+        r = n.times.map { |x| -Float::INFINITY }
+        sleek_memoized_cut_rod_aux(p, n)
       end
 
       def sleek_memoized_cut_rod_aux(p, n, r={})
@@ -93,7 +97,7 @@ module DynamicProgramming
           n = n - s[n]
         end
       end
-      
+
     end
   end
 end
