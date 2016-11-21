@@ -22,7 +22,7 @@ WHITE = 0
 GRAY = 1
 BLACK = 2
 
-NODE = 0
+NID = 0
 ALIST = 1
 
 
@@ -41,7 +41,7 @@ class Node():
         """
         self.nid = nid
         self.color = WHITE
-        self.pred = NIL
+        self.pred = None
         self.dist = -1
 
 
@@ -58,64 +58,76 @@ class Graph():
         """
         # the following item is a heterogeneous list. The first item is a node,
         # but the rest of the items are just node ids.
-        self.adj_list = {}
+        self.adj_lists = {}
 
-        for nid in alist:
-            if nid[NODE] not in self.adj_list: 
-                self.adj_list[nid] = []  # each dict entry is a list
-            self.adj_list[nid].append(Node(nid))
+        for l in alist:
+            nid = l[NID]
+            if nid not in self.adj_lists: 
+                self.adj_lists[nid] = []  # each dict entry is a list
+            self.adj_lists[nid].append(Node(nid))
 
-            for neighbor in nid[ALIST]:
-                self.adj_list[nid].append(neighbor)  # just a number!
+            for neighbor in l[ALIST]:
+                self.adj_lists[nid].append(neighbor)  # just a number!
 
     def get_node(self, nid):
-        if nid in self.adj_list:
-            return self.adj_list[nid][0]
+        if nid in self.adj_lists:
+            return self.adj_lists[nid][0]
         else:
             return None
 
     def get_alist(self, nid):
-        if nid in self.adj_list:
-            return self.adj_list[nid][1:]
+        if nid in self.adj_lists:
+            return self.adj_lists[nid][1:]
         else:
             return None
 
 
-def bfs(g, s):
+def bfs(g, start_id):
     """
     Breadth-first search.
     """
-    for u in g:
+    for nid in g.adj_lists:
+        u = g.get_node(nid)
         u.color = WHITE
         u.dist = -1
         u.pred = None
 
+    s = g.get_node(start_id)
     s.color = GRAY
     s.dist = 0
     s.pred = None
 
-    q = new Queue()
-    q.push(s.nid)
+    q = queue.Queue()
+    q.put(s.nid)
     while not q.empty():
         nid = q.get()
+        print("Handling vertex: " + str(nid))
         u = g.get_node(nid)
         if u is not None:
-            alist = g.get_list(nid)
+            alist = g.get_alist(nid)
             for neighbor in alist:
                 v = g.get_node(neighbor)
-                v.color = GRAY
-                v.dist = u.dist + 1
-                v.pred = u
-                q.push(v.nid)
+                if v.color == WHITE:
+                    v.color = GRAY
+                    v.dist = u.dist + 1
+                    v.pred = u
+                    q.put(v.nid)
 
             u.color = BLACK
 
 
 
-test_list = [[1, [2, 5]],
-             [2, [1, 5, 3, 4]],
-             [3, [2, 4]],
-             [4, [2, 5, 3]],
-             [5, [4, 1, 2]]
+test_list = [[1, [2, 3, 4]],
+             [2, [9, 10]],
+             [3, [7, 8]],
+             [4, [5, 6]],
+             [5, []],
+             [6, []],
+             [7, []],
+             [8, []],
+             [9, []],
+             [10, [11, 12]],
+             [11, []],
+             [12, []],
             ]
 
