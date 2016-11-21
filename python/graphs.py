@@ -135,6 +135,28 @@ def bfs(g, start_id):
             u.color = BLACK
 
 
+def print_path(g, s, v):
+    """
+        Trace shortest path between s and v.
+        Args:
+            g: graph
+            s: start
+            v: end vertext
+        Returns: None. Prints along the way.
+
+    """
+    if v == s:
+        print("==> " + str(s))
+    else:
+        vnode = g.get_node(v)
+        if vnode:
+            if vnode.pred is None:
+                print("No path exists.")
+            else:
+                print_path(g, s, vnode.pred.nid)
+                print("==> " + str(v))
+
+
 time = 0
 topological = None
 
