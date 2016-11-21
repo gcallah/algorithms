@@ -42,7 +42,8 @@ class Node():
         self.nid = nid
         self.color = WHITE
         self.pred = None
-        self.dist = -1
+        self.discover = -1
+        self.finish = -1
 
 
 class Graph():
@@ -82,39 +83,94 @@ class Graph():
             return None
 
 
-def bfs(g, start_id):
+def init_nodes(g):
     """
-    Breadth-first search.
+    Args:
+        g: graph to initialize
+    Return: None
     """
     for nid in g.adj_lists:
         u = g.get_node(nid)
         u.color = WHITE
-        u.dist = -1
+        u.discover = -1
         u.pred = None
+
+
+def bfs(g, start_id):
+    """
+    Breadth-first search.
+    Args:
+        g: graph
+        start_id: the vertext with which to start
+    """
+    init_nodes(g)
 
     s = g.get_node(start_id)
     s.color = GRAY
-    s.dist = 0
+    s.discover = 0
     s.pred = None
 
     q = queue.Queue()
     q.put(s.nid)
     while not q.empty():
         nid = q.get()
-        print("Handling vertex: " + str(nid))
+        print("Visiting vertex: " + str(nid))
         u = g.get_node(nid)
         if u is not None:
             alist = g.get_alist(nid)
             for neighbor in alist:
                 v = g.get_node(neighbor)
                 if v.color == WHITE:
+                    print("Coloring " + str(v.nid) + " gray.")
                     v.color = GRAY
-                    v.dist = u.dist + 1
+                    v.discover = u.discover + 1
                     v.pred = u
                     q.put(v.nid)
 
+            print("Coloring " + str(u.nid) + " black.")
             u.color = BLACK
 
+
+time = 0
+
+def dfs(g):
+    """
+    Depth-first search.
+    Args:
+        g: graph
+    """
+    global time
+    init_nodes(g)
+    time = 0
+    for nid in g.adj_lists:
+        u = g.get_node(nid)
+        if u.color == WHITE:
+            dfs_visit(g, u)
+    print("Total time = " + str(time))
+
+
+def dfs_visit(g, u):
+    """
+    Depth-first search helper.
+    Args:
+        g: graph
+        u: vertext to work on
+    """
+    print("Going to visit " + str(u.nid))
+
+    global time
+    time += 1
+    u.d = time
+    u.color = GRAY
+    alist = g.get_alist(u.nid)
+    for neighbor in alist:
+        v = g.get_node(neighbor)
+        if v.color == WHITE:
+            v.pred = u
+            dfs_visit(g, v)
+    u.color = BLACK
+    time += 1
+    u.finish = time
 
 
 test_list = [[1, [2, 3, 4]],
