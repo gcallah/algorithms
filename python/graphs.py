@@ -11,8 +11,12 @@ The performance of each function is stated in the docstring, and
 loop invariants are expressed as assert statements when they
 are not too complex.
 This file contains:
-    The class definition for Node.
+    The class definition for Node and Graph.
+    bfs(): breadth-first search.
+    dfs(): depth-first search.
+    dfs_visit(): depth-first search helper.
     Plus auxilliary functions that support the above.
+We have dfs perform a topological sort along the way.
 """
 
 import queue
@@ -132,14 +136,19 @@ def bfs(g, start_id):
 
 
 time = 0
+topological = None
 
 def dfs(g):
     """
     Depth-first search.
+    We include topological sorting here.
     Args:
         g: graph
+    Returns: topologically sorted list.
     """
     global time
+    global topological
+    topological = []
     init_nodes(g)
     time = 0
     for nid in g.adj_lists:
@@ -147,6 +156,7 @@ def dfs(g):
         if u.color == WHITE:
             dfs_visit(g, u)
     print("Total time = " + str(time))
+    print("Topological sort: " + str(topological))
 
 
 def dfs_visit(g, u):
@@ -171,6 +181,7 @@ def dfs_visit(g, u):
     u.color = BLACK
     time += 1
     u.finish = time
+    topological.insert(0, u.nid)
 
 
 test_list = [[1, [2, 3, 4]],
