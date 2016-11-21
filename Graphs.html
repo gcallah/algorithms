@@ -268,7 +268,7 @@
                         Properties of depth-first search
                     </h4>
                         <p>
-    
+                            <b>Running time</b>: O(V + E) 
                         </p>
 
                     <h4>
@@ -280,15 +280,31 @@
                         </p>
     
                         <ol>
-                            <li><b>Tree edges</b>
+                            <li><b>Tree edges</b>:
                                 <br>
-                            <li><b>Back edges</b>
-                                <br>
-                            <li><b>Forward edges</b>
-                                <br>
-                            <li><b>Cross edges</b>
-                                <br>
+                                Edges of the depth-first forest
+                                G<sub>&pi;</sub>. Edge <i>(u, v)</i> is a tree edge if
+                                <i>v</i> was first discovered by 
+                                exploring edge <i>(u, v)</i>.
+                            <li><b>Back edges</b>:
+                                <br>An edge <i>(u, v)</i> that connects
+                                <i>u</i> to an ancestor <i>v</i>.
+                            <li><b>Forward edges</b>:
+                                <br>Non-tree edge <i>(u, v)</i> that connects
+                                <i>u</i> to an descendant <i>v</i>.
+                            <li><b>Cross edges</b>:
+                                <br>All other edges.
                         </ol>
+                        <p>
+                        In DFS, when we first explore <i>(u, v)</i> the color
+                        of <i>v</i> tells us:
+                        </p>
+                        <ol>
+                            <li><b>WHITE:</b> This is a tree edge.
+                            <li><b>GRAY:</b> This is a back edge.
+                            <li><b>BLACK:</b> This is a forward edge or cross edge.
+                        </ol>
+
 
                 <h3>
                     Topological sort
