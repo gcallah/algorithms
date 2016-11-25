@@ -3,7 +3,7 @@ module Graphs
     class << self
 
       @time = nil
-
+      @found = nil
       def DFS(g, searchable = nil)
         g.vertices.each do |u|
           u.color = 'WHITE'
@@ -14,7 +14,7 @@ module Graphs
         g.vertices.each do |u|
           DFS_visit(g, u, searchable) if u.color == 'WHITE'
         end
-        nil
+        @found
       end
 
       def DFS_visit(g, u, searchable = nil)
@@ -24,7 +24,7 @@ module Graphs
         u.adj_list.each do |v|
           if v.color == 'WHITE'
             v.pi = u
-            p "YAY FOUND!" if v.attribute == searchable.attribute
+            @found = "FOUND!!" if v.attribute == searchable.attribute
             DFS_visit(g, v, searchable)
           end
         end

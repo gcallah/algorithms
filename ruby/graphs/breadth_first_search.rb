@@ -21,7 +21,7 @@ module Graphs
           u = q.deq
           u.adj_list.each do |v|
             if v.color == 'WHITE'
-              return "YEAH FOUND!!" if v.attribute == searchable.attribute
+              return "FOUND!!" if v.attribute == searchable.attribute
               v.color = 'GRAY'
               v.d = u.d + 1
               v.pi = u
