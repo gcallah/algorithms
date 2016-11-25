@@ -1,0 +1,305 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            Design and Analysis of Algorithms: Dynamic Programming
+        </title>
+    </head>
+
+    <body>
+        <h1>
+            Design and Analysis of Algorithms: Dynamic Programming
+        </h1>
+
+            <div style="text-align:center">
+                <p>
+                <img
+                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Shortest_path_optimal_substructure.svg/250px-Shortest_path_optimal_substructure.svg.png">
+                </p>
+            </div>
+
+            <h2>
+                What is a dynamic programming?
+            </h2>
+
+                <p>
+                    "Memo-ization gone wild."
+                    <br>
+                    <br>
+                    The name is largely a marketing construct. Here is the
+                    inventor of the term, Richard Bellman, on how it came about:
+                    <br>
+                    <br>
+                    "I spent the Fall quarter (of 1950) at RAND.
+                    My first task was to find a name
+                    for multistage decision processes.
+                    An interesting question is, Where did the
+                    name, dynamic programming, come from? The 1950s were not good years for
+                    mathematical research.
+                    We had a very interesting gentleman in Washington named Wilson.
+                    He was Secretary of Defense, and he actually had a pathological fear
+                    and hatred of the word research.
+                    I'm not using the term lightly; I'm using it precisely.
+                    His face would suffuse, he would turn red, and he would get violent
+                    if people used the term research in his presence.
+                    You can imagine how he felt,
+                    then, about the term mathematical.
+                    The RAND Corporation was employed by the Air
+                    Force, and the Air Force had Wilson as its boss, essentially.
+                    Hence, I felt I had to do something to shield Wilson 
+                    and the Air Force from the fact that I was
+                    really doing mathematics inside the RAND Corporation.
+                    What title, what name,
+                    could I choose? In the first place I was 
+                    interested in planning, in decision making, in thinking.
+                    But planning, is not a good word for various reasons.
+                    I decided therefore to use the word "programming".
+                    I wanted to get across the
+                    idea that this was dynamic, this was multistage, this was time-varying.
+                    I thought, let's kill two birds with one stone.
+                    Let's take a word that has an
+                    absolutely precise meaning, namely dynamic, 
+                    in the classical physical sense.
+                    It also has a very interesting property as an adjective,
+                    and that it's impossible
+                    to use the word dynamic in a pejorative sense.
+                    Try thinking of some combination
+                    that will possibly give it a pejorative meaning.
+                    It's impossible.
+                    Thus, I thought dynamic programming was a good name.
+                    It was something not even a
+                    Congressman could object to.
+                    So I used it as an umbrella for my activities."
+                    <br>
+                    (Source:
+                    https://en.wikipedia.org/wiki/Dynamic_programming#History)
+                    <br>
+                    <br>
+                    Note that Bellman's claim that "dynamic" can be use
+                    pejoratively is surely false: most people would not favor
+                    "dynamic ethnic cleansing"!
+                    <br>
+                    <br>
+                    <b>Algorithms that use dynamic programming</b>:
+                </p>
+                <ul>
+                    <li>Recurrent solutions to lattice models for protein-DNA
+                        binding
+                    <li>Backward induction as a solution method for
+                        finite-horizon discrete-time dynamic optimization
+                        problems
+                    <li>Method of undetermined coefficients can be used to
+                        solve the Bellman equation in infinite-horizon,
+                        discrete-time, discounted, time-invariant dynamic
+                        optimization problems
+                    <li>Many string algorithms including longest common
+                        subsequence, longest increasing subsequence, longest
+                        common substring, Levenshtein distance (edit distance)
+                    <li>Many algorithmic problems on graphs can be solved
+                        efficiently for graphs of bounded treewidth or bounded
+                        clique-width by using dynamic programming on a tree
+                        decomposition of the graph.
+                    <li>The Cocke-Younger-Kasami (CYK) algorithm which
+                        determines whether and how a given string can be
+                        generated by a given context-free grammar
+                    <li>Knuth's word wrapping algorithm that minimizes
+                        raggedness when word wrapping text
+                    <li>The use of transposition tables and refutation tables
+                        in computer chess
+                    <li>The Viterbi algorithm (used for hidden Markov models)
+                    <li>The Earley algorithm (a type of chart parser)
+                    <li>The Needleman-Wunsch algorithm and other algorithms
+                        used in bioinformatics, including sequence alignment,
+                        structural alignment, RNA structure prediction
+                    <li>Floyd's all-pairs shortest path algorithm
+                    <li>Optimizing the order for chain matrix multiplication
+                    <li>Pseudo-polynomial time algorithms for the subset sum,
+                        knapsack and partition problems
+                    <li>The dynamic time warping algorithm for computing the
+                        global distance between two time series
+                    <li>The Selinger (a.k.a. System R) algorithm for relational
+                        database query optimization
+                    <li>De Boor algorithm for evaluating B-spline curves
+                    <li>Duckworth-Lewis method for resolving the problem when
+                        games of cricket are interrupted
+                    <li>The value iteration method for solving Markov decision
+                        processes
+                    <li>Some graphic image edge following selection methods
+                        such as the "magnet" selection tool in Photoshop
+                    <li>Some methods for solving interval scheduling problems
+                    <li>Some methods for solving the travelling salesman
+                        problem, either exactly (in exponential time) or
+                        approximately (e.g. via the bitonic tour)
+                    <li>Recursive least squares method
+                    <li>Beat tracking in music information retrieval
+                    <li>Adaptive-critic training strategy for artificial neural
+                        networks
+                    <li>Stereo algorithms for solving the correspondence
+                        problem used in stereo vision
+                    <li>Seam carving (content-aware image resizing)
+                    <li>The Bellman-Ford algorithm for finding the shortest
+                        distance in a graph
+                    <li>Some approximate solution methods for the linear search
+                        problem
+                    <li>Kadane's algorithm for the maximum subarray problem
+                </ul>
+
+            <h2>
+                Rod cutting
+            </h2>
+
+                <h3>
+                    Recursive top-down implmentation
+                </h3>
+
+                <h3>
+                    Using dynamic programming for optimal rod-cutting
+                </h3>
+
+                <h3>
+                    Subproblem graphs
+                </h3>
+
+                <h3>
+                    Reconstructing a solution
+                </h3>
+
+            <h2>
+                Matrix-chain multiplication
+            </h2>
+
+                <p>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Catalan-Hexagons-example.svg/400px-Catalan-Hexagons-example.svg.png">
+                </p>
+
+                <h3>
+                    Counting the number of parenthesizations
+                </h3>
+
+
+                <h3>
+                    Applying dynamic programming
+                </h3>
+
+
+                <h3>
+                    Step 1: The structure of an optimal parenthesization
+                </h3>
+
+                <h3>
+                    Step 2: A recursive solution
+                </h3>
+
+                <h3>
+                    Step 3: Computing the optimal costs
+                </h3>
+
+                <h3>
+                    Step 4: Constructing an optimal solution
+                </h3>
+
+
+            <h2>
+                Elements of dynamic programming
+            </h2>
+
+                <h3>
+                    Optimal substructure
+                </h3>
+
+
+                <h3>
+                    Overlapping subproblems
+                </h3>
+
+
+                <h3>
+                    Reconstructing an optimal solution
+                </h3>
+
+
+                <h3>
+                    Memoization
+                </h3>
+
+
+
+            <h2>
+                Longest common subsequence
+            </h2>
+
+
+                <h3>
+                    Step 1: Characterizing a longest common subsequence
+                </h3>
+
+
+                <h3>
+                    Step 2: A recursive solution
+                </h3>
+
+
+                <h3>
+                    Step 3: Computing the length of an LCS
+                </h3>
+
+
+                <h3>
+                    Step 4: Constructing an LCS
+                </h3>
+
+                    <h4>
+                        Imrpoving the code
+                    </h4>
+
+                    <p>
+                    <b>An important principle</b>: Don't optimize unless it is
+                    needed!
+                    </p>
+
+            <h2>
+                Optimal binary search trees
+            </h2>
+
+
+                <h3>
+                    Step 1: The structure of an optimal binary search tree
+                </h3>
+
+
+
+            <h2>
+                Source Code
+            </h2>
+                <p>
+                <a
+                    href="https://github.com/gcallah/algorithms/blob/master/python/dynamic.py">
+                    Python
+                </a>
+                <br>
+                <a
+                    href="https://github.com/gcallah/algorithms/blob/master/ruby/dynamic.rb">
+                    Ruby
+                </a>
+                </p>
+
+            <h2>
+                External Links
+            </h2>
+                <ul>
+                    <li>
+                        <a
+                    href="https://en.wikipedia.org/wiki/Matrix_chain_multiplication">
+                            Matrix-chain multiplication
+                        </a>
+                </ul>
+            
+            <h2>
+                Homework
+            </h2>
+                <ol>
+                    <li>
+                </ol>
+    </body>
+</html>
