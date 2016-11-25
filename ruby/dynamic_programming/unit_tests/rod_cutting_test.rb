@@ -11,9 +11,9 @@ def memoized_cut_rod_test
   DynamicProgramming::RodCutting.cut_rod(p, 9) == 25
 end
 
-def sleek_memoized_cut_rod_test
+def sleek_memoized_cut_rod_aux_test
   p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
-  DynamicProgramming::RodCutting.sleek_cut_rod(p, 9) == 25
+  DynamicProgramming::RodCutting.sleek_memoized_cut_rod_aux(p, 9) == 25
 end
 
 def bottom_up_cut_rod_test
@@ -23,13 +23,11 @@ end
 
 def extended_bottom_up_cut_rod_test
   p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
-  p DynamicProgramming::RodCutting.extended_bottom_up_cut_rod(p, 9)
+  DynamicProgramming::RodCutting.extended_bottom_up_cut_rod(p, 9).first.last == 25
 end
 
-UnitTest.test('Cut rod', cut_rod_test)
-UnitTest.test('Memoized cut rod', memoized_cut_rod_test)
-UnitTest.test('Sleek memoized cut rod', sleek_memoized_cut_rod_test)
-UnitTest.test('Bottom up cut rod', bottom_up_cut_rod_test)
-# UnitTest.test('Extended bottom up cut rod', extended_bottom_up_cut_rod_test)
-
-# extended_bottom_up_cut_rod_test
+UnitTest.method('Cut rod', cut_rod_test)
+UnitTest.method('Memoized cut rod', memoized_cut_rod_test)
+UnitTest.method('Sleek memoized cut rod', sleek_memoized_cut_rod_aux_test)
+UnitTest.method('Bottom up cut rod', bottom_up_cut_rod_test)
+UnitTest.method('Extended bottom up cut rod', extended_bottom_up_cut_rod_test)

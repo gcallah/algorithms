@@ -30,12 +30,25 @@ module DynamicProgramming
       # Examples
       #   p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
       #   memoized_cut_rod(p, 9)
-      #   => 31
+      #   => 25
       def memoized_cut_rod(p, n)
         r = n.times.map { |x| -Float::INFINITY }
         memoized_cut_rod_aux(p, n, r)
       end
 
+      # Internal: Auxiliary method to calculate the maximum and optimal solution
+      #           for cutting a rod of a particular length while populating the
+      #           optimal solution array
+      #           Recursive Memoization Technique
+      #
+      # p - Price list to cut a rod of certain length
+      # n - Length of rod to be cut
+      # r - Optimal solution array
+      #
+      # Examples
+      #   p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
+      #   memoized_cut_rod_aux(p, 9, [-Float::INFINITY, -Float::INFINITY, ... , -Float::INFINITY])
+      #   => 25
       def memoized_cut_rod_aux(p, n, r)
         return r[n-1] if r[n-1] >= 0
         if n == 0
@@ -48,11 +61,17 @@ module DynamicProgramming
         q
       end
 
-      def sleek_cut_rod(p, n)
-        r = n.times.map { |x| -Float::INFINITY }
-        sleek_memoized_cut_rod_aux(p, n)
-      end
-
+      # Internal: Method to calculate the maximum and optimal solution for cutting a
+      #           rod of a particular length
+      #           Recursive Memoization Technique. RUBIFIED METHOD!
+      #
+      # p - Price list to cut a rod of certain length
+      # n - Length of rod to be cut
+      #
+      # Examples
+      #   p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
+      #   memoized_cut_rod(p, 9)
+      #   => 25
       def sleek_memoized_cut_rod_aux(p, n, r={})
         return 0 if n == 0
         q = -Float::INFINITY
@@ -63,6 +82,17 @@ module DynamicProgramming
         q
       end
 
+      # Internal: Calculates the maximum price output by calculating in a bottom
+      #           up fashion
+      #           Iterative Bottom up strategy
+      #
+      # p - Price list to cut a rod of certain length
+      # n - Length of rod to be cut
+      #
+      # Examples
+      #   p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
+      #   bottom_up_cut_rod(p, 9)
+      #   => 25
       def bottom_up_cut_rod(p, n)
         r = n.times.map { |x| 0 }
         (1..n).each do |j|
@@ -73,6 +103,18 @@ module DynamicProgramming
         r[n]
       end
 
+      # Internal: Calculates the maximum price output by calculating in a bottom
+      #           up fashion with an optimal solution array to record the length
+      #           of each rod cut at every iteration
+      #           Iterative Bottom up strategy
+      #
+      # p - Price list to cut a rod of certain length
+      # n - Length of rod to be cut
+      #
+      # Examples
+      #   p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
+      #   extended_bottom_up_cut_rod(p, 9)
+      #   => 25
       def extended_bottom_up_cut_rod(p, n)
         s = []
         s[0] = 0
@@ -101,11 +143,3 @@ module DynamicProgramming
     end
   end
 end
-
-
-# p = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
-# p cut_rod(p, 9)
-# p memoized_cut_rod(p, 9)
-# p sleek_memoized_cut_rod_aux(p, 9)
-# p bottom_up_cut_rod(p, 9)
-# p extended_bottom_up_cut_rod(p, 10)

@@ -13,5 +13,5 @@ def print_lcs_test
   DynamicProgramming::LCS.print_LCS(DynamicProgramming::LCS.LCS_length(x, y).last, x, x.length, y.length) == "BCBA"
 end
 
-UnitTest.test('LCS Length', lcs_length_test)
-UnitTest.test('Print LCS', print_lcs_test)
+UnitTest.method('LCS Length', lcs_length_test)
+UnitTest.method('Print LCS', print_lcs_test)

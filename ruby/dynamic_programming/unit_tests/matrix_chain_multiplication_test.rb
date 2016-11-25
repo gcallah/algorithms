@@ -16,6 +16,6 @@ def memoized_matrix_chain_test
   DynamicProgramming::MatrixChain.memoized_matrix_chain(p) == 15125
 end
 
-UnitTest.test('Matrix Chain Order', matrix_chain_order_test)
-UnitTest.test('Recursive Matrix Chain', recursive_matrix_chain_test)
-UnitTest.test('Memoized Matrix Chain', memoized_matrix_chain_test)
+UnitTest.method('Matrix Chain Order', matrix_chain_order_test)
+UnitTest.method('Recursive Matrix Chain', recursive_matrix_chain_test)
+UnitTest.method('Memoized Matrix Chain', memoized_matrix_chain_test)
