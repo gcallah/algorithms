@@ -1,9 +1,19 @@
 module Graphs
   class DepthFirstSearch
     class << self
-
       @time = nil
       @found = nil
+
+      # Internal: Traverses through the vertices of a graph in a DEPTH wise manner
+      #           Adjacent node is considered only after traversing the complete
+      #           depth of the current node
+      #
+      # graph - Graph to be searched
+      # searchable - Node in the graph to be searched for
+      #
+      # Examples
+      #   DFS(graph, graph.vertices.last)
+      #
       def DFS(g, searchable = nil)
         g.vertices.each do |u|
           u.color = 'WHITE'
