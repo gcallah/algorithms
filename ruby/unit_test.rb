@@ -1,5 +1,5 @@
 class UnitTest
-  def self.test(method_name, method_test)
+  def self.method(method_name, method_test)
     if method_test
       p "#{method_name} OK"
     else
