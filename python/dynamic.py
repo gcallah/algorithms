@@ -146,20 +146,23 @@ def ext_bottom_up_cut_rod(prices, n):
         print("Not enough prices for rod of len " + str(n))
         return None
 
-    max_rev = NEG_REV
     revs = [0 for i in range(n + 1)]  # CLRS only initializes first elem,
                                       # but no harm doing all
-    cuts = [0 for i in range(n)]
-    for j in range(1, n):  # 0th element holds a 0
+    cuts = [0 for i in range(n + 1)]
+    for j in range(1, n + 1):  # 0th element holds a 0
         max_rev = NEG_REV
-        for i in range(j - 1):
-            if max_rev < prices[i] + revs[j - i - 1]:
-                max_rev = prices[i] + revs[j - i - 1]
+        for i in range(j):
+            prev_revs = revs[j - i - 1]
+            print("Comparing max_rev of " + str(max_rev)
+                  + " with " + str(prices[i])
+                  + " plus prev_rev of " + str(prev_revs))
+            if max_rev < prices[i] + prev_revs:
+                max_rev = prices[i] + prev_revs
                 cuts[j] = i + 1
 
         revs[j] = max_rev
 
-    return (revs, cuts)
+    return (revs, cuts, max_rev)
 
 
 def print_cut_rod(prices, n):
@@ -171,11 +174,11 @@ def print_cut_rod(prices, n):
             None
             Prints optimal cuts
     """
-    (revs, cuts) = ext_bottom_up_cut_rod(prices, n)
+    (revs, cuts, max_rev) = ext_bottom_up_cut_rod(prices, n)
     while n > 0:
-        print("n = " + str(n))
-        print("Make a cut at: " + str(cuts[n - 1]))
-        n = n - cuts[n - 1]
+        print("Make a cut at: " + str(cuts[n]))
+        n = n - cuts[n]
+    print("And we achieve revenue of " + str(max_rev))
 
 
 # some price arrays for testing rod cutting:
