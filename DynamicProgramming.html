@@ -34,13 +34,16 @@
                     My first task was to find a name
                     for multistage decision processes.
                     An interesting question is, Where did the
-                    name, dynamic programming, come from? The 1950s were not good years for
+                    name, dynamic programming, come from?
+                    The 1950s were not good years for
                     mathematical research.
                     We had a very interesting gentleman in Washington named Wilson.
-                    He was Secretary of Defense, and he actually had a pathological fear
+                    He was Secretary of Defense,
+                    and he actually had a pathological fear
                     and hatred of the word research.
                     I'm not using the term lightly; I'm using it precisely.
-                    His face would suffuse, he would turn red, and he would get violent
+                    His face would suffuse, he would turn red,
+                    and he would get violent
                     if people used the term research in his presence.
                     You can imagine how he felt,
                     then, about the term mathematical.
@@ -55,7 +58,8 @@
                     But planning, is not a good word for various reasons.
                     I decided therefore to use the word "programming".
                     I wanted to get across the
-                    idea that this was dynamic, this was multistage, this was time-varying.
+                    idea that this was dynamic, 
+                    this was multistage, this was time-varying.
                     I thought, let's kill two birds with one stone.
                     Let's take a word that has an
                     absolutely precise meaning, namely dynamic, 
@@ -151,10 +155,31 @@
                 <h3>
                     Recursive top-down implmentation
                 </h3>
+                <p>
+                    Keeps calculating the same cuts again and again, much like
+                    naive, recursive Fibonacci.
+                    <br>
+                    <br>
+                    Running time is exponential in n.
+                </p>
+
 
                 <h3>
                     Using dynamic programming for optimal rod-cutting
                 </h3>
+                <p>
+                    Much like we did with the naive, recursive Fibonacci, we
+                    can "memoize" the recursive rod-cutting algorithm and
+                    achieve huge time savings.
+                    <br>
+                    <br>
+                    That is an efficient top-down approach. But we can also do
+                    a bottom-up approach, which will have the same run-time
+                    order but may be slightly faster due to fewer function
+                    calls. (The algorithm uses an additional loop instead of
+                    recursion to do its work.
+                </p>
+
 
                 <h3>
                     Subproblem graphs
@@ -292,7 +317,7 @@
                 </a>
                 <br>
                 <a
-                    href="https://github.com/gcallah/algorithms/blob/master/ruby/dynamic.rb">
+                    href="https://github.com/gcallah/algorithms/blob/master/ruby/dynamic_programming">
                     Ruby
                 </a>
                 </p>
@@ -312,7 +337,9 @@
                 Homework
             </h2>
                 <ol>
-                    <li>
+                    <li>Change memoized-rod-cut to return a list of cuts to
+                    make, instead of the maximum possible revenue.
+                    Pseudo-code or real code are both fine.
                 </ol>
     </body>
 </html>
