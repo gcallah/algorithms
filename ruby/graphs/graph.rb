@@ -14,7 +14,7 @@ class Edge
   end
 end
 
-class UndirectedGraph
+class Graph
   attr_accessor :vertices, :edges
 
   def initialize(vertices)
@@ -28,15 +28,6 @@ class UndirectedGraph
 
   def initialize(vertices, edges)
     @vertices, @edges = vertices, edges
-  end
-
-  def populate_adjacency_list
-    @vertices.each do |vertex|
-      if vertex.adj_list.empty?
-        vertex.adj_list = @edges.select { |edge| (edge.v1 == vertex || edge.v2 == vertex) }
-                                .map { |edge| (edge.v1 == vertex) ? edge.v2 : edge.v1  }
-      end
-    end
   end
 
   def get_adjacency_list(vertex)
@@ -66,5 +57,27 @@ class UndirectedGraph
       vertices << x.v2
     end
     vertices.uniq
+  end
+end
+
+class UndirectedGraph < Graph
+  def populate_adjacency_list
+    @vertices.each do |vertex|
+      if vertex.adj_list.empty?
+        vertex.adj_list = @edges.select { |edge| (edge.v1 == vertex || edge.v2 == vertex) }
+                                .map { |edge| (edge.v1 == vertex) ? edge.v2 : edge.v1  }
+      end
+    end
+  end
+end
+
+class DirectedGraph < Graph
+  def populate_adjacency_list
+    @vertices.each do |vertex|
+      if vertex.adj_list.empty?
+        vertex.adj_list = @edges.select { |edge| (edge.v1 == vertex) }
+                                .map { |edge| edge.v2  }
+      end
+    end
   end
 end
