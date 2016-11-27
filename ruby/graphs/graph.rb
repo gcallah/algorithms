@@ -76,7 +76,9 @@ class UndirectedGraph < Graph
 
   def populate_adjacency_list_via_array(array)
     @vertices = array.flatten.uniq.map { |v| Vertex.new('WHITE', 1, nil, [], v) }
-    @edges = array.map { |edge| Edge.new(find(edge[0]), find(edge[1])) }
+    forward_edges = array.map { |edge| Edge.new(find(edge[0]), find(edge[1])) }
+    backward_edges = array.map { |edge| Edge.new(find(edge[1]), find(edge[0])) }
+    @edges = forward_edges + backward_edges
   end
 end
 
@@ -89,4 +91,10 @@ class DirectedGraph < Graph
       end
     end
   end
+
+  def populate_adjacency_list_via_array(array)
+    @vertices = array.flatten.uniq.map { |v| Vertex.new('WHITE', 1, nil, [], v) }
+    @edges = array.map { |edge| Edge.new(find(edge[0]), find(edge[1])) }      
+  end
+
 end
