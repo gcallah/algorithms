@@ -62,6 +62,49 @@ class SeedGraph
       graph.populate_adjacency_list
       graph
     end
+
+    def topological_graph
+      undershorts = Vertex.new('WHITE', 1, nil, [], 'undershorts')
+      socks = Vertex.new('WHITE', 1, nil, [], 'socks')
+      pants = Vertex.new('WHITE', 1, nil, [], 'pants')
+      shoes = Vertex.new('WHITE', 1, nil, [], 'shoes')
+      watch = Vertex.new('WHITE', 1, nil, [], 'watch')
+      belt = Vertex.new('WHITE', 1, nil, [], 'belt')
+      shirt = Vertex.new('WHITE', 1, nil, [], 'shirt')
+      tie = Vertex.new('WHITE', 1, nil, [], 'tie')
+      jacket = Vertex.new('WHITE', 1, nil, [], 'jacket')
+
+      edge_undershorts_pants = Edge.new(undershorts, pants)
+      edge_undershorts_shoes = Edge.new(undershorts, shoes)
+
+      edge_socks_shoes = Edge.new(socks, shoes)
+
+      edge_watch_watch = Edge.new(watch, watch)
+
+      edge_belt_jacket = Edge.new(belt, jacket)
+
+      edge_pants_shoes = Edge.new(pants, shoes)
+
+      edge_shirt_belt = Edge.new(shirt, belt)
+
+      edge_shirt_tie = Edge.new(shirt, tie)
+
+      edge_tie_jacket = Edge.new(tie, jacket)
+
+
+      graph = DirectedGraph.new([undershorts, socks, pants, shoes, watch, belt, shirt, tie, jacket],
+      [edge_undershorts_pants,
+edge_undershorts_shoes,edge_socks_shoes,
+edge_watch_watch,
+edge_belt_jacket,
+edge_pants_shoes,
+edge_shirt_belt,
+edge_shirt_tie,
+edge_tie_jacket])
+      graph.populate_adjacency_list
+      graph
+    end
+
   end
 end
 
