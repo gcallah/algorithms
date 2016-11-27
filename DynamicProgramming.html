@@ -23,7 +23,7 @@
             </h2>
 
                 <p>
-                    "Memo-ization gone wild."
+                    "Bottom-up memoization."
                     <br>
                     <br>
                     The name is largely a marketing construct. Here is the
@@ -151,6 +151,16 @@
             <h2>
                 Rod cutting
             </h2>
+                <p>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Wood_from_victoria_mountain_ash.jpg/250px-Wood_from_victoria_mountain_ash.jpg">
+                <br>
+                <br>
+                Nothing special here about steel rods: the algorithm applies to
+                any good that can be sub-divided, like lumber, or meat, or
+                cloth.
+                </p>
+
 
                 <h3>
                     Recursive top-down implmentation
@@ -189,12 +199,38 @@
 
                     <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Fibonacci_dynamic_programming.svg/108px-Fibonacci_dynamic_programming.svg.png">
+                    <br>
+                    <br>
+                    The above is the Fibonacci sub-problem graph for fib(5). As
+                    you can see, F<sub>5</sub> must solve F<sub>4</sub> and
+                    F<sub>3</sub>. But F<sub>4</sub> must <i>also</i> solve
+                    F<sub>3</sub>. It also must solve F<sub>2</sub>, which
+                    F<sub>3</sub> must solve as well. And so on.
+                    <br>
+                    <br>
+                    This is the sort of graph we want to see if dynamic
+                    programming is going to be a good approach: a recursive
+                    solution involves repeatedly solving the same problems.
+                    <br>
+                    <br>
+                    This is quite different than, say, a parser, where the code
+                    sub-problems are very unlikely to be the same chunks of
+                    code again and again, unless we are parsing the code of a
+                    very bad programmer who doesn't understand functions!
                 </p>
 
 
                 <h3>
                     Reconstructing a solution
                 </h3>
+                <p>
+                    In this section, we see how to <i>record</i> the solution
+                    we arrived at, rather than simply return the optimal
+                    revenue possible. The owner of Serling Enterprises will
+                    surely be much more pleased with this code than the earlier
+                    versions.
+                </p>
+
 
             <h2>
                 Matrix-chain multiplication
@@ -203,11 +239,24 @@
                 <p>
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Catalan-Hexagons-example.svg/400px-Catalan-Hexagons-example.svg.png">
+                <br>
+                <br>
+                There are many ways to parenthisize a series of matrix
+                multiplications. For instance, if we are parenthisizing 
+                A<sub>1</sub> * A<sub>2</sub> * A<sub>3</sub> * A<sub>4</sub>,
+                we could parenthisize this in the following ways:
+                <br>
+                <br>
                 </p>
 
                 <h3>
                     Counting the number of parenthesizations
                 </h3>
+                <p>
+                    The number of solutions is exponential in <i>n</n>, thus
+                    brute-force is a bad technique for solving this
+                    problem.
+                </p>
 
 
                 <h3>
