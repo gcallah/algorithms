@@ -93,21 +93,12 @@ class SeedGraph
 
 
       graph = DirectedGraph.new([undershorts, socks, pants, shoes, watch, belt, shirt, tie, jacket],
-      [edge_undershorts_pants,
-edge_undershorts_shoes,edge_socks_shoes,
-edge_watch_watch,
-edge_belt_jacket,
-edge_pants_shoes,
-edge_shirt_belt,
-edge_shirt_tie,
-edge_tie_jacket])
+      [edge_undershorts_pants, edge_undershorts_shoes, edge_socks_shoes, edge_watch_watch,
+      edge_belt_jacket, edge_pants_shoes, edge_shirt_belt, edge_shirt_tie, edge_tie_jacket])
+
       graph.populate_adjacency_list
       graph
     end
 
   end
 end
-
-# [ [0, 1], [0, 6], [0, 8], [1, 4], [1, 6], [1, 9], [2, 4], [2, 6], [3, 4], [3, 5], [3, 8], [4, 5], [4, 9], [7, 8], [7, 9] ]
-# k = SeedGraph.undirected_graph
-# p k.edges.map { |x| [x.v1.attribute, x.v2.attribute] }.sort
