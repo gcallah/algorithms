@@ -22,13 +22,11 @@ class SeedGraph
       edge45 = Edge.new(v4, v5)
       edge43 = Edge.new(v4, v3)
 
-      graph = UndirectedGraph.new([v1, v2, v3, v4, v5], [edge15,
-                                                         edge12,
-                                                         edge25,
-                                                         edge45,
-                                                         edge24,
-                                                         edge23,
-                                                         edge34,])
+      graph = UndirectedGraph.new([v1, v2, v3, v4, v5], [edge15, edge12,
+                                                         edge25, edge24, edge23,
+                                                         edge34,
+                                                         edge45])
+
       graph.populate_adjacency_list
       graph
     end
@@ -66,3 +64,7 @@ class SeedGraph
     end
   end
 end
+
+# [ [0, 1], [0, 6], [0, 8], [1, 4], [1, 6], [1, 9], [2, 4], [2, 6], [3, 4], [3, 5], [3, 8], [4, 5], [4, 9], [7, 8], [7, 9] ]
+# k = SeedGraph.undirected_graph
+# p k.edges.map { |x| [x.v1.attribute, x.v2.attribute] }.sort

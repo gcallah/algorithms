@@ -30,6 +30,10 @@ class Graph
     @vertices, @edges = vertices, edges
   end
 
+  def find(attribute)
+    @vertices.select { |v| v.attribute == attribute }.first
+  end
+
   def get_adjacency_list(vertex)
     vertex.adj_list
   end
@@ -68,6 +72,11 @@ class UndirectedGraph < Graph
                                 .map { |edge| (edge.v1 == vertex) ? edge.v2 : edge.v1  }
       end
     end
+  end
+
+  def populate_adjacency_list_via_array(array)
+    @vertices = array.flatten.uniq.map { |v| Vertex.new('WHITE', 1, nil, [], v) }
+    @edges = array.map { |edge| Edge.new(find(edge[0]), find(edge[1])) }
   end
 end
 
