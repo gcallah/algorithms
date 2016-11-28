@@ -277,21 +277,79 @@
                 </h3>
 
 
-                <h3>
+                <h4>
                     Step 1: The structure of an optimal parenthesization
-                </h3>
+                </h4>
+                <p>
+                    For any place at level <i>n</i> where we place parentheses,
+                    we must have optimal parentheses at level <i>n + 1</i>.
+                    Otherwise, we could substitute in the optimal <i>n + 1</i>
+                    level parentheses, and level n would be better!
+                </p>
 
-                <h3>
+
+                <h4>
                     Step 2: A recursive solution
-                </h3>
+                </h4>
+                <p>
+                    If we know the optimal place to split A<sub>1</sub>...
+                    A<sub>n</sub> (call it k), then the optimal solution is
+                    that split, plus the optimal solution for A<sub>1</sub>...
+                    A<sub>k</sub> and the optimal solution for 
+                    A<sub>k+1</sub>... A<sub>n</sub>. Since we don't know k, we
+                    try each possible k in turn, compute the optimal
+                    sub-problem for each such split, and see which pair of
+                    optimal sub-problems yields the optimal (minimum, in this
+                    case) total.
+                    <br>
+                    <br>
+                    "For example, if we have four matrices ABCD, we compute the
+                    cost required to find each of (A)(BCD), (AB)(CD), and
+                    (ABC)(D), making recursive calls to find the minimum cost
+                    to compute ABC, AB, CD, and BCD. We then choose the best
+                    one."
+                    (https://en.wikipedia.org/wiki/Matrix_chain_multiplication)
+                    <br>
+                    <br>
+                    An easy way to understand this:
+                    <br>
+                    Let's say we need to get from class at NYU Tandon to a
+                    ballgame at Yankee Stadium in the Bronx as fast as
+                    possible. If we choose Grand Central Station as the optimal
+                    high-level split, we must also choose the optimal ways to
+                    get from NYU to Grand Central, and from Grand Central to
+                    Yankee Stadium. It won't do to choose Grand Central, and
+                    then walk from NYU to Grand Central, and CitiBike from
+                    Grand Central to Yankee Stadium: there are faster ways to
+                    do each sub-problem!
+                </p>
 
-                <h3>
+
+                <h4>
                     Step 3: Computing the optimal costs
-                </h3>
+                </h4>
+                <p>
+                    CLRS does not offer a recursive version here (they do later
+                    in the chapter); they go
+                    straight to the bottom-up approach of storing each
+                    lowest-level result in a table, avoiding recomputation, and
+                    then combine those lower-level results into higher-level
+                    ones. The indexing here is very tricky and hard to follow
+                    in one's head, but it is worth trying to trace out what is
+                    going on by following the code. I have as usual included
+                    some print statements to help.
+                </p>
 
-                <h3>
+
+                <h4>
                     Step 4: Constructing an optimal solution
-                </h3>
+                </h4>
+                <p>
+                    Finally, we use the results computed in step 3 to actually
+                    provide the optimal solution, by actually determing where
+                    the parentheses go.
+                </p>
+
 
 
             <h2>
@@ -357,7 +415,7 @@
                 </h3>
 
                     <h4>
-                        Imrpoving the code
+                        Improving the code
                     </h4>
 
                     <p>
@@ -374,6 +432,15 @@
                     Step 1: The structure of an optimal binary search tree
                 </h3>
 
+
+                <h3>
+                    Step 2: A recursive solution
+                </h3>
+
+
+                <h3>
+                    Step 3: Computing the expected search cost
+                </h3>
 
 
             <h2>
@@ -409,6 +476,7 @@
                     <li>Change memoized-rod-cut to return a list of cuts to
                     make, instead of the maximum possible revenue.
                     Pseudo-code or real code are both fine.
+                    <li>
                 </ol>
     </body>
 </html>
