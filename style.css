@@ -13,6 +13,10 @@ table, th, td {
             padding: 15px;
     }
 
+td {
+    background: #fff;
+}
+
 th {
     background: #afd;
 }

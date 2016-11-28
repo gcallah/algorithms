@@ -350,6 +350,14 @@
                     the parentheses go.
                 </p>
 
+                <h4>
+                    Memoization
+                </h4>
+
+                <p>
+                    We can memoize the recursive version and change its run
+                    time from &Omega;(2<sup>n</sup>) to O(n<sup>3</sup>).
+                </p>
 
 
             <h2>
@@ -382,32 +390,89 @@
                 <h3>
                     Reconstructing an optimal solution
                 </h3>
+                <p>
+                    Storing our choices in a table as we make them allows quick
+                    and simple reconstruction of the optimal solution.
+                </p>
 
 
                 <h3>
                     Memoization
                 </h3>
-
+                <p>
+                    As mentioned above, memoization is often a viable
+                    alternative to the bottom-up approach. Which to choose
+                    depends on several factors, one of which being that a
+                    recursive approach is often easier to understand. If our
+                    algorithm is going to handle small data sets, or not run
+                    very often, a recursive approach with memoization maybe
+                    the right answer.
+                </p>
 
 
             <h2>
                 Longest common subsequence
             </h2>
 
-
                 <h3>
                     Step 1: Characterizing a longest common subsequence
                 </h3>
+
+                <p>
+                    'Let X be "XMJYAUZ" and Y be "MZJAWXU".
+                    The longest common subsequence between X and Y is "MJAU".'
+                    (https://en.wikipedia.org/wiki/Longest_common_subsequence_problem)
+                    <br>
+                    <br>
+                    <img src="graphics/CommonSubsequence.png">
+                    <br>
+                    <br>
+                    Brute force solution runs in exponential time: not so good!
+                    <br>
+                    <br>
+                    But the problem has an optimal substructure:
+                    <br>
+                    <br>
+                    X = gregorsamsa
+                    <br>
+                    Y = reginaldblack
+                    <br>
+                    LCS: regaa
+                    <br>
+                    Our match on the last 'a' is at position X<sub>11</sub> and
+                    Y<sub>11</sub>. The previous result string ('rega') must have been
+                    the LCS before X<sub>11</sub> and Y<sub>11</sub>:
+                    otherwise, we could substitute in <i>that actual</i> LCS
+                    for 'rega' and have a longer overall LCS.
+
+                </p>
 
 
                 <h3>
                     Step 2: A recursive solution
                 </h3>
 
+                <p>
+                    Caution: here some sub-problems are ruled out! If
+                    X<sub>i</sub> and Y<sub>j</sub> are different, we consider
+                    the sub-problems of finding the LCS for X<sub>i</sub> and
+                    Y<sub>j - 1</sub> and for X<sub>i - 1</sub> and
+                    Y<sub>j</sub>, but not for X<sub>i</sub> and Y<sub>j</sub>.
+                    Why not? Well, if they aren't equal, they can't be the
+                    endpoint of an LCS.
+                </p>
+
 
                 <h3>
                     Step 3: Computing the length of an LCS
                 </h3>
+
+                <p>
+                    The solution here proceeds much like the earlier ones: find
+                    an LCS in a bottom-up fashion, using tables to store
+                    intermediate results and information for reconstructing the
+                    optimal solution.
+                </p>
 
 
                 <h3>
@@ -419,28 +484,53 @@
                     </h4>
 
                     <p>
-                    <b>An important principle</b>: Don't optimize unless it is
-                    needed!
+                        We could eliminate a table here, reduce aymptotic
+                        run-time a bit there. But is the code more confusing?
+                        Do we lose an ability (reconstructing the solution) we
+                        might actually need later?
+                        <br>
+                        <br>
+                        <b>An important principle</b>: Don't optimize unless it is
+                        needed!
                     </p>
 
             <h2>
                 Optimal binary search trees
             </h2>
+                <p>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/AVLtreef.svg/251px-AVLtreef.svg.png">
+                </p>
+
 
 
                 <h3>
                     Step 1: The structure of an optimal binary search tree
                 </h3>
 
+                <p>
+                    If a binary search tree is optimally construted, then both
+                    its left and right sub-trees must be optimally constructed.
+                </p>
+
 
                 <h3>
                     Step 2: A recursive solution
                 </h3>
 
+                <p>
+                    As usual, this is straightforward, but too slow.
+                </p>
+
 
                 <h3>
                     Step 3: Computing the expected search cost
                 </h3>
+
+                <p>
+                    Very much like the matrix-chain-order code. Working code coming
+                    soon!
+                </p>
 
 
             <h2>
@@ -481,7 +571,80 @@
                     <li>Change memoized-rod-cut to return a list of cuts to
                     make, instead of the maximum possible revenue.
                     Pseudo-code or real code are both fine.
-                    <li>
+                    <li>For the following table, determine the cost and
+                        structure of an optimal binary search tree:
+                        <br>
+                        <br>
+                        <table>
+                            <tr>
+                                <th>
+                                    <i>i</i>
+                                </th>
+                                <th>
+                                    0
+                                </th>
+                                <th>
+                                    1
+                                </th>
+                                <th>
+                                    2
+                                </th>
+                                <th>
+                                    3
+                                </th>
+                                <th>
+                                    4
+                                </th>
+                                <th>
+                                    5
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    p<sub>i</sub>
+                                </th>
+                                <td>
+                                </td>
+                                <td>
+                                    .05
+                                </td>
+                                <td>
+                                    .05
+                                </td>
+                                <td>
+                                    .25
+                                </td>
+                                <td>
+                                    .05
+                                </td>
+                                <td>
+                                    .05
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    q<sub>i</sub>
+                                </th>
+                                <td>
+                                    .05
+                                </td>
+                                <td>
+                                    .15
+                                </td>
+                                <td>
+                                    .05
+                                </td>
+                                <td>
+                                    .05
+                                </td>
+                                <td>
+                                    .05
+                                </td>
+                                <td>
+                                    .20
+                                </td>
+                            </tr>
+                        </table>
                 </ol>
     </body>
 </html>
