@@ -213,7 +213,7 @@ def matrix_chain_order(dims):
     costs = [[0 for x in range(n)] for x in range(n)] 
     for i in range(n):
         costs[i][i] = 0
-    indices = [[-1 for x in range(n - 1)] for x in range(n - 1)]
+    indices = [[-1 for x in range(n)] for x in range(n)]
 
     for l in range(2, n):
         for i in range(n - l):
