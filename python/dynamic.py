@@ -210,16 +210,16 @@ def matrix_chain_order(dims):
             list of costs and list of indices for parenthisation
     """
     n = len(dims) - 1
-    costs = [[0 for x in range(n)] for x in range(n)] 
+    costs = [[BIG_NUM for x in range(n)] for x in range(n)] 
     for i in range(n):
         costs[i][i] = 0
     indices = [[-1 for x in range(n)] for x in range(n)]
 
-    for l in range(2, n):
-        for i in range(n - l):
+    for l in range(2, n + 1):
+        for i in range(n - l + 1):
             j = i + l - 1
             costs[i][j] = BIG_NUM
-            for k in range(i, j - 1):
+            for k in range(i, j):
                 q = (costs[i][k] + costs[k + 1][j]
                     + (dims[i] * dims[k+1] * dims[j+1]))
                 print("Comparing q = " + str(q) 
@@ -230,6 +230,24 @@ def matrix_chain_order(dims):
                     costs[i][j] = q
                     indices[i][j] = k
     return (costs, indices)
+
+
+def print_optimal_parens(indices, i, j):
+    """
+        Args:
+            indices: the list returned by matrix_chain_order()
+            i: start index
+            j: end index
+        Returns: None; prints results.
+    """
+    if i == j:
+        print(" A", end="")
+    else:
+        print("(", end="")
+        print_optimal_parens(indices, i, indices[i][j])
+        print_optimal_parens(indices, indices[i][j] + 1, j)
+        print(")", end="")
+
 
 
 dtest = [30, 35, 15, 5, 10, 20, 25]
