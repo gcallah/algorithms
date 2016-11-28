@@ -17,6 +17,9 @@ This file contains:
     bottom_up_cut_rod():
 """
 
+import sys
+
+
 NEG_REV = -1
 calls = 0
 
@@ -176,7 +179,7 @@ def print_cut_rod(prices, n):
     """
     (revs, cuts, max_rev) = ext_bottom_up_cut_rod(prices, n)
     while n > 0:
-        print("Make a cut at: " + str(cuts[n]))
+        print("Make a cut of: " + str(cuts[n]))
         n = n - cuts[n]
     print("And we achieve revenue of " + str(max_rev))
 
@@ -188,3 +191,45 @@ p3 = [3, 7, 9]
 p4 = [3, 7, 9, 12]
 p7 = [3, 5, 10, 11, 14, 17, 20]
 p10 = [1, 5, 8, 9, 10, 17, 17, 20, 24, 30]
+
+
+"""
+On to determining optimal matrix multiplication order.
+"""
+
+BIG_NUM = sys.maxsize
+
+
+def matrix_chain_order(dims):
+    """
+        Args:
+            dims: a list of dimensions so that 
+            matrix i's dimensions are found at
+            dims[i - 1] and dims[i].
+        Returns:
+            list of costs and list of indices for parenthisation
+    """
+    n = len(dims) - 1
+    costs = [[0 for x in range(n)] for x in range(n)] 
+    for i in range(n):
+        costs[i][i] = 0
+    indices = [[-1 for x in range(n - 1)] for x in range(n - 1)]
+
+    for l in range(2, n):
+        for i in range(n - l):
+            j = i + l - 1
+            costs[i][j] = BIG_NUM
+            for k in range(i, j - 1):
+                q = (costs[i][k] + costs[k + 1][j]
+                    + (dims[i] * dims[k+1] * dims[j+1]))
+                print("Comparing q = " + str(q) 
+                      + " with costs[i][j] = "
+                      + str(costs[i][j]) + " with i = "
+                      + str(i) + " and j = " + str(j))
+                if q < costs[i][j]:
+                    costs[i][j] = q
+                    indices[i][j] = k
+    return (costs, indices)
+
+
+dtest = [30, 35, 15, 5, 10, 20, 25]
