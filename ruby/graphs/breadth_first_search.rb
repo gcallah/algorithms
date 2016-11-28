@@ -17,7 +17,8 @@ module Graphs
       #   BFS(graph, graph.vertices.first, graph.vertices.last)
       #
       def BFS(graph, s, searchable = nil)
-        graph.vertices.select { |x| x != s }.each do |u|
+        searchable_vertices = searchable ? graph.vertices.select { |x| x != s } : graph.vertices
+        searchable_vertices.each do |u|
           u.color = 'WHITE'
           u.d = Float::INFINITY
           u.pi = nil
@@ -33,7 +34,7 @@ module Graphs
           u = q.deq
           u.adj_list.each do |v|
             if v.color == 'WHITE'
-              return "FOUND!!" if v.attribute == searchable.attribute
+              return "FOUND!!" if searchable && v.attribute == searchable.attribute
               v.color = 'GRAY'
               v.d = u.d + 1
               v.pi = u
