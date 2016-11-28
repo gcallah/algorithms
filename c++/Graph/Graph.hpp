@@ -31,13 +31,16 @@ public:
     void init();
     void setAllWhite();
 private:
-    void innerDFS(Node*);
+    void innerDFS(Node*); // DFS visit
     void innerBFS(Node*);
     void createMatrix();
     void createList();
+    void turnGray(Node*);
+    void turnBlack(Node*);
     std::vector<std::vector<bool>> matrix;
     std::vector<Node*> con;
     std::queue<Node*> que;
+    int time;
     std::vector<std::vector<int>> list;
 };
 

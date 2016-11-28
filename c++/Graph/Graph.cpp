@@ -18,6 +18,7 @@ Graph::Graph(std::vector<Node*> c) {
 }
 
 void Graph::DFS() {
+    time = 0;
     for (int i = 0; i < con.size(); i++) {
         if (con[i]->color == WHITE) {
             innerDFS(con[i]);
@@ -26,45 +27,49 @@ void Graph::DFS() {
 }
 
 void Graph::BFS() {
+    time = 0;
     for (int i = 0; i < con.size(); i++) {
         if (con[i]->color == WHITE) {
-            que.push(con[i]);
-            std::cout << con[i]->weight << " to GRAY" << std::endl;
-            con[i]->color = GRAY;
             innerBFS(con[i]);
         }
     }
 }
 
 void Graph::innerDFS(Node * coni) {
-    std::cout << coni->weight << " to GRAY " << std::endl;
-    coni->color = GRAY;
+    if (coni->color == WHITE) {
+        turnGray(coni);
+    }
+    
     for (int i = 0; i < coni->neighbor.size(); i++) {
         if (coni->neighbor[i]->color == WHITE) {
             innerDFS(coni->neighbor[i]);
         }
     }
-    coni->color = BLACK;
-    std::cout << coni->weight << " to BLACK" << std::endl;
+    
+    turnBlack(coni);
 }
 
 void Graph::innerBFS(Node * coni) {
-
+    if (coni->color == WHITE) {
+        que.push(coni);
+        turnGray(coni);
+    }
+    
     for (int i = 0; i < coni->neighbor.size(); i++) {
         if (coni->neighbor[i]->color == WHITE) {
-            std::cout << coni->neighbor[i]->weight << " to GRAY" << std::endl;
-            coni->neighbor[i]->color = GRAY;
+            turnGray(coni->neighbor[i]);
             que.push(coni->neighbor[i]);
+
         }
     }
 
-    Node * frontElement = que.front();
+    Node * f = que.front();
     que.pop();
-    frontElement->color = BLACK;
-    std::cout << frontElement->weight << " to BLACK" << std::endl;
+    turnBlack(f);
+
     if (que.empty()) return;
     
-    innerBFS(frontElement);
+    innerBFS(f);
     
 
 };
@@ -112,4 +117,16 @@ void Graph::createList() {
             }
         }
     }
+}
+
+void Graph::turnGray(Node* n) {
+    n->color = GRAY;
+    std::cout << time + 1 << ": " << n->weight << " to GRAY" << std::endl;
+    time++;
+}
+
+void Graph::turnBlack(Node* n) {
+    n->color = BLACK;
+    std::cout << time + 1 << ": " << n->weight << " to BLACK" << std::endl;
+    time++;
 }
