@@ -4,6 +4,18 @@ module Graphs
   class BreadthFirstSearch
     class << self
 
+      # Internal: Traverses through the vertices of a graph in a level wise,
+      #           one level at a time manner
+      #           Next level is considered only after all the elements in the
+      #           current level are traversed through
+      #
+      # graph - Graph to be searched
+      # s - Starting node in the graph from which the search has to be initiated
+      # searchable - Node in the graph to be searched for
+      #
+      # Examples
+      #   BFS(graph, graph.vertices.first, graph.vertices.last)
+      #
       def BFS(graph, s, searchable = nil)
         graph.vertices.select { |x| x != s }.each do |u|
           u.color = 'WHITE'
@@ -21,7 +33,7 @@ module Graphs
           u = q.deq
           u.adj_list.each do |v|
             if v.color == 'WHITE'
-              return "YEAH FOUND!!" if v.attribute == searchable.attribute
+              return "FOUND!!" if v.attribute == searchable.attribute
               v.color = 'GRAY'
               v.d = u.d + 1
               v.pi = u

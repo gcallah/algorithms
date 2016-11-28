@@ -14,7 +14,7 @@ class Edge
   end
 end
 
-class UndirectedGraph
+class Graph
   attr_accessor :vertices, :edges
 
   def initialize(vertices)
@@ -30,13 +30,8 @@ class UndirectedGraph
     @vertices, @edges = vertices, edges
   end
 
-  def populate_adjacency_list
-    @vertices.each do |vertex|
-      if vertex.adj_list.empty?
-        vertex.adj_list = @edges.select { |edge| (edge.v1 == vertex || edge.v2 == vertex) }
-                                .map { |edge| (edge.v1 == vertex) ? edge.v2 : edge.v1  }
-      end
-    end
+  def find(attribute)
+    @vertices.select { |v| v.attribute == attribute }.first
   end
 
   def get_adjacency_list(vertex)
@@ -67,4 +62,39 @@ class UndirectedGraph
     end
     vertices.uniq
   end
+end
+
+class UndirectedGraph < Graph
+  def populate_adjacency_list
+    @vertices.each do |vertex|
+      if vertex.adj_list.empty?
+        vertex.adj_list = @edges.select { |edge| (edge.v1 == vertex || edge.v2 == vertex) }
+                                .map { |edge| (edge.v1 == vertex) ? edge.v2 : edge.v1  }
+      end
+    end
+  end
+
+  def populate_adjacency_list_via_array(array)
+    @vertices = array.flatten.uniq.map { |v| Vertex.new('WHITE', 1, nil, [], v) }
+    forward_edges = array.map { |edge| Edge.new(find(edge[0]), find(edge[1])) }
+    backward_edges = array.map { |edge| Edge.new(find(edge[1]), find(edge[0])) }
+    @edges = forward_edges + backward_edges
+  end
+end
+
+class DirectedGraph < Graph
+  def populate_adjacency_list
+    @vertices.each do |vertex|
+      if vertex.adj_list.empty?
+        vertex.adj_list = @edges.select { |edge| (edge.v1 == vertex) }
+                                .map { |edge| edge.v2  }
+      end
+    end
+  end
+
+  def populate_adjacency_list_via_array(array)
+    @vertices = array.flatten.uniq.map { |v| Vertex.new('WHITE', 1, nil, [], v) }
+    @edges = array.map { |edge| Edge.new(find(edge[0]), find(edge[1])) }      
+  end
+
 end
