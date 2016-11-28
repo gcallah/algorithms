@@ -34,10 +34,10 @@ class Node():
     """
     The nodes in our binary search tree.
     """
-    key = None
-    p = None
-    left = None
-    right = None
+    self.key = None
+    self.p = None
+    self.left = None
+    self.right = None
 
     def __init__(self, k):
         """

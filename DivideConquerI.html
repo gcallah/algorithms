@@ -1,0 +1,532 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            Design and Analysis of Algorithms: Divide and Conquer I
+        </title>
+    </head>
+
+    <body>
+        <h1>
+            Design and Analysis of Algorithms: Divide and Conquer I
+        </h1>
+
+            <div style="text-align:center">
+                <p>
+                <img
+                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Sierpinski_triangle.svg/250px-Sierpinski_triangle.svg.png">
+                </p>
+            </div>
+
+            <h2>
+                Topics
+            </h2>
+
+            <h3>
+                Introduction
+            </h3>
+            <p>
+            What is this?
+            <ul>
+                <li><b>Divide</b> the problem into a number of sub problems that are
+                    smaller instances of the same problem.
+                <li><b>Conquer</b> the sub problems by solving them recursively. If
+                    the subproblem sizes are small enough, however, just solve
+                    the subproblems in a straightforward manner.
+                <li><b>Combine</b> the solutions for the sub problems into the
+                    solution for the original problem.
+            </ul>
+            </p>
+
+            <h4>
+                Recurrences
+            </h4>
+                <p>
+                Merge sort recurrence:
+                <br>
+                <br>
+                <img src="graphics/RecEq1.gif">
+                <br>
+                <br>
+                We "solve" these by finding a closed-form equation that
+                describes the recurrence but without recursion.
+                <br>
+                <b>Solution</b>: T(n) = &Theta;(n lg n)
+    
+                <br>
+                <br>
+                <b>Methods</b>:
+                <br>
+                </p>
+                <ul>
+                    <li><b>Substitution method</b>: Guess a solution and then use
+                        induction to prove it.
+                    <li><b>Recursive-tree method</b>: Convert the recurrence into a
+                        tree whose nodes represent costs incurred at each level.
+                    <li><b>Master method</b>:
+                        <br>
+                        Solves recurrences of the form:
+                        <br>
+                        T(n) = aT(n / b) + f(n)
+                        <br>
+                        where a &ge; 1, b &gt; 1.
+                </ul>
+
+                <p>
+                <br>
+                <b>Technicalities</b>
+                <br>
+                We often omit floors, ceilings, and boundary conditions. For
+                instance, if n is odd, we may say n / 2 anyway.
+                </p>
+    
+    
+                <h3>
+                    The maximum-subarray problem
+                </h3>
+                <p>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Maximum_Subarray_Visualization.svg/220px-Maximum_Subarray_Visualization.svg.png">
+                <br>
+                <br>
+                Only makes since in an array with both negative and positive
+                values: otherwise the answer is either the whole array of the
+                maximum member.
+                <br>
+                <br>
+                </p>
+
+            <h4>
+                Brute-force solution
+            </h4>
+                <p>
+                Try every combination of two elements!
+                <br>
+                A n choose 2 problem, so order of &Omega;(n<sup>2</sup>).
+                <br>
+                n choose 2 will be about 1/2 n<sup>2</sup>, since it equals
+                n(n - 1) / 2. So we can establish a lower bound by setting c =
+                1/3, for instance, and n choose 2 will always be bounded from
+                below by c*n<sup>2</sup>.
+    
+                </p>
+
+            <h4>
+                A transformation
+            </h4>
+
+            <p>
+            We loon at the problem differently: let's find the nonempty,
+            contiguous subarray of our array whose values have the largest sum.
+            We call this the <b>maximum subarray</b>.
+            </p>
+
+            <h4>
+                A solution using divide-and-conquer
+            </h4>
+            <p>
+            To solve this problem, we divide an array A into three subarrays,
+            and ask what is the maximum subarray in each:
+            </p>
+            <ol>
+                <li>From A[low] to A[midpoint - 1].
+                <li>Crossing the mid-point.
+                <li>From A[midpoint + 1] to A[high]
+            </ol>
+
+            <p>
+            Problems 1 and 3 are simply this same problem on a smaller array!
+            Problem 2 can be solved by finding the maximum subarrays in
+            low-to-mid and in mid+1-to-high.
+            <br>
+            <br>
+            The recurrence is the same as for merge sort.
+            </p>
+
+
+            <h3>
+                Strassen's algorithm for matrix multiplication
+            </h3>
+
+                <h4>
+                    Recursive Square-Matrix Multiply
+                </h4>
+                <p>
+                    We divide each of our initial matrices into four
+                    sub-matrices, and multiply them. Which we do by dividing
+                    each of them into four...
+                    <br>
+                    <br>
+                    In the base case when each matrix has only one member, we
+                    just multiply them and return the result.
+                    <br>
+                    <br>
+                    So what is our recurrence? Each step except the base case
+                    multiplies eight matrices of size n / 2. So they
+                    contribute 8T(n / 2) to running time. There are also four
+                    matrix additions of matrices containing n<sup>2</sup> / 4
+                    entries -- squared because n specifies an n x n matrix. So
+                    this contributes &Theta;(n<sup>2</sup>) time.
+                    <br>
+                    <br>
+                    So our recurrence is:
+                    <br>
+                    <br>
+                    <img src="graphics/RecEq6.gif">
+                    <br>
+                    <br>
+                    The master method will show us that the solution to this
+                    recurrence is:
+                    <br>
+                    T(n) = &Theta;(n<sup>3</sup>) 
+                </p>
+
+                <h4>
+                    Strassen's Algorithm
+                </h4>
+                <p>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Strassen_algorithm.svg/800px-Strassen_algorithm.svg.png">
+                <br>
+                <br>
+                    By adding ten additions, we can cut the divide portion of
+                    our algorithm down to seven multiplications instead of
+                    eight.
+                    <br>
+                    <br>
+                    Let's try one!
+                    <br>
+                    <br>
+                    Here is the method:
+                    <br>
+                    <br>
+                    For two matrices:
+                    <br>
+                    <br>
+                    <img src="graphics/RecEq8.gif">
+                    <br>
+                    <br>
+                    Define:
+                    <br>
+                    <br>
+                    P<sub>1</sub> = A(F - H)
+                    <br>
+                    P<sub>2</sub> = H(A + B)
+                    <br>
+                    P<sub>3</sub> = E(C + D)
+                    <br>
+                    P<sub>4</sub> = D(G - E)
+                    <br>
+                    P<sub>5</sub> = (A + D) * (E + H)
+                    <br>
+                    P<sub>6</sub> = (B - D) * (G + H)
+                    <br>
+                    P<sub>7</sub> = (A - C) * (E + F)
+                    <br>
+                    <br>
+                    Then:
+                    <br>
+                    <br>
+                    <img src="graphics/RecEq9.gif">
+                    <br>
+                    <br>
+                    So let's try this example:
+                    <br>
+                    <br>
+                    <img src="graphics/RecEq7.gif">
+
+
+                    <br>
+                    <br>
+                    <b>Important Lesson</b>
+                    <br>
+                    <br>
+                    There are often serious trade-offs between set-up time and
+                    aymptotic run-time. One must carefully consider how large
+                    one's inputs are likely to be before opting for a complex
+                    algorithm like Strassen's. On modern hardware optimized for
+                    matrix multiplication, matrix sizes often need to be in the
+                    thousands before Strassen's algorithm yields significant
+                    gains.
+                </p>
+
+
+
+            <h3>
+                The substitution method for solving recurrences
+            </h3>
+                <h4>
+                    Towers of Hanoi
+                </h4>
+                    <p>
+                    <br>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Tower_of_Hanoi.jpeg/300px-Tower_of_Hanoi.jpeg">
+                    <br>
+                    The monks in a temple have the job of moving all of the
+                    disks on one peg to another, constrained by these rules:
+                    <br>
+					1) Only one disk can be moved at a time.
+                    <br>
+					2) Each move consists of taking the upper disk from 
+					one of the stacks and placing it on top of another stack 
+					i.e. a disk can only be moved if it is the 
+                    uppermost disk on a stack.
+                    <br>
+                    3) No disk may be placed on top of a smaller disk.
+                    <br>
+                    (
+                    <a href="https://en.wikipedia.org/wiki/Tower_of_Hanoi">
+                        Source
+                    </a>
+                    )
+                    <br>
+                    <br>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Iterative_algorithm_solving_a_6_disks_Tower_of_Hanoi.gif/220px-Iterative_algorithm_solving_a_6_disks_Tower_of_Hanoi.gif">
+
+                    <br>
+                    <br>
+                    Recurrence:
+                    <br>
+                    <img src="graphics/RecEq2.gif">
+                    <br>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Tower_of_Hanoi_recursion_SMIL.svg/220px-Tower_of_Hanoi_recursion_SMIL.svg.png">
+                    <br>
+                    <br>
+                    Why is this the recurrence? Well, to move disk <em>n</em>,
+                    we first move disks 1 to <em>n</em> - 1 to the spare peg,
+                    then move <em>n</em> to the target peg, then move disks 1
+                    to <em>n</em> - 1 to the target peg.
+                    <br>
+                    <br>
+                    So we guess the closed-form solution is something like
+                    2<sup>n</sup>. Why? Well, we multiply by a factor of 2 each
+                    recursion!
+                    <br>
+                    Now, let's try writing out a few elements of the sequence:
+                    <br>
+                    T(0) = 0
+                    <br>
+                    T(1) = 2*0 + 1 = 1
+                    <br>
+                    T(2) = 2*1 + 1 = 3
+                    <br>
+                    T(3) = 2*3 + 1 = 7
+                    <br>
+                    T(4) = 2*7 + 1 = 15
+                    <br>
+                    T(5) = 2*15 + 1 = 31
+                    <br>
+                    So is the answer 2<sup>n</sup> - 1?
+                    <br>
+                    Base case: T(0) = 0 = 2<sup>0</sup> - 1.
+                    <br>
+                    Yes!
+                    <br>
+                    Now induction: we want to show that, <em>if</em> T(n - 1) =
+                    2<sup>(n - 1)</sup> - 1, <em>then</em> T(n) will equal
+                    2<sup>n</sup> - 1.
+                    <br>
+                    How proof by induction works: we have proved our base case.
+                    Now we try to prove that for any n, if for n - 1 our
+                    hypothesis is true, then it is true for n as well. And since we
+                    have already proved that for n = 0 it is true, that will
+                    mean it will be true for all n whatsoever.
+                    <br>
+                    So we substitute in for n - 1:
+                    <br>
+                    T(n) = 2(2<sup>(n - 1)</sup> - 1) + 1
+                    <br>
+                    = 2 * 2<sup>(n - 1)</sup> - 2 + 1
+                    <br>
+                    = 2<sup>n</sup> - 1
+                    <br>
+                    And we are done!
+
+    
+                    </p>
+
+            <h3>
+                The recursion-tree method for solving recurrences
+            </h3>
+                <p>
+                There are two ways to use this method:
+                </p>
+
+                <ol>
+                    <li>As a way to generate a guess for the substitution
+                        method.
+                    <li>As a way to generate a rigorous answer by itself.
+                </ol>
+
+                <p>
+                Analyze the tree:
+                <br>
+                <br>
+                <img
+                src="graphics/NSquaredTree1.png">
+                <br>
+                <br>
+                Calculate the work at each level:
+                <br>
+                <br>
+                <img
+                src="graphics/NSquaredTree2.png">
+                <br>
+                <br>
+                This produces the geometric series:
+                <br>
+                <br>
+                <img src="graphics/RecEq4.gif">
+                <br>
+                <br>
+                If we set a = n<sup>2</sup> and r = 1/2, then we have the
+                general sum of a converging geometric series:
+                <br>
+                <br>
+                <img src="graphics/RecEq5.gif">
+                <br>
+                <br>
+                So the solution here is O(n<sup>2</sup>). The amount of work at
+                each level is reduced by a power of two, and so is
+                just a constant factor times the root.
+                <br>
+                <br>
+                <b>Another example</b>:
+                <br>
+                <br>
+                In our textbook, we have the recurrence:
+                <br>
+                T(n) = 3T(n / 4) + cn<sup>2</sup>, c > 0
+                <br>
+                <br>
+                <img src="graphics/ThreeTree.png" height="440" width="700">
+                <br>
+                <br>
+                a<sup>log<sub>b</sub>c</sup> = c<sup>log<sub>b</sub>a</sup>
+
+                </p>
+
+
+            <h3>
+                The master method for solving recurrences
+            </h3>
+    
+                <p>
+                    <b>Form</b>: T(n) = aT(n / b) + f(n). 
+                    <br>
+                    Where a &ge; 1 and b &gt; 1 and f(n) asymptotically positive.
+                    <br>
+                    <br>
+                    <b>Three cases</b>
+                    <br>
+                    Compare n<sup>log<sub>b</sub>a</sup> and f(n):
+                </p>
+                <ol>
+                    <li>f(n) = O(n<sup>log<sub>b</sub>a-&epsilon;</sup>),
+                        &epsilon; > 0
+                        <br><b>Solution</b>: T(n) =
+                        &Theta;(n<sup>log<sub>b</sub>a</sup>)
+                    <li>f(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>)
+                        <br><b>Solution</b>: T(n) =
+                        &Theta;(n<sup>log<sub>b</sub>a</sup> lg n)
+                    <li>f(n) = &Omega;(n<sup>log<sub>b</sub>a+&epsilon;</sup>),
+                        &epsilon; > 0
+                        <br><b>Solution</b>: T(n) = &Theta;(f(n))
+                </ol>
+                <p>
+                    <br>
+                    <b>Sample problems:</b>
+                </p>
+                <ol>
+                    <li>T(n) = 2T(n / 4) + n<sup>2</sup>
+                    <li>T(n) = 4T(n / 2) + n<sup>2</sup>
+                    <li>T(n) = 20T(n / 4) + n
+                    <li>T(n) = 3<sup>n</sup>(n / 3) + n<sup>3</sup>
+                    <li>T(n) = 8T(n / 2) + 2<sup>n</sup>
+                </ol>
+    
+    
+                <h2>
+                    Source Code
+                </h2>
+                    <p>
+                    <a
+                        href="https://github.com/gcallah/algorithms/blob/master/python/div_and_conquer.py">
+                        Python
+                    </a>
+                    <br>
+                    <a
+                        href="https://github.com/gcallah/algorithms/blob/master/ruby/div_and_conquer.rb">
+                        Ruby
+                    </a>
+                    <br>
+                    <a
+                        href="https://github.com/gcallah/algorithms/blob/master/javascript/divideAndConquer.js">
+                        JavaScript
+                    </a>
+                    <br>
+                    <a
+                        href="https://github.com/gcallah/algorithms/blob/master/Java/matrixMult.java">
+                        Java
+                    </a>
+                    </p>
+    
+                <h2>
+                    External Links
+                </h2>
+                <ul>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Master_theorem">
+                            The Master Theorem
+                        </a>
+                    <li>
+                        <a
+                            href="https://en.wikipedia.org/wiki/Maximum_subarray_problem">
+                            Maximum Subarray Problem
+                        </a>
+                    <li>
+                    <a
+                        href="https://www.khanacademy.org/computing/computer-science/algorithms/towers-of-hanoi/a/towers-of-hanoi">
+                        The Towers of Hanoi
+                    </a>
+                <li>
+                    <a href="https://en.wikipedia.org/wiki/Strassen_algorithm">
+                        Strassen's Algorithm
+                    </a>
+            </ul>
+            
+            <h2>
+                Homework
+            </h2>
+            <ol>
+                <li>Implement the Towers of Hanoi in a programming language of
+                    your choice. Put in test code to count the number of moves.
+                    Print out the number of moves after you have solved the
+                    puzzle. Run the code and show that we have solved 
+                    the recurrence correctly. What you hand in should be 
+                    your source code plus several runs showing your results.
+                <li>Implement Strassen's method in a programming language of
+                    your choice.
+                <li>A well-known recurrence is the Fibonacci sequence. Please
+                    find the closed form for it, <em>showing how you found
+                    it</em>. (You can easily look up the form online, but
+                    please try to solve this yourself.
+                <li>Find tight asymptotic bounds for the following recurrence:
+                    <br>
+                    <img src="graphics/RecEq3.gif">
+                    <br>
+            </ol>
+
+            <h2>
+                Credits
+            </h2>
+
+            <ul>
+                <li>Recursion-tree diagrams:
+                    http://www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec20-master/lec20.html
+            </ul>
+    </body>
+</html>

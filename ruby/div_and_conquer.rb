@@ -13,11 +13,17 @@
 
 # Internal: Computes the sum of the left, right halves and their index where max is reached
 #
+# ARGS:
+# arr  - Array where the sub-array has to be found
+# low  - Index of the first element in arr
+# mid  - Index of the middle element in arr
+# high - Index of the last element in arr
+#
+# Return: Array (Triplet)
+#
 # Examples
 #   find_max_crossing_subarray([-2, -3, 4, -1, -2, 1, 5, -3], 0, 3, 7)
 #   => [2, 6, 7]
-#
-# Returns an Array.
 def find_max_crossing_subarray(arr, low, mid, high)
   sum = max_left = 0
   left_sum = -Float::INFINITY
@@ -44,13 +50,19 @@ def find_max_crossing_subarray(arr, low, mid, high)
 end
 
 # Internal: Computes the maximum sub array which returns maximum sum over a range
+#           Recursive strategy
+#
+# ARGS:
+# arr  - Array where the sub-array has to be found
+# low  - Index of the first element in arr
+# high - Index of the last element in arr
+#
+# Return: Array (Triplet)
 #
 # Examples
 #   find_max_subarray([-2, -3, 4, -1, -2, 1, 5, -3], 0, 7)
 #   find_max_subarray([-2, -3, 4, -1, -2, 1, 5, -3])
 #   => [2, 6, 7]
-#
-# Returns an Array.
 def find_max_subarray(arr, low=0, high=arr.length-1)
   low ||= 0
   high ||= arr.length-1
@@ -71,14 +83,15 @@ end
 #
 # COMPLEXITY: Θ(n^3)
 #
+# ARGS:
 # m1 - Matrix 1
 # m2 - Matrix 2
+#
+# Return: Array
 #
 # Examples
 #   square_matrix_multiply([[1, 2], [3, 4]], [[1, 0], [0, 1]])
 #   => [[1, 2], [3, 4]]
-#
-# Returns an Array.
 def square_matrix_multiply(m1, m2)
   n = m1.length
   c = n.times.map { |x| [] }
@@ -99,14 +112,15 @@ end
 #
 # COMPLEXITY: Θ(n^log7)
 #
+# ARGS:
 # a - Matrix 1
 # b - Matrix 2
+#
+# Return: Array
 #
 # Examples
 #   strassen_multiplication([[1, 2], [3, 4]], [[1, 0], [0, 1]])
 #   => [[1, 2], [3, 4]]
-#
-# Returns an Array (a*b).
 def strassen_multiplication(a, b)
   a11, a12, a21, a22 = matrix_partitioner(a)
   b11, b12, b21, b22 = matrix_partitioner(b)
@@ -190,11 +204,16 @@ end
 
 # Internal: Add matrix elements
 #
+# ARGS:
+# mat1      - Matrix 1
+# mat2      - Matrix 2
+# operation - Operation to be performed on the matrices (Addition or Subtraction)
+#
+# Return: Array
+#
 # Examples
 #   mat_add_or_subtract([[1, 2], [3, 4]], [[1, 0], [0, 1]])
 #   => [[1, 2], [3, 4]]
-#
-# Returns an Array.
 def mat_add_or_subtract(mat1, mat2, operation='+')
   n = mat1.size
   result = n.times.map{ |x| [] }
@@ -209,12 +228,15 @@ end
 # Internal: Divides the given square matrix into sub matrices
 # NOTE: SIZE OF MATRICES SHOULD BE A POWER OF 2
 #
+# ARGS:
+# mat - Matrix to be partitioned
+#
+# Return: Array
+#
 # Examples
 #   matrix_partitioner([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]])
 #             a11               a12                a21                   a22
 #   => [[1, 2], [5, 6]], [[3, 4], [7, 8]], [[9, 10], [13, 14]], [[11, 12], [15, 16]]
-#
-# Returns an Array.
 def matrix_partitioner(mat)
   n = mat.size-1
   n_half = mat.size/2
@@ -228,33 +250,86 @@ def matrix_partitioner(mat)
 end
 
 # Internal: Assembles the partitioned matrix
+# NOTE: Provided argument must be valid or else this will still assemble but
+#       unexpected output may be presented
+#
+# ARGS:
+# mat_list: A partitioned NXN matrix where n is always a power of 2
+#
+# Return: Array
 #
 # Examples
 #   assemble_matrix([[1], [2], [3], [4]])
 #   => [[1, 2], [3, 4]]
 #
-# Returns an Array.
 def assemble_matrix(mat_list)
-  sub_len = mat_list[0].size
-  n = sub_len*2
-  m = n.times.map{ |x| [] }
+  mat_list.flatten!
+  rows = columns = mat_list.length**(0.5)
+  final_matrix = (0..rows-1).map { |x| [] }
 
-  (0..n-1).each do |row|
-    bottom = 0
-    if row >= sub_len
-      bottom = 1
-    end
+  (0..rows-1).each do |row|
+    (0..columns-1).each do |column|
+      offset = ( ( row / 2 ) * 8 ) +
+               ( ( row % 2 ) * 2 ) +
+               ( ( column / 2 ) * 2 ) +
+               column
 
-    for i in (0..1)
-      sub_matrix = mat_list[(bottom*2) + i]
-      sub_row = row
-      if bottom == 1
-          sub_row -= sub_len
-      end
-      (sub_matrix[sub_row]).each do |elem|
-        m[row] << elem
-      end
+      final_matrix[row] << mat_list[offset]
     end
   end
-  m
+final_matrix
 end
+
+def unit_test_div_and_conquer
+  test('Find max crossing subarray', find_max_crossing_subarray_test)
+  test('Find max subarray', find_max_subarray_test)
+  test('Square matix multiply', square_matrix_multiply_test)
+  test('Matrix partitioner', matrix_partitioner_test)
+  test('Assemble matrix', assemble_matrix_test)
+  test('Square matrix multiply Recursive', square_matrix_multiply_recursive_test)
+  test('Strassen muliplication', strassen_multiplication_test)
+end
+
+def test(method_name, method_test)
+  if method_test
+    p "#{method_name} OK"
+  else
+    p "#{method_name} FAIL"
+  end
+end
+
+@mat1 = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]
+@mat2 = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]
+
+@mat1Xmat2 = [[90, 100, 110, 120], [202, 228, 254, 280], [314, 356, 398, 440], [426, 484, 542, 600]]
+
+def find_max_crossing_subarray_test
+  find_max_crossing_subarray([-2, -3, 4, -1, -2, 1, 5, -3], 0, 3, 7) == [2, 6, 7]
+end
+
+def find_max_subarray_test
+  find_max_subarray([-2, -3, 4, -1, -2, 1, 5, -3]) == [2, 6, 7]
+end
+
+def square_matrix_multiply_test
+  square_matrix_multiply(@mat1, @mat2) == @mat1Xmat2
+end
+
+def matrix_partitioner_test
+  matrix_partitioner(@mat1) == [[[1, 2], [5, 6]], [[3, 4], [7, 8]], [[9, 10], [13, 14]], [[11, 12], [15, 16]]]
+end
+
+def assemble_matrix_test
+  partitioned_mat = [[[1, 2], [5, 6]], [[3, 4], [7, 8]], [[9, 10], [13, 14]], [[11, 12], [15, 16]]]
+  assemble_matrix(partitioned_mat) == @mat1
+end
+
+def square_matrix_multiply_recursive_test
+  square_matrix_multiply_recursive(@mat1, @mat2) == @mat1Xmat2
+end
+
+def strassen_multiplication_test
+  strassen_multiplication(@mat1, @mat2) == @mat1Xmat2
+end
+
+unit_test_div_and_conquer
