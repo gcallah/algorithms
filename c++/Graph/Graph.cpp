@@ -18,61 +18,69 @@ Graph::Graph(std::vector<Node*> c) {
 }
 
 void Graph::DFS() {
+    initNode();
     time = 0;
     for (int i = 0; i < con.size(); i++) {
-        if (con[i]->color == WHITE) {
-            innerDFS(con[i]);
+        Node* u = con[i];
+        if (u->color == WHITE) {
+            DFS_visit(u);
         }
     }
 }
 
-void Graph::BFS() {
-    time = 0;
-    for (int i = 0; i < con.size(); i++) {
-        if (con[i]->color == WHITE) {
-            innerBFS(con[i]);
+void Graph::BFS(Node *s) {
+    initNode();
+    que = std::queue<Node*>();
+    
+    s->color = GRAY;
+    s->d = 0;
+    s->p = nullptr;
+    
+    que.push(s);
+    while (!que.empty()) {
+        Node * u = que.front();
+        que.pop();
+        for (int i = 0; i < u->neighbor.size(); i++) {
+            Node * v = u->neighbor[i];
+            if (v->color == WHITE) {
+                v->color = GRAY;
+                v->d = u->d + 1;
+                v->p = u;
+                que.push(v);
+            }
         }
+        u->color = BLACK;
     }
+    
 }
 
-void Graph::innerDFS(Node * coni) {
-    if (coni->color == WHITE) {
-        turnGray(coni);
-    }
+void Graph::DFS_visit(Node * u) {
+    time = time + 1;
+    u->d = time;
+    u->color = GRAY;
     
-    for (int i = 0; i < coni->neighbor.size(); i++) {
-        if (coni->neighbor[i]->color == WHITE) {
-            innerDFS(coni->neighbor[i]);
+    for (int i = 0; i < u->neighbor.size(); i++) {
+        Node *v = u->neighbor[i];
+        if (v->color == WHITE) {
+            v->p = u;
+            DFS_visit(v);
         }
     }
-    
-    turnBlack(coni);
+    u->color = BLACK;
+    time = time + 1;
+    u->f = time;
 }
 
-void Graph::innerBFS(Node * coni) {
-    if (coni->color == WHITE) {
-        que.push(coni);
-        turnGray(coni);
+void Graph::print_path(const Node* s, const Node * v) {
+    if (s == v) {
+        std::cout << s->weight << std::endl;
+    } else if (v->p == nullptr) {
+        std::cout << "No path from s to v exists" << std::endl;
+    } else {
+        print_path(s, v->p);
+        std::cout << v->weight << std::endl;
     }
-    
-    for (int i = 0; i < coni->neighbor.size(); i++) {
-        if (coni->neighbor[i]->color == WHITE) {
-            turnGray(coni->neighbor[i]);
-            que.push(coni->neighbor[i]);
-
-        }
-    }
-
-    Node * f = que.front();
-    que.pop();
-    turnBlack(f);
-
-    if (que.empty()) return;
-    
-    innerBFS(f);
-    
-
-};
+}
 
 void Graph::init() {
     if (matrix.empty()) {
@@ -82,6 +90,14 @@ void Graph::init() {
         createList();
     }
     setAllWhite();
+}
+
+void Graph::initNode() {
+    setAllWhite();
+    for (int i = 0; i < con.size(); i++) {
+        con[i]->p = nullptr;
+        con[i]->d = 0;
+    }
 }
 
 void Graph::setAllWhite() {
@@ -104,6 +120,8 @@ void Graph::createMatrix() {
     }
 }
 
+
+
 void Graph::createList() {
     list = std::vector<std::vector<int>>(con.size(), std::vector<int>());
     
@@ -119,14 +137,4 @@ void Graph::createList() {
     }
 }
 
-void Graph::turnGray(Node* n) {
-    n->color = GRAY;
-    std::cout << time + 1 << ": " << n->weight << " to GRAY" << std::endl;
-    time++;
-}
 
-void Graph::turnBlack(Node* n) {
-    n->color = BLACK;
-    std::cout << time + 1 << ": " << n->weight << " to BLACK" << std::endl;
-    time++;
-}

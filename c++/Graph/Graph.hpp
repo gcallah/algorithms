@@ -18,6 +18,9 @@ struct Node {
     Node(int v) : weight(v) {};
     int weight = 0;
     Color color = WHITE;
+    Node *p = nullptr; // parent
+    int d = 0; // distance for BFS or visited time for DFS
+    int f = 0; // finished time for DFS
     std::vector<Node*> neighbor;
 };
 
@@ -26,17 +29,18 @@ public:
     Graph();
     Graph(std::vector<Node*> con);
     void DFS();
-    void BFS();
+    void BFS(Node*);
     std::vector<std::vector<Node*>> constructStrongComponent();
     void init();
     void setAllWhite();
+    void print_path(const Node*, const Node*);
 private:
-    void innerDFS(Node*); // DFS visit
-    void innerBFS(Node*);
+    void DFS_visit(Node*); // DFS visit
+    
+    void initNode();
     void createMatrix();
     void createList();
-    void turnGray(Node*);
-    void turnBlack(Node*);
+
     std::vector<std::vector<bool>> matrix;
     std::vector<Node*> con;
     std::queue<Node*> que;

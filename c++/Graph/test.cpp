@@ -61,7 +61,6 @@ int main(int argc, const char * argv[]) {
     cout << "DFS - :" << endl;
     graph.DFS();
     graph.setAllWhite();
-    cout << "BFS - :" << endl;
-    graph.BFS();
+    graph.print_path(b, h);
     return 0;
 }
