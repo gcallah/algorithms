@@ -14,7 +14,7 @@
             <div style="text-align:center">
                 <p>
                     <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Minimum_spanning_tree.svg/300px-Minimum_spanning_tree.svg.png">
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/The_worship_of_Mammon.jpg/170px-The_worship_of_Mammon.jpg">
                     <br>
                 </p>
             </div>
@@ -23,6 +23,52 @@
                 What is a greedy algorithm?
             </h2>
 
+                <p>
+                We have an optimization problem.
+                <br>
+                At each step of the algorithm, we have to make a choice, e.g.,
+                cut the rod here, or cut it there.
+                <br>
+                Sometimes, we need to calculate the result of all possible
+                choices.
+                </p>
+                <ul>
+                    <li>When we do so from the top down, we have a <i>recursive
+                    algorithm</i>. A naive recursive algorithm may be very
+                    expensive, but we can significantly reduce its run-time by
+                    <i>memoizing</i> it.
+                    <li>When we do this calculation from the bottom up, we are
+                        employing <i>dynamic programming</i>.
+                </ul>
+
+                <p>
+                But sometimes, we can do much better than either of those
+                choices. Sometimes, we don't need to consider the global
+                situation at all: we can simply make the best choice among the
+                options provided by the first sub-problem we face, and then
+                continue that procedure for all subsequent sub-problems.
+                <br>
+                <br>
+                An algorithm that operates in such a fashion is a <i>greedy
+                algorithm</i>. (The name comes from the idea that the
+                algorithm <i>greedily</i> grabs the best choice available to it right
+                away.)
+                <br>
+                <br>
+                Clearly, not all problems can be solved by greedy algorithms.
+                Consider this simple shortest path problem:
+                <br>
+                <br>
+                <img src="graphics/ShortPath.png">
+                <br>
+                <br>
+                A greedy algorithm choosing the shortest path from <i>a</i> to <i>d</i> will
+                wrongly head to <i>b</i> first, rather than to <i>c</i>.
+                <br>
+                <br>
+                And that provides us a <a href="#hw1">homework problem</a>.
+                <br>
+                </p>
 
                 <h3>
                     Minimum spanning trees
@@ -41,8 +87,9 @@
                     <ul>
                         <li>Lowest cost way to bring a package between two
                             cities.
-                        <li>Most efficient way to connect two components.
-                        <li>Most direct way to connect two strangers in a
+                        <li>Most efficient way to connect two components on a
+                            circuit board.
+                        <li>Most efficient way to connect two strangers in a
                             social network.
                     </ul>
                     <p>
@@ -81,6 +128,65 @@
                 </h3>
 
             <h2>
+                An activity selection problem
+            </h2>
+
+                <h3>
+                    The optimal sub-structure of the problem
+                </h3>
+
+                <h3>
+                    Making the greedy choice
+                </h3>
+
+                <h3>
+                    A recursive greedy algorithm
+                </h3>
+
+                <h3>
+                    An iterative greedy algorithm
+                </h3>
+
+            <h2>
+                Elements of the greedy strategy
+            </h2>
+
+                <h3>
+                    Greedy-choice property
+                </h3>
+
+
+                <h3>
+                    Optimal substructure
+                </h3>
+
+
+                <h3>
+                    Greedy versus dynamic programming
+                </h3>
+
+            <h2>
+                Huffman codes
+            </h2>
+
+                <h3>
+                    Prefix codes
+                </h3>
+
+                <h3>
+                    Constructing a Huffman code
+                </h3>
+
+                <h3>
+                    Correctness of Huffman's algorithm
+                </h3>
+
+
+            <h2>
+                Matroids and greedy methods
+            </h2>
+
+            <h2>
                 Source Code
             </h2>
                 <p>
@@ -106,7 +212,14 @@
                 Homework
             </h2>
                 <ol>
-                    <li>
+                    <li id="hw1">
+                    Our intuition might tell us that choosing the shortest path
+                    from MetroTech Center to Yankee Stadium is a simpler problem
+                    than choosing a minimum spanning tree for all New York subway
+                    stations. Yet the latter can be solved with a greedy algorithm,
+                    while the first cannot. Why?
+                    <li>Why is the run-time analysis of the rod cutting problem not
+                    the same as that of the matrix chain problem?
                 </ol>
     </body>
 </html>
