@@ -170,7 +170,52 @@
                     naive, recursive Fibonacci.
                     <br>
                     <br>
-                    Running time is exponential in n.
+                    Running time is exponential in n. Why?
+                    <br>
+                    Our textbook gives us the equation:
+                    <br>
+                    <br>
+                    <img src="graphics/RecRodCutEqn.gif">
+                    <br>
+                    <br>
+                    This is equivalent to:
+                    <br>
+                    T(n) = 1 + T(n - 1) + T(n - 2) + ... T(1)
+                    <br>
+                    For n = 1, there are 2<sup>0</sup> ways to solve the
+                    problem.
+                    <br>
+                    For n = 2, there are 2<sup>1</sup> ways to solve the
+                    problem.
+                    <br>
+                    For n = 3, there are 2<sup>2</sup> ways to solve the
+                    problem.
+                    <br>
+                    Each additional foot of rod gives us 2 * (previous number
+                    of ways of solving problem), since we have all the previous
+                    solutions, either with a cut of one foot for the new
+                    extension, or without a cut there. (Similar to why each row
+                    of Pascal's triangle gives us the next power of two.)
+                    <br>
+                    <br>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Pascal%27s_triangle_5.svg/250px-Pascal%27s_triangle_5.svg.png">
+                    <br>
+                    <br>
+                    So, we have the series:
+                    <br>
+                    2<sup>n - 1</sup> + 2<sup>n - 2</sup> + 2<sup>n -
+                        3</sup>... + 2<sup>0</sup> + 1
+                    <br>
+                    And this equals 2<sup>n</sup>. Why?
+                    <br>
+                    <img src="graphics/TwoToTheN.png">
+                    <br>
+                    <br>
+                    <b>Example</b>: 2<sup>4</sup> = 2<sup>3</sup> +
+                    2<sup>2</sup> + 2<sup>1</sup> + 2<sup>0</sup> + 1
+                    <br>
+                    Or, 16 = 8 + 4 + 2 + 1 + 1
                 </p>
 
 
