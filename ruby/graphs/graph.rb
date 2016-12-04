@@ -141,4 +141,9 @@ class DirectedGraph < Graph
     populate_adjacency_list
   end
 
+  def transpose
+    @edges.each do |x|
+      x.v1, x.v2 = x.v2, x.v1
+    end
+  end
 end

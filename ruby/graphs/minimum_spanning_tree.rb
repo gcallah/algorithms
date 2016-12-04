@@ -10,6 +10,7 @@ module Graphs
       end
 
       def MST_prim
+        
       end
     end
   end
