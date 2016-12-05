@@ -6,6 +6,10 @@ body {
     background: #ffd;
 }
 
+table {
+    margin: 8px 40px 8px 40px;
+}
+
 table, th, td {
     border: 1px solid black;
     }

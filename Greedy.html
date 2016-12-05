@@ -20,6 +20,25 @@
             </div>
 
             <h2>
+                A family of problems and approriate solutions
+            </h2>
+
+                <p>
+                    It is important to recognize that we have been dealing with a
+                    family of problems and solutions to those problems:
+                </p>
+                <ul>
+                    <li><b>Optimal substructure</b>:
+                        <br>Recursive solution.
+                    <li><b>Optimal substructure with overlapping sub-problems</b>:
+                        <br>Recursion with memoization or dynamic programming.
+                    <li><b>Optimal substructure where only the immediate choice
+                            matters</b>:
+                        <br>Greedy algorithms.
+                </ul>
+
+
+            <h2>
                 What is a greedy algorithm?
             </h2>
 
@@ -107,6 +126,9 @@
                     <img src="graphics/MinSpanTree1.png">
                     <br>
                     <br>
+                    We add edges in increasing-cost order, so long as the edges
+                    don't create a cycle (are "safe").
+                    <br>
                     Steps:
                     </p>
                     <ul>
@@ -147,6 +169,9 @@
                     <i>T*</i> but not in <i>T</i> (otherwise <i>T</i> would
                     have a cycle).
                     <br>
+
+                    <img src="graphics/Kruskal.png">
+                    <br>
                     But the weight of <i>e<sub>k</sub></i> must be less than
                     the weight of <i>e<sup>*</sup></i>, because after we had
                     inserted <i>e<sub>1</sub></i> through 
@@ -157,14 +182,206 @@
                     So <i>T*</i> does not have a lesser weight after all.
                     </p>
 
+                    <h4>
+                        How to find safe edges
+                    </h4>
+
+                    <ul>
+                        <li>Place each vertex in its own set. (We now have a
+                            <i>forest</i> of one-vertex, unconnected trees.)
+                        <li>We examine edges (<i>u, v</i>) in non-decreasing order.
+                        <li>If <i>u</i> and <i>v</i> are not in the same set (tree), add the
+                            edge. (It is safe.)
+                        <li>If <i>u</i> and <i>v</i> are in the same set, adding the edge
+                            would create a cycle (by the nature of trees, E = V
+                            - 1).
+                    </ul>
+
 
             <h2>
                 An activity selection problem
             </h2>
 
+                <p>
+                    Suppose we need to schedule a lecture hall with the goal of
+                    maximizing the number of lectures it can hold, given the
+                    constraint that no lectures can share the space.
+                    <br>
+                    We have the activities sorted in order of increasing finish
+                    time:
+                    <br>
+                    <i>f<sub>1</sub> &le; f<sub>2</sub> &le; f<sub>3</sub>
+                        &le; ... &le; f<sub>n - 1</sub> &le; f<sub>n</sub></i>.
+                    <br>
+                    <br>
+                    We might have the following set of activities:
+                </p>
+                <table>
+                    <tr>
+                        <th>
+                            <i>i</i>
+                        </th>
+                        <th>
+                            1
+                        </th>
+                        <th>
+                            2
+                        </th>
+                        <th>
+                            3
+                        </th>
+                        <th>
+                            4
+                        </th>
+                        <th>
+                            5
+                        </th>
+                        <th>
+                            6
+                        </th>
+                        <th>
+                            7
+                        </th>
+                        <th>
+                            8
+                        </th>
+                        <th>
+                            9
+                        </th>
+                        <th>
+                            10
+                        </th>
+                        <th>
+                            11
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <i>s<sub>i</sub></i>
+                        </th>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            8
+                        </td>
+                        <td>
+                            8
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            12
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <i>f<sub>i</sub></i>
+                        </th>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            5
+                        </td>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            7
+                        </td>
+                        <td>
+                            9
+                        </td>
+                        <td>
+                            9
+                        </td>
+                        <td>
+                            10
+                        </td>
+                        <td>
+                            11
+                        </td>
+                        <td>
+                            12
+                        </td>
+                        <td>
+                            14
+                        </td>
+                        <td>
+                            16
+                        </td>
+                    </tr>
+                </table>
+
+                <p>
+                    <br>
+                    We have several sets of mutually compatible lectures, e.g.:
+                    <br>
+                    {<i>a</i><sub>3</sub>,
+                    <i>a</i><sub>9</sub>,
+                    <i>a</i><sub>11</sub>}
+                    <br>
+                    However, this set is larger:
+                    <br>
+                    {<i>a</i><sub>1</sub>,
+                    <i>a</i><sub>4</sub>,
+                    <i>a</i><sub>8</sub>,
+                    <i>a</i><sub>11</sub>}
+                    <br>
+                    <br>
+                    How do we find the maximum subset of lectures we can
+                    schedule?
+                </p>
+
+
                 <h3>
                     The optimal sub-structure of the problem
                 </h3>
+
+                <p>
+                    It is easy to see that the problem exhibits optimal
+                    substructure. <i>If</i> the optimal solution includes a
+                    lecture from 4 to 6, then we have the sub-problems of
+                    scheduling lectures that end by 4, and lectures that start
+                    at 6 or after. Obviously, we must solve each of those
+                    sub-problems in an optimal way, or our solution will not be
+                    optimal! (Think of our problem of traveling from MetroTech
+                    Center to Yankee Stadium via Grand Central.) Our textbook
+                    calls this a "cut-and-paste" argument: we can cut an
+                    optimal set of lectures ending by 4 and paste it into our
+                    supposed optimal solution: if the solution was different
+                    before 4, we have improved it, so it wasn't actually
+                    optimal!
+                    <br>
+                    <br>
+                    It is straightforward to see that we can solve this problem
+                    with a recursive, memoized algorithm -- we examine each
+                    possible "cut" of a "middle" lecture, and recursively solve
+                    the start-to-middle problem, and the middle-to-end problem.
+                    Or we could use a bottom-up dynamic programming algorithm,
+                    developed from the recursive solution in the same way we
+                    saw in our last lecture.
+                </p>
 
                 <h3>
                     Making the greedy choice
@@ -216,6 +433,25 @@
             <h2>
                 Matroids and greedy methods
             </h2>
+
+                <h3>
+                    Matroids
+                </h3>
+
+
+                <h3>
+                    Greedy algorithms on a weighted matroid
+                </h3>
+
+
+            <h2>
+                A task-scheduling problem as a matroid
+            </h2>
+
+                <h3>
+                    
+                </h3>
+
 
             <h2>
                 Source Code
