@@ -486,10 +486,36 @@
                     Optimal substructure
                 </h3>
 
+                    <p>
+                    this is simpler then for dynamic programming problems: 
+                    all we need to do is show that a greedy choice combined with
+                    an optimal solution to the sub problem of the rest of
+                    the data gives us an optimal solution to the original problem.
+                    We use induction to show that making the greedy choice at every
+                    step produces an optimal solution.
+                    </p>
+
 
                 <h3>
                     Greedy versus dynamic programming
                 </h3>
+
+                    <p>
+                    Two knapsack problems:
+                    </p>
+    
+                    <ol>
+                        <li>A thief can take entire items from a store or not, and
+                            put them in his knapsack.
+                        <li>A thief can take whatever fraction of an item he wants,
+                            and put it in his knapsack.
+                    </ol>
+    
+                    <p>
+                    The latter can be solved with a greedy algorithm, the former
+                    cannot.
+                    </p>
+
 
             <h2>
                 Huffman codes
@@ -582,6 +608,8 @@
                         is actually going on there? Why isn't the code just
                         grabbing the first element in the activity array, which
                         must be the one that finishes first?
+                    <li>Show that the fractional knapsack problem (p. 425) has the
+                        greedy choice property.
                 </ol>
     </body>
 </html>
