@@ -121,11 +121,42 @@
                     </ul>
                     <p>
                     <img src="graphics/MinSpanTree2.png">
+                    <br>
+                    <br>
+                    <b>Proof</b>: Is Kruskal's algorithm guaranteed to always
+                    find the minimum spanning tree?
+                    <br>
+                    Yes, it is. Let's prove it. 
+                    <br>
+                    We suppose that graph <i>G</i> has <i>n</i> vertices.
+                    Then our algorithm will create a tree <i>T</i>
+                    with edges <i>e<sub>1</sub></i>, <i>e<sub>2</sub></i>,
+                    ...  <i>e<sub>n - 1</sub></i>, where 
+                    <i>w(e<sub>1</sub>) < w(e<sub>2</sub>)
+                        < ... w(e<sub>n - 1</sub>)</i>.
+                    <br>
+                    Suppose that there is a tree <i>T*</i> with a lesser
+                    weight.
+                    <br>
+                    Let <i>e<sub>k</sub></i> be the first edge in <i>T</i>
+                    that is not in <i>T*</i>.
+                    <br>
+                    Now we insert <i>e<sub>k</sub></i> in <i>T*</i>. This will
+                    produce a cycle in <i>T*</i>, by the nature of trees.
+                    There must be some edge <i>e<sup>*</sup></i> that is in
+                    <i>T*</i> but not in <i>T</i> (otherwise <i>T</i> would
+                    have a cycle).
+                    <br>
+                    But the weight of <i>e<sub>k</sub></i> must be less than
+                    the weight of <i>e<sup>*</sup></i>, because after we had
+                    inserted <i>e<sub>1</sub></i> through 
+                    <i>e<sub>k - 1</sub></i>, we could have next chosen
+                    <i>e<sup>*</sup></i>... but we did not. Instead we chose
+                    <i>e<sub>k</sub></i>.
+                    <br>
+                    So <i>T*</i> does not have a lesser weight after all.
                     </p>
 
-
-                <h3>
-                </h3>
 
             <h2>
                 An activity selection problem
