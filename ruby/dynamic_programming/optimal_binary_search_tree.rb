@@ -19,7 +19,7 @@ module DynamicProgramming
             e[i][j] = Float::INFINITY
             w[i][j] = w[i][j-1] + p[j] + q[j]
             (i..j).each do |r|
-              t = e[i][r-1] + (e[r+1][j]||0) + w[i][j]
+              t = e[i][r-1] + e[r+1][j] + w[i][j]
               if t < e[i][j]
                 e[i][j] = t
                 root[i][j] = r
