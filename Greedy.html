@@ -387,27 +387,99 @@
                     Making the greedy choice
                 </h3>
 
-                <p>
+                    <p>
                     But we can solve this problem much more efficiently. At
                     each step in solving it, we can make a completely <i>local</i>
                     choice: what activity (still possible) finishes earliest?
-                </p>
+                    <br>
+                    <br>
+                    Since we have sorted the activities in order of increasing
+                    finish time, we simply choose <i>a</i><sub>1</sub>, since
+                    it is guaranteed to finish at least tied for first.
+                    <br>
+                    <br>
+                    The proof that this will give us a maximal set of
+                    activities is trivial: Let us suppose <i>a</i><sub>j</sub>
+                    is the activity in some set that finishes first, but that
+                    there is a maximal subset A<sub>k</sub> that does <i>not</i> include
+                    <i>a</i><sub>j</sub>. We simply remove the first element of
+                    A<sub>k</sub> and substitute in <i>a</i><sub>j</sub>. This
+                    is guaranteed to be a compatible set of activities, since
+                    <i>a</i><sub>j</sub> finishes first, and it will be
+                    maximal, since it is the same size as A<sub>k</sub>. (Note
+                    that the textbook offers us an example of such sets on page
+                    415.)
+                    </p>
 
                 <h3>
                     A recursive greedy algorithm
                 </h3>
 
+                    <p>
+                    The algorithm it Is straightforward: find the first compatible 
+                    activity, then call the algorithm again with the rest of the activity list.
+                    <br>
+                    <br>
+                    One trick worth noting: the authors put a dummy activity in the
+                    first position of the list, so that there is no special first
+                    call of the function.
+                    <br>
+                    There is a <b>design pattern</b> here: oftentimes, it is
+                    better to modify a data structure than to do special coding for
+                    end cases.
+                    </p>
+
+
                 <h3>
                     An iterative greedy algorithm
                 </h3>
+
+                    <p>
+                    As usual, it is fairly simple to transform the recursive
+                    algorithm into an iterative version. The authors discuss tail
+                    recursion in this section: let's review what this is.
+                    </p>
+
 
             <h2>
                 Elements of the greedy strategy
             </h2>
 
+                <p>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Greedy_algorithm_36_cents.svg/280px-Greedy_algorithm_36_cents.svg.png">
+                </p>
+
+                <ol>
+                    <li>Determine the optimal substructure of the problem.
+                    <li>Develop a recursive solution.
+                    <li>Show if we make the greedy choice, that only one 
+                        sub-problem remains.
+                    <li>Prove that it is always safe to make the greedy
+                        choice.
+                    <li>Develop a recursive algorithm that implements the
+                        greedy strategy.
+                    <li>Convert the recursive algorithm to an iterative algorithm
+                </ol>
+
                 <h3>
                     Greedy-choice property
                 </h3>
+
+                    <p>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Greedy-search-path-example.gif">
+                    <br>
+                    <br>
+                    For a greedy algorithm to work, the optimal choice must not
+                    depend upon any sub-problems or any future choices.
+                    <br>
+                    <br>
+                    To prove that a greedy choice will be appropriate for some
+                    problem, we typically examine an optimal solution, and then
+                    show that substituting in a greedy choice will also yield an
+                    optimal solution.
+                    </p>
 
 
                 <h3>
@@ -494,14 +566,22 @@
             </h2>
                 <ol>
                     <li id="hw1">
-                    Our intuition might tell us that choosing the shortest
-                    subway path from MetroTech Center to Yankee Stadium 
-                    is a simpler problem than choosing a minimum 
-                    spanning tree for all New York subway
-                    stations. Yet the latter can be solved with a greedy algorithm,
-                    while the first cannot. Why?
+                        Our intuition might tell us that choosing the shortest
+                        subway path from MetroTech Center to Yankee Stadium 
+                        is a simpler problem than choosing a minimum 
+                        spanning tree for all New York subway
+                        stations. Yet the latter can be solved with a greedy algorithm,
+                        while the first cannot. Why?
                     <li>Why is the run-time analysis of the rod cutting problem not
-                    the same as that of the matrix chain problem?
+                        the same as that of the matrix chain problem?
+                    <li>For the activity selection problem, besides simply
+                        choosing the activity this finishes first, what other
+                        greedy choices could we make?
+                    <li>On page 419, line 2 of pseudo-code loops, and the
+                        comment describing why it is looping is incorrect. What
+                        is actually going on there? Why isn't the code just
+                        grabbing the first element in the activity array, which
+                        must be the one that finishes first?
                 </ol>
     </body>
 </html>
