@@ -9,6 +9,9 @@ public class MatrixChainMultiplication {
         int[][][] costsAndIndices = matrixChainOrder(dimens);
         printOptimalParens(costsAndIndices[1], 0, dimens.length - 2);
         System.out.printf("%n");
+        System.out.printf("dp solution min: %d%n", costsAndIndices[0][0][dimens.length - 2]);
+        System.out.printf("recursive solution min: %d%n", recursiveMatrixChain(dimens));
+        System.out.printf("memoized solution min: %d%n", memoizedMatrixChain(dimens));
     }
 
     /**
@@ -63,5 +66,56 @@ public class MatrixChainMultiplication {
             printOptimalParens(indcies, indcies[i][j] + 1, j);
             System.out.print(")");
         }
+    }
+
+    public static int recursiveMatrixChain(int[] p) {
+        int n = p.length - 1;
+        int[][] costs = new int[n][n];
+        return recursiveMatrixChain(p, 0, p.length - 2, costs);
+    }
+
+    /**
+     * Unlike the method signature in the book, I change it slighly by adding a costs array parameter because otherwise the array will be a global variable.
+     */
+    public static int recursiveMatrixChain(int[] p, int i, int j, int[][] costs) {
+        if (i == j) {
+            return 0;
+        }
+        costs[i][j] = Integer.MAX_VALUE;
+        for (int k = i; k < j; k++) {
+            int q = recursiveMatrixChain(p, i, k, costs) + recursiveMatrixChain(p, k + 1, j, costs) + p[i] * p[k + 1] * p[j + 1];
+            if (q < costs[i][j]) {
+                costs[i][j] = q;
+            }
+        }
+        return costs[i][j];
+    }
+
+    public static int memoizedMatrixChain(int[] p) {
+        int n = p.length - 1;
+        int[][] costs = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                costs[i][j] = Integer.MAX_VALUE;
+            }
+        }
+        return lookupChain(costs, p, 0, n - 1);
+    }
+    
+    private static int lookupChain(int[][] m, int[] p, int i, int j) {
+        if (m[i][j] < Integer.MAX_VALUE) {
+            return m[i][j];
+        }
+        if (i == j) {
+            m[i][j] = 0;
+        } else {
+            for (int k = i; k < j; k++) {
+                int q = lookupChain(m, p, i, k) + lookupChain(m, p, k + 1, j) + p[i] * p[k + 1] * p[j + 1];
+                if (q < m[i][j]) {
+                    m[i][j] = q;
+                }
+            }
+        }
+        return m[i][j];
     }
 }
