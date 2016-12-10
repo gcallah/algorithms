@@ -48,8 +48,8 @@ public class DivideAndConquer {
     	for (int j = mid + 1; j <= high; ++j) {
     	    sum += a[j];
     	    if (sum > rightSum) {
-    		rightSum = sum;
-    		maxRight = j;
+                rightSum = sum;
+                maxRight = j;
     	    }
     	}
 	

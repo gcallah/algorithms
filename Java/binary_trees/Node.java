@@ -13,11 +13,11 @@ public class Node<T> {
     Node<T> p;
 
     public Node(int key) {
-	this(key, null);
+        this(key, null);
     }
 
     public Node(int key, T data) {
-	this.key = key;
-	this.data = data;
+        this.key = key;
+        this.data = data;
     }
 }
