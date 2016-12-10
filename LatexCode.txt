@@ -18,3 +18,14 @@ n^{2} + \frac{n^{2}}{2} + \frac{n^{2}}{4}  + \frac{n^{2}}{8}...
 a + ar + ar^{2} + ar^{3} +...+ + ar^{n - 1} = \sum_{k = 0}^{\infty}ar^{k} =
 \frac{a}{1 - r},\ for \left | r \right | < 1
 
+Matrix:
+X = \begin{bmatrix}
+A & B\\ 
+C & D
+\end{bmatrix}
+
+Y = \begin{bmatrix}
+E & F\\ 
+G & H
+\end{bmatrix}
+
