@@ -95,22 +95,41 @@ module GreedyAlgorithms
         [q, r]
       end
 
-      # def zero_one_bottom_up(w, c, max_weight)
-      #   n = w.length
-      #   r = Array.new(n) { Array.new(max_weight) }
-      #   (0..n-1).each do |i|
-      #     (0..max_weight-1).each do |j|
-      #       if j == 0 || i == 0
-      #         r[i][j] = 0
-      #       elsif w[i-1] > max_weight
-      #         r[i][j] = r[i-1][j]
-      #       else
-      #         r[i][j] = [c[i-1] + r[i - 1][j - w[i - 1]], r[i - 1][j]].max
-      #       end
-      #     end
-      #   end
-      #   r.last.last
-      # end
+      # Public: Dynamic program recipie for 0-1 Knapsack
+      #         Iterative Strategy
+      #
+      # w - Weight list of items
+      # c - Cost list of the corresponding weights
+      # max_weight - Maximum weight that the burglar can carry
+      #
+      # Examples
+      #   w = [1, 3, 4, 5]
+      #   c = [1, 4, 5, 7]
+      #
+      #   zero_one_bottom_up(w, c, 7)
+      #   => [
+      #         [0, 0, 0, 0, 0, 0, 0, 0],
+      #         [0, 1, 1, 1, 1, 1, 1, 1],
+      #         [0, 1, 1, 4, 5, 5, 5, 5],
+      #         [0, 1, 1, 4, 5, 6, 6, 9],
+      #         [0, 1, 1, 4, 5, 7, 8, 9]
+      #      ]
+      def zero_one_bottom_up(w, c, max_weight)
+        n = w.length
+        r = Array.new(n+1) { Array.new(max_weight+1) }
+        (0..n).each do |i|
+          (0..max_weight).each do |j|
+            if j == 0 || i == 0
+              r[i][j] = 0
+            elsif w[i-1] > j
+              r[i][j] = r[i-1][j]
+            else
+              r[i][j] = [c[i-1] + r[i - 1][j - w[i - 1]], r[i - 1][j]].max
+            end
+          end
+        end
+        r
+      end
 
       def fractional
 
