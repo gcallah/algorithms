@@ -626,6 +626,9 @@
                     Matroids
                 </h3>
 
+                    <h4>
+                        A graph
+                    </h4>
                     <p>
                         Consider the following graph, where the edges represent
                         roads and the vertices towns:
@@ -657,6 +660,9 @@
                         <li>b, c and e are never in the same set.
                     </ul>
 
+                    <h4>
+                        A vector space
+                    </h4>
                     <p>
                         Now look at the following vector space in
                         &#8477;<sup>3</sup>:
@@ -688,14 +694,73 @@
                     </ul>
 
 
+                    <h4>
+                        A matching problem
+                    </h4>
+
                     <p>
-                        This section is based on lectures by Federico Ardila:
+                        You live in a small town with 3 women and 5 men who are
+                        single but might be married off. There is a town
+                        matchmaker who makes money by arranging marriages, and
+                        so he wants to arrange as many as possible.
+                        <br>
+                        In this town, it's "ladies' choice," and the women are
+                        numbered 1-3, and the men are a-f.
+                        <br>
+                        <br>
+                        <img src="graphics/MatroidMatching.png">
+                        <br>
+                        <br>
+                        What sets of matches are possible?
+                    </p>
+                    <ul>
+                        <li>&empty;
+                        <li>{a} {b} {c} {d} {e}
+                        <li>{a, b} {a, c} {a, d} {a, e} {b, c} {b, d} {b, e}
+                            {c, d} {c, e}
+                        <li>{a, b, c} {a, b, d}, {a, b, e} {a, c, d} {a, c, e}
+                    </ul>
+                    <p>
+                        Notice:
+                    </p>
+                    <ul>
+                        <li>f is useless!
+                        <li>a is in every maximal set.
+                        <li>d and e are never in the same set.
+                        <li>b, c and d are never in the same set.
+                        <li>b, c and e are never in the same set.
+                    </ul>
+
+                    <h4>
+                        The definition of a matroid
+                    </h4>
+                    <p>
+                        We are looking at general conditions for <i>independence</i>
+                        of choices. All three problems turn out to be
+                        surprisingly similar. They are all <i>matroids</i>.
+                        <br>
+                        <br>
+                        We have a matroid when the following independence
+                        conditions are satisfied:
+                    </p>
+                    <ul>
+                        <li>&empty; is independent.
+                        <li>If set J is independent and I is a subset of J,
+                            then I is independent.
+                        <li>If I and J are independent, and cardinality(I) &lt;
+                            cardinality(J), then there is some <i>j</i> in J
+                                and not in I, so that I &cup; <i>j</i> is also
+                                independent.
+                    </ul>
+
+
+                    <p>
+                        (This section is based on lectures by Federico Ardila:
                         <br>
                         https://www.youtube.com/watch?v=4EvpzV_3RXI
                         <br>
-                        https://www.youtube.com/watch?v=pe5MaEugAwg&list=PL-XzhVrXIVeSu_b29hbX5xJ0bRThokU8a
+                        https://www.youtube.com/watch?v=pe5MaEugAwg&list=PL-XzhVrXIVeSu_b29hbX5xJ0bRThokU8a)
                     </p>
-
 
                 <h3>
                     Greedy algorithms on a weighted matroid
