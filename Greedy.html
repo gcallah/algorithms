@@ -621,17 +621,72 @@
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Vamos_matroid.svg/220px-Vamos_matroid.svg.png">
                 <br>
                 <br>
-                Matroids are a generalization of the notion of linear independence
-                in a vector space.
-                They represent a mapping between vector spaces and graphs.
-                <br>
-                <br>
-                We will discuss them more next week.
-                </p>
 
                 <h3>
                     Matroids
                 </h3>
+
+                    <p>
+                        Consider the following graph, where the edges represent
+                        roads and the vertices towns:
+                        <br>
+                        <br>
+                        <img src="graphics/MatroidGraph.png">
+                        <br>
+                        <br>
+                        If we want to build a set of roads that are only built
+                        if there is no other route between towns, what sets are
+                        possible?
+                        <br>
+                    </p>
+                    <ul>
+                        <li>&empty;
+                        <li>{a} {b} {c} {d} {e}
+                        <li>{a, b} {a, c} {a, d} {a, e} {b, c} {b, d} {b, e}
+                            {c, d} {c, e}
+                        <li>{a, b, c} {a, b, d}, {a, b, e} {a, c, d} {a, c, e}
+                    </ul>
+                    <p>
+                        Notice:
+                    </p>
+                    <ul>
+                        <li>f is useless!
+                        <li>a is in every maximal set.
+                        <li>d and e are never in the same set.
+                        <li>b, c and d are never in the same set.
+                        <li>b, c and e are never in the same set.
+                    </ul>
+
+                    <p>
+                        Now look at the following vector space in
+                        &#8477;<sup>3</sup>:
+                        <br>
+                        <br>
+                        <img src="graphics/MatroidVectors.png">
+                        <br>
+                        (f is the vector 0, 0, 0.)
+                        <br>
+                        <br>
+                        What sets of linearly independent vectors are possible?
+                    </p>
+                    <ul>
+                        <li>&empty;
+                        <li>{a} {b} {c} {d} {e}
+                        <li>{a, b} {a, c} {a, d} {a, e} {b, c} {b, d} {b, e}
+                            {c, d} {c, e}
+                        <li>{a, b, c} {a, b, d}, {a, b, e} {a, c, d} {a, c, e}
+                    </ul>
+                    <p>
+                        Notice:
+                    </p>
+                    <ul>
+                        <li>f is useless!
+                        <li>a is in every maximal set.
+                        <li>d and e are never in the same set.
+                        <li>b, c and d are never in the same set.
+                        <li>b, c and e are never in the same set.
+                    </ul>
+
 
 
                 <h3>
