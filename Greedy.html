@@ -644,7 +644,34 @@
                 </h3>
 
                     <p>
-                        We will prove this algorithm works next week.
+                        We begin operating on an alphabet &Sigma;. At each step,
+                        we create a new alphabet, &Sigma;', with two symbols of
+                        &Sigma; replaced by a new "meta-symbol".
+                        <br>
+                        <br>
+                        <b>Base case</b>: For an alphabet of two symbols, the
+                        algorithm outputs 0 for one of them, and 1 for the
+                        other. And that is clearly optimal! (An alphabet of
+                        size 1 is a non-problem!)
+                        <br>
+                        <br>
+                        <b>Inductive step</b>: Assume the algorithm is correct
+                        for input of size <i>n</i> - 1.
+                        <br>
+                        At each step in the algorithm, we replace the two least
+                        frequent remaining symbols <i>a</i> and <i>b</i> with a
+                        new symbol <i>ab</i>, whose probability is the sum of
+                        the probabilities of <i>a</i> and <i>b</i>.
+                        <br>
+                        We always want the lowest frequency symbols to have the
+                        longest encoding length.
+                        <br>
+                        Any choice among symbols at the lowest frequency will
+                        be fine, since they all have equally low frequency. So
+                        we can pair any of those lowest frequency symbols as we
+                        wish.
+                        <br>
+
                     </p>
 
 
@@ -819,8 +846,8 @@
                         <br>
                         <b>Theorem</b>: Every basis of a matroid is of the same size.
                         <br>
-                        <b>Proof</b>: Let assume that there is some basis B of
-                        a matroid such that |B| < |A|.
+                        <b>Proof</b>: Let assume that there are some bases
+                        A and B of a matroid such that |B| < |A|.
                         <br>
                         Then by the exchange axiom (#3 above), there is some
                         element <i>a</i> of A that can be moved into B, and B
@@ -838,6 +865,10 @@
                         <br>
                         <br>
                         Every spanning tree has the same number of edges.
+                        <br>
+                        <br>
+                        We are proving things about vector spaces and graphs
+                        simply by examining the axioms of matroids!
                     </p>
 
 
