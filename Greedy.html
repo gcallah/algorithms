@@ -671,6 +671,13 @@
                         we can pair any of those lowest frequency symbols as we
                         wish.
                         <br>
+                        Now assume that there is an encoding &Sigma;'' that is
+                        derived from &Sigma; (like &Sigma;') but differs in
+                        choosing to combine <i>x</i> and <i>y</i> into a
+                        <i>xy</i>. But since we made the greedy choice,
+                        <i>xy</i> can be at best tied with <i>ab</i> meaning
+                        &Sigma;'' is at best another optimal encoding, and our
+                        encoding &Sigma;' is optimal after all.
 
                     </p>
 
@@ -898,9 +905,14 @@
                 A task-scheduling problem as a matroid
             </h2>
 
-                <h3>
-                    
-                </h3>
+                <p>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Thread_pool.svg/400px-Thread_pool.svg.png">
+                    <br>
+                    <br>
+                    The surprise here is that we can simply greedily grab tasks in
+                    order of increasing deadlines, and our algorithm will work.
+                </p>
 
 
             <h2>
