@@ -596,11 +596,47 @@
                     Constructing a Huffman code
                 </h3>
 
-                <p>
-                We build a binary tree from the bottom-up, starting with the
-                two least-frequent characters, and building up from there. This
-                ensures the least-frequent characters have the longest codes.
-                </p>
+                    <p>
+                        We build a binary tree from the bottom-up, starting with the
+                        two least-frequent characters, and building up from there. This
+                        ensures the least-frequent characters have the longest codes.
+                        <br>
+                        <br>
+                        Consider the phrase "MIssissippi River".
+                        This is 136 bits in 8-bit ASCII encoding.
+                        <br>
+                        <br>
+                        Here is the Huffman coding for it:
+                        <br>
+                        <img src="graphics/Huffman.png">
+                        <br>
+                        <br>
+                        I = 00
+                        <br>
+                        S = 01
+                        <br>
+                        P = 100
+                        <br>
+                        R - 101
+                        <br>
+                        M = 1100
+                        <br>
+                        V = 1101
+                        <br>
+                        E = 1110
+                        <br>
+                        _ = 1111
+                        <br>
+                        <br>
+                        The final string:
+                        <br>
+                        110000010100010100100100001111101001101101
+                        <br>
+                        <br>
+                        Try parsing it, and convince yourself that there is
+                        only one possible interpretation of it. That is what
+                        the prefix coding buys us.
+                    </p>
 
 
                 <h3>
@@ -743,7 +779,7 @@
                         We have a matroid when the following independence
                         conditions are satisfied:
                     </p>
-                    <ul>
+                    <ol>
                         <li>&empty; is independent.
                         <li>If set J is independent and I is a subset of J,
                             then I is independent.
@@ -751,20 +787,80 @@
                             cardinality(J), then there is some <i>j</i> in J
                                 and not in I, so that I &cup; <i>j</i> is also
                                 independent.
-                    </ul>
-
+                    </ol>
 
                     <p>
-                        (This section is based on lectures by Federico Ardila:
+                        A matroid consists of (S, I), where S is a set, and I
+                        is a set of subsets of S, for which axioms 1-3
+                        above are satisfied.
+                        <br>
+                        <br>
+                        All three situations described above, the vector space,
+                        the graph, and the matching problem, turn out to be the
+                        <i>same</i> matroid. (Technically, they are <i>isomorphic</i>
+                        matroids.)
+                    </p>
+
+                    <h4>
+                        The bases of a matroid
+                    </h4>
+
+                    <p>
+                        A subset in I is a <i>basis</i> for a 
+                        matroid if it is a <i>maximal</i>
+                        subset, which here means it is not contained in any
+                        larger subset that is in I.
+                        <br>
+                        <br>
+                        So in the above examples, the bases are:
+                        <br>
+                        {a, b, c} {a, b, d}, {a, b, e} {a, c, d} {a, c, e}
+                        <br>
+                        <br>
+                        <b>Theorem</b>: Every basis of a matroid is of the same size.
+                        <br>
+                        <b>Proof</b>: Let assume that there is some basis B of
+                        a matroid such that |B| < |A|.
+                        <br>
+                        Then by the exchange axiom (#3 above), there is some
+                        element <i>a</i> of A that can be moved into B, and B
+                        will still be independent.
+                        <br>
+                        Therefore, it was <i>not</i> a maximal independent subset after
+                        all!
+                        <br>
+                        <br>
+                        Translation into the different matroid realms:
+                        <br>
+                        <br>
+                        The dimension of a vector space is the size of any of
+                        its bases.
+                        <br>
+                        <br>
+                        Every spanning tree has the same number of edges.
+                    </p>
+
+
+                    <h4>
+                        Credit
+                    </h4>
+
+                    <p>
+                        This section draws on lectures by Federico Ardila:
                         <br>
                         https://www.youtube.com/watch?v=4EvpzV_3RXI
                         <br>
-                        https://www.youtube.com/watch?v=pe5MaEugAwg&list=PL-XzhVrXIVeSu_b29hbX5xJ0bRThokU8a)
+                        https://www.youtube.com/watch?v=pe5MaEugAwg&list=PL-XzhVrXIVeSu_b29hbX5xJ0bRThokU8a
                     </p>
 
                 <h3>
                     Greedy algorithms on a weighted matroid
                 </h3>
+                    <p>
+                        <b>Q</b>: Why do greedy algorithms work on a matroid?
+                        <br>
+                        <b>A</b>: Independence!
+                    </p>
 
 
             <h2>
