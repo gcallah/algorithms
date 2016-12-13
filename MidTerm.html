@@ -19,22 +19,44 @@
                 call your hashing functions h1() and h2(). (In other words, you
                 needn't actually write the hashing functions.)
                 <br> <br> <br> <br> <br> <br> <br>
+                <a
+                    href="https://github.com/gcallah/algorithms/blob/master/python/hash.py">
+                Example code here.
+                </a>
                 <br> <br> <br> <br> <br> <br> <br>
             <li>What operations do we want in the ADT <em>iterator</em>?
                 Consider including rewind() in the ADT: is it always going to
                 be possible to implement it? If "no," in which situations
                 would it not be possible?
-                <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br> 
+                <ul>
+                    <li>Get iterator.
+                    <li>Get next value.
+                    <li>Detect end of iterables.
+                </ul>
+                <br>
+                Can't rewind if data is gone, e.g., live stock feed.
+                <br> <br> <br> <br> <br> <br>
             <li>Let us say we have an algorithm that runs in 8(lg n) + 10 time.
                 We want to show its order of complexity is &theta;(lg n). Give
                 an example of a set of k<sub>1</sub>, k<sub>2</sub>,
                 and n<sub>0</sub> that would do this, so that k<sub>1</sub>
                 * lg n < 8(lg n) + 10 < k<sub>2</sub> * lg n.
-                <br> <br> <br> <br> <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> 
+                Example values:
+                <br>
+                k<sub>1</sub> = 9
+                <br>
+                k<sub>2</sub> = 7
+                <br>
+                n<sub>0</sub> = 2048
+                <br> <br> <br> <br> <br>
             <li>Imagine you have an 8-sided die, numbered 1 through 8. Use an
                 indicator random variable to show how many 8s we expect to get
                 in 100 rolls.
-                <br> <br> <br> <br> <br> <br> <br> <br> <br>
+                <br> <br> <br> <br>
+                <a href="Probability.html#dice">See here for example</a>.
+                <br> <br> <br> <br> <br>
             <li>Draw the binary search tree that arises from inserting, in
                 order:
                 24, 32, 10, 6, 88, 20, 28, 22, 1, 99
@@ -45,12 +67,18 @@
             <li>Use an indicator random variable to show how many numbers we
                 have to pick from a set of <em>n</em> numbers before we are
                 more likely than not to have drawn the same number twice.
-                <br> <br> <br> <br> <br> <br> <br> <br> <br>
+                <br> <br> <br> <br>
+                <a href="Rand.html#birthday">See here for example</a>. 
+                <br> <br> <br> <br> <br>
             <li>Write pseudo-code for a hash table (you can just assume a hash
                 function of h) that resolves collisions by chaining, and that
                 looks up (possibly chained) key value and returns the
                 associated data.
                 <br> <br> <br> <br> <br> <br> <br> <br>
+                <a
+                    href="https://github.com/gcallah/algorithms/blob/master/python/hash.py">
+                Example code here.
+                </a>
                 <br> <br> <br> <br> <br> <br> <br> <br>
             <li>Write pseudo-code to search a BST for a particular key.
                 <br> <br> <br> <br> <br> <br> <br>
@@ -60,6 +88,7 @@
                     Write memoized pseudo-code that uses recursion, but also
                     uses a direct addressing to store results.
                 <br> <br> <br> <br> <br> <br> <br>
+                Remember to both store value <i>and</i> retrieve the value!
                 <br> <br> <br> <br> <br> <br> <br>
         </ol>
 
