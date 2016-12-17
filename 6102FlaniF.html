@@ -10,62 +10,25 @@
         <h1>
             Design and Analysis of Algorithms Final
         </h1>
-        <h2>
-            Problems
-        </h2>
-
-        <ol>
-            <li>Let us say we have an algorithm that runs 
-            in 10n<sup>2</sup> + 10 time.
-                We want to show its order of complexity is
-                &theta;(n<sup>2</sup>). Give
-                an example of a set of k<sub>1</sub>, k<sub>2</sub>,
-                and n<sub>0</sub> that would do this.
-                <br> <br> <br> <br> <br>
-                <br> <br> <br> <br> <br>
-                <br> <br> <br> <br> <br>
-            <li>Imagine you have an 8-sided die, numbered 1 through 8. Use an
-                indicator random variable to show how many 8s we expect to get
-                in 100 rolls.
-                <br> <br> <br> <br> <br>
-                <br> <br> <br> <br> <br>
-                <br> <br> <br> <br> <br>
-            <li>Use an indicator random variable to show how many numbers we
-                have to pick from a set of <em>n</em> numbers before we are
-                more likely than not to have drawn the same number twice.
-                <br> <br> <br> <br> <br>
-                <br> <br> <br> <br> <br>
-                <br> <br> <br> <br> <br>
-            <li>Describe why the fractional knapsack problem can be solved with
-                a greedy algorithm, but the whole unit problem cannot.
-                <br> <br> <br> <br> <br>
-                <br> <br> <br> <br> <br>
-                <br> <br> <br> <br> <br>
-            <li>Prove that a greedy algorithm can correctly find a minimum
-                spanning tree.
-                <br> <br> <br> <br> <br>
-                <br> <br> <br> <br> <br>
-                <br> <br> <br> <br> <br>
-        </ol>
-
         <hr>
         <h3>
             Multiple Choice
         </h3>
         <ol>
             <br>
-            <li>Compared to chaining, open addressing has the downside that:
+            <li>Employing the master theorem,
+                the solution to the recurrence T(n) = 4T(n/2) + cn is
                 <ol type="a">
-                    <li>It is very slow.
-                    <li>The hash table can fill up. *
-                    <li>It can't resolve collisions.
-                    <li>The hash table takes a huge amount of space.
+                    <li>&Theta;(n<sup>2</sup>) *
+                    <li>&Theta;(n<sup>2</sup> log n)
+                    <li>&Theta;(cn)
+                    <li>the master theorem can't be applied here.
                 </ol>
-
             <br>
+
             <li>We have one algorithm for processing customer records
                 with run time of O(n), and another with
-                run time of O(lg n) + 1000. In what 
+                run time of O(lg n) + 2500. In what 
                 circumstances <i>might</i> we want
                 to choose the O(n) algorithm?
                 <ol type="a">
@@ -73,11 +36,22 @@
                     <li>If our programmers are really bad.
                     <li>We believe our program will 
                         always be dealing with a
-                        number of records less than one thousand. *
+                        number of records less than 2500. *
                     <li>If <em>n</em> is very large.
                 </ol>
-
             <br>
+
+            <li>We can sometimes be loose with our analysis of
+                divide-and-conquer algorithms, 
+                in that we might omit details like
+                <ol type="a">
+                    <li>recursions and function calls.
+                    <li>exponential factors.
+                    <li>floors, ceilings, and boundary conditions.
+                    <li>any n raised to a power less than 3.
+                </ol>
+            <br>
+
             <li>Under what circumstances might we 
                 most reasonably expect to
                 receive worst-case input to our binary search tree?
@@ -100,30 +74,17 @@
                 </ol>
             <br>
 
-            <li>The linearity of expectations means that, for two events X
-                and Y, the expectation that either event will occur equals
+            <li>Employing the master theorem,
+                the solution to the recurrence T(n) = 2T(n/4) +
+                n<sup>0.51</sup> is
                 <ol type="a">
-                    <li>the product of the expectation that X will occur
-                        and the expectation that Y will occur
-                    <li>the difference of the expectation that X will occur
-                        and the expectation that Y will occur
-                    <li>the square of the expectation that X will occur
-                        and the expectation that Y will occur
-                    <li>the sum of the expectation that X will occur and
-                        the expectation that Y will occur *
+                    <li>&Theta;(n<sup>2</sup>)
+                    <li>&Theta;(n<sup>2</sup> log n)
+                    <li>&Theta;(n<sup>0.51</sup>) *
+                    <li>the master theorem can't be applied here.
                 </ol>
             <br>
 
-            <li>The worst-case running time of a search on a binary search
-                tree is
-                <ol type="a">
-                    <li>&theta;(n<sup>2</sup>)
-                    <li>&theta;(n) *
-                    <li>&theta;(lg n)
-                    <li>&theta;(1)
-                </ol>
-
-            <br>
             <li>If we have a binary search tree of height <em>h</em>, then
                 all searching functions such as min, max, and successor
                 will run in
@@ -133,8 +94,8 @@
                     <li>O(ln h) time.
                     <li>O(lg h) time.
                 </ol>
-
             <br>
+
             <li>According to the binary search tree property
                 <ol type="a">
                     <li>for all nodes higher in the tree than x, 
@@ -146,19 +107,18 @@
                     <li>all nodes in the right subtree of x will
                         be the successors of x.
                 </ol>
-
             <br>
-            <li>The expected value of a real variable X is:
+
+            <li>Employing the master theorem,
+                the solution to the recurrence T(n) = 0.25T(n/2) + 8n is
                 <ol type="a">
-                    <li>is the weighted sum of all its values, weighted
-                        according to the probability that they happen. *
-                    <li>the single value that occurs most often.
-                    <li>the value in the middle of its probability
-                        distribution.
-                    <li>all of the above, as they are equivalent.
+                    <li>&Theta;(n<sup>-2</sup>)
+                    <li>&Theta;(n<sup>-2</sup> log n)
+                    <li>&Theta;(8n)
+                    <li>the master theorem can't be applied here.
                 </ol>
-
             <br>
+
             <li>&Theta;-notation applied to a function implies
                 it is
                 <ol type="a">
@@ -167,8 +127,8 @@
                     <li>asymptotically bound from below only.
                     <li>asymptotically bound from above only.
                 </ol>
-
             <br>
+
             <li>For large n, an algorithm will run the <em>slowest</em>
                  if it time complexity is:
                 <ol type="a">
@@ -177,8 +137,8 @@
                     <li>O(n<sup>3</sup>)
                     <li>O(2<sup>n</sup>)
                 </ol>
-
             <br>
+
             <li>An algorithm is most like:
                 <ol type="a">
                     <li>a carefully designed recipe. *
@@ -186,8 +146,8 @@
                     <li>an organic molecule.
                     <li>a literary work.
                 </ol>
-
             <br>
+
             <li>O-notation applied to a function implies
                 <ol type="a">
                     <li>it is a function we know little about.
@@ -195,8 +155,8 @@
                     <li>only that it is asymptotically bound from below.
                     <li>only that it is asymptotically bound from above. *
                 </ol>
-
             <br>
+
             <li>For large n, an algorithm will run the <em>fastest</em>
                  if it time complexity is:
                 <ol type="a">
@@ -215,8 +175,8 @@
                     <li>power consumed
                     <li>all of the above *
                 </ol>
-
             <br>
+
             <li>If f(n) = &omega;(g(n)), that means
                 <ol type="a">
                     <li>g dominates f asymptotically
@@ -224,8 +184,8 @@
                     <li>f is bounded above by g asymptotically
                     <li>f dominates g asymptotically *
                 </ol>
-
             <br>
+
             <li>Which of these functions grows most <em>slowly</em>?
                 <ol type="a">
                     <li>lg n
@@ -233,8 +193,8 @@
                     <li>ln n
                     <li>log<sub>10</sub> n
                 </ol>
-
             <br>
+
             <li>&Omega;-notation applied to a function implies 
                 <ol type="a">
                     <li>it is a function we know little about.
@@ -242,8 +202,8 @@
                     <li>only that it is asymptotically bound from below. *
                     <li>only that it is asymptotically bound from above.
                 </ol>
-
             <br>
+
             <li>In algorithm analysis, we usually analyze algorithms
                 in terms of
                 <ol type="a">
@@ -252,8 +212,18 @@
                     <li>the number of basic operations. *
                     <li>CPU time used.
                 </ol>
-
             <br>
+
+            <li>For a greedy algorithm to work, the optimal choice
+                <ol type="a">
+                    <li>must depend on many over-lapping sub-problems.
+                    <li>must not depend on any future choices.
+                    <li>must be dependent on a global optimal.
+                    <li>must only be available after considering 
+                        all sub-problems.
+                </ol>
+            <br>
+
             <li>In algorithm analysis, we usually look at
                 <ol type="a">
                     <li>worst-case performance. *
@@ -261,8 +231,8 @@
                     <li>best-case performance.
                     <li>median-case performance.
                 </ol>
-
             <br>
+
             <li>The chief advantage of a doubly-linked list over a linked list is
                 <ol type="a">
                     <li>we can walk the list in either direction. *
@@ -270,8 +240,8 @@
                     <li>deletes are faster.
                     <li>less memory is used.
                 </ol>
-
             <br>
+
             <li>A good use of direct dictionaries would be
                 <ol type="a">
                     <li>memoization of a numeric algorithm.
@@ -279,8 +249,8 @@
                     <li>marking zipcodes seen in a mailing application.
                     <li>all of the above. *
                 </ol>
-
             <br>
+
             <li>The worst case of hashing with chaining occurs when
                 <ol type="a">
                     <li>the input comes in sorted already.
@@ -288,8 +258,8 @@
                     <li>the input is purely random.
                     <li>all inputs hash to the same value. *
                 </ol>
-
             <br>
+
             <li>The "clustering" problem with open addressing with linear
                 probing means that
                 <ol type="a">
@@ -309,17 +279,6 @@
                     <li>an algorithm.
                     <li>a precise real number value.
                     <li>a function. *
-                </ol>
-            <br>
-
-            <li>We can sometimes be loose with our analysis of
-                divide-and-conquer algorithms, 
-                in that we might omit details like
-                <ol type="a">
-                    <li>recursions and function calls.
-                    <li>exponential factors.
-                    <li>floors, ceilings, and boundary conditions.
-                    <li>any n raised to a power less than 3.
                 </ol>
             <br>
 
@@ -505,22 +464,23 @@
                 </ol>
             <br>
 
-            <li>For a greedy algorithm to work, the optimal choice
+            <li>Using the master theorem, the solution to the recurrence
+                <br>T(n) = 64T(n/8) - n<sup>2</sup> log n
                 <ol type="a">
-                    <li>must depend on many over-lapping sub-problems.
-                    <li>must not depend on any future choices.
-                    <li>must be dependent on a global optimal.
-                    <li>must only be available after considering 
-                        all sub-problems.
+                    <li>&Theta;(n<sup>2</sup>)
+                    <li>&Theta;(n<sup>4</sup> log n)
+                    <li>&Theta;(n<sup>2</sup> log n)
+                    <li>the master theorem can't be applied here.
                 </ol>
             <br>
 
-            <li>
+            <li>The worst-case running time of a search on a binary search
+                tree is
                 <ol type="a">
-                    <li>
-                    <li>
-                    <li>
-                    <li>
+                    <li>&theta;(n<sup>2</sup>)
+                    <li>&theta;(n) *
+                    <li>&theta;(lg n)
+                    <li>&theta;(1)
                 </ol>
             <br>
 
@@ -570,5 +530,44 @@
             <br>
 
         </ol>
+
+        <h2>
+            Problems
+        </h2>
+
+        <ol>
+            <li>Let us say we have an algorithm that runs 
+            in 10n<sup>2</sup> + 10 time.
+                We want to show its order of complexity is
+                &theta;(n<sup>2</sup>). Give
+                an example of a set of k<sub>1</sub>, k<sub>2</sub>,
+                and n<sub>0</sub> that would do this.
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+            <li>Imagine you have an 8-sided die, numbered 1 through 8. Use an
+                indicator random variable to show how many 8s we expect to get
+                in 100 rolls.
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+            <li>Use an indicator random variable to show how many numbers we
+                have to pick from a set of <em>n</em> numbers before we are
+                more likely than not to have drawn the same number twice.
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+            <li>Describe why the fractional knapsack problem can be solved with
+                a greedy algorithm, but the whole unit problem cannot.
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+            <li>Prove that a greedy algorithm can correctly find a minimum
+                spanning tree.
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+        </ol>
+
     </body>
 </html>
