@@ -956,18 +956,44 @@
                         spanning tree for all New York subway
                         stations. Yet the latter can be solved with a greedy algorithm,
                         while the first cannot. Why?
+                        <br>
+                        <b>Answer</b>: The spanning tree problem is a matroid,
+                        and so deals with indpendent sub-problems. The
+                        different paths between subway stops are <i>not</i>
+                        independent: some choices foreclose other choices.
                     <li>Why is the run-time analysis of the rod cutting problem not
                         the same as that of the matrix chain problem?
+                        <br>
+                        <b>Answer</b>:The matrix chain order problem can nest
+                        the sub-problems in many ways, while the rod-cutting
+                        problem simply makes one level of cuts. It would be
+                        more like the matrix problem if it also bundled
+                        packages of cut rods into higher level bundles.
                     <li>For the activity selection problem, besides simply
                         choosing the activity this finishes first, what other
                         greedy choices could we make?
+                        <br>
+                        <b>Answer</b>: The activity that starts first, the
+                        activity with the smallest time requirement.
                     <li>On page 419, line 2 of pseudo-code loops, and the
                         comment describing why it is looping is incorrect. What
                         is actually going on there? Why isn't the code just
                         grabbing the first element in the activity array, which
                         must be the one that finishes first?
+                        <br>
+                        <b>Answer</b>: The code has to find not the first
+                        activity that finishes, but the first one that starts
+                        after the "current" time and finishes first. So it must
+                        loop until it finds that item.
                     <li>Show that the fractional knapsack problem (p. 425) has the
                         greedy choice property.
+                        <br>
+                        <b>Answer</b>: We can take as much as possible of the
+                        highest value per weight item first. If we fill the
+                        knapsack, we are done. If not, we can take as much as
+                        possible of the second-highest value item, and repeat
+                        until the knapsack is full. Each choice is completely
+                        independent of subsequent choices.
                 </ol>
     </body>
 </html>
