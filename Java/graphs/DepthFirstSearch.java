@@ -30,7 +30,7 @@ public class DepthFirstSearch {
         System.out.printf("Total time: %d%n", time);
     }
     
-    private void dfsVisit(Graph g, Vertex u) {
+    protected void dfsVisit(Graph g, Vertex u) {
         if (g == null || u == null) {
             throw new IllegalArgumentException("Graph object or Vertex object null");
         }
