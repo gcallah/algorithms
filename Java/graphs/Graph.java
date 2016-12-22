@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Arrays;
 
 /**
  * The graph structre represented using adjacency lists.
@@ -30,6 +31,10 @@ public class Graph {
 
         DepthFirstSearch dfSearch = new DepthFirstSearch();
         dfSearch.dfs(graph);
+
+        TopologicalSort sort = new TopologicalSort();
+        List<Vertex> topologicalSortList = sort.topologicalSort(graph);
+        System.out.printf("Topological Sort: %s%n", Arrays.toString(topologicalSortList.toArray()));
     }
 
     private final List<Vertex> vertices;
