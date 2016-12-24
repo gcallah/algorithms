@@ -16,10 +16,10 @@ class MSTVertex
 end
 
 class Edge
-  attr_accessor :v1, :v2, :weight
+  attr_accessor :v1, :v2
 
-  def initialize(v1, v2, weight = 0)
-    @v1, @v2, @weight = v1, v2, weight
+  def initialize(v1, v2)
+    @v1, @v2 = v1, v2
   end
 end
 
