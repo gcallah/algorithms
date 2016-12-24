@@ -13,15 +13,28 @@ class DisjointSet
     @head, @tail = head, tail
   end
 
-  def make_set(node)
-    self.new(node, node)
+  def self.make_set(x)
+    raise "X SHOULD NOT BE NIL" if x.nil?
+    new(x, x)
   end
 
-  def union
-    
+  def self.union(x, y)
+    raise "X OR Y SHOULD NOT BE NIL" if x.nil? || y.nil?
+    x.set_pointer.tail = y.set_pointer.head
+    y_iterator = y.head
+    while(y_iterator != nil)
+      y_iterator.set_pointer = x.set_pointer
+      y_iterator = y_iterator.next_pointer
+    end
+    # delete y -> Automatically managed by the garbage collector
+    x.set_pointer
   end
 
-  def find_set
-
+  def self.find_set(x)
+    raise "X SHOULD NOT BE NIL" if x.nil?
+    x.set_pointer
   end
 end
+
+x = Node.new(10, nil, nil)
+p DisjointSet.make_set(x)
