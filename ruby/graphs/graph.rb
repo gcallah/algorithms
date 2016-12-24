@@ -6,11 +6,29 @@ class Vertex
   end
 end
 
+# TODO: Create a new class GenericVertex to avoid multiple definitions of Vertex
+class MSTVertex
+  attr_accessor :key, :set_pointer, :next_pointer
+
+  def initialize(key, set_pointer, next_pointer)
+    @key, @set_pointer, @next_pointer = key, set_pointer, next_pointer
+  end
+end
+
 class Edge
   attr_accessor :v1, :v2
 
   def initialize(v1, v2)
     @v1, @v2 = v1, v2
+  end
+end
+
+# TODO: Create a new class GenericEdge to avoid multiple definitions of Edge
+class MSTEdge
+  attr_accessor :v1, :v2, :w
+
+  def initialize(v1, v2, w)
+    @v1, @v2, @w = v1, v2, w
   end
 end
 
@@ -141,4 +159,9 @@ class DirectedGraph < Graph
     populate_adjacency_list
   end
 
+  def transpose
+    @edges.each do |x|
+      x.v1, x.v2 = x.v2, x.v1
+    end
+  end
 end
