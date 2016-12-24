@@ -6,11 +6,29 @@ class Vertex
   end
 end
 
-class Edge
-  attr_accessor :v1, :v2
+# TODO: Create a new class GenericVertex to avoid multiple definitions of Vertex
+class MSTVertex
+  attr_accessor :key, :set_pointer, :next_pointer
 
-  def initialize(v1, v2)
-    @v1, @v2 = v1, v2
+  def initialize(key, set_pointer, next_pointer)
+    @key, @set_pointer, @next_pointer = key, set_pointer, next_pointer
+  end
+end
+
+class Edge
+  attr_accessor :v1, :v2, :weight
+
+  def initialize(v1, v2, weight = 0)
+    @v1, @v2, @weight = v1, v2, weight
+  end
+end
+
+# TODO: Create a new class GenericEdge to avoid multiple definitions of Edge
+class MSTEdge
+  attr_accessor :v1, :v2, :w
+
+  def initialize(v1, v2, w)
+    @v1, @v2, @w = v1, v2, w
   end
 end
 
