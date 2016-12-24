@@ -57,6 +57,24 @@ module Graphs
         end
       end
 
+      def classify_edges(g)
+        # CLRS Page No - 609
+        # TREE edges
+        # BACK edges
+        # FORWARD edges
+        # CROSS edges
+        # Coming soon! probably
+      end
+
+      def strongly_connected_components(g)
+        DFS(g)
+        
+      end
+
+      private
+      def graph_transpose(g)
+
+      end
     end
   end
 end
