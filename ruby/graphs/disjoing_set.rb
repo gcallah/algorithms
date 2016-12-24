@@ -1,4 +1,6 @@
-class Node
+require 'pry'
+
+class Object
   attr_accessor :key, :set_pointer, :next_pointer
 
   def initialize(key, set_pointer, next_pointer)
@@ -15,13 +17,15 @@ class DisjointSet
 
   def self.make_set(x)
     raise "X SHOULD NOT BE NIL" if x.nil?
-    new(x, x)
+    x.set_pointer = new(x, x)
+    x.set_pointer
   end
 
   def self.union(x, y)
     raise "X OR Y SHOULD NOT BE NIL" if x.nil? || y.nil?
-    x.set_pointer.tail = y.set_pointer.head
-    y_iterator = y.head
+    x.set_pointer.tail.next_pointer = y.set_pointer.head
+    x.set_pointer.tail = y.set_pointer.tail
+    y_iterator = y.set_pointer.head
     while(y_iterator != nil)
       y_iterator.set_pointer = x.set_pointer
       y_iterator = y_iterator.next_pointer
@@ -36,5 +40,8 @@ class DisjointSet
   end
 end
 
-x = Node.new(10, nil, nil)
-p DisjointSet.make_set(x)
+# x = Object.new(10, nil, nil)
+# y = Object.new(20, nil, nil)
+# s1 = DisjointSet.make_set(x)
+# s2 = DisjointSet.make_set(y)
+# s3 = DisjointSet.union(x, y)
