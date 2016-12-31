@@ -1,4 +1,5 @@
-require_relative '../graph'
+require_relative '../undirected_graph'
+require_relative '../directed_graph'
 
 class SeedGraph
   class << self
