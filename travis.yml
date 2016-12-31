@@ -1,0 +1,6 @@
+language: ruby
+rvm:
+  - 2.0.0-p247
+install:
+  - bundle install
+script: rake test
