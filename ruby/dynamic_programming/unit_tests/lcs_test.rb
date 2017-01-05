@@ -1,4 +1,4 @@
-require_relative '../LCS'
+require_relative '../lcs'
 require 'minitest/autorun'
 
 class LCSTest < Minitest::Test
