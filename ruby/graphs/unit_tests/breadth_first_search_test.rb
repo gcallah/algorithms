@@ -1,10 +1,10 @@
-require_relative '../../unit_test'
 require_relative './seed_graph'
 require_relative '../breadth_first_search'
+require 'minitest/autorun'
 
-def bfs_test
-  graph = SeedGraph.undirected_graph
-  Graphs::BreadthFirstSearch.BFS(graph, graph.vertices.first, graph.vertices.last) == "FOUND!!"
+class BreadthFirstSearchTest < Minitest::Test
+  def test_bfs
+    graph = SeedGraph.undirected_graph
+    assert_equal(Graphs::BreadthFirstSearch.BFS(graph, graph.vertices.first, graph.vertices.last), "FOUND!!")
+  end
 end
-
-UnitTest.method('BFS', bfs_test)
