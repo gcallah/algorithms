@@ -12,4 +12,10 @@ task :test do
   # GREEDY ALGORITHMS TESTS
   ruby("ruby/greedy_algorithms/unit_tests/activity_selection_test.rb")
   ruby("ruby/greedy_algorithms/unit_tests/knapsack_test.rb")
+
+  # GRAPHS
+  ruby("ruby/graphs/unit_tests/breadth_first_search_test.rb")
+  ruby("ruby/graphs/unit_tests/depth_first_search_test.rb")
+  ruby("ruby/graphs/unit_tests/topological_sort_test.rb")
+  ruby("ruby/graphs/unit_tests/minimum_spanning_tree_test.rb")
 end
