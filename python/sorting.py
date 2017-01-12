@@ -139,7 +139,7 @@ def quicksort(l, p=None, r=None):
         p: the first index in a partition
         r: the last index in a partition
 
-    Returns: a sorted list.
+    Returns: None
 
     Performance:
         Worst case: Θ(n**2) 
