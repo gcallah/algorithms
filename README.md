@@ -1,5 +1,7 @@
 # algorithms
-A project to implement the algorithms from Introduction to Algorithms (Cormen, Leiserson, Rivest, and Stein) in Python and Ruby.
+A project to implement the algorithms from Introduction to Algorithms (Cormen, Leiserson, Rivest, and Stein) in Python, C++, Java, Javascript and Ruby [![Build Status](https://travis-ci.org/gcallah/algorithms.svg?branch=master)](https://travis-ci.org/gcallah/algorithms).
+
+**TODO: INDEX FILE TO BE ADDED SOON**
 
 So far, we have:
 

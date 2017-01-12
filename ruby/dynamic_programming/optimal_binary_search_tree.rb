@@ -1,5 +1,3 @@
-require 'pry'
-
 module DynamicProgramming
   class OBST
     class << self

@@ -1,4 +1,5 @@
-require_relative '../graph'
+require_relative '../undirected_graph'
+require_relative '../directed_graph'
 
 class SeedGraph
   class << self
@@ -28,6 +29,38 @@ class SeedGraph
                                                          edge45])
 
       graph.populate_adjacency_list
+      graph
+    end
+
+    def kruskal_undirected_graph
+      a = MSTVertex.new('a', nil, nil)
+      b = MSTVertex.new('b', nil, nil)
+      c = MSTVertex.new('c', nil, nil)
+      d = MSTVertex.new('d', nil, nil)
+      e = MSTVertex.new('e', nil, nil)
+      f = MSTVertex.new('f', nil, nil)
+      g = MSTVertex.new('g', nil, nil)
+      h = MSTVertex.new('h', nil, nil)
+      i = MSTVertex.new('i', nil, nil)
+
+      edge_ab_ba = MSTEdge.new(a, b, 4)
+      edge_bc_cb = MSTEdge.new(b, c, 8)
+      edge_cd_dc = MSTEdge.new(c, d, 7)
+      edge_de_ed = MSTEdge.new(d, e, 9)
+      edge_ef_fe = MSTEdge.new(e, f, 10)
+      edge_fg_gf = MSTEdge.new(f, g, 2)
+      edge_gh_hg = MSTEdge.new(g, h, 1)
+      edge_ha_ah = MSTEdge.new(h, a, 8)
+      edge_bh_hb = MSTEdge.new(b, h, 11)
+      edge_ci_ic = MSTEdge.new(c, i, 2)
+      edge_ih_hi = MSTEdge.new(i, h, 7)
+      edge_ig_gi = MSTEdge.new(i, g, 6)
+      edge_cf_fc = MSTEdge.new(c, f, 4)
+      edge_df_fd = MSTEdge.new(d, f, 14)
+
+      graph = UndirectedGraph.new([a, b, c, d, e, f, g, h, i],
+                                  [edge_ab_ba, edge_bc_cb, edge_cd_dc, edge_de_ed, edge_ef_fe, edge_fg_gf, edge_gh_hg, edge_ha_ah, edge_bh_hb, edge_ci_ic, edge_ih_hi, edge_ig_gi, edge_cf_fc, edge_df_fd])
+
       graph
     end
 
