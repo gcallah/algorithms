@@ -12,7 +12,7 @@ loop invariants are expressed as assert statements when they
 are not too complex.
 This file contains:
     The class definition for Node.
-    The class definition for BinTree.
+    The class definition for Tree.
     tree_insert()
     inorder_tree_walk()
     tree_search()
@@ -34,10 +34,6 @@ class Node():
     """
     The nodes in our binary search tree.
     """
-    self.key = None
-    self.p = None
-    self.left = None
-    self.right = None
 
     def __init__(self, k):
         """
@@ -48,6 +44,9 @@ class Node():
                 None
         """
         self.key = k
+        self.p = None
+        self.left = None
+        self.right = None
 
 
 def tree_insert(t, z):
@@ -128,11 +127,11 @@ def iter_tree_search(x, k):
 
 def tree_minimum(x):
     """
-        Searches a tree for the node with the max key.
+        Searches a tree for the node with the min key.
         Args:
             x: the node at which to start the search
         Returns:
-            The node with the max key in the tree, or
+            The node with the min key in the tree, or
             None if the tree is empty.
     """
     if x is None:
