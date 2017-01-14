@@ -36,5 +36,13 @@ class BinaryTreesTestCase(TestCase):
         l = bt.inorder_tree_walk(t.root)
         self.assertEqual(l, inorder)
 
+    def test_search(self):
+        node = bt.tree_search(n7, 22)
+        self.assertEqual(node.key, 22)
+
+    def test_iter_search(self):
+        node = bt.tree_search(n7, 22)
+        self.assertEqual(node.key, 22)
+
 if __name__ == '__main__':
     main()
