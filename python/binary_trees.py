@@ -27,8 +27,11 @@ class Tree():
     """
     The binary search tree.
     """
-    root = None
+    def __init__(self, root=None):
+        self.root = root
 
+    def __str__(self):
+        return "Binary tree with root of " + str(self.root)
 
 class Node():
     """
@@ -47,6 +50,9 @@ class Node():
         self.p = None
         self.left = None
         self.right = None
+
+    def __str__(self):
+        return str(self.key)
 
 
 def tree_insert(t, z):
@@ -75,9 +81,10 @@ def tree_insert(t, z):
         y.left = z
     else:
         y.right = z
+    return z
 
 
-def inorder_tree_walk(x):
+def inorder_tree_walk(x, l=None):
     """
         Walk and print the tree in order.
         Args:
@@ -85,11 +92,14 @@ def inorder_tree_walk(x):
         Returns:
             None
     """
+    if l is None:
+        l = []
     if x is not None:
-        inorder_tree_walk(x.left)
+        inorder_tree_walk(x.left, l)
+        l.append(x)
         print(str(x.key))
-        inorder_tree_walk(x.right)
-    
+        inorder_tree_walk(x.right, l)
+    return l
     
 def tree_search(x, k):
     """
