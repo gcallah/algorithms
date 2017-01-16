@@ -17,7 +17,7 @@ module Sorting
   #   => [1, 2, 3, 4, 5, 6, 7, 8, 9]
   #
   # Returns a sorted array.
-  def merge_sort(arr, first=0, last=arr.length-1)
+  def self.merge_sort(arr, first=0, last=arr.length-1)
   	mid = (last+first)/2
   	if first < last
   		merge_sort(arr, first, mid)
@@ -41,7 +41,7 @@ module Sorting
   #   => [5, 3, 6, 2, 4, 1, 8, 7, 9]
   #
   # Returns a sorted array.
-  def merge(arr, first, mid, last)
+  def self.merge(arr, first, mid, last)
   	l1 = []
   	l2 = []
 
@@ -64,5 +64,5 @@ module Sorting
   		end
   	end
   end
-  
+
 end
