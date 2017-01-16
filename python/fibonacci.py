@@ -131,6 +131,7 @@ def closed_form_fib(n):
             The n-th fibonacci number.
     """
     sqrt_five = 5 ** .5
-    return (1 / sqrt_five) * (((1 + sqrt_five) / 2) ** n
+    res = (1 / sqrt_five) * (((1 + sqrt_five) / 2) ** n
                               - ((1 - sqrt_five) / 2) ** n)
+    return int(res)
 
