@@ -1,8 +1,11 @@
 language: ruby
 rvm:
   - 2.0.0-p247
+python:
+  - '3.5'
 before_install:
   - bundle install
+  - pip install pytest pytest-cov
 script: rake test
 
 # language: python
