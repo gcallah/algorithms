@@ -13,7 +13,7 @@ class FibonacciTestCase(TestCase):
     def test_naive(self):
         fnum = 13
         n = fib.naive_fib(fnum)
-        self.assertEqual(fibs[fnum], n)
+        self.assertEqual(fibs[fnum], 1)
 
     def test_memo(self):
         fnum = 14   # might as well try different numbers
