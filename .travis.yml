@@ -1,17 +1,17 @@
-# language: ruby
-# rvm:
-#   - 2.0.0-p247
-# python:
-#   - '3.5'
-# before_install:
-#   - bundle install
-#   - pip install pytest
-# script: rake test
-
-language: python
+language: ruby
+rvm:
+  - 2.0.0-p247
 python:
   - '3.5'
 before_install:
+  - bundle install
   - pip install pytest
-script:
-  - py.test python/
+script: rake test
+
+# language: python
+# python:
+#   - '3.5'
+# before_install:
+#   - pip install pytest
+# script:
+#   - py.test python/
