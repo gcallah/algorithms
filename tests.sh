@@ -1,0 +1,2 @@
+rake test
+py.test

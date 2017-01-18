@@ -4,7 +4,7 @@ python:
 before_install:
   - bundle install
   - pip3 install pytest
-script: rake test
+script: source tests.sh
 
 # language: python
 # python:
