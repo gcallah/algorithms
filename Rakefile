@@ -4,6 +4,7 @@ task :test do
   ruby("ruby/sorting/unit_tests/insertion_sort_test.rb")
   ruby("ruby/sorting/unit_tests/merge_sort_test.rb")
   ruby("ruby/sorting/unit_tests/quick_sort_test.rb")
+  ruby("ruby/sorting/unit_tests/heap_sort_test.rb")
 
   # DIVIDE AND CONQUER TESTS
   ruby("ruby/divide_and_conquer/unit_tests/find_max_subarray_test.rb")
