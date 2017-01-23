@@ -423,7 +423,7 @@ def double_hash_search(t, k):
         return t[k1][VAL]
     else:
         for i in range(1, m):
-            k2 = h2(k1, k, m)
+            k2 = h2(k1, k, m, i)
             print("Searching slot from h2: " + str(k2))
             if t[k2] is None:
                 return None   # key not in table
