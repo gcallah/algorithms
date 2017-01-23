@@ -18,11 +18,11 @@ module MonkeyPatch
     end
 
     def left
-      ( 2 * self )
+      ( 2 * self ) + 1
     end
 
     def right
-      ( 2 * self ) + 1
+      ( 2 * self ) + 2
     end
 
     def half

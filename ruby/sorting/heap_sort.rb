@@ -1,4 +1,5 @@
 require_relative '../heaps/max_heap'
+require_relative '../heaps/min_heap'
 require_relative '../heaps/monkey_patch'
 
 using MonkeyPatch
@@ -26,5 +27,14 @@ module Sorting
       Heap::MaxHeap.max_heapify(arr, 0)
     end
     arr
+  end
+
+  def self.min_heap_sort(arr)
+    Heap::MinHeap.build_min_heap(arr)
+    (1..(arr.length-1)).reverse_each do |i|
+      arr[0], arr[i] = arr[i], arr[0]
+      arr.heap_size -= 1
+      Heap::MinHeap.min_heapify(arr, 0)
+    end
   end
 end

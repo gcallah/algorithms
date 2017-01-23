@@ -52,22 +52,5 @@ module Heap
         max_heapify(arr, i)
       end
     end
-
-    # Public: Returns the maximium element in the heap, which is the element at
-    #         index 0 after building the heap structure
-    #
-    # ARGS:
-    # arr - Input array
-    #
-    # Return: Integer
-    #
-    # Examples
-    #    arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
-    #    build_max_heap(arr)
-    #    heap_maximum(arr)
-    #    => 9
-    def self.heap_maximum(arr)
-      arr[0]
-    end
   end
 end
