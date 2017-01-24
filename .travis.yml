@@ -2,9 +2,6 @@ language: python
 python:
   - '3.5'
 before_install:
-  # - \curl -sSL https://get.rvm.io | bash
-  # - source ~/.rvm/scripts/rvm
-  # - type rvm | head -n 1
   - rvm install 2.0.0-p648
   - rvm use 2.0.0
   - bundle install
