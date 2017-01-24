@@ -2,6 +2,8 @@ language: python
 python:
   - '3.5'
 before_install:
+  - rvm install ruby 2.0.0p648
+  - rvm use 2.0.0
   - bundle install
   - pip3 install pytest
 script: source run_ruby_and_python_tests.sh
