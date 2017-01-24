@@ -3,7 +3,6 @@ python:
   - '3.5'
 before_install:
   - rvm install 2.0.0-p648
-  - rvm use 2.0.0
   - bundle install
   - pip3 install pytest
 script: source run_ruby_and_python_tests.sh
