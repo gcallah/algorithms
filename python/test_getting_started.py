@@ -4,7 +4,7 @@ Test our sorting code.
 """
 
 from unittest import TestCase, main
-import sorting as srt
+import getting_started as srt
 
 l = [9, 7, 2, 6, 4, 21, 8, 15, 1, 12]
 sorted = [1, 2, 4, 6, 7, 8, 9, 12, 15, 21]

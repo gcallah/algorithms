@@ -20,7 +20,7 @@ This file contains:
         partition().
 """
 
-from sorting import swap
+from getting_started import swap
 
 
 def quicksort(l, p=None, r=None):
