@@ -1,13 +1,13 @@
 #!/Users/gcallah/anaconda/bin/python3
 """
-Test our graph code.
+Test our heap code.
 """
 
 from unittest import TestCase, main
-import graphs as gr
+import heapsort
 
 
-class GraphsTestCase(TestCase):
+class HeapsortTestCase(TestCase):
     def test_x(self):
         pass
 

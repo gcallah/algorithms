@@ -32,12 +32,5 @@ class SortingTestCase(TestCase):
         l2 = srt.bubble_sort(my_l)
         self.assertEqual(l2, sorted)
 
-    def test_quick(self):
-        # sorts in place: let's copy list first!
-        my_l = list(l)
-        # no return!
-        srt.quicksort(my_l)
-        self.assertEqual(my_l, sorted)
-
 if __name__ == '__main__':
     main()
