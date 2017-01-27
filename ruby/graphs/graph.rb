@@ -13,6 +13,10 @@ class MSTVertex
   def initialize(key, set_pointer, next_pointer)
     @key, @set_pointer, @next_pointer = key, set_pointer, next_pointer
   end
+
+  def initialize(key, adj_list=[], set_pointer, next_pointer)
+    @key, @adj_list, @set_pointer, @next_pointer = key, adj_list, set_pointer, next_pointer
+  end
 end
 
 class Edge

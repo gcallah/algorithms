@@ -34,7 +34,7 @@ module Heap
       end
     end
 
-    # Public: Re-order the input array to adhere to the Max-Heap property at all indices
+    # Public: Re-order the input array to adhere to the Min-Heap property at all indices
     #
     # ARGS:
     # arr - Input array
