@@ -4,7 +4,7 @@ Test our binary tree code.
 """
 
 from unittest import TestCase, main
-import binary_trees as bt
+import binary_search_trees as bt
 
 n7 = bt.Node(7)
 t = bt.Tree(n7)

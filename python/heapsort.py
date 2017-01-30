@@ -24,7 +24,7 @@ This file contains:
 
 import operator as op
 
-import sorting as srt   # so we don't have to duplicate swap!
+import getting_started as srt   # so we don't have to duplicate swap!
 
 
 # do we have a max heap or min heap?

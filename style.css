@@ -128,3 +128,14 @@ h4 {
 }
 
 
+figure {
+    text-align: center;
+/*    margin: 12px 20px 12px 100px;  */
+}
+
+figcaption {
+    color: #606;
+    font-style: italic;
+    text-align: center;
+    margin: 16px 20px 12px 20px;
+}

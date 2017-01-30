@@ -4,7 +4,7 @@ Test our sorting code.
 """
 
 from unittest import TestCase, main
-import sorting as srt
+import getting_started as srt
 
 l = [9, 7, 2, 6, 4, 21, 8, 15, 1, 12]
 sorted = [1, 2, 4, 6, 7, 8, 9, 12, 15, 21]
@@ -31,13 +31,6 @@ class SortingTestCase(TestCase):
         my_l = list(l)
         l2 = srt.bubble_sort(my_l)
         self.assertEqual(l2, sorted)
-
-    def test_quick(self):
-        # sorts in place: let's copy list first!
-        my_l = list(l)
-        # no return!
-        srt.quicksort(my_l)
-        self.assertEqual(my_l, sorted)
 
 if __name__ == '__main__':
     main()
