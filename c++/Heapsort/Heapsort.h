@@ -3,6 +3,9 @@
 //  This is max_heap building and heapsort return ascending order
 //
 
+#ifndef HEAPSORT_H
+#define HEAPSORT_H
+
 #include <vector>
 #include <iostream>
 #include <math.h>
@@ -61,6 +64,13 @@ public:
         b = a;
         a = temp;
     }
+    
+    int& getHeapSize() {
+        return heapSize;
+    }
+    
 private:
     int heapSize = 0;
 };
+
+#endif
