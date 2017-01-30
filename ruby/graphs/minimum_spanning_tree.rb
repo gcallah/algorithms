@@ -26,6 +26,8 @@ module Graphs
         a
       end
 
+      # TODO: DO NOT FORGET TO IMPLEMENT THIS USING PRIORITY QUEUE AS
+      #       EXPLAINED IN THE CLRS BOOK
       def MST_prim(graph, r)
         graph.vertices.each do |u|
           u.key = Float::INFINITY
