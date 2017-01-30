@@ -1,5 +1,5 @@
 class Vertex
-  attr_accessor :color, :d, :pi, :adj_list, :attribute, :f
+  attr_accessor :color, :d, :pi, :adj_list, :key, :attribute, :f
 
   def initialize(color, d, pi, adj_list=[], attribute)
     @color, @d, @pi, @adj_list, @attribute= color, d, pi, adj_list, attribute
@@ -8,19 +8,23 @@ end
 
 # TODO: Create a new class GenericVertex to avoid multiple definitions of Vertex
 class MSTVertex
-  attr_accessor :key, :set_pointer, :next_pointer
+  attr_accessor :d, :key, :pi, :adj_list, :set_pointer, :next_pointer
 
   def initialize(key, set_pointer, next_pointer)
     @key, @set_pointer, @next_pointer = key, set_pointer, next_pointer
   end
+end
 
-  def initialize(key, adj_list=[], set_pointer, next_pointer)
-    @key, @adj_list, @set_pointer, @next_pointer = key, adj_list, set_pointer, next_pointer
+class MSTPrimVertex
+  attr_accessor :d, :key, :pi, :adj_list
+
+  def initialize(d, key, pi, adj_list)
+    @d, @key, @pi, @adj_list = d, key, pi, adj_list
   end
 end
 
 class Edge
-  attr_accessor :v1, :v2
+  attr_accessor :v1, :v2, :w
 
   def initialize(v1, v2)
     @v1, @v2 = v1, v2
@@ -69,6 +73,14 @@ class Graph
     @edges << Edge.new(v1, v2)
     v1.adj_list << v2
     v2.adj_list << v1
+  end
+
+  def get_edge_weight(v1, v2)
+    @edges.each do |edge|
+      if (edge.v1 == v1 && edge.v2 == v2) || (edge.v1 == v2 && edge.v2 == v1)
+        return edge.w
+      end
+    end
   end
 
   private

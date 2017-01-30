@@ -1,4 +1,5 @@
 require_relative './disjoint_set'
+require_relative '../heaps/min_heap'
 
 module Graphs
   class MinimumSpanningTree
@@ -27,29 +28,26 @@ module Graphs
 
       def MST_prim(graph, r)
         graph.vertices.each do |u|
-          u.key = -Float::INFINITY
+          u.key = Float::INFINITY
           u.pi = nil
         end
 
         r.key = 0
-        q = build_priority_queue(graph.vertices)
-        while !q.empty?
-          u = extract_min(q)
+        arr = graph.vertices
+        q = arr
+        # Heap::MinHeap::build_min_heap(q)
+        while true
+          u = q.sort_by! { |x| x.key }.first
+          q = q[1..(q.length-1)]
+          # u = Heap::MinHeap::heap_extract_min(q)
+          break if u.nil?
           u.adj_list.each do |v|
-            if q.include?(v) && v.w < v.key
+            if q.include?(v) && graph.get_edge_weight(u, v) < v.key
               v.pi = u
-              # v.key = 
+              v.key = graph.get_edge_weight(u, v)
             end
           end
         end
-      end
-
-      def build_priority_queue(list)
-        list.sort_by { |x| x.key }
-      end
-
-      def extract_min(list)
-        list.first
       end
     end
   end
