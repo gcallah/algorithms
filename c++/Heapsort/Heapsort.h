@@ -1,5 +1,6 @@
 //
 //	Heapsort running time is O(nlgn)
+//  This is max_heap building and heapsort return ascending order
 //
 
 #include <vector>
