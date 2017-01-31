@@ -1,5 +1,6 @@
 require_relative './disjoint_set'
 require_relative '../heaps/min_heap'
+require_relative '../heaps/priority_queue'
 
 module Graphs
   class MinimumSpanningTree
@@ -35,14 +36,10 @@ module Graphs
         end
 
         r.key = 0
-        arr = graph.vertices
-        q = arr
-        # Heap::MinHeap::build_min_heap(q)
-        while true
-          u = q.sort_by! { |x| x.key }.first
+        q = graph.vertices
+        while q.length != 0
+          u = Heap::PriorityQueue::heap_extract_min(q)
           q = q[1..(q.length-1)]
-          # u = Heap::MinHeap::heap_extract_min(q)
-          break if u.nil?
           u.adj_list.each do |v|
             if q.include?(v) && graph.get_edge_weight(u, v) < v.key
               v.pi = u

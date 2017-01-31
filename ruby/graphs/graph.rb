@@ -16,7 +16,13 @@ class MSTVertex
 end
 
 class MSTPrimVertex
+  # include Comparable
+
   attr_accessor :d, :key, :pi, :adj_list
+
+  # def <=> (anotherVertex)
+  #   key <=> anotherVertex.key
+  # end
 
   def initialize(d, key, pi, adj_list)
     @d, @key, @pi, @adj_list = d, key, pi, adj_list
