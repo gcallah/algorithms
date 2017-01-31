@@ -115,15 +115,7 @@ module Heap
       heap_increase_key(arr, arr.heap_size-1, key)
     end
 
-
-
-
-
-
-
-
-
-    # Public: Returns the maximium element in the heap, which is the element at
+    # Public: Returns the minimum element in the heap, which is the element at
     #         index 0 after building the heap structure
     #
     # ARGS:
@@ -133,14 +125,14 @@ module Heap
     #
     # Examples
     #    arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
-    #    build_max_heap(arr)
-    #    heap_maximum(arr)
-    #    => 9
+    #    build_min_heap(arr)
+    #    heap_mimimum(arr)
+    #    => 1
     def self.heap_mimimum(arr)
       arr[0]
     end
 
-    # Public: Returns the maximium element in the heap, which is the element at
+    # Public: Returns the minimum element in the heap, which is the element at
     #         index 0 after building the heap structure
     #
     # ARGS:
@@ -150,9 +142,9 @@ module Heap
     #
     # Examples
     #    arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
-    #    build_max_heap(arr)
-    #    heap_extract_max(arr)
-    #    => 9
+    #    build_min_heap(arr)
+    #    heap_extract_min(arr)
+    #    => 1
     def self.heap_extract_min(arr)
       arr.heap_size ||= arr.length
       # raise 'heap underflow' if arr.heap_size < 1
@@ -164,7 +156,7 @@ module Heap
       min
     end
 
-    # Public: Increases the element at the specified position to the value provided
+    # Public: Decreases the element at the specified position to the value provided
     #         and makes sure the max-heap property holds
     #
     # ARGS:
@@ -176,8 +168,7 @@ module Heap
     #
     # Examples
     #    arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
-    #    heap_increase_key(arr, 3, 10)
-    #    arr = [10, 5, 8, 3, 9, 6, 2, 4, 1]
+    #    heap_decrease_key(arr, 8, 0)
     #
     # Modifies the input array
     def self.heap_decrease_key(arr, i, key)
@@ -199,8 +190,7 @@ module Heap
     #
     # Examples
     #    arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
-    #    max_heap_insert(arr, 10)
-    #    arr = [10, 5, 3, 7, 8, 6, 2, 4, 1, 9]
+    #    min_heap_insert(arr, 0)
     #
     # Modifies the input array
     def self.min_heap_insert(arr, key)

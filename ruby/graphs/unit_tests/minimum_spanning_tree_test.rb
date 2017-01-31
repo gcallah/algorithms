@@ -1,4 +1,3 @@
-require 'pry'
 require_relative './seed_graph'
 require_relative '../minimum_spanning_tree'
 require 'minitest/autorun'
@@ -14,6 +13,5 @@ class MinimumSpanningTreeTest < Minitest::Test
   def test_mst_prim
     graph = SeedGraph.prim_undirected_graph
     Graphs::MinimumSpanningTree.MST_prim(graph, graph.vertices.first)
-    binding.pry
   end
 end

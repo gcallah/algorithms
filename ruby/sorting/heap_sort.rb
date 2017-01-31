@@ -29,12 +29,12 @@ module Sorting
     arr
   end
 
-  def self.min_heap_sort(arr)
-    Heap::MinHeap.build_min_heap(arr)
-    (1..(arr.length-1)).reverse_each do |i|
-      arr[0], arr[i] = arr[i], arr[0]
-      arr.heap_size -= 1
-      Heap::MinHeap.min_heapify(arr, 0)
-    end
-  end
+  # def self.min_heap_sort(arr)
+  #   Heap::MinHeap.build_min_heap(arr)
+  #   (1..(arr.length-1)).reverse_each do |i|
+  #     arr[0], arr[i] = arr[i], arr[0]
+  #     arr.heap_size -= 1
+  #     Heap::MinHeap.min_heapify(arr, 0)
+  #   end
+  # end
 end

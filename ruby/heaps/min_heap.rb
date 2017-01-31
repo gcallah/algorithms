@@ -20,9 +20,7 @@ module Heap
     #    min_heapify(arr, 5)
     #
     # Modifies the provided array.
-    def self.min_heapify(arr, i)
-      binding.pry
-
+    def self.min_heapify(arr, i)      
       arr.heap_size ||= arr.length
 
       l = i.left
