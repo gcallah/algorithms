@@ -4,7 +4,7 @@ require_relative './min_heap'
 
 using MonkeyPatch
 
-module Heaps
+module Heap
   module PriorityQueue
     # Public: Returns the maximium element in the heap, which is the element at
     #         index 0 after building the heap structure
@@ -155,11 +155,12 @@ module Heaps
     #    => 9
     def self.heap_extract_min(arr)
       arr.heap_size ||= arr.length
-      raise 'heap underflow' if arr.heap_size < 1
+      # raise 'heap underflow' if arr.heap_size < 1
+      return nil if arr.heap_size < 1
       min = arr[0]
-      arr[0] = arr[a.heap_size]
+      arr[0] = arr[arr.heap_size-1]
       arr.heap_size -= 1
-      Heap::MinHeap::min_heapify(arr, 1)
+      Heap::MinHeap::min_heapify(arr, 0)
       min
     end
 
