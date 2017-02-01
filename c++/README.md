@@ -6,6 +6,9 @@ Implementation stictly follows <Introduction to Algorithms> (Cormen, Leiserson, 
 
 ### Foundations *I*
 
+> #### 1. The Role of Algorithms in Computing
+> #### 2. Getting Started
+> #### 3. Growth of Function
 > #### 4. Divide-and-Conquer
 
 ### Sorting and Order Statistics *II*
