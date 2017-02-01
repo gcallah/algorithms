@@ -14,6 +14,8 @@ class UndirectedGraph < Graph
         # location of the edge and then corresponding vertices are returned
         vertex.adj_list = @edges.select { |edge| (edge.v1 == vertex || edge.v2 == vertex) }
                                 .map { |edge| (edge.v1 == vertex) ? edge.v2 : edge.v1  }
+
+        vertex.key = vertex.adj_list.map { |x| get_edge_weight(x, vertex) }.min
       end
     end
   end
