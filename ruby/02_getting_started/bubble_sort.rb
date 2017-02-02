@@ -1,6 +1,4 @@
-require_relative './utils'
-
-module Sorting
+module GettingStarted
   # Internal: Sorts the elements of the array using BUBBLE sort algorithm
   # 					Divide and Conquer strategy
   #

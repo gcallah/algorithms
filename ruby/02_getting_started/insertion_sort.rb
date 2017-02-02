@@ -1,4 +1,4 @@
-module Sorting
+module GettingStarted
   # Internal: Sorts the elements of the array using INSERTION sort algorithm
   #
   # arr - Array of interger elements for now

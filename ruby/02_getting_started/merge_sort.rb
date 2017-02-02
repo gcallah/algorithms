@@ -1,4 +1,4 @@
-module Sorting
+module GettingStarted
   # Internal: Sorts the elements of the array using MERGE sort algorithm
   # 					Divide and Conquer strategy
   # Dependancy: merge
