@@ -1,8 +1,8 @@
 task :test do
   # SORTING
-  ruby("ruby/sorting/unit_tests/bubble_sort_test.rb")
-  ruby("ruby/sorting/unit_tests/insertion_sort_test.rb")
-  ruby("ruby/sorting/unit_tests/merge_sort_test.rb")
+  ruby("ruby/02-getting_started/unit_tests/bubble_sort_test.rb")
+  ruby("ruby/02-getting_started/unit_tests/insertion_sort_test.rb")
+  ruby("ruby/02-getting_started/unit_tests/merge_sort_test.rb")
   ruby("ruby/sorting/unit_tests/quick_sort_test.rb")
   ruby("ruby/sorting/unit_tests/heap_sort_test.rb")
 
