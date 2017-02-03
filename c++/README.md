@@ -7,13 +7,13 @@ Implementation stictly follows <Introduction to Algorithms> (Cormen, Leiserson, 
 ### Foundations *I*
 
 > #### 1. The Role of Algorithms in Computing
-> #### 2. Getting Started
+> #### 2. [Getting Started](https://github.com/gcallah/algorithms/tree/master/c%2B%2B/Getting%20Started)
 > #### 3. Growth of Function
 > #### 4. Divide-and-Conquer
 
 ### Sorting and Order Statistics *II*
 
-> #### 6.heapsort
+> #### 6.[Heapsort](https://github.com/gcallah/algorithms/tree/master/c%2B%2B/Heapsort)
 
 ### Data Structures *III*
 
