@@ -40,7 +40,8 @@ module RandomizedAlgorithms
     #   randomized_hire_assistant([0, 9, 2, 15, 17, 9, 10, 20])
     #   => [2, 7]
     #   => [1]
-    #   => []    Every output will be different due to the randomization
+    #   => []
+    #   NOTE: Every output for each input will be different due to randomization
     def randomized_hire_assistant(candidates, permutation_method="permute_by_sorting")
       candidates = RandomizedAlgorithms.send(permutation_method, candidates)
       best = 0
