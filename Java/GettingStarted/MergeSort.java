@@ -54,6 +54,11 @@ public class MergeSort {
          *      Merger Array;
          */
 	    private void merge(int[] array, int p, int q, int r){
+	    	/*
+	    	 * The Book assumes that array index starts from 1 
+	    	 * but instead in Java it stars from 0. So we have made
+	    	 * some changes in the code.
+	    	 */
 	        int n1 = q - p + 1;
 	        int n2 = r - q;
 	        int[] left = new int[n1 + 1];
