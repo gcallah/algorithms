@@ -12,6 +12,7 @@ loop invariants are expressed as assert statements when they
 are not too complex.
 This file contains:
     recursive_activity_selector()
+    greedy_activity_selector()
 """
 
 
@@ -38,4 +39,25 @@ def recursive_activity_selector(s, f, k, n=None):
         return [m] + recursive_activity_selector(s, f, m, n)
     else:
         return []
+
+
+def greedy_activity_selector(s, f):
+    """
+        Args:
+            s: a list of start times
+            f: a list of finish times
+
+        Returns:
+            A maximal set of activities that can be scheduled.
+            (We use a list to hold the set.)
+    """
+    assert(len(s) == len(f))  # each start time must match a finish time
+    n = len(s)  # could be len f as well!
+    a = []
+    k = 0
+    for m in range(1, n):
+        if s[m] >= f[k]:
+            a.append(m)
+            k = m
+    return a
    
