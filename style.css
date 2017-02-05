@@ -10,15 +10,27 @@ table {
     margin: 8px 40px 8px 40px;
 }
 
-table, th, td {
+th {
     border: 1px solid black;
-    }
-    th, td {
-            padding: 15px;
+}
+
+th, td {
+            padding: 8px;
     }
 
 td {
     background: #fff;
+}
+
+td#languages {
+    color: #fdf;
+    background: #434;
+}
+
+th#chapter-head {
+    font-size: 20px;
+    color: #334;
+    background: #bff;
 }
 
 th {
@@ -138,4 +150,24 @@ figcaption {
     font-style: italic;
     text-align: center;
     margin: 16px 20px 12px 20px;
+}
+
+.illustr-container {
+    width: 1000px;
+    height: 400px;
+    flex: 1;
+    margin: 20px 20px 0 0;
+    overflow: auto;
+}
+
+.illustr-text {
+    display: inline-block;
+    vertical-align: center;
+    width: 33%;
+}
+
+.illustration {
+    display: inline-block;
+    float: right;
+    vertical-align: top;
 }
