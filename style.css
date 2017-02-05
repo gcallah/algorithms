@@ -8,10 +8,12 @@ body {
 
 table {
     margin: 8px 40px 8px 40px;
+    border-collapse: collapse;
 }
 
 th {
     border: 1px solid black;
+    font-weight: normal;
 }
 
 th, td {
