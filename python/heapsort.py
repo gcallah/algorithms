@@ -122,7 +122,7 @@ def heapify(h, i, heapsize=None, min_or_max=MAX):
     l = left(i)
     r = right(i)
     largest = i
-    print("heap = " + str(h))
+    print("heap in progress = " + str(h))
     print("heapifying with i = " + str(i) + " and " +
             "left = " + str(l) + " and right = " + str(r))
     if l < heapsize and comp(h[l], h[i]):
@@ -137,10 +137,10 @@ def heapify(h, i, heapsize=None, min_or_max=MAX):
         print("Swapping elements " + str(i) + " and " +
                 str(largest))
         srt.swap(h, i, largest)
-        heapify(h, largest, heapsize)
+        heapify(h, largest, heapsize, min_or_max)
 
 
-def build_heap(h, heapsize=None, min_or_max=MAX):
+def build_heap(h, min_or_max=MAX):
     """
         Args:
             h: the list to heapify.
@@ -150,8 +150,7 @@ def build_heap(h, heapsize=None, min_or_max=MAX):
             None
             The heap is built in place.
     """
-    if heapsize is None:
-        heapsize = len(h)
+    heapsize = len(h)
     for i in range((heapsize // 2), -1, -1):
         heapify(h, i, heapsize, min_or_max)
 
@@ -163,19 +162,20 @@ def heapsort(h, min_or_max=MAX):
             min_or_max: are we sorting a max heap or a min heap?
 
         Returns:
-            sorted: sorted list
+            None
 
         Performance: O(n lg n)
     """
-    sorted = []
-    while len(h) > 0:
-        print("heapsort; heapsize = " + str(len(h)))
-        build_heap(h, len(h), min_or_max)
-        # put the max item in sorted
-        sorted.append(h[0])
-        # then trim the max item out of the list
-        h = h[1:]
-    return sorted
+    build_heap(h, min_or_max)
+    heapsize = len(h)
+    for i in range(len(h) - 1, 1, -1):
+        print("heapsort heap: " + str(h))
+        print("heapsize = " + str(heapsize)
+              + "; i = " + str(i))
+        srt.swap(h, 0, i)
+        heapsize -= 1
+        heapify(h, 0, heapsize, min_or_max)
+
 
 """
 The functions from here down are used for priority queues.
