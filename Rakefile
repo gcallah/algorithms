@@ -18,7 +18,7 @@ task :test do
   # QUICKSORT
   ruby("ruby/quicksort/unit_tests/quick_sort_test.rb")
   ruby("ruby/quicksort/unit_tests/randomized_quick_sort_test.rb")
-  ruby("ruby/quicksort/unit_tests/tail_recursive_quick_sort.rb")
+  ruby("ruby/quicksort/unit_tests/tail_recursive_quick_sort_test.rb")
 
   # DYNAMIC PROGRAMMING TESTS
   ruby("ruby/dynamic_programming/unit_tests/lcs_test.rb")
