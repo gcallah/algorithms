@@ -195,11 +195,9 @@ def heap_min_or_max(h):
     return h[0]
 
 
-def heap_extract_next(h, min_or_max=MAX):
+def heap_extract_extr(h, min_or_max=MAX):
     """
-        The book calls heapify in this function. But I found
-        calling build_heap() works, while calling heapify()
-        does not!
+        Extract "extreme" value from heap, be it min or max.
 
         Args:
             h: the heap
@@ -209,8 +207,6 @@ def heap_extract_next(h, min_or_max=MAX):
         Returns:
             The minimum or maximum value, depending on whether we
             have a min or max heap.
-            Since we are here implementing priority queues, we can
-            call this the "next" item.
     """
     if len(h) < 1:
         print("Heap empty!")
@@ -219,7 +215,7 @@ def heap_extract_next(h, min_or_max=MAX):
     m = h[0]
     h[0] = h[len(h) - 1]
     del h[len(h) - 1]
-    build_heap(h, min_or_max=min_or_max)
+    heapify(h, 0, min_or_max=min_or_max)
     return m
 
 
