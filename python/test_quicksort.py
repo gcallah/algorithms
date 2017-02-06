@@ -3,21 +3,23 @@
 Test our sorting code.
 """
 
+import random
 from unittest import TestCase, main
 import quicksort as qs
-
-l = [9, 7, 2, 6, 4, 21, 8, 15, 1, 12]
-sorted = [1, 2, 4, 6, 7, 8, 9, 12, 15, 21]
 
 
 class QuicksortTestCase(TestCase):
 
     def test_quick(self):
-        # sorts in place: let's copy list first!
-        my_l = list(l)
+        # set up a random list
+        n = random.randint(0, 100)
+        my_l = random.sample(range(1, 1000), n)
+
         # no return!
         qs.quicksort(my_l)
-        self.assertEqual(my_l, sorted)
+
+        for i in range(0, n - 1):
+            self.assertLessEqual(my_l[i], my_l[i + 1])
 
 if __name__ == '__main__':
     main()
