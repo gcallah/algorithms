@@ -25,14 +25,14 @@ td {
 }
 
 td#languages {
-    color: #dff;
-    background: #344;
+    color: #cff;
+    background: #334;
 }
 
 th#chapter-head {
     font-size: 20px;
     color: #334;
-    background: #bff;
+    background: #cff;
 }
 
 th {
