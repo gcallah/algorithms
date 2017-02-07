@@ -10,7 +10,7 @@ from test_utils import rand_list
 
 class QuicksortTestCase(TestCase):
 
-    def test_quick(self):
+    def test_quicksort(self):
         for j in range(10):
             l = rand_list(max_list=100)
     
