@@ -48,7 +48,6 @@ class Node():
     """
     The nodes in our graph.
     """
-
     def __init__(self, nid):
         """
             Args:
@@ -62,6 +61,24 @@ class Node():
         self.pred = None
         self.discover = -1
         self.finish = -1
+
+
+class Edge():
+    """
+    The edges of our graph.
+    """
+    def __init__(self, v1, v2):
+        self.v1 = v1
+        self.v2 = v2
+
+    def __str__(self):
+        return str(self.v1) + "<-->" + str(self.v2)
+
+    def get_vertices(self):
+        return (self.v1, self.v2)
+
+    def is_incident(self, v):
+        return (v == self.v1) or (v == self.v2)
 
 
 class Graph():
@@ -78,6 +95,7 @@ class Graph():
         # the following item is a heterogeneous list. The first item is a node,
         # but the rest of the items are just node ids.
         self.adj_lists = {}
+        self.edges = []
 
         for l in alist:
             nid = l[NID]
@@ -87,18 +105,22 @@ class Graph():
 
             for neighbor in l[ALIST]:
                 self.adj_lists[nid].append(neighbor)  # just a number!
+                self.edges.append(Edge(nid, neighbor))
 
     def get_node(self, nid):
         if nid in self.adj_lists:
-            return self.adj_lists[nid][0]
+            return self.adj_lists[nid][NID]
         else:
             return None
 
     def get_alist(self, nid):
         if nid in self.adj_lists:
-            return self.adj_lists[nid][1:]
+            return self.adj_lists[nid][ALIST:]
         else:
             return None
+
+    def get_edges(self):
+        return self.edges
 
 
 def init_nodes(g):
