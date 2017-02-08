@@ -6,10 +6,6 @@ require_relative '../heaps/priority_queue'
 module Graphs
   class MinimumSpanningTree
     class << self
-      def MST_generic
-
-      end
-
       def MST_kruskal(graph)
         a = []
         graph.vertices.each do |vertex|
