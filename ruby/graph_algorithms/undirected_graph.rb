@@ -12,10 +12,10 @@ class UndirectedGraph < Graph
       if vertex.adj_list.empty?
         # Selection is done by checking if the vertex being iterated is at either
         # location of the edge and then corresponding vertices are returned
-        vertex.adj_list = @edges.select { |edge| (edge.v1 == vertex || edge.v2 == vertex) }
-                                .map { |edge| (edge.v1 == vertex) ? edge.v2 : edge.v1  }
+        vertex.adj_list = @edges.select { |edge| ((edge.v1).equal?(vertex) || (edge.v2).equal?(vertex)) }
+                                .map { |edge| ((edge.v1).equal?(vertex)) ? edge.v2 : edge.v1  }
 
-        vertex.key = vertex.adj_list.map { |x| get_edge_weight(x, vertex) }.min
+        # vertex.key = vertex.adj_list.map { |x| get_edge_weight(x, vertex) }.min
       end
     end
   end

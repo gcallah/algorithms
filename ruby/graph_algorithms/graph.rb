@@ -16,16 +16,23 @@ class MSTVertex
 end
 
 class MSTPrimVertex
-  # include Comparable
+  include Comparable
 
   attr_accessor :d, :key, :pi, :adj_list
 
-  # def <=> (anotherVertex)
-  #   key <=> anotherVertex.key
-  # end
+  def <=> (anotherVertex)
+    key <=> anotherVertex.key
+  end
 
   def initialize(d, key, pi, adj_list)
     @d, @key, @pi, @adj_list = d, key, pi, adj_list
+  end
+
+  def belongs_to?(vertex_list)
+    vertex_list.each do |x|
+      return true if self.equal?(x)
+    end
+    return false
   end
 end
 
@@ -83,10 +90,11 @@ class Graph
 
   def get_edge_weight(v1, v2)
     @edges.each do |edge|
-      if (edge.v1 == v1 && edge.v2 == v2) || (edge.v1 == v2 && edge.v2 == v1)
+      if ((edge.v1).equal?(v1) && (edge.v2).equal?(v2)) || ((edge.v1).equal?(v2) && (edge.v2).equal?(v1))
         return edge.w
       end
     end
+    return 0
   end
 
   private

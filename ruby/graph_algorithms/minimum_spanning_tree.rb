@@ -1,3 +1,4 @@
+require 'pry'
 require_relative './disjoint_set'
 require_relative '../heaps/min_heap'
 require_relative '../heaps/priority_queue'
@@ -27,6 +28,15 @@ module Graphs
         a
       end
 
+      def vertex_include(arr, v)
+        arr.each do |x|
+          if x.equal?(v)
+            return true
+          end
+        end
+        return false
+      end
+
       # TODO: DO NOT FORGET TO IMPLEMENT THIS USING PRIORITY QUEUE AS
       #       EXPLAINED IN THE CLRS BOOK
       def MST_prim(graph, r)
@@ -41,7 +51,7 @@ module Graphs
           u = Heap::PriorityQueue::heap_extract_min(q)
           q = q[1..(q.length-1)]
           u.adj_list.each do |v|
-            if q.include?(v) && graph.get_edge_weight(u, v) < v.key
+            if v.belongs_to?(q) && graph.get_edge_weight(u, v) < v.key
               v.pi = u
               v.key = graph.get_edge_weight(u, v)
             end
