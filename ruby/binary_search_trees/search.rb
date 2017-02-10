@@ -1,6 +1,14 @@
 require_relative './tree'
 require_relative './node'
 
+# INDEX
+#      tree_search
+#      iterative_tree_search
+#      tree_minimum
+#      tree_maximum
+#      tree_successor
+
+
 module BinarySearchTree
   class << self
     #             TREE structure

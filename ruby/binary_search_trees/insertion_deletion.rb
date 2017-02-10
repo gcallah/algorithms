@@ -2,6 +2,11 @@ require_relative './tree'
 require_relative './node'
 require_relative './search'
 
+# INDEX
+#      tree_insert
+#      tree_delete -> transplant
+#
+
 module BinarySearchTree
   class << self
     #             TREE structure

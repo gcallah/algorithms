@@ -1,6 +1,11 @@
 require_relative './tree'
 require_relative './node'
 
+# INDEX
+#      inorder_tree_walk
+#      preoder_tree_walk
+#      postorder_tree_walk
+
 module BinarySearchTree
   class << self
     #             TREE structure
