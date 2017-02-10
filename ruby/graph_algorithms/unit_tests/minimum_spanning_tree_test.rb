@@ -9,9 +9,10 @@ class MinimumSpanningTreeTest < Minitest::Test
     [["g", "h"], ["c", "i"], ["f", "g"], ["c", "f"], ["a", "b"], ["c", "d"], ["b", "c"], ["d", "e"]])
   end
 
-  # TODO: Complete this test case once Prim is implemented using priority queue
   def test_mst_prim
     graph = SeedGraph.prim_undirected_graph
     Graphs::MinimumSpanningTree.MST_prim(graph, graph.vertices.first)
+    assert_equal(graph.vertices.map { |x| x.d }, ["i", "b", "c", "d", "e", "f", "g", "h", "i"])
+    assert_equal(graph.vertices.map { |x| x.pi.d }, ["c", "a", "b", "c", "d", "c", "f", "g", "c"])
   end
 end

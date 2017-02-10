@@ -20,14 +20,14 @@ module Heap
     #    min_heapify(arr, 5)
     #
     # Modifies the provided array.
-    def self.min_heapify(arr, i)      
+    def self.min_heapify(arr, i)
       arr.heap_size ||= arr.length
 
       l = i.left
       r = i.right
 
-      smallest = (l <= arr.heap_size-1 && arr[l].key < arr[i].key) ? l : i
-      smallest = r if (r <= arr.heap_size-1 && arr[r].key < arr[smallest].key)
+      smallest = (l <= arr.heap_size-1 && arr[l] < arr[i]) ? l : i
+      smallest = r if (r <= arr.heap_size-1 && arr[r] < arr[smallest])
       if smallest != i
         arr[i], arr[smallest] = arr[smallest], arr[i]
         min_heapify(arr, smallest)

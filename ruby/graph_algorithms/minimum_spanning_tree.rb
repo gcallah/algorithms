@@ -1,14 +1,9 @@
 require_relative './disjoint_set'
-require_relative '../heaps/min_heap'
-require_relative '../heaps/priority_queue'
+require_relative '../heapsort/min_priority_queue'
 
 module Graphs
   class MinimumSpanningTree
     class << self
-      def MST_generic
-
-      end
-
       def MST_kruskal(graph)
         a = []
         graph.vertices.each do |vertex|
@@ -27,6 +22,15 @@ module Graphs
         a
       end
 
+      def vertex_include(arr, v)
+        arr.each do |x|
+          if x.equal?(v)
+            return true
+          end
+        end
+        return false
+      end
+
       # TODO: DO NOT FORGET TO IMPLEMENT THIS USING PRIORITY QUEUE AS
       #       EXPLAINED IN THE CLRS BOOK
       def MST_prim(graph, r)
@@ -38,10 +42,10 @@ module Graphs
         r.key = 0
         q = graph.vertices
         while q.length != 0
-          u = Heap::PriorityQueue::heap_extract_min(q)
+          u = Heap::MinPriorityQueue::heap_extract_min(q)
           q = q[1..(q.length-1)]
           u.adj_list.each do |v|
-            if q.include?(v) && graph.get_edge_weight(u, v) < v.key
+            if v.belongs_to?(q) && graph.get_edge_weight(u, v) < v.key
               v.pi = u
               v.key = graph.get_edge_weight(u, v)
             end

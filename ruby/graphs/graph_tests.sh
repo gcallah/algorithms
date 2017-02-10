@@ -1,4 +1,0 @@
-ruby unit_tests/breadth_first_search_test.rb
-ruby unit_tests/depth_first_search_test.rb
-ruby unit_tests/topological_sort_test.rb
-ruby unit_tests/minimum_spanning_tree_test.rb
