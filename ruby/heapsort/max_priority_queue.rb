@@ -1,3 +1,8 @@
+require_relative './max_heap'
+require_relative './monkey_patch'
+
+using MonkeyPatch
+
 module Heap
   module MaxPriorityQueue
     class << self
@@ -39,7 +44,7 @@ module Heap
         arr.heap_size -= 1
         Heap::MaxHeap::max_heapify(arr, 0)
         max
-      end    
+      end
 
       # Public: Increases the element at the specified position to the value provided
       #         and makes sure the max-heap property holds

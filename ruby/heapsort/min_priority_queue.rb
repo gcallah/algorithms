@@ -1,3 +1,8 @@
+require_relative './min_heap'
+require_relative './monkey_patch'
+
+using MonkeyPatch
+
 module Heap
   module MinPriorityQueue
     class << self

@@ -1,7 +1,6 @@
 require 'pry'
 require_relative './disjoint_set'
-require_relative '../heaps/min_heap'
-require_relative '../heaps/priority_queue'
+require_relative '../heapsort/min_priority_queue'
 
 module Graphs
   class MinimumSpanningTree
@@ -44,7 +43,7 @@ module Graphs
         r.key = 0
         q = graph.vertices
         while q.length != 0
-          u = Heap::PriorityQueue::heap_extract_min(q)
+          u = Heap::MinPriorityQueue::heap_extract_min(q)
           q = q[1..(q.length-1)]
           u.adj_list.each do |v|
             if v.belongs_to?(q) && graph.get_edge_weight(u, v) < v.key
