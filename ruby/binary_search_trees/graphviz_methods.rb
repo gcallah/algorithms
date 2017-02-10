@@ -1,3 +1,10 @@
+require_relative './node'
+require_relative './tree'
+
+# Comment the below line while running the tests. Installation steps for ruby-graphviz
+# and GraphViz will be added soon to a readme file
+require 'ruby-graphviz'
+
 module BinarySearchTree
   class << self
     # TODO: Add documentation on how to install GRAPHVIZ AND RUBY-GRAPHVIZ GEM
@@ -42,6 +49,38 @@ module BinarySearchTree
 
         g.add_edges( { "#{y.key}" => :right}, {"#{z.key}" => :key} )
         g.add_edges( { "#{z.key}" => :p}, {"#{y.key}" => :key} )
+      end
+
+      def build_visualization_images
+        node_a = Node.new('A', nil, nil, nil)
+        node_b = Node.new('B', nil, nil, nil)
+        node_c = Node.new('C', nil, nil, nil)
+        node_d = Node.new('D', nil, nil, nil)
+        node_e = Node.new('E', nil, nil, nil)
+        node_f = Node.new('F', nil, nil, nil)
+        node_g = Node.new('G', nil, nil, nil)
+        node_h = Node.new('H', nil, nil, nil)
+        node_i = Node.new('I', nil, nil, nil)
+        node_j = Node.new('J', nil, nil, nil)
+
+        tree_graphical = Tree.new(nil)
+
+        g = GraphViz.new( :G, :type => :digraph )
+
+        p "--------------------  BEGIN GENERATING IMAGES -------------------- "
+        [node_f, node_b, node_g, node_a, node_d, node_c, node_e, node_i, node_h].each_with_index do |x, i|
+          tree_insert_graphical(tree_graphical, x, g) # For image generation
+          g.output( :png => "Order #{i.to_i} - Inserted #{x.key}.png", :canon => nil)
+        end
+        p "                              F                      "
+        p "                            // \\                    "
+        p "                           B     G                   "
+        p "                         // \\    \\                 "
+        p "                         A   D     I                 "
+        p "                           // \\ //                  "
+        p "                           C   E H                   "
+
+        p "--------------------  END GENERATING IMAGES -------------------- "
       end
     end
   end
