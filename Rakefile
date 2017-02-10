@@ -16,8 +16,8 @@ task :test do
   ruby("ruby/heapsort/unit_tests/heap_sort_test.rb")
   ruby("ruby/heapsort/unit_tests/min_heap_test.rb")
   ruby("ruby/heapsort/unit_tests/max_heap_test.rb")
-  ruby("ruby/heapsort/unit_tests/min_priority_queue.rb")
-  ruby("ruby/heapsort/unit_tests/max_priority_queue.rb")
+  ruby("ruby/heapsort/unit_tests/min_priority_queue_test.rb")
+  ruby("ruby/heapsort/unit_tests/max_priority_queue_test.rb")
 
   # QUICKSORT
   ruby("ruby/quicksort/unit_tests/quick_sort_test.rb")

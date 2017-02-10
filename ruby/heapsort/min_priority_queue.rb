@@ -17,9 +17,9 @@ module Heap
       # Examples
       #    arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
       #    build_min_heap(arr)
-      #    heap_mimimum(arr)
+      #    heap_minimum(arr)
       #    => 1
-      def heap_mimimum(arr)
+      def heap_minimum(arr)
         arr[0]
       end
 
@@ -41,7 +41,7 @@ module Heap
         # raise 'heap underflow' if arr.heap_size < 1
         return nil if arr.heap_size < 1
         min = arr[0]
-        arr[0] = arr[arr.heap_size-1]
+        arr[0] = arr[arr.heap_size - 1]
         arr.heap_size -= 1
         Heap::MinHeap::min_heapify(arr, 0)
         min

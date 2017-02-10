@@ -40,7 +40,7 @@ module Heap
         arr.heap_size ||= arr.length
         raise 'heap underflow' if arr.heap_size < 1
         max = arr[0]
-        arr[0] = arr[arr.heap_size]
+        arr[0] = arr[arr.heap_size - 1]
         arr.heap_size -= 1
         Heap::MaxHeap::max_heapify(arr, 0)
         max
