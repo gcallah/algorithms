@@ -1,4 +1,3 @@
-require 'pry'
 require_relative './disjoint_set'
 require_relative '../heapsort/min_priority_queue'
 

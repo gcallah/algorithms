@@ -14,6 +14,8 @@ module Heap
   #
   # RETURN: Array
   #
+  # COMPLEXITY: Θ(nlgn)
+  #
   # Examples
   #    arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]
   #    max_heap_sort(arr)
@@ -38,6 +40,8 @@ module Heap
   # arr - Input array
   #
   # RETURN: Array
+  #
+  # COMPLEXITY: Θ(nlgn)
   #
   # Examples
   #    arr = [5, 3, 8, 7, 9, 6, 2, 4, 1]

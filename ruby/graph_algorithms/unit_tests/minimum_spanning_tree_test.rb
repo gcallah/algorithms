@@ -1,4 +1,3 @@
-require 'pry'
 require_relative './seed_graph'
 require_relative '../minimum_spanning_tree'
 require 'minitest/autorun'
