@@ -14,7 +14,7 @@ This file contains:
 """
 
 import random
-from graph_algorithms import Graph, Node, Edge
+from graph_algorithms import Graph, Node, Edge, test_graph
 
 
 def approx_vertex_cover(g):
@@ -32,7 +32,7 @@ def approx_vertex_cover(g):
         c.append((u, v))
         for edge in edges:
             if edge.is_incident(u) or edge.is_incident(v):
-                pass
+                edges.remove(edge)
 
     return c
 
