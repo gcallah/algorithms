@@ -1,4 +1,3 @@
-require 'pry'
 require_relative '../min_priority_queue'
 require_relative '../min_heap'
 require 'minitest/autorun'
