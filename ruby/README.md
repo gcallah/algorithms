@@ -25,10 +25,30 @@
 
 <pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Quicksort</span></b></pre>
 
+> ##### [Quicksort](https://github.com/gcallah/algorithms/blob/master/ruby/quicksort/quick_sort.rb)
+> ##### [Randomized Quicksort](https://github.com/gcallah/algorithms/blob/master/ruby/quicksort/randomized_quick_sort.rb)
+> ##### [Tail Recursive Quicksort](https://github.com/gcallah/algorithms/blob/master/ruby/quicksort/tail_recursive_quick_sort.rb)
+
 <pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Sorting in Linear Time</span></b></pre>
 
 <pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Hash Tables</span></b></pre>
 
+> ##### [Hash](https://github.com/gcallah/algorithms/blob/master/ruby/hash/hash.rb)
+
 <pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Binary Search Trees</span></b></pre>
 
-<pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Dynamic Programming</span></b></pre>
+> ##### [Tree Traversals](https://github.com/gcallah/algorithms/blob/master/ruby/binary_search_trees/traversals.rb)
+> ##### [Tree Search](https://github.com/gcallah/algorithms/blob/master/ruby/binary_search_trees/search.rb)
+> ##### [Insertion and Deletion](https://github.com/gcallah/algorithms/blob/master/ruby/binary_search_trees/insertion_deletion.rb)
+
+
+<pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Greedy Algorithms</span></b></pre>
+
+> ##### [Activity Selection](https://github.com/gcallah/algorithms/blob/master/ruby/greedy_algorithms/activity_selection.rb)
+> ##### [Knapsack (0-1 and Fractional)](https://github.com/gcallah/algorithms/blob/master/ruby/greedy_algorithms/knapsack.rb)
+
+<pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Elementary Graph Algorithms</span></b></pre>
+
+> ##### [Breadth First Search](https://github.com/gcallah/algorithms/blob/master/ruby/graph_algorithms/breadth_first_search.rb)
+> ##### [Depth First Search](https://github.com/gcallah/algorithms/blob/master/ruby/graph_algorithms/depth_first_search.rb)
+> ##### [Minimum Spanning Trees (Kruskal and Prim's)](https://github.com/gcallah/algorithms/blob/master/ruby/graph_algorithms/minimum_spanning_tree.rb)
