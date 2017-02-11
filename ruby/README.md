@@ -1,54 +1,38 @@
-<!-- <pre> <span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;">Getting Started</span> </pre> -->
+<pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Getting Started </span> </b> </pre>
 
-```ruby
-Getting Started
-```
 > ##### [Bubble Sort](https://github.com/gcallah/algorithms/blob/master/ruby/02-getting_started/bubble_sort.rb)
 
-
+</br>
 > ##### [Insertion Sort](https://github.com/gcallah/algorithms/blob/master/ruby/02-getting_started/insertion_sort.rb)
 
-
+</br>
 > ##### [Merge Sort](https://github.com/gcallah/algorithms/blob/master/ruby/02-getting_started/merge_sort.rb)
 
-<!-- <pre> <span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;">Divide and Conquer</span> </pre> -->
-
-```ruby
-Divide and Conquer
-```
+<pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Divide and Conquer </span> </b> </pre>
 
 > ##### [Find Max Subarray](https://github.com/gcallah/algorithms/blob/master/ruby/04-divide_and_conquer/find_max_subarray.rb)
 
-
+</br>
 > ##### [Matrix Multiplication](https://github.com/gcallah/algorithms/blob/master/ruby/04-divide_and_conquer/matrix_multiplication.rb)
 
-
+</br>
 > ##### [Towers of Hanoi](https://github.com/gcallah/algorithms/blob/master/ruby/04-divide_and_conquer/towers_of_hanoi.rb)
 
-```ruby
-Randomized Algorithms
-```
+<pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Randomized Algorithms</span></b></pre>
 
-```ruby
-Heapsort
-```
+> ##### [Hire Assistant](https://github.com/gcallah/algorithms/blob/master/ruby/05-randomized_algorithms/hire_assistant.rb)
 
-```ruby
-Quicksort
-```
+</br>
+> ##### [Permuting Arrays](https://github.com/gcallah/algorithms/blob/master/ruby/05-randomized_algorithms/permuting_arrays.rb)
 
-```ruby
-Sorting in Linear Time
-```
+<pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Heapsort</span></b></pre>
 
-```ruby
-Hash Tables
-```
+<pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Quicksort</span></b></pre>
 
-```ruby
-Binary Search Trees
-```
+<pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Sorting in Linear Time</span></b></pre>
 
-```ruby
-Dynamic Programming
-```
+<pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Hash Tables</span></b></pre>
+
+<pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Binary Search Trees</span></b></pre>
+
+<pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Dynamic Programming</span></b></pre>
