@@ -9,6 +9,7 @@
 > ##### [Find Max Subarray](https://github.com/gcallah/algorithms/blob/master/ruby/04-divide_and_conquer/find_max_subarray.rb)
 > ##### [Matrix Multiplication](https://github.com/gcallah/algorithms/blob/master/ruby/04-divide_and_conquer/matrix_multiplication.rb)
 > ##### [Towers of Hanoi](https://github.com/gcallah/algorithms/blob/master/ruby/04-divide_and_conquer/towers_of_hanoi.rb)
+
 <pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Randomized Algorithms</span></b></pre>
 
 > ##### [Hire Assistant](https://github.com/gcallah/algorithms/blob/master/ruby/05-randomized_algorithms/hire_assistant.rb)
