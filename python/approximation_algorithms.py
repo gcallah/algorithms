@@ -29,10 +29,21 @@ def approx_vertex_cover(g):
     while len(edges) > 0:
         e = random.choice(edges)  # choose a random edge
         (u, v) = e.get_vertices()
+        print("Got random edge " + str(e))
         c.append((u, v))
+        removals = []
+        i = 0
         for edge in edges:
+            print("Looping on edges; got edge " + str(edge))
             if edge.is_incident(u) or edge.is_incident(v):
-                edges.remove(edge)
+                print("Putting on removal list " + str(edge))
+                removals.append(i)
+            i += 1
+
+        if len(removals) > 0:
+            removals.reverse()
+            for i in removals:
+                del edges[i]
 
     return c
 
