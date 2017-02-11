@@ -97,15 +97,21 @@ class Graph():
         self.adj_lists = {}
         self.edges = []
 
-        for l in alist:
-            nid = l[NID]
+        for v in alist:
+            nid = v[NID]
             if nid not in self.adj_lists: 
                 self.adj_lists[nid] = []  # each dict entry is a list
             self.adj_lists[nid].append(Node(nid))
 
-            for neighbor in l[ALIST]:
+            for neighbor in v[ALIST]:
                 self.adj_lists[nid].append(neighbor)  # just a number!
                 self.edges.append(Edge(nid, neighbor))
+
+    def __str__(self):
+        s = ''
+        for e in self.edges:
+            s += str(e) + "\n"
+        return s
 
     def get_node(self, nid):
         if nid in self.adj_lists:
@@ -121,6 +127,14 @@ class Graph():
 
     def get_edges(self):
         return self.edges
+
+    def is_cover(self, edge_set):
+        """
+        See if this edge set is a vertex cover.
+        Return:
+            True if it is, False if not.
+        """
+        return True
 
 
 def init_nodes(g):
