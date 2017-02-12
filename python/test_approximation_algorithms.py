@@ -12,7 +12,7 @@ class ApproximationTestCase(TestCase):
     def test_approx_vertex_cover(self):
         g = Graph(test_graph)
         cover_set = approx_vertex_cover(g)
-        self.assertEqual(True, g.is_cover(cover_set))
+        self.assertEqual(True, g.iscover(cover_set))
 
 
 if __name__ == '__main__':

@@ -11,7 +11,7 @@ The performance of each function is stated in the docstring, and
 loop invariants are expressed as assert statements when they
 are not too complex.
 This file contains:
-    The class definition for Node and Graph.
+    The class definition for Vertex and Graph.
     bfs(): breadth-first search.
     dfs(): depth-first search.
     dfs_visit(): depth-first search helper.
@@ -26,7 +26,7 @@ WHITE = 0
 GRAY = 1
 BLACK = 2
 
-NID = 0
+VID = 0
 ALIST = 1
 
 
@@ -44,19 +44,19 @@ test_graph = [[1, [2, 3, 4]],
              [12, []],
             ]
 
-class Node():
+class Vertex():
     """
     The nodes in our graph.
     """
-    def __init__(self, nid):
+    def __init__(self, vid):
         """
             Args:
-                k: this node's key
+                vid: this node's id
 
             Returns:
                 None
         """
-        self.nid = nid
+        self.vid = vid
         self.color = WHITE
         self.pred = None
         self.discover = -1
@@ -81,6 +81,18 @@ class Edge():
         return (v == self.v1) or (v == self.v2)
 
 
+def extract_vertices(edges):
+    """
+    Returns a set of all the vertices in the edge collection.
+    """
+    vertices = set()
+    for e in edges:
+        (u, v) = e.get_vertices()
+        vertices.add(u)
+        vertices.add(v)
+    return vertices
+
+
 class Graph():
     """
     The graph structure, here an adjacency list.
@@ -94,18 +106,20 @@ class Graph():
         """
         # the following item is a heterogeneous list. The first item is a node,
         # but the rest of the items are just node ids.
+        self.vertices = None
         self.adj_lists = {}
         self.edges = []
 
         for v in alist:
-            nid = v[NID]
-            if nid not in self.adj_lists: 
-                self.adj_lists[nid] = []  # each dict entry is a list
-            self.adj_lists[nid].append(Node(nid))
+            vid = v[VID]
+            if vid not in self.adj_lists: 
+                self.adj_lists[vid] = []  # each dict entry is a list
+            self.adj_lists[vid].append(Vertex(vid))
 
-            for neighbor in v[ALIST]:
-                self.adj_lists[nid].append(neighbor)  # just a number!
-                self.edges.append(Edge(nid, neighbor))
+            for u in v[ALIST]:
+                self.adj_lists[vid].append(u)  # u is just a number!
+                self.edges.append(Edge(vid, u))
+        self.vertices = extract_vertices(self.edges)
 
     def __str__(self):
         s = ''
@@ -113,38 +127,46 @@ class Graph():
             s += str(e) + "\n"
         return s
 
-    def get_node(self, nid):
-        if nid in self.adj_lists:
-            return self.adj_lists[nid][NID]
+    def get_vertex(self, vid):
+        if vid in self.adj_lists:
+            return self.adj_lists[vid][VID]
         else:
             return None
 
-    def get_alist(self, nid):
-        if nid in self.adj_lists:
-            return self.adj_lists[nid][ALIST:]
+    def get_alist(self, vid):
+        if vid in self.adj_lists:
+            return self.adj_lists[vid][ALIST:]
         else:
             return None
 
     def get_edges(self):
         return self.edges
 
-    def is_cover(self, edge_set):
+    def get_vertices(self):
+        return self.vertices
+
+    def iscover(self, edges):
         """
         See if this edge set is a vertex cover.
         Return:
             True if it is, False if not.
         """
+        cover_set = extract_vertices(edges)
+        for e in self.edges:
+            (u, v) = e.get_vertices
+            if u not in cover_set and v not in cover_set:
+                return False
         return True
 
 
-def init_nodes(g):
+def init_vertices(g):
     """
     Args:
         g: graph to initialize
     Return: None
     """
-    for nid in g.adj_lists:
-        u = g.get_node(nid)
+    for vid in g.adj_lists:
+        u = g.get_vertex(vid)
         u.color = WHITE
         u.discover = -1
         u.pred = None
@@ -157,31 +179,31 @@ def bfs(g, start_id):
         g: graph
         start_id: the vertext with which to start
     """
-    init_nodes(g)
+    init_vertices(g)
 
-    s = g.get_node(start_id)
+    s = g.get_vertex(start_id)
     s.color = GRAY
     s.discover = 0
     s.pred = None
 
     q = queue.Queue()
-    q.put(s.nid)
+    q.put(s.vid)
     while not q.empty():
-        nid = q.get()
-        print("Visiting vertex: " + str(nid))
-        u = g.get_node(nid)
+        vid = q.get()
+        print("Visiting vertex: " + str(vid))
+        u = g.get_vertex(vid)
         if u is not None:
-            alist = g.get_alist(nid)
+            alist = g.get_alist(vid)
             for neighbor in alist:
-                v = g.get_node(neighbor)
+                v = g.get_vertex(neighbor)
                 if v.color == WHITE:
-                    print("Coloring " + str(v.nid) + " gray.")
+                    print("Coloring " + str(v.vid) + " gray.")
                     v.color = GRAY
                     v.discover = u.discover + 1
                     v.pred = u
-                    q.put(v.nid)
+                    q.put(v.vid)
 
-            print("Coloring " + str(u.nid) + " black.")
+            print("Coloring " + str(u.vid) + " black.")
             u.color = BLACK
 
 
@@ -198,12 +220,12 @@ def print_path(g, s, v):
     if v == s:
         print("==> " + str(s))
     else:
-        vnode = g.get_node(v)
+        vnode = g.get_vertex(v)
         if vnode:
             if vnode.pred is None:
                 print("No path exists.")
             else:
-                print_path(g, s, vnode.pred.nid)
+                print_path(g, s, vnode.pred.vid)
                 print("==> " + str(v))
 
 
@@ -221,10 +243,10 @@ def dfs(g):
     global time
     global topological
     topological = []
-    init_nodes(g)
+    init_vertices(g)
     time = 0
-    for nid in g.adj_lists:
-        u = g.get_node(nid)
+    for vid in g.adj_lists:
+        u = g.get_vertex(vid)
         if u.color == WHITE:
             dfs_visit(g, u)
     print("Total time = " + str(time))
@@ -238,20 +260,20 @@ def dfs_visit(g, u):
         g: graph
         u: vertext to work on
     """
-    print("Going to visit " + str(u.nid))
+    print("Going to visit " + str(u.vid))
 
     global time
     time += 1
     u.d = time
     u.color = GRAY
-    alist = g.get_alist(u.nid)
+    alist = g.get_alist(u.vid)
     for neighbor in alist:
-        v = g.get_node(neighbor)
+        v = g.get_vertex(neighbor)
         if v.color == WHITE:
             v.pred = u
             dfs_visit(g, v)
     u.color = BLACK
     time += 1
     u.finish = time
-    topological.insert(0, u.nid)
+    topological.insert(0, u.vid)
 

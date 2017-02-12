@@ -22,15 +22,15 @@ def approx_vertex_cover(g):
         Args:
             g: the graph for which we are creating a vertex cover
         Return:
-            c: the cover set we return
+            cover: the cover set we return
     """
-    c = []
+    cover = []
     edges = g.get_edges()
     while len(edges) > 0:
         e = random.choice(edges)  # choose a random edge
         (u, v) = e.get_vertices()
         print("Got random edge " + str(e))
-        c.append((u, v))
+        cover.append(e)
         removals = []
         i = 0
         for edge in edges:
@@ -45,5 +45,5 @@ def approx_vertex_cover(g):
             for i in removals:
                 del edges[i]
 
-    return c
+    return cover
 
