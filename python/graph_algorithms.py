@@ -112,13 +112,13 @@ class Graph():
 
         for v in alist:
             vid = v[VID]
-            if vid not in self.adj_lists: 
-                self.adj_lists[vid] = []  # each dict entry is a list
-            self.adj_lists[vid].append(Vertex(vid))
+            self.init_alist(vid)
 
-            for u in v[ALIST]:
-                self.adj_lists[vid].append(u)  # u is just a number!
-                self.edges.append(Edge(vid, u))
+            for uid in v[ALIST]:
+                self.adj_lists[vid].append(uid)  # uid is just an int!
+                self.init_alist(uid)
+                self.adj_lists[uid].append(vid)
+                self.edges.append(Edge(vid, uid))
         self.vertices = extract_vertices(self.edges)
 
     def __str__(self):
@@ -126,6 +126,11 @@ class Graph():
         for e in self.edges:
             s += str(e) + "\n"
         return s
+
+    def init_alist(self, vid):
+        if vid not in self.adj_lists: 
+            self.adj_lists[vid] = []  # each dict entry is a list
+            self.adj_lists[vid].append(Vertex(vid))
 
     def get_vertex(self, vid):
         if vid in self.adj_lists:
@@ -177,7 +182,7 @@ def bfs(g, start_id):
     Breadth-first search.
     Args:
         g: graph
-        start_id: the vertext with which to start
+        start_id: the vertex with which to start
     """
     init_vertices(g)
 
@@ -191,20 +196,22 @@ def bfs(g, start_id):
     while not q.empty():
         vid = q.get()
         print("Visiting vertex: " + str(vid))
-        u = g.get_vertex(vid)
-        if u is not None:
+        v = g.get_vertex(vid)
+        if v is not None:
             alist = g.get_alist(vid)
-            for neighbor in alist:
-                v = g.get_vertex(neighbor)
-                if v.color == WHITE:
-                    print("Coloring " + str(v.vid) + " gray.")
-                    v.color = GRAY
-                    v.discover = u.discover + 1
-                    v.pred = u
-                    q.put(v.vid)
+            for uid in alist:
+                print("In loop for " + str(vid)
+                      + " processing neighbor " + str(uid))
+                u = g.get_vertex(uid)
+                if u.color == WHITE:
+                    print("Coloring " + str(u.vid) + " gray.")
+                    u.color = GRAY
+                    u.discover = v.discover + 1
+                    u.pred = v
+                    q.put(uid)
 
-            print("Coloring " + str(u.vid) + " black.")
-            u.color = BLACK
+            print("Coloring " + str(vid) + " black.")
+            v.color = BLACK
 
 
 def print_path(g, s, v):
@@ -212,10 +219,9 @@ def print_path(g, s, v):
         Trace shortest path between s and v.
         Args:
             g: graph
-            s: start
-            v: end vertext
+            s: start vertex
+            v: end vertex
         Returns: None. Prints along the way.
-
     """
     if v == s:
         print("==> " + str(s))
@@ -258,7 +264,7 @@ def dfs_visit(g, u):
     Depth-first search helper.
     Args:
         g: graph
-        u: vertext to work on
+        u: vertex to work on
     """
     print("Going to visit " + str(u.vid))
 
