@@ -1,3 +1,5 @@
+# RUBY <img src="http://www.rubyjobs.me/assets/logo-6192ac44030c8a2cabddc9f99ef287d9.png" alt="Drawing" width="30px"/> (2.0.0p648) 
+
 <pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Getting Started </span> </b> </pre>
 
 > ##### [Bubble Sort](https://github.com/gcallah/algorithms/blob/master/ruby/02-getting_started/bubble_sort.rb)
