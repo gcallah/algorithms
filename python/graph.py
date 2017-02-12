@@ -20,7 +20,7 @@ class Vertex():
     """
     The nodes in our graph.
     """
-    def __init__(self, vid):
+    def __init__(self, vid, neighbor=None):
         """
             Args:
                 vid: this node's id
@@ -33,16 +33,15 @@ class Vertex():
         self.pred = None
         self.discover = NOT_DISCOVERED
         self.finish = NOT_FINISHED
-        self.neighbors = []
-
-    def __eq__(self, other):  # we override equal to just check vid
-       return self.vid == other.vid
+        self.adj_list = []
+        if neighbor is not None:
+            self.adj_list.append(neighbor)
 
     def __str__(self):
         return str(self.vid)
 
-    def __hash__(self):
-        return self.vid
+    def add_neighbor(self, neighbor):
+        self.adj_list.append(neighbor)
 
 
 class Edge():
@@ -88,18 +87,17 @@ class Graph():
         """
         # the following item is a heterogeneous list. The first item is a node,
         # but the rest of the items are just node ids.
-        self.vertices = None
+        self.vertices = {}
         self.edges = []
 
         for v in alist:
             vid = v[VID]
 
             for uid in v[ALIST]:
-                add_edge(vid, uid)
+                self.add_edge(vid, uid)
 
         if not self.isconnected():
-            print("Warning: these algorithms only work on connected graphs, "
-                  + "but this graph is not connected.")
+            print("Warning: this graph is not connected.")
 
     def __str__(self):
         s = ''
@@ -107,17 +105,19 @@ class Graph():
             s += str(e) + "\n"
         return s
 
-    def add_vertex(self, vid):
+    def add_vertex(self, vid, uid=None):
         if vid not in self.vertices:
-            self.vertices.add(Vertex(vid))
+            self.vertices[vid] = Vertex(vid, uid)
+        elif uid is not None:
+            self.vertices[vid].add_neighbor(uid)
 
     def add_edge(self, vid, uid):
         """
             We can safely add these vertices, because we check for dups
             before adding.
         """
-        self.add_vertex(vid)
-        self.add_vertex(uid)
+        self.add_vertex(vid, uid)
+        self.add_vertex(uid, vid)
         self.edges.append(Edge(vid, uid))
 
     def isconnected(self):
@@ -126,9 +126,9 @@ class Graph():
     def get_vertex(self, vid):
         return self.vertices[vid]
 
-    def get_alist(self, vid):
-        if vid in self.adj_lists:
-            return self.adj_lists[vid][ALIST:]
+    def get_adj_list(self, vid):
+        if vid in self.vertices:
+            return self.vertices[vid].adj_list
         else:
             return None
 
@@ -136,7 +136,10 @@ class Graph():
         return self.edges
 
     def get_vertices(self):
-        return self.vertices
+        """
+        This returns the actual vertex objects.
+        """
+        return self.vertices.values()
 
     def iscover(self, edges):
         """

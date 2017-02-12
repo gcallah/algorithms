@@ -34,11 +34,10 @@ def init_vertices(g):
         g: graph to initialize
     Return: None
     """
-    for vid in g.adj_lists:
-        u = g.get_vertex(vid)
-        u.color = WHITE
-        u.discover = -1
-        u.pred = None
+    for v in g.get_vertices():
+        v.color = WHITE
+        v.discover = -1
+        v.pred = None
 
 
 def bfs(g, start_id):
@@ -62,7 +61,7 @@ def bfs(g, start_id):
         print("Visiting vertex: " + str(vid))
         v = g.get_vertex(vid)
         if v is not None:
-            alist = g.get_alist(vid)
+            alist = g.get_adj_list(vid)
             for uid in alist:
                 print("In loop for " + str(vid)
                       + " processing neighbor " + str(uid))
@@ -115,10 +114,10 @@ def dfs(g):
     topological = []
     init_vertices(g)
     time = 0
-    for vid in g.adj_lists:
-        u = g.get_vertex(vid)
-        if u.color == WHITE:
-            dfs_visit(g, u)
+    for v in g.get_vertices():
+        if v.color == WHITE:
+            dfs_visit(g, v)
+
     print("Total time = " + str(time))
     print("Topological sort: " + str(topological))
 
@@ -136,7 +135,7 @@ def dfs_visit(g, u):
     time += 1
     u.d = time
     u.color = GRAY
-    alist = g.get_alist(u.vid)
+    alist = g.get_adj_list(u.vid)
     for neighbor in alist:
         v = g.get_vertex(neighbor)
         if v.color == WHITE:
