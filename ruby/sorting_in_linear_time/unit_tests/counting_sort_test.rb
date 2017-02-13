@@ -9,7 +9,7 @@ class CountingSortTest < Minitest::Test
     b = []
     k = 5
 
-    SortingInLinearTime::counting_sort(arr, b, 18)
+    SortingInLinearTime::counting_sort(a, b, 18)
     assert_equal(b, sorted_arr)
   end
 end
