@@ -1,4 +1,3 @@
-require 'pry'
 require_relative '../counting_sort'
 require 'minitest/autorun'
 
