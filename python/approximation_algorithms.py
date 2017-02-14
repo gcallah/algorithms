@@ -14,7 +14,7 @@ This file contains:
 """
 
 import random
-from graph import Graph, Edge, test_graph
+from graph import Graph, Edge
 
 
 def approx_vertex_cover(g):

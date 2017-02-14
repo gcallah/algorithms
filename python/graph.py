@@ -8,13 +8,16 @@ ALIST = 1
 NOT_DISCOVERED = -1
 NOT_FINISHED = -1
 
-test_graph = [
+test_alist = [
                 [1, [2, 3, 4]],
                 [2, [9, 10]],
                 [3, [7, 8]],
                 [4, [5, 6]],
                 [10, [11, 12]],
              ]
+
+test_elist = [(1, 2), (1, 3), (3, 5), (4, 5), (5, 6), (5, 9), (6, 7),
+              (6, 9), (7, 8)]
 
 class Vertex():
     """
@@ -74,27 +77,40 @@ def extract_vertex_set(edges):
     return vertices
 
 
+def graph_from_alist(alist):
+    """
+    Read an adjacency list of the format [vertex, [neighbor, neighbor...]]
+    and create a graph from that by making an edge list.
+    """
+    elist = []
+    for v in alist:
+        vid = v[VID]
+
+        for uid in v[ALIST]:
+            elist.append((vid, uid))
+    return Graph(elist)
+
+
 class Graph():
     """
-    The graph structure.
+    The graph structure with member functions supporting a variety
+    of useful things to do with a graph.
     """
 
-    def __init__(self, alist):
+    def __init__(self, elist, directed=False):
         """
         Args:
-            alist: a list of ints for the nodes and a list of what they are
-            connected to.
+            elist: a list of edges by id.
+            directed: is thisa directed graph?
         """
         # the following item is a heterogeneous list. The first item is a node,
         # but the rest of the items are just node ids.
         self.vertices = {}
         self.edges = []
+        self.directed = directed
 
-        for v in alist:
-            vid = v[VID]
-
-            for uid in v[ALIST]:
-                self.add_edge(vid, uid)
+        for e in elist:
+            self.add_edge(e[0], e[1])
 
         if not self.isconnected():
             print("Warning: this graph is not connected.")
@@ -112,12 +128,13 @@ class Graph():
             self.vertices[vid].add_neighbor(uid)
 
     def add_edge(self, vid, uid):
-        """
-            We can safely add these vertices, because we check for dups
-            before adding.
-        """
+        # We can safely add these vertices, because we check for dups
+        # before adding:
         self.add_vertex(vid, uid)
-        self.add_vertex(uid, vid)
+        # for directed graphs, you have to explicitly
+        # add both directions of you want both:
+        if not self.directed:    
+            self.add_vertex(uid, vid)
         self.edges.append(Edge(vid, uid))
 
     def isconnected(self):

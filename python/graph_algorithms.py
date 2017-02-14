@@ -21,7 +21,7 @@ We have dfs perform a topological sort along the way.
 
 import queue
 
-from graph import Vertex, Edge, Graph, test_graph
+from graph import Vertex, Edge, Graph
 
 
 WHITE = 0
