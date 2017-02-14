@@ -4,7 +4,7 @@ A little program for comparing hashing functions
 
 import random
 
-MAX_KEY = 20200
+MAX_KEY = 80
 EXP_KEYS = 10
 
 hash_funcs = [
@@ -43,3 +43,17 @@ def test_funcs(max_key=MAX_KEY, exp_keys=EXP_KEYS):
         print("********************************")
         i += 1
 
+
+M = 14
+P = 7
+a = random.randint(1, P - 1)
+b = random.randint(0, P - 1)
+
+def test_universal(key, m=M, p=P):
+    """
+    Try out Carter-Wegman hash functions.
+    """
+    h = ((a*key + b) % p) % m
+    print("For key = " + str(key)
+          + " with a, b = " + str(a) + ", " + str(b)
+          + " hash = " + str(h))
