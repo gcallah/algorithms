@@ -7,18 +7,19 @@ import random
 MAX_KEY = 80
 EXP_KEYS = 10
 
-hash_funcs = [
-    lambda i: (i**2) % EXP_KEYS,
-    lambda i: (i**3) % EXP_KEYS,
-    lambda i: (11 * i**2) % EXP_KEYS,
-    lambda i: (12 * i) % EXP_KEYS,
-]
 
 def test_funcs(max_key=MAX_KEY, exp_keys=EXP_KEYS):
     """
     Run each function against a sample; print results, collect statistics.
     """
-    keys = random.sample(range(0, max_key), EXP_KEYS)
+    hash_funcs = [
+        lambda i: (i**2) % exp_keys,
+        lambda i: (i**3) % exp_keys,
+        lambda i: (11 * i**2) % exp_keys,
+        lambda i: (12 * i) % exp_keys,
+    ]
+    # we can put as many hash funcs as we'd like in the above array!
+    keys = random.sample(range(0, max_key), exp_keys)
 
     i = 0
     for f in hash_funcs:
