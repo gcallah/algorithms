@@ -2,12 +2,15 @@
 Contains basic classes for holding graph information.
 """
 
+from random import shuffle, randint, choice
+
 VID = 0
 ALIST = 1
 
 NOT_DISCOVERED = -1
 NOT_FINISHED = -1
 
+# to test initializing by adjancency list:
 test_alist = [
                 [1, [2, 3, 4]],
                 [2, [9, 10]],
@@ -16,8 +19,15 @@ test_alist = [
                 [10, [11, 12]],
              ]
 
+# to test initializing by edge list:
 test_elist = [(1, 2), (1, 3), (3, 5), (4, 5), (5, 6), (5, 9), (6, 7),
               (6, 9), (7, 8)]
+
+# to test for detecting disconnected graphs:
+test_dis_elist = [(1, 2), (1, 3), (3, 5), (4, 5), (5, 6), (5, 9), (6, 7),
+                  (6, 9), (8, 13)]  # this last edge is not connected:
+                                    # should be revealed by isconnected()
+
 
 class Vertex():
     """
@@ -75,6 +85,50 @@ def extract_vertex_set(edges):
         vertices.add(u)
         vertices.add(v)
     return vertices
+
+
+def graph_from_vlist(vlist):
+    """
+    Creates a graph of disconnected vertices.
+    """
+    g = Graph([])
+    for v in vlist:
+        g.add_vertex(v)
+    return g
+
+
+def graph_from_rand(n):
+    """
+    Creates a random, connected graph with n vertices.
+    "Random" here means we don't know which vertices are connected.
+    We want to be able to do this for testing purposes.
+    """
+    verts = [i for i in range(n)]
+    shuffle(verts)
+    edges = []
+    seen = []
+
+    g = graph_from_vlist(verts)
+
+    while len(seen) < len(verts):
+        v = None
+        u = randint(0, n - 1)
+        if len(seen) == 0:
+            v = randint(0, n - 1)
+            seen.append(v)
+        else:
+            v = choice(seen)
+        if (u == v) or (u in seen):
+            # if we've seen u, it will create a cycle to
+            # make an edge between it and another seen node
+            continue
+        else:
+            print("Trying to create random graph with u = "
+                  + str(u) + " and v = " + str(v))
+            print("Seen = " + str(seen))
+            g.add_edge(u, v) 
+            seen.append(u)
+    return g
 
 
 def graph_from_alist(alist):
@@ -137,8 +191,36 @@ class Graph():
             self.add_vertex(uid, vid)
         self.edges.append(Edge(vid, uid))
 
-    def isconnected(self):
-        return True
+    def isconnected(self, vseen=None, vid=None):
+        """
+        Is this graph connected?
+        Called recursively.
+        """
+        firstv = False
+        if vseen is None:  # then vid will be None as well
+            if len(self.edges) < 1:
+                if len(self.vertices) <= 1:
+                    return True  # a graph with one vertex is connected
+                else:
+                    return False
+            firstv = True
+            vseen = set()
+            e = self.edges[0]
+            vid = e.get_vertices()[0]
+
+        vseen.add(vid)
+        alist = self.get_adj_list(vid)
+        # print("Got alist of " + str(alist))
+        if alist is not None and len(alist) > 0:
+            for u in alist:
+                if u not in vseen:
+                    self.isconnected(vseen, u)
+        if not firstv:  # lower level calls just return True 
+            return True
+        elif len(vseen) == len(self.vertices):
+            return True
+        else:
+            return False
 
     def get_vertex(self, vid):
         return self.vertices[vid]
@@ -156,7 +238,7 @@ class Graph():
         """
         This returns the actual vertex objects.
         """
-        return self.vertices.values()
+        return list(self.vertices.values())
 
     def iscover(self, edges):
         """
