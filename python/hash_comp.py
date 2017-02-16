@@ -7,16 +7,19 @@ import random
 MAX_KEY = 80
 EXP_KEYS = 10
 
+NOT_SEEN = 0
+SEEN = 1
+
 
 def test_funcs(max_key=MAX_KEY, exp_keys=EXP_KEYS):
     """
     Run each function against a sample; print results, collect statistics.
     """
     hash_funcs = [
-        lambda i: (i**2) % exp_keys,
-        lambda i: (i**3) % exp_keys,
-        lambda i: (11 * i**2) % exp_keys,
-        lambda i: (12 * i) % exp_keys,
+        lambda i: (i**2) % exp_keys,      # f0
+        lambda i: (i**3) % exp_keys,      # f1
+        lambda i: (11 * i**2) % exp_keys, # f2
+        lambda i: (12 * i) % exp_keys,    # f3
     ]
     # we can put as many hash funcs as we'd like in the above array!
     keys = random.sample(range(0, max_key), exp_keys)
@@ -26,22 +29,21 @@ def test_funcs(max_key=MAX_KEY, exp_keys=EXP_KEYS):
         hvals = []
         for k in keys:
             hvals.append(f(k))
-        seen = [0]*exp_keys
+        seen = [NOT_SEEN]*exp_keys
         collisions = 0
-        j = 0
-        for v in hvals:
-            print("For key = " + str(keys[j])
+        for (k, v) in zip(keys, hvals):
+            print("For key = " + str(k)
                   + " we got val " + str(v))
-            if seen[v] == 0:
-                seen[v] = 1
+            if seen[v] == NOT_SEEN:
+                seen[v] = SEEN
             else:
+                # hash value was seen before: collision!
                 collisions += 1
-            j += 1
 
         print("______________")
         print("For function " + str(i) + " collisions = "
               + str(collisions))
-        print("********************************")
+        print("\n********************************")
         i += 1
 
 
