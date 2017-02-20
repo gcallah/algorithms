@@ -27,6 +27,7 @@ task :test do
   # SORTING IN LINEAR TIME
   ruby("ruby/sorting_in_linear_time/unit_tests/counting_sort_test.rb")
   ruby("ruby/sorting_in_linear_time/unit_tests/radix_sort_test.rb")
+  ruby("ruby/sorting_in_linear_time/unit_tests/bucket_sort_test.rb")
 
   # DYNAMIC PROGRAMMING TESTS
   ruby("ruby/dynamic_programming/unit_tests/lcs_test.rb")
