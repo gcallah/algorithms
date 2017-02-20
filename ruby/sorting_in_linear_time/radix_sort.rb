@@ -1,4 +1,3 @@
-require 'pry'
 require_relative '../02-getting_started/bubble_sort'
 
 module SortingInLinearTime
