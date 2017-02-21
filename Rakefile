@@ -24,6 +24,11 @@ task :test do
   ruby("ruby/quicksort/unit_tests/randomized_quick_sort_test.rb")
   ruby("ruby/quicksort/unit_tests/tail_recursive_quick_sort_test.rb")
 
+  # SORTING IN LINEAR TIME
+  ruby("ruby/sorting_in_linear_time/unit_tests/counting_sort_test.rb")
+  ruby("ruby/sorting_in_linear_time/unit_tests/radix_sort_test.rb")
+  ruby("ruby/sorting_in_linear_time/unit_tests/bucket_sort_test.rb")
+
   # DYNAMIC PROGRAMMING TESTS
   ruby("ruby/dynamic_programming/unit_tests/lcs_test.rb")
   ruby("ruby/dynamic_programming/unit_tests/matrix_chain_multiplication_test.rb")
