@@ -7,8 +7,8 @@
 //
 
 #include <iostream>
-#include "PriorityQueue.h"
-#include "Heapsort.h"
+#include "priority_queue.h"
+#include "heapsort.h"
 #include <limits>
 
 int main(int argc, const char * argv[]) {
