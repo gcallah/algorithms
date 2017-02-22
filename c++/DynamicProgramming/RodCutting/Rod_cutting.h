@@ -1,13 +1,13 @@
 //
-//  Rod_cutting.h
+//  rod_cutting.h
 //  Dynamic Programming
 //
 //  Created by Xiaohang Su on 12/3/16.
 //
 //
 
-#ifndef Rod_cutting_h
-#define Rod_cutting_h
+#ifndef rod_cutting_h
+#define rod_cutting_h
 #include <stdlib.h>
 #include <time.h>
 #include <vector>
@@ -17,9 +17,9 @@
 #include <utility>
 
 int RANGE = 10; // price addon 0 - 10
-class Rod_cutting {
+class rod_cutting {
 public:
-    Rod_cutting(int n) : length(n) {
+    rod_cutting(int n) : length(n) {
         generatePrice();
         std::cout << "Price randomly generate: " << std::endl;
         printVector(price);
@@ -117,4 +117,4 @@ private:
     }
 };
 
-#endif /* Rod_cutting_h */
+#endif /* rod_cutting_h */
