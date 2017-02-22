@@ -7,14 +7,12 @@
 //
 
 #include <iostream>
-#include "Heapsort.h"
+#include "heapsort.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
     int a[10] = {2, 6, 5, 3, 9, 0, 8, 1, 4, 7};
     std::vector<int> b(a, a + sizeof(a) / sizeof(a[0]));
-    Heapsort<int> heaps;
+    heapsort<int> heaps;
     heaps.heapsort(b);
     return 0;
 }
