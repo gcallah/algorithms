@@ -330,7 +330,8 @@
                     2<sup>n</sup> - 1.
                     <br>
                     How proof by induction works: we have proved our base case.
-                    Now we try to prove that for any n, if for n - 1 our
+                    Now we try to prove that for any n, if for n - 1 (or
+                    sometimes all smaller n) our
                     hypothesis is true, then it is true for n as well. And since we
                     have already proved that for n = 0 it is true, that will
                     mean it will be true for all n whatsoever.
@@ -344,7 +345,6 @@
                     = 2<sup>n</sup> - 1
                     <br>
                     And we are done!
-
     
                     </p>
 
@@ -394,22 +394,349 @@
                 just a constant factor times the root.
                 <br>
                 <br>
-                <b>Another example</b>:
-                <br>
-                <br>
-                In our textbook, we have the recurrence:
-                <br>
-                T(n) = 3T(n / 4) + cn<sup>2</sup>, c > 0
-                <br>
-                <br>
-                <img src="graphics/ThreeTree.png" height="440" width="700">
-                <br>
-                <br>
-                a<sup>log<sub>b</sub>c</sup> = c<sup>log<sub>b</sub>a</sup>
+                <b>Consider these three examples</b>:
+                </p>
 
+                <ol>
+                    <li> T(n) = 4T(n/2) + cn
+                    <li> T(n)) = 2T(n/2) + cn
+                    <li> T(n) = 2T(n/2) + cn<sup>2</sup>
+                </ol>
+
+                <p>
+                    (We assume c > 0.)
+                    <br>
+                    Let's break down these cases:
                 </p>
 
 
+                <table>
+                    <tr>
+                        <th colspan="4">
+                            <b>T(n) = 4T(n/2) + cn<sup>1</sup></b>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Level
+                        </th>
+                        <th>
+                            # Nodes
+                        </th>
+                        <th>
+                            Equ. for
+                            <br>
+                            Node
+                        </th>
+                        <th>
+                            Work
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            n
+                        </td>
+                        <td>
+                            n
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            n/2
+                        </td>
+                        <td>
+                            2n
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            16
+                        </td>
+                        <td>
+                            n/4
+                        </td>
+                        <td>
+                            4n
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            64
+                        </td>
+                        <td>
+                            n/8
+                        </td>
+                        <td>
+                            8n
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            i
+                        </td>
+                        <td>
+                            4<sup>i</sup>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            h
+                        </td>
+                        <td>
+                            4<sup>h</sup>
+                        </td>
+                        <td>
+                            T(1)
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <table>
+                    <tr>
+                        <th colspan="4">
+                            <b>T(n)) = 2T(n/2) + cn<sup>1</sup></b>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Level
+                        </th>
+                        <th>
+                            # Nodes
+                        </th>
+                        <th>
+                            Equ. for
+                            <br>
+                            Node
+                        </th>
+                        <th>
+                            Work
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            n
+                        </td>
+                        <td>
+                            n
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            n/2
+                        </td>
+                        <td>
+                            n
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            n/4
+                        </td>
+                        <td>
+                            n
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            8
+                        </td>
+                        <td>
+                            n/8
+                        </td>
+                        <td>
+                            n
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            i
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            h
+                            <br>
+                            (log<sub>2</sub>n)
+                        </td>
+                        <td>
+                            2<sup>h</sup>
+                        </td>
+                        <td>
+                            T(1)
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <table>
+                    <tr>
+                        <th colspan="4">
+                            <b>T(n) = 2T(n/2) + cn<sup>2</sup></b>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Level
+                        </th>
+                        <th>
+                            # Nodes
+                        </th>
+                        <th>
+                            Equ. for
+                            <br>
+                            Node
+                        </th>
+                        <th>
+                            Work
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            n
+                        </td>
+                        <td>
+                            n<sup>2</sup>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            (n/2)<sup>2</sup>
+                        </td>
+                        <td>
+                            n<sup>2</sup>/2
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            (n/4)<sup>2</sup>
+                        </td>
+                        <td>
+                            n<sup>2</sup>/4
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            8
+                        </td>
+                        <td>
+                            (n/8)<sup>2</sup>
+                        </td>
+                        <td>
+                            n<sup>2</sup>/8
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            i
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            h
+                        </td>
+                        <td>
+                            log<sub>2</sub>n
+                        </td>
+                        <td>
+                            T(1)
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+
+                <p>
+                    These all have the form: T(n) = aT(n / b) + f(n). 
+                    <br>
+                    When we work these out, we see that in the first case, the
+                    recursion is the dominant factor, in the second case the
+                    recursion and f(n) contribute equally to the run time, and
+                    in the third case f(n) dominates.
+                    <br>
+                    This observation leads us to:
+                </p>
             <h3>
                 The master method for solving recurrences
             </h3>
