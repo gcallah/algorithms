@@ -401,6 +401,8 @@
                     <li> T(n) = 4T(n/2) + cn
                     <li> T(n)) = 2T(n/2) + cn
                     <li> T(n) = 2T(n/2) + cn<sup>2</sup>
+                        <br>
+                        (This is the recurrence in the diagram above.)
                 </ol>
 
                 <p>
@@ -496,13 +498,17 @@
                             4<sup>i</sup>
                         </td>
                         <td>
+                            n/2<sup>i</sup>
                         </td>
                         <td>
+                            2<sup>i</sup>n
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            h
+                            h =
+                            <br>
+                            log<sub>4</sub>n
                         </td>
                         <td>
                             4<sup>h</sup>
@@ -511,6 +517,7 @@
                             T(1)
                         </td>
                         <td>
+                            4<sup>h</sup>T(1)
                         </td>
                     </tr>
                 </table>
@@ -599,17 +606,20 @@
                             i
                         </td>
                         <td>
+                            2<sup>i</sup>
                         </td>
                         <td>
+                            n/2<sup>i</sup>
                         </td>
                         <td>
+                            n
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            h
+                            h =
                             <br>
-                            (log<sub>2</sub>n)
+                            log<sub>2</sub>n
                         </td>
                         <td>
                             2<sup>h</sup>
@@ -618,6 +628,7 @@
                             T(1)
                         </td>
                         <td>
+                            2<sup>h</sup>T(1)
                         </td>
                     </tr>
                 </table>
@@ -706,27 +717,40 @@
                             i
                         </td>
                         <td>
+                            2<sup>i</sup>
                         </td>
                         <td>
+                            (n/2<sup>i</sup>)<sup>2</sup>
                         </td>
                         <td>
+                            n<sup>2</sup>/2<sup>i</sup>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            h
+                            h =
+                            <br>
+                            log<sub>2</sub>n
+                        </td>
                         </td>
                         <td>
-                            log<sub>2</sub>n
+                            2<sup>h</sup>
                         </td>
                         <td>
                             T(1)
                         </td>
                         <td>
+                            2<sup>h</sup>T(1)
                         </td>
                     </tr>
                 </table>
 
+                <p>
+                    The runtime then is:
+                    <br>
+                    <img src="graphics/NSquaredRec.gif">
+                </p>
+                <hr>
                 <p>
                     These all have the form: T(n) = aT(n / b) + f(n). 
                     <br>
