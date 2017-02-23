@@ -1,16 +1,15 @@
+package HashTable;
+
 /**
- * Q3: Write code to resolve collision with chaining
- *
- * Created by Prashant,Jatri,Abhishek,Durvesh on 9/30/2016.
+ * Created by Prashant.
  * We are using LinkedList to store the individual members of Hashmap.
  * Each LinkedList has the "next" element which stores the chain of values having same keys,Which is necessary for
  * resolving collision
- *
  */
-public class HashList {
+public class Node {
     private String key;
     private double value;
-    private HashList next;
+    private Node next;
 
     public HashList(String key,double value){
         this.key=key;
@@ -33,10 +32,10 @@ public class HashList {
         this.key=key;
     }
 
-    public HashList getNext(){
+    public Node getNext(){
         return next;
     }
-    public void setNext(HashList next){
+    public void setNext(Node next){
         this.next=next;
     }
 
