@@ -4,20 +4,21 @@ Test our sorting code.
 """
 
 from unittest import TestCase, main
-import quicksort as qs
-
-l = [9, 7, 2, 6, 4, 21, 8, 15, 1, 12]
-sorted = [1, 2, 4, 6, 7, 8, 9, 12, 15, 21]
+from quicksort import quicksort
+from test_utils import rand_list
 
 
 class QuicksortTestCase(TestCase):
 
-    def test_quick(self):
-        # sorts in place: let's copy list first!
-        my_l = list(l)
-        # no return!
-        qs.quicksort(my_l)
-        self.assertEqual(my_l, sorted)
+    def test_quicksort(self):
+        for j in range(10):
+            l = rand_list(max_list=100)
+    
+            # no return!
+            quicksort(l)
+    
+            for i in range(0, len(l) - 1):
+                self.assertLessEqual(l[i], l[i + 1])
 
 if __name__ == '__main__':
     main()

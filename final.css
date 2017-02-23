@@ -1,38 +1,26 @@
 body {
     margin: 0;
     padding: 0;
-    font-size: 20px;
-    color: #333;
-    background: #dff;
+    font-size: 16px;
+    color: #000;
+    background: #fff;
 }
 
 table {
     margin: 8px 40px 8px 40px;
-    border-collapse: collapse;
 }
 
-th {
+table, th, td {
+    page-break-inside: avoid;
     border: 1px solid black;
-    font-weight: normal;
 }
 
 th, td {
-            padding: 8px;
-    }
+        padding: 10px;
+}
 
 td {
-    background: #dff;
-}
-
-td#languages {
-    color: #dff;
-    background: #245;
-}
-
-th#chapter-head {
-    font-size: 20px;
-    color: #245;
-    background: #cff;
+    background: #fff;
 }
 
 th {
@@ -65,14 +53,14 @@ h1 {
     text-align: center;
     font-weight: 300;
     font-size: 36px;
-    background-color: #245;
-    color: #dff;
+    background-color: #339;
+    color: #cfe;
 }
 
 h2 {
     font-size: 32px;
     margin: 24px 16px 20px 16px;
-    color: #245;
+    color: #066;
 }
 
 h2.subhead {
@@ -142,34 +130,3 @@ h4 {
 }
 
 
-figure {
-    text-align: center;
-/*    margin: 12px 20px 12px 100px;  */
-}
-
-figcaption {
-    color: #606;
-    font-style: italic;
-    text-align: center;
-    margin: 16px 20px 12px 20px;
-}
-
-.illustr-container {
-    width: 1000px;
-    height: 400px;
-    flex: 1;
-    margin: 20px 20px 0 0;
-    overflow: auto;
-}
-
-.illustr-text {
-    display: inline-block;
-    vertical-align: center;
-    width: 33%;
-}
-
-.illustration {
-    display: inline-block;
-    float: right;
-    vertical-align: top;
-}

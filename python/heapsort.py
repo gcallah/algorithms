@@ -18,8 +18,8 @@ This file contains:
     build_heap()
     heapsort()
     heap_insert()
-    heap_extract_next()
-    heap_find_place()
+    heap_extract_extr()
+    heap_change_key()
 """
 
 import operator as op
@@ -122,25 +122,26 @@ def heapify(h, i, heapsize=None, min_or_max=MAX):
     l = left(i)
     r = right(i)
     largest = i
-    print("heap = " + str(h))
+    print("\n*********\nheap in progress = " + str(h[0:heapsize]))
     print("heapifying with i = " + str(i) + " and " +
-            "left = " + str(l) + " and right = " + str(r))
+            "left = " + str(l) + "; right = " + str(r)
+            + "; heapsize = " + str(heapsize))
     if l < heapsize and comp(h[l], h[i]):
-        print("Largest was: " + str(largest)
-                + " setting largest to: " + str(l))
+        print("Largest was: " + str(h[largest])
+                + " setting largest to: " + str(h[l]))
         largest = l
     if r < heapsize and comp(h[r], h[largest]):
-        print("Largest was: " + str(largest)
-                + " setting largest to: " + str(r))
+        print("Largest was: " + str(h[largest])
+                + " setting largest to: " + str(h[r]))
         largest = r
     if largest != i:
         print("Swapping elements " + str(i) + " and " +
                 str(largest))
         srt.swap(h, i, largest)
-        heapify(h, largest, heapsize)
+        heapify(h, largest, heapsize, min_or_max)
 
 
-def build_heap(h, heapsize=None, min_or_max=MAX):
+def build_heap(h, min_or_max=MAX):
     """
         Args:
             h: the list to heapify.
@@ -150,8 +151,7 @@ def build_heap(h, heapsize=None, min_or_max=MAX):
             None
             The heap is built in place.
     """
-    if heapsize is None:
-        heapsize = len(h)
+    heapsize = len(h)
     for i in range((heapsize // 2), -1, -1):
         heapify(h, i, heapsize, min_or_max)
 
@@ -163,25 +163,26 @@ def heapsort(h, min_or_max=MAX):
             min_or_max: are we sorting a max heap or a min heap?
 
         Returns:
-            sorted: sorted list
+            None
 
         Performance: O(n lg n)
     """
-    sorted = []
-    while len(h) > 0:
-        print("heapsort; heapsize = " + str(len(h)))
-        build_heap(h, len(h), min_or_max)
-        # put the max item in sorted
-        sorted.append(h[0])
-        # then trim the max item out of the list
-        h = h[1:]
-    return sorted
+    build_heap(h, min_or_max)
+    heapsize = len(h)
+    for i in range(len(h) - 1, 0, -1):
+        print("heapsort heap: " + str(h))
+        print("heapsize = " + str(heapsize)
+              + "; i = " + str(i))
+        srt.swap(h, 0, i)
+        heapsize -= 1
+        heapify(h, 0, heapsize, min_or_max)
+
 
 """
 The functions from here down are used for priority queues.
 """
 
-def heap_min_or_max(h):
+def heap_extreme(h):
     """
         Args:
             h: the heap
@@ -194,11 +195,9 @@ def heap_min_or_max(h):
     return h[0]
 
 
-def heap_extract_next(h, min_or_max=MAX):
+def heap_extract_extr(h, min_or_max=MAX):
     """
-        The book calls heapify in this function. But I found
-        calling build_heap() works, while calling heapify()
-        does not!
+        Extract "extreme" value from heap, be it min or max.
 
         Args:
             h: the heap
@@ -208,8 +207,6 @@ def heap_extract_next(h, min_or_max=MAX):
         Returns:
             The minimum or maximum value, depending on whether we
             have a min or max heap.
-            Since we are here implementing priority queues, we can
-            call this the "next" item.
     """
     if len(h) < 1:
         print("Heap empty!")
@@ -218,16 +215,16 @@ def heap_extract_next(h, min_or_max=MAX):
     m = h[0]
     h[0] = h[len(h) - 1]
     del h[len(h) - 1]
-    build_heap(h, min_or_max=min_or_max)
+    heapify(h, 0, min_or_max=min_or_max)
     return m
 
 
-def heap_find_place(h, i, key, min_or_max=MAX):
+def heap_change_key(h, i, key, min_or_max=MAX):
     """
         Args:
             h: the heap.
-            i: the starting index for the key we are inserting.
-            key: the new value we are inserting.
+            i: the initial index for the key we are changing.
+            key: the new value for i.
             min_or_max: are we dealing with a min or max heap?
 
         Returns:
@@ -237,8 +234,9 @@ def heap_find_place(h, i, key, min_or_max=MAX):
     # since we are working bottom up!
     comp = get_opt(not min_or_max)
 
-    if key < h[i]:
-        print("New key is smaller than current key.")
+    if comp(key, h[i]):
+        xer = ("smaller" if min_or_max == MAX else "larger")
+        print("New key is " + xer + " than current key.")
         return None
 
     h[i] = key
@@ -262,4 +260,4 @@ def heap_insert(h, key, min_or_max=MAX):
             None (inserts in the existing heap).
     """
     h.append(get_sentinel(min_or_max))
-    heap_find_place(h, len(h) - 1, key, min_or_max)
+    heap_change_key(h, len(h) - 1, key, min_or_max)
