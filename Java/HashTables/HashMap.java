@@ -1,46 +1,42 @@
+package HashTable;
+
+import HashTable.Node;
 /**
  * Created by Prashant on 9/30/2016.
- * The Hash function which we are using is this program is as follows:
- * Suppose we are having the key,value pairs like this:
+ * The Hash function which we are using in this program is as follows:
+ * Suppose we are having the key,value pairs such as shown below:
  *  KEY  =   VALUE
  * "NAME"="PHONE_NUMBER"
- *
- * Here Name is the Key and PHONE_NUMBER is the Value.
+ * The hash function is very simple and easy to understand that is why we used it in this program.
+ * Here NAME is the Key and PHONE_NUMBER is the Value.
  * Inorder to map the keys to the HashTable we will be using the following logic for the hashfunction.
- *
  * HashLogic:
  * We will map the First Letter of the "Key" with its alphabetical index and then store in it the
  * table[index].
  * For example,
- * NAME="Pratham"
+ * NAME="Prashant"
  * First Letter is ="P"
- * alphabetical position =15.
+ * alphabetical index =15.
  * We will store the data as
  *
  * Table[index]={["Prashant"]<->["PHONE_NUMBER"]}
  * ***********************************Collision Removal with Chaining*****************************************
- * Now for the collision suppose we have another value called "Pratham"<->"PHONE_NUMBER"
- * Both of these Keys "Prashant" and "Pratham" will point to the same location.
+ * Now for the collision suppose we have another value called "Patrick"<->"PHONE_NUMBER"
+ * Both of these Keys "Prashant" and "Patrick" will point to the same location.
  *
- * Table[index]= {["Prashant"]<->["PHONE_NUMBER"],["Pratham"]<->["PHONE_NUMBER]}
- *
- * The way we resolve the collision is,when we have the collision we will traverse the
- * linked list and when we find the appropriate key we will use that node of the linked list
- * as the result to either get the data or delete the data
+ * Table[index]= {["Prashant"]<->["PHONE_NUMBER"],["Patrick"]<->["PHONE_NUMBER]}
  *
  * We are resolving the chain collision in both get(key) and remove(key) function.
- *
- *
  */
-public class HashMapJ {
+public class HashMap {
 
     private int TABLE_SIZE=26;
-    HashList[] hashListTable;
+    Node[] table;
 
-    public HashMapJ(){
-        hashListTable=new HashList[TABLE_SIZE];
+    public HashMap(){
+        table=new Node[TABLE_SIZE];
         for(int i=0;i<TABLE_SIZE;i++){
-            hashListTable[i]=null;
+            table[i]=null;
         }
     }
 
@@ -57,10 +53,10 @@ public class HashMapJ {
 
     public double get(String key) {
         int hash = getAlphaIndex(key);
-        if (hashListTable[hash] == null)
+        if (table[hash] == null)
             return -1;
         else {
-            HashList entry = hashListTable[hash];
+            Node entry = table[hash];
             while (entry != null && entry.getKey() != key)
                 entry = entry.getNext();
             if (entry == null)
@@ -72,32 +68,32 @@ public class HashMapJ {
 
     public void put(String key,double value){
         int hash = getAlphaIndex(key);
-        if (hashListTable[hash] == null)
-            hashListTable[hash] = new HashList(key, value);
+        if (table[hash] == null)
+            table[hash] = new Node(key, value);
         else {
-            HashList entry = hashListTable[hash];
+            Node entry = table[hash];
             while (entry.getNext() != null && entry.getKey() != key)
                 entry = entry.getNext();
             if (entry.getKey() == key)
                 entry.setValue(value);
             else
-                entry.setNext(new HashList(key, value));
+                entry.setNext(new Node(key, value));
         }
 
     }
 
     public void remove(String key) {
         int hash = getAlphaIndex(key);
-        if (hashListTable[hash] != null) {
-            HashList prevEntry = null;
-            HashList entry = hashListTable[hash];
+        if (table[hash] != null) {
+            Node prevEntry = null;
+            Node entry = table[hash];
             while (entry.getNext() != null && entry.getKey() != key) {
                 prevEntry = entry;
                 entry = entry.getNext();
             }
             if (entry.getKey() == key) {
                 if (prevEntry == null)
-                    hashListTable[hash] = entry.getNext();
+                    table[hash] = entry.getNext();
                 else
                     prevEntry.setNext(entry.getNext());
             }
