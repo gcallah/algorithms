@@ -523,6 +523,29 @@
                 </table>
 
 
+                <p>
+                    The runtime then is:
+                    <br>
+                    <img src="graphics/4TRec.gif">
+                    <br>
+                    h = log<sub>2</sub>n
+                    <br>
+                    so the first part equals:
+                    <br>
+                    4<sup>log<sub>2</sub>n</sup> = n<sup>log<sub>2</sub>4</sup>
+                    <br>
+                    We pull out the n from the sum and it is 
+                    an increasing geometric series that evaluates to n - 1.
+                    So the closed form for the recurrence is:
+                    <br>
+                    n<sup>2</sup>T(1) + n(n - 1)
+                    <br>
+                    <br>
+                    The very last level dominates, as it already has O(n<sup>2</sup>)
+                    complexity.
+                </p>
+                <hr>
+
                 <table>
                     <tr>
                         <th colspan="4">
@@ -556,7 +579,7 @@
                             n
                         </td>
                         <td>
-                            n
+                            cn
                         </td>
                     </tr>
                     <tr>
@@ -570,7 +593,7 @@
                             n/2
                         </td>
                         <td>
-                            n
+                            cn
                         </td>
                     </tr>
                     <tr>
@@ -584,7 +607,7 @@
                             n/4
                         </td>
                         <td>
-                            n
+                            cn
                         </td>
                     </tr>
                     <tr>
@@ -598,7 +621,7 @@
                             n/8
                         </td>
                         <td>
-                            n
+                            cn
                         </td>
                     </tr>
                     <tr>
@@ -612,7 +635,7 @@
                             n/2<sup>i</sup>
                         </td>
                         <td>
-                            n
+                            cn
                         </td>
                     </tr>
                     <tr>
@@ -633,6 +656,25 @@
                     </tr>
                 </table>
 
+                <p>
+                And so we get:
+                <br>
+                <img src="graphics/EqCaseRec.gif">
+                <br>
+                2<sup>h</sup> = n.
+                <br>
+                The sum happens log n times, so we have cn * log n.
+                <br>
+                n + n log n
+                <br>
+                n log n dominates.
+                <br>
+                <br>
+                All levels contributed equally.
+                </p>
+
+
+                <hr>
 
                 <table>
                     <tr>
@@ -749,16 +791,26 @@
                     The runtime then is:
                     <br>
                     <img src="graphics/NSquaredRec.gif">
+                    <br>
+                    We pull out the n<sup>2</sup> from the sum, and we get a
+                    geometric series. Obviously, n<sup>2</sup> dominates.
+                    And it is the same as the top level.
                 </p>
                 <hr>
                 <p>
                     These all have the form: T(n) = aT(n / b) + f(n). 
                     <br>
-                    When we work these out, we see that in the first case, the
-                    recursion is the dominant factor, in the second case the
-                    recursion and f(n) contribute equally to the run time, and
-                    in the third case f(n) dominates.
-                    <br>
+                    When we work these out, we see that in our 3 cases:
+                </p>
+                <ol>
+                    <li>The recursion is the dominant factor, and the bottom
+                        level has the Big-O complexity of the whole recurrence.
+                    <li>The recursion and f(n) contribute equally to the run time,
+                        and all levels are equal.
+                    <li>f(n) dominates, and the top level has the Big-O
+                        complexity of the whole recurrence.
+                </ol>
+                <p>
                     This observation leads us to:
                 </p>
             <h3>
