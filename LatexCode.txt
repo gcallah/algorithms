@@ -12,6 +12,9 @@ T(n) =
       T(n / 2) + T(n / 2) + \Theta(n) \quad  \mbox{if}\ n>0
     \end{cases}
 
+T(n) = 4T(1) + \sum_{i=0}^{h-1}2^i n
+
+
 Geometric series:
 n^{2} + \frac{n^{2}}{2} + \frac{n^{2}}{4}  + \frac{n^{2}}{8}...
 
@@ -28,4 +31,5 @@ Y = \begin{bmatrix}
 E & F\\ 
 G & H
 \end{bmatrix}
+
 
