@@ -10,7 +10,7 @@ module MedianAndOrderStatistics
       min
     end
 
-    def maximum
+    def maximum(a)
       max = a[0]
       (1..a.length-1).each do |i|
         if a[i] > max

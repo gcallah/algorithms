@@ -1,4 +1,3 @@
-require 'pry'
 require_relative '../randomized_select'
 require 'minitest/autorun'
 
