@@ -1,5 +1,5 @@
 //
-//	Heapsort running time is O(nlgn)
+//	heapsort running time is O(nlgn)
 //  This is max_heap building and heapsort return ascending order
 //
 
@@ -10,9 +10,9 @@
 #include <iostream>
 #include <math.h>
 #include <algorithm>
-template <typename comparable> class Heapsort {
+template <typename comparable> class heapsort {
 public:
-    Heapsort(){};
+    heapsort(){};
     void max_heapify(std::vector<comparable> &A, const int i) {
         int l = LEFT(i);
         int r = RIGHT(i);

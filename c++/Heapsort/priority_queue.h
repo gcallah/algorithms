@@ -1,18 +1,18 @@
 //
-//  PriorityQueue.h
+//  priority_queue.h
 //  AlgorithmMuseum
 //
 //  Created by Xiaohang Su on 1/29/17.
 //  Copyright © 2017 Xiaohang Su. All rights reserved.
 //
 
-#ifndef PriorityQueue_h
-#define PriorityQueue_h
+#ifndef priority_queue_h
+#define priority_queue_h
 #include <iostream>
 #include <vector>
 #include "Heapsort.h"
 
-template <typename comparable> class PriorityQueue : public Heapsort<comparable> {
+template <typename comparable> class priority_queue : public Heapsort<comparable> {
 public:
     comparable heap_maximum(const std::vector<comparable> &A) {
         return A[0];
@@ -53,4 +53,4 @@ private:
     
 };
 
-#endif /* PriorityQueue_h */
+#endif /* priority_queue_h */
