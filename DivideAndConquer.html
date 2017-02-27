@@ -25,18 +25,18 @@
             <h3>
                 Introduction
             </h3>
-            <p>
-            What is this?
-            <ul>
-                <li><b>Divide</b> the problem into a number of sub problems that are
-                    smaller instances of the same problem.
-                <li><b>Conquer</b> the sub problems by solving them recursively. If
-                    the subproblem sizes are small enough, however, just solve
-                    the subproblems in a straightforward manner.
-                <li><b>Combine</b> the solutions for the sub problems into the
-                    solution for the original problem.
-            </ul>
-            </p>
+                <p>
+                What is this?
+                </p>
+                <ul>
+                    <li><b>Divide</b> the problem into a number of sub problems that are
+                        smaller instances of the same problem.
+                    <li><b>Conquer</b> the sub problems by solving them recursively. If
+                        the subproblem sizes are small enough, however, just solve
+                        the subproblems in a straightforward manner.
+                    <li><b>Combine</b> the solutions for the sub problems into the
+                        solution for the original problem.
+                </ul>
 
             <h4>
                 Recurrences
@@ -260,7 +260,7 @@
                     substitution method last, because we can best make sense of
                     our "guess" for a solution if we understand the other two
                     methods first. I suggest students tackle recursion-tree,
-                    then master theorem, and <i>then</i> substitution.
+                    then master method, and <i>then</i> substitution.
                 </p>
 
                 <h4 id="Towers">
@@ -369,7 +369,7 @@
                         T(1) = 1
                         <br>
                         <br>
-                        This does not have the form the master theorem
+                        This does not have the form the master method
                         requires. And if we sketch a recursion tree, not every
                         node is the same on a level, so it is different from
                         what we usually deal with there. But if we <i>do</i>
@@ -406,7 +406,7 @@
                         But we can prove it for any given "small" n > 2 by
                         setting:
                         <br>
-                        c >= T(n) / n log n
+                        c &ge; T(n) / n log n
                     </p>
 
                     <p>
@@ -890,6 +890,7 @@
                 <p>
                     This observation leads us to:
                 </p>
+
             <h3>
                 The master method for solving recurrences
             </h3>
@@ -916,10 +917,54 @@
                         &epsilon; > 0
                         <br><b>Solution</b>: T(n) = &Theta;(f(n))
                 </ol>
+
+                <p>
+                    <b>Restrictions:</b>
+                </p>
+
+                <ol>
+                    <li>a &ge; 1
+                        <br>
+                        We must divide the problem into <i>at least</i> one
+                        sub-problem.
+                        <br>
+                        The method will <i>work</i> if <i>a</i> is not an
+                        integer, although this doesn't really make sense: how
+                        can we have 1.5 sub-problems?
+                    <li>b > 1
+                        <br>
+                        If we don't get <i>smaller</i> sub-problems, we will
+                        never finish! (n/b < n)
+                    <li><b>Regularity condition</b> for case 3: af(n/b) &le; cf(n)
+                        <br>
+                        Consider: 
+                        <br>
+                        T(n) = 2T(n/2) + n log n
+                        <br>
+                        n log n is grows faster than n, but not by a polynomial
+                        difference:
+                        <br>
+                        log n is asymptotically < n<sup>&epsilon;</sup> for any
+                        &epsilon; > 0
+                        <br>
+
+                        <figure>
+                            <img src="graphics/RegularityCondition.png">
+                            <figcaption>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/RegularityCondition.xlsx">
+                                A spreadsheet
+                            </a>
+                            where you can see this for yourself.
+                            </figcaption>
+                        </figure>
+                </ol>
+
                 <p>
                     <br>
                     <b>Sample problems:</b>
                 </p>
+
                 <ol>
                     <li>T(n) = 2T(n / 4) + n<sup>2</sup>
                     <li>T(n) = 4T(n / 2) + n<sup>2</sup>
