@@ -251,10 +251,18 @@
                 </p>
 
 
-
             <h3>
                 The substitution method for solving recurrences
             </h3>
+                <p>
+                    <b>Note:</b> I am presenting these three methods in my
+                    notes in textbook order. But in lectures, I present the
+                    substitution method last, because we can best make sense of
+                    our "guess" for a solution if we understand the other two
+                    methods first. I suggest students tackle recursion-tree,
+                    then master theorem, and <i>then</i> substitution.
+                </p>
+
                 <h4 id="Towers">
                     Towers of Hanoi
                 </h4>
@@ -345,8 +353,75 @@
                     = 2<sup>n</sup> - 1
                     <br>
                     And we are done!
-    
                     </p>
+
+                    <h4>
+                        Another substitution-method problem
+                    </h4>
+                    
+                    <p>
+                        Let's look at the recurrence:
+                        <br>
+                        T(n) = T(n/3) + T(2n/3) + n
+                        <br>
+                        T(0) = 1
+                        <br>
+                        T(1) = 1
+                        <br>
+                        <br>
+                        This does not have the form the master theorem
+                        requires. And if we sketch a recursion tree, not every
+                        node is the same on a level, so it is different from
+                        what we usually deal with there. But if we <i>do</i>
+                        diagram a recursion tree, we will see that the work
+                        looks constant at each level, like a master theorem
+                        case 2. And since the function part of the equation is
+                        f(n) = n, let's "guess":
+                        <br>
+                        T(n) <= cn log n                        
+                        <br>
+                        <br>
+                        But that is just our hunch: we have to prove it!
+                        <br>
+                        <br>
+                        Let's look at base cases for our inductive proof.
+                        Use floors for divisions! Is:
+                    </p>
+                    <ul>
+                        <li>T(0) <= c(0 * log 0)  --> nonsense! (There is no log 0.)
+                        <br>
+                        <li>T(1) <= c(1 * log 1)  --> false! (There is no such c.)
+                        <br>
+                        <li>T(2) <= c(2 * log 2)  --> true!
+                        <br>
+                        T(2) = T(floor(2/3)) + T(floor(4/3)) + 2 = 1 + 1 + 2 <=
+                        c(2 * log 2) = c(2 * 1)
+                        <br>
+                        So if we set c = 2 (or greater) the inequality holds.
+                    </ul>
+
+                    <p>
+                        How many base cases do we need to examine? We will see!
+                        <br>
+                        But we can prove it for any given "small" n > 2 by
+                        setting:
+                        <br>
+                        c >= T(n) / n log n
+                    </p>
+
+                    <p>
+                        <b>Recursion step:</b>
+                        <br>
+                        We assume that for k where:
+                        <br>
+                        2 <= k < n
+                        <br>
+                        the claim is true.
+                        <br>
+                        Now, we need to show that if for sub-problems smaller
+                        than n the claim is true, then it is true for n.
+                    </p>
+
 
             <h3>
                 The recursion-tree method for solving recurrences
