@@ -29,6 +29,10 @@ task :test do
   ruby("ruby/sorting_in_linear_time/unit_tests/radix_sort_test.rb")
   ruby("ruby/sorting_in_linear_time/unit_tests/bucket_sort_test.rb")
 
+  # MEDIAN AND ORDER STATISTICS
+  ruby("ruby/median_and_order_statistics/unit_tests/min_max_test.rb")
+  ruby("ruby/median_and_order_statistics/unit_tests/randomized_select_test.rb")
+
   # DYNAMIC PROGRAMMING TESTS
   ruby("ruby/dynamic_programming/unit_tests/lcs_test.rb")
   ruby("ruby/dynamic_programming/unit_tests/matrix_chain_multiplication_test.rb")
