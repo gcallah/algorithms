@@ -42,4 +42,29 @@ public class CountingSort {
             c[a[j]]--;
         }
     }
+
+    /**
+     * Counting sort on a specific digit of numbers.
+     *
+     * @param a    the array to be sorted, the sorted array will be copied back.
+     * @param d    the d-th digit starting from right to left (e.g. the 1st digit of 123 is 3).
+     * @param base the base of numbers in the array.
+     */
+    public static void countingSortOnDigit(int[] a, int d, int base) {
+        int exp = (int) Math.pow(10, d - 1);
+        int[] c = new int[base];// When base=10, the maximum value of the digit is 9.
+        int[] temp = new int[a.length];
+        for (int j = 0; j < a.length; j++) {
+            c[(a[j] / exp) % base]++;
+        }
+        for (int i = 1; i < base; i++) {
+            c[i] += c[i - 1];
+        }
+        for (int j = a.length - 1; j >= 0; j--) {
+            temp[c[(a[j] / exp) % base] - 1] = a[j];
+            c[(a[j] / exp) % base]--;
+        }
+        // Copy the sorted array back to a.
+        System.arraycopy(temp, 0, a, 0, temp.length);
+    }
 }
