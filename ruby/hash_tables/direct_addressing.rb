@@ -1,4 +1,15 @@
 module HashTables
+  # INDEX
+  #      direct_addressing_search
+  #      direct_addressing_insert
+  #      direct_addressing_delete
+  #
+  #      chained_hash_insert
+  #      chained_hash_search
+  #      chained_hash_delete
+  #
+  #      h
+
   class << self
     # Public: Get an element from provided index location
     #

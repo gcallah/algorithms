@@ -1,4 +1,18 @@
 module HashTables
+  # INDEX
+  #      h1
+  #      h2
+  #      division_h
+  #      multilpication_h
+  #
+  #      linear_probing
+  #      quadratic_probing
+  #      double_hasing
+  #
+  #      open_addressing_insert
+  #      open_addressing_search
+
+
   class << self
     # Public: Returns the remainder of a value when divided by another value
     # NOTE: m should not be a power of 2. REFERENCE: CLRS Page-263 11.3.1
