@@ -14,8 +14,8 @@
 
 <pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Randomized Algorithms</span></b></pre>
 
-> ##### [Hire Assistant](https://github.com/gcallah/algorithms/blob/master/ruby/05-randomized_algorithms/hire_assistant.rb)
-> ##### [Permuting Arrays](https://github.com/gcallah/algorithms/blob/master/ruby/05-randomized_algorithms/permuting_arrays.rb)
+> ##### [Hire Assistant](https://github.com/gcallah/algorithms/blob/master/ruby/randomized_algorithms/hire_assistant.rb)
+> ##### [Permuting Arrays](https://github.com/gcallah/algorithms/blob/master/ruby/randomized_algorithms/permuting_arrays.rb)
 
 <pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Heapsort</span></b></pre>
 
