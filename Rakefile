@@ -5,8 +5,8 @@ task :test do
   ruby("ruby/getting_started/unit_tests/merge_sort_test.rb")
 
   # DIVIDE AND CONQUER TESTS
-  ruby("ruby/04-divide_and_conquer/unit_tests/find_max_subarray_test.rb")
-  ruby("ruby/04-divide_and_conquer/unit_tests/matrix_multiplication_test.rb")
+  ruby("ruby/divide_and_conquer/unit_tests/find_max_subarray_test.rb")
+  ruby("ruby/divide_and_conquer/unit_tests/matrix_multiplication_test.rb")
 
   # RANDOMIZED ALGORITHMS
   ruby("ruby/05-randomized_algorithms/unit_tests/hire_assistant_test.rb")
