@@ -1,8 +1,8 @@
 task :test do
   # GETTING STARTED
-  ruby("ruby/02-getting_started/unit_tests/bubble_sort_test.rb")
-  ruby("ruby/02-getting_started/unit_tests/insertion_sort_test.rb")
-  ruby("ruby/02-getting_started/unit_tests/merge_sort_test.rb")
+  ruby("ruby/getting_started/unit_tests/bubble_sort_test.rb")
+  ruby("ruby/getting_started/unit_tests/insertion_sort_test.rb")
+  ruby("ruby/getting_started/unit_tests/merge_sort_test.rb")
 
   # DIVIDE AND CONQUER TESTS
   ruby("ruby/04-divide_and_conquer/unit_tests/find_max_subarray_test.rb")
