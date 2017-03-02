@@ -39,8 +39,12 @@ th {
     background: #afd;
 }
 
-ol, ul, dl, li {
+li {
     margin: 8px 12px 8px 12px;
+}
+
+ol, ul, dl {
+    margin: 16px 40px 16px 40px;
 }
 
 p {
