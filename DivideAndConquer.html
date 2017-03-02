@@ -973,6 +973,39 @@
                         <b>Detailed Example:</b>
                         <br>
                         T(n) = 4T(n/2) + (n<sup>2</sup>/log n)
+                        <br>
+                        <br>
+                        The first part gets us n<sup>2</sup>.
+                        <br>
+                        (n<sup>2</sup>/log n) = O(n<sup>2</sup>) 
+                        <br>
+                        <br>
+                        (n<sup>2</sup>/log n) / n<sup>2</sup> = 1 / log n
+                        <br>
+                        which goes to 0 as n goes to infinity.
+                        
+                        <br>
+                        <br>
+                        But is it
+                        <i>polynomially</i> larger than (n<sup>2</sup>/log n),
+                        so that we are in case 1? Or, is there an &epsilon; we
+                        can subtract from 2 so that n<sup>2</sup> is still an
+                        upper bound for (n<sup>2</sup>/log n)?
+                        <br>
+
+                        Is f(n) = O(n<sup>log<sub>b</sub>a-&epsilon;</sup>) ?
+                        <br>
+                        <br>
+                        Let's look at the ratio:
+                        <br>
+
+                        (n<sup>2</sup>/log n) / n<sup>2-&epsilon;</sup>
+                        <br>
+                        <br>
+                        That yields:
+                        <br>
+                        n<sup>&epsilon;</sup> / log n &rarr; &infin; as n
+                        &rarr; &infin;.
                 </ol>
 
                 <p>
@@ -1035,6 +1068,11 @@
                 <li>
                     <a href="https://en.wikipedia.org/wiki/Strassen_algorithm">
                         Strassen's Algorithm
+                    </a>
+                <li>
+                    <a
+                        href="http://www.csd.uwo.ca/~moreno/CS433-CS9624/Resources/master.pdf">
+                        Practice problems
                     </a>
             </ul>
             
