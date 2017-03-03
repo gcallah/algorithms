@@ -11,7 +11,7 @@ BEGIN {
 
 /^\;/ { }    # allows comments in the chapter file
 
-/^[IVX]/ { } # skip the major section names
+/^[IVXCM]/ { } # skip the major section names
 
 /^[0-9]/ {
     print $2
