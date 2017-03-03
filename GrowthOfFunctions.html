@@ -2,15 +2,175 @@
     <head>
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <title>
-            Introduction to Algorithms, Lecture 2
+            Growth of Functions
         </title>
     </head>
     <body>
-        <h1>Review of Big-O, Summation and Algebra
-            <a href="#note1">*</a>
+        <h1>
+            Growth of Functions
         </h1>
 
     <h2>A review of Big-O, summations and algebra. </h2>
+        <h3>
+            Different asymptotic notations
+        </h3>
+        <br>
+        <br>
+        <ul>
+            <li><h3>Big O</h3>
+            <br>
+            <img src="https://cdn.kastatic.org/ka-cs-algorithms/O_fn.png">
+            <br>
+            <table>
+                <tr>
+                    <th style="background-color:#9999DD">
+                        Notation
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Intuition
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Definition
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <em>f(n) = O(g(n))</em>
+                    </td>
+                    <td>
+                        <em>f</em> is bounded above by <em>g</em>
+                        (up to constant factor) asymptotically
+                    </td>
+                    <td>
+                        <em>f(n) <= k*g(n)</em> for some positive <em>k</em>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <li><h3>Big &Theta;</h3>
+            <br>
+            <img src="https://cdn.kastatic.org/ka-cs-algorithms/theta_fn.png">
+            <br>
+            <table>
+                <tr>
+                    <th style="background-color:#9999DD">
+                        Notation
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Intuition
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Definition
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <em>f(n) = &Theta;(g(n))</em>
+                    </td>
+                    <td>
+                        <em>f</em> is bounded above and below by <em>g</em>
+                        asymptotically
+                    </td>
+                    <td>
+                        <em>k<sub>2</sub>*g(n) <=
+                        f(n) <= k<sub>2</sub>*g(n)</em>
+                        for some positive
+                        <em>k<sub>1</sub></en>,
+                            <em>k<sub>2</sub></em>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <li><h3>Big &Omega;</h3>
+            <br>
+            <img src="https://cdn.kastatic.org/ka-cs-algorithms/Omega_fn.png">
+            <br>
+            <table>
+                <tr>
+                    <th style="background-color:#9999DD">
+                        Notation
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Intuition
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Definition
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <em>f(n) = &Omega;(g(n))</em>
+                    </td>
+                    <td>
+                        <em>f</em> is bounded below by <em>g</em>
+                        asymptotically
+                    </td>
+                    <td>
+                        <em>f(n) >= k*g(n)</em> for some positive <em>k</em>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <li><h3>Little o</h3>
+            <br>
+            <table>
+                <tr>
+                    <th style="background-color:#9999DD">
+                        Notation
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Intuition
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Definition
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <em>f(n) = o(g(n))</em>
+                    </td>
+                    <td>
+                        <em>f</em> is dominated by <em>g</em>
+                        asymptotically
+                    </td>
+                    <td>
+                        <em>f(n) < k*g(n)</em> for every positive <em>k</em>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <hr>
+            <li><h3>Little &omega;</h3>
+            <br>
+            <table>
+                <tr>
+                    <th style="background-color:#9999DD">
+                        Notation
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Intuition
+                    </th>
+                    <th style="background-color:#9999DD">
+                        Definition
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <em>f(n) = &omega;(g(n))</em>
+                    </td>
+                    <td>
+                        <em>f</em> dominates <em>g</em>
+                        asymptotically
+                    </td>
+                    <td>
+                        <em>f(n) > k*g(n)</em> for every positive <em>k</em>
+                    </td>
+                </tr>
+            </table>
+        </ul>
     <h3>Why have different notations?</h3> 
     <p>
     Why not just Big-&Theta;?
