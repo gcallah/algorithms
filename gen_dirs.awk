@@ -19,8 +19,15 @@ BEGIN {
 /^[0-9]/ {
     print $2
     for( lang in langs ) {
-        print "We are about to test for " lang "/" $2
-        if (system( "[ -f " lang "/" $2 " ] ") == 0)
-            print lang "/" $2 " exists."
+        new_dir = lang "/" $2
+        if (system( "[ -d " new_dir " ] ") == 0)
+            print new_dir " already exists."
+        else {
+            print "We are going to add " new_dir
+            if (system( "mkdir " new_dir) == 0) {
+                system( "touch " new_dir "/README")
+                system( "git add " new_dir "/README")                
+            }
+        }
     }
 }
