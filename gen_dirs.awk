@@ -5,9 +5,6 @@ BEGIN {
     while((getline < file ) > 0 ) {
     	langs[$1] = 1  # record each language
     }
-# next lines for debugging:
-#    for( lang in langs )
-#        print lang
 }
 
 /^$/ { }     # blank lines allowed
