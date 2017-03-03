@@ -14,7 +14,7 @@ module BinarySearchTree
     #
     # NOTE: Images are generated at a location where the code is executed
     #       Eg: If you are at /Users/whoami/Documents directory and ran the code
-    #           by executing ruby /algorithms/ruby/binary_trees/binary_tree.rb, then
+    #           by executing ruby /algorithms/Ruby/binary_trees/binary_tree.rb, then
     #           images will be generated at /Users/whoami/Documents location and not
     #           at the location of the ruby file
     #
