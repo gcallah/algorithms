@@ -20,6 +20,7 @@ def test_funcs(max_key=MAX_KEY, exp_keys=EXP_KEYS):
         lambda i: (i**3) % exp_keys,      # f1
         lambda i: (11 * i**2) % exp_keys, # f2
         lambda i: (12 * i) % exp_keys,    # f3
+        lambda i: (7 * i**2) % exp_keys,      # f0
     ]
     # we can put as many hash funcs as we'd like in the above array!
     keys = random.sample(range(0, max_key), exp_keys)
