@@ -65,7 +65,7 @@ h1,h2,h3,h4,h5 {
 }
 
 h1 {
-    margin: 28px 8px 24px 8px;
+    margin: 0px 0px 24px 0px;
     text-align: center;
     font-weight: 300;
     font-size: 36px;
@@ -114,9 +114,9 @@ h5 {
     width: auto;
     height: 40px;
     padding: 10px 40px;
-    background: #285D91;
     line-height: 40px;
-    color: #ffc;
+    background-color: #245;
+    color: #dff;
     overflow: hidden;
 }
 
