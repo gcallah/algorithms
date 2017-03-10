@@ -66,6 +66,7 @@ h1,h2,h3,h4,h5 {
 
 h1 {
     margin: 0px 0px 24px 0px;
+    padding-bottom: 24px;
     text-align: center;
     font-weight: 300;
     font-size: 36px;
