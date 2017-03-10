@@ -7,8 +7,6 @@
     </head>
 
     <body>
-<!--include menu.txt -->
-
         <h1>
             Design and Analysis of Algorithms: Quicksort
         </h1>
