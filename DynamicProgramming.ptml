@@ -7,7 +7,7 @@
     </head>
 
     <body>
-<!--include menu.html -->
+<!--include menu.txt -->
         <h1>
             Design and Analysis of Algorithms: Dynamic Programming
         </h1>

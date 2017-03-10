@@ -6,7 +6,7 @@
         </title>
     </head>
     <body>
-<!--include menu.html -->
+<!--include menu.txt -->
         <h1>The Role of Algorithms
                 <a href="#note1">*</a>
         </h1>
