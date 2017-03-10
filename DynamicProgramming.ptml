@@ -7,15 +7,7 @@
     </head>
 
     <body>
-    <div id="header">
-        <div id="user-tools">
-            <a href="index.html">Home</a>
-            &nbsp; &nbsp; 
-            <a href="about.html">About</a>
-        </div>
-    </div>
-
-
+<!--include menu.html -->
         <h1>
             Design and Analysis of Algorithms: Dynamic Programming
         </h1>
