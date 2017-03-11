@@ -2,22 +2,14 @@
     <head>
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <title>
-            Design and Analyis of Algorithms:  Greedy Algorithms
+            Design and Analyis of Algorithms:  Data Structures For Disjoint Sets
         </title>
     </head>
 
     <body>
-    <div id="header">
-        <div id="user-tools">
-            <a href="index.html">Home</a>
-            &nbsp; &nbsp; 
-            <a href="about.html">About</a>
-        </div>
-    </div>
-
-
+<!--include menu.txt -->
         <h1>
-            Design and Analyis of Algorithms:  Greedy Algorithms
+            Design and Analyis of Algorithms:  Data Structures For Disjoint Sets
         </h1>
 
             <div style="text-align:center">

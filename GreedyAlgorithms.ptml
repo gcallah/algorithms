@@ -7,15 +7,7 @@
     </head>
 
     <body>
-    <div id="header">
-        <div id="user-tools">
-            <a href="index.html">Home</a>
-            &nbsp; &nbsp; 
-            <a href="about.html">About</a>
-        </div>
-    </div>
-
-
+<!--include menu.txt -->
         <h1>
             Design and Analyis of Algorithms:  Greedy Algorithms
         </h1>
