@@ -34,6 +34,7 @@ BEGIN {
     if (system( "[ -f " chap_file " ] ") == 0)
         print chap_file " already exists."
     else 
+        system("touch " chap_html)
         system(create_pg " <" templ " >" chap_file " \"" daa chap_nm "\"")
     print indent3 "<h3>" >> menu
     print indent4 "<a href=\"" chap_html "\">" >> menu
