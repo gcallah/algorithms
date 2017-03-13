@@ -1,5 +1,5 @@
-require_relative '../quicksort/quick_sort'
-require_relative '../quicksort/randomized_quick_sort'
+require_relative '../Quicksort/quick_sort'
+require_relative '../Quicksort/randomized_quick_sort'
 
 module MedianAndOrderStatistics
   class << self
