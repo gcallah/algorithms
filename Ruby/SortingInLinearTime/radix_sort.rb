@@ -1,4 +1,4 @@
-require_relative '../getting_started/bubble_sort'
+require_relative '../GettingStarted/bubble_sort'
 
 module SortingInLinearTime
   class << self

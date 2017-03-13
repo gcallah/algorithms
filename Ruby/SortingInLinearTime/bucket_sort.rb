@@ -1,4 +1,4 @@
-require_relative '../getting_started/insertion_sort'
+require_relative '../GettingStarted/insertion_sort'
 
 module SortingInLinearTime
   class << self
