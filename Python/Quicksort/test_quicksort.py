@@ -4,7 +4,7 @@ Test our sorting code.
 """
 
 from unittest import TestCase, main
-from Quicksort.quicksort import quicksort
+from .quicksort import quicksort
 from utils.test_utils import rand_list
 
 
