@@ -5,7 +5,7 @@ Test our heap code.
 
 from unittest import TestCase, main
 from .heapsort import heapsort, build_heap, heap_extract_extr
-from lib.test_utils import rand_list
+from utils.test_utils import rand_list
 
 NUM_TESTS = 10
 MAX_LIST = 100

@@ -4,7 +4,7 @@ Test our heap code.
 """
 
 from unittest import TestCase, main
-from lib.graph import Graph, Edge, graph_from_alist, test_alist
+from utils.graph import Graph, Edge, graph_from_alist, test_alist
 from .approximation_algorithms import approx_vertex_cover
 
 
