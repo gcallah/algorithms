@@ -2,20 +2,19 @@
     <head>
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <title>
-            Design and Analysis of Algorithms: Heapsort
+            Design and Analyis of Algorithms:  Heapsort
         </title>
     </head>
 
     <body>
 <!--include menu.txt -->
         <h1>
-            Design and Analysis of Algorithms: Heapsort
+            Design and Analyis of Algorithms:  Heapsort
         </h1>
 
             <div style="text-align:center">
                 <p>
-                <img
-                 src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Sorting_heapsort_anim.gif">
+                <img src="">
                 </p>
             </div>
 
@@ -28,7 +27,7 @@
             </h2>
             <p>
             <a
-                href="https://github.com/gcallah/algorithms/blob/master/Python/Heapsort/">
+                href="https://github.com/gcallah/algorithms/blob/master/Python/">
                 Python
             </a>
             <br>
@@ -38,8 +37,8 @@
                 External Links
             </h2>
                 <ul>
-                    <li><a href="https://en.wikipedia.org/wiki/Heapsort">
-                            Heapsort
+                    <li><a href="https://en.wikipedia.org/wiki/Algorithm">
+                            Algorithm
                         </a>.
                 </ul>
             
