@@ -4,8 +4,8 @@ Test our heap code.
 """
 
 from unittest import TestCase, main
-from heapsort import heapsort, build_heap, heap_extract_extr
-from test_utils import rand_list
+from .heapsort import heapsort, build_heap, heap_extract_extr
+from utils.test_utils import rand_list
 
 NUM_TESTS = 10
 MAX_LIST = 100

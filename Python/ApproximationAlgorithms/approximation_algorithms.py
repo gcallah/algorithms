@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 """
-This file contains Python implementations of 
+This file contains Python implementations of
 approximation algorithms from Intro to Algorithms (Cormen et al.).
-The aim here is not efficient Python implementations 
+The aim here is not efficient Python implementations
 but to duplicate the pseudo-code in the book as closely as possible.
 Also, since the goal is to help students to see how the algorithm
 works, there are print statements placed at key points in the code.
@@ -14,7 +14,7 @@ This file contains:
 """
 
 import random
-from graph import Graph, Edge
+from utils.graph import Graph, Edge
 
 
 def approx_vertex_cover(g):
@@ -46,4 +46,3 @@ def approx_vertex_cover(g):
                 del edges[i]
 
     return cover
-
