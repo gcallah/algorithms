@@ -8,7 +8,7 @@
 
     <body>
 
-<!--include menu.html -->
+<!--include menu.txt -->
 		<h1>
 			Design and Analysis of Algorithms
 		</h1>
@@ -40,144 +40,36 @@
                 <br>
                 </p>
 
-                <h2>
-                    Topics
-                </h2>
                 <hr>
 
-                <h3>
-                    I. Foundations
-                </h3>
-
-                    <h4>
-                        <a href="TheRoleOfAlgorithms.html">
-                        The Role of Algorithms
-                        </a>
-                    </h4>
-    
-                    <h4>
-                        <a href="GrowthOfFunctions.html">
-                        Growth of Functions
-                        </a>
-                    </h4>
-    
-                    <h4>
-                        <a href="DivideAndConquer.html">
-                        Divide-and-Conquer
-                        </a>
-                    </h4>
-    
-                    <h4>
-                        <a href="RandomizedAlgorithms.html">
-                        Probabilistic Analysis and Randomized Algorithms
-                        </a>
-                    </h4>
-                
-                        <h5>
-                            <a href="Probability.html">
-                            Some Basic Probability
-                            </a>
-                        </h5>
-
-                <h3>
-                    II. Sorting and Order Statistics
-                </h3>
-
-                    <h4>
-                        Heapsort
-                    </h4>
-
-                    <h4>
-                        <a href="Quicksort.html">
-                        Quicksort
-                        </a>
-                    </h4>
-
-                <h3>
-                    III. Data Structures
-                </h3>
-    
-                    <h4>
-                        <a href="HashTables.html">
-                        Hash Tables
-                        </a>
-                    </h4>
-    
-                    <h4>
-                        <a href="BinarySearchTrees.html">
-                        Binary Search Trees
-                        </a>
-                    </h4>
-    
-                    <h4>
-                        <a href="RedBlackTrees.html">
-                        Red-Black Trees
-                        </a>
-                    </h4>
-
-                <h3>
-                    IV. Advanced Design and Analysis Techniques
-                </h3>
-    
-                    <h4>
-                        <a
-                           href="DynamicProgramming.html">
-                        Dynamic Programming
-                        </a>
-                    </h4>
-    
-                    <h4>
-                        <a href="GreedyAlgorithms.html">
-                        Greedy Algorithms
-                        </a>
-                    </h4>
-    
-                <h3>
-                    V. Advanced Data Structures
-                </h3>
-    
-                    <h4>
-                        <a href="BTrees.html">
-                        B-Trees
-                        </a>
-                    </h4>
-
-                <h3>
-                    VI. Graph Algorithms
-                </h3>
-    
-                    <h4>
-                        <a href="GraphAlgorithms.html">
-                        Elementary Graph Algorithms
-                        </a>
-                    </h4>
+<!--include chap_menu.txt  -->
 
                 <hr>
                 <h2>
                     Other Material
                 </h2>
-                    <p>
+                    <h3>
                     <a href="AlgorithmMuseum.html">
                         The Algorithm Museum
                     </a>
-                    <br>
-                    <br>
+                    </h3>
+                    <h3>
                     <a
                         href="MidTerm.html">
                         Mid-Term Exam Fall 2016
                     </a>
-                    <br>
-                    <br>
+                    </h3>
+                    <h3>
                     <a
                         href="MidTermLessons.html">
                         Mid-Term Exam Lessons
                     </a>
-                    <br>
-                    <br>
+                    </h3>
+                    <h3>
                     <a href="https://github.com/gcallah/algorithms">
                         GitHub Repository
                     </a>
-                    </p>
+                    </h3>
 
             </div>
 
