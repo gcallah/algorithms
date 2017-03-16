@@ -39,18 +39,18 @@
 
 <pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Binary Search Trees</span></b></pre>
 
-> ##### [Tree Traversals](https://github.com/gcallah/algorithms/blob/master/Ruby/binary_search_trees/traversals.rb)
-> ##### [Tree Search](https://github.com/gcallah/algorithms/blob/master/Ruby/binary_search_trees/search.rb)
-> ##### [Insertion and Deletion](https://github.com/gcallah/algorithms/blob/master/Ruby/binary_search_trees/insertion_deletion.rb)
+> ##### [Tree Traversals](https://github.com/gcallah/algorithms/blob/master/Ruby/BinarySearchTrees/traversals.rb)
+> ##### [Tree Search](https://github.com/gcallah/algorithms/blob/master/Ruby/BinarySearchTrees/search.rb)
+> ##### [Insertion and Deletion](https://github.com/gcallah/algorithms/blob/master/Ruby/BinarySearchTrees/insertion_deletion.rb)
 
 
 <pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Greedy Algorithms</span></b></pre>
 
-> ##### [Activity Selection](https://github.com/gcallah/algorithms/blob/master/Ruby/greedy_algorithms/activity_selection.rb)
-> ##### [Knapsack (0-1 and Fractional)](https://github.com/gcallah/algorithms/blob/master/Ruby/greedy_algorithms/knapsack.rb)
+> ##### [Activity Selection](https://github.com/gcallah/algorithms/blob/master/Ruby/GreedyAlgorithms/activity_selection.rb)
+> ##### [Knapsack (0-1 and Fractional)](https://github.com/gcallah/algorithms/blob/master/Ruby/GreedyAlgorithms/knapsack.rb)
 
 <pre><b><span style="font-size:25px;font-style:oblique;color:#9b111e;font-weight:bold;font-family:monospace;"> Elementary Graph Algorithms</span></b></pre>
 
-> ##### [Breadth First Search](https://github.com/gcallah/algorithms/blob/master/Ruby/graph_algorithms/breadth_first_search.rb)
-> ##### [Depth First Search](https://github.com/gcallah/algorithms/blob/master/Ruby/graph_algorithms/depth_first_search.rb)
-> ##### [Minimum Spanning Trees (Kruskal and Prim's)](https://github.com/gcallah/algorithms/blob/master/Ruby/graph_algorithms/minimum_spanning_tree.rb)
+> ##### [Breadth First Search](https://github.com/gcallah/algorithms/blob/master/Ruby/GraphAlgorithms/breadth_first_search.rb)
+> ##### [Depth First Search](https://github.com/gcallah/algorithms/blob/master/Ruby/GraphAlgorithms/depth_first_search.rb)
+> ##### [Minimum Spanning Trees (Kruskal and Prim's)](https://github.com/gcallah/algorithms/blob/master/Ruby/GraphAlgorithms/minimum_spanning_tree.rb)
