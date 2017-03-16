@@ -1,0 +1,1111 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            The Algorithm Museum
+        </title>
+    </head>
+
+    <body>
+<!--include menu.txt -->
+
+        <h1>
+            The Algorithm Museum
+        </h1>
+        <div style="text-align:center">
+            <p>
+            <img
+             src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Louvre_Museum_Wikimedia_Commons.jpg/800px-Louvre_Museum_Wikimedia_Commons.jpg"
+             height="200" width="540">
+            </p>
+        </div>
+
+
+            <h2>
+                Project Purpose
+            </h2>
+
+                <p>
+                    The aim of this project is to implement the algorithms from
+                    <i>Introduction to Algorithms</i> (Cormen, Leiserson,
+                    Rivest, and Stein, henceforth CLRS)
+                    in as many languages as possible,
+                    for educational purposes. The versions we implement will
+                    contain printing of intermediate results at key spots, and
+                    eventually interactive features.
+                </p>
+
+            <h2>
+                What Has Been Implemented
+            </h2>
+
+                <table>
+                    <tr>
+                        <th id="chapter-head" colspan="11">
+                            Chapters 1-12
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Language
+                        </th>
+                        <th>
+                            Getting
+                            <br>
+                            Started
+                        </th>
+                        <th>
+                            Divide
+                            <br>
+                            and
+                            <br>
+                            Conquer
+                        </th>
+                        <th>
+                            Randomized
+                            <br>
+                            Algorithms
+                        </th>
+                        <th>
+                            Heapsort
+                        </th>
+                        <th>
+                            Quicksort
+                        </th>
+                        <th>
+                            Sorting in
+                            <br>
+                            Linear Time
+                        </th>
+                        <th>
+                            Medians /
+                            <br>
+                            Order
+                            <br>
+                            Statistics
+                        </th>
+                        <th>
+                            Data
+                            <br>
+                            Structures
+                        </th>
+                        <th>
+                            Hash Tables
+                        </th>
+                        <th>
+                            Binary
+                            <br>
+                            Search Trees
+                        </th>
+                    </tr>
+
+                    <tr>
+                        <td id="languages">
+                            C++
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/tree/master/c%2B%2B/GettingStarted"/>
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/tree/master/c%2B%2B/DivideAndConquer/">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/tree/master/c%2B%2B/RandomizedAlgorithms/">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            <a 
+                             href="https://github.com/gcallah/algorithms/tree/master/c%2B%2B/Heapsort">
+                                Yes
+                            </a>
+
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/tree/master/c%2B%2B/SortingInLinearTime">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="languages">
+                            Clojure
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/clojure/getting_started.clj">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td id="languages">
+                            Go
+                        </td>
+
+                        <td>
+                            <a
+                            href="https://github.com/gcallah/algorithms/blob/master/Go/GettingStarted/sort.go">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                            href="https://github.com/gcallah/algorithms/blob/master/Go/Quicksort/quicksort.go">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="languages">
+                            Java
+                        </td>
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/tree/master/Java/GettingStarted">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/tree/master/Java/DivideAndConquer">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/tree/master/Java/RandomizedAlgorithms">
+                                Yes
+                            </a>
+
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/tree/master/Java/Heapsort">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Java/BinarySearchTrees/">
+                                Yes
+
+
+                    </tr>
+                    <tr>
+                        <td id="languages">
+                            Javascript
+                        </td>
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/javascript/divideAndConquer.js">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/tree/master/javascript/heap.js">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/javascript/binary_tree.js">
+                                Yes
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="languages">
+                            Python
+                        </td>
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Python/GettingStarted/">
+                                Yes
+                            </a>
+                        </td>
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Python/DivideAndConquer/">
+                                Yes
+                            </a>
+                        </td>
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Python/RandomizedAlgorithms/">
+                                Yes
+                            </a>
+                        </td>
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Python/Heapsort/">
+                                Yes
+                            </a>
+                        </td>
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Python/Quicksort/">
+                                Yes
+                            </a>
+                        </td>
+                        <td>
+                            No
+                        </td>
+                        <td>
+                            No
+                        </td>
+                        <td>
+                            No
+                        </td>
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Python/HashTables/">
+                                Yes
+                            </a>
+                        </td>
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Python/BinarySearchTrees/">
+                                Yes
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="languages">
+                            Ruby
+                        </td>
+                        <td>
+                            <a
+                               href="https://github.com/gcallah/algorithms/tree/master/Ruby/getting_started">
+                                Yes
+                            </a>
+                        </td>
+                        <td>
+                            <a
+                               href="https://github.com/gcallah/algorithms/tree/master/Ruby/divide_and_conquer">
+                                Yes
+                            </a>
+                        </td>
+                        <td>
+                            <a
+                               href="https://github.com/gcallah/algorithms/tree/master/Ruby/randomized_algorithms">
+                                Yes
+                            </a>
+                        </td>
+                        <td>
+                            <a
+                               href="https://github.com/gcallah/algorithms/tree/master/Ruby/heapsort">
+                                Yes
+                            </a>
+                        </td>
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/tree/master/Ruby/quicksort">
+                                Yes
+                            </a>
+                        </td>
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/tree/master/Ruby/sorting_in_linear_time">
+                                Yes
+                            </a>
+                        </td>
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/tree/master/Ruby/median_and_order_statistics">
+                                Yes
+                            </a>
+                        </td>
+                        <td>
+                            No
+                        </td>
+                        <td>
+                            <a href="https://github.com/gcallah/algorithms/blob/master/Ruby/hash/">
+                                Yes
+                            </a>
+                        </td>
+                        <td>
+                            <a
+                               href="https://github.com/gcallah/algorithms/tree/master/Ruby/binary_search_trees">
+                                Yes
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th id="chapter-head" colspan="11">
+                            Chapters 13-22
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Language
+                        </th>
+                        <th>
+                            Red-Black
+                            <br>
+                            Trees
+                        </th>
+                        <th>
+                            Augmenting
+                            <br>
+                            Data
+                            <br>
+                            Structures
+                        </th>
+                        <th>
+                            Dynamic
+                            <br>
+                            Programming
+                        </th>
+                        <th>
+                            Greedy
+                            <br>
+                            Algorithms
+                        </th>
+                        <th>
+                            Amortized
+                            <br>
+                            Analysis
+                        </th>
+                        <th>
+                            B-Trees
+                        </th>
+                        <th>
+                            Fibonacci
+                            <br>
+                            Heaps
+                        </th>
+                        <th>
+                            van Emde
+                            <br>
+                            Boas Trees
+                        </th>
+                        <th>
+                            Disjoint
+                            <br>
+                            Sets
+                        </th>
+                        <th>
+                            Graph
+                            <br>
+                            Algorithms
+                        </th>
+                    </tr>
+                    <tr>
+                        <td id="languages">
+                            C++
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/c++/DynamicProgramming/">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/c++/Graph/">
+                                Yes
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="languages">
+                            Clojure
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/clojure/dynamic_programming.clj">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="languages">
+                            Go
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a 
+                                href="https://github.com/gcallah/algorithms/blob/master/Go/GreedyAlgorithms/">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td id="languages">
+                            Java
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Java/DynamicProgramming/">
+                                Yes
+                            </a>
+
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Java/GreedyAlgorithms/">
+                                Yes
+                            </a>
+
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Java/GraphAlgorithms/">
+                                Yes
+                            </a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="languages">
+                            Javascript
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="languages">
+                            Python
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Python/DynamicProgramming/">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Python/GreedyAlgorithms/">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Python/GraphAlgorithms/">
+                                Yes
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="languages">
+                            Ruby
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a href="https://github.com/gcallah/algorithms/blob/master/Ruby/dynamic_programming/">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            <a href="https://github.com/gcallah/algorithms/blob/master/Ruby/greedy_algorithms/">
+                                Yes
+                            </a>
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Ruby/graph_algorithms/">
+                                Yes
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th id="chapter-head" colspan="11">
+                            Chapters 22-35
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Language
+                        </th>
+                        <th>
+                            Minimum
+                            <br>
+                            Spanning
+                            <br>
+                            Trees
+                        </th>
+                        <th>
+                            Maximum
+                            <br>
+                            Flow
+                        </th>
+                        <th>
+                            Approximation
+                            <br>
+                            Algorithms
+                        </th>
+                    </tr>
+                    <tr>
+                        <td id="languages">
+                            C++
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="languages">
+                            Clojure
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="languages">
+                            Go
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="languages">
+                            Java
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="languages">
+                            Javascript
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td id="languages">
+                            Python
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            <a
+                                href="https://github.com/gcallah/algorithms/blob/master/Python/ApproximationAlgorithms/">
+                                Yes
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="languages">
+                            Ruby
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+
+                        <td>
+                            No
+                        </td>
+                    </tr>
+                </table>
+
+            <h2>
+                Coding Standards
+            </h2>
+                <p>
+                    Our <a href="CodingStandards.html">coding standards</a>.
+                </p>
+
+            <h2>
+                Project Leaders
+            </h2>
+                <div class="illustr-container">
+                    <div class="illustr-text">
+                        <ul>
+                            <li>Prashant Patel
+                            <li>Nandu Kalidindi
+                            <li>Dr. Eugene Callahan
+                            <li>Xiaohang Su
+                            <li>Zebin Xu
+                        </ul>
+                    </div>
+                    <div class="illustration">
+                        <img src="graphics/Board.jpg" 
+                            height="330" width="550">
+                    </div>
+                </div>
+
+                <h3>
+                    Other Contributors
+                </h3>
+                    <ul>
+                        <li><a href="http://robdodson.net">
+                                Robert Dodson
+                            </a>
+                    </ul>
+    </body>
+</html>

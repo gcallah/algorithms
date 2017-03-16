@@ -39,8 +39,12 @@ th {
     background: #afd;
 }
 
-ol, ul, dl, li {
+li {
     margin: 8px 12px 8px 12px;
+}
+
+ol, ul, dl {
+    margin: 16px 40px 16px 40px;
 }
 
 p {
@@ -61,7 +65,8 @@ h1,h2,h3,h4,h5 {
 }
 
 h1 {
-    margin: 28px 8px 24px 8px;
+    margin: 0px 0px 24px 0px;
+    padding-bottom: 24px;
     text-align: center;
     font-weight: 300;
     font-size: 36px;
@@ -96,6 +101,13 @@ h4 {
     font-weight: bold;
 }
 
+h5 {
+    font-size: 22px;
+    margin: 16px 32px 12px 32px;
+    color: #366;
+    font-weight: bold;
+}
+
 /* HEADER */
 /* not used at present */
 
@@ -103,9 +115,9 @@ h4 {
     width: auto;
     height: 40px;
     padding: 10px 40px;
-    background: #285D91;
     line-height: 40px;
-    color: #ffc;
+    background-color: #245;
+    color: #dff;
     overflow: hidden;
 }
 
@@ -173,3 +185,26 @@ figcaption {
     float: right;
     vertical-align: top;
 }
+
+#user-tools {
+    float: right;
+    padding: 0;
+    margin: 0 0 0 20px;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+#user-tools a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+#user-tools a:focus, #user-tools a:hover {
+    text-decoration: none;
+    border-bottom-color: #285d91;
+    color: #285d91;
+}
+
+
