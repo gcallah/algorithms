@@ -439,43 +439,43 @@
                         </td>
                         <td>
                             <a
-                               href="https://github.com/gcallah/algorithms/tree/master/Ruby/getting_started">
+                               href="https://github.com/gcallah/algorithms/tree/master/Ruby/GettingStarted">
                                 Yes
                             </a>
                         </td>
                         <td>
                             <a
-                               href="https://github.com/gcallah/algorithms/tree/master/Ruby/divide_and_conquer">
+                               href="https://github.com/gcallah/algorithms/tree/master/Ruby/DivideAndConquer">
                                 Yes
                             </a>
                         </td>
                         <td>
                             <a
-                               href="https://github.com/gcallah/algorithms/tree/master/Ruby/randomized_algorithms">
+                               href="https://github.com/gcallah/algorithms/tree/master/Ruby/RandomizedAlgorithms">
                                 Yes
                             </a>
                         </td>
                         <td>
                             <a
-                               href="https://github.com/gcallah/algorithms/tree/master/Ruby/heapsort">
+                               href="https://github.com/gcallah/algorithms/tree/master/Ruby/Heapsort">
                                 Yes
                             </a>
                         </td>
                         <td>
                             <a
-                                href="https://github.com/gcallah/algorithms/tree/master/Ruby/quicksort">
+                                href="https://github.com/gcallah/algorithms/tree/master/Ruby/Quicksort">
                                 Yes
                             </a>
                         </td>
                         <td>
                             <a
-                                href="https://github.com/gcallah/algorithms/tree/master/Ruby/sorting_in_linear_time">
+                                href="https://github.com/gcallah/algorithms/tree/master/Ruby/SortingInLinearTime">
                                 Yes
                             </a>
                         </td>
                         <td>
                             <a
-                                href="https://github.com/gcallah/algorithms/tree/master/Ruby/median_and_order_statistics">
+                                href="https://github.com/gcallah/algorithms/tree/master/Ruby/MediansAndOrderStatistics">
                                 Yes
                             </a>
                         </td>
@@ -483,7 +483,7 @@
                             No
                         </td>
                         <td>
-                            <a href="https://github.com/gcallah/algorithms/blob/master/Ruby/hash/">
+                            <a href="https://github.com/gcallah/algorithms/blob/master/Ruby/HashTables/">
                                 Yes
                             </a>
                         </td>
