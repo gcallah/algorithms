@@ -113,7 +113,7 @@ h5 {
 
 #header {
     width: auto;
-    height: 40px;
+    height: 60px;
     padding: 10px 40px;
     line-height: 40px;
     background-color: #245;
@@ -176,14 +176,17 @@ figcaption {
 
 .illustr-text {
     display: inline-block;
-    vertical-align: center;
     width: 33%;
 }
 
 .illustration {
     display: inline-block;
     float: right;
-    vertical-align: top;
+}
+
+#logo {
+    float: left;
+    margin: 0 20px 0 0;
 }
 
 #user-tools {
