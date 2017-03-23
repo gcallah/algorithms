@@ -1,11 +1,11 @@
 /**
  * Created by Ajay A. Thorve
- * RedBlackTree.java takes as input a sequence of numbers and creates a Red-Black Tree using node class instances created in a custom package tree
+ * RB_Tree.java takes as input a sequence of numbers and creates a Red-Black Tree using node class instances created in a custom package tree
  */
 
-import com.tree.node;
+import tree.node;
 import java.util.*;
-public class RedBlackTree{
+public class RB_Tree{
     static int sum;
     static Tree T;
     public static void main(String args[]){
@@ -26,10 +26,21 @@ public class RedBlackTree{
 
     }
     static void insert(int key){
-            T.insert(key);
+            T.Insert(key);
             System.out.println("Inserting key: "+key);
         }
-
+    static void mean_median(){
+            double median=0;
+            System.out.print("Mean: "+(double)T.root.sum/T.root.size);
+            if(T.root.size%2==0){
+                median=T.select(T.root,(T.root.size/2))+T.select(T.root,((T.root.size/2)+1));
+                median/=2;
+            }
+            else{
+                median=T.select(T.root,((T.root.size+1)/2));
+            }
+            System.out.println(",Median:"+median);
+    }
 }
 
 
@@ -43,16 +54,16 @@ class Tree{
 
 
     //Inserting the node in the Red-Black binary tree
-    public void insert(int nCurr){
+    public void Insert(int n){
 
-        node newNode=new node(nCurr);
+        node newNode=new node(n);
         node current=root;
         node y=nill;
 
         while(current!=nill){               //checking if its not equal to T.nill
 
             y=current;
-            if(nCurr<current.data){
+            if(n<current.data){
                 current=current.left;
             }
             else{
@@ -76,14 +87,14 @@ class Tree{
             newNode.right=nill;
             newNode.color="R";
             if(newNode.parent!=nill)
-                rbInsertFixup(newNode);
+                RB_INSERT_FIXUP(newNode);
         }
         
     }
 
 //Fixing up RB-INSERT so that the tree maintains RB-tree rules
-public void rbInsertFixup(node nCurr){
-    node x=nCurr;
+public void RB_INSERT_FIXUP(node n){
+    node x=n;
     while(x.color=="R" && x.parent.color=="R"){
         n=x;
         if(n.parent==n.parent.parent.right){             // if the inserted element is on the right side
@@ -95,12 +106,12 @@ public void rbInsertFixup(node nCurr){
             }
             else{
                 if(n==n.parent.left){                   //case 2
-                    rightRotate(n.parent);
+                    Right_Rotate(n.parent);
                     n=n.right;
                 }
                 n.parent.parent.color="R";              //case 3
                 n.parent.color="B";                     //case 3
-                leftRotate(n.parent.parent);           //case 3
+                Left_Rotate(n.parent.parent);           //case 3
             }
         }
         else{                                           //else if the inserted element is on the left side
@@ -112,12 +123,12 @@ public void rbInsertFixup(node nCurr){
             }
             else{
                 if(n==n.parent.right){                   //case 2
-                    leftRotate(n.parent);
+                    Left_Rotate(n.parent);
                     n=n.left;
                 }
                 n.parent.parent.color="R";              //case 3
                 n.parent.color="B";                     //case 3
-                rightRotate(n.parent.parent);           //case 3
+                Right_Rotate(n.parent.parent);           //case 3
             }
         }
         if(n.parent.parent.color=="R" && n.parent.parent.parent!=nill)
@@ -126,7 +137,7 @@ public void rbInsertFixup(node nCurr){
     root.color="B";
 }
 
-public void leftRotate(node x){
+public void Left_Rotate(node x){
     node y=x.right;
     x.right=y.left;                 // turn y's left subtree to x's right subtree
     if(y.left!=nill){
@@ -148,7 +159,7 @@ public void leftRotate(node x){
     x.parent=y;
 }
 
-public void rightRotate(node x){
+public void Right_Rotate(node x){
     node y=x.left;
     x.left=y.right;                 // turn y's right subtree to x's left subtree
     if(y.right!=nill){
@@ -172,33 +183,33 @@ public void rightRotate(node x){
 
 //selecting the ith smallest data/key in the tree, useful to find the median
 
-public int select(node nCurr,int posCurr){
-    int r=(nCurr.left==null)?1:nCurr.left.size+1;
-    if(posCurr==r){
-        return nCurr.data;
-    }else if(posCurr<r){
-        return select(nCurr.left,pos);
+public int select(node n,int pos){
+    int r=(n.left==null)?1:n.left.size+1;
+    if(pos==r){
+        return n.data;
+    }else if(pos<r){
+        return select(n.left,pos);
     }else{
-        return select(nCurr.right,pos-r);
+        return select(n.right,pos-r);
     }
 }
 
 
 //in-order tree traversal
-public void inOrderTraversal(node nCurr){
-    if(nCurr!=null){
-        inOrderTraversal(nCurr.left);
-        if(nCurr!=nill)
-        {
-            if(nCurr==root)
-                System.out.println((char)(64+nCurr.data)+"("+nCurr.color+"),(root)");
-            else if(nCurr==nCurr.parent.right)
-                System.out.println((char)(64+nCurr.data)+"("+nCurr.color+"),(right child of "+(char)(64+nCurr.parent.data)+")");
-            else
-                System.out.println((char)(64+nCurr.data)+"("+nCurr.color+"),(left child of "+(char)(64+nCurr.parent.data)+")");
+    public void inOrderTraversal(node n){
+        if(n!=null){
+            inOrderTraversal(n.left);
+            if(n!=nill)
+            {
+                if(n==root)
+                    System.out.println((char)(64+n.data)+"("+n.color+"),(root)");
+                else if(n==n.parent.right)
+                    System.out.println((char)(64+n.data)+"("+n.color+"),(right child of "+(char)(64+n.parent.data)+")");
+                else
+                    System.out.println((char)(64+n.data)+"("+n.color+"),(left child of "+(char)(64+n.parent.data)+")");
+            }
+            inOrderTraversal(n.right);
         }
-        inOrderTraversal(nCurr.right);
     }
-}
 
 }
