@@ -1,4 +1,4 @@
-package tree;
+package com.tree;
 
 public class node{
     public int data;
