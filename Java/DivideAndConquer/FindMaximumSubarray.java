@@ -3,6 +3,8 @@
  * Maximum subarray implementation using divide-and-conquer following textbook.
  */
 
+package divideandconquer;
+
 import java.util.Arrays;
 
 public class FindMaximumSubarray {

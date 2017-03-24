@@ -1,4 +1,4 @@
-package HashTable;
+package hashtables;
 
 /**
  * Created by Prashant

@@ -3,6 +3,8 @@
  * A tree node structure for binary trees.
  */
 
+package binarysearchtrees;
+
 public class Node<T> {
 
     int key;

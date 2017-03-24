@@ -4,6 +4,8 @@
  * Currently it may not work very well with extremely unbalanced trees and node with keys greater than 10.
  */
 
+package binarysearchtrees;
+
 import java.util.Queue;
 import java.util.LinkedList;
 

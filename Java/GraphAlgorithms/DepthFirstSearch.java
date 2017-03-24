@@ -1,3 +1,5 @@
+package graphalgorithms;
+
 import java.util.List;
 
 public class DepthFirstSearch {

@@ -1,6 +1,9 @@
 /**
- * The color of the Vertex.
+ * The state of the Vertex.
  */
+
+package graphalgorithms;
+
 public enum Color {
     WHITE,
     GRAY,

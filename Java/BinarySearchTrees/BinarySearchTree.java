@@ -22,6 +22,8 @@
  * 
  */
 
+package binarysearchtrees;
+
 import java.util.Scanner;
 
 public class BinarySearchTree<T> {

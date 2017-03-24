@@ -2,6 +2,8 @@
  * Written By Prashant Patel
  */
 
+package gettingstarted;
+
 import java.util.Scanner;
 
 //The insertionSort implementation in Java.

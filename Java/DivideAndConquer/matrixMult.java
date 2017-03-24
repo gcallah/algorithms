@@ -1,6 +1,9 @@
 /**
  * Created by Prashantkumar Patel on 11/11/2016.
  */
+
+package divideandconquer;
+
 public class matrixMult {
 
     public static void main(String[] args) {

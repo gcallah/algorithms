@@ -9,6 +9,8 @@
  * @neighbors a list storing the adjacent vertices of a vertex.
  */
 
+package graphalgorithms;
+
 import java.util.List;
 import java.util.LinkedList;
 

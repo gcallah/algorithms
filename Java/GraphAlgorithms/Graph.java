@@ -1,9 +1,12 @@
-import java.util.List;
-import java.util.Arrays;
-
 /**
  * The graph structre represented using adjacency lists.
  */
+
+package graphalgorithms;
+
+import java.util.List;
+import java.util.Arrays;
+
 public class Graph {
     
     public static void main(String[] args) {

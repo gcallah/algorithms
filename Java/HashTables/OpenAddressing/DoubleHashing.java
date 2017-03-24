@@ -1,6 +1,9 @@
 /**
  * Created by prashant on 3/15/2017.
  */
+
+package hashtables.openaddressing;
+
 public class DoubleHashing extends OpenAddressing {
 
     public DoubleHashing(int size){

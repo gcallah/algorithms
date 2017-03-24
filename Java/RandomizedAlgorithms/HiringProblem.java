@@ -4,6 +4,9 @@
  * Simulate the HIRE-ASSISTANT procedure of the hiring problem in the CLRS book.
  * Compare the origianl hiring algorithm and the randomized algorithm.
  */
+
+package randomizedalgorithms;
+
 import java.util.Arrays;
 import java.util.Random;
 
