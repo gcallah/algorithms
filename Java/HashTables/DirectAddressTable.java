@@ -1,4 +1,4 @@
-package HashTable;
+package hashtables;
 
 import java.util.Scanner;
 

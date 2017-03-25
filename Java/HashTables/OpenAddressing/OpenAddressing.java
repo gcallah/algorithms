@@ -1,3 +1,5 @@
+package hashtables.openaddressing;
+
 import java.util.Arrays;
 
 /**

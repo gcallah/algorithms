@@ -1,6 +1,9 @@
 /**
  * Created by prashant on 3/15/2017.
  */
+
+package hashtables.openaddressing;
+
 public class QuadraticProbing extends OpenAddressing {
 
     private int c1;

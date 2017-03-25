@@ -4,6 +4,9 @@
  *
  * This implementation follows the method using dynamic programming in the CLRS book.
  */
+
+package dynamicprogramming;
+
 public class LongestCommonSubsequence {
     
     public static void main(String[] args) {

@@ -1,6 +1,9 @@
 /**
  * Implementation of the optimal binary search tree problem using dynamic programming following the CLRS book.
  */
+
+package dynamicprogramming;
+
 public class OptimalBinarySearchTrees {
 
     public static void main(String[] args) {

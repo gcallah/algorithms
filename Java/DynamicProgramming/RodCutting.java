@@ -6,6 +6,9 @@
  * bottomUpCutRod: DP solution using bottom-up approach: solve the subproblems in size order (smallest subproblems first). Time: O(n^2).
  * printCutRodSolution: prints the optimal solution with size of cuts.
  */
+
+package dynamicprogramming;
+
 public class RodCutting {
 
     public static void main(String[] args) {

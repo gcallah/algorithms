@@ -1,6 +1,3 @@
-import java.util.List;
-import java.util.ArrayList;
-
 /**
  * The first vertex of each adjacency list must be in ascending order with id starting from 0.
  * For example:
@@ -30,6 +27,12 @@ import java.util.ArrayList;
  * 8
  * 9
  */
+
+package graphalgorithms;
+
+import java.util.List;
+import java.util.ArrayList;
+
 public class AdjacencyList {
 
     public static List<Vertex> build(final int[][] adjacencyList, int numberOfVertex) {

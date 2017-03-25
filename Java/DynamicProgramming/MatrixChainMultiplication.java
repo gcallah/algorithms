@@ -2,6 +2,8 @@
  * Dynamic-programming method to determine the optimal parenthesization of a matrix chain with the minimal number of scalar multiplications.
  */
 
+package dynamicprogramming;
+
 public class MatrixChainMultiplication {
 
     public static void main(String[] args) {
