@@ -1,6 +1,6 @@
 /**
  * Created by Ajay A. Thorve
- * RedBlackTree.java takes as input a sequence of numbers and creates a Red-Black Tree using node class instances created in a custom package tree
+ * RedBlackTree.java takes as input a sequence of numbers and creates a Red-Black Tree using Node class instances created in a custom package tree
  */
 
 import com.tree.Node;
@@ -21,7 +21,7 @@ public class RedBlackTree{
         insert(8);      // inserting H
 		insert(13);     // inserting M
         insert(19);     // inserting S
-        System.out.println("\nInorder Traversal:element(node-size): ");
+        System.out.println("\nInorder Traversal:element(Node-size): ");
         T.inOrderTraversal(T.root);
 
     }
@@ -34,20 +34,20 @@ public class RedBlackTree{
 
 
 class Tree{
-    public static node root;
-    final static node nill=new node(-1);
+    public static Node root;
+    final static Node nill=new Node(-1);
     public Tree(){
      this.root=nill;
     }
 
 
 
-    //Inserting the node in the Red-Black binary tree
+    //Inserting the Node in the Red-Black binary tree
     public void insert(int nCurr){
 
-        node newNode=new node(nCurr);
-        node current=root;
-        node y=nill;
+        Node newNode=new Node(nCurr);
+        Node current=root;
+        Node y=nill;
 
         while(current!=nill){               //checking if its not equal to T.nill
 
@@ -82,52 +82,52 @@ class Tree{
     }
 
 //Fixing up RB-INSERT so that the tree maintains RB-tree rules
-public void rbInsertFixup(node nCurr){
-    node x=nCurr;
+public void rbInsertFixup(Node nCurr){
+    Node x=nCurr;
     while(x.color=="R" && x.parent.color=="R"){
-        n=x;
-        if(n.parent==n.parent.parent.right){             // if the inserted element is on the right side
-            if(n.parent.parent.left.color=="R")                        //case 1
+        nCurr=x;
+        if(nCurr.parent==nCurr.parent.parent.right){             // if the inserted element is on the right side
+            if(nCurr.parent.parent.left.color=="R")                        //case 1
             {
-                n.parent.parent.left.color="B";
-                n.parent.color="B";
-                n.parent.parent.color="R";
+                nCurr.parent.parent.left.color="B";
+                nCurr.parent.color="B";
+                nCurr.parent.parent.color="R";
             }
             else{
-                if(n==n.parent.left){                   //case 2
-                    rightRotate(n.parent);
-                    n=n.right;
+                if(nCurr==nCurr.parent.left){                   //case 2
+                    rightRotate(nCurr.parent);
+                    nCurr=nCurr.right;
                 }
-                n.parent.parent.color="R";              //case 3
-                n.parent.color="B";                     //case 3
-                leftRotate(n.parent.parent);           //case 3
+                nCurr.parent.parent.color="R";              //case 3
+                nCurr.parent.color="B";                     //case 3
+                leftRotate(nCurr.parent.parent);           //case 3
             }
         }
         else{                                           //else if the inserted element is on the left side
-            if(n.parent.parent.right.color=="R")                        //case 1
+            if(nCurr.parent.parent.right.color=="R")                        //case 1
             {
-                n.parent.parent.right.color="B";
-                n.parent.color="B";
-                n.parent.parent.color="R";
+                nCurr.parent.parent.right.color="B";
+                nCurr.parent.color="B";
+                nCurr.parent.parent.color="R";
             }
             else{
-                if(n==n.parent.right){                   //case 2
-                    leftRotate(n.parent);
-                    n=n.left;
+                if(nCurr==nCurr.parent.right){                   //case 2
+                    leftRotate(nCurr.parent);
+                    nCurr=nCurr.left;
                 }
-                n.parent.parent.color="R";              //case 3
-                n.parent.color="B";                     //case 3
-                rightRotate(n.parent.parent);           //case 3
+                nCurr.parent.parent.color="R";              //case 3
+                nCurr.parent.color="B";                     //case 3
+                rightRotate(nCurr.parent.parent);           //case 3
             }
         }
-        if(n.parent.parent.color=="R" && n.parent.parent.parent!=nill)
-           x=n.parent.parent;
+        if(nCurr.parent.parent.color=="R" && nCurr.parent.parent.parent!=nill)
+           x=nCurr.parent.parent;
     }
     root.color="B";
 }
 
-public void leftRotate(node x){
-    node y=x.right;
+public void leftRotate(Node x){
+    Node y=x.right;
     x.right=y.left;                 // turn y's left subtree to x's right subtree
     if(y.left!=nill){
         y.left.parent=x;
@@ -148,8 +148,8 @@ public void leftRotate(node x){
     x.parent=y;
 }
 
-public void rightRotate(node x){
-    node y=x.left;
+public void rightRotate(Node x){
+    Node y=x.left;
     x.left=y.right;                 // turn y's right subtree to x's left subtree
     if(y.right!=nill){
         y.right.parent=x;
@@ -172,20 +172,20 @@ public void rightRotate(node x){
 
 //selecting the ith smallest data/key in the tree, useful to find the median
 
-public int select(node nCurr,int posCurr){
+public int select(Node nCurr,int posCurr){
     int r=(nCurr.left==null)?1:nCurr.left.size+1;
     if(posCurr==r){
         return nCurr.data;
     }else if(posCurr<r){
-        return select(nCurr.left,pos);
+        return select(nCurr.left,posCurr);
     }else{
-        return select(nCurr.right,pos-r);
+        return select(nCurr.right,posCurr-r);
     }
 }
 
 
 //in-order tree traversal
-public void inOrderTraversal(node nCurr){
+public void inOrderTraversal(Node nCurr){
     if(nCurr!=null){
         inOrderTraversal(nCurr.left);
         if(nCurr!=nill)
