@@ -3,7 +3,7 @@
  * RedBlackTree.java takes as input a sequence of numbers and creates a Red-Black Tree using node class instances created in a custom package tree
  */
 
-import com.tree.node;
+import com.tree.Node;
 import java.util.*;
 public class RedBlackTree{
     static int sum;
