@@ -157,7 +157,8 @@ class Graph():
             elist: a list of edges by id.
             directed: is thisa directed graph?
         """
-        # the following item is a heterogeneous list. The first item is a node,
+        # the following item is a heterogeneous list.
+        # The first item is a node,
         # but the rest of the items are just node ids.
         self.vertices = {}
         self.edges = []
