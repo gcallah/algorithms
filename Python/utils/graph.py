@@ -103,31 +103,30 @@ def graph_from_rand(n):
     "Random" here means we don't know which vertices are connected.
     We want to be able to do this for testing purposes.
     """
-    verts = [i for i in range(n)]
-    shuffle(verts)
-    edges = []
+    unseen = [i for i in range(n)]
+    shuffle(unseen)
     seen = []
 
-    g = graph_from_vlist(verts)
+    g = graph_from_vlist(unseen)
 
-    while len(seen) < len(verts):
+    while len(unseen) > 0:
+        print("length seen = " + str(len(seen))
+              + "; length verts = " + str(len(verts)))
         v = None
-        u = randint(0, n - 1)
+        u = choice(unseen)
+        unseen.remove(u)
         if len(seen) == 0:
-            v = randint(0, n - 1)
+            v = choice(unseen)
+            unseen.remove(v)
             seen.append(v)
         else:
             v = choice(seen)
-        if (u == v) or (u in seen):
-            # if we've seen u, it will create a cycle to
-            # make an edge between it and another seen node
-            continue
-        else:
-            print("Trying to create random graph with u = "
-                  + str(u) + " and v = " + str(v))
-            print("Seen = " + str(seen))
-            g.add_edge(u, v) 
-            seen.append(u)
+ 
+        print("Creating random graph with u = "
+          + str(u) + " and v = " + str(v))
+        print("Seen = " + str(seen))
+        g.add_edge(u, v) 
+        seen.append(u)
     return g
 
 

@@ -20,7 +20,7 @@ BEGIN {
 
 /^\;/ { }      # allows comments in the chapter file
 
-/^[IVXCM]/ {   # a major section name
+/^[IVXLCM]/ {   # a major section name
     sect_nm = split_on_caps($2)
     print indent2 "<h2>" >> menu
     print indent3 $1 ". " sect_nm >> menu

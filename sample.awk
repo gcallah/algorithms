@@ -1,3 +1,3 @@
 #!/usr/bin/awk -f
 
-/href/  { print }
+/href/  { print NF }
