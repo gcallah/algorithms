@@ -2,12 +2,15 @@
     <head>
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <title>
-            Design and Analyis of Algorithms:  Hash Tables
+            Design and Analysis of Algorithms, Lecture 3
         </title>
     </head>
 
     <body>
     <div id="header">
+        <div id="logo">
+            <img src="graphics/Julia.png">
+        </div>
         <div id="user-tools">
             <a href="index.html">Home</a>
             &nbsp; &nbsp; 
@@ -17,41 +20,324 @@
 
 
         <h1>
-            Design and Analyis of Algorithms:  Hash Tables
+            Design and Analysis of Algorithms, Lecture 3
+            <a href="#note1">*</a>
         </h1>
-
-            <div style="text-align:center">
-                <p>
-                <img src="">
-                </p>
-            </div>
-
-            <h2>
-                Overview
-            </h2>
-
-            <h2>
-                Source Code
-            </h2>
-            <p>
-            <a
-                href="https://github.com/gcallah/algorithms/blob/master/Python/">
-                Python
-            </a>
+        <h2>Looking at Memoization</h2>
+        <p>
+            Last class, I asked you to <a
+                href="https://en.wikipedia.org/wiki/Memoization">
+            memoize</a>
+            the naive, recursive Fibonacci algorithm. Let's take a look at how to do that.
             <br>
-            </p>
+            <a
+            href="https://github.com/gcallah/algorithms/blob/master/Python/DivideAndConquer/fibonacci.py">
+                Here</a>
+            is the Fibonacci code, now including memo-ization.
+        </p>
+        <h2>Dictionaries</h2>
+        <p>
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/English-English_and_English-Persian_dictionaries.JPG/350px-English-English_and_English-Persian_dictionaries.JPG">
+        </p>
 
-            <h2>
-                External Links
-            </h2>
-                <ul>
-                    <li><a href="https://en.wikipedia.org/wiki/Algorithm">
-                            Algorithm
-                        </a>.
-                </ul>
-            
-            <h2>
-                Homework
-            </h2>
+        <h3>
+        Dictionary ADT.
+        </h3>
+        <p>
+        Operations associated with this data type allow:
+        <ul>
+            <li>the addition of a pair to the collection
+            <li>the removal of a pair from the collection
+            <li>the modification of an existing pair
+            <li>the lookup of a value associated with a particular key
+        </ul>
+            <p>
+            (<a href="https://en.wikipedia.org/wiki/Associative_array">Source</a>)
+            </p>
+        </p>
+        <p>
+        Typical uses:
+        <ul>
+            <li> Symbol lookup in a programming language
+            <li> Counting words in a book
+            <li> Store colors by name as key and their numeric equivalent as
+            the value. Then we can write <b>set_text(colors["red"])</b>.
+        </ul>
+        </p>
+
+
+        <p>
+        (Ordered Dictionary ADT next time.) 
+        </p>
+        <p>
+        <em>Direct addressing</em> and <em>Hashing</em> are two ways of implementing a
+        dictionary. Are there others?
+        </p>
+
+        <h3>
+        Direct addressing. 
+        </h3>
+        <ul>
+            <li> <em>O(1)</em> <em>worst</em> case time for lookup.
+            <li> Uses:
+            <ul>
+                <li> Memoization
+                <li> Bingo
+                <li> Sieve of Eratosthenes
+                <li> Mark zipcodes seen
+            </ul>
+            <li> Downside: wastes space. If you have no idea how many possible
+            keys you need, direct addressing is not a good choice.
+            <br>For instance, if your key is an arbitrary string!
+            <li><a
+                    href="https://github.com/gcallah/algorithms/blob/master/python/hash.py">
+                Example code here.
+                </a>
+        </ul>
+        <h3>
+        Hashing
+        </h3>
+        <p>
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hash_table_4_1_1_0_0_1_0_LL.svg/300px-Hash_table_4_1_1_0_0_1_0_LL.svg.png">
+        <br>
+        <h4>
+        Basic Hashing:
+        </h4>
+        <ul>
+            <li> <em>O(1)</em> <em>average</em> case time for lookup.
+            <li> Universe of keys <em>U</em> mapped into slots of a <em>hash table</em>
+            of size <em>m</em> by hash function <em>h</em>.
+            <li> Because <em>size(U) > m</em>, collisions are always possible.
+            <br>Imagine we hash by word length: 'mark' and 'beam' both hash to
+            4. (Stupid hash function, but it illustrates the idea.) We must
+            resolve this collision somehow.
+            <li> Resolve collisions by chaining:
+            <br> Each slot holds a linked list of values.
+            <li> <a
+                href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">
+            Cryptographic hashing
+            </a>
+            <br> Use large hash keys:
+                <a href="https://en.wikipedia.org/wiki/SHA-1">
+                    SHA-1</a> uses 160 bit keys. <a
+                    href="https://en.wikipedia.org/wiki/SHA-2">SHA-2</a> uses
+                    keys of up to 512 bits.
+                    <br>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/SHA-2.svg/400px-SHA-2.svg.png">
+                    <li> <a href="http://www.phash.org">
+                        Perceptual hashing
+                    </a>
+        </ul>
+        </p>
+        <h4>
+        Introducing probability into an algorithm.
+        </h4>
+        <p>
+        What happens to the usual assumptions?
+        <br>
+        <b>Correctness</b>: always, most of the time?
+        <br>
+        <b>Termination</b>: always, or almost always?
+        What does "performance" mean if the running
+        time/answer/even termination change from one run to the next?
+        </p>
+        <h4>Probability Basics</h4>
+        <p>
+        <a href="https://gcallah.github.io/algorithms/Probability.html">
+            Reviewed in this document.
+        </a>
+        </p>
+        <h4>
+        Simple uniform hashing 
+        </h4>
+        <p>
+        This employs <b>chaining</b>. Furthermore, we assume that the
+        distribution of elements is uniform across hash table slots.
+        <br>
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Hasq_hash_chains.png"
+        height="210" width="240">
+            <ul>
+                <li> Hash table <em>T</em> with <em>m</em> slots storing <em>n</em> elements.
+                <li> <b>Load factor</b>: <em>&alpha; = n / m</em>
+                <br> <em>&alpha;</em> is the average number of elements stored in a
+                chain.
+                <li> Our analysis is in terms of <em>&alpha;</em>, which can be
+                less than, equal to, or greater than one.
+                <li><b>Worst case</b> is very bad:
+                <br>All <em>n</em> keys hash to the same slot.
+                <br>Worst case for searching becomes <em>&Theta;(n)</em> plus
+                time to compute hash function.
+                <br>We could have just used a linked list directly!
+                <li><b>Average case</b>:
+                <br>Assuming any given element is equally likely to hash into
+                any slot...
+                <br>We get average case <em>&Theta;(1 + &alpha;)</em> time.
+                <br>See proofs in our textbook.
+            </ul>
+        </p>
+
+        <h4>Hash functions</h4>
+        <ul>
+            <li> First, convert key to an integer.
+            <br> E.g., we can interpret characters in a string by their ASCII values.
+            <br> Then treat each value as a digit in a radix-128 integer.
+            <br>
+            (<a
+                href="http://www.drdobbs.com/database/generating-sequential-keys-in-an-arbitra/184409688">
+                See this article for more on radices.</a>)
+            <li> Keys could be many other things besides strings.
+            <br> E.g., genomes:
+            <br>
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/6/63/Part_of_DNA_sequence_prototypification_of_complete_genome_of_virus_5418_nucleotides.gif"
+            height="320" width="340">
+            <li> Division method:
+            <br><em>h(k) = k mod P</em>, where <em>P</em> is a
+            suitably-chosen prime number.
+            <li> Multiplication method:
+            <br><em>h(k) = [m (k A mod 1)]</em>,
+            where <em>0 < A < 1</em>.
+        </ul>
+
+        <h4>
+        Universal hashing
+        </h4>
+        <ul>
+            <li>Establish a <em>family</em> of hash functions.
+            <li>Choose so that <em>Prob[h(x) = h(y)] <= 1/m</em>, where m is
+                the size of our hash table.
+            <br>In other words, the hash functions have no more chance of
+            collision than simply randomly choosing to slots between 1 and m.
+            <li>Choose one at random each execution.
+            <br>Tricky: what if we store hash values?
+            <li>Good average case behavior
+            <br>If a "bad" function handles some
+            data once, a "good" one will handle it another time.
+            <br>So a "bad" set of programming variable names one run will turn
+            into a good set the next run.
+        </ul>
+
+        <h4>Open addressing</h4>
+        <ul>
+            <li>All elements are stored directly in the table; no chaining.
+            <li>Linear probing
+            <br>Easy: just move along array indices!
+            <br>Prone to clustering
+            <li>Quadratic probing
+            <li><a href="https://en.wikipedia.org/wiki/Double_hashing">
+                Double hashing
+            </a>
+            <br>Uses two hash functions to search array for key.
+            <li><a
+                    href="https://github.com/gcallah/algorithms/blob/master/hash_tables.py">
+                    Source code here</a>.
+        </ul>
+        <h4>
+        Perfect hashing
+        </h4>
+
+
+        <h3>Homework</h3>
+        <p>
+        </p>
+        <ul>
+            <li> Devise three possible hash functions. Analyze each for size of hash
+            table necessary and possibility of collisions.
+            <li> Let's say our hash function is <em>h(k) = k mod 11</em> and we resolve
+            conflicts with chaining. Analyze what happens if our data values are
+            23, 34, 12, 8, 19, 33, 2, 5, 15, 4, 31, 9, 3, 6, 18, 8, 19 and 22.
+            <br>What will happen when we look up 19?
+            <li>Write (pseudo) code to resolve collisions with chaining. 
+            <li>Consider the following hashing scheme:
+                <br>
+                <em>h(k) = k mod m</em>
+                <br>
+                <em>m = 7</em>
+                <br>We convert a string into a hashable key by treating it as a
+                base-8 number.
+                <br>So 'abc', where a = 1, b = 2, and c = 3, is converted to a
+                key as follows: 1 * 8<sup>2</sup> + 2 * 8 + 3 = 83.
+                <br>In this hashing scheme, what do the strings 'cba' and 'bac'
+                hash to?
+                <br>Can you write a more general statement about a pattern we
+                can detect here? Something along the lines of, "If the table
+                size is 2<sup>P</sup> - 1, and strings are interpreted in radix
+                2<sup>P</sup>..."
+                <br>
+                <br>
+                <b>Answer:</b>
+                <br>
+                <br>
+                If <em>h(k) = k mod m</em>, where <em>m = 2<sup>P</sup> -
+                    1</em>, and <em>k</em> is a character string interpreted in
+                radix 2<sup>P</sup>, then all permutations of a given string
+                will hash to the same value. So in the example above, 'abc',
+                'cba', and 'bac' all hash to the same value.
+                <br>
+                <br>
+                <b>Proof</b>:
+                <br>
+                <br>
+                Assumed (could be proven, but we won't do it here):
+                <ol>
+                    <li> (x + y) mod z == 
+                            (x mod z + y mod z) mod z
+                        <br><b>Example:</b> (10 + 12) mod 7 ==
+                        (10 mod 7 + 12 mod 7) mod 7
+                    <li> (x * y) mod z == 
+                            (x mod z) * (y mod z)
+                        mod z
+                        <br><b>Example:</b> (10 * 12) mod 7 ==
+                        (10 mod 7) * (12 mod 7) mod 7
+                        <br>(7 * 17 = 119)
+                    <li>if x mod z == 1, then x<sup>n</sup> mod z == 1
+                        <br><b>Example:</b> 8 mod 7 == 1, and
+                        8<sup>2</sup> mod 7 == 1
+                        <br>This is a special case of 2!
+                </ol>
+                <br>
+                So, we have:
+                <br>
+                <br>
+                <img src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq1.gif">
+                <br>
+                <br>
+                <img src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq2.gif">
+                <br>
+                <br>
+                <img src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq3.gif">
+                <br>
+                <br>
+                <img
+                src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq4.gif">
+                &nbsp;&nbsp;(By 1)
+                <br>
+                <br>
+                <img
+                src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq5.gif">
+                &nbsp;&nbsp;(By 2)
+                <br>
+                <br>
+                <img
+                src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq6.gif">
+                &nbsp;&nbsp;(By 3)
+                <br>
+                <br>
+                <img
+                src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq7.gif">
+              </ol>
+        </ul>
+        <br>
+        <hr>
+
+
+
+    <a name="note1">* Based on Prof. Boris Aronov's lecture notes. </a>
+    <br>
+
     </body>
 </html>
