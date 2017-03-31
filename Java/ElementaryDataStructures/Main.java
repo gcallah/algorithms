@@ -26,5 +26,15 @@ public class Main {
         }
 
 
+        Queue queue=new Queue(10);
+        queue.enqueue(2);
+        queue.enqueue(5);
+        queue.enqueue(7);
+        queue.enqueue(9);
+        System.out.println("Dqueue: "+queue.dequeue());
+        System.out.println("Dqueue: "+queue.dequeue());
+        System.out.println("Dqueue: "+queue.dequeue());
+        System.out.println(queue.toString());
+
     }
 }
