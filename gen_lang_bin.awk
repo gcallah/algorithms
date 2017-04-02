@@ -10,7 +10,7 @@ BEGIN {
     	langs[$1] = $2  # record each language and ext
     }
     for (lang in langs) {
-      header = header " " lang " |"
+        header = header " " lang " |"
     }
     print header
 }
@@ -23,9 +23,9 @@ BEGIN {
         cmd | getline x
         close(cmd)
         if (x == 0) {
-          k = k " 0 "
+            k = k " 0 "
         } else {
-          k = k " 1 "
+            k = k " 1 "
         }
     }
     print k
