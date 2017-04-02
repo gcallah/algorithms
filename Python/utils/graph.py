@@ -167,8 +167,9 @@ class Graph():
         self.edges = []
         self.directed = directed
 
-        for e in elist:
-            self.add_edge(e[0], e[1])
+        if elist is not None:
+            for e in elist:
+                self.add_edge(e[0], e[1])
 
         if not self.isconnected():
             print("Warning: this graph is not connected.")
@@ -250,6 +251,17 @@ class Graph():
         This returns the actual vertex objects.
         """
         return list(self.vertices.values())
+
+    def transpose(self):
+        if not self.isdirected():
+            print("Can't transpose an undirected graph!")
+            return None
+        else:
+            trans = Graph(None)
+            for e in self.get_edges():
+                (u, v) = e.get_vertices()
+                trans.add_edge(v, u)
+            return trans
 
     def iscover(self, edges):
         """
