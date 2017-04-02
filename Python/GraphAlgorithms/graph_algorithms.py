@@ -123,10 +123,11 @@ def dfs(g):
                 acyclical = False
 
     print("Total time = " + str(time))
-    if acyclical:
-        print("Topological sort: " + str(topological))
-    else:
-        print("Graph contains a cycle; topological sort not possible.")
+    if g.isdirected():
+        if acyclical:
+            print("Topological sort: " + str(topological))
+        else:
+            print("Graph contains a cycle; topological sort not possible.")
 
 
 def dfs_visit(g, u):
@@ -158,7 +159,7 @@ def dfs_visit(g, u):
     u.color = BLACK
     time += 1
     u.finish = time
-    if not cycle:
+    if not cycle and g.isdirected():
         topological.insert(0, u.vid)
     return cycle
 

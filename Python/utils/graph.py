@@ -20,7 +20,7 @@ test_alist = [
              ]
 
 # initialize by edge list:
-test_elist = [(1, 2), (1, 3), (3, 5), (4, 5), (5, 6), (5, 9), (6, 7),
+test_elist = [(1, 2), (1, 3), (3, 5), (5, 4), (5, 6), (5, 9), (6, 7),
               (7, 8)]
 
 # edge list with cycle:
@@ -158,7 +158,7 @@ class Graph():
         """
         Args:
             elist: a list of edges by id.
-            directed: is thisa directed graph?
+            directed: is this a directed graph?
         """
         # the following item is a heterogeneous list.
         # The first item is a node,
@@ -190,10 +190,15 @@ class Graph():
         # before adding:
         self.add_vertex(vid, uid)
         # for directed graphs, you have to explicitly
-        # add both directions of you want both:
+        # add both directions if you want both:
         if not self.directed:    
             self.add_vertex(uid, vid)
+        else:
+            self.add_vertex(uid, None)
         self.edges.append(Edge(vid, uid))
+
+    def isdirected(self):
+        return self.directed
 
     def isconnected(self, vseen=None, vid=None):
         """
@@ -224,6 +229,8 @@ class Graph():
         elif len(vseen) == len(self.vertices):
             return True
         else:
+            print("vseen = " + str(vseen))
+            print("vertices = " + str(self.vertices.keys()))
             return False
 
     def get_vertex(self, vid):
