@@ -112,14 +112,21 @@ def dfs(g):
     global time
     global topological
     topological = []
+    acyclical = True
     init_vertices(g)
     time = 0
     for v in g.get_vertices():
         if v.color == WHITE:
-            dfs_visit(g, v)
+            cycle = dfs_visit(g, v)
+            if cycle:
+                print("Setting acyclical to false")
+                acyclical = False
 
     print("Total time = " + str(time))
-    print("Topological sort: " + str(topological))
+    if acyclical:
+        print("Topological sort: " + str(topological))
+    else:
+        print("Graph contains a cycle; topological sort not possible.")
 
 
 def dfs_visit(g, u):
@@ -128,9 +135,11 @@ def dfs_visit(g, u):
     Args:
         g: graph
         u: vertex to work on
+    Return: contains a cycle or not?
     """
     print("Going to visit " + str(u.vid))
 
+    cycle = False
     global time
     time += 1
     u.d = time
@@ -140,9 +149,16 @@ def dfs_visit(g, u):
         v = g.get_vertex(neighbor)
         if v.color == WHITE:
             v.pred = u
-            dfs_visit(g, v)
+            c = dfs_visit(g, v)
+            if c == True:
+                cycle = True
+        elif v.color == BLACK:
+            print("Detected cycle at node " + str(v))
+            cycle = True
     u.color = BLACK
     time += 1
     u.finish = time
-    topological.insert(0, u.vid)
+    if not cycle:
+        topological.insert(0, u.vid)
+    return cycle
 

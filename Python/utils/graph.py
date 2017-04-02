@@ -19,12 +19,16 @@ test_alist = [
                 [10, [11, 12]],
              ]
 
-# to test initializing by edge list:
+# initialize by edge list:
 test_elist = [(1, 2), (1, 3), (3, 5), (4, 5), (5, 6), (5, 9), (6, 7),
+              (7, 8)]
+
+# edge list with cycle:
+test_cycle = [(1, 2), (1, 3), (3, 5), (4, 5), (5, 6), (5, 9), (6, 7),
               (6, 9), (7, 8)]
 
 # to test for detecting disconnected graphs:
-test_dis_elist = [(1, 2), (1, 3), (3, 5), (4, 5), (5, 6), (5, 9), (6, 7),
+test_disconn = [(1, 2), (1, 3), (3, 5), (4, 5), (5, 6), (5, 9), (6, 7),
                   (6, 9), (8, 13)]  # this last edge is not connected:
                                     # should be revealed by isconnected()
 
