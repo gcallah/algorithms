@@ -202,3 +202,8 @@ def issc(g):
     print("Starting dfs at: " + str(start))
     dfs_visit(t, start)  # use the SAME start as first dfs
     return all_visited(t.get_vertices())
+
+def strongly_connected_components(g):
+    dfs(g)
+    t = g.transpose()
+    dfs(t)
