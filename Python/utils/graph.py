@@ -70,7 +70,7 @@ class Edge():
         self.v2 = v2
 
     def __str__(self):
-        return str(self.v1) + "<-->" + str(self.v2)
+        return str(self.v1) + "-->" + str(self.v2)
 
     def get_vertices(self):
         return (self.v1, self.v2)
@@ -247,9 +247,6 @@ class Graph():
         return self.edges
 
     def get_vertices(self):
-        """
-        This returns the actual vertex objects.
-        """
         return list(self.vertices.values())
 
     def transpose(self):
@@ -257,7 +254,7 @@ class Graph():
             print("Can't transpose an undirected graph!")
             return None
         else:
-            trans = Graph(None)
+            trans = Graph(None, directed=True)
             for e in self.get_edges():
                 (u, v) = e.get_vertices()
                 trans.add_edge(v, u)

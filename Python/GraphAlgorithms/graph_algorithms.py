@@ -15,6 +15,7 @@ This file contains:
     bfs(): breadth-first search.
     dfs(): depth-first search.
     dfs_visit(): depth-first search helper.
+    issc(): returns True if graph is strongly connected.
     Plus auxilliary functions that support the above.
 We have dfs perform a topological sort along the way.
 """
@@ -23,6 +24,8 @@ import queue
 
 from utils.graph import Vertex, Edge, Graph
 
+test_strong = [(0, 1), (1, 2), (2, 0)]
+test_weak = [(0, 1), (1, 2)]
 
 WHITE = 0
 GRAY = 1
@@ -34,10 +37,14 @@ def init_vertices(g):
         g: graph to initialize
     Return: None
     """
+    first_v = None
     for v in g.get_vertices():
+        if first_v is None:
+            first_v = v
         v.color = WHITE
         v.discover = -1
         v.pred = None
+    return first_v  # just a convenience when we want someplace to start!
 
 
 def bfs(g, start_id):
@@ -99,7 +106,7 @@ def print_path(g, s, v):
 
 
 time = 0
-topological = None
+topological = []
 
 def dfs(g):
     """
@@ -111,7 +118,7 @@ def dfs(g):
     """
     global time
     global topological
-    topological = []
+    topological = []  # re-initialize
     acyclical = True
     init_vertices(g)
     time = 0
@@ -163,3 +170,35 @@ def dfs_visit(g, u):
         topological.insert(0, u.vid)
     return cycle
 
+def all_visited(verts):
+    # we assume a search has been run to color vertices:
+    for v in verts:
+        if v.color == WHITE:
+            return False
+    return True
+
+def issc(g):
+    """
+        Args:
+            g: graph to check
+        Returns:
+            True if graph is strongly connected, False if not.
+    """
+    # if graph is not directed, just return if is is connected:
+    if not g.isdirected():
+        return g.isconnected()
+
+    # for a directed graph, see if we can walk it in both directions 
+    # from a random starting place:
+    start = init_vertices(g)
+    print("Starting dfs at: " + str(start))
+    dfs_visit(g, start)
+
+    if not all_visited(g.get_vertices()):
+        return False
+
+    t = g.transpose()
+    init_vertices(t)
+    print("Starting dfs at: " + str(start))
+    dfs_visit(t, start)  # use the SAME start as first dfs
+    return all_visited(t.get_vertices())
