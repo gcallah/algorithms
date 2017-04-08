@@ -6,6 +6,6 @@ INCS = menu.txt
 	./gen_lang_bin.awk <chapters.txt | ./gen_lang_menu.awk > lang_menu.txt
 	./html_include.awk <$< >$@
 
-web_site: $(OBJS) $(INCS)
+website: $(OBJS) $(INCS)
 	git commit -a -m "HTML rebuild."
 	git push origin master
