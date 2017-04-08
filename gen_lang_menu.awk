@@ -1,6 +1,7 @@
 #!/usr/bin/awk -f
 
 BEGIN {
+    url = "https://github.com/gcallah/algorithms/tree/master/"
     indent1 = "    "
     indent2 = indent1 indent1
     indent3 = indent2 indent1
@@ -24,7 +25,7 @@ BEGIN {
     for (i = 2; i <= NF; i++) {
         yn = "No"
         if($i) {
-            yn = "<a href=\"" langs[i] "/" $1 "\">Yes</a>"
+            yn = "<a href=\"" url langs[i] "/" $1 "\">Yes</a>"
         }
         print indent3 "<td>" yn "</td>"
     }

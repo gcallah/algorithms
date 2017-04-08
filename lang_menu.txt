@@ -21,12 +21,12 @@
         </tr>
         <tr>
             <td>GettingStarted</td>
-            <td><a href="Java/GettingStarted">Yes</a></td>
-            <td><a href="Ruby/GettingStarted">Yes</a></td>
-            <td><a href="Go/GettingStarted">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Java/GettingStarted">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Ruby/GettingStarted">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Go/GettingStarted">Yes</a></td>
             <td>No</td>
-            <td><a href="C++/GettingStarted">Yes</a></td>
-            <td><a href="Python/GettingStarted">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/C++/GettingStarted">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Python/GettingStarted">Yes</a></td>
             <td>No</td>
         </tr>
         <tr>
@@ -41,62 +41,62 @@
         </tr>
         <tr>
             <td>DivideAndConquer</td>
-            <td><a href="Java/DivideAndConquer">Yes</a></td>
-            <td><a href="Ruby/DivideAndConquer">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Java/DivideAndConquer">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Ruby/DivideAndConquer">Yes</a></td>
             <td>No</td>
             <td>No</td>
             <td>No</td>
-            <td><a href="Python/DivideAndConquer">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Python/DivideAndConquer">Yes</a></td>
             <td>No</td>
         </tr>
         <tr>
             <td>RandomizedAlgorithms</td>
-            <td><a href="Java/RandomizedAlgorithms">Yes</a></td>
-            <td><a href="Ruby/RandomizedAlgorithms">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Java/RandomizedAlgorithms">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Ruby/RandomizedAlgorithms">Yes</a></td>
             <td>No</td>
             <td>No</td>
-            <td><a href="C++/RandomizedAlgorithms">Yes</a></td>
-            <td><a href="Python/RandomizedAlgorithms">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/C++/RandomizedAlgorithms">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Python/RandomizedAlgorithms">Yes</a></td>
             <td>No</td>
         </tr>
         <tr>
             <td>Heapsort</td>
-            <td><a href="Java/Heapsort">Yes</a></td>
-            <td><a href="Ruby/Heapsort">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Java/Heapsort">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Ruby/Heapsort">Yes</a></td>
             <td>No</td>
             <td>No</td>
-            <td><a href="C++/Heapsort">Yes</a></td>
-            <td><a href="Python/Heapsort">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/C++/Heapsort">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Python/Heapsort">Yes</a></td>
             <td>No</td>
         </tr>
         <tr>
             <td>Quicksort</td>
             <td>No</td>
-            <td><a href="Ruby/Quicksort">Yes</a></td>
-            <td><a href="Go/Quicksort">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Ruby/Quicksort">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Go/Quicksort">Yes</a></td>
             <td>No</td>
-            <td><a href="C++/Quicksort">Yes</a></td>
-            <td><a href="Python/Quicksort">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/C++/Quicksort">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Python/Quicksort">Yes</a></td>
             <td>No</td>
         </tr>
         <tr>
             <td>SortingInLinearTime</td>
-            <td><a href="Java/SortingInLinearTime">Yes</a></td>
-            <td><a href="Ruby/SortingInLinearTime">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Java/SortingInLinearTime">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Ruby/SortingInLinearTime">Yes</a></td>
             <td>No</td>
             <td>No</td>
-            <td><a href="C++/SortingInLinearTime">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/C++/SortingInLinearTime">Yes</a></td>
             <td>No</td>
             <td>No</td>
         </tr>
         <tr>
             <td>MediansAndOrderStatistics</td>
             <td>No</td>
-            <td><a href="Ruby/MediansAndOrderStatistics">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Ruby/MediansAndOrderStatistics">Yes</a></td>
             <td>No</td>
             <td>No</td>
-            <td><a href="C++/MediansAndOrderStatistics">Yes</a></td>
-            <td><a href="Python/MediansAndOrderStatistics">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/C++/MediansAndOrderStatistics">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Python/MediansAndOrderStatistics">Yes</a></td>
             <td>No</td>
         </tr>
         <tr>
@@ -111,27 +111,27 @@
         </tr>
         <tr>
             <td>HashTables</td>
-            <td><a href="Java/HashTables">Yes</a></td>
-            <td><a href="Ruby/HashTables">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Java/HashTables">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Ruby/HashTables">Yes</a></td>
             <td>No</td>
             <td>No</td>
             <td>No</td>
-            <td><a href="Python/HashTables">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Python/HashTables">Yes</a></td>
             <td>No</td>
         </tr>
         <tr>
             <td>BinarySearchTrees</td>
-            <td><a href="Java/BinarySearchTrees">Yes</a></td>
-            <td><a href="Ruby/BinarySearchTrees">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Java/BinarySearchTrees">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Ruby/BinarySearchTrees">Yes</a></td>
             <td>No</td>
             <td>No</td>
             <td>No</td>
-            <td><a href="Python/BinarySearchTrees">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Python/BinarySearchTrees">Yes</a></td>
             <td>No</td>
         </tr>
         <tr>
             <td>RedBlackTrees</td>
-            <td><a href="Java/RedBlackTrees">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Java/RedBlackTrees">Yes</a></td>
             <td>No</td>
             <td>No</td>
             <td>No</td>
@@ -151,22 +151,22 @@
         </tr>
         <tr>
             <td>DynamicProgramming</td>
-            <td><a href="Java/DynamicProgramming">Yes</a></td>
-            <td><a href="Ruby/DynamicProgramming">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Java/DynamicProgramming">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Ruby/DynamicProgramming">Yes</a></td>
             <td>No</td>
             <td>No</td>
             <td>No</td>
-            <td><a href="Python/DynamicProgramming">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Python/DynamicProgramming">Yes</a></td>
             <td>No</td>
         </tr>
         <tr>
             <td>GreedyAlgorithms</td>
-            <td><a href="Java/GreedyAlgorithms">Yes</a></td>
-            <td><a href="Ruby/GreedyAlgorithms">Yes</a></td>
-            <td><a href="Go/GreedyAlgorithms">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Java/GreedyAlgorithms">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Ruby/GreedyAlgorithms">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Go/GreedyAlgorithms">Yes</a></td>
             <td>No</td>
             <td>No</td>
-            <td><a href="Python/GreedyAlgorithms">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Python/GreedyAlgorithms">Yes</a></td>
             <td>No</td>
         </tr>
         <tr>
@@ -221,12 +221,12 @@
         </tr>
         <tr>
             <td>GraphAlgorithms</td>
-            <td><a href="Java/GraphAlgorithms">Yes</a></td>
-            <td><a href="Ruby/GraphAlgorithms">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Java/GraphAlgorithms">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Ruby/GraphAlgorithms">Yes</a></td>
             <td>No</td>
             <td>No</td>
             <td>No</td>
-            <td><a href="Python/GraphAlgorithms">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Python/GraphAlgorithms">Yes</a></td>
             <td>No</td>
         </tr>
         <tr>
@@ -275,7 +275,7 @@
             <td>No</td>
             <td>No</td>
             <td>No</td>
-            <td><a href="C++/MultithreadedAlgorithms">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/C++/MultithreadedAlgorithms">Yes</a></td>
             <td>No</td>
             <td>No</td>
         </tr>
@@ -356,7 +356,7 @@
             <td>No</td>
             <td>No</td>
             <td>No</td>
-            <td><a href="Python/ApproximationAlgorithms">Yes</a></td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Python/ApproximationAlgorithms">Yes</a></td>
             <td>No</td>
         </tr>
     </table>
