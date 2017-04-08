@@ -1,6 +1,8 @@
-SRCS = $(wildcard *.ptml)
-OBJS = $(wildcard *.html)
 INCS = menu.txt chap_menu.txt chapters.txt lang_menu.txt langs.txt
+
+website: lang_menu 
+	git commit -a -m "HTML rebuild."
+	git push origin master
 
 lang_menu:
 	./gen_lang_bin.awk <chapters.txt >lang_chapter_binary.txt
@@ -8,7 +10,3 @@ lang_menu:
 
 %.html: %.ptml $(INCS)
 	./html_include.awk <$< >$@
-
-website: $(OBJS) $(INCS)
-	git commit -a -m "HTML rebuild."
-	git push origin master
