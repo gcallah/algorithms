@@ -1,0 +1,362 @@
+    <table>
+        <tr>
+            <th>Chapter</th>
+            <th>Java</th>
+            <th>Ruby</th>
+            <th>Go</th>
+            <th>Javascript</th>
+            <th>C++</th>
+            <th>Python</th>
+            <th>Clojure</th>
+        </tr>
+        <tr>
+            <td>TheRoleOfAlgorithms</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>GettingStarted</td>
+            <td><a href="Java/GettingStarted">Yes</a></td>
+            <td><a href="Ruby/GettingStarted">Yes</a></td>
+            <td><a href="Go/GettingStarted">Yes</a></td>
+            <td>No</td>
+            <td><a href="C++/GettingStarted">Yes</a></td>
+            <td><a href="Python/GettingStarted">Yes</a></td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>GrowthOfFunctions</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>DivideAndConquer</td>
+            <td><a href="Java/DivideAndConquer">Yes</a></td>
+            <td><a href="Ruby/DivideAndConquer">Yes</a></td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td><a href="Python/DivideAndConquer">Yes</a></td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>RandomizedAlgorithms</td>
+            <td><a href="Java/RandomizedAlgorithms">Yes</a></td>
+            <td><a href="Ruby/RandomizedAlgorithms">Yes</a></td>
+            <td>No</td>
+            <td>No</td>
+            <td><a href="C++/RandomizedAlgorithms">Yes</a></td>
+            <td><a href="Python/RandomizedAlgorithms">Yes</a></td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>Heapsort</td>
+            <td><a href="Java/Heapsort">Yes</a></td>
+            <td><a href="Ruby/Heapsort">Yes</a></td>
+            <td>No</td>
+            <td>No</td>
+            <td><a href="C++/Heapsort">Yes</a></td>
+            <td><a href="Python/Heapsort">Yes</a></td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>Quicksort</td>
+            <td>No</td>
+            <td><a href="Ruby/Quicksort">Yes</a></td>
+            <td><a href="Go/Quicksort">Yes</a></td>
+            <td>No</td>
+            <td><a href="C++/Quicksort">Yes</a></td>
+            <td><a href="Python/Quicksort">Yes</a></td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>SortingInLinearTime</td>
+            <td><a href="Java/SortingInLinearTime">Yes</a></td>
+            <td><a href="Ruby/SortingInLinearTime">Yes</a></td>
+            <td>No</td>
+            <td>No</td>
+            <td><a href="C++/SortingInLinearTime">Yes</a></td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>MediansAndOrderStatistics</td>
+            <td>No</td>
+            <td><a href="Ruby/MediansAndOrderStatistics">Yes</a></td>
+            <td>No</td>
+            <td>No</td>
+            <td><a href="C++/MediansAndOrderStatistics">Yes</a></td>
+            <td><a href="Python/MediansAndOrderStatistics">Yes</a></td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>ElementaryDataStructures</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>HashTables</td>
+            <td><a href="Java/HashTables">Yes</a></td>
+            <td><a href="Ruby/HashTables">Yes</a></td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td><a href="Python/HashTables">Yes</a></td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>BinarySearchTrees</td>
+            <td><a href="Java/BinarySearchTrees">Yes</a></td>
+            <td><a href="Ruby/BinarySearchTrees">Yes</a></td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td><a href="Python/BinarySearchTrees">Yes</a></td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>RedBlackTrees</td>
+            <td><a href="Java/RedBlackTrees">Yes</a></td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>AugmentingDataStructures</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>DynamicProgramming</td>
+            <td><a href="Java/DynamicProgramming">Yes</a></td>
+            <td><a href="Ruby/DynamicProgramming">Yes</a></td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td><a href="Python/DynamicProgramming">Yes</a></td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>GreedyAlgorithms</td>
+            <td><a href="Java/GreedyAlgorithms">Yes</a></td>
+            <td><a href="Ruby/GreedyAlgorithms">Yes</a></td>
+            <td><a href="Go/GreedyAlgorithms">Yes</a></td>
+            <td>No</td>
+            <td>No</td>
+            <td><a href="Python/GreedyAlgorithms">Yes</a></td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>AmortizedAnalysis</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>BTrees</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>FibonacciHeaps</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>vanEmdeBoasTrees</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>DataStructuresForDisjointSets</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>GraphAlgorithms</td>
+            <td><a href="Java/GraphAlgorithms">Yes</a></td>
+            <td><a href="Ruby/GraphAlgorithms">Yes</a></td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td><a href="Python/GraphAlgorithms">Yes</a></td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>MinimumSpanningTrees</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>SingleSourceShortestPaths</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>AllPairsShortestPaths</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>MaximumFlow</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>MultithreadedAlgorithms</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td><a href="C++/MultithreadedAlgorithms">Yes</a></td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>MatrixOperations</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>LinearProgramming</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>PolynomialsAndTheFFT</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>NumberTheoreticAlgorithms</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>StringMatching</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>ComputationalGeometry</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>NPCompleteness</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>ApproximationAlgorithms</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+            <td><a href="Python/ApproximationAlgorithms">Yes</a></td>
+            <td>No</td>
+        </tr>
+    </table>

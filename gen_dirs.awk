@@ -25,8 +25,8 @@ BEGIN {
         else {
             print "We are going to add " new_dir
             if (system( "mkdir " new_dir) == 0) {
-                system( "touch " new_dir "/README")
-                system( "git add " new_dir "/README")                
+                system( "touch " new_dir "/README.md")
+                system( "git add " new_dir "/README.md")                
             }
         }
     }
