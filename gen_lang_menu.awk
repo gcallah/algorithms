@@ -20,15 +20,20 @@ BEGIN {
 }
 
 {
+    chap = $1
+    chap_langs = chap "_langs.txt"
     tr()
-    print indent3 "<td>" $1 "</td>"
+    print indent3 "<td>" chap "</td>"
+    print indent3 "" > chap_langs
     for (i = 2; i <= NF; i++) {
         yn = "No"
         if($i) {
-            yn = "<a href=\"" url langs[i] "/" $1 "\">Yes</a>"
+            yn = "<a href=\"" url langs[i] "/" chap "\">Yes</a>"
+            print "<a href=\"" url langs[i] "/" chap "\">" langs[i] "</a>" >> chap_langs
         }
         print indent3 "<td>" yn "</td>"
     }
+    close(chap_langs)
     endtr()
 }
 

@@ -1,6 +1,6 @@
 CHAPTER Java Ruby Go Javascript C++ Python Clojure
 TheRoleOfAlgorithms 0  0  0  0  0  0  0 
-GettingStarted 1  1  1  0  1  1  0 
+GettingStarted 1  1  1  0  1  1  1 
 GrowthOfFunctions 0  0  0  0  0  0  0 
 DivideAndConquer 1  1  0  0  0  1  0 
 RandomizedAlgorithms 1  1  0  0  1  1  0 
@@ -13,7 +13,7 @@ HashTables 1  1  0  0  0  1  0
 BinarySearchTrees 1  1  0  0  0  1  0 
 RedBlackTrees 1  0  0  0  0  0  0 
 AugmentingDataStructures 0  0  0  0  0  0  0 
-DynamicProgramming 1  1  0  0  0  1  0 
+DynamicProgramming 1  1  0  0  0  1  1 
 GreedyAlgorithms 1  1  1  0  0  1  0 
 AmortizedAnalysis 0  0  0  0  0  0  0 
 BTrees 0  0  0  0  0  0  0 
