@@ -9,7 +9,7 @@ BEGIN {
     while((getline < file ) > 0 ) {
     	print $0
     }
-
+    next
 }
 
 { print }
