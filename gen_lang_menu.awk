@@ -29,7 +29,7 @@ BEGIN {
         yn = "No"
         if($i) {
             yn = "<a href=\"" url langs[i] "/" chap "\">Yes</a>"
-            print "<a href=\"" url langs[i] "/" chap "\">" langs[i] "</a>" >> chap_langs
+            print "<a href=\"" url langs[i] "/" chap "\">" langs[i] "</a><br>" >> chap_langs
         }
         print indent3 "<td>" yn "</td>"
     }
