@@ -29,7 +29,7 @@
             </div>
 
             <h2>
-                Minimum spanning trees
+                Overview
             </h2>
 
                 <p>
@@ -51,15 +51,75 @@
                         social network.
                 </ul>
                 <p>
-                Our first greedy algorithm.
+                This problem can be solved using a greedy algorithm.
                 <br>
                 <br>
-                Weighted graph.
+                It runs on a weighted graph. (On an unweighted graph, all
+                spanning trees are minimal: tree property E = V - 1.)
                 </p>
 
-                <h4>
-                    Kruskal's Algorithm
-                </h4>
+            <h2>
+                The Generic MST Algorithm
+            </h2>
+
+                <p>
+                    Generic-MST(<i>G</i>, <i>w</i>)
+                    <br>
+                    <i>A</i> = &empty;
+                    <br>
+                    <b>while</b> <i>A</i> does not form a spanning tree
+                    <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; fine an edge (<i>u</i>, <i>v</i>) that is
+                    safe for <i>A</i>
+                    <br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; <i>A</i> =
+                        <i>A</i> &cup; {(<i>u</i>, <i>v</i>)}
+                    <br>
+                    return <i>A</i>
+                    <br>
+                </p>
+
+                <p>
+                <b>Loop invariants:</b>
+                <br>
+                </p>
+
+                <h3>
+                    Finding a "safe" edge
+                </h3>
+
+                <p>
+                How do we find a safe edge?
+                <br>
+                One must exist, since we are working with a connected graph,
+                and <i>A</i> is at all times a part of an MST.
+                <br>
+                <b>Definition</b>:
+                a cut (<i>S</i>, <i>V</i> - <i>S</i>) of an
+                undirected graph <i>G</i> = (<i>V</i>, <i>E</i>) is a
+                partition of <i>V</i>.
+                <br>
+                <b>Definition</b>:
+                an edge (<i>u</i>, <i>v</i>) crosses the cut (<i>S</i>,
+                <i>V</i> - <i>S</i>) if one of its
+                endpoints is in <i>S</i> and the other in <i>V</i>.
+                <br>
+                <b>Definition</b>:
+                a cut <b>respects</b> a set <i>A</i> of edges
+                if no edge in <i>A</i> crosses
+                the cut.
+                <br>
+                <b>Definition</b>:
+                An edge is a <b>light edge</b> crossing a cut if its weight is
+                minimum among all edges crossing the cut. Uniqueness is not
+                required. This can be generalized to properties other than
+                crossing.
+                </p>
+
+
+            <h2>
+                Kruskal's Algorithm
+            </h2>
 
                 <p>
                 <img src="graphics/MinSpanTree1.png">
@@ -137,6 +197,11 @@
                 </ul>
 
             <h2>
+                Prim's Algorithm
+            </h2>
+
+
+            <h2>
                 Source Code
             </h2>
             
@@ -145,9 +210,17 @@
                 External Links
             </h2>
                 <ul>
-                    <li><a href="https://en.wikipedia.org/wiki/Algorithm">
-                            Algorithm
-                        </a>.
+                    <li>
+                        <a
+                         href="https://en.wikipedia.org/wiki/Minimum_spanning_tree">
+                            Minimum Spanning Tree (Wikipedia)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=YyLaRffCdk4">
+                            Prim's Algorithm (Khan Academy)
+                        </a>
+                    </li>
                 </ul>
             
             <h2>
