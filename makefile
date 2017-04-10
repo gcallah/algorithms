@@ -12,8 +12,8 @@ lang_menu.txt: lang_chapter_binary.txt
 lang_chapter_binary.txt: chapters.txt langs.txt
 	./gen_lang_bin.awk <chapters.txt >lang_chapter_binary.txt
 	
-menu.txt: chapters.txt
-	./gen_chaps.awk <chapters.txt >menu.txt
+chap_menu.txt: chapters.txt
+	./gen_chaps.awk <chapters.txt >chap_menu.txt
 
 $(HTML_FILES): $(PTML_FILES) $(INCS)
 	./html_include.awk <$< >$@

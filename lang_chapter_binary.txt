@@ -5,10 +5,10 @@ GrowthOfFunctions 0  0  0  0  0  0  0
 DivideAndConquer 1  1  0  0  0  1  0 
 RandomizedAlgorithms 1  1  0  0  1  1  0 
 Heapsort 1  1  0  0  1  1  0 
-Quicksort 0  1  1  0  1  1  0 
+Quicksort 1  1  1  0  1  1  0 
 SortingInLinearTime 1  1  0  0  1  0  0 
 MediansAndOrderStatistics 0  1  0  0  1  1  0 
-ElementaryDataStructures 0  0  0  0  0  0  0 
+ElementaryDataStructures 1  0  0  0  0  0  0 
 HashTables 1  1  0  0  0  1  0 
 BinarySearchTrees 1  1  0  0  0  1  0 
 RedBlackTrees 1  0  0  0  0  0  0 

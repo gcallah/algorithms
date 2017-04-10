@@ -71,7 +71,7 @@
         </tr>
         <tr>
             <td>Quicksort</td>
-            <td>No</td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Java/Quicksort">Yes</a></td>
             <td><a href="https://github.com/gcallah/algorithms/tree/master/Ruby/Quicksort">Yes</a></td>
             <td><a href="https://github.com/gcallah/algorithms/tree/master/Go/Quicksort">Yes</a></td>
             <td>No</td>
@@ -101,7 +101,7 @@
         </tr>
         <tr>
             <td>ElementaryDataStructures</td>
-            <td>No</td>
+            <td><a href="https://github.com/gcallah/algorithms/tree/master/Java/ElementaryDataStructures">Yes</a></td>
             <td>No</td>
             <td>No</td>
             <td>No</td>
