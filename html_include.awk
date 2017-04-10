@@ -1,5 +1,7 @@
 #!/usr/bin/awk -f
 # this file preprocesses HTML files to put in includes
+# It looks for lines beginning with <!--include and takes the next bit as 
+# a file name to include.
 
 BEGIN {
 }

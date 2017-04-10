@@ -19,19 +19,117 @@
             </div>
 
             <h2>
-                Overview
+                Minimum spanning trees
             </h2>
+
+                <p>
+                <b>Tree</b>: A connected graph with no cycles.
+                <br>
+                Given a graph G, any tree that includes all of the vertices
+                of G is called a <i>spanning tree</i>. The lowest-weight tree
+                that does that is a <i>minimum spanning tree</i>.
+                <br>
+                <br>
+                These are used to solve problems such as:
+                </p>
+                <ul>
+                    <li>Lowest cost way to bring a package between two
+                        cities.
+                    <li>Most efficient way to connect two components on a
+                        circuit board.
+                    <li>Most efficient way to connect two strangers in a
+                        social network.
+                </ul>
+                <p>
+                Our first greedy algorithm.
+                <br>
+                <br>
+                Weighted graph.
+                </p>
+
+                <h4>
+                    Kruskal's Algorithm
+                </h4>
+
+                <p>
+                <img src="graphics/MinSpanTree1.png">
+                <br>
+                <br>
+                We add edges in increasing-cost order, so long as the edges
+                don't create a cycle (are "safe").
+                <br>
+                Steps:
+                </p>
+                <ul>
+                    <li>Include the edge weighted 1.
+                    <li>Include both edges weighted 2.
+                    <li>Include the edge weighted 3.
+                    <li>Include the upper
+                        and lower edges weighted 4.
+                        (Not the middle one!)
+                    <li>Include the lone edge weighted 5.
+                    <li>Include the edge weighted 6.
+                </ul>
+                <p>
+                <img src="graphics/MinSpanTree2.png">
+                <br>
+                <br>
+                <b>Proof</b>: Is Kruskal's algorithm guaranteed to always
+                find the minimum spanning tree?
+                <br>
+                Yes, it is. Let's prove it. 
+                <br>
+                We suppose that graph <i>G</i> has <i>n</i> vertices.
+                Then our algorithm will create a tree <i>T</i>
+                with edges <i>e<sub>1</sub></i>, <i>e<sub>2</sub></i>,
+                ...  <i>e<sub>n - 1</sub></i>, where 
+                <i>w(e<sub>1</sub>) &le; w(e<sub>2</sub>)
+                    &le; ... w(e<sub>n - 1</sub>)</i>.
+                <br>
+                Suppose that there is a tree <i>T*</i> with a lesser
+                weight.
+                <br>
+                Let <i>e<sub>k</sub></i> be the first edge in <i>T</i>
+                that is not in <i>T*</i>.
+                <br>
+                Now we insert <i>e<sub>k</sub></i> in <i>T*</i>. This will
+                produce a cycle in <i>T*</i>, by the nature of trees.
+                There must be some edge <i>e<sup>*</sup></i> that is in
+                <i>T*</i> but not in <i>T</i> (otherwise <i>T</i> would
+                have a cycle).
+                <br>
+
+                <img src="graphics/Kruskal.png">
+                <br>
+                But the weight of <i>e<sub>k</sub></i> must be less than
+                the weight of <i>e<sup>*</sup></i>, because after we had
+                inserted <i>e<sub>1</sub></i> through 
+                <i>e<sub>k - 1</sub></i>, we could have next chosen
+                <i>e<sup>*</sup></i>... but we did not. Instead we chose
+                <i>e<sub>k</sub></i>.
+                <br>
+                So <i>T*</i> does not have a lesser weight after all.
+                </p>
+
+                <h4>
+                    How to find safe edges
+                </h4>
+
+                <ul>
+                    <li>Place each vertex in its own set. (We now have a
+                        <i>forest</i> of one-vertex, unconnected trees.)
+                    <li>We examine edges (<i>u, v</i>) in non-decreasing order.
+                    <li>If <i>u</i> and <i>v</i> are not in the same set (tree), add the
+                        edge. (It is safe.)
+                    <li>If <i>u</i> and <i>v</i> are in the same set, adding the edge
+                        would create a cycle (by the nature of trees, E = V
+                        - 1).
+                </ul>
 
             <h2>
                 Source Code
             </h2>
-            <p>
-            <a
-                href="https://github.com/gcallah/algorithms/blob/master/Python/">
-                Python
-            </a>
-            <br>
-            </p>
+<!--include MinimumSpanningTrees_langs.txt -->
 
             <h2>
                 External Links
