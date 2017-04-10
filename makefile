@@ -15,4 +15,4 @@ chap_menu.txt: chapters.txt
 	./gen_chaps.awk <chapters.txt >chap_menu.txt
  
 %.html: %.ptml
-	   ./html_include.awk <$ > $@
+	./html_include.awk <$< >$@
