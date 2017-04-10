@@ -1,5 +1,4 @@
 INCS = menu.txt chap_menu.txt lang_menu.txt 
-PTMLFILES = $(wildcard *.ptml)
 HTMLFILES = $(shell ls *.ptml | sed -e 's/ptml/html/g')
 
 website: lang_menu.txt menu.txt $(HTML_FILES)
@@ -14,6 +13,6 @@ lang_chapter_binary.txt: chapters.txt langs.txt
 	
 chap_menu.txt: chapters.txt
 	./gen_chaps.awk <chapters.txt >chap_menu.txt
-
-$(HTML_FILES): $(PTML_FILES) $(INCS)
-	./html_include.awk <$< >$@
+ 
+%.html: %.ptml
+	   ./html_include.awk <$ > $@
