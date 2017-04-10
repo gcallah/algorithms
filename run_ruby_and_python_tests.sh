@@ -5,4 +5,4 @@ else
     exit 1
 fi
 
-py.test Python/
+# py.test Python/

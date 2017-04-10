@@ -1,6 +1,6 @@
 #!/usr/bin/awk -f
 
-# This program generates the program dirs for the Algorithm Museum's languages.
+# This program generates the language menu for the Algorithm Museum's languages.
 # It reads langs.txt to get the language list, and stdin for the chapter names.
 
 BEGIN {
@@ -10,7 +10,7 @@ BEGIN {
     	langs[$1] = $2  # record each language and ext
     }
     for (lang in langs) {
-        header = header " " lang " |"
+        header = header " " lang
     }
     print header
 }
