@@ -15,6 +15,7 @@ This file contains:
     memo_cut_rod()
     memo_cut_rod_aux()
     bottom_up_cut_rod():
+    matrix_chain_order()
 """
 
 import sys
