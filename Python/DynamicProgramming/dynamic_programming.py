@@ -217,20 +217,18 @@ def matrix_chain_order(p):
     s = [[-1 for x in range(n)] for x in range(n)]
 
     for l in range(2, n + 1):
-        print("Working on chain length: " + str(l)
-             + " n = " + str(n))
+        print("Working on chain length: " + str(l))
         for i in range(0, n - l + 1):
-            print("i = " + str(i))
             j = i + l - 1
-            print("j = " + str(j))
-            j = i + l - 1
+            print("i = " + str(i) + "; j = " + str(j))
             m[i][j] = BIG_NUM
             for k in range(i, j):
                 print("k = " + str(k))
-                print("Cost = m[i][k] " + str(m[i][k]) +
-                        " + m[k + 1][j] " + str(m[k + 1][j]) +
-                        " + p[i] * p[k + 1] * p[j + 1] " +
-                        str(p[i]) + " " + str(p[k + 1]) + " " + str(p[j + 1]))
+                print("Cost = m[i][k] (" + str(m[i][k]) +
+                        ") + m[k+1][j] (" + str(m[k + 1][j]) +
+                        ") + p[i] (" + str(p[i]) +
+                        ") * p[k+1] (" + str(p[k + 1]) +
+                        ") * p[j+1] (" + str(p[j + 1]) + ")")
                 q = (m[i][k] + m[k + 1][j]
                     + (p[i] * p[k+1] * p[j+1]))
                 print("Comparing q = " + str(q) 
