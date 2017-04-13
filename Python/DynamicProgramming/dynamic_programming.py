@@ -217,7 +217,8 @@ def matrix_chain_order(p):
     s = [[-1 for x in range(n)] for x in range(n)]
 
     for l in range(2, n + 1):
-        print("Working on chain length: " + str(l))
+        print("Working on chain length: " + str(l)
+             + " n = " + str(n))
         for i in range(0, n - l + 1):
             print("i = " + str(i))
             j = i + l - 1
@@ -225,6 +226,7 @@ def matrix_chain_order(p):
             j = i + l - 1
             m[i][j] = BIG_NUM
             for k in range(i, j):
+                print("k = " + str(k))
                 print("Cost = m[i][k] " + str(m[i][k]) +
                         " + m[k + 1][j] " + str(m[k + 1][j]) +
                         " + p[i] * p[k + 1] * p[j + 1] " +
@@ -260,5 +262,6 @@ def print_optimal_parens(s, i, j):
 
 
 
-dtest = [30, 35, 15, 5, 10, 20, 25]
-small_dims = [10, 100, 100, 5, 5, 50]
+clrs_test = [30, 35, 15, 5, 10, 20, 25]  # from page 376
+small_dims = [10, 100, 5, 50]
+min_dims = [10, 100, 5]

@@ -418,6 +418,22 @@
                     the parentheses go.
                 </p>
 
+                <p>
+                    Here is the code from our textbook, implemented in 
+                    <a
+                    href="https://github.com/gcallah/algorithms/blob/master/Python/DynamicProgramming/">
+                    Python</a>,
+
+                    runnning on the example where A<sub>1</sub> is 10 x 100,
+                    A<sub>2</sub> is 100 x 5, and A<sub>3</sub> is 5 x 50:
+                </p>
+
+                <figure>
+                <img src="graphics/MatrixChainRun.jpg">
+                <figcaption>
+                The actual output of our Python code.
+                </figcaption>
+                </figure>
                 <h4>
                     Memoization
                 </h4>
