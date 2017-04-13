@@ -201,42 +201,51 @@ On to determining optimal matrix multiplication order.
 BIG_NUM = sys.maxsize
 
 
-def matrix_chain_order(dims):
+def matrix_chain_order(p):
     """
         Args:
-            dims: a list of dimensions so that 
+            p: a list of dimensions so that 
             matrix i's dimensions are found at
-            dims[i - 1] and dims[i].
+            p[i - 1] and p[i].
         Returns:
-            list of costs and list of indices for parenthisation
+            list of m and list of s for parenthisation
     """
-    n = len(dims) - 1
-    costs = [[BIG_NUM for x in range(n)] for x in range(n)] 
+    n = len(p) - 1
+    m = [[BIG_NUM for x in range(n)] for x in range(n)] 
     for i in range(n):
-        costs[i][i] = 0
-    indices = [[-1 for x in range(n)] for x in range(n)]
+        m[i][i] = 0
+    s = [[-1 for x in range(n)] for x in range(n)]
 
     for l in range(2, n + 1):
-        for i in range(n - l + 1):
+        print("Working on chain length: " + str(l))
+        for i in range(0, n - l + 1):
+            print("i = " + str(i))
             j = i + l - 1
-            costs[i][j] = BIG_NUM
+            print("j = " + str(j))
+            j = i + l - 1
+            m[i][j] = BIG_NUM
             for k in range(i, j):
-                q = (costs[i][k] + costs[k + 1][j]
-                    + (dims[i] * dims[k+1] * dims[j+1]))
+                print("Cost = m[i][k] " + str(m[i][k]) +
+                        " + m[k + 1][j] " + str(m[k + 1][j]) +
+                        " + p[i] * p[k + 1] * p[j + 1] " +
+                        str(p[i]) + " " + str(p[k + 1]) + " " + str(p[j + 1]))
+                q = (m[i][k] + m[k + 1][j]
+                    + (p[i] * p[k+1] * p[j+1]))
                 print("Comparing q = " + str(q) 
-                      + " with costs[i][j] = "
-                      + str(costs[i][j]) + " with i = "
-                      + str(i) + " and j = " + str(j))
-                if q < costs[i][j]:
-                    costs[i][j] = q
-                    indices[i][j] = k
-    return (costs, indices)
+                      + " with m[i][j] = "
+                      + str(m[i][j]) + " with i = "
+                      + str(i) + " and j = " + str(j)
+                      + " and k = " + str(k))
+                if q < m[i][j]:
+                    m[i][j] = q
+                    s[i][j] = k
+    return (m, s)
 
 
-def print_optimal_parens(indices, i, j):
+def print_optimal_parens(s, i, j):
     """
         Args:
-            indices: the list returned by matrix_chain_order()
+            s: the list returned by matrix_chain_order()
             i: start index
             j: end index
         Returns: None; prints results.
@@ -245,10 +254,11 @@ def print_optimal_parens(indices, i, j):
         print(" A", end="")
     else:
         print("(", end="")
-        print_optimal_parens(indices, i, indices[i][j])
-        print_optimal_parens(indices, indices[i][j] + 1, j)
+        print_optimal_parens(s, i, s[i][j])
+        print_optimal_parens(s, s[i][j] + 1, j)
         print(")", end="")
 
 
 
 dtest = [30, 35, 15, 5, 10, 20, 25]
+small_dims = [10, 100, 100, 5, 5, 50]
