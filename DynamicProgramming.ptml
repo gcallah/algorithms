@@ -315,9 +315,7 @@
                     are not the same.
                 </p>
                 <details>
-                    <p>
-                    &nbsp; &nbsp; &nbsp; <summary><b>The reason</b></summary>
-                    </p>
+                    <summary><b>The reason</b></summary>
 
                     <p>
                     In rod cutting, a cut of 4-2-2 is the <i>same cut</i> as a
@@ -581,6 +579,7 @@
                 <p>
                     If a binary search tree is optimally construted, then both
                     its left and right sub-trees must be optimally constructed.
+                    The usual "cut-and-paste" argument applies.
                 </p>
 
 
