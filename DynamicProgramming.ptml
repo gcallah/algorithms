@@ -327,7 +327,7 @@
                     are not the same.
                 </p>
                 <details>
-                    <summary><b>The reason</b></summary>
+                    <summary id="sum4"><b>The reason</b></summary>
 
                     <p>
                     In rod cutting, a cut of 4-2-2 is the <i>same cut</i> as a

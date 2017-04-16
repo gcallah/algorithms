@@ -47,7 +47,7 @@ ol, ul, dl {
     margin: 16px 40px 16px 40px;
 }
 
-p {
+p, summary#sum4 {
     margin: 8px 40px 8px 40px;
     padding: 0;
     line-height: 140%;
