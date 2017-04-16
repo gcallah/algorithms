@@ -1,7 +1,7 @@
 INCS = menu.txt chap_menu.txt lang_menu.txt 
 HTMLFILES = $(shell ls *.ptml | sed -e 's/ptml/html/g')
 
-website: lang_menu.txt menu.txt $(HTMLFILES)
+website: $(INCS) $(HTMLFILES)
 	git commit -a -m "HTML rebuild."
 	git push origin master
  

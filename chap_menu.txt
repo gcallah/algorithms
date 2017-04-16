@@ -1,47 +1,39 @@
-
-        <h2>
-            I.  Foundations
-        </h2>
-            <h3>
-                <a href="TheRoleOfAlgorithms.html">
-                1.  The Role Of Algorithms
-                </a>
-            </h3>
-            <h3>
-                <a href="GettingStarted.html">
-                2.  Getting Started
-                </a>
-            </h3>
-            <h3>
-                <a href="GrowthOfFunctions.html">
-                3.  Growth Of Functions
-                </a>
-            </h3>
-            <h3>
-                <a href="DivideAndConquer.html">
-                4.  Divide And Conquer
-                </a>
-            </h3>
-            <h3>
-                <a href="RandomizedAlgorithms.html">
-                5.  Randomized Algorithms
-                </a>
-            </h3>
-        <h2>
-            II.  Sorting And Order Statistics
-        </h2>
-            <h3>
-                <a href="Heapsort.html">
-                6.  Heapsort
-                </a>
-            </h3>
-            <h3>
-                <a href="Quicksort.html">
-                7.  Quicksort
-                </a>
-            </h3>
-            <h3>
-                <a href="SortingInLinearTime.html">
+TheRoleOfAlgorithms.ptml already exists.
+GettingStarted.ptml already exists.
+GrowthOfFunctions.ptml already exists.
+DivideAndConquer.ptml already exists.
+RandomizedAlgorithms.ptml already exists.
+Heapsort.ptml already exists.
+Quicksort.ptml already exists.
+SortingInLinearTime.ptml already exists.
+MediansAndOrderStatistics.ptml already exists.
+ElementaryDataStructures.ptml already exists.
+HashTables.ptml already exists.
+BinarySearchTrees.ptml already exists.
+RedBlackTrees.ptml already exists.
+AugmentingDataStructures.ptml already exists.
+DynamicProgramming.ptml already exists.
+GreedyAlgorithms.ptml already exists.
+AmortizedAnalysis.ptml already exists.
+BTrees.ptml already exists.
+FibonacciHeaps.ptml already exists.
+vanEmdeBoasTrees.ptml already exists.
+DataStructuresForDisjointSets.ptml already exists.
+GraphAlgorithms.ptml already exists.
+MinimumSpanningTrees.ptml already exists.
+SingleSourceShortestPaths.ptml already exists.
+AllPairsShortestPaths.ptml already exists.
+MaximumFlow.ptml already exists.
+MultithreadedAlgorithms.ptml already exists.
+MatrixOperations.ptml already exists.
+LinearProgramming.ptml already exists.
+PolynomialsAndTheFFT.ptml already exists.
+NumberTheoreticAlgorithms.ptml already exists.
+StringMatching.ptml already exists.
+ComputationalGeometry.ptml already exists.
+NPCompleteness.ptml already exists.
+ApproximationAlgorithms.ptml already exists.
+nLinearTime.html">
                 8.  Sorting In Linear Time
                 </a>
             </h3>
@@ -50,9 +42,14 @@
                 9.  Medians And Order Statistics
                 </a>
             </h3>
+            </details>
         <h2>
             III.  Data Structures
         </h2>
+            <details>
+            <summary>
+            Chapters
+            </summary>
             <h3>
                 <a href="ElementaryDataStructures.html">
                 10.  Elementary Data Structures
@@ -78,9 +75,14 @@
                 14.  Augmenting Data Structures
                 </a>
             </h3>
+            </details>
         <h2>
             IV.  Advanced Design And Analysis Techniques
         </h2>
+            <details>
+            <summary>
+            Chapters
+            </summary>
             <h3>
                 <a href="DynamicProgramming.html">
                 15.  Dynamic Programming
@@ -96,9 +98,14 @@
                 17.  Amortized Analysis
                 </a>
             </h3>
+            </details>
         <h2>
             V.  Advanced Data Structures
         </h2>
+            <details>
+            <summary>
+            Chapters
+            </summary>
             <h3>
                 <a href="BTrees.html">
                 18.  B Trees
@@ -119,9 +126,14 @@
                 21.  Data Structures For Disjoint Sets
                 </a>
             </h3>
+            </details>
         <h2>
             VI.  Graph Algorithms
         </h2>
+            <details>
+            <summary>
+            Chapters
+            </summary>
             <h3>
                 <a href="GraphAlgorithms.html">
                 22.  Graph Algorithms
@@ -147,9 +159,14 @@
                 26.  Maximum Flow
                 </a>
             </h3>
+            </details>
         <h2>
             VII.  Selected Topics
         </h2>
+            <details>
+            <summary>
+            Chapters
+            </summary>
             <h3>
                 <a href="MultithreadedAlgorithms.html">
                 27.  Multithreaded Algorithms
@@ -195,3 +212,4 @@
                 35.  Approximation Algorithms
                 </a>
             </h3>
+</details>
