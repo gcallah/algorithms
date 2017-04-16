@@ -16,15 +16,25 @@ BEGIN {
     print "" > menu   # because we don't want a cumulative menu for each run!
 }
 
+END {
+    print "</details>" >> menu
+}
+
+
 /^$/ { }       # blank lines allowed
 
 /^\;/ { }      # allows comments in the chapter file
 
 /^[IVXLCM]/ {   # a major section name
+    if($0 != "I") print indent3 "</details>" >> menu
     sect_nm = split_on_caps($2)
     print indent2 "<h2>" >> menu
     print indent3 $1 ". " sect_nm >> menu
     print indent2 "</h2>" >> menu
+    print indent3 "<details>" >> menu
+    print indent3 "<summary>" >> menu
+    print indent3 "Chapters" >> menu
+    print indent3 "</summary>" >> menu
 }
 
 /^[0-9]/ {     # this is a chapter name

@@ -21,7 +21,7 @@ FibonacciHeaps 0  0  0  0  0  0  0
 vanEmdeBoasTrees 0  0  0  0  0  0  0 
 DataStructuresForDisjointSets 0  0  0  0  0  0  0 
 GraphAlgorithms 1  1  0  0  0  1  0 
-MinimumSpanningTrees 0  0  0  0  0  0  0 
+MinimumSpanningTrees 0  0  0  0  0  1  0 
 SingleSourceShortestPaths 0  0  0  0  0  0  0 
 AllPairsShortestPaths 0  0  0  0  0  0  0 
 MaximumFlow 0  0  0  0  0  0  0 
