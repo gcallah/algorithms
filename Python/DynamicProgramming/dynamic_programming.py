@@ -260,6 +260,7 @@ def print_optimal_parens(s, i, j):
 
 
 
-clrs_test = [30, 35, 15, 5, 10, 20, 25]  # from page 376
-small_dims = [10, 100, 5, 50]
-min_dims = [10, 100, 5]
+M2 = [10, 100, 5]
+M3 = [10, 100, 5, 50]
+M4 = [10, 100, 5, 50, 80]
+clrs_test = [30, 35, 15, 5, 10, 20, 25]  # this is the example from page 376
