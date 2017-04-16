@@ -211,19 +211,19 @@ figcaption {
 }
 
 summary#sum1 {
-    font-size: 22px;
+    font-size: 24px;
     color: #cbe;
     margin: 8px 24px 8px 24px;
 }
 
 summary#sum2 {
-    font-size: 20px;
-    color: #633;
+    font-size: 22px;
+    color: #245;
     margin: 8px 32px 8px 32px;
 }
 
 summary#sum3 {
-    font-size: 18px;
+    font-size: 20px;
     color: #339;
     margin: 8px 40px 8px 40px;
 }
