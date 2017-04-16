@@ -29,13 +29,10 @@
                 </p>
             </div>
 
-            <h2>
-                Topics
-            </h2>
-
-            <h3>
+            <details>
+            <summary id="sum2">
                 Introduction
-            </h3>
+            </summary>
                 <p>
                 What is this?
                 </p>
@@ -49,52 +46,54 @@
                         solution for the original problem.
                 </ul>
 
-            <h4>
-                Recurrences
-            </h4>
-                <p>
-                Merge sort recurrence:
-                <br>
-                <br>
-                <img src="graphics/RecEq1.gif">
-                <br>
-                <br>
-                We "solve" these by finding a closed-form equation that
-                describes the recurrence but without recursion.
-                <br>
-                <b>Solution</b>: T(n) = &Theta;(n lg n)
+                <h4>
+                    Recurrences
+                </h4>
+                    <p>
+                    Merge sort recurrence:
+                    <br>
+                    <br>
+                    <img src="graphics/RecEq1.gif">
+                    <br>
+                    <br>
+                    We "solve" these by finding a closed-form equation that
+                    describes the recurrence but without recursion.
+                    <br>
+                    <b>Solution</b>: T(n) = &Theta;(n lg n)
+        
+                    <br>
+                    <br>
+                    <b>Methods</b>:
+                    <br>
+                    </p>
+                    <ul>
+                        <li><b>Substitution method</b>: Guess a solution and then use
+                            induction to prove it.
+                        <li><b>Recursive-tree method</b>: Convert the recurrence into a
+                            tree whose nodes represent costs incurred at each level.
+                        <li><b>Master method</b>:
+                            <br>
+                            Solves recurrences of the form:
+                            <br>
+                            T(n) = aT(n / b) + f(n)
+                            <br>
+                            where a &ge; 1, b &gt; 1.
+                    </ul>
     
-                <br>
-                <br>
-                <b>Methods</b>:
-                <br>
-                </p>
-                <ul>
-                    <li><b>Substitution method</b>: Guess a solution and then use
-                        induction to prove it.
-                    <li><b>Recursive-tree method</b>: Convert the recurrence into a
-                        tree whose nodes represent costs incurred at each level.
-                    <li><b>Master method</b>:
-                        <br>
-                        Solves recurrences of the form:
-                        <br>
-                        T(n) = aT(n / b) + f(n)
-                        <br>
-                        where a &ge; 1, b &gt; 1.
-                </ul>
-
-                <p>
-                <br>
-                <b>Technicalities</b>
-                <br>
-                We often omit floors, ceilings, and boundary conditions. For
-                instance, if n is odd, we may say n / 2 anyway.
-                </p>
+                    <p>
+                    <br>
+                    <b>Technicalities</b>
+                    <br>
+                    We often omit floors, ceilings, and boundary conditions. For
+                    instance, if n is odd, we may say n / 2 anyway.
+                    </p>
+            </details>
     
     
-                <h3>
+            <details>
+                <summary id="sum2">
                     The maximum-subarray problem
-                </h3>
+                </summary>
                 <p>
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Maximum_Subarray_Visualization.svg/220px-Maximum_Subarray_Visualization.svg.png">
@@ -107,57 +106,59 @@
                 <br>
                 </p>
 
-            <h4>
-                Brute-force solution
-            </h4>
-                <p>
-                Try every combination of two elements!
-                <br>
-                A n choose 2 problem, so order of &Omega;(n<sup>2</sup>).
-                <br>
-                n choose 2 will be about 1/2 n<sup>2</sup>, since it equals
-                n(n - 1) / 2. So we can establish a lower bound by setting c =
-                1/3, for instance, and n choose 2 will always be bounded from
-                below by c*n<sup>2</sup>.
+                <h4>
+                    Brute-force solution
+                </h4>
+                    <p>
+                    Try every combination of two elements!
+                    <br>
+                    A n choose 2 problem, so order of &Omega;(n<sup>2</sup>).
+                    <br>
+                    n choose 2 will be about 1/2 n<sup>2</sup>, since it equals
+                    n(n - 1) / 2. So we can establish a lower bound by setting c =
+                    1/3, for instance, and n choose 2 will always be bounded from
+                    below by c*n<sup>2</sup>.
+        
+                    </p>
     
+                <h4>
+                    A transformation
+                </h4>
+    
+                <p>
+                We loon at the problem differently: let's find the nonempty,
+                contiguous subarray of our array whose values have the largest sum.
+                We call this the <b>maximum subarray</b>.
                 </p>
-
-            <h4>
-                A transformation
-            </h4>
-
-            <p>
-            We loon at the problem differently: let's find the nonempty,
-            contiguous subarray of our array whose values have the largest sum.
-            We call this the <b>maximum subarray</b>.
-            </p>
-
-            <h4>
-                A solution using divide-and-conquer
-            </h4>
-            <p>
-            To solve this problem, we divide an array A into three subarrays,
-            and ask what is the maximum subarray in each:
-            </p>
-            <ol>
-                <li>From A[low] to A[midpoint - 1].
-                <li>Crossing the mid-point.
-                <li>From A[midpoint + 1] to A[high]
-            </ol>
-
-            <p>
-            Problems 1 and 3 are simply this same problem on a smaller array!
-            Problem 2 can be solved by finding the maximum subarrays in
-            low-to-mid and in mid+1-to-high.
-            <br>
-            <br>
-            The recurrence is the same as for merge sort.
-            </p>
+    
+                <h4>
+                    A solution using divide-and-conquer
+                </h4>
+                <p>
+                To solve this problem, we divide an array A into three subarrays,
+                and ask what is the maximum subarray in each:
+                </p>
+                <ol>
+                    <li>From A[low] to A[midpoint - 1].
+                    <li>Crossing the mid-point.
+                    <li>From A[midpoint + 1] to A[high]
+                </ol>
+    
+                <p>
+                Problems 1 and 3 are simply this same problem on a smaller array!
+                Problem 2 can be solved by finding the maximum subarrays in
+                low-to-mid and in mid+1-to-high.
+                <br>
+                <br>
+                The recurrence is the same as for merge sort.
+                </p>
+            </details>
 
 
-            <h3>
+            <details>
+            <summary id="sum2">
                 Strassen's algorithm for matrix multiplication
-            </h3>
+            </summary>
 
                 <h4>
                     Recursive Square-Matrix Multiply
@@ -260,11 +261,13 @@
                     thousands before Strassen's algorithm yields significant
                     gains.
                 </p>
+            </details>
 
 
-            <h3>
+            <details>
+            <summary id="sum2">
                 The substitution method for solving recurrences
-            </h3>
+            </summary>
                 <p>
                     <b>Note:</b> I am presenting these three methods in my
                     notes in textbook order. But in lectures, I present the
@@ -432,11 +435,13 @@
                         Now, we need to show that if for sub-problems smaller
                         than n the claim is true, then it is true for n.
                     </p>
+            </details>
 
 
-            <h3>
+            <details>
+            <summary id="sum2">
                 The recursion-tree method for solving recurrences
-            </h3>
+            </summary>
                 <p>
                 There are two ways to use this method:
                 </p>
@@ -901,10 +906,12 @@
                 <p>
                     This observation leads us to:
                 </p>
+            </details>
 
-            <h3>
+            <details>
+            <summary id="sum2">
                 The master method for solving recurrences
-            </h3>
+            </summary>
     
                 <p>
                     <b>Form</b>: T(n) = aT(n / b) + f(n). 

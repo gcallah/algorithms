@@ -41,11 +41,6 @@ END {
     chap_file = $2 ".ptml"   # we process ptml files into html
     chap_html = $2 ".html"   # we process ptml files into html
     chap_nm = split_on_caps($2)
-# this is failing right now: eliminate until we get it right
-#    if (system( "[ -f " chap_file " ] ") != 0) {
-#        system("touch " chap_html)
-#        system(create_pg " <" templ " >" chap_file " \"" daa chap_nm "\"")
-#    }
     print indent3 "<h3>" >> menu
     print indent4 "<a href=\"" chap_html "\">" >> menu
     print indent4 $1 ". " chap_nm >> menu
