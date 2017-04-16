@@ -80,13 +80,6 @@ h2 {
     color: #245;
 }
 
-h2.subhead {
-    font-weight:
-    normal;
-    margin-top:
-    0;
-}
-
 h3 {
     font-size: 28px;
     margin: 20px 24px 16px 24px;
@@ -212,13 +205,13 @@ figcaption {
 
 summary#sum1 {
     font-size: 24px;
-    color: #cbe;
+    color: #245;
     margin: 8px 24px 8px 24px;
 }
 
 summary#sum2 {
     font-size: 22px;
-    color: #245;
+    color: #633;
     margin: 8px 32px 8px 32px;
 }
 
