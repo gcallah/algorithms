@@ -206,13 +206,13 @@ figcaption {
 summary#sum1 {
     font-size: 24px;
     color: #245;
-    margin: 8px 24px 8px 24px;
+    margin: 16px 24px 16px 24px;
 }
 
 summary#sum2 {
     font-size: 22px;
     color: #633;
-    margin: 8px 32px 8px 32px;
+    margin: 12px 32px 12px 32px;
 }
 
 summary#sum3 {

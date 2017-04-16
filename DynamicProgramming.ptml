@@ -25,7 +25,7 @@
             </summary>
 
                 <p>
-                    "Bottom-up memoization."
+                    Memoization!
                     <br>
                     <br>
                     The name is largely a marketing construct. Here is the
@@ -166,9 +166,10 @@
                 </p>
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Recursive top-down implmentation
-                </h3>
+                </summary>
                 <p>
                     Keeps calculating the same cuts again and again, much like
                     naive, recursive Fibonacci.
@@ -221,11 +222,13 @@
                     <br>
                     Or, 16 = 8 + 4 + 2 + 1 + 1
                 </p>
+                </details>
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Using dynamic programming for optimal rod-cutting
-                </h3>
+                </summary>
                 <p>
                     Much like we did with the naive, recursive Fibonacci, we
                     can "memoize" the recursive rod-cutting algorithm and
@@ -238,11 +241,13 @@
                     calls. (The algorithm uses an additional loop instead of
                     recursion to do its work.)
                 </p>
+                </details>
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Subproblem graphs
-                </h3>
+                </summary>
 
                 <p>
 
@@ -267,11 +272,13 @@
                     code again and again, unless we are parsing the code of a
                     very bad programmer who doesn't understand functions!
                 </p>
+                </details>
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Reconstructing a solution
-                </h3>
+                </summary>
                 <p>
                     In this section, we see how to <i>record</i> the solution
                     we arrived at, rather than simply return the optimal
@@ -333,19 +340,22 @@
                 </details>
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Counting the number of parenthesizations
-                </h3>
+                </summary>
                 <p>
                     The number of solutions is exponential in <i>n</i>, thus
                     brute-force is a bad technique for solving this
                     problem.
                 </p>
+                </details>
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Applying dynamic programming
-                </h3>
+                </summary>
 
 
                 <h4>
@@ -455,20 +465,23 @@
                 Elements of dynamic programming
             </summary>
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Optimal substructure
-                </h3>
+                </summary>
                 <p>
                     A problem exhibits <i>optimal substructure</i> if an optimal
                     solution to the problem contains within it optimal
                     solutions to subproblems.
                 </p>
+                </details>
 
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Overlapping subproblems
-                </h3>
+                </summary>
 
                 <p>
                     The problem space must be "small," in that a recursive
@@ -476,22 +489,26 @@
                     rather than continually generating new subproblems. The
                     recursive Fibonacci is an excellent example of this!
                 </p>
+                </details>
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Reconstructing an optimal solution
-                </h3>
+                </summary>
                 <p>
                     Storing our choices in a table as we make them allows quick
                     and simple reconstruction of the optimal solution.
                 </p>
+                </details>
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Memoization
-                </h3>
+                </summary>
                 <p>
-                    As mentioned above, memoization is often a viable
+                    As mentioned above, recursion with memoization is often a viable
                     alternative to the bottom-up approach. Which to choose
                     depends on several factors, one of which being that a
                     recursive approach is often easier to understand.
@@ -499,6 +516,7 @@
                     or not run very often, a recursive approach 
                     with memoization may be the right answer.
                 </p>
+                </details>
             </details>
 
 
@@ -507,9 +525,10 @@
                 Longest common subsequence
             </summary>
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Step 1: Characterizing a longest common subsequence
-                </h3>
+                </summary>
 
                 <p>
                     'Let X be "XMJYAUZ" and Y be "MZJAWXU".
@@ -539,11 +558,13 @@
                     for 'rega' and have a longer overall LCS.
 
                 </p>
+                </details>
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Step 2: A recursive solution
-                </h3>
+                </summary>
 
                 <p>
                     Caution: here some sub-problems are ruled out! If
@@ -554,11 +575,13 @@
                     Why not? Well, if they aren't equal, they can't be the
                     endpoint of an LCS.
                 </p>
+                </details>
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Step 3: Computing the length of an LCS
-                </h3>
+                </summary>
 
                 <p>
                     The solution here proceeds much like the earlier ones: find
@@ -566,11 +589,13 @@
                     intermediate results and information for reconstructing the
                     optimal solution.
                 </p>
+                </details>
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Step 4: Constructing an LCS
-                </h3>
+                </summary>
 
                     <h4>
                         Improving the code
@@ -586,6 +611,7 @@
                         <b>An important principle</b>: Don't optimize unless it is
                         needed!
                     </p>
+                </details>
             </details>
 
             <details>
@@ -599,34 +625,40 @@
 
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Step 1: The structure of an optimal binary search tree
-                </h3>
+                </summary>
 
                 <p>
                     If a binary search tree is optimally construted, then both
                     its left and right sub-trees must be optimally constructed.
                     The usual "cut-and-paste" argument applies.
                 </p>
+                </details>
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Step 2: A recursive solution
-                </h3>
+                </summary>
 
                 <p>
                     As usual, this is straightforward, but too slow.
                 </p>
+                </details>
 
 
-                <h3>
+                <details>
+                <summary id="sum2">
                     Step 3: Computing the expected search cost
-                </h3>
+                </summary>
 
                 <p>
                     Very much like the matrix-chain-order code. Working code coming
                     soon!
                 </p>
+                </details>
             </details>
 
 
