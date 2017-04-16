@@ -5,6 +5,13 @@ HTMLFILES = $(shell ls *.ptml | sed -e 's/ptml/html/g')
 	./html_include.awk <$< >$@
 
 website: $(INCS) $(HTMLFILES)
+	./C++/tests.sh
+	./Clojure/tests.sh
+	./Go/tests.sh
+	./Java/tests.sh
+	./Javascript/tests.sh
+	./Python/tests.sh
+	./Ruby/tests.sh
 	git commit -a -m "HTML rebuild."
 	git push origin master
 
