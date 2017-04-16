@@ -8,6 +8,8 @@ website: $(INCS) $(HTMLFILES)
 	git commit -a -m "HTML rebuild."
 	git push origin master
 
+local: $(INCS) $(HTMLFILES)
+
 lang_menu.txt: lang_chapter_binary.txt
 	./gen_lang_menu.awk <lang_chapter_binary.txt >lang_menu.txt
 

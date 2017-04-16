@@ -21,7 +21,7 @@
 
             <details>
             <summary id="sum1">
-                What is a dynamic programming?
+                What is dynamic programming?
             </summary>
 
                 <p>
@@ -161,130 +161,141 @@
                 <br>
                 <br>
                 Nothing special here about steel rods: the algorithm applies to
-                any good that can be sub-divided, like lumber, or meat, or
-                cloth.
+                any good that can be sub-divided, but only in multiples of some
+                unit, like lumber, or meat, or cloth.
                 </p>
 
                 <details>
-                <summary id="sum2">
-                    Recursive top-down implmentation
-                </summary>
-                <p>
-                    Keeps calculating the same cuts again and again, much like
-                    naive, recursive Fibonacci.
-                    <br>
-                    <br>
-                    Running time is exponential in n. Why?
-                    <br>
-                    Our textbook gives us the equation:
-                    <br>
-                    <br>
-                    <img src="graphics/RecRodCutEqn.gif">
-                    <br>
-                    <br>
-                    This is equivalent to:
-                    <br>
-                    T(n) = 1 + T(n - 1) + T(n - 2) + ... T(1)
-                    <br>
-                    For n = 1, there are 2<sup>0</sup> ways to solve the
-                    problem.
-                    <br>
-                    For n = 2, there are 2<sup>1</sup> ways to solve the
-                    problem.
-                    <br>
-                    For n = 3, there are 2<sup>2</sup> ways to solve the
-                    problem.
-                    <br>
-                    Each additional foot of rod gives us 2 * (previous number
-                    of ways of solving problem), since we have all the previous
-                    solutions, either with a cut of one foot for the new
-                    extension, or without a cut there. (Similar to why each row
-                    of Pascal's triangle gives us the next power of two.)
-                    <br>
-                    <br>
-                    <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Pascal%27s_triangle_5.svg/250px-Pascal%27s_triangle_5.svg.png">
-                    <br>
-                    <br>
-                    So, we have the series:
-                    <br>
-                    2<sup>n - 1</sup> + 2<sup>n - 2</sup> + 2<sup>n -
-                        3</sup>... + 2<sup>0</sup> + 1
-                    <br>
-                    And this equals 2<sup>n</sup>. Why?
-                    <br>
-                    <img src="graphics/TwoToTheN.png">
-                    <br>
-                    <br>
-                    <b>Example</b>: 2<sup>4</sup> = 2<sup>3</sup> +
-                    2<sup>2</sup> + 2<sup>1</sup> + 2<sup>0</sup> + 1
-                    <br>
-                    Or, 16 = 8 + 4 + 2 + 1 + 1
-                </p>
+                    <summary id="sum2">
+                        Recursive top-down implmentation
+                    </summary>
+                    <p>
+                        Keeps calculating the same cuts again and again, much like
+                        naive, recursive Fibonacci.
+                        <br>
+                        <br>
+                        Running time is exponential in n. Why?
+                        <br>
+                        Our textbook gives us the equation:
+                        <br>
+                        <br>
+                        <img src="graphics/RecRodCutEqn.gif">
+                        <br>
+                        <br>
+                        This is equivalent to:
+                        <br>
+                        T(n) = 1 + T(n - 1) + T(n - 2) + ... T(1)
+                        <br>
+                        For n = 1, there are 2<sup>0</sup> ways to solve the
+                        problem.
+                        <br>
+                        For n = 2, there are 2<sup>1</sup> ways to solve the
+                        problem.
+                        <br>
+                        For n = 3, there are 2<sup>2</sup> ways to solve the
+                        problem.
+                        <br>
+                        Each additional foot of rod gives us 2 * (previous number
+                        of ways of solving problem), since we have all the previous
+                        solutions, either with a cut of one foot for the new
+                        extension, or without a cut there. (Similar to why each row
+                        of Pascal's triangle gives us the next power of two.)
+                        <br>
+                        <br>
+                        <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Pascal%27s_triangle_5.svg/250px-Pascal%27s_triangle_5.svg.png">
+                        <br>
+                        <br>
+                        So, we have the series:
+                        <br>
+                        2<sup>n - 1</sup> + 2<sup>n - 2</sup> + 2<sup>n -
+                            3</sup>... + 2<sup>0</sup> + 1
+                        <br>
+                        And this equals 2<sup>n</sup>. Why?
+                        <br>
+                        <img src="graphics/TwoToTheN.png">
+                        <br>
+                        <br>
+                        <b>Example</b>: 2<sup>4</sup> = 2<sup>3</sup> +
+                        2<sup>2</sup> + 2<sup>1</sup> + 2<sup>0</sup> + 1
+                        <br>
+                        Or, 16 = 8 + 4 + 2 + 1 + 1
+                    </p>
                 </details>
 
 
                 <details>
-                <summary id="sum2">
-                    Using dynamic programming for optimal rod-cutting
-                </summary>
-                <p>
-                    Much like we did with the naive, recursive Fibonacci, we
-                    can "memoize" the recursive rod-cutting algorithm and
-                    achieve huge time savings.
-                    <br>
-                    <br>
-                    That is an efficient top-down approach. But we can also do
-                    a bottom-up approach, which will have the same run-time
-                    order but may be slightly faster due to fewer function
-                    calls. (The algorithm uses an additional loop instead of
-                    recursion to do its work.)
-                </p>
+                    <summary id="sum2">
+                        Using dynamic programming for optimal rod-cutting
+                    </summary>
+                    <p>
+                        Much like we did with the naive, recursive Fibonacci, we
+                        can "memoize" the recursive rod-cutting algorithm and
+                        achieve huge time savings.
+                        <br>
+                        <br>
+                        That is an efficient top-down approach. But we can also do
+                        a bottom-up approach, which will have the same run-time
+                        order but may be slightly faster due to fewer function
+                        calls. (The algorithm uses an additional loop instead of
+                        recursion to do its work.)
+                    </p>
                 </details>
 
 
                 <details>
-                <summary id="sum2">
-                    Subproblem graphs
-                </summary>
-
-                <p>
-
-                    <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Fibonacci_dynamic_programming.svg/108px-Fibonacci_dynamic_programming.svg.png">
-                    <br>
-                    <br>
-                    The above is the Fibonacci sub-problem graph for fib(5). As
-                    you can see, F<sub>5</sub> must solve F<sub>4</sub> and
-                    F<sub>3</sub>. But F<sub>4</sub> must <i>also</i> solve
-                    F<sub>3</sub>. It also must solve F<sub>2</sub>, which
-                    F<sub>3</sub> must solve as well. And so on.
-                    <br>
-                    <br>
-                    This is the sort of graph we want to see if dynamic
-                    programming is going to be a good approach: a recursive
-                    solution involves repeatedly solving the same problems.
-                    <br>
-                    <br>
-                    This is quite different than, say, a parser, where the code
-                    sub-problems are very unlikely to be the same chunks of
-                    code again and again, unless we are parsing the code of a
-                    very bad programmer who doesn't understand functions!
-                </p>
+                    <summary id="sum2">
+                        Subproblem graphs
+                    </summary>
+    
+                    <p>
+    
+                        <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Fibonacci_dynamic_programming.svg/108px-Fibonacci_dynamic_programming.svg.png">
+                        <br>
+                        <br>
+                        The above is the Fibonacci sub-problem graph for fib(5). As
+                        you can see, F<sub>5</sub> must solve F<sub>4</sub> and
+                        F<sub>3</sub>. But F<sub>4</sub> must <i>also</i> solve
+                        F<sub>3</sub>. It also must solve F<sub>2</sub>, which
+                        F<sub>3</sub> must solve as well. And so on.
+                        <br>
+                        <br>
+                        This is the sort of graph we want to see if dynamic
+                        programming is going to be a good approach: a recursive
+                        solution involves repeatedly solving the same problems.
+                        <br>
+                        <br>
+                        This is quite different than, say, a parser, where the code
+                        sub-problems are very unlikely to be the same chunks of
+                        code again and again, unless we are parsing the code of a
+                        very bad programmer who doesn't understand functions!
+                    </p>
                 </details>
 
 
                 <details>
-                <summary id="sum2">
-                    Reconstructing a solution
-                </summary>
-                <p>
-                    In this section, we see how to <i>record</i> the solution
-                    we arrived at, rather than simply return the optimal
-                    revenue possible. The owner of Serling Enterprises will
-                    surely be much more pleased with this code than the earlier
-                    versions.
-                </p>
+                    <summary id="sum2">
+                        Reconstructing a solution
+                    </summary>
+                    <p>
+                        In this section, we see how to <i>record</i> the solution
+                        we arrived at, rather than simply return the optimal
+                        revenue possible. The owner of Serling Enterprises will
+                        surely be much more pleased with this code than the earlier
+                        versions.
+                    </p>
+                </details>
+
+                <details>
+                    <summary id="sum2">
+                    A video on rod cutting
+                    </summary>
+                    <div style="text-align:center">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/IRwVmTmN6go"
+                        frameborder="0" allowfullscreen></iframe>
+                    </div>
                 </details>
             </details>
 
@@ -339,7 +350,6 @@
 
                 </details>
 
-
                 <details>
                 <summary id="sum2">
                     Counting the number of parenthesizations
@@ -351,113 +361,130 @@
                 </p>
                 </details>
 
-
                 <details>
                 <summary id="sum2">
                     Applying dynamic programming
                 </summary>
 
+                    <details>
+                    <summary id="sum3">
+                        Step 1: The structure of an optimal parenthesization
+                    </summary>
+                    <p>
+                        For any place at level <i>n</i> where we place 
+                        parentheses, we must have optimal parentheses 
+                        at level <i>n</i> + 1.
+                        Otherwise, we could substitute 
+                        in the optimal <i>n</i> + 1
+                        level parentheses, and level n would be better!
+                    </p>
+                    </details>
 
-                <h4>
-                    Step 1: The structure of an optimal parenthesization
-                </h4>
-                <p>
-                    For any place at level <i>n</i> where we place 
-                    parentheses, we must have optimal parentheses 
-                    at level <i>n</i> + 1.
-                    Otherwise, we could substitute 
-                    in the optimal <i>n</i> + 1
-                    level parentheses, and level n would be better!
-                </p>
+                    <details>
+                    <summary id="sum3">
+                        Step 2: A recursive solution
+                    </summary>
+                    <p>
+                        If we know the optimal place to split A<sub>1</sub>...
+                        A<sub>n</sub> (call it k), then the optimal solution is
+                        that split, plus the optimal solution for A<sub>1</sub>...
+                        A<sub>k</sub> and the optimal solution for 
+                        A<sub>k+1</sub>... A<sub>n</sub>. Since we don't know k, we
+                        try each possible k in turn, compute the optimal
+                        sub-problem for each such split, and see which pair of
+                        optimal sub-problems yields the optimal (minimum, in this
+                        case) total.
+                        <br>
+                        <br>
+                        "For example, if we have four matrices ABCD, we compute the
+                        cost required to find each of (A)(BCD), (AB)(CD), and
+                        (ABC)(D), making recursive calls to find the minimum cost
+                        to compute ABC, AB, CD, and BCD. We then choose the best
+                        one."
+                        (https://en.wikipedia.org/wiki/Matrix_chain_multiplication)
+                        <br>
+                        <br>
+                        An easy way to understand this:
+                        <br>
+                        Let's say we need to get from class at NYU Tandon to a
+                        ballgame at Yankee Stadium in the Bronx as fast as
+                        possible. If we choose Grand Central Station as the optimal
+                        high-level split, we must also choose the optimal ways to
+                        get from NYU to Grand Central, and from Grand Central to
+                        Yankee Stadium. It won't do to choose Grand Central, and
+                        then walk from NYU to Grand Central, and CitiBike from
+                        Grand Central to Yankee Stadium: there are faster ways to
+                        do each sub-problem!
+                    </p>
+                    </details>
 
+                    <details>
+                    <summary id="sum3">
+                        Step 3: Computing the optimal costs
+                    </summary>
+                    <p>
+                        CLRS does not offer a recursive version here (they do later
+                        in the chapter); they go
+                        straight to the bottom-up approach of storing each
+                        lowest-level result in a table, avoiding recomputation, and
+                        then combine those lower-level results into higher-level
+                        ones. The indexing here is very tricky and hard to follow
+                        in one's head, but it is worth trying to trace out what is
+                        going on by following the code. I have as usual included
+                        some print statements to help.
+                    </p>
+                    </details>
 
-                <h4>
-                    Step 2: A recursive solution
-                </h4>
-                <p>
-                    If we know the optimal place to split A<sub>1</sub>...
-                    A<sub>n</sub> (call it k), then the optimal solution is
-                    that split, plus the optimal solution for A<sub>1</sub>...
-                    A<sub>k</sub> and the optimal solution for 
-                    A<sub>k+1</sub>... A<sub>n</sub>. Since we don't know k, we
-                    try each possible k in turn, compute the optimal
-                    sub-problem for each such split, and see which pair of
-                    optimal sub-problems yields the optimal (minimum, in this
-                    case) total.
-                    <br>
-                    <br>
-                    "For example, if we have four matrices ABCD, we compute the
-                    cost required to find each of (A)(BCD), (AB)(CD), and
-                    (ABC)(D), making recursive calls to find the minimum cost
-                    to compute ABC, AB, CD, and BCD. We then choose the best
-                    one."
-                    (https://en.wikipedia.org/wiki/Matrix_chain_multiplication)
-                    <br>
-                    <br>
-                    An easy way to understand this:
-                    <br>
-                    Let's say we need to get from class at NYU Tandon to a
-                    ballgame at Yankee Stadium in the Bronx as fast as
-                    possible. If we choose Grand Central Station as the optimal
-                    high-level split, we must also choose the optimal ways to
-                    get from NYU to Grand Central, and from Grand Central to
-                    Yankee Stadium. It won't do to choose Grand Central, and
-                    then walk from NYU to Grand Central, and CitiBike from
-                    Grand Central to Yankee Stadium: there are faster ways to
-                    do each sub-problem!
-                </p>
+                    <details>
+                        <summary id="sum3">
+                            Step 4: Constructing an optimal solution
+                        </summary>
+                        <p>
+                            Finally, we use the results computed in step 3 to actually
+                            provide the optimal solution, by actually determing where
+                            the parentheses go.
+                        </p>
+        
+                        <p>
+                            Here is the code from our textbook, implemented in 
+                            <a
+                            href="https://github.com/gcallah/algorithms/blob/master/Python/DynamicProgramming/">
+                            Python</a>,
+        
+                            runnning on the example where A<sub>1</sub> is 10 x 100,
+                            A<sub>2</sub> is 100 x 5, and A<sub>3</sub> is 5 x 50:
+                        </p>
+        
+                        <figure>
+                        <img src="graphics/MatrixChainRun.png">
+                        <figcaption>
+                        The actual output of our Python code.
+                        </figcaption>
+                        </figure>
+                    </details>
 
+                    <details>
+                        <summary id="sum3">
+                            An video addressing this problem.
+                        </summary>
+                        <div style="text-align:center">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/u6Y055g4mOE"
+                            frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </details>
 
-                <h4>
-                    Step 3: Computing the optimal costs
-                </h4>
-                <p>
-                    CLRS does not offer a recursive version here (they do later
-                    in the chapter); they go
-                    straight to the bottom-up approach of storing each
-                    lowest-level result in a table, avoiding recomputation, and
-                    then combine those lower-level results into higher-level
-                    ones. The indexing here is very tricky and hard to follow
-                    in one's head, but it is worth trying to trace out what is
-                    going on by following the code. I have as usual included
-                    some print statements to help.
-                </p>
-
-
-                <h4>
-                    Step 4: Constructing an optimal solution
-                </h4>
-                <p>
-                    Finally, we use the results computed in step 3 to actually
-                    provide the optimal solution, by actually determing where
-                    the parentheses go.
-                </p>
-
-                <p>
-                    Here is the code from our textbook, implemented in 
-                    <a
-                    href="https://github.com/gcallah/algorithms/blob/master/Python/DynamicProgramming/">
-                    Python</a>,
-
-                    runnning on the example where A<sub>1</sub> is 10 x 100,
-                    A<sub>2</sub> is 100 x 5, and A<sub>3</sub> is 5 x 50:
-                </p>
-
-                <figure>
-                <img src="graphics/MatrixChainRun.png">
-                <figcaption>
-                The actual output of our Python code.
-                </figcaption>
-                </figure>
-                <h4>
-                    Memoization
-                </h4>
-
-                <p>
-                    We can memoize the recursive version and change its run
-                    time from &Omega;(2<sup>n</sup>) to O(n<sup>3</sup>).
-                </p>
-            </details>
+                    <details>
+                    <summary id="sum3">
+                        Memoization
+                    </summary>
+    
+                    <p>
+                        We can memoize the recursive version and change its run
+                        time from &Omega;(2<sup>n</sup>) to O(n<sup>3</sup>).
+                    </p>
+                    </details>
+                </details>
             </details>
 
 
@@ -598,20 +625,32 @@
                     Step 4: Constructing an LCS
                 </summary>
 
-                    <h4>
-                        Improving the code
-                    </h4>
-
-                    <p>
-                        We could eliminate a table here, reduce aymptotic
-                        run-time a bit there. But is the code more confusing?
-                        Do we lose an ability (reconstructing the solution) we
-                        might actually need later?
-                        <br>
-                        <br>
-                        <b>An important principle</b>: Don't optimize unless it is
-                        needed!
-                    </p>
+                    <details>
+                        <summary id="sum3">
+                            Improving the code
+                        </summary>
+    
+                        <p>
+                            We could eliminate a table here, reduce aymptotic
+                            run-time a bit there. But is the code more confusing?
+                            Do we lose an ability (reconstructing the solution) we
+                            might actually need later?
+                            <br>
+                            <br>
+                            <b>An important principle</b>: Don't optimize unless it is
+                            needed!
+                        </p>
+                    </details>
+                </details>
+                <details>
+                    <summary id="sum2">
+                        Video on LCS
+                    </summary>
+                    <div style="text-align:center">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/P-mMvhfJhu8"
+                            frameborder="0" allowfullscreen></iframe>
+                    </div>
                 </details>
             </details>
 
