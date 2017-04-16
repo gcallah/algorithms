@@ -210,4 +210,20 @@ figcaption {
     color: #285d91;
 }
 
+summary#sum1 {
+    font-size: 22px;
+    color: #cbe;
+    margin: 8px 24px 8px 24px;
+}
 
+summary#sum2 {
+    font-size: 20px;
+    color: #ebc;
+    margin: 8px 32px 8px 32px;
+}
+
+summary#sum3 {
+    font-size: 18px;
+    color: #bce;
+    margin: 8px 40px 8px 40px;
+}
