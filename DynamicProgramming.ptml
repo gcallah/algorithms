@@ -165,7 +165,6 @@
                 cloth.
                 </p>
 
-
                 <details>
                 <summary id="sum2">
                     Recursive top-down implmentation
@@ -286,6 +285,7 @@
                     surely be much more pleased with this code than the earlier
                     versions.
                 </p>
+                </details>
             </details>
 
 
