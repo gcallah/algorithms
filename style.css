@@ -47,7 +47,7 @@ ol, ul, dl {
     margin: 16px 40px 16px 40px;
 }
 
-p, summary {
+p {
     margin: 8px 40px 8px 40px;
     padding: 0;
     line-height: 140%;
@@ -218,12 +218,12 @@ summary#sum1 {
 
 summary#sum2 {
     font-size: 20px;
-    color: #ebc;
+    color: #633;
     margin: 8px 32px 8px 32px;
 }
 
 summary#sum3 {
     font-size: 18px;
-    color: #bce;
+    color: #339;
     margin: 8px 40px 8px 40px;
 }

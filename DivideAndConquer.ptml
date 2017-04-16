@@ -20,7 +20,7 @@
             </div>
 
             <details>
-            <summary id="sum2">
+            <summary id="sum1">
                 Introduction
             </summary>
                 <p>
@@ -81,7 +81,7 @@
     
     
             <details>
-                <summary id="sum2">
+                <summary id="sum1">
                     The maximum-subarray problem
                 </summary>
                 <p>
@@ -146,7 +146,7 @@
 
 
             <details>
-            <summary id="sum2">
+            <summary id="sum1">
                 Strassen's algorithm for matrix multiplication
             </summary>
 
@@ -255,7 +255,7 @@
 
 
             <details>
-            <summary id="sum2">
+            <summary id="sum1">
                 The substitution method for solving recurrences
             </summary>
                 <p>
@@ -429,7 +429,7 @@
 
 
             <details>
-            <summary id="sum2">
+            <summary id="sum1">
                 The recursion-tree method for solving recurrences
             </summary>
                 <p>
@@ -899,7 +899,7 @@
             </details>
 
             <details>
-            <summary id="sum2">
+            <summary id="sum1">
                 The master method for solving recurrences
             </summary>
     

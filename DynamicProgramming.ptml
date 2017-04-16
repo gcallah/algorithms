@@ -19,9 +19,10 @@
                 </p>
             </div>
 
-            <h2>
+            <details>
+            <summary id="sum1">
                 What is a dynamic programming?
-            </h2>
+            </summary>
 
                 <p>
                     "Bottom-up memoization."
@@ -148,10 +149,12 @@
                         problem
                     <li>Kadane's algorithm for the maximum subarray problem
                 </ul>
+            </details>
 
-            <h2>
+            <details>
+            <summary id="sum1">
                 Rod cutting
-            </h2>
+            </summary>
                 <p>
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Wood_from_victoria_mountain_ash.jpg/250px-Wood_from_victoria_mountain_ash.jpg">
@@ -276,11 +279,13 @@
                     surely be much more pleased with this code than the earlier
                     versions.
                 </p>
+            </details>
 
 
-            <h2>
+            <details>
+            <summary id="sum1">
                 Matrix-chain multiplication
-            </h2>
+            </summary>
 
                 <p>
                 <img
@@ -442,11 +447,13 @@
                     We can memoize the recursive version and change its run
                     time from &Omega;(2<sup>n</sup>) to O(n<sup>3</sup>).
                 </p>
+            </details>
 
 
-            <h2>
+            <details>
+            <summary id="sum1">
                 Elements of dynamic programming
-            </h2>
+            </summary>
 
                 <h3>
                     Optimal substructure
@@ -492,11 +499,13 @@
                     or not run very often, a recursive approach 
                     with memoization may be the right answer.
                 </p>
+            </details>
 
 
-            <h2>
+            <details>
+            <summary id="sum1">
                 Longest common subsequence
-            </h2>
+            </summary>
 
                 <h3>
                     Step 1: Characterizing a longest common subsequence
@@ -577,10 +586,12 @@
                         <b>An important principle</b>: Don't optimize unless it is
                         needed!
                     </p>
+            </details>
 
-            <h2>
+            <details>
+            <summary id="sum1">
                 Optimal binary search trees
-            </h2>
+            </summary>
                 <p>
                     <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/AVLtreef.svg/251px-AVLtreef.svg.png">
@@ -616,11 +627,13 @@
                     Very much like the matrix-chain-order code. Working code coming
                     soon!
                 </p>
+            </details>
 
 
-            <h2>
+            <details>
+            <summary id="sum1">
                 Source Code
-            </h2>
+            </summary>
                 <p>
                 <a
                     href="https://github.com/gcallah/algorithms/blob/master/Python/DynamicProgramming/">
@@ -632,10 +645,12 @@
                     Ruby
                 </a>
                 </p>
+            </details>
 
-            <h2>
+            <details>
+            <summary id="sum1">
                 External Links
-            </h2>
+            </summary>
                 <ul>
                     <li>
                         <a
@@ -648,14 +663,17 @@
                             Longest common subsequence
                             </a>
                 </ul>
+            </details>
             
-            <h2>
+            <details>
+            <summary id="sum1">
                 Homework
-            </h2>
+            </summary>
                 <ol>
                     <li>Change memoized-rod-cut to return a list of cuts to
                     make, instead of the maximum possible revenue.
                     Pseudo-code or real code are both fine.
+                    </li>
                     <li>For the following table, determine the cost and
                         structure of an optimal binary search tree:
                         <br>
