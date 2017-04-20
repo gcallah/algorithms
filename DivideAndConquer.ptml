@@ -35,6 +35,15 @@
                     <li><b>Combine</b> the solutions for the sub problems into the
                         solution for the original problem.
                 </ul>
+    
+                <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/6SUmp_Cn-SU"
+                        frameborder="0" allowfullscreen></iframe>
+                    <figcaption>
+                        Introduction to divide-and-conquer
+                    </figcaption>
+                </figure>
 
                 <details>
                     <summary id="sum2">
@@ -79,6 +88,7 @@
                     instance, if n is odd, we may say n / 2 anyway.
                     </p>
                 </details>
+
             </details>
     
     
@@ -92,7 +102,7 @@
                 <br>
                 <br>
                 Only makes since in an array with both negative and positive
-                values: otherwise the answer is either the whole array of the
+                values: otherwise the answer is either the whole array or the
                 maximum member.
                 <br>
                 <br>
@@ -150,6 +160,16 @@
                 The recurrence is the same as for merge sort.
                 </p>
                 </details>
+
+                <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/OexQs_cYgAQ"
+                        frameborder="0" allowfullscreen></iframe>
+                    <figcaption>
+                        Maximum sub-array video
+                    </figcaption>
+                </figure>
+
             </details>
 
 

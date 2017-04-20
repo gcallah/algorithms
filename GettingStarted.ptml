@@ -18,28 +18,52 @@
                 </p>
             </div>
 
-            <h2>
+            <details>
+                <summary id="sum1">
                 Overview
-            </h2>
+                </summary>
 
-            <h2>
+                <details>
+                    <summary id="sum2">
+                    Running code in our browser
+                    </summary>
+
+                    <figure>
+                        <iframe style="width: 640; height: 480; border: none;"
+                            name="embedded_python_anywhere"
+                            src="http://www.pythonanywhere.com/embedded3/"></iframe>
+                        <figcaption>
+                            Python console
+                        </figcaption>
+                    </figure>
+
+                </details>
+            </details>
+
+            <details>
+                <summary id="sum1">
                 Source Code
-            </h2>
-            <p>
+                </summary>
+                <p>
 <!--include GettingStarted_langs.txt -->
-            </p>
+                </p>
+            </details>
 
-            <h2>
+            <details>
+                <summary id="sum1">
                 For Further Study
-            </h2>
+                </summary>
                 <ul>
                     <li><a href="https://en.wikipedia.org/wiki/Algorithm">
                             Algorithm
                         </a>.
                 </ul>
+            </details>
             
-            <h2>
+            <details>
+                <summary id="sum1">
                 Homework
-            </h2>
+                </summary>
+            </details>
     </body>
 </html>
