@@ -36,9 +36,10 @@
                         solution for the original problem.
                 </ul>
 
-                <h4>
+                <details>
+                    <summary id="sum2">
                     Recurrences
-                </h4>
+                    </summary>
                     <p>
                     Merge sort recurrence:
                     <br>
@@ -77,6 +78,7 @@
                     We often omit floors, ceilings, and boundary conditions. For
                     instance, if n is odd, we may say n / 2 anyway.
                     </p>
+                </details>
             </details>
     
     
@@ -96,9 +98,10 @@
                 <br>
                 </p>
 
-                <h4>
+                <details>
+                    <summary id="sum2">
                     Brute-force solution
-                </h4>
+                </summary>
                     <p>
                     Try every combination of two elements!
                     <br>
@@ -110,20 +113,24 @@
                     below by c*n<sup>2</sup>.
         
                     </p>
+                </details>
     
-                <h4>
+                <details>
+                    <summary id="sum2">
                     A transformation
-                </h4>
+                </summary>
     
                 <p>
                 We loon at the problem differently: let's find the nonempty,
                 contiguous subarray of our array whose values have the largest sum.
                 We call this the <b>maximum subarray</b>.
                 </p>
+                </details>
     
-                <h4>
+                <details>
+                    <summary id="sum2">
                     A solution using divide-and-conquer
-                </h4>
+                </summary>
                 <p>
                 To solve this problem, we divide an array A into three subarrays,
                 and ask what is the maximum subarray in each:
@@ -142,6 +149,7 @@
                 <br>
                 The recurrence is the same as for merge sort.
                 </p>
+                </details>
             </details>
 
 
@@ -150,9 +158,10 @@
                 Strassen's algorithm for matrix multiplication
             </summary>
 
-                <h4>
+                <details>
+                    <summary id="sum2">
                     Recursive Square-Matrix Multiply
-                </h4>
+                </summary>
                 <p>
                     We divide each of our initial matrices into four
                     sub-matrices, and multiply them. Which we do by dividing
@@ -182,10 +191,12 @@
                     <br>
                     T(n) = &Theta;(n<sup>3</sup>) 
                 </p>
+                </details>
 
-                <h4>
+                <details>
+                    <summary id="sum2">
                     Strassen's Algorithm
-                </h4>
+                </summary>
                 <p>
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Strassen_algorithm.svg/800px-Strassen_algorithm.svg.png">
@@ -251,6 +262,7 @@
                     thousands before Strassen's algorithm yields significant
                     gains.
                 </p>
+                </details>
             </details>
 
 
@@ -267,9 +279,10 @@
                     then master method, and <i>then</i> substitution.
                 </p>
 
-                <h4 id="Towers">
+                <details>
+                <summary id="sum2">
                     Towers of Hanoi
-                </h4>
+                </summary>
                     <p>
                     <br>
                     <img
@@ -358,10 +371,12 @@
                     <br>
                     And we are done!
                     </p>
+                    </details>
 
-                    <h4>
+                    <details>
+                    <summary id="sum2">
                         Another substitution-method problem
-                    </h4>
+                    </summary>
                     
                     <p>
                         Let's look at the recurrence:
@@ -425,6 +440,7 @@
                         Now, we need to show that if for sub-problems smaller
                         than n the claim is true, then it is true for n.
                     </p>
+                </details>
             </details>
 
 
@@ -1028,19 +1044,32 @@
                     <li>T(n) = 3<sup>n</sup>(n / 3) + n<sup>3</sup>
                     <li>T(n) = 8T(n / 2) + 2<sup>n</sup>
                 </ol>
+            </details>
     
     
-                <h2>
+            <details>
+                 <summary id="sum1">
                     Source Code
-                </h2>
+                    </summary>
                 <p>
 <!--include DivideAndConquer_langs.txt -->
                 </p>
+            </details>
     
-                <h2>
-                    External Links
-                </h2>
+            <details>
+                 <summary id="sum1">
+                    For Further Study
+                    </summary>
                 <ul>
+                    <figure>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/kDhR4Zm53zc"
+                            frameborder="0" allowfullscreen></iframe>
+                        <figcaption>
+                            MIT: Intro to Divide-and-Conquer
+                        </figcaption>
+                    </figure>
+
                     <li>
                         <a href="https://en.wikipedia.org/wiki/Master_theorem">
                             The Master Theorem
@@ -1064,37 +1093,42 @@
                         href="http://www.csd.uwo.ca/~moreno/CS433-CS9624/Resources/master.pdf">
                         Practice problems
                     </a>
-            </ul>
+                </ul>
+            </details>
             
-            <h2>
-                Homework
-            </h2>
-            <ol>
-                <li>Implement the Towers of Hanoi in a programming language of
-                    your choice. Put in test code to count the number of moves.
-                    Print out the number of moves after you have solved the
-                    puzzle. Run the code and show that we have solved 
-                    the recurrence correctly. What you hand in should be 
-                    your source code plus several runs showing your results.
-                <li>Implement Strassen's method in a programming language of
-                    your choice.
-                <li>A well-known recurrence is the Fibonacci sequence. Please
-                    find the closed form for it, <em>showing how you found
-                    it</em>. (You can easily look up the form online, but
-                    please try to solve this yourself.)
-                <li>Find tight asymptotic bounds for the following recurrence:
-                    <br>
-                    <img src="graphics/RecEq3.gif">
-                    <br>
-            </ol>
+            <details>
+                 <summary id="sum1">
+                    Homework
+                </summary>
+                <ol>
+                    <li>Implement the Towers of Hanoi in a programming language of
+                        your choice. Put in test code to count the number of moves.
+                        Print out the number of moves after you have solved the
+                        puzzle. Run the code and show that we have solved 
+                        the recurrence correctly. What you hand in should be 
+                        your source code plus several runs showing your results.
+                    <li>Implement Strassen's method in a programming language of
+                        your choice.
+                    <li>A well-known recurrence is the Fibonacci sequence. Please
+                        find the closed form for it, <em>showing how you found
+                        it</em>. (You can easily look up the form online, but
+                        please try to solve this yourself.)
+                    <li>Find tight asymptotic bounds for the following recurrence:
+                        <br>
+                        <img src="graphics/RecEq3.gif">
+                        <br>
+                </ol>
+            </details>
 
-            <h2>
+            <details>
+                 <summary id="sum1">
                 Credits
-            </h2>
+                </summary>
 
-            <ul>
-                <li>Recursion-tree diagrams:
-                    http://www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec20-master/lec20.html
-            </ul>
+                <ul>
+                    <li>Recursion-tree diagrams:
+                        http://www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec20-master/lec20.html
+                </ul>
+            </details>
     </body>
 </html>
