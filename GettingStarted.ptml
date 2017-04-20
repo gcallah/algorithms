@@ -25,9 +25,28 @@
 
                 <details>
                     <summary id="sum2">
-                    Running code in our browser
+                    Running code in your browser
                     </summary>
 
+                    <p>
+                    Here is Python code for a swap routine, which our textbook
+                    uses periodically:
+                    </p>
+<pre>
+
+l = [1, 2, 3]
+
+def swap(l, i, j): 
+    temp = l[i]
+    l[i] = l[j]
+    l[j] = temp
+
+</pre>
+
+                    <p>
+                        Type that code into the Python console below:
+                    </p>
+ 
                     <figure>
                         <iframe style="width: 640; height: 480; border: none;"
                             name="embedded_python_anywhere"
@@ -36,6 +55,13 @@
                             Python console
                         </figcaption>
                     </figure>
+
+                    <p>
+                        Hit return. Then type 'swap(l, 0, 2)' and hit return.
+                        <br />
+                        Then type 'l'.
+                    </p>
+
 
                 </details>
             </details>
