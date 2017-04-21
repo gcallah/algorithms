@@ -60,6 +60,9 @@ def swap(l, i, j):
                         Hit return. Then type 'swap(l, 0, 2)' and hit return.
                         <br />
                         Then type 'l'.
+                        <br />
+                        You should see '[3, 2, 1]'. You have swapped items 1
+                        and 3!
                     </p>
 
 
