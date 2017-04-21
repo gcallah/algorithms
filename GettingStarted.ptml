@@ -32,16 +32,16 @@
                     Here is Python code for a swap routine, which our textbook
                     uses periodically:
                     </p>
-<pre>
-
-l = [1, 2, 3]
-
-def swap(l, i, j): 
-    temp = l[i]
-    l[i] = l[j]
-    l[j] = temp
-
-</pre>
+        <pre>
+        
+        l = [1, 2, 3]
+        
+        def swap(l, i, j): 
+            temp = l[i]
+            l[i] = l[j]
+            l[j] = temp
+        
+        </pre>
 
                     <p>
                         Type that code into the Python console below:
@@ -60,8 +60,26 @@ def swap(l, i, j):
                         Hit return. Then type 'swap(l, 0, 2)' and hit return.
                         <br />
                         Then type 'l'.
+                        <br />
+                        <br />
+                        You should see '[3, 2, 1]': you swapped element 0 and
+                        2!
                     </p>
 
+                    <p>
+                        Now type in the following:
+                    </p>
+
+    <pre>
+        def bubble_sort(l):
+            for i in range(0, len(l) - 1):
+                for j in range(len(l) - 1, i, -1):
+                    if l[j] < l[j - 1]:
+                        print("Swapping " + str(l[j]) + " and "
+                                + str(l[j - 1]))
+                        swap(l, j, j - 1)
+            return l
+    </pre>
 
                 </details>
             </details>
