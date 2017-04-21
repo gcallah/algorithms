@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 
 # intermediate lang files
-*_lang.txt
+*.txt
 
 # misc:
 .DS_Store

@@ -9,8 +9,8 @@ task :test do
   ruby("Ruby/DivideAndConquer/unit_tests/matrix_multiplication_test.rb")
 
   # RANDOMIZED ALGORITHMS
-  ruby("Ruby/RandomizedAlgorithms/unit_tests/hire_assistant_test.rb")
-  ruby("Ruby/RandomizedAlgorithms/unit_tests/permuting_arrays_test.rb")
+  # ruby("Ruby/RandomizedAlgorithms/unit_tests/hire_assistant_test.rb")
+  # ruby("Ruby/RandomizedAlgorithms/unit_tests/permuting_arrays_test.rb")
 
   # HEAPSORT
   ruby("Ruby/Heapsort/unit_tests/heap_sort_test.rb")

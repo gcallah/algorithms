@@ -18,28 +18,81 @@
                 </p>
             </div>
 
-            <h2>
+            <details>
+                <summary id="sum1">
                 Overview
-            </h2>
+                </summary>
 
-            <h2>
+                <details>
+                    <summary id="sum2">
+                    Running code in your browser
+                    </summary>
+
+                    <p>
+                    Here is Python code for a swap routine, which our textbook
+                    uses periodically:
+                    </p>
+<pre>
+
+l = [1, 2, 3]
+
+def swap(l, i, j): 
+    temp = l[i]
+    l[i] = l[j]
+    l[j] = temp
+
+</pre>
+
+                    <p>
+                        Paste that code into the Python console below:
+                    </p>
+ 
+                    <figure>
+                        <iframe style="width: 640; height: 480; border: none;"
+                            name="embedded_python_anywhere"
+                            src="https://www.pythonanywhere.com/embedded3/"></iframe>
+                        <figcaption>
+                            Python console
+                        </figcaption>
+                    </figure>
+
+                    <p>
+                        Hit return. Then type 'swap(l, 0, 2)' and hit return.
+                        <br />
+                        Then type 'l'.
+                        <br />
+                        You should see '[3, 2, 1]'. You have swapped items 1
+                        and 3!
+                    </p>
+
+
+                </details>
+            </details>
+
+            <details>
+                <summary id="sum1">
                 Source Code
-            </h2>
-            <p>
+                </summary>
+                <p>
 <!--include GettingStarted_langs.txt -->
-            </p>
+                </p>
+            </details>
 
-            <h2>
-                External Links
-            </h2>
+            <details>
+                <summary id="sum1">
+                For Further Study
+                </summary>
                 <ul>
                     <li><a href="https://en.wikipedia.org/wiki/Algorithm">
                             Algorithm
                         </a>.
                 </ul>
+            </details>
             
-            <h2>
+            <details>
+                <summary id="sum1">
                 Homework
-            </h2>
+                </summary>
+            </details>
     </body>
 </html>
