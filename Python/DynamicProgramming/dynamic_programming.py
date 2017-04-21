@@ -266,8 +266,51 @@ def print_optimal_parens(s, i, j):
         print(")", end="")
 
 
-
+# an M of size n holds the dimensions for n - 1 matrices!
+# dims 2 ... n - 1 are the 2nd dim of one M and the 1st dim of the 
+# next one.
 M2 = [10, 100, 5]
 M3 = [10, 100, 5, 50]
 M4 = [10, 100, 5, 50, 80]
 clrs_test = [30, 35, 15, 5, 10, 20, 25]  # this is the example from page 376
+
+
+def optimal_bst(p, q, n):
+    """
+        Args:
+            p: probabilities of actual items
+            q: probabilities of failed searches (1 bigger than p!)
+            n: number of items in p
+
+        Returns:
+            e: expected search costs (a 2D list)
+            root: of the constructed BST
+    """
+
+    # three 2D arrays: e is expected search costs, w is probabilities,
+    # and root is ?
+    e = [[BIG_NUM for x in range(n + 1)] for x in range(n + 1)]
+    w = [[BIG_NUM for x in range(n + 1)] for x in range(n + 1)]
+    root = [[BIG_NUM for x in range(n)] for x in range(n)]
+
+    for i in range(0, n + 1):
+        e[i][i] = q[i]
+        print("i = " + str(i) + "; e[i][i] = " + str(e[i][i]))
+        w[i][i] = q[i]
+        print("i = " + str(i) + "; w[i][i] = " + str(w[i][i]))
+
+    for l in range(0, n):
+        for i in range(0, n - l + 1):
+            j = i + l - 1
+            w[i][j] = w[i][j - 1] + p[j] + q[j]
+            for r in (i, j + 1):
+                t = e[i][r] + e[r][j] + w[i][j]
+                if t < e[i][j]:
+                    e[i][j] = t
+                    root[i][j] = r
+    return (e, root)
+
+# probabilities from CLRS:
+p = [.15, .10, .05, .10, .20]
+q = [.05, .10, .05, .05, .05, .10]
+
