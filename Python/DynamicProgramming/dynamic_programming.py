@@ -127,6 +127,11 @@ def bottom_up_cut_rod(prices, n):
     for j in range(1, n + 1):  # 0th element holds a 0
         max_rev = NEG_REV
         for i in range(j):
+            print("Checking max_rev between " + str(max_rev)
+                    + " and j = " + str(j) + "; i = " + str(i)
+                    + "; j - i - 1 = " + str(j - i - 1))
+            print("prices[i] = " + str(prices[i]) + 
+                    "; revs[j - i - 1] = " + str(revs[j - i - 1]))
             max_rev = max(max_rev, prices[i] + revs[j - i - 1])
 
         print("Maximum revenue calculated at step " + str(j)
@@ -154,9 +159,11 @@ def ext_bottom_up_cut_rod(prices, n):
                                       # but no harm doing all
     cuts = [0 for i in range(n + 1)]
     for j in range(1, n + 1):  # 0th element holds a 0
+        print("\n********\n Working on foot: " + str(j))
         max_rev = NEG_REV
         for i in range(j):
             prev_revs = revs[j - i - 1]
+            print("Revs = " + str(revs))
             print("Comparing max_rev of " + str(max_rev)
                   + " with " + str(prices[i])
                   + " plus prev_rev of " + str(prev_revs))
