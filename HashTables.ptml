@@ -14,7 +14,7 @@
         </h1>
         
         <details>
-            <summary id="sum1">
+            <summary class="sum1">
             Dictionaries
             </summary>
 
@@ -24,7 +24,7 @@
         </p>
 
         <details>
-        <summary id="sum2">
+        <summary class="sum2">
         Dictionary ADT.
         </summary>
         <p>
@@ -60,7 +60,7 @@
         </details>
 
         <details>
-        <summary id="sum2">
+        <summary class="sum2">
         Direct addressing. 
         </summary>
         <ul>
@@ -83,7 +83,7 @@
         </details>
 
         <details>
-        <summary id="sum2">
+        <summary class="sum2">
         Hashing
         </summary>
         <p>
@@ -92,7 +92,7 @@
         </p>
 
         <details>
-        <summary id="sum3">
+        <summary class="sum3">
         Basic Hashing:
         </summary>
         <ul>
@@ -124,7 +124,7 @@
         </details>
 
         <details>
-        <summary id="sum3">
+        <summary class="sum3">
         Introducing probability into an algorithm.
         </summary>
         <p>
@@ -139,7 +139,7 @@
         </details>
 
         <details>
-        <summary id="sum3">Probability Basics</summary>
+        <summary class="sum3">Probability Basics</summary>
         <p>
         <a href="https://gcallah.github.io/algorithms/Probability.html">
             Reviewed in this document.
@@ -148,7 +148,7 @@
         </details>
 
         <details>
-        <summary id="sum3">
+        <summary class="sum3">
         Simple uniform hashing 
         </summary>
         <p>
@@ -180,7 +180,7 @@
         </details>
 
         <details>
-        <summary id="sum3">Hash functions</summary>
+        <summary class="sum3">Hash functions</summary>
         <ul>
             <li> First, convert key to an integer.
             <br> E.g., we can interpret characters in a string by their ASCII values.
@@ -205,7 +205,7 @@
         </details>
 
         <details>
-        <summary id="sum3">
+        <summary class="sum3">
         Universal hashing
         </summary>
         <ul>
@@ -225,7 +225,7 @@
         </details>
 
         <details>
-        <summary id="sum3">Open addressing</summary>
+        <summary class="sum3">Open addressing</summary>
         <ul>
             <li>All elements are stored directly in the table; no chaining.
             <li>Linear probing
@@ -241,7 +241,7 @@
                     Source code here</a>.
         </ul>
             <details>
-            <summary id="sum3">
+            <summary class="sum3">
             Perfect hashing
             </summary>
             </details>
@@ -250,7 +250,7 @@
         </details>
 
         <details>
-            <summary id="sum1">
+            <summary class="sum1">
                 Source Code
             </summary>
             <p>
@@ -260,7 +260,7 @@
 
 
         <details>
-            <summary id="sum1">
+            <summary class="sum1">
             Homework
             </summary>
 

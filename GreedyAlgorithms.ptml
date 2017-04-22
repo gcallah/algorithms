@@ -21,7 +21,7 @@
             </div>
 
             <details>
-                <summary id="sum1">
+                <summary class="sum1">
                     A family of problems and approriate solutions
                 </summary>
 
@@ -42,7 +42,7 @@
 
 
             <details>
-                <summary id="sum1">
+                <summary class="sum1">
                     What is a greedy algorithm?
                 </summary>
 
@@ -102,7 +102,7 @@
             </details>
 
             <details>
-                <summary id="sum1">
+                <summary class="sum1">
                     An activity selection problem
                 </summary>
 
@@ -259,7 +259,7 @@
 
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                     The optimal sub-structure of the problem
                     </summary>
 
@@ -290,7 +290,7 @@
                 </details>
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                     Making the greedy choice
                     </summary>
 
@@ -320,7 +320,7 @@
                 </details>
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                     A recursive greedy algorithm
                     </summary>
 
@@ -341,7 +341,7 @@
 
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                     An iterative greedy algorithm
                     </summary>
 
@@ -355,7 +355,7 @@
 
 
             <details>
-                <summary id="sum1">
+                <summary class="sum1">
                     Elements of the greedy strategy
                 </summary>
 
@@ -377,7 +377,7 @@
                 </ol>
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                     Greedy-choice property
                     </summary>
 
@@ -399,7 +399,7 @@
 
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                     Optimal substructure
                     </summary>
 
@@ -419,7 +419,7 @@
 
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                     Greedy versus dynamic programming
                     </summary>
 
@@ -443,7 +443,7 @@
 
 
             <details>
-                <summary id="sum1">
+                <summary class="sum1">
                     Huffman codes
                 </summary>
 
@@ -468,7 +468,7 @@
                 </figure>
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                     Prefix codes
                     </summary>
 
@@ -533,7 +533,7 @@
                 </details>
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                     Constructing a Huffman code
                     </summary>
 
@@ -582,7 +582,7 @@
 
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                     Correctness of Huffman's algorithm
                     </summary>
 
@@ -628,7 +628,7 @@
 
 
             <details>
-                <summary id="sum1">
+                <summary class="sum1">
                     Matroids and greedy methods
                 </summary>
 
@@ -639,7 +639,7 @@
                 <br>
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                     Matroids
                     </summary>
 
@@ -840,7 +840,7 @@
                 </details>
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                     Greedy algorithms on a weighted matroid
                     </summary>
                     <p>
@@ -853,7 +853,7 @@
 
 
             <details>
-                <summary id="sum1">
+                <summary class="sum1">
                     A task-scheduling problem as a matroid
                 </summary>
 
@@ -870,14 +870,14 @@
 
 
             <details>
-                <summary id="sum1">
+                <summary class="sum1">
                 Source Code
                 </summary>
 <!--include GreedyAlgorithms_langs.txt -->
             </details>
 
             <details>
-                <summary id="sum1">
+                <summary class="sum1">
                     For Further Study
                 </summary>
                 <ul>
@@ -894,7 +894,7 @@
             </details>
             
             <details>
-                <summary id="sum1">
+                <summary class="sum1">
                     Homework
                 </summary>
                 <ol>

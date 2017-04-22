@@ -19,12 +19,12 @@
             </div>
 
             <details>
-                <summary id="sum1">
+                <summary class="sum1">
                 Overview
                 </summary>
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                     Running code in your browser
                     </summary>
 
@@ -85,7 +85,7 @@
             </details>
 
             <details>
-                <summary id="sum1">
+                <summary class="sum1">
                 Source Code
                 </summary>
                 <p>
@@ -94,7 +94,7 @@
             </details>
 
             <details>
-                <summary id="sum1">
+                <summary class="sum1">
                 For Further Study
                 </summary>
                 <ul>
@@ -105,7 +105,7 @@
             </details>
             
             <details>
-                <summary id="sum1">
+                <summary class="sum1">
                 Homework
                 </summary>
             </details>

@@ -21,7 +21,7 @@
             </div>
 
             <details>
-            <summary id="sum1">
+            <summary class="sum1">
                 What is dynamic programming?
             </summary>
 
@@ -89,7 +89,7 @@
                     <br>
                 </p>
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                         <b>Algorithms that use dynamic programming</b>:
                     </summary>
                     <ul>
@@ -156,7 +156,7 @@
                 </details>
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                         Dynamic programming video
                     </summary>
                     <div style="text-align:center">
@@ -169,7 +169,7 @@
             </details>
 
             <details>
-            <summary id="sum1">
+            <summary class="sum1">
                 Rod cutting
             </summary>
                 <p>
@@ -183,7 +183,7 @@
                 </p>
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                         Recursive top-down implmentation
                     </summary>
                     <p>
@@ -242,7 +242,7 @@
 
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                         Using dynamic programming for optimal rod-cutting
                     </summary>
                     <p>
@@ -261,7 +261,7 @@
 
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                         Subproblem graphs
                     </summary>
     
@@ -292,7 +292,7 @@
 
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                         Reconstructing a solution
                     </summary>
                     <p>
@@ -305,7 +305,7 @@
                 </details>
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                         Run the Python code
                     </summary>
  
@@ -317,15 +317,16 @@
                     <br />
                     cd 80d2a774f08f686f675f8a9254570da0
                     <br />
-                    import dynamic_programming
+                    from dynamic_programming import *
                     <br />
                     </code>
                     </p>
 
-                    <div style="text-align:center">
-                        <iframe style="width: 640; height: 480; border: none;"
+                    <div style="python-console">
+                        <iframe style="width: 640; height: 480;"
                             name="embedded_python_anywhere"
-                            src="https://www.pythonanywhere.com/embedded3/"></iframe>
+                            src="https://www.pythonanywhere.com/embedded3/">
+                        </iframe>
                     </div>
 
                     <p>
@@ -355,7 +356,7 @@
                 </details>
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                     A video on rod cutting
                     </summary>
                     <div style="text-align:center">
@@ -368,7 +369,7 @@
 
 
             <details>
-            <summary id="sum1">
+            <summary class="sum1">
                 Matrix-chain multiplication
             </summary>
 
@@ -405,7 +406,7 @@
                     are not the same.
                 </p>
                 <details>
-                    <summary id="sum4"><b>The reason</b></summary>
+                    <summary class="sum4"><b>The reason</b></summary>
 
                     <p>
                     In rod cutting, a cut of 4-2-2 is the <i>same cut</i> as a
@@ -418,7 +419,7 @@
                 </details>
 
                 <details>
-                <summary id="sum2">
+                <summary class="sum2">
                     Counting the number of parenthesizations
                 </summary>
                 <p>
@@ -429,12 +430,12 @@
                 </details>
 
                 <details>
-                <summary id="sum2">
+                <summary class="sum2">
                     Applying dynamic programming
                 </summary>
 
                     <details>
-                    <summary id="sum3">
+                    <summary class="sum3">
                         Step 1: The structure of an optimal parenthesization
                     </summary>
                     <p>
@@ -450,7 +451,7 @@
                     </details>
 
                     <details>
-                    <summary id="sum3">
+                    <summary class="sum3">
                         Step 2: A recursive solution
                     </summary>
                     <p>
@@ -488,7 +489,7 @@
                     </details>
 
                     <details>
-                    <summary id="sum3">
+                    <summary class="sum3">
                         Step 3: Computing the optimal costs
                     </summary>
                     <p>
@@ -505,7 +506,7 @@
                     </details>
 
                     <details>
-                        <summary id="sum3">
+                        <summary class="sum3">
                             Step 4: Constructing an optimal solution
                         </summary>
                         <p>
@@ -573,7 +574,7 @@
                     </details>
 
                     <details>
-                    <summary id="sum3">
+                    <summary class="sum3">
                         Memoization
                     </summary>
     
@@ -585,7 +586,7 @@
                 </details>
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                         A video on matrix chains.
                     </summary>
                     <div style="text-align:center">
@@ -598,12 +599,12 @@
 
 
             <details>
-            <summary id="sum1">
+            <summary class="sum1">
                 Elements of dynamic programming
             </summary>
 
                 <details>
-                <summary id="sum2">
+                <summary class="sum2">
                     Optimal substructure
                 </summary>
                 <p>
@@ -616,7 +617,7 @@
 
 
                 <details>
-                <summary id="sum2">
+                <summary class="sum2">
                     Overlapping subproblems
                 </summary>
 
@@ -630,7 +631,7 @@
 
 
                 <details>
-                <summary id="sum2">
+                <summary class="sum2">
                     Reconstructing an optimal solution
                 </summary>
                 <p>
@@ -641,7 +642,7 @@
 
 
                 <details>
-                <summary id="sum2">
+                <summary class="sum2">
                     Memoization
                 </summary>
                 <p>
@@ -658,12 +659,12 @@
 
 
             <details>
-            <summary id="sum1">
+            <summary class="sum1">
                 Longest common subsequence
             </summary>
 
                 <details>
-                <summary id="sum2">
+                <summary class="sum2">
                     Step 1: Characterizing a longest common subsequence
                 </summary>
 
@@ -699,7 +700,7 @@
 
 
                 <details>
-                <summary id="sum2">
+                <summary class="sum2">
                     Step 2: A recursive solution
                 </summary>
 
@@ -716,7 +717,7 @@
 
 
                 <details>
-                <summary id="sum2">
+                <summary class="sum2">
                     Step 3: Computing the length of an LCS
                 </summary>
 
@@ -730,12 +731,12 @@
 
 
                 <details>
-                <summary id="sum2">
+                <summary class="sum2">
                     Step 4: Constructing an LCS
                 </summary>
 
                     <details>
-                        <summary id="sum3">
+                        <summary class="sum3">
                             Improving the code
                         </summary>
     
@@ -752,7 +753,7 @@
                     </details>
                 </details>
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                         Video on LCS
                     </summary>
                     <div style="text-align:center">
@@ -764,7 +765,7 @@
             </details>
 
             <details>
-            <summary id="sum1">
+            <summary class="sum1">
                 Optimal binary search trees
             </summary>
                 <p>
@@ -775,7 +776,7 @@
 
 
                 <details>
-                <summary id="sum2">
+                <summary class="sum2">
                     Step 1: The structure of an optimal binary search tree
                 </summary>
 
@@ -788,7 +789,7 @@
 
 
                 <details>
-                <summary id="sum2">
+                <summary class="sum2">
                     Step 2: A recursive solution
                 </summary>
 
@@ -799,7 +800,7 @@
 
 
                 <details>
-                <summary id="sum2">
+                <summary class="sum2">
                     Step 3: Computing the expected search cost
                 </summary>
 
@@ -810,7 +811,7 @@
                 </details>
 
                 <details>
-                    <summary id="sum2">
+                    <summary class="sum2">
                         Optimal binary search tree video
                     </summary>
                     <div style="text-align:center">
@@ -823,7 +824,7 @@
 
 
             <details>
-            <summary id="sum1">
+            <summary class="sum1">
                 Source Code
             </summary>
                 <p>
@@ -832,7 +833,7 @@
             </details>
 
             <details>
-            <summary id="sum1">
+            <summary class="sum1">
                 For Further Study
             </summary>
                 <ul>
@@ -850,7 +851,7 @@
             </details>
             
             <details>
-            <summary id="sum1">
+            <summary class="sum1">
                 Homework
             </summary>
                 <ol>

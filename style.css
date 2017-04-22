@@ -47,7 +47,7 @@ ol, ul, dl {
     margin: 16px 40px 16px 40px;
 }
 
-p, summary#sum4 {
+p, summary.sum4 {
     margin: 8px 40px 8px 40px;
     padding: 0;
     line-height: 140%;
@@ -159,6 +159,11 @@ figcaption {
     margin: 16px 20px 12px 20px;
 }
 
+.python-console {
+    border: 1px solid red;
+    text-align: center;
+}
+
 .illustr-container {
     width: 1000px;
     height: 400px;
@@ -203,19 +208,19 @@ figcaption {
     color: #285d91;
 }
 
-summary#sum1 {
+summary.sum1 {
     font-size: 30px;
     color: #245;
     margin: 16px 24px 16px 24px;
 }
 
-summary#sum2 {
+summary.sum2 {
     font-size: 26px;
     color: #633;
     margin: 12px 24px 12px 40px;
 }
 
-summary#sum3 {
+summary.sum3 {
     font-size: 22px;
     color: #339;
     margin: 8px 24px 8px 56px;
