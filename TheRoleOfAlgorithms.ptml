@@ -171,8 +171,8 @@
       In particular, we want to focus on the highest power of n in any
       function expressing the run time of an algorithm. That is because, as
       input size grows, that power will dwarf all others in significance.
-      Consider the contribution of <em>4n<sup>2</sup></em>
-      and <em>4n</em> in the runtime of the
+      Consider the contribution of <em>n<sup>2</sup></em>
+      and <em>n</em> in the runtime of the
       sorting algorithm mentioned above for various values of <em>n</em>:
       </p>
 
