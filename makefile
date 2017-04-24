@@ -12,7 +12,7 @@ website: $(INCS) $(HTMLFILES)
 	./Javascript/tests.sh
 	./Python/tests.sh
 	./Ruby/tests.sh
-	git commit -a -m "HTML rebuild."
+	-git commit -a -m "HTML rebuild."
 	git push origin master
 
 local: $(INCS) $(HTMLFILES)
