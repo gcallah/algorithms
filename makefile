@@ -2,7 +2,7 @@ INCS = menu.txt chap_menu.txt lang_menu.txt
 HTMLFILES = $(shell ls *.ptml | sed -e 's/ptml/html/g')
  
 %.html: %.ptml $(INCS)
-	./html_include.awk <$< >$@
+	utils/html_include.awk <$< >$@
 
 website: $(INCS) $(HTMLFILES)
 	./C++/tests.sh
