@@ -132,9 +132,9 @@ figcaption {
 }
 
 .python-console {
-    border: .03125em solid red;
     text-align: center;
-    width: 96%;
+    float: center;
+    width: 100%;
     font-family: sans-serif; 
 }
 

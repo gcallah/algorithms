@@ -322,7 +322,7 @@
                     </code>
                     </p>
 
-                    <div style="python-console">
+                    <div class="python-console">
                         <iframe style="width: 640; height: 480;"
                             name="embedded_python_anywhere"
                             src="https://www.pythonanywhere.com/embedded3/">
