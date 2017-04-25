@@ -134,6 +134,8 @@ figcaption {
 .python-console {
     border: .03125em solid red;
     text-align: center;
+    width: 96%;
+    font-family: sans-serif; 
 }
 
 .illustr-container {

@@ -158,10 +158,11 @@
                     <summary class="sum2">
                         Dynamic programming video
                     </summary>
-                    <div style="text-align:center">
-                    <iframe width="560" height="315"
-                        src="https://www.youtube.com/embed/W2ote4jCuYw"
-                        frameborder="0" allowfullscreen></iframe>
+                    <div id="python_anywhere_dynprog" 
+                         class="python-console">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/W2ote4jCuYw"
+                            frameborder="0" allowfullscreen></iframe>
                     </div>
                 </details>
 
