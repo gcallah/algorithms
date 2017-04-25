@@ -1,23 +1,23 @@
 body {
     margin: 0;
     padding: 0;
-    font-size: 20px;
+    font-size: 100%;
     color: #333;
     background: #dff;
 }
 
 table {
-    margin: 8px 40px 8px 40px;
+    margin: .5em 2.5em .5em 2.5em;
     border-collapse: collapse;
 }
 
 th {
-    border: 1px solid black;
+    border: .03125em solid black;
     font-weight: normal;
 }
 
 th, td {
-            padding: 8px;
+            padding: .5em;
     }
 
 td {
@@ -30,7 +30,7 @@ td#languages {
 }
 
 th#chapter-head {
-    font-size: 20px;
+    font-size: 1.25em;
     color: #245;
     background: #cff;
 }
@@ -40,21 +40,21 @@ th {
 }
 
 li {
-    margin: 8px 12px 8px 12px;
+    margin: .5em .75em .5em .75em;
 }
 
 ol, ul, dl {
-    margin: 16px 40px 16px 40px;
+    margin: 1em 2.5em 1em 2.5em;
 }
 
 p, summary.sum4 {
-    margin: 8px 40px 8px 40px;
+    margin: .5em 2.5em .5em 2.5em;
     padding: 0;
     line-height: 140%;
 }
 
 blockquote {
-    margin: 12px 48px 12px 48px;
+    margin: .75em 4.5em .75em 4.5em;
     padding: 0;
     line-height: 140%;
     font-weight: bold;
@@ -65,47 +65,47 @@ h1,h2,h3,h4,h5 {
 }
 
 h1 {
-    margin: 0px 0px 24px 0px;
-    padding-bottom: 24px;
+    margin: 0 0 1.5em 0;
+    padding-bottom: 1.5em;
     text-align: center;
     font-weight: 300;
-    font-size: 36px;
+    font-size: 2.25em;
     background-color: #245;
     color: #dff;
 }
 
 h2 {
-    font-size: 32px;
-    margin: 24px 16px 20px 16px;
+    font-size: 2em;
+    margin: 1.5em 1em 1.25em 1em;
     color: #245;
 }
 
 h3 {
-    font-size: 28px;
-    margin: 20px 24px 16px 24px;
+    font-size: 1.66em;
+    margin: 1.25em 1.5em 1em 1.5em;
     color: #633;
     font-weight: bold;
 }
 
 h4 {
-    font-size: 24px;
-    margin: 16px 32px 12px 32px;
+    font-size: 1.5em;
+    margin: 1em 2em .75em 2em;
     color: #339;
     font-weight: bold;
 }
 
 h5 {
-    font-size: 22px;
-    margin: 16px 32px 12px 32px;
+    font-size: 1.375em;
+    margin: 1em 2em .75em 2em;
     color: #366;
     font-weight: bold;
 }
 
 #header {
     width: auto;
-    height: 60px;
-    padding: 10px 40px;
-    line-height: 40px;
+    height: 60;
+    padding: 10 2.5em;
+    line-height: 2.5em;
     background-color: #245;
     color: #dff;
     overflow: hidden;
@@ -121,26 +121,26 @@ h5 {
 
 figure {
     text-align: center;
-/*    margin: 12px 20px 12px 100px;  */
+/*    margin: .75em 1.25em .75em 100;  */
 }
 
 figcaption {
     color: #606;
     font-style: italic;
     text-align: center;
-    margin: 16px 20px 12px 20px;
+    margin: 1em 1.25em .75em 20;
 }
 
 .python-console {
-    border: 1px solid red;
+    border: .03125em solid red;
     text-align: center;
 }
 
 .illustr-container {
-    width: 1000px;
-    height: 400px;
+    width: 1000;
+    height: 400;
     flex: 1;
-    margin: 20px 20px 0 0;
+    margin: 1.25em 20 0 0;
     overflow: auto;
 }
 
@@ -156,22 +156,22 @@ figcaption {
 
 #logo {
     float: left;
-    margin: 0 20px 0 0;
+    margin: 0 1.25em 0 0;
 }
 
 #user-tools {
     float: right;
     padding: 0;
-    margin: 0 0 0 20px;
+    margin: 0 0 0 1.25em;
     font-weight: 300;
-    font-size: 11px;
-    letter-spacing: 0.5px;
+    font-size: .625em;
+    letter-spacing: 0.00375em;
     text-transform: uppercase;
     text-align: right;
 }
 
 #user-tools a {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom: .03125em solid rgba(255, 255, 255, 0.25);
 }
 
 #user-tools a:focus, #user-tools a:hover {
@@ -181,19 +181,19 @@ figcaption {
 }
 
 summary.sum1 {
-    font-size: 30px;
+    font-size: 30;
     color: #245;
-    margin: 16px 24px 16px 24px;
+    margin: 1em 1.5em 1em 1.5em;
 }
 
 summary.sum2 {
-    font-size: 26px;
+    font-size: 1.625em;
     color: #633;
-    margin: 12px 24px 12px 40px;
+    margin: .75em 1.5em .75em 2.5em;
 }
 
 summary.sum3 {
-    font-size: 22px;
+    font-size: 1.375em;
     color: #339;
-    margin: 8px 24px 8px 56px;
+    margin: .5em 1.5em .5em 3.5em;
 }
