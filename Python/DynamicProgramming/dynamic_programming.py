@@ -300,11 +300,18 @@ def optimal_bst(p, q, n):
         print("i = " + str(i) + "; w[i][i] = " + str(w[i][i]))
 
     for l in range(0, n):
-        for i in range(0, n - l + 1):
-            j = i + l - 1
+        print("\n*********")
+        print("Outer loop; l = " + str(l))
+        for i in range(0, n - l):
+            j = i + l
+            print("\n*********")
+            print("Middle loop; i = " + str(i) +
+                  "; j = " + str(j))
             w[i][j] = w[i][j - 1] + p[j] + q[j]
             for r in (i, j + 1):
-                t = e[i][r] + e[r][j] + w[i][j]
+                print("\n*********")
+                print("Inner loop; r = " + str(r))
+                t = e[i][r] + e[r + 1][j] + w[i][j + 1]
                 if t < e[i][j]:
                     e[i][j] = t
                     root[i][j] = r
