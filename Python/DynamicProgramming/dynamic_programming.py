@@ -290,7 +290,7 @@ def optimal_bst(p, q, n):
     # three 2D arrays: e is expected search costs, w is probabilities,
     # and root is ?
     e = [[BIG_NUM for x in range(n + 1)] for x in range(n + 1)]
-    w = [[BIG_NUM for x in range(n + 1)] for x in range(n + 1)]
+    w = [[0 for x in range(n + 1)] for x in range(n + 1)]
     root = [[BIG_NUM for x in range(n)] for x in range(n)]
 
     for i in range(0, n + 1):
@@ -301,19 +301,26 @@ def optimal_bst(p, q, n):
 
     for l in range(0, n):
         print("\n*********")
+        print("*********")
+        print("*********")
         print("Outer loop; l = " + str(l))
         for i in range(0, n - l):
             j = i + l
             print("\n*********")
+            print("*********")
             print("Middle loop; i = " + str(i) +
                   "; j = " + str(j))
-            w[i][j] = w[i][j - 1] + p[j] + q[j]
-            for r in (i, j + 1):
+            print("w[i][j + 1] = " + str(w[i][j]) + " + "
+                  + str(p[j]) + " + " + str(q[j + 1]))
+            w[i][j + 1] = w[i][j] + p[j] + q[j + 1]
+            w[i][j + 1] = round(w[i][j + 1], 2)
+            for r in range(i, j + 1):
                 print("\n*********")
                 print("Inner loop; r = " + str(r))
-                t = e[i][r] + e[r + 1][j] + w[i][j + 1]
+                t = e[i][r] + e[r + 1][j + 1] + w[i][j + 1]
+                print("t = " + str(t))
                 if t < e[i][j]:
-                    e[i][j] = t
+                    e[i][j] = round(t, 2)
                     root[i][j] = r
     return (e, root)
 
