@@ -16,17 +16,17 @@ BEGIN {
 }
 
 /^[0-9]/ {     # this is a chapter name
-    k = $2
+    chapnm = $2
     for( lang in langs ) {
-        dir = lang "/" $2
+        dir = lang "/" chapnm
         cmd = "ls " dir "/*" langs[lang] " 2>/dev/null | egrep -v 'README' | awk 'END{print NR}'"
         cmd | getline x
         close(cmd)
         if (x == 0) {
-            k = k " 0 "
+            chapnm = chapnm " 0 "
         } else {
-            k = k " 1 "
+            chapnm = chapnm " 1 "
         }
     }
-    print k
+    print chapnm
 }
