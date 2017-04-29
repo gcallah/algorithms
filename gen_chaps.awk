@@ -32,7 +32,7 @@ END {
     print indent3 $1 ". " sect_nm >> menu
     print indent2 "</h2>" >> menu
     print indent3 "<details>" >> menu
-    print indent3 "<summary>" >> menu
+    print indent3 "<summary class=\"menu_sum\">" >> menu
     print indent3 "Chapters" >> menu
     print indent3 "</summary>" >> menu
 }

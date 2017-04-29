@@ -346,13 +346,17 @@ Data structures
         (There are algorithms courses that spend their entire time on data structures. 
         We have an advanced data structures expert in the department, Prof. John Iacono.)
         </p>
-        <ul><li>A quick reminder of basic data structures:
-            <ul>
-                <li>Arrays
-                <li>Linked list
+        <ul>A quick reminder of basic data structures:
+            <li>
+                Arrays
+            </li>
+            <li>
+                Linked list
                 <br><img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/408px-Singly-linked-list.svg.png">
-                <li>Doubly-linked list
+            </li>
+            <li>
+                Doubly-linked list
                 <br>
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png">
@@ -360,48 +364,63 @@ Data structures
                 <br>
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Lifo_stack.png">
-                <li>Queues
+            </li>
+            <li>
+                Queues
                 <br>
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/405px-Data_Queue.svg.png">
-                <li>Double-ended queues
-                <li>ADT (<i>abstract data type</i>):
+            <li>
+                Double-ended queues
+            </li>
+            <li>
+                ADT (<i>abstract data type</i>):
                 <br>the set of operations a data structure promises to provide 
                 and the rules that they have to obey.
+            </li>
             </ul>
-              <h3>
+            <details>
+              <summary class="sum2">
               Detailed case study: Iterables as an ADT. 
-              </h3>
-              <h4>
-              Basic operations. 
-              </h4>
-              <ul>
-                  <li>Get iterator.
-                  <li>Get next value.
-                  <li>Detect end of iterables.
-              </ul>
-        
-              <h4>
-                    Extended operations. 
-              </h4>
-              <ul>
-                  <li>
-                      Rewind? We may not be able to if the iterator is exhausted in iterating
-                      through it.
-                  <li>Iterate in reverse?
-                  <li>Access an arbitrary element? (By index, say.)
-              </ul>
-              <h4>
-                Implementations. 
-              </h4>
-              <ul>
-                  <li>Straight-forward: Array.
-                  <li>Complex:<a
-                     <a href="https://github.com/gcallah/Indra/blob/master/indra/agent_pop.py">
-                         A population that can be iterated in many ways.
-                     </a> 
-              </ul>
-            </ul> 
+              </summary>
+                <details>
+                     <summary class="sum3">
+                     Basic operations. 
+                     </summary>
+                         <ul>
+                             <li>Get iterator.
+                             <li>Get next value.
+                             <li>Detect end of iterables.
+                         </ul>
+                </details>
+               
+                <details>
+                     <summary class="sum3">
+                           Extended operations. 
+                     </summary>
+                         <ul>
+                             <li>
+                             Rewind? We may not be able to if the 
+                             iterator is exhausted in iterating
+                                 through it.
+                             <li>Iterate in reverse?
+                             <li>Access an arbitrary element? (By index, say.)
+                         </ul>
+                </details>
+                <details>
+                     <summary class="sum3">
+                       Implementations. 
+                     </summary>
+                       <ul>
+                           <li>Straight-forward: Array.
+                           <li>Complex:<a
+                              <a href="https://github.com/gcallah/Indra/blob/master/indra/agent_pop.py">
+                                  A population that can be iterated in many ways.
+                              </a> 
+                       </ul>
+                </details>
+            </details>
+        </ul> 
     </details>
 
     <details>

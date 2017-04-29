@@ -4,7 +4,7 @@
             I.  Foundations
         </h2>
             <details>
-            <summary>
+            <summary class="menu_sum">
             Chapters
             </summary>
             <h3>
@@ -37,7 +37,7 @@
             II.  Sorting And Order Statistics
         </h2>
             <details>
-            <summary>
+            <summary class="menu_sum">
             Chapters
             </summary>
             <h3>
@@ -65,7 +65,7 @@
             III.  Data Structures
         </h2>
             <details>
-            <summary>
+            <summary class="menu_sum">
             Chapters
             </summary>
             <h3>
@@ -98,7 +98,7 @@
             IV.  Advanced Design And Analysis Techniques
         </h2>
             <details>
-            <summary>
+            <summary class="menu_sum">
             Chapters
             </summary>
             <h3>
@@ -121,7 +121,7 @@
             V.  Advanced Data Structures
         </h2>
             <details>
-            <summary>
+            <summary class="menu_sum">
             Chapters
             </summary>
             <h3>
@@ -149,7 +149,7 @@
             VI.  Graph Algorithms
         </h2>
             <details>
-            <summary>
+            <summary class="menu_sum">
             Chapters
             </summary>
             <h3>
@@ -182,7 +182,7 @@
             VII.  Selected Topics
         </h2>
             <details>
-            <summary>
+            <summary class="menu_sum">
             Chapters
             </summary>
             <h3>
