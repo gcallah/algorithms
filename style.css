@@ -69,7 +69,7 @@ h1,h2,h3,h4,h5 {
 
 h1 {
     margin: 0 0 1.5em 0;
-    padding-bottom: 1.5em;
+    padding-bottom: 1em;
     text-align: center;
     font-weight: 300;
     font-size: 2.25em;
@@ -77,15 +77,19 @@ h1 {
     color: #dff;
 }
 
+h1.toc-head {
+    margin: 0 0 0 0;
+}
+
 h2 {
     font-size: 2em;
-    margin: 1.5em 1em 1.25em 1em;
+    margin: 1.25em 1em 1.25em 1em;
     color: #245;
 }
 
 h3 {
     font-size: 1.75em;
-    margin: 1.25em 1.5em 1em 1.5em;
+    margin: 1.15em 1.5em 1em 1.5em;
     color: #633;
     font-weight: bold;
 }
@@ -122,9 +126,13 @@ h5 {
     text-decoration: underline;
 }
 
-figure {
+figure, figure.toc {
     text-align: center;
 /*    margin: .75em 1.25em .75em 100;  */
+}
+
+figure.toc {
+    margin: 0em 4em 4em 4em;  */
 }
 
 figcaption {
@@ -167,9 +175,9 @@ figcaption {
 #user-tools {
     float: right;
     padding: 0;
-    margin: 0 0 0 1.25em;
+    margin: 0 1.25em 0 1.25em;
     font-weight: 300;
-    font-size: .625em;
+    font-size: .8em;
     letter-spacing: 0.00375em;
     text-transform: uppercase;
     text-align: right;
@@ -205,7 +213,7 @@ summary.sum3 {
 
 summary.menu_sum {
     font-size: 1.4em;
-    color: #639;
+    color: #249;
     margin: .5em 0em .5em 0em;
 }
 

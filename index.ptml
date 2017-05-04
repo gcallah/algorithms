@@ -10,11 +10,10 @@
     <body>
 
 <!--include menu.txt -->
-		<h1>
+		<h1 class="toc-head">
 			Design and Analysis of Algorithms
 		</h1>
-            <div style="text-align:center">
-                <p>
+            <figure class="toc-fig">
 				<img
                  src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Finite_subdivision_of_a_radial_link.png"
 				height="160" width="160"><img
@@ -24,10 +23,7 @@
 				height="160" width="160"><img
                  src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Finite_subdivision_of_a_radial_link.png"
 				height="160" width="160">
-                </p>
-            </div>
-            <div style="text-align:center">
-                <p class="lead-quote">
+                <figcaption>
                 "The best programs are written so that computing
                 machines can perform them quickly and so that
                 human beings can understand them clearly. A
@@ -36,8 +32,9 @@
                 as mathematical concepts, to communicate the way
                 that an algorithm works and to convince a reader
                 that the results will be correct." -- Donald Knuth
-                <br>
-                </p>
+                </figcaption>
+            </figure>
+            <div style="text-align:center">
 
                 <hr>
 
