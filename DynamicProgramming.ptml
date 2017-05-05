@@ -330,8 +330,9 @@
                     </div>
 
                     <p>
-                        Now let's run our bottom_up_cut_rod() code. Type or
-                        paste:
+                        Now let's run our ext_bottom_up_cut_rod() code.
+                        (Link to full source code below.)
+                        Type or paste:
                         <code>
                         <br />
                         p4
