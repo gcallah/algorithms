@@ -7,7 +7,7 @@ body {
 }
 
 table {
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin: .5em 2.5em .5em 2.5em;
     border-collapse: collapse;
 }
@@ -31,7 +31,7 @@ td#languages {
 }
 
 th#chapter-head {
-    font-size: 1.25em;
+    font-size: 1.4em;
     color: #245;
     background: #cff;
 }
@@ -45,12 +45,12 @@ li {
 }
 
 ol, ul, dl {
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin: 1em 2.5em 1em 2.5em;
 }
 
 p, summary.sum4 {
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin: .5em 2.5em .5em 2.5em;
     padding: 0;
     line-height: 140%;
@@ -72,7 +72,7 @@ h1 {
     padding-bottom: 1em;
     text-align: center;
     font-weight: 300;
-    font-size: 2.25em;
+    font-size: 2.5em;
     background-color: #245;
     color: #dff;
 }
@@ -82,27 +82,27 @@ h1.toc-head {
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2.2em;
     margin: 1.25em 1em 1.25em 1em;
     color: #245;
 }
 
 h3 {
-    font-size: 1.75em;
+    font-size: 2em;
     margin: 1.15em 1.5em 1em 1.5em;
     color: #633;
     font-weight: bold;
 }
 
 h4 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     margin: 1em 2em .75em 2em;
     color: #339;
     font-weight: bold;
 }
 
 h5 {
-    font-size: 1.4em;
+    font-size: 1.6em;
     margin: 1em 2em .75em 2em;
     color: #366;
     font-weight: bold;
@@ -177,7 +177,7 @@ figcaption {
     padding: 0;
     margin: 0 1.25em 0 1.25em;
     font-weight: 300;
-    font-size: .8em;
+    font-size: 1em;
     letter-spacing: 0.00375em;
     text-transform: uppercase;
     text-align: right;
@@ -194,25 +194,25 @@ figcaption {
 }
 
 summary.sum1 {
-    font-size: 1.8em;
+    font-size: 2em;
     color: #245;
     margin: 1em 1.5em 1em 1.5em;
 }
 
 summary.sum2 {
-    font-size: 1.6em;
+    font-size: 1.8em;
     color: #633;
     margin: .75em 1.5em .75em 2.5em;
 }
 
 summary.sum3 {
-    font-size: 1.4em;
+    font-size: 1.6em;
     color: #339;
     margin: .5em 1.5em .5em 3.5em;
 }
 
 summary.menu_sum {
-    font-size: 1.4em;
+    font-size: 1.6em;
     color: #249;
     margin: .5em 0em .5em 0em;
 }
