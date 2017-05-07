@@ -1,36 +1,36 @@
 CHAPTER Java Ruby Go Javascript C++ Python Clojure
-TheRoleOfAlgorithms 0  1  1  1  1  1  1 
-GettingStarted 1  1  1  1  1  1  1 
-GrowthOfFunctions 0  1  1  1  1  1  1 
-DivideAndConquer 1  1  1  1  1  1  1 
-RandomizedAlgorithms 1  1  1  1  1  1  1 
-Heapsort 1  1  1  1  1  1  1 
-Quicksort 1  1  1  1  1  1  1 
-SortingInLinearTime 1  1  1  1  1  1  1 
-MediansAndOrderStatistics 0  1  1  1  1  1  1 
-ElementaryDataStructures 1  1  1  1  1  1  1 
-HashTables 1  1  1  1  1  1  1 
-BinarySearchTrees 1  1  1  1  1  1  1 
-RedBlackTrees 1  1  1  1  1  1  1 
-AugmentingDataStructures 0  1  1  1  1  1  1 
-DynamicProgramming 1  1  1  1  1  1  1 
-GreedyAlgorithms 1  1  1  1  1  1  1 
-AmortizedAnalysis 0  1  1  1  1  1  1 
-BTrees 0  1  1  1  1  1  1 
-FibonacciHeaps 0  1  1  1  1  1  1 
-vanEmdeBoasTrees 0  1  1  1  1  1  1 
-DataStructuresForDisjointSets 0  1  1  1  1  1  1 
-GraphAlgorithms 1  1  1  1  1  1  1 
-MinimumSpanningTrees 0  1  1  1  1  1  1 
-SingleSourceShortestPaths 0  1  1  1  1  1  1 
-AllPairsShortestPaths 0  1  1  1  1  1  1 
-MaximumFlow 0  1  1  1  1  1  1 
-MultithreadedAlgorithms 0  1  1  1  1  1  1 
-MatrixOperations 0  1  1  1  1  1  1 
-LinearProgramming 0  1  1  1  1  1  1 
-PolynomialsAndTheFFT 0  1  1  1  1  1  1 
-NumberTheoreticAlgorithms 0  1  1  1  1  1  1 
-StringMatching 0  1  1  1  1  1  1 
-ComputationalGeometry 0  1  1  1  1  1  1 
-NPCompleteness 0  1  1  1  1  1  1 
-ApproximationAlgorithms 0  1  1  1  1  1  1 
+TheRoleOfAlgorithms
+GettingStarted
+GrowthOfFunctions
+DivideAndConquer
+RandomizedAlgorithms
+Heapsort
+Quicksort
+SortingInLinearTime
+MediansAndOrderStatistics
+ElementaryDataStructures
+HashTables
+BinarySearchTrees
+RedBlackTrees
+AugmentingDataStructures
+DynamicProgramming
+GreedyAlgorithms
+AmortizedAnalysis
+BTrees
+FibonacciHeaps
+vanEmdeBoasTrees
+DataStructuresForDisjointSets
+GraphAlgorithms
+MinimumSpanningTrees
+SingleSourceShortestPaths
+AllPairsShortestPaths
+MaximumFlow
+MultithreadedAlgorithms
+MatrixOperations
+LinearProgramming
+PolynomialsAndTheFFT
+NumberTheoreticAlgorithms
+StringMatching
+ComputationalGeometry
+NPCompleteness
+ApproximationAlgorithms
