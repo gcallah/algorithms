@@ -30,5 +30,5 @@ BEGIN {
             entry = entry " 1 "
         }
     }
-    print chapnm
+    print entry
 }
