@@ -17,15 +17,17 @@ BEGIN {
 
 /^[0-9]/ {     # this is a chapter name
     chapnm = $2
+    entry = chapnm
     for( lang in langs ) {
-        dir = lang "/" chapnm
-        cmd = "ls " dir "/*" langs[lang] " 2>/dev/null | egrep -v 'README' | awk 'END{print NR}'"
-        cmd | getline x
-        close(cmd)
-        if (x == 0) {
-            chapnm = chapnm " 0 "
+        ext = langs[lang]
+        files = lang "/" chapnm "/*" ext
+#        print files
+        if(system("ls " files " 1> /dev/null 2>&1")) {
+#            print "Got nuttin"
+            entry = entry " 0 "
         } else {
-            chapnm = chapnm " 1 "
+#            print "Got one"
+            entry = entry " 1 "
         }
     }
     print chapnm
