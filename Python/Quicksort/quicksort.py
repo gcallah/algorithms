@@ -20,10 +20,70 @@ This file contains:
         partition().
 """
 
-from getting_started import swap
+from utils.misc import swap
 
+swaps = 0
 
-def quicksort(l, p=None, r=None):
+def hoare_partition(l, p, r):
+    """
+    Alternate helper function for quicksort.
+
+    """
+    global swaps
+    x = l[p]
+    i = p - 1
+    j = r + 1
+    print("Hoare: Our pivot element x = " + str(x))
+    while i < j:
+        while True:
+            j -= 1
+            if l[j] <= x:
+                break
+        while True:
+            i += 1
+            if l[i] >= x:
+                break
+        if i < j:
+            print("Swapping elements "
+                  + "i (" + str(i) + ") = "
+                  + str(l[i])
+                  + " and "
+                  + "j (" + str(j) + ") = "
+                  + str(l[j]))
+            swap(l, i, j)
+            swaps += 1
+            print("Swaps = " + str(swaps))
+    return j
+
+def partition(l, p, r):
+    """
+    Helper function for quicksort.
+
+    Returns: the new partition index.
+    """
+    global swaps
+    x = l[r]
+    print("Partition: Our pivot element x = " + str(x))
+    i = p - 1
+    for j in range(p, r):
+        if l[j] <= x:
+            i += 1
+            print("i = " + str(i) + " and j = " + str(j))
+            if i != j:
+                print("Swapping elements " + str(l[i]) + " and "
+                     + str(l[j]))
+                swap(l, i, j)
+                swaps += 1
+                print("Swaps = " + str(swaps))
+    if (i + 1) != r:
+        print("Swapping elements " + str(l[i + 1]) + " and "
+              + str(l[r]))
+        swap(l, i + 1, r)
+        swaps += 1
+        print("Swaps = " + str(swaps))
+    return i + 1
+
+def quicksort(l, p=None, r=None, partf=partition):
     """
     Args:
         l: the list to sort
@@ -37,39 +97,18 @@ def quicksort(l, p=None, r=None):
         Expected case: Θ(n * lg n) 
         Sorts in place.
     """
+    global swaps
     if p is None:
+        swaps = 0
         p = 0
     if r is None:
         r = len(l) - 1
     if p < r:
-        q = partition(l, p, r)
+        q = partf(l, p, r)
         print("Partitioning list at index " + str(q))
         print("The list is now: " + str(l))
-        quicksort(l, p, q - 1)
-        quicksort(l, q + 1, r)
-
-def partition(l, p, r):
-    """
-    Helper function for quicksort.
-
-    Returns: the new partition index.
-    """
-    x = l[r]
-    print("Our pivot element x = " + str(x))
-    i = p - 1
-    for j in range(p, r):
-        if l[j] <= x:
-            i += 1
-            print("i = " + str(i) + " and j = " + str(j))
-            if i != j:
-                print("Swapping elements " + str(l[i]) + " and "
-                     + str(l[j]))
-                swap(l, i, j)
-    if (i + 1) != r:
-        swap(l, i + 1, r)
-        print("Swapping elements " + str(l[i + 1]) + " and "
-              + str(l[r]))
-    return i + 1
+        quicksort(l, p, q - 1, partf=partf)
+        quicksort(l, q + 1, r, partf=partf)
 
 
 def rand_quicksort(l, p=None, r=None):
