@@ -2,7 +2,7 @@
 
 # put tests here!
 
-if Quicksort/test_quicksort.py ; then
+if ./test_quicksort.py ; then
     exit 1
 fi
 
