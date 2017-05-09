@@ -2,8 +2,9 @@
 
 # put tests here!
 
-if ./test_quicksort.py ; then
+./test_quicksort.py
+if [ "$?" != "0" ]; then
     exit 1
 fi
 
-exit 1
+exit 0

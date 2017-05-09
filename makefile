@@ -10,8 +10,9 @@ website: $(INCS) $(HTMLFILES)
 	./Go/tests.sh
 	./Java/tests.sh
 	./Javascript/tests.sh
-	cd Python; ./tests.sh; cd ..
 	./Ruby/tests.sh
+	cd Python; ./tests.sh
+	cd ..
 	-git commit -a -m "HTML rebuild."
 	git push origin master
 
