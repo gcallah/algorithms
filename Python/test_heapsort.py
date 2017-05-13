@@ -4,8 +4,8 @@ Test our heap code.
 """
 
 from unittest import TestCase, main
-from .heapsort import heapsort, build_heap, heap_extract_extr
-from utils.test_utils import rand_list
+from Heapsort.heapsort import heapsort, build_heap, heap_extract_extr
+from utils.test_utils import rand_list, assert_sorted
 
 NUM_TESTS = 10
 MAX_LIST = 100
@@ -18,9 +18,7 @@ class HeapsortTestCase(TestCase):
 
             # no return!
             heapsort(l)
-
-            for i in range(0, len(l) - 1):
-                self.assertLessEqual(l[i], l[i + 1])
+            assert_sorted(self, l)
 
     def test_heap_extract_extr(self):
         for j in range(NUM_TESTS):

@@ -24,7 +24,7 @@ This file contains:
 
 import operator as op
 
-import getting_started as srt   # so we don't have to duplicate swap!
+from utils.misc import swap, MAX_SENTINEL, MIN_SENTINEL
 
 
 # do we have a max heap or min heap?
@@ -42,9 +42,9 @@ def get_sentinel(min_or_max=MAX):
 
     """
     if min_or_max == MAX:
-        return srt.MIN_SENTINEL
+        return MIN_SENTINEL
     else:
-        return srt.MAX_SENTINEL
+        return MAX_SENTINEL
 
 """
 Next come three functions to navigate the heap:
@@ -137,7 +137,7 @@ def heapify(h, i, heapsize=None, min_or_max=MAX):
     if largest != i:
         print("Swapping elements " + str(i) + " and " +
                 str(largest))
-        srt.swap(h, i, largest)
+        swap(h, i, largest)
         heapify(h, largest, heapsize, min_or_max)
 
 
@@ -173,7 +173,7 @@ def heapsort(h, min_or_max=MAX):
         print("heapsort heap: " + str(h))
         print("heapsize = " + str(heapsize)
               + "; i = " + str(i))
-        srt.swap(h, 0, i)
+        swap(h, 0, i)
         heapsize -= 1
         heapify(h, 0, heapsize, min_or_max)
 
@@ -243,7 +243,7 @@ def heap_change_key(h, i, key, min_or_max=MAX):
     while i > 0 and comp(h[parent(i)], h[i]):
         print("Swapping " + str(h[i]) +
             " and " + str(h[parent(i)]))
-        srt.swap(h, i, parent(i))
+        swap(h, i, parent(i))
         i = parent(i)
 
 

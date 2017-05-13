@@ -22,10 +22,7 @@ This file contains:
 """
 
 import sys
-from utils.misc import swap
-
-MAX_SENTINEL = sys.maxsize
-MIN_SENTINEL = -1 * sys.maxsize
+from utils.misc import swap, MAX_SENTINEL, MIN_SENTINEL
 
 
 def merge_sort(l):

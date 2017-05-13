@@ -2,6 +2,10 @@
 Miscellaneous utilities used by Python algorithms code.
 """
 
+import sys
+
+MAX_SENTINEL = sys.maxsize
+MIN_SENTINEL = -1 * sys.maxsize
 
 def swap(l, i, j):
     """
