@@ -5,22 +5,19 @@ Test our sorting code.
 
 from unittest import TestCase, main
 from Quicksort.quicksort import quicksort, hoare_partition
-from utils.test_utils import rand_list
+from utils.test_utils import rand_list, assert_sorted
 
+NUM_TESTS = 10
+MAX_LIST = 100
 
 class QuicksortTestCase(TestCase):
-
-    def assert_sorted(self, l):
-        for i in range(0, len(l) - 1):
-            self.assertLessEqual(l[i], l[i + 1])
-
     def test_quicksort(self):
-        for j in range(10):
-            l = rand_list(max_list=100)
+        for j in range(NUM_TESTS):
+            l = rand_list(max_list=MAX_LIST)
 
             # no return!
             quicksort(l)
-            self.assert_sorted(l)
+            assert_sorted(self, l)
 
 """
     def test_hoare(self):
