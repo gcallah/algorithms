@@ -11,33 +11,69 @@
                 <a href="#note1">*</a>
         </h1>
 
-    <ul>
-        <li><h2>Introduction</h2>
-      <br>
+        
+    <details>
+    <summary class="sum1">
+    Introduction
+    </summary>
+      <p>
       Syllabus: Logistics, grading, exams, homeworks, cheating. 
-      <li><h2>We will study algorithms.</h2>
-      <br><b>What's an algorithm?</b>
+      </p>
+    </details> 
+
+    <details>
+    <summary class="sum1">
+    We will study algorithms.
+    </summary>
+      <p>
+      <b>What's an algorithm?</b>
       A carefully written recipe.<br>
       We need to agree what steps are allowed in a recipe.<br>
       We need to agree what problem the recipe is solving, ahead of time.<br>
       <img
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Euclid_flowchart.svg/220px-Euclid_flowchart.svg.png">
-      <li><h2>Important considerations</h2>
-      <br>
-      Things to keep in mind about algorithms (when analyzing and/or designing them): <ul>
-          <li><h3>Termination:</h3>
-          <br>
+      </p>
+    </details> 
+      
+    <details>
+    <summary class="sum1">
+    Important considerations
+    </summary>
+      <p>
+      Things to keep in mind about algorithms (when analyzing and/or designing them):
+      </p>
+          
+    <details>
+    <summary class="sum2">
+    Termination
+    </summary>
+
+    <p>
           On any legal (meaning, consistent with algorithm specification) input,
         the procedure you are describing should always eventually stop, or <i>terminate</i>.
         (In this course we will not talk about algorithms that are intended to run "forever,"
         such as the scheduler in an operating system.)
-        <li><h3>Correctness:</h3>
-          <br>
+    </p>
+    </details> 
+        
+    <details>
+    <summary class="sum2">
+    Correctness
+    </summary>
+
+    <p>
         On any legal input, provided the procedure has terminated,
         the result that it produces has to be correct. Not <em>sometimes</em> correct,
         not <em>mostly</em> correct, but <em>always</em> correct.
-        <li><h3>Performance:</h3>
-          <br>
+    </p>
+    </details> 
+        
+    <details>
+    <summary class="sum2">
+    Performance
+    </summary>
+
+    <p>
         You can measure performance in many different ways.
         The course will focus on the running time,
         but there are many others: space (memory use),
@@ -47,13 +83,25 @@
         number of cores in a multi-core program,
         total amount of communication in a distributed program,
         power consumed in an algorithm tuned to low-power devices and many many others.
-      </ul>
+
       So in short, when you describe a recipe for doing something, make sure it always stops,
       make sure it always produces correct answers, and only after that worry about how
       efficient it is. (Depending on the algorithm, some or all of these are very
       easy, and some may not be obvious at all. We will see examples later.)
-      <li><h2>Running time</h2>
-      <br>
+    </p>
+    </details> 
+    </details> 
+      
+    <details>
+    <summary class="sum1">
+        Characteristics of our analysis
+    </summary>
+    <details>
+    <summary class="sum2">
+    Running time
+    </summary>
+
+    <p>
       We surely do not want to talk about actual time
      in nanoseconds, as that depends on too many external things: what other
      processes are running, details of the hardware, compiler switches, etc, etc. 
@@ -63,7 +111,15 @@
     in the CPU, such as address arithmetic, additions, multiplications, divisions,
     etc. Our idea of "running time" is then simply the number of operations
     performed when the program runs.
-    <li><h2>More trouble</h2>
+    </p>
+    </details> 
+    
+    <details>
+    <summary class="sum2">
+    More trouble
+    </summary>
+
+    <p>
     Even for inputs of a fixed size (saying, your favorite program
       sorting 10 numbers), different specific inputs will produce different performance.
       For example, a clever algorithm may notice that the input is already sorted
@@ -74,14 +130,27 @@
       means: technically, you need to specify a <i>distribution</i> of the inputs.
       We will mostly stay away from average-case analysis and focus on the worst case;
       we will occasionally look at the best case too.)
-      <li><h2>Generalized statement of running time</h2>
+    </p>
+    </details> 
+      
+    <details>
+    <summary class="sum2">
+    Generalized statement of running time
+    </summary>
+
       <br>
       What we really want, is not the running time (as the number of operations,
       say, in the worst case), for a specific input size, but as a function of the
       input size, over all sizes. For example, it may be that a given sorting
       algorithm requires <em>4n<sup>2</sup> + 4n + 24</em> operations to sort <em>n</em> items.
-      <li><h2>Asymptotic behavior</h2>
-      <br>
+    </details> 
+      
+    <details>
+    <summary class="sum2">
+    Asymptotic behavior
+    </summary>
+
+      <p>
       In order to make life easier, we will not be focusing on the exact value of
       such function, but on its <i>asymptotic</i> behavior.
       <br>
@@ -90,24 +159,29 @@
         <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Comparison_computational_complexity.svg/250px-Comparison_computational_complexity.svg.png">
         </center>
-      <br>
-      <li><h2>Highest power of n</h2>
-      <br>
+      </p>
+    </details> 
+      
+    <details>
+    <summary class="sum2">
+    Highest power of n
+    </summary>
+
+      <p>
       In particular, we want to focus on the highest power of n in any
       function expressing the run time of an algorithm. That is because, as
       input size grows, that power will dwarf all others in significance.
-      Consider the contribution of <em>4n<sup>2</sup></em>
-      and <em>4n</em> in the runtime of the
+      Consider the contribution of <em>n<sup>2</sup></em>
+      and <em>n</em> in the runtime of the
       sorting algorithm mentioned above for various values of <em>n</em>:
-      <br>
-      <br>
-      <center>
+      </p>
+
       <table>
           <tr>
-              <th style="background-color:#9999DD">
+              <th>
                   n
               </th>
-              <th style="background-color:#9999DD">
+              <th>
                   n<sup>2</sup>
               </th>
           </tr>
@@ -132,23 +206,33 @@
               <td>10,000,000,000</td>
           </tr>
       </table>
-      </center>
+
       <p>
       Now consider that Amazon is processing tens of millions of transactions
       per day: of what significance is the <em>n</em> factor in the performance
       of their servers, if they are using an algorithm with an
       <em>n<sup>2</sup></em> factor involved to sort them?
       </p>
-      <hr>
-        <br>
-        <li><h2>An example</h2>
+    </details> 
+       
+        
+    <details>
+    <summary class="sum2">
+    An example
+    </summary>
+
+        <p>
         An example of a toy algorithmic problem and how to solve it, analyze it etc etc.
         <br>
         Who has the same birthday in class?
-    </ul>
+        </p>
+    </details> 
+    </details> 
+    <p>
     <a name="note1">* Based on Prof. Boris Aronov's lecture notes. </a>
     <br>
     <a name="note2">** Material drawn from Khan Academy and
-        https://en.wikipedia.org/wiki/Big_O_notation.</a>
+       https://en.wikipedia.org/wiki/Big_O_notation.</a>
+    </p>
     </body>
 </html>

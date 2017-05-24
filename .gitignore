@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# intermediate lang files
+*.txt
+
 # misc:
 .DS_Store
 

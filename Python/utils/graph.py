@@ -19,12 +19,16 @@ test_alist = [
                 [10, [11, 12]],
              ]
 
-# to test initializing by edge list:
-test_elist = [(1, 2), (1, 3), (3, 5), (4, 5), (5, 6), (5, 9), (6, 7),
+# initialize by edge list:
+test_elist = [(1, 2), (1, 3), (3, 5), (5, 4), (5, 6), (5, 9), (6, 7),
+              (7, 8)]
+
+# edge list with cycle:
+test_cycle = [(1, 2), (1, 3), (3, 5), (4, 5), (5, 6), (5, 9), (6, 7),
               (6, 9), (7, 8)]
 
 # to test for detecting disconnected graphs:
-test_dis_elist = [(1, 2), (1, 3), (3, 5), (4, 5), (5, 6), (5, 9), (6, 7),
+test_disconn = [(1, 2), (1, 3), (3, 5), (4, 5), (5, 6), (5, 9), (6, 7),
                   (6, 9), (8, 13)]  # this last edge is not connected:
                                     # should be revealed by isconnected()
 
@@ -66,7 +70,7 @@ class Edge():
         self.v2 = v2
 
     def __str__(self):
-        return str(self.v1) + "<-->" + str(self.v2)
+        return str(self.v1) + "-->" + str(self.v2)
 
     def get_vertices(self):
         return (self.v1, self.v2)
@@ -154,7 +158,7 @@ class Graph():
         """
         Args:
             elist: a list of edges by id.
-            directed: is thisa directed graph?
+            directed: is this a directed graph?
         """
         # the following item is a heterogeneous list.
         # The first item is a node,
@@ -163,8 +167,9 @@ class Graph():
         self.edges = []
         self.directed = directed
 
-        for e in elist:
-            self.add_edge(e[0], e[1])
+        if elist is not None:
+            for e in elist:
+                self.add_edge(e[0], e[1])
 
         if not self.isconnected():
             print("Warning: this graph is not connected.")
@@ -186,10 +191,15 @@ class Graph():
         # before adding:
         self.add_vertex(vid, uid)
         # for directed graphs, you have to explicitly
-        # add both directions of you want both:
+        # add both directions if you want both:
         if not self.directed:    
             self.add_vertex(uid, vid)
+        else:
+            self.add_vertex(uid, None)
         self.edges.append(Edge(vid, uid))
+
+    def isdirected(self):
+        return self.directed
 
     def isconnected(self, vseen=None, vid=None):
         """
@@ -220,6 +230,8 @@ class Graph():
         elif len(vseen) == len(self.vertices):
             return True
         else:
+            print("vseen = " + str(vseen))
+            print("vertices = " + str(self.vertices.keys()))
             return False
 
     def get_vertex(self, vid):
@@ -235,10 +247,18 @@ class Graph():
         return self.edges
 
     def get_vertices(self):
-        """
-        This returns the actual vertex objects.
-        """
         return list(self.vertices.values())
+
+    def transpose(self):
+        if not self.isdirected():
+            print("Can't transpose an undirected graph!")
+            return None
+        else:
+            trans = Graph(None, directed=True)
+            for e in self.get_edges():
+                (u, v) = e.get_vertices()
+                trans.add_edge(v, u)
+            return trans
 
     def iscover(self, edges):
         """

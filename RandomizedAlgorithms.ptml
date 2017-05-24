@@ -18,56 +18,57 @@
         </center>
         <br>
 
-        <h2>
+        <details>
+        <summary class="sum1">
             The hiring problem
-        </h2>
+        </summary>
 
-        <p>
-        <a
-            href="https://github.com/gcallah/algorithms/blob/master/Python/RandomizedAlgorithms/">
-            Source code here.
-        </a>
-        </p>
+            <details>
+            <summary class="sum2">
+                Worst-case analysis
+            </summary>
+            <p>
+            The worst case: the employment agency sets us up, and sends us
+            candidates in worst-to-best order, so we hire every single one.
+            </p>
+            </details>
+    
+    
+            <details>
+            <summary class="sum2">
+                Probabilistic anaysis
+            </summary>
+            <p>
+            We use probability theory to find an <em>average-case running
+                time</em>.
+            <br>
+            <br>
+            <a href="Probability.html">Probability basics</a>.
+            </p>
+            </details>
+    
+    
+            <details>
+            <summary class="sum2">
+                A randomized algorithm
+            </summary>
+            <p>
+            We best the employment agency by shuffling their list of candidates,
+            and seeing them in random order: we get a much lower average cost, as we shall
+            prove.
+            </p>
+            <p>
+            When we randomize the algorithm we speak of an <em>expected 
+                running time</em>.
+            </p>
+            </details>
+        </details>
 
-        <h3>
-            Worst-case analysis
-        </h3>
-        <p>
-        The worst case: the employment agency sets us up, and sends us
-        candidates in worst-to-best order, so we hire every single one.
-        </p>
 
-
-        <h3>
-            Probabilistic anaysis
-        </h3>
-        <p>
-        We use probability theory to find an <em>average-case running
-            time</em>.
-        <br>
-        <br>
-        <a href="Probability.html">Probability basics</a>.
-        </p>
-
-
-        <h3>
-            Randomized algorithms
-        </h3>
-        <p>
-        We best the employment agency by shuffling their list of candidates,
-        and seeing them in random order: we get a much lower average cost, as we shall
-        prove.
-        </p>
-        <p>
-        When we randomize the algorithm we speak of an <em>expected 
-            running time</em>.
-        </p>
-
-
-
-        <h2>
+        <details>
+        <summary class="sum1">
             Indicator random variables
-        </h2>
+        </summary>
              <p>
              (Note: <a href="https://en.wikipedia.org/wiki/Random_variable">
                  random variables</a> are actually functions.)
@@ -81,9 +82,10 @@
                  <li>X = 0 if A does not happen
              </ul>
 
-             <h3>
+            <details>
+             <summary class="sum2">
              Useful properties of indicator variables:
-             </h3>
+             </summary>
 
              <p>
              If X is an indicator variable for A, then
@@ -151,10 +153,12 @@
 
              So we expect to get 1 or 6 about 33.33 times.
              </p>
+            </details>
 
-             <h3>
+            <details>
+             <summary class="sum2">
                 Analysis of hiring problem using indicator random variables
-             </h3>
+             </summary>
              <p>
                 The first candidate we always hire. The second candidate will
                 be better half the time, the third one will be better than the
@@ -213,30 +217,38 @@
              <br>It means that the sum - ln n is always bounded by a constant.
 
              </p>
+            </details>
+        </details>
 
-             <h2>
+        <details>
+             <summary class="sum1">
              Randomized algorithms
-             </h2>
+             </summary>
              <p>
 
              </p>
 
 
-             <h3>
+            <details>
+             <summary class="sum2">
              Randomly permuting arrays
-             </h3>
+             </summary>
              <p>
 
              </p>
+            </details>
+        </details>
 
-             <h2>
+        <details>
+             <summary class="sum1">
                 Probabilistic analysis and further uses of indicator random
                 variables
-             </h2>
+             </summary>
 
-             <h3 id="birthday">
+            <details>
+             <summary class="sum2">
              The birthday paradox
-             </h3>
+             </summary>
              <p>
 
              <img
@@ -289,24 +301,41 @@
              So we are looking at <em>&Theta;(n<sup>1/2</sup>)</em>,
              asymptotically speaking.
              </p>
+            </details>
 
 
-             <h3>
+            <details>
+             <summary class="sum2">
              Balls and bins
-             </h3>
+             </summary>
+            </details>
 
 
-             <h3>
+            <details>
+             <summary class="sum2">
              Streaks
-             </h3>
+             </summary>
+            </details>
 
 
-             <h3>
+            <details>
+             <summary class="sum2">
              The on-line hiring problem
-             </h3>
+             </summary>
              <p>
 
              </p>
+            </details>
+        </details>
+        
+        <details>
+            <summary class="sum1">
+                Source Code
+            </summary>
+            <p>
+<!--include RandomizedAlgorithms_langs.txt -->
+            </p>
+        </details>
 
     </body>
 </html>

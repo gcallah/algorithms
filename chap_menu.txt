@@ -1,7 +1,12 @@
 
+            </details>
         <h2>
             I.  Foundations
         </h2>
+            <details>
+            <summary class="menu_sum">
+            Chapters
+            </summary>
             <h3>
                 <a href="TheRoleOfAlgorithms.html">
                 1.  The Role Of Algorithms
@@ -27,9 +32,14 @@
                 5.  Randomized Algorithms
                 </a>
             </h3>
+            </details>
         <h2>
             II.  Sorting And Order Statistics
         </h2>
+            <details>
+            <summary class="menu_sum">
+            Chapters
+            </summary>
             <h3>
                 <a href="Heapsort.html">
                 6.  Heapsort
@@ -50,9 +60,14 @@
                 9.  Medians And Order Statistics
                 </a>
             </h3>
+            </details>
         <h2>
             III.  Data Structures
         </h2>
+            <details>
+            <summary class="menu_sum">
+            Chapters
+            </summary>
             <h3>
                 <a href="ElementaryDataStructures.html">
                 10.  Elementary Data Structures
@@ -78,9 +93,14 @@
                 14.  Augmenting Data Structures
                 </a>
             </h3>
+            </details>
         <h2>
             IV.  Advanced Design And Analysis Techniques
         </h2>
+            <details>
+            <summary class="menu_sum">
+            Chapters
+            </summary>
             <h3>
                 <a href="DynamicProgramming.html">
                 15.  Dynamic Programming
@@ -96,9 +116,14 @@
                 17.  Amortized Analysis
                 </a>
             </h3>
+            </details>
         <h2>
             V.  Advanced Data Structures
         </h2>
+            <details>
+            <summary class="menu_sum">
+            Chapters
+            </summary>
             <h3>
                 <a href="BTrees.html">
                 18.  B Trees
@@ -119,9 +144,14 @@
                 21.  Data Structures For Disjoint Sets
                 </a>
             </h3>
+            </details>
         <h2>
             VI.  Graph Algorithms
         </h2>
+            <details>
+            <summary class="menu_sum">
+            Chapters
+            </summary>
             <h3>
                 <a href="GraphAlgorithms.html">
                 22.  Graph Algorithms
@@ -147,9 +177,14 @@
                 26.  Maximum Flow
                 </a>
             </h3>
+            </details>
         <h2>
             VII.  Selected Topics
         </h2>
+            <details>
+            <summary class="menu_sum">
+            Chapters
+            </summary>
             <h3>
                 <a href="MultithreadedAlgorithms.html">
                 27.  Multithreaded Algorithms
@@ -195,3 +230,4 @@
                 35.  Approximation Algorithms
                 </a>
             </h3>
+            </details>

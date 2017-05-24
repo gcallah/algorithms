@@ -19,13 +19,10 @@
                 </p>
             </div>
 
-            <h2>
-                Topics
-            </h2>
-
-            <h3>
+            <details>
+            <summary class="sum1">
                 Introduction
-            </h3>
+            </summary>
                 <p>
                 What is this?
                 </p>
@@ -38,120 +35,153 @@
                     <li><b>Combine</b> the solutions for the sub problems into the
                         solution for the original problem.
                 </ul>
+    
+                <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/6SUmp_Cn-SU"
+                        frameborder="0" allowfullscreen></iframe>
+                    <figcaption>
+                        Introduction to divide-and-conquer
+                    </figcaption>
+                </figure>
 
-            <h4>
-                Recurrences
-            </h4>
-                <p>
-                Merge sort recurrence:
-                <br>
-                <br>
-                <img src="graphics/RecEq1.gif">
-                <br>
-                <br>
-                We "solve" these by finding a closed-form equation that
-                describes the recurrence but without recursion.
-                <br>
-                <b>Solution</b>: T(n) = &Theta;(n lg n)
+                <details>
+                    <summary class="sum2">
+                    Recurrences
+                    </summary>
+                    <p>
+                    Merge sort recurrence:
+                    <br>
+                    <br>
+                    <img src="graphics/RecEq1.gif">
+                    <br>
+                    <br>
+                    We "solve" these by finding a closed-form equation that
+                    describes the recurrence but without recursion.
+                    <br>
+                    <b>Solution</b>: T(n) = &Theta;(n lg n)
+        
+                    <br>
+                    <br>
+                    <b>Methods</b>:
+                    <br>
+                    </p>
+                    <ul>
+                        <li><b>Substitution method</b>: Guess a solution and then use
+                            induction to prove it.
+                        <li><b>Recursive-tree method</b>: Convert the recurrence into a
+                            tree whose nodes represent costs incurred at each level.
+                        <li><b>Master method</b>:
+                            <br>
+                            Solves recurrences of the form:
+                            <br>
+                            T(n) = aT(n / b) + f(n)
+                            <br>
+                            where a &ge; 1, b &gt; 1.
+                    </ul>
     
-                <br>
-                <br>
-                <b>Methods</b>:
-                <br>
-                </p>
-                <ul>
-                    <li><b>Substitution method</b>: Guess a solution and then use
-                        induction to prove it.
-                    <li><b>Recursive-tree method</b>: Convert the recurrence into a
-                        tree whose nodes represent costs incurred at each level.
-                    <li><b>Master method</b>:
-                        <br>
-                        Solves recurrences of the form:
-                        <br>
-                        T(n) = aT(n / b) + f(n)
-                        <br>
-                        where a &ge; 1, b &gt; 1.
-                </ul>
+                    <p>
+                    <br>
+                    <b>Technicalities</b>
+                    <br>
+                    We often omit floors, ceilings, and boundary conditions. For
+                    instance, if n is odd, we may say n / 2 anyway.
+                    </p>
+                </details>
 
-                <p>
-                <br>
-                <b>Technicalities</b>
-                <br>
-                We often omit floors, ceilings, and boundary conditions. For
-                instance, if n is odd, we may say n / 2 anyway.
-                </p>
+            </details>
     
     
-                <h3>
+            <details>
+                <summary class="sum1">
                     The maximum-subarray problem
-                </h3>
+                </summary>
                 <p>
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Maximum_Subarray_Visualization.svg/220px-Maximum_Subarray_Visualization.svg.png">
                 <br>
                 <br>
                 Only makes since in an array with both negative and positive
-                values: otherwise the answer is either the whole array of the
+                values: otherwise the answer is either the whole array or the
                 maximum member.
                 <br>
                 <br>
                 </p>
 
-            <h4>
-                Brute-force solution
-            </h4>
-                <p>
-                Try every combination of two elements!
-                <br>
-                A n choose 2 problem, so order of &Omega;(n<sup>2</sup>).
-                <br>
-                n choose 2 will be about 1/2 n<sup>2</sup>, since it equals
-                n(n - 1) / 2. So we can establish a lower bound by setting c =
-                1/3, for instance, and n choose 2 will always be bounded from
-                below by c*n<sup>2</sup>.
+                <details>
+                    <summary class="sum2">
+                    Brute-force solution
+                </summary>
+                    <p>
+                    Try every combination of two elements!
+                    <br>
+                    A n choose 2 problem, so order of &Omega;(n<sup>2</sup>).
+                    <br>
+                    n choose 2 will be about 1/2 n<sup>2</sup>, since it equals
+                    n(n - 1) / 2. So we can establish a lower bound by setting c =
+                    1/3, for instance, and n choose 2 will always be bounded from
+                    below by c*n<sup>2</sup>.
+        
+                    </p>
+                </details>
     
+                <details>
+                    <summary class="sum2">
+                    A transformation
+                </summary>
+    
+                <p>
+                We loon at the problem differently: let's find the nonempty,
+                contiguous subarray of our array whose values have the largest sum.
+                We call this the <b>maximum subarray</b>.
                 </p>
+                </details>
+    
+                <details>
+                    <summary class="sum2">
+                    A solution using divide-and-conquer
+                </summary>
+                <p>
+                To solve this problem, we divide an array A into three subarrays,
+                and ask what is the maximum subarray in each:
+                </p>
+                <ol>
+                    <li>From A[low] to A[midpoint - 1].
+                    <li>Crossing the mid-point.
+                    <li>From A[midpoint + 1] to A[high]
+                </ol>
+    
+                <p>
+                Problems 1 and 3 are simply this same problem on a smaller array!
+                Problem 2 can be solved by finding the maximum subarrays in
+                low-to-mid and in mid+1-to-high.
+                <br>
+                <br>
+                The recurrence is the same as for merge sort.
+                </p>
+                </details>
 
-            <h4>
-                A transformation
-            </h4>
+                <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/OexQs_cYgAQ"
+                        frameborder="0" allowfullscreen></iframe>
+                    <figcaption>
+                        Maximum sub-array video
+                    </figcaption>
+                </figure>
 
-            <p>
-            We loon at the problem differently: let's find the nonempty,
-            contiguous subarray of our array whose values have the largest sum.
-            We call this the <b>maximum subarray</b>.
-            </p>
-
-            <h4>
-                A solution using divide-and-conquer
-            </h4>
-            <p>
-            To solve this problem, we divide an array A into three subarrays,
-            and ask what is the maximum subarray in each:
-            </p>
-            <ol>
-                <li>From A[low] to A[midpoint - 1].
-                <li>Crossing the mid-point.
-                <li>From A[midpoint + 1] to A[high]
-            </ol>
-
-            <p>
-            Problems 1 and 3 are simply this same problem on a smaller array!
-            Problem 2 can be solved by finding the maximum subarrays in
-            low-to-mid and in mid+1-to-high.
-            <br>
-            <br>
-            The recurrence is the same as for merge sort.
-            </p>
+            </details>
 
 
-            <h3>
+            <details>
+            <summary class="sum1">
                 Strassen's algorithm for matrix multiplication
-            </h3>
+            </summary>
 
-                <h4>
+                <details>
+                    <summary class="sum2">
                     Recursive Square-Matrix Multiply
-                </h4>
+                </summary>
                 <p>
                     We divide each of our initial matrices into four
                     sub-matrices, and multiply them. Which we do by dividing
@@ -181,10 +211,12 @@
                     <br>
                     T(n) = &Theta;(n<sup>3</sup>) 
                 </p>
+                </details>
 
-                <h4>
+                <details>
+                    <summary class="sum2">
                     Strassen's Algorithm
-                </h4>
+                </summary>
                 <p>
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Strassen_algorithm.svg/800px-Strassen_algorithm.svg.png">
@@ -250,11 +282,14 @@
                     thousands before Strassen's algorithm yields significant
                     gains.
                 </p>
+                </details>
+            </details>
 
 
-            <h3>
+            <details>
+            <summary class="sum1">
                 The substitution method for solving recurrences
-            </h3>
+            </summary>
                 <p>
                     <b>Note:</b> I am presenting these three methods in my
                     notes in textbook order. But in lectures, I present the
@@ -264,9 +299,10 @@
                     then master method, and <i>then</i> substitution.
                 </p>
 
-                <h4 id="Towers">
+                <details>
+                <summary class="sum2">
                     Towers of Hanoi
-                </h4>
+                </summary>
                     <p>
                     <br>
                     <img
@@ -355,10 +391,12 @@
                     <br>
                     And we are done!
                     </p>
+                    </details>
 
-                    <h4>
+                    <details>
+                    <summary class="sum2">
                         Another substitution-method problem
-                    </h4>
+                    </summary>
                     
                     <p>
                         Let's look at the recurrence:
@@ -422,11 +460,14 @@
                         Now, we need to show that if for sub-problems smaller
                         than n the claim is true, then it is true for n.
                     </p>
+                </details>
+            </details>
 
 
-            <h3>
+            <details>
+            <summary class="sum1">
                 The recursion-tree method for solving recurrences
-            </h3>
+            </summary>
                 <p>
                 There are two ways to use this method:
                 </p>
@@ -891,10 +932,12 @@
                 <p>
                     This observation leads us to:
                 </p>
+            </details>
 
-            <h3>
+            <details>
+            <summary class="sum1">
                 The master method for solving recurrences
-            </h3>
+            </summary>
     
                 <p>
                     <b>Form</b>: T(n) = aT(n / b) + f(n). 
@@ -1021,34 +1064,32 @@
                     <li>T(n) = 3<sup>n</sup>(n / 3) + n<sup>3</sup>
                     <li>T(n) = 8T(n / 2) + 2<sup>n</sup>
                 </ol>
+            </details>
     
     
-                <h2>
+            <details>
+                 <summary class="sum1">
                     Source Code
-                </h2>
-                    <p>
-                    <a
-                        href="https://github.com/gcallah/algorithms/blob/master/Python/DivideAndConquer/div_and_conquer.py">
-                        Python
-                    </a>
-                    <br>
-                        Ruby
-                    <br>
-                    <a
-                        href="https://github.com/gcallah/algorithms/blob/master/Javascript/divideAndConquer.js">
-                        JavaScript
-                    </a>
-                    <br>
-                    <a
-                        href="https://github.com/gcallah/algorithms/blob/master/Java/DivideAndConquer/matrixMult.java">
-                        Java
-                    </a>
-                    </p>
+                    </summary>
+                <p>
+<!--include DivideAndConquer_langs.txt -->
+                </p>
+            </details>
     
-                <h2>
-                    External Links
-                </h2>
+            <details>
+                 <summary class="sum1">
+                    For Further Study
+                    </summary>
                 <ul>
+                    <figure>
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/kDhR4Zm53zc"
+                            frameborder="0" allowfullscreen></iframe>
+                        <figcaption>
+                            MIT: Intro to Divide-and-Conquer
+                        </figcaption>
+                    </figure>
+
                     <li>
                         <a href="https://en.wikipedia.org/wiki/Master_theorem">
                             The Master Theorem
@@ -1072,37 +1113,42 @@
                         href="http://www.csd.uwo.ca/~moreno/CS433-CS9624/Resources/master.pdf">
                         Practice problems
                     </a>
-            </ul>
+                </ul>
+            </details>
             
-            <h2>
-                Homework
-            </h2>
-            <ol>
-                <li>Implement the Towers of Hanoi in a programming language of
-                    your choice. Put in test code to count the number of moves.
-                    Print out the number of moves after you have solved the
-                    puzzle. Run the code and show that we have solved 
-                    the recurrence correctly. What you hand in should be 
-                    your source code plus several runs showing your results.
-                <li>Implement Strassen's method in a programming language of
-                    your choice.
-                <li>A well-known recurrence is the Fibonacci sequence. Please
-                    find the closed form for it, <em>showing how you found
-                    it</em>. (You can easily look up the form online, but
-                    please try to solve this yourself.)
-                <li>Find tight asymptotic bounds for the following recurrence:
-                    <br>
-                    <img src="graphics/RecEq3.gif">
-                    <br>
-            </ol>
+            <details>
+                 <summary class="sum1">
+                    Homework
+                </summary>
+                <ol>
+                    <li>Implement the Towers of Hanoi in a programming language of
+                        your choice. Put in test code to count the number of moves.
+                        Print out the number of moves after you have solved the
+                        puzzle. Run the code and show that we have solved 
+                        the recurrence correctly. What you hand in should be 
+                        your source code plus several runs showing your results.
+                    <li>Implement Strassen's method in a programming language of
+                        your choice.
+                    <li>A well-known recurrence is the Fibonacci sequence. Please
+                        find the closed form for it, <em>showing how you found
+                        it</em>. (You can easily look up the form online, but
+                        please try to solve this yourself.)
+                    <li>Find tight asymptotic bounds for the following recurrence:
+                        <br>
+                        <img src="graphics/RecEq3.gif">
+                        <br>
+                </ol>
+            </details>
 
-            <h2>
+            <details>
+                 <summary class="sum1">
                 Credits
-            </h2>
+                </summary>
 
-            <ul>
-                <li>Recursion-tree diagrams:
-                    http://www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec20-master/lec20.html
-            </ul>
+                <ul>
+                    <li>Recursion-tree diagrams:
+                        http://www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec20-master/lec20.html
+                </ul>
+            </details>
     </body>
 </html>

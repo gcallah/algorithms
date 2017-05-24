@@ -1,10 +1,31 @@
-SRCS = $(wildcard *.ptml)
-OBJS = $(wildcard *.html)
-INCS = menu.txt
-
+INCS = menu.txt chap_menu.txt lang_menu.txt 
+HTMLFILES = $(shell ls *.ptml | sed -e 's/ptml/html/g')
+ 
 %.html: %.ptml $(INCS)
-	./html_include.awk <$< >$@
+	utils/html_include.awk <$< >$@
 
-web_site: $(OBJS) $(INCS)
-	git commit $(SRCS) $(OBJS) $(INCS) -m "HTML rebuild."
+website: $(INCS) $(HTMLFILES)
+	./C++/tests.sh
+	./Clojure/tests.sh
+	./Go/tests.sh
+	./Java/tests.sh
+	./Javascript/tests.sh
+	./Ruby/tests.sh
+	cd Python; ./tests.sh
+	cd ..
+	-git commit -a -m "HTML rebuild."
 	git push origin master
+
+local: $(INCS) $(HTMLFILES)
+
+lang_menu.txt: lang_chapter_binary.txt
+	./gen_lang_menu.awk <lang_chapter_binary.txt >lang_menu.txt
+
+lang_chapter_binary.txt: chapters.txt langs.txt
+	./gen_lang_bin.sh <chapters.txt >lang_chapter_binary.txt
+	
+chap_menu.txt: chapters.txt
+	./gen_chaps.awk <chapters.txt >chap_menu.txt
+
+clean:
+	rm $(HTMLFILES)

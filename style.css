@@ -1,24 +1,25 @@
 body {
     margin: 0;
     padding: 0;
-    font-size: 20px;
+    font-size: 100%;
     color: #333;
     background: #dff;
 }
 
 table {
-    margin: 8px 40px 8px 40px;
+    font-size: 1.4em;
+    margin: .5em 2.5em .5em 2.5em;
     border-collapse: collapse;
 }
 
 th {
-    border: 1px solid black;
+    border: .03125em solid black;
     font-weight: normal;
 }
 
 th, td {
-            padding: 8px;
-    }
+    padding: .5em;
+}
 
 td {
     background: #dff;
@@ -30,7 +31,7 @@ td#languages {
 }
 
 th#chapter-head {
-    font-size: 20px;
+    font-size: 1.4em;
     color: #245;
     background: #cff;
 }
@@ -40,82 +41,78 @@ th {
 }
 
 li {
-    margin: 8px 12px 8px 12px;
+    margin: .5em .75em .5em .75em;
 }
 
 ol, ul, dl {
-    margin: 16px 40px 16px 40px;
+    font-size: 1.4em;
+    margin: 1em 2.5em 1em 2.5em;
 }
 
-p {
-    margin: 8px 40px 8px 40px;
+p, summary.sum4 {
+    font-size: 1.4em;
+    margin: .5em 2.5em .5em 2.5em;
     padding: 0;
     line-height: 140%;
 }
 
 blockquote {
-    margin: 12px 48px 12px 48px;
+    font-size: 1.1em;
+    margin: .75em 4.5em .75em 4.5em;
     padding: 0;
     line-height: 140%;
-    font-weight: bold;
 }
 
-h1,h2,h3,h4,h5 {
+h1,h2 {
     font-weight: bold;
 }
 
 h1 {
-    margin: 0px 0px 24px 0px;
-    padding-bottom: 24px;
+    margin: 0 0 1.5em 0;
+    padding-bottom: 1em;
     text-align: center;
     font-weight: 300;
-    font-size: 36px;
+    font-size: 2.5em;
     background-color: #245;
     color: #dff;
 }
 
+h1.toc-head {
+    margin: 0 0 0 0;
+}
+
 h2 {
-    font-size: 32px;
-    margin: 24px 16px 20px 16px;
+    font-size: 2.2em;
+    margin: 1.25em 1em 1.25em 1em;
     color: #245;
 }
 
-h2.subhead {
-    font-weight:
-    normal;
-    margin-top:
-    0;
-}
-
 h3 {
-    font-size: 28px;
-    margin: 20px 24px 16px 24px;
+    font-size: 2em;
+    margin: 1.15em 1.5em 1em 1.5em;
     color: #633;
     font-weight: bold;
 }
 
 h4 {
-    font-size: 24px;
-    margin: 16px 32px 12px 32px;
+    font-size: 1.8em;
+    margin: 1em 2em .75em 2em;
     color: #339;
     font-weight: bold;
 }
 
 h5 {
-    font-size: 22px;
-    margin: 16px 32px 12px 32px;
+    font-size: 1.6em;
+    margin: 1em 2em .75em 2em;
     color: #366;
     font-weight: bold;
 }
 
-/* HEADER */
-/* not used at present */
-
 #header {
     width: auto;
-    height: 60px;
-    padding: 10px 40px;
-    line-height: 40px;
+    height: 60;
+    padding: 10 2.5em;
+    line-height: 2.5em;
     background-color: #245;
     color: #dff;
     overflow: hidden;
@@ -129,48 +126,34 @@ h5 {
     text-decoration: underline;
 }
 
-#branding {
-    float: left;
-}
-
-#branding h1 {
-    padding: 0;
-    margin: 0 20px 0 0;
-    font-weight: 300;
-    font-size: 24px;
-    color: #ffcc33;
-}
-
-#branding h1, #branding h1 a:link, #branding h1 a:visited {
-    color: #ffcc33;
-}
-
-#branding h2 {
-    padding: 0 10px;
-    font-size: 14px;
-    margin: -8px 0 8px 0;
-    font-weight: normal;
-    color: #ffc;
-}
-
-
-figure {
+figure, figure.toc {
     text-align: center;
-/*    margin: 12px 20px 12px 100px;  */
+/*    margin: .75em 1.25em .75em 100;  */
+}
+
+figure.toc {
+    margin: 0em 4em 4em 4em;  */
 }
 
 figcaption {
     color: #606;
     font-style: italic;
     text-align: center;
-    margin: 16px 20px 12px 20px;
+    margin: 1em 1.25em .75em 20;
+}
+
+.python-console {
+    text-align: center;
+    float: center;
+    width: 100%;
+    font-family: sans-serif; 
 }
 
 .illustr-container {
-    width: 1000px;
-    height: 400px;
+    width: 1000;
+    height: 400;
     flex: 1;
-    margin: 20px 20px 0 0;
+    margin: 1.25em 20 0 0;
     overflow: auto;
 }
 
@@ -186,22 +169,22 @@ figcaption {
 
 #logo {
     float: left;
-    margin: 0 20px 0 0;
+    margin: .1em 1.25em 0 1.25em;
 }
 
 #user-tools {
     float: right;
     padding: 0;
-    margin: 0 0 0 20px;
+    margin: 0 1.25em 0 1.25em;
     font-weight: 300;
-    font-size: 11px;
-    letter-spacing: 0.5px;
+    font-size: 1em;
+    letter-spacing: 0.00375em;
     text-transform: uppercase;
     text-align: right;
 }
 
 #user-tools a {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom: .03125em solid rgba(255, 255, 255, 0.25);
 }
 
 #user-tools a:focus, #user-tools a:hover {
@@ -210,4 +193,31 @@ figcaption {
     color: #285d91;
 }
 
+summary.sum1 {
+    font-size: 2em;
+    color: #245;
+    margin: 1em 1.5em 1em 1.5em;
+}
+
+summary.sum2 {
+    font-size: 1.8em;
+    color: #633;
+    margin: .75em 1.5em .75em 2.5em;
+}
+
+summary.sum3 {
+    font-size: 1.6em;
+    color: #339;
+    margin: .5em 1.5em .5em 3.5em;
+}
+
+summary.menu_sum {
+    font-size: 1.6em;
+    color: #249;
+    margin: .5em 0em .5em 0em;
+}
+
+p.lead-quote {
+    margin: .75em 8em .75em 8em;
+}
 

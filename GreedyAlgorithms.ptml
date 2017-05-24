@@ -20,9 +20,10 @@
                 </p>
             </div>
 
-            <h2>
-                A family of problems and approriate solutions
-            </h2>
+            <details>
+                <summary class="sum1">
+                    A family of problems and approriate solutions
+                </summary>
 
                 <p>
                     It is important to recognize that we have been dealing with a
@@ -37,11 +38,13 @@
                             matters</b>:
                         <br>Greedy algorithms.
                 </ul>
+            </details>
 
 
-            <h2>
-                What is a greedy algorithm?
-            </h2>
+            <details>
+                <summary class="sum1">
+                    What is a greedy algorithm?
+                </summary>
 
                 <p>
                 We have an optimization problem.
@@ -79,129 +82,29 @@
                 Consider this simple shortest path problem:
                 <br>
                 <br>
-                <img src="graphics/ShortPath.png">
+                <img src="graphics/ShortPath.png"
+                    height="240" width="360">
                 <br>
                 <br>
                 A greedy algorithm choosing the shortest path from <i>a</i> to <i>d</i> will
                 wrongly head to <i>b</i> first, rather than to <i>c</i>.
-                <br>
-                <br>
-                And that provides us a <a href="#hw1">homework problem</a>.
-                <br>
                 </p>
 
-                <h3>
-                    Minimum spanning trees
-                </h3>
+                <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/rOOyJNgyW_o"
+                        frameborder="0" allowfullscreen></iframe>
+                    <figcaption>
+                        Introduction to greedy algorithms
+                    </figcaption>
+                </figure>
 
-                    <p>
-                    <b>Tree</b>: A connected graph with no cycles.
-                    <br>
-                    Given a graph G, any tree that includes all of the vertices
-                    of G is called a <i>spanning tree</i>. The lowest-weight tree
-                    that does that is a <i>minimum spanning tree</i>.
-                    <br>
-                    <br>
-                    These are used to solve problems such as:
-                    </p>
-                    <ul>
-                        <li>Lowest cost way to bring a package between two
-                            cities.
-                        <li>Most efficient way to connect two components on a
-                            circuit board.
-                        <li>Most efficient way to connect two strangers in a
-                            social network.
-                    </ul>
-                    <p>
-                    Our first greedy algorithm.
-                    <br>
-                    <br>
-                    Weighted graph.
-                    </p>
+            </details>
 
-                    <h4>
-                        Kruskal's Algorithm
-                    </h4>
-
-                    <p>
-                    <img src="graphics/MinSpanTree1.png">
-                    <br>
-                    <br>
-                    We add edges in increasing-cost order, so long as the edges
-                    don't create a cycle (are "safe").
-                    <br>
-                    Steps:
-                    </p>
-                    <ul>
-                        <li>Include the edge weighted 1.
-                        <li>Include both edges weighted 2.
-                        <li>Include the edge weighted 3.
-                        <li>Include the upper
-                            and lower edges weighted 4.
-                            (Not the middle one!)
-                        <li>Include the lone edge weighted 5.
-                        <li>Include the edge weighted 6.
-                    </ul>
-                    <p>
-                    <img src="graphics/MinSpanTree2.png">
-                    <br>
-                    <br>
-                    <b>Proof</b>: Is Kruskal's algorithm guaranteed to always
-                    find the minimum spanning tree?
-                    <br>
-                    Yes, it is. Let's prove it. 
-                    <br>
-                    We suppose that graph <i>G</i> has <i>n</i> vertices.
-                    Then our algorithm will create a tree <i>T</i>
-                    with edges <i>e<sub>1</sub></i>, <i>e<sub>2</sub></i>,
-                    ...  <i>e<sub>n - 1</sub></i>, where 
-                    <i>w(e<sub>1</sub>) &le; w(e<sub>2</sub>)
-                        &le; ... w(e<sub>n - 1</sub>)</i>.
-                    <br>
-                    Suppose that there is a tree <i>T*</i> with a lesser
-                    weight.
-                    <br>
-                    Let <i>e<sub>k</sub></i> be the first edge in <i>T</i>
-                    that is not in <i>T*</i>.
-                    <br>
-                    Now we insert <i>e<sub>k</sub></i> in <i>T*</i>. This will
-                    produce a cycle in <i>T*</i>, by the nature of trees.
-                    There must be some edge <i>e<sup>*</sup></i> that is in
-                    <i>T*</i> but not in <i>T</i> (otherwise <i>T</i> would
-                    have a cycle).
-                    <br>
-
-                    <img src="graphics/Kruskal.png">
-                    <br>
-                    But the weight of <i>e<sub>k</sub></i> must be less than
-                    the weight of <i>e<sup>*</sup></i>, because after we had
-                    inserted <i>e<sub>1</sub></i> through 
-                    <i>e<sub>k - 1</sub></i>, we could have next chosen
-                    <i>e<sup>*</sup></i>... but we did not. Instead we chose
-                    <i>e<sub>k</sub></i>.
-                    <br>
-                    So <i>T*</i> does not have a lesser weight after all.
-                    </p>
-
-                    <h4>
-                        How to find safe edges
-                    </h4>
-
-                    <ul>
-                        <li>Place each vertex in its own set. (We now have a
-                            <i>forest</i> of one-vertex, unconnected trees.)
-                        <li>We examine edges (<i>u, v</i>) in non-decreasing order.
-                        <li>If <i>u</i> and <i>v</i> are not in the same set (tree), add the
-                            edge. (It is safe.)
-                        <li>If <i>u</i> and <i>v</i> are in the same set, adding the edge
-                            would create a cycle (by the nature of trees, E = V
-                            - 1).
-                    </ul>
-
-
-            <h2>
-                An activity selection problem
-            </h2>
+            <details>
+                <summary class="sum1">
+                    An activity selection problem
+                </summary>
 
                 <p>
                     Suppose we need to schedule a lecture hall with the goal of
@@ -355,11 +258,12 @@
                 </p>
 
 
-                <h3>
+                <details>
+                    <summary class="sum2">
                     The optimal sub-structure of the problem
-                </h3>
+                    </summary>
 
-                <p>
+                    <p>
                     It is easy to see that the problem exhibits optimal
                     substructure. <i>If</i> the optimal solution includes a
                     lecture from 4 to 6, then we have the sub-problems of
@@ -382,11 +286,13 @@
                     Or we could use a bottom-up dynamic programming algorithm,
                     developed from the recursive solution in the same way we
                     saw in our last lecture.
-                </p>
+                    </p>
+                </details>
 
-                <h3>
+                <details>
+                    <summary class="sum2">
                     Making the greedy choice
-                </h3>
+                    </summary>
 
                     <p>
                     But we can solve this problem much more efficiently. At
@@ -411,10 +317,12 @@
                     that the textbook offers us an example of such sets on page
                     415.)
                     </p>
+                </details>
 
-                <h3>
+                <details>
+                    <summary class="sum2">
                     A recursive greedy algorithm
-                </h3>
+                    </summary>
 
                     <p>
                     The algorithm it Is straightforward: find the first compatible 
@@ -429,22 +337,27 @@
                     better to modify a data structure than to do special coding for
                     end cases.
                     </p>
+                </details>
 
 
-                <h3>
+                <details>
+                    <summary class="sum2">
                     An iterative greedy algorithm
-                </h3>
+                    </summary>
 
                     <p>
                     As usual, it is fairly simple to transform the recursive
                     algorithm into an iterative version. The authors discuss tail
                     recursion in this section: let's review what this is.
                     </p>
+                </details>
+            </details>
 
 
-            <h2>
-                Elements of the greedy strategy
-            </h2>
+            <details>
+                <summary class="sum1">
+                    Elements of the greedy strategy
+                </summary>
 
                 <p>
                 <img
@@ -463,9 +376,10 @@
                     <li>Convert the recursive algorithm to an iterative algorithm
                 </ol>
 
-                <h3>
+                <details>
+                    <summary class="sum2">
                     Greedy-choice property
-                </h3>
+                    </summary>
 
                     <p>
                     <img
@@ -481,11 +395,13 @@
                     show that substituting in a greedy choice will also yield an
                     optimal solution.
                     </p>
+                </details>
 
 
-                <h3>
+                <details>
+                    <summary class="sum2">
                     Optimal substructure
-                </h3>
+                    </summary>
 
                     <p>
                     This is simpler then for dynamic programming 
@@ -499,11 +415,13 @@
                     greedy choice at every
                     step produces an optimal solution.
                     </p>
+                </details>
 
 
-                <h3>
+                <details>
+                    <summary class="sum2">
                     Greedy versus dynamic programming
-                </h3>
+                    </summary>
 
                     <p>
                     Two knapsack problems:
@@ -520,11 +438,14 @@
                     The latter can be solved with a greedy algorithm, the former
                     cannot.
                     </p>
+                </details>
+            </details>
 
 
-            <h2>
-                Huffman codes
-            </h2>
+            <details>
+                <summary class="sum1">
+                    Huffman codes
+                </summary>
 
                 <p>
                 <img
@@ -537,9 +458,19 @@
                 representations for characters that occur less frequently.
                 </p>
 
-                <h3>
+                <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/dM6us854Jk0"
+                        frameborder="0" allowfullscreen></iframe>
+                    <figcaption>
+                        Huffman coding
+                    </figcaption>
+                </figure>
+
+                <details>
+                    <summary class="sum2">
                     Prefix codes
-                </h3>
+                    </summary>
 
                     <p>
                     Prefix codes are coding schemes in which no codeword 
@@ -547,6 +478,9 @@
                     <br>
                     This makes decoding easier -- no lookahead.
                     (<b>else</b> and <b>else-if</b>)
+                    <br />
+                    It means that we never hit two letters on the same path
+                    down the tree!
                     </p>
     
                     <table>
@@ -596,10 +530,12 @@
                             </td>
                         </tr>
                     </table>
+                </details>
 
-                <h3>
+                <details>
+                    <summary class="sum2">
                     Constructing a Huffman code
-                </h3>
+                    </summary>
 
                     <p>
                         We build a binary tree from the bottom-up, starting with the
@@ -642,11 +578,13 @@
                         only one possible interpretation of it. That is what
                         the prefix coding buys us.
                     </p>
+                </details>
 
 
-                <h3>
+                <details>
+                    <summary class="sum2">
                     Correctness of Huffman's algorithm
-                </h3>
+                    </summary>
 
                     <p>
                         We begin operating on an alphabet &Sigma;. At each step,
@@ -685,11 +623,14 @@
                         encoding &Sigma;' is optimal after all.
 
                     </p>
+                </details>
+            </details>
 
 
-            <h2>
-                Matroids and greedy methods
-            </h2>
+            <details>
+                <summary class="sum1">
+                    Matroids and greedy methods
+                </summary>
 
                 <p>
                 <img
@@ -697,9 +638,10 @@
                 <br>
                 <br>
 
-                <h3>
+                <details>
+                    <summary class="sum2">
                     Matroids
-                </h3>
+                    </summary>
 
                     <h4>
                         A graph
@@ -895,49 +837,49 @@
                         <br>
                         https://www.youtube.com/watch?v=pe5MaEugAwg&list=PL-XzhVrXIVeSu_b29hbX5xJ0bRThokU8a
                     </p>
+                </details>
 
-                <h3>
+                <details>
+                    <summary class="sum2">
                     Greedy algorithms on a weighted matroid
-                </h3>
+                    </summary>
                     <p>
                         <b>Q</b>: Why do greedy algorithms work on a matroid?
                         <br>
                         <b>A</b>: Independence!
                     </p>
+                </details>
+            </details>
 
 
-            <h2>
-                A task-scheduling problem as a matroid
-            </h2>
+            <details>
+                <summary class="sum1">
+                    A task-scheduling problem as a matroid
+                </summary>
 
                 <p>
                     <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Thread_pool.svg/400px-Thread_pool.svg.png">
                     <br>
                     <br>
-                    The surprise here is that we can simply greedily grab tasks in
+                    The surprise here is that we can 
+                    simply greedily grab tasks in
                     order of increasing deadlines, and our algorithm will work.
                 </p>
+            </details>
 
 
-            <h2>
+            <details>
+                <summary class="sum1">
                 Source Code
-            </h2>
-                <p>
-                    <a
-                        href="https://github.com/gcallah/algorithms/blob/master/Python/GreedyAlgorithms/">
-                    Python
-                    </a>
-                    <br>
-                    <a
-                        href="https://github.com/gcallah/algorithms/blob/master/Ruby/greedy.rb">
-                        Ruby
-                    </a>
-                </p>
+                </summary>
+<!--include GreedyAlgorithms_langs.txt -->
+            </details>
 
-            <h2>
-                External Links
-            </h2>
+            <details>
+                <summary class="sum1">
+                    For Further Study
+                </summary>
                 <ul>
                     <li><a href="https://en.wikipedia.org/wiki/Greedy_algorithm">
                             Greedy algorithm
@@ -949,10 +891,12 @@
                             Matroid
                         </a>
                 </ul>
+            </details>
             
-            <h2>
-                Homework
-            </h2>
+            <details>
+                <summary class="sum1">
+                    Homework
+                </summary>
                 <ol>
                     <li id="hw1">
                         Our intuition might tell us that choosing the shortest
@@ -1016,5 +960,6 @@
                         until the knapsack is full. Each choice is completely
                         independent of subsequent choices.
                 </ol>
+            </details>
     </body>
 </html>

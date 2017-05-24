@@ -15,17 +15,19 @@
             <div style="text-align:center">
                 <p>
                 <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/BinaryTreeRotations.svg/405px-BinaryTreeRotations.svg.png">
+                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/200px-Binary_search_tree.svg.png">
                 </p>
             </div>
 
-            <h2>
+        <details>
+            <summary class="sum1">
                 What is a binary search tree?
-            </h2>
+            </summary>
 
-            <h3>
+            <details>
+            <summary class="sum2">
                 Running time
-            </h3>
+            </summary>
             <p>
                 <b>Worst case:</b> &Theta;(n)
                 <br>
@@ -37,11 +39,13 @@
                 That is because the expected height of a randomly built binary
                 search tree is O(lg n).
             </p>
+            </details>
 
 
-            <h3>
+            <details>
+            <summary class="sum2">
                 Binary Search Tree Property
-            </h3>
+            </summary>
             <blockquote>
                 Let x be a node in a binary search tree. If y is a node in the
                 left subtree of x, then y.key &le; x.key. If y is a node in the
@@ -54,11 +58,14 @@
             <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <em>(Tree 1)</em>
             </p>
+            </details>
+        </details>
 
     
-            <h2>
+        <details>
+            <summary class="sum1">
                 Querying a binary search tree
-            </h2>
+            </summary>
             <p>
                 Why do we pass in a node rather than the tree itself?
                 <br>
@@ -79,9 +86,11 @@
                 the tree.
                 <br>
             </p>
-            <h3>
+
+            <details>
+            <summary class="sum2">
                 Search
-            </h3>
+            </summary>
             <p>
                 We search by starting with the root node. If it's key is equal
                 to the key for which we are searching, we are done: that is the
@@ -108,22 +117,26 @@
                     <li>Voila!
                 </ul>
             </p>
+            </details>
 
             
-            <h3>
+            <details>
+            <summary class="sum2">
                 Minimum and maximum
-            </h3>
+            </summary>
 
             <p>
             To find the minimum, we simply walk down the left side of the tree.
             <br>
             To find the maximum, we simply walk down the right side of the tree.
             </p>
+            </details>
 
 
-            <h3>
+            <details>
+            <summary class="sum2">
                 Successor
-            </h3>
+            </summary>
             <p>
                 Similarly, let's walk through successor for our tree above.
                 <br>
@@ -142,15 +155,19 @@
                 <em>(Tree 2)</em>
                 <br>
             </p>
+            </details>
+        </details>
 
     
-            <h2>
+        <details>
+            <summary class="sum1">
                 Insertion and deletion
-            </h2>
+            </summary>
 
-            <h3>
+            <details>
+            <summary class="sum2">
                 Insert
-            </h3>
+            </summary>
             <p>
                 Let's walk through insert for tree 1 above.
                 <br>
@@ -164,10 +181,12 @@
                     <li>5 &gt; 4, so we move right and insert. 
                 </ul>
             </p>
+            </details>
 
-            <h3>
+            <details>
+            <summary class="sum2">
                 Delete
-            </h3>
+            </summary>
             <p>
                 Deletion is by far the most complicated coding of any of these
                 functions. There are four cases (and z is the node to delete):
@@ -209,13 +228,13 @@
                 <img 
                 src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/BinTree2.png">
             </p>
+            </details>
+        </details>
 
-
-
-    
-            <h2>
+        <details>
+            <summary class="sum1">
                 Randomly built binary search trees
-            </h2>
+            </summary>
             <p>
                 We insert the keys randomly. (We would have to have all keys at
                 hand at the start, and then do a random shuffle on the set of
@@ -226,26 +245,48 @@
                 input that is already sorted, which would create a worst-case
                 scenario.
             </p>
+        </details>
 
-    
-            <h2>
-                Source Code
-            </h2>
+        <details>
+            <summary class="sum1">
+                Run the Python code
+            </summary>
+ 
             <p>
-            <a
-                href="https://github.com/gcallah/algorithms/blob/master/Python/BinarySearchTrees/">
-                Python
-            </a>
-            <br>
-            <a
-                href="https://github.com/gcallah/algorithms/blob/master/Ruby/binary_trees.rb">
-                Ruby
-            </a>
+                In the console below, type or paste:
+                <br />
+            <code>
+            !git clone
+            https://gist.github.com/gcallah/f0d36f8c107e6c1e888d58aefcb3a5aa
+            <br />
+            cd f0d36f8c107e6c1e888d58aefcb3a5aa
+            <br />
+            from binary_search_trees import *
+            <br />
+            </code>
             </p>
 
-            <h2>
-                External Links
-            </h2>
+            <div class="python-console">
+                <iframe style="width: 640; height: 480;"
+                    name="embedded_python_anywhere"
+                    src="https://www.pythonanywhere.com/embedded3/">
+                </iframe>
+            </div>
+        </details>
+
+        <details>
+            <summary class="sum1">
+                Source Code
+            </summary>
+            <p>
+<!--include BinarySearchTrees_langs.txt -->
+            </p>
+        </details>
+
+        <details>
+            <summary class="sum1">
+                For Further Study
+            </summary>
             <ul>
                 <li><a
                         href="https://www.cs.usfca.edu/~galles/visualization/BST.html">
@@ -256,10 +297,12 @@
                         Khan Academy BST visualizer
                     </a>.
             </ul>
+        </details>
             
-            <h2>
+        <details>
+            <summary class="sum1">
                 Homework
-            </h2>
+            </summary>
             <ol>
                 <li>For the first tree above, write the steps that will take place
                     when we insert 11.

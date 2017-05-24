@@ -15,6 +15,7 @@ This file contains:
     memo_cut_rod()
     memo_cut_rod_aux()
     bottom_up_cut_rod():
+    matrix_chain_order()
 """
 
 import sys
@@ -126,6 +127,11 @@ def bottom_up_cut_rod(prices, n):
     for j in range(1, n + 1):  # 0th element holds a 0
         max_rev = NEG_REV
         for i in range(j):
+            print("Checking max_rev between " + str(max_rev)
+                    + " and j = " + str(j) + "; i = " + str(i)
+                    + "; j - i - 1 = " + str(j - i - 1))
+            print("prices[i] = " + str(prices[i]) + 
+                    "; revs[j - i - 1] = " + str(revs[j - i - 1]))
             max_rev = max(max_rev, prices[i] + revs[j - i - 1])
 
         print("Maximum revenue calculated at step " + str(j)
@@ -153,9 +159,11 @@ def ext_bottom_up_cut_rod(prices, n):
                                       # but no harm doing all
     cuts = [0 for i in range(n + 1)]
     for j in range(1, n + 1):  # 0th element holds a 0
+        print("\n********\n Working on foot: " + str(j))
         max_rev = NEG_REV
         for i in range(j):
             prev_revs = revs[j - i - 1]
+            print("Revs = " + str(revs))
             print("Comparing max_rev of " + str(max_rev)
                   + " with " + str(prices[i])
                   + " plus prev_rev of " + str(prev_revs))
@@ -200,42 +208,51 @@ On to determining optimal matrix multiplication order.
 BIG_NUM = sys.maxsize
 
 
-def matrix_chain_order(dims):
+def matrix_chain_order(p):
     """
         Args:
-            dims: a list of dimensions so that 
+            p: a list of dimensions so that 
             matrix i's dimensions are found at
-            dims[i - 1] and dims[i].
+            p[i - 1] and p[i].
         Returns:
-            list of costs and list of indices for parenthisation
+            list of m and list of s for parenthisation
     """
-    n = len(dims) - 1
-    costs = [[BIG_NUM for x in range(n)] for x in range(n)] 
+    n = len(p) - 1
+    m = [[BIG_NUM for x in range(n)] for x in range(n)] 
     for i in range(n):
-        costs[i][i] = 0
-    indices = [[-1 for x in range(n)] for x in range(n)]
+        m[i][i] = 0
+    s = [[-1 for x in range(n)] for x in range(n)]
 
     for l in range(2, n + 1):
-        for i in range(n - l + 1):
+        print("Working on chain length: " + str(l))
+        for i in range(0, n - l + 1):
             j = i + l - 1
-            costs[i][j] = BIG_NUM
+            print("i = " + str(i) + "; j = " + str(j))
+            m[i][j] = BIG_NUM
             for k in range(i, j):
-                q = (costs[i][k] + costs[k + 1][j]
-                    + (dims[i] * dims[k+1] * dims[j+1]))
+                print("k = " + str(k))
+                print("Cost = m[i][k] (" + str(m[i][k]) +
+                        ") + m[k+1][j] (" + str(m[k + 1][j]) +
+                        ") + p[i] (" + str(p[i]) +
+                        ") * p[k+1] (" + str(p[k + 1]) +
+                        ") * p[j+1] (" + str(p[j + 1]) + ")")
+                q = (m[i][k] + m[k + 1][j]
+                    + (p[i] * p[k+1] * p[j+1]))
                 print("Comparing q = " + str(q) 
-                      + " with costs[i][j] = "
-                      + str(costs[i][j]) + " with i = "
-                      + str(i) + " and j = " + str(j))
-                if q < costs[i][j]:
-                    costs[i][j] = q
-                    indices[i][j] = k
-    return (costs, indices)
+                      + " with m[i][j] = "
+                      + str(m[i][j]) + " with i = "
+                      + str(i) + " and j = " + str(j)
+                      + " and k = " + str(k))
+                if q < m[i][j]:
+                    m[i][j] = q
+                    s[i][j] = k
+    return (m, s)
 
 
-def print_optimal_parens(indices, i, j):
+def print_optimal_parens(s, i, j):
     """
         Args:
-            indices: the list returned by matrix_chain_order()
+            s: the list returned by matrix_chain_order()
             i: start index
             j: end index
         Returns: None; prints results.
@@ -244,10 +261,70 @@ def print_optimal_parens(indices, i, j):
         print(" A", end="")
     else:
         print("(", end="")
-        print_optimal_parens(indices, i, indices[i][j])
-        print_optimal_parens(indices, indices[i][j] + 1, j)
+        print_optimal_parens(s, i, s[i][j])
+        print_optimal_parens(s, s[i][j] + 1, j)
         print(")", end="")
 
 
+# an M of size n holds the dimensions for n - 1 matrices!
+# dims 2 ... n - 1 are the 2nd dim of one M and the 1st dim of the 
+# next one.
+M2 = [10, 100, 5]
+M3 = [10, 100, 5, 50]
+M4 = [10, 100, 5, 50, 80]
+clrs_test = [30, 35, 15, 5, 10, 20, 25]  # this is the example from page 376
 
-dtest = [30, 35, 15, 5, 10, 20, 25]
+
+def optimal_bst(p, q, n):
+    """
+        Args:
+            p: probabilities of actual items
+            q: probabilities of failed searches (1 bigger than p!)
+            n: number of items in p
+
+        Returns:
+            e: expected search costs (a 2D list)
+            root: of the constructed BST
+    """
+
+    # three 2D arrays: e is expected search costs, w is probabilities,
+    # and root is ?
+    e = [[BIG_NUM for x in range(n + 1)] for x in range(n + 1)]
+    w = [[0 for x in range(n + 1)] for x in range(n + 1)]
+    root = [[BIG_NUM for x in range(n)] for x in range(n)]
+
+    for i in range(0, n + 1):
+        e[i][i] = q[i]
+        print("i = " + str(i) + "; e[i][i] = " + str(e[i][i]))
+        w[i][i] = q[i]
+        print("i = " + str(i) + "; w[i][i] = " + str(w[i][i]))
+
+    for l in range(0, n):
+        print("\n*********")
+        print("*********")
+        print("*********")
+        print("Outer loop; l = " + str(l))
+        for i in range(0, n - l):
+            j = i + l
+            print("\n*********")
+            print("*********")
+            print("Middle loop; i = " + str(i) +
+                  "; j = " + str(j))
+            print("w[i][j + 1] = " + str(w[i][j]) + " + "
+                  + str(p[j]) + " + " + str(q[j + 1]))
+            w[i][j + 1] = w[i][j] + p[j] + q[j + 1]
+            w[i][j + 1] = round(w[i][j + 1], 2)
+            for r in range(i, j + 1):
+                print("\n*********")
+                print("Inner loop; r = " + str(r))
+                t = e[i][r] + e[r + 1][j + 1] + w[i][j + 1]
+                print("t = " + str(t))
+                if t < e[i][j]:
+                    e[i][j] = round(t, 2)
+                    root[i][j] = r
+    return (e, root)
+
+# probabilities from CLRS:
+p = [.15, .10, .05, .10, .20]
+q = [.05, .10, .05, .05, .05, .10]
+

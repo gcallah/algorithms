@@ -18,7 +18,6 @@
         </div>
     </div>
 
-
         <h1>
             Design and Analyis of Algorithms:  Getting Started
         </h1>
@@ -29,32 +28,103 @@
                 </p>
             </div>
 
-            <h2>
+            <details>
+                <summary class="sum1">
                 Overview
-            </h2>
+                </summary>
 
-            <h2>
+                <details>
+                    <summary class="sum2">
+                    Running code in your browser
+                    </summary>
+
+                    <p>
+                    Here is Python code for a swap routine, which our textbook
+                    uses periodically:
+                    </p>
+        <pre>
+        
+        l = [1, 2, 3]
+        
+        def swap(l, i, j): 
+            temp = l[i]
+            l[i] = l[j]
+            l[j] = temp
+        
+        </pre>
+
+                    <p>
+                        Paste that code into the Python console below:
+                    </p>
+ 
+                    <figure>
+                        <iframe style="width: 640; height: 480; border: none;"
+                            name="embedded_python_anywhere"
+                            src="https://www.pythonanywhere.com/embedded3/"></iframe>
+                        <figcaption>
+                            Python console
+                        </figcaption>
+                    </figure>
+
+                    <p>
+                        Hit return. Then type 'swap(l, 0, 2)' and hit return.
+                        <br />
+                        Then type 'l'.
+                        <br />
+                        <br />
+                        You should see '[3, 2, 1]': you swapped element 0 and
+                        2!
+                    </p>
+
+                    <p>
+                        Now type in the following:
+                    </p>
+
+    <pre>
+        def bubble_sort(l):
+            for i in range(0, len(l) - 1):
+                for j in range(len(l) - 1, i, -1):
+                    if l[j] < l[j - 1]:
+                        print("Swapping " + str(l[j]) + " and "
+                                + str(l[j - 1]))
+                        swap(l, j, j - 1)
+            return l
+    </pre>
+
+                </details>
+            </details>
+
+            <details>
+                <summary class="sum1">
                 Source Code
-            </h2>
-            <p>
-            <a
-                href="https://github.com/gcallah/algorithms/blob/master/Python/">
-                Python
-            </a>
-            <br>
-            </p>
+                </summary>
+                <p>
+            
+<a href="https://github.com/gcallah/algorithms/tree/master/Java/GettingStarted">Java</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/Ruby/GettingStarted">Ruby</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/Go/GettingStarted">Go</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/Javascript/GettingStarted">Javascript</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/C++/GettingStarted">C++</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/Python/GettingStarted">Python</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/Clojure/GettingStarted">Clojure</a><br>
+                </p>
+            </details>
 
-            <h2>
-                External Links
-            </h2>
+            <details>
+                <summary class="sum1">
+                For Further Study
+                </summary>
                 <ul>
                     <li><a href="https://en.wikipedia.org/wiki/Algorithm">
                             Algorithm
                         </a>.
                 </ul>
+            </details>
             
-            <h2>
+            <details>
+                <summary class="sum1">
                 Homework
-            </h2>
+                </summary>
+            </details>
     </body>
 </html>

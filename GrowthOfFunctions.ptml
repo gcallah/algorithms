@@ -11,26 +11,30 @@
             Growth of Functions
         </h1>
 
-    <h2>A review of Big-O, summations and algebra. </h2>
-        <h3>
+
+    <details>
+    <summary class="sum1">
+    A review of Big-O, summations and algebra. 
+    </summary>
+        <details>
+        <summary class="sum2">
             Different asymptotic notations
-        </h3>
-        <br>
+        </summary>
         <br>
         <ul>
-            <li><h3>Big O</h3>
+            <li><b>Big O</b>
             <br>
             <img src="https://cdn.kastatic.org/ka-cs-algorithms/O_fn.png">
             <br>
             <table>
                 <tr>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Notation
                     </th>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Intuition
                     </th>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Definition
                     </th>
                 </tr>
@@ -49,19 +53,19 @@
             </table>
             <br>
             <hr>
-            <li><h3>Big &Theta;</h3>
+            <li><b>Big &Theta;</b>
             <br>
             <img src="https://cdn.kastatic.org/ka-cs-algorithms/theta_fn.png">
             <br>
             <table>
                 <tr>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Notation
                     </th>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Intuition
                     </th>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Definition
                     </th>
                 </tr>
@@ -84,19 +88,19 @@
             </table>
             <br>
             <hr>
-            <li><h3>Big &Omega;</h3>
+            <li><b>Big &Omega;</b>
             <br>
             <img src="https://cdn.kastatic.org/ka-cs-algorithms/Omega_fn.png">
             <br>
             <table>
                 <tr>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Notation
                     </th>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Intuition
                     </th>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Definition
                     </th>
                 </tr>
@@ -115,17 +119,17 @@
             </table>
             <br>
             <hr>
-            <li><h3>Little o</h3>
+            <li><b>Little o</b>
             <br>
             <table>
                 <tr>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Notation
                     </th>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Intuition
                     </th>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Definition
                     </th>
                 </tr>
@@ -144,17 +148,17 @@
             </table>
             <br>
             <hr>
-            <li><h3>Little &omega;</h3>
+            <li><b>Little &omega;</b>
             <br>
             <table>
                 <tr>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Notation
                     </th>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Intuition
                     </th>
-                    <th style="background-color:#9999DD">
+                    <th>
                         Definition
                     </th>
                 </tr>
@@ -172,35 +176,45 @@
                 </tr>
             </table>
         </ul>
-    <h3>Why have different notations?</h3> 
-    <p>
-    Why not just Big-&Theta;?
-    </p>
-    <p>
-    From the Khan Academy site:<br>
-    <blockquote>
-    We use big-&Theta; notation to asymptotically bound the 
-    growth of a running time to
-    within constant factors above and below. 
-    Sometimes we want to bound from only
-    above. For example, although the worst-case 
-    running time of binary search is &Theta;(lg n),
-    it would be incorrect to say that binary search runs in 
-    &Theta;(lg n) time in all cases.
-    What if we find the target value upon the first
-    guess? Then it runs in &Theta;(1) time. 
-    The running time of binary search is never worse than 
-    &Theta;(lg n), but it's sometimes better. 
-    It would be convenient to have a form of
-    asymptotic notation that means 
-    "the running time grows at most this much, but
-    it could grow more slowly."
-    We use "big-O" notation for just such occasions.
-    </blockquote>
-    </p>
+    </details> 
+    
+    <details>
+    <summary class="sum2">
+    Why have different notations?
+    </summary> 
+        <p>
+        Why not just Big-&Theta;?
+        </p>
+        <p>
+        From the Khan Academy site:<br>
+        <blockquote>
+        We use big-&Theta; notation to asymptotically bound the 
+        growth of a running time to
+        within constant factors above and below. 
+        Sometimes we want to bound from only
+        above. For example, although the worst-case 
+        running time of binary search is &Theta;(lg n),
+        it would be incorrect to say that binary search runs in 
+        &Theta;(lg n) time in all cases.
+        What if we find the target value upon the first
+        guess? Then it runs in &Theta;(1) time. 
+        The running time of binary search is never worse than 
+        &Theta;(lg n), but it's sometimes better. 
+        It would be convenient to have a form of
+        asymptotic notation that means 
+        "the running time grows at most this much, but
+        it could grow more slowly."
+        We use "big-O" notation for just such occasions.
+        </blockquote>
+        </p>
 
 
-    <h3>Highest-order term</h3>
+    </details> 
+
+    <details>
+    <summary class="sum2">
+    Highest-order term
+    </summary>
         <p>
             More graphics on why we only care about the highest-order
         </p>
@@ -214,7 +228,12 @@
           src="https://cdn.kastatic.org/ka-cs-algorithms/0.6n2_vs_1000n%2B3000.png"
             height="300" width="450">
         </p>
-    <h3>Meaning of constants in O, &Theta; and &Omega; expressions</h3>
+    </details> 
+    
+    <details>
+    <summary class="sum2">
+    Meaning of constants in O, &Theta; and &Omega; expressions
+    </summary>
         <p>
         Let's say we posit a search operating in <em>2n + 3</em> time.<br>
         We want to show that this has &Theta;(n) complexity.<br>
@@ -227,147 +246,194 @@
         <br>
         Let's demonstrate!
         </p>
+    </details> 
 
-  <h2>Algorithmic design in action:</h2>
-  <h3>Fibonacci numbers</h3> 
+  </details>
+
+    <details>
+    <summary class="sum1">
+    Algorithmic design in action:
+    </summary>
+  
+    <details>
+    <summary class="sum2">
+    Fibonacci numbers
+    </summary> 
   <p>
     The problem of computing, given <em>n >= 0</em>,
     the <em>n</em><sup>th</sup> Fibonacci number <em>F<sub>n</sub></em>.
 
   </p>
 
-<p>
-    The Fibonacci discussion is not in the textbook. 
-One place where it is presented in a nice way similar to what I will do in class is in
-section 0.2 of the DasGupta, Papadimitriou, Vazirani <em>Algorithms</em> book.
-</p>
-
-<p>
-Talked about the obvious recursive algorithm;
-how it is very slow, intuitively due to recomputing the same subproblems. 
-Proved that the recursion tree grows at least as fast as the Fibonacci sequence itself. 
-</p>
-
-<h4>Sketch of Proof</h4>
-<p>
-Note that every leaf of the recursion tree returns one. The sum of the value
-of all of these leaves is going to be the Fibonacci number we return.
-Therefore, there must be at least as many operations as the Fibonacci number
-itself.
-</p>
-
-
-<p>
-Showed how to speed the recursive algorithm algorithm up by "memoization":
-Using a table to store answers for subproblems already computed. 
-Analyzed the running time and space of the recursive memoized version and of
-the iterative algorithm that fills the table going in the forward direction. 
-Pointed out how to reduce space to constant.
-</p>
-<p>
-<a
-href="https://github.com/gcallah/algorithms/blob/master/Python/DivideAndConquer/fibonacci.py">
-    Naive and faster Fibonacci code.</a>
-</p>
-<p>
-By the way, this is an open-source project: you may contribute!
-</p>
-
-<p>
-There is a closed-form formula for computing Fibonacci numbers. 
-</p>
-<p>
-
-So why can't we claim we can compute <em>n</em>th Fibonacci number in constant time?
-Did not go into details, but this is related to our inability to directly represent
-irrational numbers such as square roots, maybe related to precision/rounding,
-and generally related to what operations are allowed and what are not, in an algorithm. 
-</p>
-<p>
-Using some tricks one can construct <em>n</em>th Fibonacci number
-in <em>O(log n)</em> arithmetic operations, where we count additions/subtractions/multiplications
-and do not worry about the fact that eventually the numbers get too large to manipulate
-in constant time.
-</p>
+        <p>
+            The Fibonacci discussion is not in the textbook. 
+        One place where it is presented in a nice way similar to what I will do in class is in
+        section 0.2 of the DasGupta, Papadimitriou, Vazirani <em>Algorithms</em> book.
+        </p>
+        
+        <p>
+        Talked about the obvious recursive algorithm;
+        how it is very slow, intuitively due to recomputing the same subproblems. 
+        Proved that the recursion tree grows at least as fast as the Fibonacci sequence itself. 
+        </p>
+        
+        <h4>Sketch of Proof</h4>
+        <p>
+        Note that every leaf of the recursion tree returns one. The sum of the value
+        of all of these leaves is going to be the Fibonacci number we return.
+        Therefore, there must be at least as many operations as the Fibonacci number
+        itself.
+        </p>
+        
+        
+        <p>
+        Showed how to speed the recursive algorithm algorithm up by "memoization":
+        Using a table to store answers for subproblems already computed. 
+        Analyzed the running time and space of the recursive memoized version and of
+        the iterative algorithm that fills the table going in the forward direction. 
+        Pointed out how to reduce space to constant.
+        </p>
+        <p>
+        <a
+        href="https://github.com/gcallah/algorithms/blob/master/Python/DivideAndConquer/fibonacci.py">
+            Naive and faster Fibonacci code.</a>
+        </p>
+        <p>
+        By the way, this is an open-source project: you may contribute!
+        </p>
+        
+        <p>
+        There is a closed-form formula for computing Fibonacci numbers. 
+        </p>
+        <p>
+        
+        So why can't we claim we can compute <em>n</em>th Fibonacci number in constant time?
+        Did not go into details, but this is related to our inability to directly represent
+        irrational numbers such as square roots, maybe related to precision/rounding,
+        and generally related to what operations are allowed and what are not, in an algorithm. 
+        </p>
+        <p>
+        Using some tricks one can construct <em>n</em>th Fibonacci number
+        in <em>O(log n)</em> arithmetic operations, where we count additions/subtractions/multiplications
+        and do not worry about the fact that eventually the numbers get too large to manipulate
+        in constant time.
+        </p>
+    </details> 
     
-<h2>Data structures</h2>
-<p>
-Data structures form a very important part of algorithmic research. 
-</p>
+</details>
 
-<p>
-However, this course does not focus on data structures. 
-We will only devote a couple of lectures, total, to this subject. 
-(There are algorithms courses that spend their entire time on data structures. 
-We have an advanced data structures expert in the department, Prof. John Iacono.)
-</p>
-<ul><li>A quick reminder of basic data structures:
-    <ul>
-        <li>Arrays
-        <li>Linked list
-        <br><img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/408px-Singly-linked-list.svg.png">
-        <li>Doubly-linked list
-        <br>
-        <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png">
-        <li>Stacks
-        <br>
-        <img
-        src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Lifo_stack.png">
-        <li>Queues
-        <br>
-        <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/405px-Data_Queue.svg.png">
-        <li>Double-ended queues
-        <li>ADT (<i>abstract data type</i>):
-        <br>the set of operations a data structure promises to provide 
-        and the rules that they have to obey.
-    </ul>
-      <h3>
-      Detailed case study: Iterables as an ADT. 
-      </h3>
-      <h4>
-      Basic operations. 
-      </h4>
-      <ul>
-          <li>Get iterator.
-          <li>Get next value.
-          <li>Detect end of iterables.
-      </ul>
+<details>
+<summary class="sum1">
+Data structures
+</summary>
+        <p>
+        Data structures form a very important part of algorithmic research. 
+        </p>
+        
+        <p>
+        However, this course does not focus on data structures. 
+        We will only devote a couple of lectures, total, to this subject. 
+        (There are algorithms courses that spend their entire time on data structures. 
+        We have an advanced data structures expert in the department, Prof. John Iacono.)
+        </p>
+        <ul>A quick reminder of basic data structures:
+            <li>
+                Arrays
+            </li>
+            <li>
+                Linked list
+                <br><img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/408px-Singly-linked-list.svg.png">
+            </li>
+            <li>
+                Doubly-linked list
+                <br>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png">
+                <li>Stacks
+                <br>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Lifo_stack.png">
+            </li>
+            <li>
+                Queues
+                <br>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/405px-Data_Queue.svg.png">
+            <li>
+                Double-ended queues
+            </li>
+            <li>
+                ADT (<i>abstract data type</i>):
+                <br>the set of operations a data structure promises to provide 
+                and the rules that they have to obey.
+            </li>
+            </ul>
+            <details>
+              <summary class="sum2">
+              Detailed case study: Iterables as an ADT. 
+              </summary>
+                <details>
+                     <summary class="sum3">
+                     Basic operations. 
+                     </summary>
+                         <ul>
+                             <li>Get iterator.
+                             <li>Get next value.
+                             <li>Detect end of iterables.
+                         </ul>
+                </details>
+               
+                <details>
+                     <summary class="sum3">
+                           Extended operations. 
+                     </summary>
+                         <ul>
+                             <li>
+                             Rewind? We may not be able to if the 
+                             iterator is exhausted in iterating
+                                 through it.
+                             </li>
+                             <li>
+                                Iterate in reverse?
+                             </li>
+                             <li>
+                                Access an arbitrary element? (By index, say.)
+                             </li>
+                         </ul>
+                </details>
+                <details>
+                     <summary class="sum3">
+                       Implementations. 
+                     </summary>
+                       <ul>
+                           <li>Straight-forward: Array.
+                           <li>Complex:<a
+                              <a href="https://github.com/gcallah/Indra/blob/master/indra/agent_pop.py">
+                                  A population that can be iterated in many ways.
+                              </a> 
+                       </ul>
+                </details>
+            </details>
+        </ul> 
+    </details>
 
-      <h4>
-Extended operations. 
-      </h4>
-      <ul>
-          <li>
-              Rewind? We may not be able to if the iterator is exhausted in iterating
-              through it.
-          <li>Iterate in reverse?
-          <li>Access an arbitrary element? (By index, say.)
-      </ul>
-      <h4>
-        Implementations. 
-      </h4>
-      <ul>
-          <li>Straight-forward: Array.
-          <li>Complex:<a
-             <a href="https://github.com/gcallah/Indra/blob/master/indra/agent_pop.py">
-                 A population that can be iterated in many ways.
-             </a> 
-      </ul>
-    </ul> 
-    <h2>Homework</h2>
-    <p>
-    <ul>
-        <li>
-    Write the recursive "memo-ized" version of Fibonacci that I did not write.
-    You may use pseudo-code or actually write real code in... Python, Perl,
-    Java, C++... or you suggest a language!
-        <li>Write a queue.
-        <li>What is the Big-&Theta; order of the naive Fibonacci calculation?
-    </ul>
-    </p>
+    <details>
+        <summary class="sum1">
+        Homework
+        </summary>
+        <p>
+        <ul>
+            <li>
+        Write the recursive "memo-ized" version of Fibonacci that I did not write.
+        You may use pseudo-code or actually write real code in... Python, Perl,
+        Java, C++... or you suggest a language!
+            <li>Write a queue.
+            <li>What is the Big-&Theta; order of the naive Fibonacci calculation?
+        </ul>
+        </p>
+    </details>
+
 
     <a name="note1">* Based on Prof. Boris Aronov's lecture notes. </a>
     <br>

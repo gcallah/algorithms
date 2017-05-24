@@ -77,16 +77,12 @@
             <h2>
                 Source Code
             </h2>
-            <p>
-            <a
-                href="https://github.com/gcallah/algorithms/blob/master/Python/red_black_trees.py">
-                Python
-            </a>
-            <br>
-            </p>
 
+            <p>
+<!--include RedBlackTrees_langs.txt -->
+            </p>
             <h2>
-                External Links
+                For Further Study
             </h2>
                 <ul>
                     <li><a

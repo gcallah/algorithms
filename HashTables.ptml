@@ -2,37 +2,31 @@
     <head>
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <title>
-            Design and Analysis of Algorithms, Lecture 3
+            Design and Analysis of Algorithms: Hash Tables
         </title>
     </head>
 
     <body>
 <!--include menu.txt -->
         <h1>
-            Design and Analysis of Algorithms, Lecture 3
+            Design and Analysis of Algorithms: Hash Tables
             <a href="#note1">*</a>
         </h1>
-        <h2>Looking at Memoization</h2>
-        <p>
-            Last class, I asked you to <a
-                href="https://en.wikipedia.org/wiki/Memoization">
-            memoize</a>
-            the naive, recursive Fibonacci algorithm. Let's take a look at how to do that.
-            <br>
-            <a
-            href="https://github.com/gcallah/algorithms/blob/master/Python/DivideAndConquer/fibonacci.py">
-                Here</a>
-            is the Fibonacci code, now including memo-ization.
-        </p>
-        <h2>Dictionaries</h2>
+        
+        <details>
+            <summary class="sum1">
+            Dictionaries
+            </summary>
+
         <p>
         <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/English-English_and_English-Persian_dictionaries.JPG/350px-English-English_and_English-Persian_dictionaries.JPG">
         </p>
 
-        <h3>
+        <details>
+        <summary class="sum2">
         Dictionary ADT.
-        </h3>
+        </summary>
         <p>
         Operations associated with this data type allow:
         <ul>
@@ -63,10 +57,12 @@
         <em>Direct addressing</em> and <em>Hashing</em> are two ways of implementing a
         dictionary. Are there others?
         </p>
+        </details>
 
-        <h3>
+        <details>
+        <summary class="sum2">
         Direct addressing. 
-        </h3>
+        </summary>
         <ul>
             <li> <em>O(1)</em> <em>worst</em> case time for lookup.
             <li> Uses:
@@ -84,16 +80,21 @@
                 Example code here.
                 </a>
         </ul>
-        <h3>
+        </details>
+
+        <details>
+        <summary class="sum2">
         Hashing
-        </h3>
+        </summary>
         <p>
         <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hash_table_4_1_1_0_0_1_0_LL.svg/300px-Hash_table_4_1_1_0_0_1_0_LL.svg.png">
-        <br>
-        <h4>
+        </p>
+
+        <details>
+        <summary class="sum3">
         Basic Hashing:
-        </h4>
+        </summary>
         <ul>
             <li> <em>O(1)</em> <em>average</em> case time for lookup.
             <li> Universe of keys <em>U</em> mapped into slots of a <em>hash table</em>
@@ -120,10 +121,12 @@
                         Perceptual hashing
                     </a>
         </ul>
-        </p>
-        <h4>
+        </details>
+
+        <details>
+        <summary class="sum3">
         Introducing probability into an algorithm.
-        </h4>
+        </summary>
         <p>
         What happens to the usual assumptions?
         <br>
@@ -133,15 +136,23 @@
         What does "performance" mean if the running
         time/answer/even termination change from one run to the next?
         </p>
-        <h4>Probability Basics</h4>
+        </details>
+
+        <details>
+        <summary class="sum3">
+        Probability Basics
+        </summary>
         <p>
         <a href="https://gcallah.github.io/algorithms/Probability.html">
             Reviewed in this document.
         </a>
         </p>
-        <h4>
+        </details>
+
+        <details>
+        <summary class="sum3">
         Simple uniform hashing 
-        </h4>
+        </summary>
         <p>
         This employs <b>chaining</b>. Furthermore, we assume that the
         distribution of elements is uniform across hash table slots.
@@ -168,8 +179,12 @@
                 <br>See proofs in our textbook.
             </ul>
         </p>
+        </details>
 
-        <h4>Hash functions</h4>
+        <details>
+        <summary class="sum3">
+        Hash functions
+        </summary>
         <ul>
             <li> First, convert key to an integer.
             <br> E.g., we can interpret characters in a string by their ASCII values.
@@ -191,10 +206,12 @@
             <br><em>h(k) = [m (k A mod 1)]</em>,
             where <em>0 < A < 1</em>.
         </ul>
+        </details>
 
-        <h4>
+        <details>
+        <summary class="sum3">
         Universal hashing
-        </h4>
+        </summary>
         <ul>
             <li>Establish a <em>family</em> of hash functions.
             <li>Choose so that <em>Prob[h(x) = h(y)] <= 1/m</em>, where m is
@@ -209,30 +226,58 @@
             <br>So a "bad" set of programming variable names one run will turn
             into a good set the next run.
         </ul>
+        </details>
 
-        <h4>Open addressing</h4>
+        <details>
+        <summary class="sum3">
+        Open addressing
+        </summary>
         <ul>
-            <li>All elements are stored directly in the table; no chaining.
-            <li>Linear probing
+            <li>
+            All elements are stored directly in the table; no chaining.
+            </li>
+            <li>
+            Linear probing
             <br>Easy: just move along array indices!
             <br>Prone to clustering
-            <li>Quadratic probing
+            </li>
+            <li>
+            Quadratic probing
+            </li>
             <li><a href="https://en.wikipedia.org/wiki/Double_hashing">
                 Double hashing
             </a>
             <br>Uses two hash functions to search array for key.
+            </li>
             <li><a
                     href="https://github.com/gcallah/algorithms/blob/master/hash_tables.py">
                     Source code here</a>.
+            </li>
         </ul>
-        <h4>
-        Perfect hashing
-        </h4>
+            <details>
+            <summary class="sum3">
+            Perfect hashing
+            </summary>
+            </details>
+        </details>
+        </details>
+        </details>
+
+        <details>
+            <summary class="sum1">
+                Source Code
+            </summary>
+            <p>
+<!--include HashTables_langs.txt -->
+            </p>
+        </details>
 
 
-        <h3>Homework</h3>
-        <p>
-        </p>
+        <details>
+            <summary class="sum1">
+            Homework
+            </summary>
+
         <ul>
             <li> Devise three possible hash functions. Analyze each for size of hash
             table necessary and possibility of collisions.
@@ -320,13 +365,11 @@
                 src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq7.gif">
               </ol>
         </ul>
-        <br>
-        <hr>
+    </details>
 
-
-
+    <p>
     <a name="note1">* Based on Prof. Boris Aronov's lecture notes. </a>
-    <br>
+    </p>
 
     </body>
 </html>
