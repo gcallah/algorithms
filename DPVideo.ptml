@@ -19,9 +19,9 @@
             algorithm.
             <br />
             The context of this presentation assumes that students have already
-            been introduced to both synamic programming and greedy algorithms,
-            but are puzzled as to when one or the other applies (something I
-            have found is a common problem).
+            been introduced to both dynamic programming and greedy algorithms,
+            but are puzzled as to when one or the other 
+            technique applies (something I have found is a common problem).
             <br />
             And the idea that opportunity cost is the differentiator here needs
             to be refined a bit: I only arrived at this today while preparing
