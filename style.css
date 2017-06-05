@@ -40,6 +40,10 @@ th {
     background: #afd;
 }
 
+canvas {
+    border: .1em dashed black;
+}
+
 li {
     margin: .5em .75em .5em .75em;
 }
