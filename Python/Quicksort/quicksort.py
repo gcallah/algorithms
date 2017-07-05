@@ -55,40 +55,50 @@ def hoare_partition(l, p, r):
             print("Swaps = " + str(swaps))
     return j
 
-def partition(l, p, r):
+def partition(l, p, r, prnt=True):
     """
     Helper function for quicksort.
+    Args:
+        prnt: turn on printing
 
     Returns: the new partition index.
     """
     global swaps
     x = l[r]
-    print("Partition: Our pivot element x = " + str(x))
+    if prnt:
+        print("Checking print flag; = " + str(prnt))
+        print("Partition: Our pivot element x = " + str(x))
     i = p - 1
     for j in range(p, r):
         if l[j] <= x:
             i += 1
-            print("i = " + str(i) + " and j = " + str(j))
+            if prnt:
+                print("i = " + str(i) + " and j = " + str(j))
             if i != j:
-                print("Swapping elements " + str(l[i]) + " and "
-                     + str(l[j]))
+                if prnt:
+                    print("Swapping elements " + str(l[i]) + " and "
+                          + str(l[j]))
                 swap(l, i, j)
                 swaps += 1
-                print("Swaps = " + str(swaps))
+                if prnt:
+                    print("Swaps = " + str(swaps))
     if (i + 1) != r:
-        print("Swapping elements " + str(l[i + 1]) + " and "
-              + str(l[r]))
+        if prnt:
+            print("Swapping elements " + str(l[i + 1]) + " and "
+                  + str(l[r]))
         swap(l, i + 1, r)
         swaps += 1
-        print("Swaps = " + str(swaps))
+        if prnt:
+            print("Swaps = " + str(swaps))
     return i + 1
 
-def quicksort(l, p=None, r=None, partf=partition):
+def quicksort(l, p=None, r=None, partf=partition, prnt=True):
     """
     Args:
         l: the list to sort
         p: the first index in a partition
         r: the last index in a partition
+        prnt: turn on printing
 
     Returns: None
 
@@ -104,11 +114,12 @@ def quicksort(l, p=None, r=None, partf=partition):
     if r is None:
         r = len(l) - 1
     if p < r:
-        q = partf(l, p, r)
-        print("Partitioning list at index " + str(q))
-        print("The list is now: " + str(l))
-        quicksort(l, p, q - 1, partf=partf)
-        quicksort(l, q + 1, r, partf=partf)
+        q = partf(l, p, r, prnt=prnt)
+        if prnt:
+            print("Partitioning list at index " + str(q))
+            print("The list is now: " + str(l))
+        quicksort(l, p, q - 1, partf=partf, prnt=prnt)
+        quicksort(l, q + 1, r, partf=partf, prnt=prnt)
 
 
 def rand_quicksort(l, p=None, r=None):
