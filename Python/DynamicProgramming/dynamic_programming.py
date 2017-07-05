@@ -275,6 +275,8 @@ M4 = [10, 100, 5, 50, 80]
 clrs_test = [30, 35, 15, 5, 10, 20, 25]  # this is the example from page 376
 
 
+########################
+
 def optimal_bst(p, q, n):
     """
         Args:
@@ -314,15 +316,21 @@ def optimal_bst(p, q, n):
                   + str(p[j]) + " + " + str(q[j + 1]))
             w[i][j + 1] = w[i][j] + p[j] + q[j + 1]
             w[i][j + 1] = round(w[i][j + 1], 2)
-            for r in range(i, j + 1):
+            for r in range(i + 1, j + 2):
                 print("\n*********")
                 print("Inner loop; r = " + str(r))
-                t = e[i][r] + e[r + 1][j + 1] + w[i][j + 1]
+                t = e[i][r - 1] + e[r][j + 1] + w[i][j + 1]
                 print("t = " + str(t))
-                if t < e[i][j]:
-                    e[i][j] = round(t, 2)
+                if t < e[i][j + 1]:
+                    e[i][j + 1] = round(t, 2)
+                    print("Storing in e[" + str(i) + "]["
+                          + str(j) + "] t of " + str(e[i][j + 1]))
                     root[i][j] = r
     return (e, root)
+
+# probabilities from CLRS:
+smallp = [.15, .10, .05, .10, .20]
+smallq = [.05, .10, .05, .05, .05, .10]
 
 # probabilities from CLRS:
 p = [.15, .10, .05, .10, .20]
