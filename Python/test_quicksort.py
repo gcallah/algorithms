@@ -1,4 +1,4 @@
-#!/Users/gcallah/anaconda/bin/python3
+#!/usr/bin/env python3
 """
 Test our sorting code.
 """
@@ -7,7 +7,7 @@ from unittest import TestCase, main
 from Quicksort.quicksort import quicksort, hoare_partition
 from utils.test_utils import rand_list, assert_sorted
 
-NUM_TESTS = 10
+NUM_TESTS = 100
 MAX_LIST = 100
 
 class QuicksortTestCase(TestCase):
@@ -16,7 +16,7 @@ class QuicksortTestCase(TestCase):
             l = rand_list(max_list=MAX_LIST)
 
             # no return!
-            quicksort(l)
+            quicksort(l, prnt=False)
             assert_sorted(self, l)
 
 """
