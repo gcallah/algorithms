@@ -1,0 +1,123 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <link rel="stylesheet" href="css/JSAV.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+    <title>Test Binary Tree Page</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="lib/jquery.transit.js"></script>
+    <script src="lib/raphael.js"></script>
+    <script src="lib/JSAV.js"></script>
+    <Script src="lib/includeall.js"></Script>
+<style>
+    #av {
+      width: 98%;
+      position: relative;
+    }
+    .jsavcounter {
+      position: absolute;
+      top: 15px;
+    }
+    .jsavtree {
+      position: relative;
+      width: 500px;
+      height: 300px;
+    }
+    svg {
+      height: 600px;
+    }
+    path {
+      pointer-events: visible;
+    }
+    </style>
+
+</head>
+<body>
+<div id="av">
+
+    </div>
+<script>
+
+    var jsav=new JSAV("av");
+    var bt=jsav.ds.binarytree();
+//
+//    bt.root("10");
+//    bt.layout();
+//    bt.root().left("3");
+//    bt.layout();
+
+addNode(bt,20);
+addNode(bt,5);
+addNode(bt,40);
+addNode(bt,50);
+addNode(bt,60);
+addNode(bt,70);
+//bt.layout();
+//    bt.root().right("11");
+//    bt.layout();
+//    bt.root().left().left("2")
+//    bt.layout();
+//    console.log(bt.root().value());
+
+
+    function Highlight(n)
+
+    {
+     n.css({"background-color": "yellow"});
+
+
+    }
+    function X(n)
+    {
+
+            n.css({"background-color": "white"});
+
+
+    }
+    function searchBinarytree()
+    {
+        var value=parseInt(document.getElementById("value").value)
+
+        var test=bt.root();
+
+        while(test!=null)
+        {   console.log(test.value());
+            Highlight(test);
+
+            if(test.value()==value)
+
+            {
+                break ;
+
+            }
+
+            if(bt.root().value()<=value)
+            {
+
+            test=test.right();
+
+
+
+            }
+            else
+
+            {
+            test=test.left();
+            }
+
+
+
+        }
+    }
+</script>
+
+<div id="valuebox">
+    Value to search:<input id="value" type="text"> <button type="button" onclick="searchBinarytree()"> Search</button>
+
+</div>
+
+</body>
+</html>
