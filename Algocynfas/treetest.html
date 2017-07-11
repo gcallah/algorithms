@@ -26,23 +26,29 @@
         background-color: white;
 
     }
-    #av {
+    #av
+    {
       width: 98%;
       position: relative;
     }
-    .jsavcounter {
+    .jsavcounter
+    {
       position: absolute;
       top: 15px;
     }
-    .jsavtree {
+    .jsavtree
+    {
       position: relative;
       width: 500px;
       height: 300px;
     }
-    svg {
+    svg
+    {
+
       height: 600px;
     }
-    path {
+    path
+    {
       pointer-events: visible;
     }
 
@@ -58,11 +64,6 @@
 
     var jsav=new JSAV("av");
     var bt=jsav.ds.binarytree();
-//
-//    bt.root("10");
-//    bt.layout();
-//    bt.root().left("3");
-//    bt.layout();
 
 addNode(bt,20);
 addNode(bt,5);
@@ -71,39 +72,6 @@ addNode(bt,50);
 addNode(bt,60);
 addNode(bt,70);
 addNode(bt,4);
-//bt.layout();
-//    bt.root().right("11");
-//    bt.layout();
-//    bt.root().left().left("2")
-//    bt.layout();
-//    console.log(bt.root().value());
-
-//
-//    function Highlight(n)
-//
-//    {
-////     n.css({"background-color": "blue"});
-//         n.addClass("highlight");
-//
-//
-//    }
-//    function unhighlight(v)
-//    {
-//
-////        v.css({"background-color": "black"});
-//        v.toggleClass("highlight");
-//        bt.layout();
-//
-//
-//    }
-
-function sleep(miliseconds) {
-   var currentTime = new Date().getTime();
-
-   while (currentTime + miliseconds >= new Date().getTime()) {
-        console.log("In Sleep");
-   }
-}
 
 var test;
 
@@ -113,28 +81,34 @@ function searchBinarytree() {
   setTimeout(updateNode, 2000);
 }
 
-function updateNode() {
-  var value = parseInt(document.getElementById("value").value);
+function updateNode()
+{
+    var value = parseInt(document.getElementById("value").value);
 
-  if (test != null) {
+    if (test != null)
+    {
 
-    if (test.value() != value) {
-      test.removeClass("highlight");
+        if (test.value() != value)
+        {
+            test.removeClass("highlight");
+            if (test.value() <= value)
+            {
+                test = test.right();
+            }
+            else
+            {
+                test = test.left();
+            }
 
-      if (test.value() <= value) {
-        test = test.right();
-      } else {
-        test = test.left();
-      }
+            if (test != null)
+            {
+                test.addClass("highlight");
+            }
 
-      if (test != null) {
-        test.addClass("highlight");
-      }
+            setTimeout(updateNode, 2000);
+        }
 
-      setTimeout(updateNode, 2000);
-    }
-
-    bt.layout();
+        bt.layout();
   }
 }
 </script>
