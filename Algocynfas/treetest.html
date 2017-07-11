@@ -72,10 +72,26 @@ addNode(bt,50);
 addNode(bt,60);
 addNode(bt,70);
 addNode(bt,4);
-
+addNode(bt,30);
+addNode(bt,25);
+addNode(bt,31);
+addNode(bt,24);
+addNode(bt,26);
+addNode(bt,37);
+addNode(bt,55);
+addNode(bt,56);
+addNode(bt,67);
+addNode(bt,72);
+addNode(bt,13);
+addNode(bt,12);
+addNode(bt,3);
+addNode(bt,15);
 var test;
 
-function searchBinarytree() {
+function searchBinarytree()
+{
+
+
   test = bt.root();
   test.addClass("highlight");
   setTimeout(updateNode, 2000);
@@ -84,6 +100,7 @@ function searchBinarytree() {
 function updateNode()
 {
     var value = parseInt(document.getElementById("value").value);
+
 
     if (test != null)
     {
@@ -114,7 +131,8 @@ function updateNode()
 </script>
 
 <div id="valuebox">
-    Value to search:<input id="value" type="text"> <button type="button" onclick="searchBinarytree()"> Search</button>
+    <br><br>
+    Value to search For:&nbsp;&nbsp; <input id="value" type="text"> <button type="button" onclick="searchBinarytree()"> Search</button>
 
 </div>
 
