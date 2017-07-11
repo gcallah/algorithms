@@ -104,43 +104,39 @@ function sleep(miliseconds) {
         console.log("In Sleep");
    }
 }
-    function searchBinarytree()
-    {
-        var value=parseInt(document.getElementById("value").value);
 
-        var test=bt.root();
+var test;
 
-        while(test!=null)
-        {
-          test.addClass("highlight");
+function searchBinarytree() {
+  test = bt.root();
+  test.addClass("highlight");
+  setTimeout(updateNode, 2000);
+}
 
-          sleep(100);
+function updateNode() {
+  var value = parseInt(document.getElementById("value").value);
 
+  if (test != null) {
 
+    if (test.value() != value) {
+      test.removeClass("highlight");
 
+      if (test.value() <= value) {
+        test = test.right();
+      } else {
+        test = test.left();
+      }
 
-            if(test.value()==value)
+      if (test != null) {
+        test.addClass("highlight");
+      }
 
-            {
-                break ;
-
-            }
-
-            if(test.value()<=value)
-            {
-            test.toggleClass("unhighlight");
-            test=test.right();
-            }
-            else
-
-            {test.toggleClass("unhighlight");
-            test=test.left();
-            }
-
-
-            bt.layout();
-        }
+      setTimeout(updateNode, 2000);
     }
+
+    bt.layout();
+  }
+}
 </script>
 
 <div id="valuebox">
