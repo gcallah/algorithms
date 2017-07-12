@@ -11,7 +11,7 @@
     <script src="lib/jquery.transit.js"></script>
     <script src="lib/raphael.js"></script>
     <script src="lib/JSAV.js"></script>
-    <Script src="lib/includeall.js"></Script>
+    <Script src="lib/btfuncs.js"></Script>
 
 
 <style>
@@ -56,8 +56,9 @@
     </div>
 <script>
 
-    var jsav=new JSAV("av");
-    var bt=jsav.ds.binarytree();
+    var SLEEP = 1000
+    var jsav = new JSAV("av");
+    var bt = jsav.ds.binarytree();
 
     addNode(bt,20);
     addNode(bt,5);
@@ -84,17 +85,14 @@
     
     function searchBinarytree()
     {
-    
-    
       test = bt.root();
       test.addClass("highlight");
-      setTimeout(updateNode, 2000);
+      setTimeout(updateNode, SLEEP);
     }
     
     function updateNode()
     {
         var value = parseInt(document.getElementById("value").value);
-    
     
         if (test != null)
         {
@@ -117,7 +115,7 @@
             }
     
             bt.layout();
-      }
+        }
     }
 </script>
 
