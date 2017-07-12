@@ -1,4 +1,4 @@
-#!/Users/gcallah/anaconda/bin/python3
+#!/Users/gcallah/miniconda/bin/python3
 """
 Test our sorting code.
 """

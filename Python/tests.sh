@@ -11,11 +11,11 @@ function run_test {
     fi
 }
 
-run_test "Getting Started" "./test_getting_started.py"
-run_test "Fibonacci" "./test_fibonacci.py"
-run_test "Heapsort" "./test_heapsort.py"
-run_test "Quicksort" "./test_quicksort.py"
-run_test "Binary Search Trees" "./test_binary_search_trees.py"
-run_test "Greedy Algorithms" "./test_greedy_algorithms.py"
+run_test "Getting Started" "python ./test_getting_started.py"
+run_test "Fibonacci" "python ./test_fibonacci.py"
+run_test "Heapsort" "python ./test_heapsort.py"
+run_test "Quicksort" "python ./test_quicksort.py"
+run_test "Binary Search Trees" "python ./test_binary_search_trees.py"
+run_test "Greedy Algorithms" "python ./test_greedy_algorithms.py"
 
 exit 0
