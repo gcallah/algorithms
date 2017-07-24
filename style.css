@@ -68,6 +68,10 @@ blockquote {
     line-height: 140%;
 }
 
+p.authors {
+    text-align: center;
+}
+
 h1,h2 {
     font-weight: bold;
 }

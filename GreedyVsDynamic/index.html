@@ -11,28 +11,45 @@
         <h1>
             Greed Versus Dynamism: When Can We Make the Greedy Choice?
         </h1>
-            <p>
-            "Richard Bellman showed that a dynamic optimization problem in
+            <p class="authors">
+                Gene Callahan,
+                Tandon School of Engineering,
+                New York University
+                <br />
+                Robert P. Murphy,
+                Free Market Institute,
+                Texas Tech University
+                <br />
+                Salim Arfaoui,
+                Department of Computer Science and Mathematics,
+                St. Joseph's College, Brooklyn
+            </p>
+
+            <hr>
+
+            <blockquote>
+            Richard Bellman showed that a dynamic optimization problem in
             discrete time can be stated in a 
             recursive, step-by-step form known
             as backward induction by writing 
             down the relationship between the
             value function in one period and 
-            the value function in the next
-            period.”
-            </p>
+            the value function in the next period.
+            -- <a
+               href="https://en.wikipedia.org/wiki/Bellman_equation">Wikipedia</a>
+            </blockquote>
 
             <p>
             When a greedy algorithm can be (correctly) used,
-            we don’t need to worry about the next period!
+            we don't need to worry about the next period!
             We simply choose what is best for
-            *this* period. This occurs when the entire opportunity cost for a
+            <i>this</i> period. This occurs when the entire opportunity cost for a
             choice is contained in the current period.
             </p>
 
             <p>
-            On the other hand, when the opportunity cost spills over into other
-            periods, we must resort to dynamic programming.
+            On the other hand, when the opportunity cost spills over into
+            future periods, we must resort to dynamic programming.
             </p>
 
             <p>
@@ -60,6 +77,16 @@
                 programming.
             </p>
 
+            <p>
+                This paper aims to show that, while the distinction between
+                static and dynamic allocation problems, based on
+                the periods in which the opportunity costs of a choice falls, is
+                well-understood in economics, the idea is not as clear in
+                computer science. And what's more, we suggest that the computer
+                science literature, especially in pedagogy, could benefit from
+                incorporating this distinction.
+            </p>
+
             <h2>
                 Other material
             </h2>
@@ -72,9 +99,12 @@
                     <li>
                         <a
                             href="https://pdfs.semanticscholar.org/dead/b452ffd9b2f90fd604e4fe5662ebdc2d2ee8.pdf">
-                            Presentation trying to sort out when greedy
+                            A preliminary presentation trying to sort out when greedy
                             applies.
                         </a>
+                        <br />
+                        (This video was made just before the idea for this
+                        paper was fully formulated.)
                     </li>
                     <li>
                     <a href="../DPVideo.html">
