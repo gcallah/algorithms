@@ -5,7 +5,7 @@ before_install:
   - rvm install 2.0.0-p648
   - bundle install
   - pip3 install pytest
-script: source run_ruby_and_python_tests.sh
+script: source test_runner.sh
 
 # language: python
 # python:
