@@ -6,11 +6,3 @@ before_install:
   - bundle install
   - pip3 install pytest
 script: source test_runner.sh
-
-# language: python
-# python:
-#   - '3.5'
-# before_install:
-#   - pip install pytest
-# script:
-#   - py.test python/
