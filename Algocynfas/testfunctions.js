@@ -20,7 +20,7 @@ function addNode(node1,node2,angle)
     var intialx=parseInt(node1.get('left'));
     var initialy=parseInt(node1.get('top'));
 
-    if(angle>180)
+    if(angle<180)
     {
 
 
@@ -31,7 +31,7 @@ function addNode(node1,node2,angle)
     else
     {
 
-        var pointx =Math.abs(Math.cos(angle*Math.PI/180)*200-intialx);
+        var pointx =Math.abs(Math.cos(angle*Math.PI/180)*200+intialx);
         var pointy=Math.abs(Math.sin(angle*Math.PI/180)*200+initialy);
     }
 
