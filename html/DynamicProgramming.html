@@ -1,0 +1,956 @@
+<html>
+    <head>
+        <link href="../style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            Design and Analysis of Algorithms: Dynamic Programming
+        </title>
+    </head>
+
+    <body>
+    <div id="header">
+        <div id="logo">
+            <img src="../graphics/Julia.png">
+        </div>
+        <div id="user-tools">
+            <a href="index.html">Home</a>
+            &nbsp; &nbsp; 
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
+        <h1>
+            Design and Analysis of Algorithms: Dynamic Programming
+        </h1>
+
+            <div style="text-align:center">
+                <p>
+                <img
+                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Shortest_path_optimal_substructure.svg/250px-Shortest_path_optimal_substructure.svg.png">
+                </p>
+            </div>
+
+            <details>
+            <summary class="sum1">
+                What is dynamic programming?
+            </summary>
+
+                <p>
+                    Memoization!
+                    <br>
+                    <br>
+                    The name is largely a marketing construct. Here is the
+                    inventor of the term, Richard Bellman, on how it came about:
+                    <br>
+                    <br>
+                    "I spent the Fall quarter (of 1950) at RAND.
+                    My first task was to find a name
+                    for multistage decision processes.
+                    An interesting question is, Where did the
+                    name, dynamic programming, come from?
+                    The 1950s were not good years for
+                    mathematical research.
+                    We had a very interesting gentleman in Washington named Wilson.
+                    He was Secretary of Defense,
+                    and he actually had a pathological fear
+                    and hatred of the word research.
+                    I'm not using the term lightly; I'm using it precisely.
+                    His face would suffuse, he would turn red,
+                    and he would get violent
+                    if people used the term research in his presence.
+                    You can imagine how he felt,
+                    then, about the term mathematical.
+                    The RAND Corporation was employed by the Air
+                    Force, and the Air Force had Wilson as its boss, essentially.
+                    Hence, I felt I had to do something to shield Wilson 
+                    and the Air Force from the fact that I was
+                    really doing mathematics inside the RAND Corporation.
+                    What title, what name,
+                    could I choose? In the first place I was 
+                    interested in planning, in decision making, in thinking.
+                    But planning, is not a good word for various reasons.
+                    I decided therefore to use the word "programming".
+                    I wanted to get across the
+                    idea that this was dynamic, 
+                    this was multistage, this was time-varying.
+                    I thought, let's kill two birds with one stone.
+                    Let's take a word that has an
+                    absolutely precise meaning, namely dynamic, 
+                    in the classical physical sense.
+                    It also has a very interesting property as an adjective,
+                    and that it's impossible
+                    to use the word dynamic in a pejorative sense.
+                    Try thinking of some combination
+                    that will possibly give it a pejorative meaning.
+                    It's impossible.
+                    Thus, I thought dynamic programming was a good name.
+                    It was something not even a
+                    Congressman could object to.
+                    So I used it as an umbrella for my activities."
+                    <br>
+                    (Source:
+                    https://en.wikipedia.org/wiki/Dynamic_programming#History)
+                    <br>
+                    <br>
+                    Note that Bellman's claim that "dynamic" can be use
+                    pejoratively is surely false: most people would not favor
+                    "dynamic ethnic cleansing"!
+                    <br>
+                    <br>
+                </p>
+                <details>
+                    <summary class="sum2">
+                        <b>Algorithms that use dynamic programming</b>:
+                    </summary>
+                    <ul>
+                        <li>Recurrent solutions to lattice models for protein-DNA
+                            binding
+                        <li>Backward induction as a solution method for
+                            finite-horizon discrete-time dynamic optimization
+                            problems
+                        <li>Method of undetermined coefficients can be used to
+                            solve the Bellman equation in infinite-horizon,
+                            discrete-time, discounted, time-invariant dynamic
+                            optimization problems
+                        <li>Many string algorithms including longest common
+                            subsequence, longest increasing subsequence, longest
+                            common substring, Levenshtein distance (edit distance)
+                        <li>Many algorithmic problems on graphs can be solved
+                            efficiently for graphs of bounded treewidth or bounded
+                            clique-width by using dynamic programming on a tree
+                            decomposition of the graph.
+                        <li>The Cocke-Younger-Kasami (CYK) algorithm which
+                            determines whether and how a given string can be
+                            generated by a given context-free grammar
+                        <li>Knuth's word wrapping algorithm that minimizes
+                            raggedness when word wrapping text
+                        <li>The use of transposition tables and refutation tables
+                            in computer chess
+                        <li>The Viterbi algorithm (used for hidden Markov models)
+                        <li>The Earley algorithm (a type of chart parser)
+                        <li>The Needleman-Wunsch algorithm and other algorithms
+                            used in bioinformatics, including sequence alignment,
+                            structural alignment, RNA structure prediction
+                        <li>Floyd's all-pairs shortest path algorithm
+                        <li>Optimizing the order for chain matrix multiplication
+                        <li>Pseudo-polynomial time algorithms for the subset sum,
+                            knapsack and partition problems
+                        <li>The dynamic time warping algorithm for computing the
+                            global distance between two time series
+                        <li>The Selinger (a.k.a. System R) algorithm for relational
+                            database query optimization
+                        <li>De Boor algorithm for evaluating B-spline curves
+                        <li>Duckworth-Lewis method for resolving the problem when
+                            games of cricket are interrupted
+                        <li>The value iteration method for solving Markov decision
+                            processes
+                        <li>Some graphic image edge following selection methods
+                            such as the "magnet" selection tool in Photoshop
+                        <li>Some methods for solving interval scheduling problems
+                        <li>Some methods for solving the travelling salesman
+                            problem, either exactly (in exponential time) or
+                            approximately (e.g. via the bitonic tour)
+                        <li>Recursive least squares method
+                        <li>Beat tracking in music information retrieval
+                        <li>Adaptive-critic training strategy for artificial neural
+                            networks
+                        <li>Stereo algorithms for solving the correspondence
+                            problem used in stereo vision
+                        <li>Seam carving (content-aware image resizing)
+                        <li>The Bellman-Ford algorithm for finding the shortest
+                            distance in a graph
+                        <li>Some approximate solution methods for the linear search
+                            problem
+                        <li>Kadane's algorithm for the maximum subarray problem
+                    </ul>
+                </details>
+
+                <details>
+                    <summary class="sum2">
+                        Dynamic programming video
+                    </summary>
+                    <div id="python_anywhere_dynprog" 
+                         class="python-console">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/W2ote4jCuYw"
+                            frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </details>
+
+            </details>
+
+            <details>
+            <summary class="sum1">
+                Rod cutting
+            </summary>
+                <p>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Wood_from_victoria_mountain_ash.jpg/250px-Wood_from_victoria_mountain_ash.jpg">
+                <br>
+                <br>
+                Nothing special here about steel rods: the algorithm applies to
+                any good that can be sub-divided, but only in multiples of some
+                unit, like lumber, or meat, or cloth.
+                </p>
+
+                <details>
+                    <summary class="sum2">
+                        Recursive top-down implmentation
+                    </summary>
+                    <p>
+                        Keeps calculating the same cuts again and again, much like
+                        naive, recursive Fibonacci.
+                        <br>
+                        <br>
+                        Running time is exponential in n. Why?
+                        <br>
+                        Our textbook gives us the equation:
+                        <br>
+                        <br>
+                        <img src="../graphics/RecRodCutEqn.gif">
+                        <br>
+                        <br>
+                        This is equivalent to:
+                        <br>
+                        T(n) = 1 + T(n - 1) + T(n - 2) + ... T(1)
+                        <br>
+                        For n = 1, there are 2<sup>0</sup> ways to solve the
+                        problem.
+                        <br>
+                        For n = 2, there are 2<sup>1</sup> ways to solve the
+                        problem.
+                        <br>
+                        For n = 3, there are 2<sup>2</sup> ways to solve the
+                        problem.
+                        <br>
+                        Each additional foot of rod gives us 2 * (previous number
+                        of ways of solving problem), since we have all the previous
+                        solutions, either with a cut of one foot for the new
+                        extension, or without a cut there. (Similar to why each row
+                        of Pascal's triangle gives us the next power of two.)
+                        <br>
+                        <br>
+                        <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Pascal%27s_triangle_5.svg/250px-Pascal%27s_triangle_5.svg.png">
+                        <br>
+                        <br>
+                        So, we have the series:
+                        <br>
+                        2<sup>n - 1</sup> + 2<sup>n - 2</sup> + 2<sup>n -
+                            3</sup>... + 2<sup>0</sup> + 1
+                        <br>
+                        And this equals 2<sup>n</sup>. Why?
+                        <br>
+                        <img src="../graphics/TwoToTheN.png">
+                        <br>
+                        <br>
+                        <b>Example</b>: 2<sup>4</sup> = 2<sup>3</sup> +
+                        2<sup>2</sup> + 2<sup>1</sup> + 2<sup>0</sup> + 1
+                        <br>
+                        Or, 16 = 8 + 4 + 2 + 1 + 1
+                    </p>
+                </details>
+
+
+                <details>
+                    <summary class="sum2">
+                        Using dynamic programming for optimal rod-cutting
+                    </summary>
+                    <p>
+                        Much like we did with the naive, recursive Fibonacci, we
+                        can "memoize" the recursive rod-cutting algorithm and
+                        achieve huge time savings.
+                        <br>
+                        <br>
+                        That is an efficient top-down approach. But we can also do
+                        a bottom-up approach, which will have the same run-time
+                        order but may be slightly faster due to fewer function
+                        calls. (The algorithm uses an additional loop instead of
+                        recursion to do its work.)
+                    </p>
+                </details>
+
+
+                <details>
+                    <summary class="sum2">
+                        Subproblem graphs
+                    </summary>
+    
+                    <p>
+    
+                        <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Fibonacci_dynamic_programming.svg/108px-Fibonacci_dynamic_programming.svg.png">
+                        <br>
+                        <br>
+                        The above is the Fibonacci sub-problem graph for fib(5). As
+                        you can see, F<sub>5</sub> must solve F<sub>4</sub> and
+                        F<sub>3</sub>. But F<sub>4</sub> must <i>also</i> solve
+                        F<sub>3</sub>. It also must solve F<sub>2</sub>, which
+                        F<sub>3</sub> must solve as well. And so on.
+                        <br>
+                        <br>
+                        This is the sort of graph we want to see if dynamic
+                        programming is going to be a good approach: a recursive
+                        solution involves repeatedly solving the same problems.
+                        <br>
+                        <br>
+                        This is quite different than, say, a parser, where the code
+                        sub-problems are very unlikely to be the same chunks of
+                        code again and again, unless we are parsing the code of a
+                        very bad programmer who doesn't understand functions!
+                    </p>
+                </details>
+
+
+                <details>
+                    <summary class="sum2">
+                        Reconstructing a solution
+                    </summary>
+                    <p>
+                        In this section, we see how to <i>record</i> the solution
+                        we arrived at, rather than simply return the optimal
+                        revenue possible. The owner of Serling Enterprises will
+                        surely be much more pleased with this code than the earlier
+                        versions.
+                    </p>
+                </details>
+
+                <details>
+                    <summary class="sum2">
+                        Run the Python code
+                    </summary>
+ 
+                    <p>
+                        In the console below, type or paste:
+                        <br />
+                    <code>
+                    !git clone https://gist.github.com/80d2a774f08f686f675f8a9254570da0.git
+                    <br />
+                    cd 80d2a774f08f686f675f8a9254570da0
+                    <br />
+                    from dynamic_programming import *
+                    <br />
+                    </code>
+                    </p>
+
+                    <div class="python-console">
+                        <iframe style="width: 640; height: 480;"
+                            name="embedded_python_anywhere"
+                            src="https://www.pythonanywhere.com/embedded3/">
+                        </iframe>
+                    </div>
+
+                    <p>
+                        Now let's run our ext_bottom_up_cut_rod() code.
+                        (Link to full source code below.)
+                        Type or paste:
+                        <code>
+                        <br />
+                        p4
+                        <br />
+                        (revs, cuts, max_rev) = ext_bottom_up_cut_rod(p4, 4)
+                        </code>
+                    </p>
+
+                    <p>
+                        You can go explore more, by designing your own price
+                        arrays! Just type in:
+                        <br />
+                        <code>
+                        my_name = [x, y, z...]
+                        </code>
+                        <br />
+                        where 'my_name' is whatever name you want to give your
+                        price array, and x, y, z, etc. are the prices for a cut
+                        of length 1, 2, 3, etc.
+                    </p>
+
+                </details>
+
+                <details>
+                    <summary class="sum2">
+                    A video on rod cutting
+                    </summary>
+                    <div style="text-align:center">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/IRwVmTmN6go"
+                        frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </details>
+            </details>
+
+
+            <details>
+            <summary class="sum1">
+                Matrix-chain multiplication
+            </summary>
+
+                <p>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Catalan-Hexagons-example.svg/400px-Catalan-Hexagons-example.svg.png">
+                <br>
+                <br>
+                There are many ways to parenthisize a series of matrix
+                multiplications. For instance, if we are parenthisizing 
+                A<sub>1</sub> * A<sub>2</sub> * A<sub>3</sub> * A<sub>4</sub>,
+                we could parenthisize this in the following ways:
+                <br>
+                <br>
+                (A<sub>1</sub> (A<sub>2</sub> (A<sub>3</sub> A<sub>4</sub>)))
+                <br>
+                (A<sub>1</sub> ((A<sub>2</sub> A<sub>3</sub>) A<sub>4</sub>))
+                <br>
+                ((A<sub>1</sub> A<sub>2</sub>) (A<sub>3</sub> A<sub>4</sub>))
+                <br>
+                ((A<sub>1</sub> (A<sub>2</sub> A<sub>3</sub>)) A<sub>4</sub>)
+                <br>
+                (((A<sub>1</sub> A<sub>2</sub>) A<sub>3</sub>) A<sub>4</sub>)
+                <br>
+                <br>
+                Which way we choose to do so can make a huge difference in
+                run-time!
+                </p>
+
+
+                <p>
+                    Why is this different than rod cutting? Think about this
+                    for a moment, and see if you can determine why the problems
+                    are not the same.
+                </p>
+                <details>
+                    <summary class="sum4"><b>The reason</b></summary>
+
+                    <p>
+                    In rod cutting, a cut of 4-2-2 is the <i>same cut</i> as a
+                    cut of 2-2-4, and the same as a cut of 2-4-2.
+                    <br>
+                    That is not at all the case for matrix parenthisization.
+                    </p>
+
+
+                </details>
+
+                <details>
+                <summary class="sum2">
+                    Counting the number of parenthesizations
+                </summary>
+                <p>
+                    The number of solutions is exponential in <i>n</i>, thus
+                    brute-force is a bad technique for solving this
+                    problem.
+                </p>
+                </details>
+
+                <details>
+                <summary class="sum2">
+                    Applying dynamic programming
+                </summary>
+
+                    <details>
+                    <summary class="sum3">
+                        Step 1: The structure of an optimal parenthesization
+                    </summary>
+                    <p>
+                        For any place at level <i>n</i> where we place 
+                        parentheses, we must have optimal parentheses 
+                        at level <i>n</i> + 1.
+                        Otherwise, we could substitute 
+                        in the optimal <i>n</i> + 1
+                        level parentheses, and level n would be better!
+                        <br />
+                        Cut-and-paste proof.
+                    </p>
+                    </details>
+
+                    <details>
+                    <summary class="sum3">
+                        Step 2: A recursive solution
+                    </summary>
+                    <p>
+                        If we know the optimal place to split A<sub>1</sub>...
+                        A<sub>n</sub> (call it k), then the optimal solution is
+                        that split, plus the optimal solution for A<sub>1</sub>...
+                        A<sub>k</sub> and the optimal solution for 
+                        A<sub>k+1</sub>... A<sub>n</sub>. Since we don't know k, we
+                        try each possible k in turn, compute the optimal
+                        sub-problem for each such split, and see which pair of
+                        optimal sub-problems yields the optimal (minimum, in this
+                        case) total.
+                        <br>
+                        <br>
+                        "For example, if we have four matrices ABCD, we compute the
+                        cost required to find each of (A)(BCD), (AB)(CD), and
+                        (ABC)(D), making recursive calls to find the minimum cost
+                        to compute ABC, AB, CD, and BCD. We then choose the best
+                        one."
+                        (https://en.wikipedia.org/wiki/Matrix_chain_multiplication)
+                        <br>
+                        <br>
+                        An easy way to understand this:
+                        <br>
+                        Let's say we need to get from class at NYU Tandon to a
+                        ballgame at Yankee Stadium in the Bronx as fast as
+                        possible. If we choose Grand Central Station as the optimal
+                        high-level split, we must also choose the optimal ways to
+                        get from NYU to Grand Central, and from Grand Central to
+                        Yankee Stadium. It won't do to choose Grand Central, and
+                        then walk from NYU to Grand Central, and CitiBike from
+                        Grand Central to Yankee Stadium: there are faster ways to
+                        do each sub-problem!
+                    </p>
+                    </details>
+
+                    <details>
+                    <summary class="sum3">
+                        Step 3: Computing the optimal costs
+                    </summary>
+                    <p>
+                        CLRS does not offer a recursive version here (they do later
+                        in the chapter); they go
+                        straight to the bottom-up approach of storing each
+                        lowest-level result in a table, avoiding recomputation, and
+                        then combine those lower-level results into higher-level
+                        ones. The indexing here is very tricky and hard to follow
+                        in one's head, but it is worth trying to trace out what is
+                        going on by following the code. I have as usual included
+                        some print statements to help.
+                    </p>
+                    </details>
+
+                    <details>
+                        <summary class="sum3">
+                            Step 4: Constructing an optimal solution
+                        </summary>
+                        <p>
+                            Finally, we use the results computed in step 3 to actually
+                            provide the optimal solution, by actually determing where
+                            the parentheses go.
+                        </p>
+        
+                        <p>
+                            Here is the code from our textbook, implemented in 
+                            <a
+                            href="https://github.com/gcallah/algorithms/blob/master/Python/DynamicProgramming/">
+                            Python</a>,
+        
+                            runnning on the example where A<sub>1</sub> is 10 x 100,
+                            A<sub>2</sub> is 100 x 5, and A<sub>3</sub> is 5 x 50:
+                        </p>
+        
+                        <figure>
+                        <img src="../graphics/MatrixChainRun.png">
+                        <figcaption>
+                        The actual output of our Python code.
+                        </figcaption>
+                        </figure>
+
+                        <p>
+                        The structure of m:
+                        </p>
+
+                        <table>
+                            <tr>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    5000
+                                </td>
+                                <td>
+                                    7500
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &infin;        
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                                <td>
+                                    25000
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &infin; 
+                                </td>
+                                <td>
+                                    &infin;
+                                </td>
+                                <td>
+                                    0
+                                </td>
+                            </tr>
+                        </table>
+                    </details>
+
+                    <details>
+                    <summary class="sum3">
+                        Memoization
+                    </summary>
+    
+                    <p>
+                        We can memoize the recursive version and change its run
+                        time from &Omega;(2<sup>n</sup>) to O(n<sup>3</sup>).
+                    </p>
+                    </details>
+                </details>
+
+                <details>
+                    <summary class="sum2">
+                        A video on matrix chains.
+                    </summary>
+                    <div style="text-align:center">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/u6Y055g4mOE"
+                        frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </details>
+            </details>
+
+
+            <details>
+            <summary class="sum1">
+                Elements of dynamic programming
+            </summary>
+
+                <details>
+                <summary class="sum2">
+                    Optimal substructure
+                </summary>
+                <p>
+                    A problem exhibits <i>optimal substructure</i> if an optimal
+                    solution to the problem contains within it optimal
+                    solutions to subproblems.
+                </p>
+                </details>
+
+
+
+                <details>
+                <summary class="sum2">
+                    Overlapping subproblems
+                </summary>
+
+                <p>
+                    The problem space must be "small," in that a recursive
+                    algorithm visits the same sub-problems again and again,
+                    rather than continually generating new subproblems. The
+                    recursive Fibonacci is an excellent example of this!
+                </p>
+                </details>
+
+
+                <details>
+                <summary class="sum2">
+                    Reconstructing an optimal solution
+                </summary>
+                <p>
+                    Storing our choices in a table as we make them allows quick
+                    and simple reconstruction of the optimal solution.
+                </p>
+                </details>
+
+
+                <details>
+                <summary class="sum2">
+                    Memoization
+                </summary>
+                <p>
+                    As mentioned above, recursion with memoization is often a viable
+                    alternative to the bottom-up approach. Which to choose
+                    depends on several factors, one of which being that a
+                    recursive approach is often easier to understand.
+                    If our algorithm is going to handle small data sets,
+                    or not run very often, a recursive approach 
+                    with memoization may be the right answer.
+                </p>
+                </details>
+            </details>
+
+
+            <details>
+            <summary class="sum1">
+                Longest common subsequence
+            </summary>
+
+                <details>
+                <summary class="sum2">
+                    Step 1: Characterizing a longest common subsequence
+                </summary>
+
+                <p>
+                    'Let X be "XMJYAUZ" and Y be "MZJAWXU".
+                    The longest common subsequence between X and Y is "MJAU".'
+                    (https://en.wikipedia.org/wiki/Longest_common_subsequence_problem)
+                    <br>
+                    <br>
+                    <img src="../graphics/CommonSubsequence.png">
+                    <br>
+                    <br>
+                    Brute force solution runs in exponential time: not so good!
+                    <br>
+                    <br>
+                    But the problem has an optimal substructure:
+                    <br>
+                    <br>
+                    X = gregorsamsa
+                    <br>
+                    Y = reginaldblack
+                    <br>
+                    LCS: regaa
+                    <br>
+                    Our match on the last 'a' is at position X<sub>11</sub> and
+                    Y<sub>11</sub>. The previous result string ('rega') must have been
+                    the LCS before X<sub>11</sub> and Y<sub>11</sub>:
+                    otherwise, we could substitute in <i>that actual</i> LCS
+                    for 'rega' and have a longer overall LCS.
+
+                </p>
+                </details>
+
+
+                <details>
+                <summary class="sum2">
+                    Step 2: A recursive solution
+                </summary>
+
+                <p>
+                    Caution: here some sub-problems are ruled out! If
+                    X<sub>i</sub> and Y<sub>j</sub> are different, we consider
+                    the sub-problems of finding the LCS for X<sub>i</sub> and
+                    Y<sub>j - 1</sub> and for X<sub>i - 1</sub> and
+                    Y<sub>j</sub>, but not for X<sub>i</sub> and Y<sub>j</sub>.
+                    Why not? Well, if they aren't equal, they can't be the
+                    endpoint of an LCS.
+                </p>
+                </details>
+
+
+                <details>
+                <summary class="sum2">
+                    Step 3: Computing the length of an LCS
+                </summary>
+
+                <p>
+                    The solution here proceeds much like the earlier ones: find
+                    an LCS in a bottom-up fashion, using tables to store
+                    intermediate results and information for reconstructing the
+                    optimal solution.
+                </p>
+                </details>
+
+
+                <details>
+                <summary class="sum2">
+                    Step 4: Constructing an LCS
+                </summary>
+
+                    <details>
+                        <summary class="sum3">
+                            Improving the code
+                        </summary>
+    
+                        <p>
+                            We could eliminate a table here, reduce aymptotic
+                            run-time a bit there. But is the code more confusing?
+                            Do we lose an ability (reconstructing the solution) we
+                            might actually need later?
+                            <br>
+                            <br>
+                            <b>An important principle</b>: Don't optimize unless it is
+                            needed!
+                        </p>
+                    </details>
+                </details>
+                <details>
+                    <summary class="sum2">
+                        Video on LCS
+                    </summary>
+                    <div style="text-align:center">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/P-mMvhfJhu8"
+                            frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </details>
+            </details>
+
+            <details>
+            <summary class="sum1">
+                Optimal binary search trees
+            </summary>
+                <p>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/AVLtreef.svg/251px-AVLtreef.svg.png">
+                </p>
+
+
+
+                <details>
+                <summary class="sum2">
+                    Step 1: The structure of an optimal binary search tree
+                </summary>
+
+                <p>
+                    If a binary search tree is optimally construted, then both
+                    its left and right sub-trees must be optimally constructed.
+                    The usual "cut-and-paste" argument applies.
+                </p>
+                </details>
+
+
+                <details>
+                <summary class="sum2">
+                    Step 2: A recursive solution
+                </summary>
+
+                <p>
+                    As usual, this is straightforward, but too slow.
+                </p>
+                </details>
+
+
+                <details>
+                <summary class="sum2">
+                    Step 3: Computing the expected search cost
+                </summary>
+
+                <p>
+                    Very much like the matrix-chain-order code. Working code coming
+                    soon!
+                </p>
+                </details>
+
+                <details>
+                    <summary class="sum2">
+                        Optimal binary search tree video
+                    </summary>
+                    <div style="text-align:center">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/YXwmt55nl7I"
+                            frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </details>
+            </details>
+
+
+            <details>
+            <summary class="sum1">
+                Source Code
+            </summary>
+                <p>
+            
+<a href="https://github.com/gcallah/algorithms/tree/master/Java/DynamicProgramming">Java</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/Ruby/DynamicProgramming">Ruby</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/Go/DynamicProgramming">Go</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/Javascript/DynamicProgramming">Javascript</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/C++/DynamicProgramming">C++</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/Python/DynamicProgramming">Python</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/Clojure/DynamicProgramming">Clojure</a><br>
+                </p>
+            </details>
+
+            <details>
+            <summary class="sum1">
+                For Further Study
+            </summary>
+                <ul>
+                    <li>
+                        <a
+                        href="https://en.wikipedia.org/wiki/Matrix_chain_multiplication">
+                            Matrix-chain multiplication
+                        </a>
+                        <li>
+                            <a
+                            href="http://www.geeksforgeeks.org/dynamic-programming-set-4-longest-common-subsequence/">
+                            Longest common subsequence
+                            </a>
+                </ul>
+            </details>
+            
+            <details>
+            <summary class="sum1">
+                Homework
+            </summary>
+                <ol>
+                    <li>Change memoized-rod-cut to return a list of cuts to
+                    make, instead of the maximum possible revenue.
+                    Pseudo-code or real code are both fine.
+                    </li>
+                    <li>For the following table, determine the cost and
+                        structure of an optimal binary search tree:
+                        <br>
+                        <br>
+                        <table>
+                            <tr>
+                                <th>
+                                    <i>i</i>
+                                </th>
+                                <th>
+                                    0
+                                </th>
+                                <th>
+                                    1
+                                </th>
+                                <th>
+                                    2
+                                </th>
+                                <th>
+                                    3
+                                </th>
+                                <th>
+                                    4
+                                </th>
+                                <th>
+                                    5
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    p<sub>i</sub>
+                                </th>
+                                <td>
+                                </td>
+                                <td>
+                                    .05
+                                </td>
+                                <td>
+                                    .05
+                                </td>
+                                <td>
+                                    .25
+                                </td>
+                                <td>
+                                    .05
+                                </td>
+                                <td>
+                                    .05
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    q<sub>i</sub>
+                                </th>
+                                <td>
+                                    .05
+                                </td>
+                                <td>
+                                    .15
+                                </td>
+                                <td>
+                                    .05
+                                </td>
+                                <td>
+                                    .05
+                                </td>
+                                <td>
+                                    .05
+                                </td>
+                                <td>
+                                    .20
+                                </td>
+                            </tr>
+                        </table>
+                </ol>
+    </body>
+</html>

@@ -1,0 +1,439 @@
+<html>
+    <head>
+        <link href="../style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            Graph Algorithms
+        </title>
+    </head>
+
+    <body>
+    <div id="header">
+        <div id="logo">
+            <img src="../graphics/Julia.png">
+        </div>
+        <div id="user-tools">
+            <a href="index.html">Home</a>
+            &nbsp; &nbsp; 
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
+        <h1>
+            Graph Algorithms
+        </h1>
+
+            <div style="text-align:center">
+                <p>
+                <img
+                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Wikipedia_multilingual_network_graph_July_2013.svg/220px-Wikipedia_multilingual_network_graph_July_2013.svg.png">
+                </p>
+            </div>
+
+            <h2>
+                Topics
+            </h2>
+
+                <h3>
+                    Seven Bridges of Ko&#776;nigsberg
+                </h3>
+
+                    <p>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Konigsberg_bridges.png/180px-Konigsberg_bridges.png">
+                    &nbsp; &nbsp; &nbsp; 
+                    &nbsp; &nbsp; &nbsp; 
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/7_bridges.svg/179px-7_bridges.svg.png">
+                    &nbsp; &nbsp; &nbsp; 
+                    &nbsp; &nbsp; &nbsp; 
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Koenigsberg_Bridges_Variations_Graph7.png/150px-Koenigsberg_Bridges_Variations_Graph7.png">
+                    <br>
+                    <br>
+                    Can one walk the city crossing every bridge once and only
+                    once?
+                    <br>
+                    <br>
+                    Euler answered "No." Why?
+                    <br>
+                    View the land as vertices. The bridges are edges. There is
+                    an <i>Eulerian walk</i> on a graph only if it is connected
+                    and has either zero or two edges of odd degree.
+
+                    <br>
+                    <br>
+                    Graph theory was born to solve a problem of movement in space.
+                    <br>
+                    <br>
+                    But it is also used for:
+                    </p>
+                    <ul>
+                        <li>Task management
+                        <li>Tournament design
+                        <li>Social networks
+                        <li>Map coloring
+                        <li>Voting theory
+                        <li>Cellular telephone networks
+                        <li>Words in a dictionary
+                    </ul>
+                    <p>
+                    Elements:
+                    </p>
+                    <ul>
+                        <li>Walks: Any wandering about from vertex to vertext
+                            following edges.
+                        <li>Paths: A walk with no repetition of vertices or
+                            edges.
+                        <li>Cycles: Got back to where we were.
+                        <li>Trees: Connected graphs with no cycles.
+                        <li>Forests: Unconnected trees.
+                        <li><a
+                                href="https://en.wikipedia.org/wiki/Tournament_(graph_theory)">
+                                Tournaments
+                            </a>
+                    </ul>
+
+
+
+
+                <h3>
+                    Representations of graphs
+                </h3>
+                    <p>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Directed.svg/125px-Directed.svg.png">
+                    <br>
+                    <br>
+                    There are two standard representations: 
+                    </p>
+
+                    <ol>
+                        <li>Adjancency lists
+                        <li>Adjancency matrices
+                    </ol>
+
+                    <p>
+                        Consider the following graph:
+                        <br>
+                        <br>
+                        <img
+                        src="https://cdn.kastatic.org/ka-cs-algorithms/social_network_num.png">
+                        <br>
+                        <br>
+
+                        Following our text, we will prefer adjancency lists.
+                        But, as CLRS point out, in an especially dense graph,
+                        or when we need to detect an edge quickly, we might
+                        prefer a matrix.
+                        <br>
+                        <br>
+                        Here are the two different representations of this
+                        graph:
+                        <br>
+                        <br>
+                        Adjacency list:
+                        <br>
+                        <img src="../graphics/AdjList.png">
+                        <br>
+                        <br>
+                        Adjacency matrix:
+                        <br>
+                        <img src="../graphics/AdjMatrix.png">
+                        <br>
+                        <br>
+                        For the adjancency matrix:
+                        <br>
+                        <br>
+                        <img src="../graphics/GraphsEq1.gif">
+                        <br>
+                        <br>
+                    </p>
+                    <h4>
+                        Trade-offs
+                    </h4>
+                        <ul>
+                            <li>Adjacency list is generally smaller and at
+                                worst as large as adjacency matrix. We use it
+                                for sparse graphs, where E is singificantly
+                                less than V<sup>2</sup>. 
+                            <li>Adjacency matrix is simpler. It also allows
+                                quicker search for whether some specific edge
+                                is present or not.
+                        </ul>
+                        <p>
+                            Both forms can be used to represent directed,
+                            undirected, and weighted graphs.
+                            <br>
+                            For weighted graphs, we can store 0 or the weight
+                            in the matrix instead of just 0 or 1. For the list, we
+                            store a tuple (vertex, weight) in the adjancency list of a
+                            vertex.
+                            <br>
+                            For directed graphs, in a list, <i>i</i>, say, would have
+                            an entry for <i>j</i>, but <i>j</i> would not for <i>i</i>.
+                            In a matrix, m[i][j] would be 1, but m[j][i] would
+                            be 0.
+                        </p>
+
+                    <h4>
+                        Representing attributes
+                    </h4>
+                    <p>
+                    For pseudo-code, we just represent attribute <i>f</i> of
+                    edge <i>(u, v)</i> as <i>(u, v).f</i>. (<i>f</i> might
+                    represent the edge already having been visited, for
+                    instance.)
+                    <br>
+                    <br>
+                    In a real program, there are many, many ways to store
+                    additional information. How to best do this will very much
+                    depend on your application. I have found this can work:
+                    </p>
+                    <ul>
+                        <li>Create a class <i>node</i>.
+                        <li><i>node</i> has an instance variable
+                            <i>adj_list</i>.
+                        <li>Anything you want to put in a graph should
+                            sub-class node.
+                        <li>Voila! You can store any attributes whatsoever with
+                            each node.
+                    </ul>
+
+                <h3>
+                    Breadth-first search
+                </h3>
+                    <p>
+                        <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Breadth-first-tree.svg/300px-Breadth-first-tree.svg.png">
+                        <br>
+                        <br>
+                        We assume a <b>source</b> vertex <i>s</i>. 
+                        <br>
+                        We then find every vertex at distance 1 from the
+                        source. (Connected by a direct edge.)
+                        <br>
+                        Then we process those vertices, finding every vertex at
+                        distance 2 from the source vertex.
+                        <br>
+                        We continue in the same fashion until we run out of
+                        vertices.
+                        <br>
+                        <br>
+                        <b>Coloring vertices:</b>
+                        <br>
+                        Vertices start out "white."
+                        <br>
+                        They are colored gray when they are discovered.
+                        <br>
+                        They are colored black when all of their adjacent vertices
+                        have been discovered.
+                    </p>
+                    <h4>
+                        Analysis
+                    </h4>
+
+                        <ul>
+                            <li>After initialization, BFS never whitens a
+                                vertex. So each Will go on and off the queue at
+                                most once. So queue time is O(V).
+                            <li>The adjacency List for each vertex is scanned
+                                once, when the vertex is dequeued. The length
+                                of all adjacency lists is the number of edges,
+                                E. So this runs in O(E).
+                            <li>The overhead for initialization is O(V).
+                            <li>Thus, we get a running time for BFS of O(V +
+                                E).
+                        </ul>
+
+                    <h4>
+                        Shortest paths
+                    </h4>
+                    <p>
+                    Breadth-first search computes shortest path distances.
+                    </p>
+
+
+                <h3>
+                    Depth-first search
+                </h3>
+
+                    <p>
+                        <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Depth-first-tree.svg/300px-Depth-first-tree.svg.png">
+                        <br>
+                        <br>
+                        This search goes as "deep" as it can before it ventures
+                        back up the graph to explore other nodes nearer the
+                        source.
+                        <br>
+                        <br>
+                        <b>Coloring vertices:</b>
+                        <br>
+                        Vertices start out "white."
+                        <br>
+                        They are colored gray when they are discovered.
+                        <br>
+                        They are colored black when they are "finished,"
+                        meaning when all of the nodes on their adjacency list
+                        have been completely explored.
+    
+                    </p>
+
+                    <h4>
+                        Properties of depth-first search
+                    </h4>
+                        <p>
+                            <b>Running time</b>: O(V + E) 
+                        </p>
+
+                    <h4>
+                        Classification of edges
+                    </h4>
+
+                        <p>
+                        Types of edges:
+                        </p>
+    
+                        <ol>
+                            <li><b>Tree edges</b>:
+                                <br>
+                                Edges of the depth-first forest
+                                G<sub>&pi;</sub>. Edge <i>(u, v)</i> is a tree edge if
+                                <i>v</i> was first discovered by 
+                                exploring edge <i>(u, v)</i>.
+                            <li><b>Back edges</b>:
+                                <br>An edge <i>(u, v)</i> that connects
+                                <i>u</i> to an ancestor <i>v</i>.
+                            <li><b>Forward edges</b>:
+                                <br>Non-tree edge <i>(u, v)</i> that connects
+                                <i>u</i> to an descendant <i>v</i>.
+                            <li><b>Cross edges</b>:
+                                <br>All other edges.
+                        </ol>
+                        <p>
+                        In DFS, when we first explore <i>(u, v)</i> the color
+                        of <i>v</i> tells us:
+                        </p>
+                        <ol>
+                            <li><b>WHITE:</b> This is a tree edge.
+                            <li><b>GRAY:</b> This is a back edge.
+                            <li><b>BLACK:</b> This is a forward edge or cross edge.
+                        </ol>
+
+
+                <h3>
+                    Topological sort
+                </h3>
+                    <p>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Directed_acyclic_graph_2.svg/180px-Directed_acyclic_graph_2.svg.png">
+                    <br>
+                    <br>
+                    Can only be performed on directed acyclical graphs (DAGs).
+                    The sort makes no sense on undirected graphs or cyclical
+                    graphs.
+                    <br>
+                    <br>
+                    <b>Property</b>: If G contains an edge <i>(u, v)</i>,
+                    then <i>u</i> appears before <i>v</i>
+                    in the topological ordering.
+                    <br>
+                    <br>
+                    Our book's topological sort algorithm is somewhat weird:
+                    <br>
+                    TOPOLOGICAL-SORT(G)
+                    </p>
+                    <ol>
+                        <li>call DFS(G) to compute finishing times <i>v.f</i>
+                            for each vertex <i>v</i>.
+                        <li>as each vertex is finished, insert it into the
+                            front of a linked list
+                        <li><b>return</b> the linked list of vertices.
+                    </ol>
+
+
+                <h3>
+                    Strongly connected components
+                </h3>
+                    <p>
+                        <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Graph_Condensation.svg/330px-Graph_Condensation.svg.png">
+    
+                        <br>
+                        <br>
+                        These are components of directed graphs that can each
+                        be reached from the other.
+                        <br>
+                        Many advanced graph algorithms rely on de-composing a
+                        graph into strongly directed components, and then
+                        processing those, and then combining the results:
+                        <i>divide-and-conquer</i>!
+                    </p>
+
+
+            <h2>
+                Source Code
+            </h2>
+                <p>
+                <a
+                    href="https://github.com/gcallah/algorithms/blob/master/Python/GraphAlgorithms/">
+                    Python
+                </a>
+                <br>
+                <a
+                    href="https://github.com/gcallah/algorithms/blob/master/Ruby/graph.rb">
+                    Ruby
+                </a>
+                <br>
+
+            <h2>
+                For Further Study
+            </h2>
+                <ul>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Graph_(abstract_data_type)">
+                            Graph (abstract data type)
+                        </a>
+                </ul>
+
+            <h2>
+                Homework
+            </h2>
+                <ol>
+                    <li>Master Theorem problems:
+                        <ol type="a">
+                            <li>T(n) = .2T(n / 2) + 5n
+                            <li>T(n) = 32T(n / 8) + n!
+                            <li>T(n) = &radic;2T(n / 2) + log n
+                            <li>T(n) = 7/2T(n / 2) + n
+                            <li>T(n) = 4T(n / 4) + &radic;n
+                            <li>T(n) = 23T(n / 7) - n<sup>2</sup> log n
+                        </ol>
+                    <li>Work out a better implementation of the graph data
+                        structure than I did in the Python code linked to
+                        above.
+                    <li>Consider the following graph represented as an
+                        adjacency list:
+                        <br>
+                        <img src="../graphics/AdjList.png">
+                        <br>
+                        Show the d and &pi; values that result from running BFS
+                        on that graph.
+                    <li>Now do the same thing with the above graph for DFS.
+                    <li>Do problem 22.1-6 in the textbook.
+                    <li>Read Chapter 23, section on minimum spanning trees.
+                        
+                </ol>
+
+
+            <h2>
+                Credits
+            </h2>
+            <ul>
+                <li>Graphics of list versus matrix representations:
+                    https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/representing-graphs
+            </ul>
+
+
+    </body>
+</html>
