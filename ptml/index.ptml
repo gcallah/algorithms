@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <link href="../style.css" rel="stylesheet" type="text/css"/>
         <title>
 			Design and Analysis of Algorithms
         </title>
@@ -55,12 +55,12 @@
                     </a>
                     </h3>
                     <h3>
-                    <a href="GreedyVsDynamic/index.html">
+                    <a href="../GreedyVsDynamic/index.html">
                         Greedy Versus Dynamic Programming
                     </a>
                     </h3>
                     <h3>
-                        <a href="Algocynfas/index.html">
+                        <a href="../Algocynfas/index.html">
                         Algocynfas
                         </a>
                     </h3>

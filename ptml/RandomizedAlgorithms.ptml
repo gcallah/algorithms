@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <link href="../style.css" rel="stylesheet" type="text/css"/>
         <title>
             Randomized Algorithms
         </title>
@@ -120,7 +120,7 @@
 
              <img
              src=
-             "graphics/Lec3Eq1.gif">
+             "../graphics/Lec3Eq1.gif">
              <br>
              <br>
 
@@ -129,7 +129,7 @@
              <br>
              <img
              src=
-             "graphics/Lec3Eq2.gif">
+             "../graphics/Lec3Eq2.gif">
 
              <br>
              <br>
@@ -138,7 +138,7 @@
              <br> <br>
              <img
              src=
-             "graphics/Lec3Eq3.gif">
+             "../graphics/Lec3Eq3.gif">
 
              <br> <br>
 
@@ -147,7 +147,7 @@
              <br>
              <img
              src=
-             "graphics/Lec3Eq4.gif">
+             "../graphics/Lec3Eq4.gif">
              <br>
              <br>
 
@@ -175,30 +175,30 @@
              <br>
              <img
              src=
-             "graphics/RandEq1.gif">
+             "../graphics/RandEq1.gif">
              <br>
              <br>
              <img
              src=
-             "graphics/RandEq2.gif">
+             "../graphics/RandEq2.gif">
              <br>
              <br>
              <img
              src=
-             "graphics/RandEq3.gif">
+             "../graphics/RandEq3.gif">
              <br>
              (By linearity of expectations.)
              <br>
              <br>
              <img
              src=
-             "graphics/RandEq4.gif">
+             "../graphics/RandEq4.gif">
 
              <br>
              <br>
              <img
              src=
-             "graphics/RandEq5.gif">
+             "../graphics/RandEq5.gif">
              <br>
              <br>
              Why is the last step true? <a
@@ -277,25 +277,25 @@
              <br> <br>
              <img
              src=
-             "graphics/RandEq6.gif">
+             "../graphics/RandEq6.gif">
              <br> <br>
              Take expectations and apply linearity of expectation:
              <br> <br>
              <img
              src=
-             "graphics/RandEq7.gif">
+             "../graphics/RandEq7.gif">
              <br> <br>
              <img
              src=
-             "graphics/RandEq8.gif">
+             "../graphics/RandEq8.gif">
              <br> <br>
              <img
              src=
-             "graphics/RandEq9.gif">
+             "../graphics/RandEq9.gif">
              <br> <br>
              <img
              src=
-             "graphics/RandEq10.gif">
+             "../graphics/RandEq10.gif">
              <br>
              <br>
              So we are looking at <em>&Theta;(n<sup>1/2</sup>)</em>,

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <link href="../style.css" rel="stylesheet" type="text/css"/>
         <title>
             The Algorithm Museum
         </title>
@@ -62,7 +62,7 @@
                         </ul>
                     </div>
                     <div class="illustration">
-                        <img src="graphics/Board.jpg"
+                        <img src="../graphics/Board.jpg"
                             height="330" width="550">
                     </div>
                 </div>

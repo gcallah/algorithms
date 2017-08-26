@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <link href="../style.css" rel="stylesheet" type="text/css"/>
         <title>
             Design and Analyis of Algorithms:  Minimum Spanning Trees
         </title>
@@ -111,7 +111,7 @@
             </h2>
 
                 <p>
-                <img src="graphics/MinSpanTree1.png">
+                <img src="../graphics/MinSpanTree1.png">
                 <br>
                 <br>
                 We add edges in increasing-cost order, so long as the edges
@@ -130,7 +130,7 @@
                     <li>Include the edge weighted 6.
                 </ul>
                 <p>
-                <img src="graphics/MinSpanTree2.png">
+                <img src="../graphics/MinSpanTree2.png">
                 <br>
                 <br>
                 <b>Proof</b>: Is Kruskal's algorithm guaranteed to always
@@ -158,7 +158,7 @@
                 have a cycle).
                 <br>
 
-                <img src="graphics/Kruskal.png">
+                <img src="../graphics/Kruskal.png">
                 <br>
                 But the weight of <i>e<sub>k</sub></i> must be less than
                 the weight of <i>e<sup>*</sup></i>, because after we had
