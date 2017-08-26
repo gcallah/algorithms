@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link href="../style.css" rel="stylesheet" type="text/css"/>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
         <title>
             Design and Analysis of Algorithms: Dynamic Programming
         </title>
@@ -196,7 +196,7 @@
                         Our textbook gives us the equation:
                         <br>
                         <br>
-                        <img src="../graphics/RecRodCutEqn.gif">
+                        <img src="graphics/RecRodCutEqn.gif">
                         <br>
                         <br>
                         This is equivalent to:
@@ -230,7 +230,7 @@
                         <br>
                         And this equals 2<sup>n</sup>. Why?
                         <br>
-                        <img src="../graphics/TwoToTheN.png">
+                        <img src="graphics/TwoToTheN.png">
                         <br>
                         <br>
                         <b>Example</b>: 2<sup>4</sup> = 2<sup>3</sup> +
@@ -527,7 +527,7 @@
                         </p>
         
                         <figure>
-                        <img src="../graphics/MatrixChainRun.png">
+                        <img src="graphics/MatrixChainRun.png">
                         <figcaption>
                         The actual output of our Python code.
                         </figcaption>
@@ -675,7 +675,7 @@
                     (https://en.wikipedia.org/wiki/Longest_common_subsequence_problem)
                     <br>
                     <br>
-                    <img src="../graphics/CommonSubsequence.png">
+                    <img src="graphics/CommonSubsequence.png">
                     <br>
                     <br>
                     Brute force solution runs in exponential time: not so good!

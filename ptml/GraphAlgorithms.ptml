@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link href="../style.css" rel="stylesheet" type="text/css"/>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
         <title>
             Graph Algorithms
         </title>
@@ -123,18 +123,18 @@
                         <br>
                         Adjacency list:
                         <br>
-                        <img src="../graphics/AdjList.png">
+                        <img src="graphics/AdjList.png">
                         <br>
                         <br>
                         Adjacency matrix:
                         <br>
-                        <img src="../graphics/AdjMatrix.png">
+                        <img src="graphics/AdjMatrix.png">
                         <br>
                         <br>
                         For the adjancency matrix:
                         <br>
                         <br>
-                        <img src="../graphics/GraphsEq1.gif">
+                        <img src="graphics/GraphsEq1.gif">
                         <br>
                         <br>
                     </p>
@@ -405,7 +405,7 @@
                     <li>Consider the following graph represented as an
                         adjacency list:
                         <br>
-                        <img src="../graphics/AdjList.png">
+                        <img src="graphics/AdjList.png">
                         <br>
                         Show the d and &pi; values that result from running BFS
                         on that graph.

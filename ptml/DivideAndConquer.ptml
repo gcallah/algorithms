@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link href="../style.css" rel="stylesheet" type="text/css"/>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
         <title>
             Design and Analysis of Algorithms: Divide and Conquer
         </title>
@@ -53,7 +53,7 @@
                     Merge sort recurrence:
                     <br>
                     <br>
-                    <img src="../graphics/RecEq1.gif">
+                    <img src="graphics/RecEq1.gif">
                     <br>
                     <br>
                     We "solve" these by finding a closed-form equation that
@@ -203,7 +203,7 @@
                     So our recurrence is:
                     <br>
                     <br>
-                    <img src="../graphics/RecEq6.gif">
+                    <img src="graphics/RecEq6.gif">
                     <br>
                     <br>
                     The master method will show us that the solution to this
@@ -236,7 +236,7 @@
                     For two matrices:
                     <br>
                     <br>
-                    <img src="../graphics/RecEq8.gif">
+                    <img src="graphics/RecEq8.gif">
                     <br>
                     <br>
                     Define:
@@ -260,13 +260,13 @@
                     Then:
                     <br>
                     <br>
-                    <img src="../graphics/RecEq9.gif">
+                    <img src="graphics/RecEq9.gif">
                     <br>
                     <br>
                     So let's try this example:
                     <br>
                     <br>
-                    <img src="../graphics/RecEq7.gif">
+                    <img src="graphics/RecEq7.gif">
 
 
                     <br>
@@ -334,7 +334,7 @@
                     <br>
                     Recurrence:
                     <br>
-                    <img src="../graphics/RecEq2.gif">
+                    <img src="graphics/RecEq2.gif">
                     <br>
                     <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Tower_of_Hanoi_recursion_SMIL.svg/220px-Tower_of_Hanoi_recursion_SMIL.svg.png">
@@ -483,27 +483,27 @@
                 <br>
                 <br>
                 <img
-                src="../graphics/NSquaredTree1.png">
+                src="graphics/NSquaredTree1.png">
                 <br>
                 <br>
                 Calculate the work at each level:
                 <br>
                 <br>
                 <img
-                src="../graphics/NSquaredTree2.png">
+                src="graphics/NSquaredTree2.png">
                 <br>
                 <br>
                 This produces the geometric series:
                 <br>
                 <br>
-                <img src="../graphics/RecEq4.gif">
+                <img src="graphics/RecEq4.gif">
                 <br>
                 <br>
                 If we set a = n<sup>2</sup> and r = 1/2, then we have the
                 general sum of a converging geometric series:
                 <br>
                 <br>
-                <img src="../graphics/RecEq5.gif">
+                <img src="graphics/RecEq5.gif">
                 <br>
                 <br>
                 So the solution here is O(n<sup>2</sup>). The amount of work at
@@ -645,7 +645,7 @@
                 <p>
                     The runtime then is:
                     <br>
-                    <img src="../graphics/4TRec.gif">
+                    <img src="graphics/4TRec.gif">
                     <br>
                     h = log<sub>2</sub>n
                     <br>
@@ -778,7 +778,7 @@
                 <p>
                 And so we get:
                 <br>
-                <img src="../graphics/EqCaseRec.gif">
+                <img src="graphics/EqCaseRec.gif">
                 <br>
                 2<sup>h</sup> = n.
                 <br>
@@ -909,7 +909,7 @@
                 <p>
                     The runtime then is:
                     <br>
-                    <img src="../graphics/NSquaredRec.gif">
+                    <img src="graphics/NSquaredRec.gif">
                     <br>
                     We pull out the n<sup>2</sup> from the sum, and we get a
                     geometric series. Obviously, n<sup>2</sup> dominates.
@@ -986,7 +986,7 @@
                         Notice the gap between the red and blue lines:
                         <br>
                         <figure>
-                            <img src="../graphics/PolynomialLine.svg">
+                            <img src="graphics/PolynomialLine.svg">
                             <figcaption>
                                 The "polynomial line"
                             </figcaption>
@@ -1002,7 +1002,7 @@
                         &epsilon; > 0
                         <br>
                         <figure>
-                            <img src="../graphics/RegularityCond.png">
+                            <img src="graphics/RegularityCond.png">
                             <figcaption>
                             <a
                                 href="https://github.com/gcallah/algorithms/blob/master/RegularityCondition.xlsx">
@@ -1135,7 +1135,7 @@
                         please try to solve this yourself.)
                     <li>Find tight asymptotic bounds for the following recurrence:
                         <br>
-                        <img src="../graphics/RecEq3.gif">
+                        <img src="graphics/RecEq3.gif">
                         <br>
                 </ol>
             </details>
