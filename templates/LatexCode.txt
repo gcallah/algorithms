@@ -1,0 +1,35 @@
+
+Recurrence:
+T(n) =
+    \begin{cases}
+      \Theta (1)\qquad\qquad\quad  \mbox{if}\ n=1\\
+      2T(n/2) + \Theta (n)\ \mbox{if}\ n>1
+    \end{cases}
+
+T(n) =
+    \begin{cases}
+      c \qquad\qquad\qquad\qquad\quad\quad\quad \  \mbox{if}\ n=0\\
+      T(n / 2) + T(n / 2) + \Theta(n) \quad  \mbox{if}\ n>0
+    \end{cases}
+
+T(n) = 4T(1) + \sum_{i=0}^{h-1}2^i n
+
+
+Geometric series:
+n^{2} + \frac{n^{2}}{2} + \frac{n^{2}}{4}  + \frac{n^{2}}{8}...
+
+a + ar + ar^{2} + ar^{3} +...+ + ar^{n - 1} = \sum_{k = 0}^{\infty}ar^{k} =
+\frac{a}{1 - r},\ for \left | r \right | < 1
+
+Matrix:
+X = \begin{bmatrix}
+A & B\\ 
+C & D
+\end{bmatrix}
+
+Y = \begin{bmatrix}
+E & F\\ 
+G & H
+\end{bmatrix}
+
+
