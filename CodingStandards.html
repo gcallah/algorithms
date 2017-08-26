@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+        Algorithm Museum Coding Standards
+        </title>
+    </head>
+
+    <body>
+
+        <h1>
+        Algorithm Museum Coding Standards
+        </h1>
+
+        <hr>
+
+        <figure>
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/IBM402plugboard.Shrigley.wireside.jpg/220px-IBM402plugboard.Shrigley.wireside.jpg">
+            <figcaption>
+            The above is a computer program for calculating profit and loss!
+            </figcaption>
+        </figure>
+
+        <ol>
+            <li> All code should be stored in a single file named for the chapter in CLRS
+                for which it implements the algorithms, OR it should be in a directory with
+                such a name, if there is more than one file for the code. So, if the C source
+                code for chapter 4 is in a single file, it should be called
+                <i>divide_and_conquer.c</i>.
+            <br>
+            <br>
+                If a directory is used, the directory should be named in mixed
+                case: <i>DynamicProgramming</i>.
+
+            <li> There should be a test for each algorithm implemented.
+
+            <li> Code should reflect the pseudocode in CLRS "fairly" closely.
+                How close depends greatly on the language being used for
+                implementation. Clearly, an implementation in Lisp or
+                a assembly language is not going to be as close to the
+                textbook pseudocode as one in Pascal.
+
+                The decision as to whether to use a "shortcut"
+                provided by a language should be based on how crucial the code
+                in question is to the algorithm. Clearly, we can't "implement"
+                quicksort just by calling the library quicksort routine! But if
+                the pseudocode is dividing an array into pieces for a
+                divide-and-conquer algorithm, it is fine to use Python's
+                slicing capability.
+
+            <li> Code should print intermediate results along the way: this
+                project is educational, and we want to help students to
+                understand what is happening!
+
+            <li> Students should be able to generate their own input to
+                experiment with the algorithms as easily as the language
+                allows.
+        </ol>
+
+        <h3>
+            Additional Standards for Each Language
+        </h3>
+            <ul>
+                <li>Python:
+                <a href="https://www.python.org/dev/peps/pep-0008/">
+                    PEP8
+                </a>
+                lays out Python coding standards.
+            </ul>
+			      <ul>
+                <li>Java:
+                <a href="https://google.github.io/styleguide/javaguide.html">
+                    Google
+                </a>
+                lays out Java coding standards.
+            </ul>
+            <ul>
+                <li>Ruby:
+                <a href="https://github.com/bbatsov/ruby-style-guide">
+                    Ruby style guide
+                </a>
+                for programming standards and
+                <a href="http://tomdoc.org">
+                  Tomdoc
+                </a>
+                for documentation
+            </ul>
+    </body>
+</html>

@@ -1,0 +1,815 @@
+<html>
+    <head>
+        <link href="final.css" rel="stylesheet" type="text/css"/>
+        <title>
+            Design and Analysis of Algorithms Final
+        </title>
+    </head>
+
+    <body>
+        <h1>
+            Design and Analysis of Algorithms Final
+        </h1>
+        <p>
+        Name: _______________________________________
+        <br>
+        <br>
+        NYU NetID: __________________________________
+        </p>
+
+        <hr>
+        <h3>
+            Multiple Choice
+        </h3>
+
+        <ol>
+            <li>Employing the master theorem,
+                the solution to the recurrence T(n) = 2T(n/4) +
+                n<sup>0.51</sup> is
+                <ol type="a">
+                    <li>&Theta;(n<sup>2</sup>)
+                    <li>&Theta;(n<sup>2</sup> log n)
+                    <li>&Theta;(n<sup>0.51</sup>)
+                    <li>the master theorem can't be applied here.
+                </ol>
+            <br>
+
+            <li>When we have an optimal substructure and only the locally
+                optimal choice matters, we should probably use:
+                <ol type="a">
+                    <li>a straightforward recursive solution.
+                    <li>dynamic programming.
+                    <li>a memoized recursive algorithm.
+                    <li>a greedy algorithm.
+                </ol>
+            <br>
+
+            <li>If we have a binary search tree of height <em>h</em>, then
+                all searching functions such as min, max, and successor
+                will run in
+                <ol type="a">
+                    <li>O(h<sup>2</sup>) time.
+                    <li>O(ln h) time.
+                    <li>O(h) time.
+                    <li>O(lg h) time.
+                </ol>
+            <br>
+
+            <li>A depth-first search of this tree:
+                <br>
+                <img src="graphics/GraphForFinal4.png">
+                <br>
+                Will cover the nodes in what order?
+                <ol type="a">
+                    <li>A-C-B-H-E-F-I-K-G-J-D
+                    <li>A-B-H-C-F-I-K-D-E-G-J
+                    <li>A-B-C-D-E-F-G-H-I-J-K
+                    <li>A-B-C-H-F-I-K-D-E-G-J
+                </ol>
+            <br>
+                
+            <li>According to the binary search tree property
+                <ol type="a">
+                    <li>for all nodes higher in the tree than x, 
+                        x.key &le; y.key.
+                    <li>for all nodes in the left subtree of x,
+                        y.key &le; x.key.
+                    <li>for all nodes lower in the tree than x, 
+                        x.key &le; y.key.
+                    <li>all nodes in the right subtree of x will
+                        be the successors of x.
+                </ol>
+            <br>
+
+            <li>Employing the master theorem,
+                the solution to the recurrence T(n) = 0.25T(n/2) + 8n is
+                <ol type="a">
+                    <li>&Theta;(n<sup>-2</sup>)
+                    <li>&Theta;(n<sup>-2</sup> log n)
+                    <li>&Theta;(8n)
+                    <li>the master theorem can't be applied here.
+                </ol>
+            <br>
+
+            <li>For large n, an algorithm will <em>run the slowest</em>
+                 if it time complexity is:
+                <ol type="a">
+                    <li>O(n<sup>3</sup>)
+                    <li>O((1.02)<sup>n</sup>)
+                    <li>O(n<sup>5</sup>)
+                    <li>O(500n log n)
+                </ol>
+            <br>
+
+            <li>Matroids are essentially a theory of
+                <ol type="a">
+                    <li>independence.
+                    <li>connectivity.
+                    <li>resilience.
+                    <li>linearity.
+                </ol>
+            <br>
+
+            <li>Consider the following alphabet with frequencies:
+                <table>
+                    <tr>
+                        <th>
+                            Symbol
+                        </th>
+                        <th>
+                            Frequency
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            A
+                        </td>
+                        <td>
+                            24
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            B
+                        </td>
+                        <td>
+                            12
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            C
+                        </td>
+                        <td>
+                            10
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            D
+                        </td>
+                        <td>
+                            8
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            E
+                        </td>
+                        <td>
+                            8
+                        </td>
+                    </tr>
+                </table>
+                <p>
+                    Which of the following is a possible Huffman coding for the 
+                    string "ABBCDAED"?
+                </p>
+
+                <ol type="a">
+                    <li>11111101011100111110
+                    <li>11001001011100111110
+                    <li>01001001011100111110
+                    <li>11001001011100111110
+                </ol>
+            <br>
+
+            <li>When we have an optimal substructure and 
+                overlapping sub-problems, we should probably use:
+                <ol type="a">
+                    <li>a straightforward recursive solution.
+                    <li>dynamic programming.
+                    <li>a merge sort.
+                    <li>a greedy algorithm.
+                </ol>
+            <br>
+            
+            <li>Employing the master theorem,
+                the solution to the recurrence T(n) = 4T(n/2) + cn is
+                <ol type="a">
+                    <li>&Theta;(n<sup>2</sup>)
+                    <li>&Theta;(n<sup>2</sup> log n)
+                    <li>&Theta;(cn)
+                    <li>the master theorem can't be applied here.
+                </ol>
+            <br>
+
+            <li>We have one algorithm for processing customer records
+                with run time of O(n), and another with run time of O(lg n) + 2500.
+                <br>In what circumstances <i>might</i> we want
+                to choose the O(n) algorithm?
+                <ol type="a">
+                    <li>The algorithm will be distirbuted across a network.
+                    <li>We believe our program will 
+                        always be dealing with a
+                        number of records less than 2500.
+                    <li>We are running on a slow CPU.
+                    <li>If <em>n</em> is very large.
+                </ol>
+            <br>
+
+            <li>We can sometimes be loose with our analysis of
+                divide-and-conquer algorithms, 
+                in that we might omit details like
+                <ol type="a">
+                    <li>recursions and function calls.
+                    <li>exponential factors.
+                    <li>floors, ceilings, and boundary conditions.
+                    <li>any n raised to a power less than 3.
+                </ol>
+            <br>
+
+            <li>Under what circumstances might we 
+                most reasonably expect to
+                receive worst-case input to our binary search tree?
+                <ol type="a">
+                    <li>We insert data into the tree as it comes along to us.
+                    <li>The data has been randomly shuffled.
+                    <li>A user types in the data from a sorted list.
+                    <li>All of the above.
+                </ol>
+            <br>
+
+            <li>When we have overlapping sub-problems and we want to solve
+                them from the bottom up, we should employ:
+                <ol type="a">
+                    <li>dynamic programming
+                    <li>a recursive algorithm
+                    <li>a recursive algorithm with memoization
+                    <li>a greedy algorithm
+                </ol>
+            <br>
+
+            <li>When we randomize an algorithm, we then speak of its
+                <ol type="a">
+                    <li>necessary running time.
+                    <li>best-case running time.
+                    <li>expected running time.
+                    <li>unbounded running time.
+                </ol>
+            <br>
+
+            <li>For large n, an algorithm will run the <em>fastest</em>
+                 if it time complexity is:
+                <ol type="a">
+                    <li>O(n!)
+                    <li>O(n<sup>3</sup>)
+                    <li>O(n<sup>4</sup>)
+                    <li>O((1.02)<sup>n</sup>)
+                </ol>
+            <br>
+
+            <li>Strongly connected components of a graph are
+                <ol type="a">
+                    <li>components of a directed graph that can
+                        each be reached from each other.
+                    <li>components in a weighted graph where the 
+                        connections have the highest weights.
+                    <li>components of a spanning tree.
+                    <li>an vertices with edges between them.
+                </ol>
+            <br>
+
+            <li>Which of these functions <em>grows most slowly</em>?
+                <ol type="a">
+                    <li>lg n
+                    <li>lg* n
+                    <li>ln n
+                    <li>log<sub>10</sub> n
+                </ol>
+            <br>
+
+            <li>For a greedy algorithm to work, the optimal choice
+                <ol type="a">
+                    <li>must depend on many over-lapping sub-problems.
+                    <li>must not depend on any future choices.
+                    <li>must be dependent on a global optimal.
+                    <li>must only be available after considering 
+                        all sub-problems.
+                </ol>
+            <br>
+
+            <li>&Omega;-notation applied to a function implies 
+                <ol type="a">
+                    <li>it is a function we know little about.
+                    <li>it is asymptotically bound from above and below.
+                    <li>only that it is asymptotically bound from below.
+                    <li>only that it is asymptotically bound from above.
+                </ol>
+            <br>
+
+            <li>In algorithm analysis, we usually analyze algorithms
+                in terms of
+                <ol type="a">
+                    <li>actual running time in nanoseconds.
+                    <li>the number of disk operations.
+                    <li>the number of basic operations.
+                    <li>CPU time used.
+                </ol>
+            <br>
+
+            <li>In proving that a problem has the greedy-choice property,
+                <br>we often use a proof technique called:
+                <ol type="a">
+                    <li>cut-and-paste.
+                    <li>the master theorem.
+                    <li>substitution.
+                    <li>recursion-tree analysis.
+                </ol>
+            <br>
+
+            <li>The chief advantage of a doubly-linked list over a singly-linked list is
+                <ol type="a">
+                    <li>inserts are faster.
+                    <li>there are fewer pointers to maintain.
+                    <li>we can back up as well as go forward in the list.
+                    <li>less memory is used.
+                </ol>
+            <br>
+
+            <li>Often, a good alternative to dynamic programming is
+                <ol type="a">
+                    <li>a simple recursive solution.
+                    <li>a recursive solution with memoization.
+                    <li>a brute-force solution.
+                    <li>all of the above.
+                </ol>
+            <br>
+
+            <li>A random variable is actually
+                <ol type="a">
+                    <li>the mean of all possible values.
+                    <li>an algorithm.
+                    <li>a precise real number value.
+                    <li>a function.
+                </ol>
+            <br>
+
+            <li>In the substitution method for solving recurrences,
+                we
+                <ol type="a">
+                    <li>substitute a different recurrence for
+                        the one characterizing our algorithm.
+                    <li>guess a solution and then 
+                        use induction to prove it.
+                    <li>substitute a polynomial factor for 
+                        an exponential one.
+                    <li>substitute an n<sup>2</sup> wherever
+                        we see a 2<sup>n</sup> 
+                </ol>
+            <br>
+
+            <li>Consider the following recursion tree.
+                <br>
+                <img src="graphics/NSquaredTree1.png">
+                <br>
+                What closed form best characterizes this tree?
+                <ol type="a">
+                    <li>O(n/8)
+                    <li>O(n log n)
+                    <li>O(n<sup>2</sup>)
+                    <li>O(log n)
+                </ol>
+            <br>
+
+            <li>The worst case of hashing with chaining occurs when
+                <ol type="a">
+                    <li>the input comes in sorted already.
+                    <li>all inputs hash to different values.
+                    <li>the input is purely random.
+                    <li>all inputs hash to the same value.
+                </ol>
+            <br>
+
+            <li>Consider this recurrence:
+                    <br>
+                    <img src="graphics/RecEq6.gif">
+                    <br>
+                What is the solution to this recurrence?
+                <ol type="a">
+                    <li>T(n) = &Theta;(n<sup>3</sup>) 
+                    <li>T(n) = &Theta;(n<sup>2</sup>) 
+                    <li>T(n) = &Theta;(n<sup>8</sup>) 
+                    <li>T(n) = &Theta;(n<sup>8/3</sup>) 
+                </ol>
+            <br>
+
+            <li>If you have available a simple algorithm with some 
+                acceptable run time, and a more complex algorithm 
+                with slightly faster run time, you should
+                <ol type="a">
+                    <li>always choose the faster algorithm.
+                    <li>always choose the simpler algorithm.
+                    <li>consider how big your input is likely
+                        to be before choosing either algorithm.
+                    <li>ask your boss what to do.
+                </ol>
+            <br>
+
+            <li>In graph theory, a tree is
+                <ol type="a">
+                    <li>a forest with no edges.
+                    <li>a cyclical graph with no forests.
+                    <li>any walk on a graph.
+                    <li>a connected graph with no cycles.
+                </ol>
+            <br>
+
+            <li>Graph theory is useful for
+                <ol type="a">
+                    <li>task management.
+                    <li>map coloring.
+                    <li>cellular telephone networks.
+                    <li>all of the above.
+                </ol>
+            <br>
+
+            <li>A problem with linear probing to resolve hash collisions is
+                <ol type="a">
+                    <li>the code is extremely complex.
+                    <li>clusters of keys will build up in a linked list.
+                    <li>the hash table clusters around its central value.
+                    <li>once inputs start to cluster in one area of the
+                        hash table, they will become more likely 
+                        to do so.
+                </ol>
+            <br>
+
+            <li>Consider this graph:
+                <br>
+                <img src="graphics/GraphForFinal2.png">
+                <br>
+                Which of the following would be an adjacency list
+                representation of this graph?
+                <ol type="a">
+                    <li>1 (2, 3, 4) 2 (1, 4) 3 (1, 4) 4 (2, 3, 5) 5 (4, 6)
+                        6 (4, 5)
+                    <li>1 (2, 3) 2 (1, 4) 3 (1, 4) 4 (2, 5, 6) 5 (4, 6)
+                        6 (4, 5)
+                    <li>1 (2, 3) 2 (1, 4) 3 (1, 4) 4 (2, 3, 5, 6) 5 (4, 6)
+                        6 (4, 5)
+                    <li>1 (2, 3) 2 (1, 4) 3 (1, 4) 4 (1, 3, 5, 6) 5 (4, 6)
+                        6 (4, 5)
+                </ol>
+            <br>
+
+            <li>Taking the graph from the previous question,
+                <br>
+                which of the following would be an adjacency matrix
+                representation of this graph?
+                <ol type="a">
+                    <li>
+                        <table>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>1</td>
+                                <td>0</td> <td>0</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>0</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>0</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>1</td>
+                                <td>0</td> <td>1</td> <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>0</td> <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>1</td> <td>0</td>
+                            </tr>
+                        </table>
+                    <li>
+                        <table>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>0</td>
+                                <td>0</td> <td>0</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>0</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>0</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>1</td>
+                                <td>1</td> <td>1</td> <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>0</td> <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>1</td> <td>0</td>
+                            </tr>
+                        </table>
+                    <li>
+                        <table>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>1</td>
+                                <td>0</td> <td>0</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>0</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>0</td> <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>1</td>
+                                <td>0</td> <td>1</td> <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>0</td> <td>1</td>
+                                <td>1</td> <td>0</td> <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>1</td> <td>0</td>
+                            </tr>
+                        </table>
+                    <li>
+                        <table>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>1</td>
+                                <td>0</td> <td>0</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>0</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>0</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>1</td>
+                                <td>0</td> <td>1</td> <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>0</td> <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td> <td>0</td> <td>0</td>
+                                <td>1</td> <td>1</td> <td>0</td>
+                            </tr>
+                        </table>
+                </ol>
+            <br>
+
+            <li>Besides running time, we can also measure algorithm performance
+                by:
+                <ol type="a">
+                    <li>amount of disk-memory communication
+                    <li>number of processors used
+                    <li>amount of network bandwith used
+                    <li>all of the above
+                </ol>
+            <br>
+
+            <li>An advantage of the adjacency matrix representation
+                over the adjacency list representation is
+                <ol type="a">
+                    <li>it is smaller. 
+                    <li>it allows quicker searches for determining whether some
+                        edge exists.
+                    <li>it can represent weighted graphs.
+                    <li>it can represent directed graphs.
+                </ol>
+            <br>
+
+            <li>Which of the following matrices represents this directed
+                graph:
+                <br>
+                <img src="graphics/GraphForFinal3.png">
+                <br>
+                <ol type="a">
+                    <li>
+                        <table>
+                            <tr>
+                                <td>0</td> <td>0</td> <td>1</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>1</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>1</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>0</td> <td>1</td> <td>0</td>
+                            </tr>
+                        </table>
+                    <li>
+                        <table>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>1</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>1</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>1</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>1</td> <td>0</td>
+                            </tr>
+                        </table>
+                    <li>
+                        <table>
+                            <tr>
+                                <td>0</td> <td>0</td> <td>1</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td> <td>0</td> <td>0</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>1</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td> <td>0</td> <td>0</td> <td>1</td>
+                            </tr>
+                        </table>
+                    <li>
+                        <table>
+                            <tr>
+                                <td>0</td> <td>0</td> <td>1</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>1</td> <td>0</td> <td>0</td> <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>0</td> <td>1</td> <td>0</td> <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td> <td>0</td> <td>0</td> <td>0</td>
+                            </tr>
+                        </table>
+                </ol>
+            <br>
+
+            <li>A breadth-first search of this graph:
+                <br>
+                <img src="graphics/GraphForFinal4.png">
+                <br>
+                Will cover the nodes in what order?
+                <ol type="a">
+                    <li>A-B-C-D-E-F-G-H-I-J-K
+                    <li>A-C-B-H-E-F-I-K-G-J-D
+                    <li>A-B-H-C-F-I-K-D-E-G-J
+                    <li>A-B-C-H-F-I-K-D-E-G-J
+                </ol>
+            <br>
+
+            <li>&Theta;-notation applied to a function implies
+                it is
+                <ol type="a">
+                    <li>a function we know little about.
+                    <li>asymptotically bound from above and below.
+                    <li>asymptotically bound from below only.
+                    <li>asymptotically bound from above only.
+                </ol>
+            <br>
+
+            <li>Using the master theorem, the solution to the recurrence
+                <br>T(n) = 3T(n/3) + n/2 is:
+                <ol type="a">
+                    <li>&Theta;(n/3)
+                    <li>&Theta;(n log n)
+                    <li>&Theta;(n)
+                    <li>the master theorem can't be applied here.
+                </ol>
+            <br>
+
+            <li>Dynamic programming is preferred to simple recursive 
+                solutions when
+                <ol type="a">
+                    <li>the recursive solution is hard to grasp.
+                    <li>all of the sub-problems are completely
+                        independent of each other.
+                    <li>the recursion goes beyond 4 levels.
+                    <li>the same sub-problems must be solved multiple
+                        times.
+                </ol>
+            <br>
+
+            <li>Direct dictionaries are only practical when
+                <ol type="a">
+                    <li>the number of keys is small.
+                    <li>we don't care how slow lookups will be.
+                    <li>we aren't worried about the large number of collisions 
+                        hashing will produce.
+                    <li>linear probing is appropriate.
+                </ol>
+            <br>
+
+            <li>A greedy algorithm is appropriate when
+                <ol type="a">
+                    <li>we need to consider the global situation
+                        when making any choice.
+                    <li>there is extensive over-lap among sub-problems.
+                    <li>only the locally best choice matters.
+                    <li>greed is the goal of the algorithm choice.
+                </ol>
+            <br>
+
+            <li>We can use a greedy algorithm to solve
+                <ol type="a">
+                    <li>a rod-cutting problem.
+                    <li>a minimum-spanning-tree problem.
+                    <li>a matrix-parenthisization problem.
+                    <li>a shortest-path problem.
+                </ol>
+            <br>
+
+            <li>If f(n) = &omega;(g(n)), that means
+                <ol type="a">
+                    <li>g dominates f asymptotically
+                    <li>f is bounded below by g asymptotically
+                    <li>f is bounded above by g asymptotically
+                    <li>f dominates g asymptotically
+                </ol>
+            <br>
+
+            <li>Using the master theorem, the solution to the recurrence
+                <br>T(n) = 64T(n/8) - n<sup>2</sup> log n is:
+                <ol type="a">
+                    <li>&Theta;(n<sup>2</sup>)
+                    <li>&Theta;(n<sup>4</sup> log n)
+                    <li>&Theta;(n<sup>2</sup> log n)
+                    <li>the master theorem can't be applied here.
+                </ol>
+            <br>
+
+            <li>The worst-case running time of a search on a binary search
+                tree is
+                <ol type="a">
+                    <li>&theta;(n<sup>2</sup>)
+                    <li>&theta;(n)
+                    <li>&theta;(lg n)
+                    <li>&theta;(1)
+                </ol>
+            <br>
+
+            <li>A toppological sort on a tree makes use of
+                <ol type="a">
+                    <li>breadth-first search.
+                    <li>finding the minimum spanning tree.
+                    <li>depth-first search.
+                    <li>finding the shortest path.
+                </ol>
+            <br>
+        </ol>
+
+        <h2>
+            Problems
+        </h2>
+
+        <ol>
+            <li>Let us say we have an algorithm that runs 
+                in 10n<sup>2</sup> + 10 time.
+                We want to show its order of complexity is
+                &theta;(n<sup>2</sup>). Give
+                an example of a set of k<sub>1</sub>, k<sub>2</sub>,
+                and n<sub>0</sub> that would do this.
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+            <li>How will a depth-first search process the following tree?
+                <br>
+                Write a number above each vertex indicating the order in which 
+                it will be visited:
+                <br>
+                <img src="graphics/GraphForFinal.png">
+                <br> 
+            <li>Use an indicator random variable to show how many numbers we
+                have to pick from a set of <em>n</em> numbers before we are
+                more likely than not to have drawn the same number twice.
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+            <li>Describe why the fractional knapsack problem can be solved with
+                a greedy algorithm, but the whole unit problem cannot.
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+            <li>Prove that Kruskal's algorithm can correctly find a minimum
+                spanning tree.
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+                <br> <br> <br> <br> <br>
+        </ol>
+
+    </body>
+</html>
