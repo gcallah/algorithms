@@ -4,14 +4,17 @@
 # It reads stdin for the chapter names.
 
 BEGIN {
+    # TEMPLATES ENV Needed
+    template_path = ENVIRON["TEMPLATES"]
+
     indent1 = "    "
     indent2 = indent1 indent1
     indent3 = indent2 indent1
     indent4 = indent2 indent2
-    menu = "chap_menu.txt"
-    templ = "ChapTemplate.txt"
+    menu = template_path "/" "chap_menu.txt"
+    templ = template_path "/" "ChapTemplate.txt"
     daa = "Design and Analyis of Algorithms: "
-    create_pg = "../utils/create_page.py"
+    create_pg = "utils/create_page.py"
 
     print "" > menu   # because we don't want a cumulative menu for each run!
 }
