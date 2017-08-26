@@ -21,7 +21,14 @@ BEGIN {
 
 {
     chap = $1
+    # Need to set TEMPLATES in ENV
+    template_path = ENVIRON["TEMPLATES"]
     chap_langs = chap "_langs.txt"
+    if (template_path != "") {
+
+        chap_langs = template_path "/" chap "_langs.txt"
+    }
+
     tr()
     print indent3 "<td>" chap "</td>"
     print indent3 "" > chap_langs
