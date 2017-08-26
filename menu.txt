@@ -1,0 +1,11 @@
+    <div id="header">
+        <div id="logo">
+            <img src="graphics/Julia.png">
+        </div>
+        <div id="user-tools">
+            <a href="index.html">Home</a>
+            &nbsp; &nbsp; 
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
