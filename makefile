@@ -1,9 +1,9 @@
 INCS = menu.txt chap_menu.txt lang_menu.txt 
-HTMLFILES = $(shell ls ptml/*.ptml | sed -e 's/ptml/html/g')
+HTMLFILES = $(shell ls *.ptml | sed -e 's/ptml/html/g')
 SUBPROJ_FILES = $(shell ls Algocynfas/*.html)
  
-%.html: ptml/%.ptml $(INCS)
-	utils/html_include.awk <$< >html/$@
+%.html: %.ptml $(INCS)
+	utils/html_include.awk <$< >$@
 
 website: $(INCS) $(HTMLFILES) $(SUBPROJ_FILES)
 	./C++/tests.sh
