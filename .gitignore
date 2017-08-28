@@ -98,3 +98,6 @@ ENV/
 # some sub-dirs
 aronov_lectures
 video
+
+# Intellij IDEA ignore
+.idea/
