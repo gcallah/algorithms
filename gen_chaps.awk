@@ -10,8 +10,15 @@ BEGIN {
     indent4 = indent2 indent2
     menu = "chap_menu.txt"
     templ = "ChapTemplate.txt"
-    daa = "Design and Analyis of Algorithms: "
-    create_pg = "../utils/create_page.py"
+
+    template_path = ENVIRON["TEMPLATE_DIR"]
+    if (template_path != "") {
+        menu = template_path "/" menu
+        templ= template_path "/" menu
+    }
+    # Did not use daa and create_pg ? maybe remove those later on?
+    # daa = "Design and Analyis of Algorithms: "
+    # create_pg = "../utils/create_page.py"
 
     print "" > menu   # because we don't want a cumulative menu for each run!
 }
@@ -26,7 +33,7 @@ END {
 /^\;/ { }      # allows comments in the chapter file
 
 /^[IVXLCM]/ {   # a major section name
-    if($0 != "I") print indent3 "</details>" >> menu
+    if($0 != "I"r) print indent3 "</details>" >> menu
     sect_nm = split_on_caps($2)
     print indent2 "<h2>" >> menu
     print indent3 $1 ". " sect_nm >> menu
