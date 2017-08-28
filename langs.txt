@@ -1,7 +1,0 @@
-C++ .cpp
-Clojure .clj
-Go .go
-Java .java
-Javascript .js
-Python .py
-Ruby .rb
