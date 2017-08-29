@@ -11,3 +11,4 @@ chap_menu.txt: chapters.txt gen_chaps.awk
 
 clean:
 	rm *_langs.txt
+	rm lang_chapter_binary.txt

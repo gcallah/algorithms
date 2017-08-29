@@ -7,7 +7,7 @@ INCS = $(TEMPLATE_DIR)/menu.txt $(TEMPLATE_DIR)/chap_menu.txt $(TEMPLATE_DIR)/la
 HTMLFILES = $(shell ls $(PTML_DIR)/*.ptml | sed -e 's/.ptml/.html/' | sed -e 's/ptml\///')
 SUBPROJ_FILES = $(shell ls Algocynfas/*.html)
 
-%.html: $(PTML_DIR)/%.ptml $(INCS) template
+%.html: $(PTML_DIR)/%.ptml $(INCS)
 	utils/html_include.awk <$< >$@
 
 website: $(INCS) $(HTMLFILES) $(SUBPROJ_FILES) template
@@ -22,7 +22,7 @@ website: $(INCS) $(HTMLFILES) $(SUBPROJ_FILES) template
 	-git commit -a -m "HTML rebuild."
 	git push origin master
 
-local: $(INCS) $(HTMLFILES) template
+local: template $(INCS) $(HTMLFILES)
 
 template: $(TEMPLATE_DIR)
 	cd $(TEMPLATE_DIR) ; make all
