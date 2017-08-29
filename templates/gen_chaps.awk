@@ -11,11 +11,6 @@ BEGIN {
     menu = "chap_menu.txt"
     templ = "ChapTemplate.txt"
 
-    template_path = ENVIRON["TEMPLATE_DIR"]
-    if (template_path != "") {
-        menu = template_path "/" menu
-        templ= template_path "/" templ
-    }
     # Did not use daa and create_pg ? maybe remove those later on?
     # daa = "Design and Analyis of Algorithms: "
     # create_pg = "../utils/create_page.py"

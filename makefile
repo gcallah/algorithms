@@ -22,10 +22,10 @@ website: $(INCS) $(HTMLFILES) $(SUBPROJ_FILES)
 	-git commit -a -m "HTML rebuild."
 	git push origin master
 
-local: $(INCS) $(HTMLFILES)
+local: template $(INCS) $(HTMLFILES)
 
-templates:
-	cd templates ; make all
+template: $(TEMPLATE_DIR)
+	cd $(TEMPLATE_DIR) ; make all
 
 clean:
 	rm $(HTMLFILES)

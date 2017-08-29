@@ -5,7 +5,7 @@
 
 BEGIN {
     header = "CHAPTER"
-    file = "langs.txt";
+    file = "langs.txt"
     while((getline < file ) > 0 ) {
     	langs[$1] = $2  # record each language and ext
     }
@@ -20,8 +20,7 @@ BEGIN {
     entry = chapnm
     for( lang in langs ) {
         ext = langs[lang]
-        files = lang "/" chapnm "/*" ext
-#        print files
+        files = "../" lang "/" chapnm "/*" ext
         if(system("ls " files " 1> /dev/null 2>&1")) {
 #            print "Got nuttin"
             entry = entry " 0 "
