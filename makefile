@@ -24,14 +24,8 @@ website: $(INCS) $(HTMLFILES) $(SUBPROJ_FILES)
 
 local: $(INCS) $(HTMLFILES)
 
-$(TEMPLATE_DIR)/lang_menu.txt: $(TEMPLATE_DIR)/lang_chapter_binary.txt gen_lang_menu.awk
-	./gen_lang_menu.awk <$(TEMPLATE_DIR)/lang_chapter_binary.txt >$(TEMPLATE_DIR)/lang_menu.txt
-
-$(TEMPLATE_DIR)/lang_chapter_binary.txt: $(TEMPLATE_DIR)/chapters.txt $(TEMPLATE_DIR)/langs.txt gen_lang_bin.sh
-	./gen_lang_bin.sh <$(TEMPLATE_DIR)/chapters.txt >$(TEMPLATE_DIR)/lang_chapter_binary.txt
-	
-$(TEMPLATE_DIR)/chap_menu.txt: $(TEMPLATE_DIR)/chapters.txt gen_chaps.awk
-	./gen_chaps.awk <$(TEMPLATE_DIR)/chapters.txt >$(TEMPLATE_DIR)/chap_menu.txt
+templates:
+	cd templates ; make all
 
 clean:
 	rm $(HTMLFILES)

@@ -24,20 +24,20 @@ cleanup() {
 cd ./Java
 
 # MultithreadedAlgorithms tests
-echo "[INFO] Compiling all java files under MultithreadedAlgorithms"
-javac -cp :test/junit-4.12.jar MultithreadedAlgorithms/*.java MultithreadedAlgorithms/tests/*.java
-validate $COMPILE
-
-echo "[INFO] Running FibonacciTest"
-java -cp :MultithreadedAlgorithms/:test/junit-4.12.jar:test/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MultithreadedAlgorithms.tests.FibonacciTest
-validate $RUN_TESTS
-
-echo "[INFO] Running MatrixMultiplicationTest"
-java -cp :MultithreadedAlgorithms/:test/junit-4.12.jar:test/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MultithreadedAlgorithms.tests.MatrixMultiplicationTest
-validate $RUN_TESTS
-
-echo "[INFO] Cleaning up artifacts"
-cleanup
-validate $CLEAN_UP
-
-exit 0
+#echo "[INFO] Compiling all java files under MultithreadedAlgorithms"
+#javac -cp :test/junit-4.12.jar MultithreadedAlgorithms/*.java MultithreadedAlgorithms/tests/*.java
+#validate $COMPILE
+#
+#echo "[INFO] Running FibonacciTest"
+#java -cp :MultithreadedAlgorithms/:test/junit-4.12.jar:test/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MultithreadedAlgorithms.tests.FibonacciTest
+#validate $RUN_TESTS
+#
+#echo "[INFO] Running MatrixMultiplicationTest"
+#java -cp :MultithreadedAlgorithms/:test/junit-4.12.jar:test/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MultithreadedAlgorithms.tests.MatrixMultiplicationTest
+#validate $RUN_TESTS
+#
+#echo "[INFO] Cleaning up artifacts"
+#cleanup
+#validate $CLEAN_UP
+#
+#exit 0
