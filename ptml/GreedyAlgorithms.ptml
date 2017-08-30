@@ -869,12 +869,12 @@
             </details>
 
 
-            <details>
-                <summary class="sum1">
+            <h2>
                 Source Code
-                </summary>
+            </h2>
+            <p>
 <!--include GreedyAlgorithms_langs.txt -->
-            </details>
+            </p>
 
             <details>
                 <summary class="sum1">
