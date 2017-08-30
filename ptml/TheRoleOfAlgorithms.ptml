@@ -139,10 +139,12 @@
     </summary>
 
       <br>
-      What we really want, is not the running time (as the number of operations,
-      say, in the worst case), for a specific input size, but as a function of the
-      input size, over all sizes. For example, it may be that a given sorting
-      algorithm requires <em>4n<sup>2</sup> + 4n + 24</em> operations to sort <em>n</em> items.
+      <p>
+        What we really want, is not the running time (as the number of operations,
+        say, in the worst case), for a specific input size, but as a function of the
+        input size, over all sizes. For example, it may be that a given sorting
+        algorithm requires <em>4n<sup>2</sup> + 4n + 24</em> operations to sort <em>n</em> items.
+       </p>
     </details> 
       
     <details>
