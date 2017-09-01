@@ -41,11 +41,11 @@
                 <summary class="sum1">
                     Source Code
                 </summary>
-            </details>
           
-            <p>
+                <p>
 <!--include Heapsort_langs.txt -->
-            </p>
+                </p>
+            </details>
 
             <h2>
                 For Further Study
