@@ -11,7 +11,6 @@ SUBPROJ_FILES = $(shell ls Algocynfas/*.html)
 	utils/html_include.awk <$< >$@
 
 website: $(INCS) $(HTMLFILES) $(SUBPROJ_FILES) template
-	make add_google_analytics
 	./C++/tests.sh
 	./Clojure/tests.sh
 	./Go/tests.sh
@@ -27,14 +26,6 @@ local: template $(INCS) $(HTMLFILES)
 
 template: $(TEMPLATE_DIR)
 	cd $(TEMPLATE_DIR) ; make all
-
-add_google_analytics: $(HTMLFILES)
-	for html_file in $$(ls *.html); \
-	do \
-		mv $$html_file $$html_file.tmp; \
-		./add_google_analytics.awk < $$html_file.tmp > $$html_file; \
-		rm $$html_file.tmp; \
-	done
 
 clean:
 	rm $(HTMLFILES)
