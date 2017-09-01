@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div id="logo">
+            <img src="graphics/Julia.png">
+        </div>
+        <div id="user-tools">
+            <a href="index.html">Home</a>
+            &nbsp; &nbsp; 
+            <a href="about.html">About</a>
+            &nbsp; &nbsp;
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </div>
+
+    <h1>
+            Feedback
+    </h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <label for="user-email">Email address</label>
+            <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp" placeholder="Email (Required)">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="col">
+            <label for="user-name">Your name</label>
+            <input type="text" class="form-control" id="user-name" placeholder="Name (Required)">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="feedback-title">Title</label>
+        <input type="text" class="form-control" id="feedback-title" placeholder="Title (Required)">
+    </div>
+    <div class="form-group">
+        <label for="feedback-content">Content</label>
+        <input type="text" class="form-control" id="feedback-content" placeholder="Content (Optional)">
+    </div>
+    <button class="btn btn-primary" id="submit">Submit</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="send-success" tabindex="-1" role="dialog" aria-labelledby="send-success" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="feedback-title-success">Feedback Sent</h5>
+            </div>
+            <div class="modal-body">
+                We will check your feedback soon! Thank you!
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-success" href="index.html">Back to Home Page</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="send-fail" tabindex="-1" role="dialog" aria-labelledby="send-success" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="feedback-title-fail">Feedback failed</h5>
+            </div>
+            <div class="modal-body">
+                Some Error Happened, please send a email to xs741@nyu.edu
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-danger" href="index.html">Back to Home Page</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+
+    function validateEmail(email) {
+        let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    let submitButton = $("#submit");
+    submitButton.click(()=> {
+        let userName = $("#user-name").val();
+        let userEmail= $("#user-email").val();
+        let title    = $("#feedback-title").val();
+        let content  = $("#feedback-content").val();
+
+        if (userName === "") {
+            alert("Input your name");
+            return;
+        }
+
+        if (userEmail === "" || !validateEmail(userEmail)) {
+            alert("Input a valid Email");
+            return;
+        }
+
+        if (title === "") {
+            alert("Tell us about somethings.");
+            return;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: "https://slack.com/api/chat.postMessage",
+            header: {'Content-Type': 'application/x-www-form-urlencoded'},
+            data: {
+                token: "xoxp-130530241169-131926646167-234212188608-f19d2f9b9e5c7eb5196c1d789b51ebd8",
+                channel: "feedback",
+                text: `Email: ${userEmail}`,
+                username: `${userName}`,
+                attachments: `[{
+                \"pretext\": \"${title}\",
+                \"text\": \"${content}\"}]`
+            },
+            success: (res)=> {
+                $("#send-success").modal();
+            },
+            error: (err)=> {
+                $("#send-fail").modal();
+            }
+        });
+    });
+
+</script>
+<!-- google_analytics.txt -->
+</html>
