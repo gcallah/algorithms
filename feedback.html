@@ -31,24 +31,16 @@
     </h1>
 
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <label for="user-email">Email address</label>
-            <input type="email" class="form-control" id="user-email" aria-describedby="emailHelp" placeholder="Email (Required)">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="col">
-            <label for="user-name">Your name</label>
-            <input type="text" class="form-control" id="user-name" placeholder="Name (Required)">
-        </div>
-    </div>
+    <h2> Send an email to us</h2>
     <div class="form-group">
         <label for="feedback-title">Title</label>
         <input type="text" class="form-control" id="feedback-title" placeholder="Title (Required)">
+        <small id="titleHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
         <label for="feedback-content">Content</label>
         <input type="text" class="form-control" id="feedback-content" placeholder="Content (Optional)">
+        <small id="contentHelp" class="form-text text-muted">Giving more details will be good.</small>
     </div>
     <button class="btn btn-primary" id="submit">Submit</button>
 </div>
@@ -90,53 +82,21 @@
 </body>
 <script>
 
-    function validateEmail(email) {
-        let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(email);
-    }
+    let profEmail = "ejc369@nyu.edu";
+    let ccList = "xs741@nyu.edu";
 
     let submitButton = $("#submit");
     submitButton.click(()=> {
-        let userName = $("#user-name").val();
-        let userEmail= $("#user-email").val();
         let title    = $("#feedback-title").val();
         let content  = $("#feedback-content").val();
-
-        if (userName === "") {
-            alert("Input your name");
-            return;
-        }
-
-        if (userEmail === "" || !validateEmail(userEmail)) {
-            alert("Input a valid Email");
-            return;
-        }
 
         if (title === "") {
             alert("Tell us about somethings.");
             return;
         }
+        window.location.href =
+            `mailto:${profEmail}?cc=${ccList}&body=${content}&subject=${title}`;
 
-        $.ajax({
-            type: "POST",
-            url: "https://slack.com/api/chat.postMessage",
-            header: {'Content-Type': 'application/x-www-form-urlencoded'},
-            data: {
-                token: "xoxp-130530241169-131926646167-235341226293-e798af6ef6de3d7b1fb13bcf283ec3bc",
-                channel: "feedback",
-                text: `Email: ${userEmail}`,
-                username: `${userName}`,
-                attachments: `[{
-                \"pretext\": \"${title}\",
-                \"text\": \"${content}\"}]`
-            },
-            success: (res)=> {
-                $("#send-success").modal();
-            },
-            error: (err)=> {
-                $("#send-fail").modal();
-            }
-        });
     });
 
 </script>
