@@ -2,14 +2,14 @@
     <head>
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <title>
-            Graph Algorithms
+            Design and Analysis of Algorithms: Graph Algorithms
         </title>
     </head>
 
     <body>
 <!--include menu.txt -->
         <h1>
-            Graph Algorithms
+            Design and Analysis of Algorithms: Graph Algorithms
         </h1>
 
             <div style="text-align:center">
