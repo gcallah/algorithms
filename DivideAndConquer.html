@@ -41,11 +41,14 @@
                 <ul>
                     <li><b>Divide</b> the problem into a number of sub problems that are
                         smaller instances of the same problem.
+                    </li>
                     <li><b>Conquer</b> the sub problems by solving them recursively. If
                         the subproblem sizes are small enough, however, just solve
                         the subproblems in a straightforward manner.
+                    </li>
                     <li><b>Combine</b> the solutions for the sub problems into the
                         solution for the original problem.
+                    </li>
                 </ul>
     
                 <figure>
@@ -81,8 +84,10 @@
                     <ul>
                         <li><b>Substitution method</b>: Guess a solution and then use
                             induction to prove it.
+                        </li>
                         <li><b>Recursive-tree method</b>: Convert the recurrence into a
                             tree whose nodes represent costs incurred at each level.
+                        </li>
                         <li><b>Master method</b>:
                             <br>
                             Solves recurrences of the form:
@@ -90,6 +95,7 @@
                             T(n) = aT(n / b) + f(n)
                             <br>
                             where a &ge; 1, b &gt; 1.
+                        </li>
                     </ul>
     
                     <p>
@@ -158,9 +164,9 @@
                 and ask what is the maximum subarray in each:
                 </p>
                 <ol>
-                    <li>From A[low] to A[midpoint - 1].
-                    <li>Crossing the mid-point.
-                    <li>From A[midpoint + 1] to A[high]
+                    <li>From A[low] to A[midpoint - 1].  </li>
+                    <li>Crossing the mid-point.  </li>
+                    <li>From A[midpoint + 1] to A[high] </li>
                 </ol>
     
                 <p>
@@ -491,14 +497,17 @@
                     <ul>
                         <li>T(0) <= c(0 * log 0)  --> nonsense! (There is no log 0.)
                         <br>
+                        </li>
                         <li>T(1) <= c(1 * log 1)  --> false! (There is no such c.)
                         <br>
+                        </li>
                         <li>T(2) <= c(2 * log 2)  --> true!
                         <br>
                         T(2) = T(floor(2/3)) + T(floor(4/3)) + 2 = 1 + 1 + 2 <=
                         c(2 * log 2) = c(2 * 1)
                         <br>
                         So if we set c = 2 (or greater) the inequality holds.
+                        </li>
                     </ul>
 
                     <p>
@@ -537,7 +546,9 @@
                 <ol>
                     <li>As a way to generate a guess for the substitution
                         method.
+                    </li>
                     <li>As a way to generate a rigorous answer by itself.
+                    </li>
                 </ol>
 
                 <p>
@@ -578,10 +589,13 @@
 
                 <ol>
                     <li> T(n) = 4T(n/2) + cn
+                    </li>
                     <li> T(n)) = 2T(n/2) + cn
+                    </li>
                     <li> T(n) = 2T(n/2) + cn<sup>2</sup>
                         <br>
                         (This is the recurrence in the diagram above.)
+                    </li>
                 </ol>
 
                 <p>
@@ -955,7 +969,6 @@
                             <br>
                             log<sub>2</sub>n
                         </td>
-                        </td>
                         <td>
                             2<sup>h</sup>
                         </td>
@@ -986,10 +999,13 @@
                 <ol>
                     <li>The recursion is the dominant factor, and the bottom
                         level has the Big-O complexity of the whole recurrence.
+                    </li>
                     <li>The recursion and f(n) contribute equally to the run time,
                         and all levels are equal.
+                    </li>
                     <li>f(n) dominates, and the top level has the Big-O
                         complexity of the whole recurrence.
+                    </li>
                 </ol>
                 <p>
                     This observation leads us to:
@@ -1016,12 +1032,15 @@
                         &epsilon; > 0
                         <br><b>Solution</b>: T(n) =
                         &Theta;(n<sup>log<sub>b</sub>a</sup>)
+                    </li>
                     <li>f(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>)
                         <br><b>Solution</b>: T(n) =
                         &Theta;(n<sup>log<sub>b</sub>a</sup> lg n)
+                    </li>
                     <li>f(n) = &Omega;(n<sup>log<sub>b</sub>a+&epsilon;</sup>),
                         &epsilon; > 0
                         <br><b>Solution</b>: T(n) = &Theta;(f(n))
+                    </li>
                 </ol>
 
                 <p>
@@ -1037,11 +1056,13 @@
                         The method will <i>work</i> if <i>a</i> is not an
                         integer, although this doesn't really make sense: how
                         can we have 1.5 sub-problems?
+                    </li>
                     <li>b > 1
                         <br>
                         If we don't get <i>smaller</i> sub-problems, we will
                         never finish! (n/b < n)
                         <br>
+                    </li>
                     <li><b>Regularity condition</b> for case 3: af(n/b) &le; cf(n)
                         <br>
                         <br>
@@ -1112,6 +1133,7 @@
                         <br>
                         n<sup>&epsilon;</sup> / log n &rarr; &infin; as n
                         &rarr; &infin;.
+                    </li>
                 </ol>
 
                 <p>
@@ -1121,10 +1143,15 @@
 
                 <ol>
                     <li>T(n) = 2T(n / 4) + n<sup>2</sup>
+                    </li>
                     <li>T(n) = 4T(n / 2) + n<sup>2</sup>
+                    </li>
                     <li>T(n) = 20T(n / 4) + n
+                    </li>
                     <li>T(n) = 3<sup>n</sup>(n / 3) + n<sup>3</sup>
+                    </li>
                     <li>T(n) = 8T(n / 2) + 2<sup>n</sup>
+                    </li>
                 </ol>
             </details>
     
@@ -1134,10 +1161,6 @@
                     Source Code
                     </summary>
                 <p>
-            
-<a href="https://github.com/gcallah/algorithms/tree/master/Java/DivideAndConquer">Java</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/Ruby/DivideAndConquer">Ruby</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/Python/DivideAndConquer">Python</a><br>
                 </p>
             </details>
     
@@ -1159,25 +1182,30 @@
                         <a href="https://en.wikipedia.org/wiki/Master_theorem">
                             The Master Theorem
                         </a>
+                    </li>
                     <li>
                         <a
                             href="https://en.wikipedia.org/wiki/Maximum_subarray_problem">
                             Maximum Subarray Problem
                         </a>
+                    </li>
                     <li>
                     <a
                         href="https://www.khanacademy.org/computing/computer-science/algorithms/towers-of-hanoi/a/towers-of-hanoi">
                         The Towers of Hanoi
                     </a>
-                <li>
-                    <a href="https://en.wikipedia.org/wiki/Strassen_algorithm">
-                        Strassen's Algorithm
-                    </a>
-                <li>
-                    <a
-                        href="http://www.csd.uwo.ca/~moreno/CS433-CS9624/Resources/master.pdf">
-                        Practice problems
-                    </a>
+                    </li>
+                    <li>
+                        <a href="https://en.wikipedia.org/wiki/Strassen_algorithm">
+                            Strassen's Algorithm
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="http://www.csd.uwo.ca/~moreno/CS433-CS9624/Resources/master.pdf">
+                            Practice problems
+                        </a>
+                    </li>
                 </ul>
             </details>
             
@@ -1192,16 +1220,20 @@
                         puzzle. Run the code and show that we have solved 
                         the recurrence correctly. What you hand in should be 
                         your source code plus several runs showing your results.
+                    </li>
                     <li>Implement Strassen's method in a programming language of
                         your choice.
+                    </li>
                     <li>A well-known recurrence is the Fibonacci sequence. Please
                         find the closed form for it, <em>showing how you found
                         it</em>. (You can easily look up the form online, but
                         please try to solve this yourself.)
+                    </li>
                     <li>Find tight asymptotic bounds for the following recurrence:
                         <br>
                         <img src="graphics/RecEq3.gif">
                         <br>
+                    </li>
                 </ol>
             </details>
 
@@ -1213,6 +1245,7 @@
                 <ul>
                     <li>Recursion-tree diagrams:
                         http://www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec20-master/lec20.html
+                    </li>
                 </ul>
             </details>
     </body>
