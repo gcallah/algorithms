@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            TA Office Hours
+        </title>
+    </head>
+
+    <body>
+
+<!--include menu.txt -->
+
+        <h1>
+            TA Office Hours
+        </h1>
+
+        <table>
+            <tr>
+                <th>
+                    TA Name
+                </th>
+                <th>
+                    Office Hours
+                </th>
+                <th>
+                    Location
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Abhishek Kuntal
+                </td>
+                <td>
+                    Tuesday, 1:00 - 2:00
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Jatri Dave
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Prashant Patel
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Xiaohang Su
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+<!--include google_analytics.txt -->
+</html>
