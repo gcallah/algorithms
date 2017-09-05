@@ -8,7 +8,7 @@ HTMLFILES = $(shell ls $(PTML_DIR)/*.ptml | sed -e 's/.ptml/.html/' | sed -e 's/
 SUBPROJ_FILES = $(shell ls Algocynfas/*.html)
 
 %.html: $(PTML_DIR)/%.ptml $(INCS)
-	python3 utils/html_checker.py <$<
+	python3 utils/html_checker.py $<
 	utils/html_include.awk <$< >$@
 
 website: $(INCS) $(HTMLFILES) $(SUBPROJ_FILES) template
