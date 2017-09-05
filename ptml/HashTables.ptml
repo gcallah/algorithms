@@ -31,9 +31,13 @@
         Operations associated with this data type allow:
         <ul>
             <li>the addition of a pair to the collection
+            </li>
             <li>the removal of a pair from the collection
+            </li>
             <li>the modification of an existing pair
+            </li>
             <li>the lookup of a value associated with a particular key
+            </li>
         </ul>
             <p>
             (<a href="https://en.wikipedia.org/wiki/Associative_array">Source</a>)
@@ -281,11 +285,14 @@
         <ul>
             <li> Devise three possible hash functions. Analyze each for size of hash
             table necessary and possibility of collisions.
+            </li>
             <li> Let's say our hash function is <em>h(k) = k mod 11</em> and we resolve
             conflicts with chaining. Analyze what happens if our data values are
             23, 34, 12, 8, 19, 33, 2, 5, 15, 4, 31, 9, 3, 6, 18, 8, 19 and 22.
             <br>What will happen when we look up 19?
+            </li>
             <li>Write (pseudo) code to resolve collisions with chaining. 
+            </li>
             <li>Consider the following hashing scheme:
                 <br>
                 <em>h(k) = k mod m</em>
@@ -322,16 +329,19 @@
                             (x mod z + y mod z) mod z
                         <br><b>Example:</b> (10 + 12) mod 7 ==
                         (10 mod 7 + 12 mod 7) mod 7
+                    </li>
                     <li> (x * y) mod z == 
                             (x mod z) * (y mod z)
                         mod z
                         <br><b>Example:</b> (10 * 12) mod 7 ==
                         (10 mod 7) * (12 mod 7) mod 7
                         <br>(7 * 17 = 119)
+                    </li>
                     <li>if x mod z == 1, then x<sup>n</sup> mod z == 1
                         <br><b>Example:</b> 8 mod 7 == 1, and
                         8<sup>2</sup> mod 7 == 1
                         <br>This is a special case of 2!
+                    </li>
                 </ol>
                 <br>
                 So, we have:
@@ -364,6 +374,7 @@
                 <img
                 src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq7.gif">
               </ol>
+            </li>
         </ul>
     </details>
 

@@ -32,11 +32,14 @@
                 <ul>
                     <li><b>Optimal substructure</b>:
                         <br>Recursive solution.
+                    </li>
                     <li><b>Optimal substructure with overlapping sub-problems</b>:
                         <br>Recursion with memoization or dynamic programming.
+                    </li>
                     <li><b>Optimal substructure where only the locally optimal choice
                             matters</b>:
                         <br>Greedy algorithms.
+                    </li>
                 </ul>
             </details>
 
@@ -912,6 +915,7 @@
                         different paths between subway stops are <i>not</i>
                         independent: some choices foreclose other choices.
                         <br>
+                    </li>
                     <li>Why is the run-time analysis of the rod cutting problem not
                         the same as that of the matrix chain problem?
                         <br>
@@ -929,6 +933,7 @@
                         Whereas, matrix chaining: (((A A) (A (A A))) (A A) ((A A
                         A)) A)
                         <br>
+                    </li>
                     <li>For the activity selection problem, besides simply
                         choosing the activity this finishes first, what other
                         greedy choices could we make?
@@ -937,6 +942,7 @@
                         <b>Answer</b>: The activity that starts first, the
                         activity with the smallest time requirement.
                         <br>
+                    </li>
                     <li>On page 419, line 2 of pseudo-code loops, and the
                         comment describing why it is looping is incorrect. What
                         is actually going on there? Why isn't the code just
@@ -949,6 +955,7 @@
                         after the "current" time and finishes first. So it must
                         loop until it finds that item.
                         <br>
+                    </li>
                     <li>Show that the fractional knapsack problem (p. 425) has the
                         greedy choice property.
                         <br>
@@ -959,6 +966,7 @@
                         possible of the second-highest value item, and repeat
                         until the knapsack is full. Each choice is completely
                         independent of subsequent choices.
+                    </li>
                 </ol>
             </details>
     </body>
