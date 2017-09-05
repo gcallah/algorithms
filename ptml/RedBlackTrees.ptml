@@ -35,13 +35,18 @@
     
                     <ol>
                         <li>Every node is red or black.
+                        </li>
                         <li>The root is black.
+                        </li>
                         <li>Every leaf (<i>T.nil</i>) is black.
+                        </li>
                         <li>If a node is red, then both of its children are
                             black. (Never two reds in a row while descending!)
+                        </li>
                         <li>For each node, all paths from the node to its
                             descendant leaves contain the same number of black
                             nodes.
+                        </li>
                     </ol>
 
                     <p>
@@ -89,9 +94,11 @@
                 href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html">
                             Red-black tree visualizer
                         </a>
+                    </li>
                     <li><a href="https://en.wikipedia.org/wiki/Red–black_tree">
                             Wikipedia page on red-black trees
                         </a>.
+                    </li>
                 </ul>
             
             <h2>

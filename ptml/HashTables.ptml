@@ -31,9 +31,13 @@
         Operations associated with this data type allow:
         <ul>
             <li>the addition of a pair to the collection
+            </li>
             <li>the removal of a pair from the collection
+            </li>
             <li>the modification of an existing pair
+            </li>
             <li>the lookup of a value associated with a particular key
+            </li>
         </ul>
             <p>
             (<a href="https://en.wikipedia.org/wiki/Associative_array">Source</a>)
@@ -43,9 +47,12 @@
         Typical uses:
         <ul>
             <li> Symbol lookup in a programming language
+            </li>
             <li> Counting words in a book
+            </li>
             <li> Store colors by name as key and their numeric equivalent as
             the value. Then we can write <b>set_text(colors["red"])</b>.
+            </li>
         </ul>
         </p>
 
@@ -65,20 +72,28 @@
         </summary>
         <ul>
             <li> <em>O(1)</em> <em>worst</em> case time for lookup.
+            </li>
             <li> Uses:
             <ul>
                 <li> Memoization
+                </li>
                 <li> Bingo
+                </li>
                 <li> Sieve of Eratosthenes
+                </li>
                 <li> Mark zipcodes seen
+                </li>
             </ul>
+            </li>
             <li> Downside: wastes space. If you have no idea how many possible
             keys you need, direct addressing is not a good choice.
             <br>For instance, if your key is an arbitrary string!
+            </li>
             <li><a
                     href="https://github.com/gcallah/algorithms/blob/master/python/hash.py">
                 Example code here.
                 </a>
+            </li>
         </ul>
         </details>
 
@@ -97,14 +112,18 @@
         </summary>
         <ul>
             <li> <em>O(1)</em> <em>average</em> case time for lookup.
+            </li>
             <li> Universe of keys <em>U</em> mapped into slots of a <em>hash table</em>
             of size <em>m</em> by hash function <em>h</em>.
+            </li>
             <li> Because <em>size(U) > m</em>, collisions are always possible.
             <br>Imagine we hash by word length: 'mark' and 'beam' both hash to
             4. (Stupid hash function, but it illustrates the idea.) We must
             resolve this collision somehow.
+            </li>
             <li> Resolve collisions by chaining:
             <br> Each slot holds a linked list of values.
+            </li>
             <li> <a
                 href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">
             Cryptographic hashing
@@ -120,6 +139,8 @@
                     <li> <a href="http://www.phash.org">
                         Perceptual hashing
                     </a>
+                </li>
+            </li>
         </ul>
         </details>
 
@@ -162,21 +183,26 @@
         height="210" width="240">
             <ul>
                 <li> Hash table <em>T</em> with <em>m</em> slots storing <em>n</em> elements.
+                </li>
                 <li> <b>Load factor</b>: <em>&alpha; = n / m</em>
                 <br> <em>&alpha;</em> is the average number of elements stored in a
                 chain.
+                </li>
                 <li> Our analysis is in terms of <em>&alpha;</em>, which can be
                 less than, equal to, or greater than one.
+                </li>
                 <li><b>Worst case</b> is very bad:
                 <br>All <em>n</em> keys hash to the same slot.
                 <br>Worst case for searching becomes <em>&Theta;(n)</em> plus
                 time to compute hash function.
                 <br>We could have just used a linked list directly!
+                </li>
                 <li><b>Average case</b>:
                 <br>Assuming any given element is equally likely to hash into
                 any slot...
                 <br>We get average case <em>&Theta;(1 + &alpha;)</em> time.
                 <br>See proofs in our textbook.
+                </li>
             </ul>
         </p>
         </details>
@@ -193,18 +219,22 @@
             (<a
                 href="http://www.drdobbs.com/database/generating-sequential-keys-in-an-arbitra/184409688">
                 See this article for more on radices.</a>)
+            </li>
             <li> Keys could be many other things besides strings.
             <br> E.g., genomes:
             <br>
             <img
             src="https://upload.wikimedia.org/wikipedia/commons/6/63/Part_of_DNA_sequence_prototypification_of_complete_genome_of_virus_5418_nucleotides.gif"
             height="320" width="340">
+            </li>
             <li> Division method:
             <br><em>h(k) = k mod P</em>, where <em>P</em> is a
             suitably-chosen prime number.
+            </li>
             <li> Multiplication method:
             <br><em>h(k) = [m (k A mod 1)]</em>,
             where <em>0 < A < 1</em>.
+            </li>
         </ul>
         </details>
 
@@ -214,17 +244,21 @@
         </summary>
         <ul>
             <li>Establish a <em>family</em> of hash functions.
+            </li>
             <li>Choose so that <em>Prob[h(x) = h(y)] <= 1/m</em>, where m is
                 the size of our hash table.
             <br>In other words, the hash functions have no more chance of
             collision than simply randomly choosing to slots between 1 and m.
+            </li>
             <li>Choose one at random each execution.
             <br>Tricky: what if we store hash values?
+            </li>
             <li>Good average case behavior
             <br>If a "bad" function handles some
             data once, a "good" one will handle it another time.
             <br>So a "bad" set of programming variable names one run will turn
             into a good set the next run.
+            </li>
         </ul>
         </details>
 
@@ -281,11 +315,14 @@
         <ul>
             <li> Devise three possible hash functions. Analyze each for size of hash
             table necessary and possibility of collisions.
+            </li>
             <li> Let's say our hash function is <em>h(k) = k mod 11</em> and we resolve
             conflicts with chaining. Analyze what happens if our data values are
             23, 34, 12, 8, 19, 33, 2, 5, 15, 4, 31, 9, 3, 6, 18, 8, 19 and 22.
             <br>What will happen when we look up 19?
+            </li>
             <li>Write (pseudo) code to resolve collisions with chaining. 
+            </li>
             <li>Consider the following hashing scheme:
                 <br>
                 <em>h(k) = k mod m</em>
@@ -322,16 +359,19 @@
                             (x mod z + y mod z) mod z
                         <br><b>Example:</b> (10 + 12) mod 7 ==
                         (10 mod 7 + 12 mod 7) mod 7
+                    </li>
                     <li> (x * y) mod z == 
                             (x mod z) * (y mod z)
                         mod z
                         <br><b>Example:</b> (10 * 12) mod 7 ==
                         (10 mod 7) * (12 mod 7) mod 7
                         <br>(7 * 17 = 119)
+                    </li>
                     <li>if x mod z == 1, then x<sup>n</sup> mod z == 1
                         <br><b>Example:</b> 8 mod 7 == 1, and
                         8<sup>2</sup> mod 7 == 1
                         <br>This is a special case of 2!
+                    </li>
                 </ol>
                 <br>
                 So, we have:
@@ -363,7 +403,7 @@
                 <br>
                 <img
                 src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/H3Eq7.gif">
-              </ol>
+            </li>
         </ul>
     </details>
 

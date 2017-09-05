@@ -32,11 +32,14 @@
                 <ul>
                     <li><b>Optimal substructure</b>:
                         <br>Recursive solution.
+                    </li>
                     <li><b>Optimal substructure with overlapping sub-problems</b>:
                         <br>Recursion with memoization or dynamic programming.
+                    </li>
                     <li><b>Optimal substructure where only the locally optimal choice
                             matters</b>:
                         <br>Greedy algorithms.
+                    </li>
                 </ul>
             </details>
 
@@ -60,8 +63,10 @@
                     algorithm</i>. A naive recursive algorithm may be very
                     expensive, but we can significantly reduce its run-time by
                     <i>memoizing</i> it.
+                    </li>
                     <li>When we do this calculation from the bottom up, we are
                         employing <i>dynamic programming</i>.
+                    </li>
                 </ul>
 
                 <p>
@@ -366,14 +371,20 @@
 
                 <ol>
                     <li>Determine the optimal substructure of the problem.
+                    </li>
                     <li>Develop a recursive solution.
+                    </li>
                     <li>Show if we make the greedy choice, that only one 
                         sub-problem remains.
+                    </li>
                     <li>Prove that it is always safe to make the greedy
                         choice.
+                    </li>
                     <li>Develop a recursive algorithm that implements the
                         greedy strategy.
+                    </li>
                     <li>Convert the recursive algorithm to an iterative algorithm
+                    </li>
                 </ol>
 
                 <details>
@@ -430,8 +441,10 @@
                     <ol>
                         <li>A thief can take entire items from a store or not, and
                             put them in his knapsack.
+                        </li>
                         <li>A thief can take whatever fraction of an item he wants,
                             and put it in his knapsack.
+                        </li>
                     </ol>
     
                     <p>
@@ -635,8 +648,7 @@
                 <p>
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Vamos_matroid.svg/220px-Vamos_matroid.svg.png">
-                <br>
-                <br>
+                </p>
 
                 <details>
                     <summary class="sum2">
@@ -661,20 +673,29 @@
                     </p>
                     <ul>
                         <li>&empty;
+                        </li>
                         <li>{a} {b} {c} {d} {e}
+                        </li>
                         <li>{a, b} {a, c} {a, d} {a, e} {b, c} {b, d} {b, e}
                             {c, d} {c, e}
+                        </li>
                         <li>{a, b, c} {a, b, d}, {a, b, e} {a, c, d} {a, c, e}
+                        </li>
                     </ul>
                     <p>
                         Notice:
                     </p>
                     <ul>
                         <li>f is useless!
+                        </li>
                         <li>a is in every maximal set.
+                        </li>
                         <li>d and e are never in the same set.
+                        </li>
                         <li>b, c and d are never in the same set.
+                        </li>
                         <li>b, c and e are never in the same set.
+                        </li>
                     </ul>
 
                     <h4>
@@ -694,20 +715,29 @@
                     </p>
                     <ul>
                         <li>&empty;
+                        </li>
                         <li>{a} {b} {c} {d} {e}
+                        </li>
                         <li>{a, b} {a, c} {a, d} {a, e} {b, c} {b, d} {b, e}
                             {c, d} {c, e}
+                        </li>
                         <li>{a, b, c} {a, b, d}, {a, b, e} {a, c, d} {a, c, e}
+                        </li>
                     </ul>
                     <p>
                         Notice:
                     </p>
                     <ul>
                         <li>f is useless!
+                        </li>
                         <li>a is in every maximal set.
+                        </li>
                         <li>d and e are never in the same set.
+                        </li>
                         <li>b, c and d are never in the same set.
+                        </li>
                         <li>b, c and e are never in the same set.
+                        </li>
                     </ul>
 
 
@@ -732,20 +762,29 @@
                     </p>
                     <ul>
                         <li>&empty;
+                        </li>
                         <li>{a} {b} {c} {d} {e}
+                        </li>
                         <li>{a, b} {a, c} {a, d} {a, e} {b, c} {b, d} {b, e}
                             {c, d} {c, e}
+                        </li>
                         <li>{a, b, c} {a, b, d}, {a, b, e} {a, c, d} {a, c, e}
+                        </li>
                     </ul>
                     <p>
                         Notice:
                     </p>
                     <ul>
                         <li>f is useless!
+                        </li>
                         <li>a is in every maximal set.
+                        </li>
                         <li>d and e are never in the same set.
+                        </li>
                         <li>b, c and d are never in the same set.
+                        </li>
                         <li>b, c and e are never in the same set.
+                        </li>
                     </ul>
 
                     <h4>
@@ -762,12 +801,15 @@
                     </p>
                     <ol>
                         <li>&empty; is independent.
+                        </li>
                         <li>If set J is independent and I is a subset of J,
                             then I is independent.
+                        </li>
                         <li>If I and J are independent, and cardinality(I) &lt;
                             cardinality(J), then there is some <i>j</i> in J
                                 and not in I, so that I &cup; <i>j</i> is also
                                 independent.
+                        </li>
                     </ol>
 
                     <p>
@@ -884,12 +926,15 @@
                     <li><a href="https://en.wikipedia.org/wiki/Greedy_algorithm">
                             Greedy algorithm
                         </a>
+                    </li>
                     <li><a href="https://en.wikipedia.org/wiki/Huffman_coding">
                             Huffman coding
                         </a>
+                    </li>
                     <li><a href="https://en.wikipedia.org/wiki/Matroid">
                             Matroid
                         </a>
+                    </li>
                 </ul>
             </details>
             
@@ -912,6 +957,7 @@
                         different paths between subway stops are <i>not</i>
                         independent: some choices foreclose other choices.
                         <br>
+                    </li>
                     <li>Why is the run-time analysis of the rod cutting problem not
                         the same as that of the matrix chain problem?
                         <br>
@@ -929,6 +975,7 @@
                         Whereas, matrix chaining: (((A A) (A (A A))) (A A) ((A A
                         A)) A)
                         <br>
+                    </li>
                     <li>For the activity selection problem, besides simply
                         choosing the activity this finishes first, what other
                         greedy choices could we make?
@@ -937,6 +984,7 @@
                         <b>Answer</b>: The activity that starts first, the
                         activity with the smallest time requirement.
                         <br>
+                    </li>
                     <li>On page 419, line 2 of pseudo-code loops, and the
                         comment describing why it is looping is incorrect. What
                         is actually going on there? Why isn't the code just
@@ -949,6 +997,7 @@
                         after the "current" time and finishes first. So it must
                         loop until it finds that item.
                         <br>
+                    </li>
                     <li>Show that the fractional knapsack problem (p. 425) has the
                         greedy choice property.
                         <br>
@@ -959,6 +1008,7 @@
                         possible of the second-highest value item, and repeat
                         until the knapsack is full. Each choice is completely
                         independent of subsequent choices.
+                    </li>
                 </ol>
             </details>
     </body>

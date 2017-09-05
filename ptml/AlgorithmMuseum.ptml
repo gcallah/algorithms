@@ -54,11 +54,11 @@
                 <div class="illustr-container">
                     <div class="illustr-text">
                         <ul>
-                            <li>Prashant Patel
-                            <li>Nandu Kalidindi
-                            <li>Dr. Eugene Callahan
-                            <li>Xiaohang Su
-                            <li>Zebin Xu
+                            <li>Prashant Patel</li>
+                            <li>Nandu Kalidindi</li>
+                            <li>Dr. Eugene Callahan</li>
+                            <li>Xiaohang Su</li>
+                            <li>Zebin Xu</li>
                         </ul>
                     </div>
                     <div class="illustration">
@@ -74,6 +74,7 @@
                         <li><a href="http://robdodson.net">
                                 Robert Dodson
                             </a>
+                        </li>
                     </ul>
     </body>
 <!--include google_analytics.txt -->

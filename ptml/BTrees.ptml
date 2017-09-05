@@ -31,10 +31,13 @@
 
                 <ul>
                     <li><b>Number of children:</b> A few, or thousands!
+                    </li>
                     <li>O(lg n) performance.
+                    </li>
                     <li>If an internal node contains <i>n</i> keys, then it has 
                     <i>n</i> + 1 children. We make an <i>n</i> + 1 way decision
                     when reaching this node in search.
+                    </li>
                 </ul>
 
                 <h3>

@@ -63,6 +63,7 @@
                     </td>
                 </tr>
             </table>
+            </li>
             <br>
             <hr>
             <li><b>Big &Theta;</b>
@@ -93,11 +94,12 @@
                         <em>k<sub>2</sub>*g(n) <=
                         f(n) <= k<sub>2</sub>*g(n)</em>
                         for some positive
-                        <em>k<sub>1</sub></en>,
+                        <em>k<sub>1</sub></em>,
                             <em>k<sub>2</sub></em>
                     </td>
                 </tr>
             </table>
+            </li>
             <br>
             <hr>
             <li><b>Big &Omega;</b>
@@ -129,6 +131,7 @@
                     </td>
                 </tr>
             </table>
+            </li>
             <br>
             <hr>
             <li><b>Little o</b>
@@ -158,6 +161,7 @@
                     </td>
                 </tr>
             </table>
+            </li>
             <br>
             <hr>
             <li><b>Little &omega;</b>
@@ -187,6 +191,7 @@
                     </td>
                 </tr>
             </table>
+            </li>
         </ul>
     </details> 
     
@@ -264,18 +269,18 @@
 
     <details>
     <summary class="sum1">
-    Algorithmic design in action:
+    Algorithmic design in action
     </summary>
   
     <details>
     <summary class="sum2">
     Fibonacci numbers
     </summary> 
-  <p>
-    The problem of computing, given <em>n >= 0</em>,
-    the <em>n</em><sup>th</sup> Fibonacci number <em>F<sub>n</sub></em>.
-
-  </p>
+        <p>
+          The problem of computing, given <em>n >= 0</em>,
+          the <em>n</em><sup>th</sup> Fibonacci number <em>F<sub>n</sub></em>.
+      
+        </p>
 
         <p>
             The Fibonacci discussion is not in the textbook. 
@@ -362,7 +367,8 @@ Data structures
                 <br>
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png">
-                <li>Stacks
+            </li>
+            <li>Stacks
                 <br>
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Lifo_stack.png">
@@ -372,6 +378,7 @@ Data structures
                 <br>
                 <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/405px-Data_Queue.svg.png">
+            </li>
             <li>
                 Double-ended queues
             </li>
@@ -380,54 +387,55 @@ Data structures
                 <br>the set of operations a data structure promises to provide 
                 and the rules that they have to obey.
             </li>
-            </ul>
+        </ul>
+        <details>
+          <summary class="sum2">
+          Detailed case study: Iterables as an ADT. 
+          </summary>
             <details>
-              <summary class="sum2">
-              Detailed case study: Iterables as an ADT. 
-              </summary>
-                <details>
-                     <summary class="sum3">
-                     Basic operations. 
-                     </summary>
-                         <ul>
-                             <li>Get iterator.
-                             <li>Get next value.
-                             <li>Detect end of iterables.
-                         </ul>
-                </details>
-               
-                <details>
-                     <summary class="sum3">
-                           Extended operations. 
-                     </summary>
-                         <ul>
-                             <li>
-                             Rewind? We may not be able to if the 
-                             iterator is exhausted in iterating
-                                 through it.
-                             </li>
-                             <li>
-                                Iterate in reverse?
-                             </li>
-                             <li>
-                                Access an arbitrary element? (By index, say.)
-                             </li>
-                         </ul>
-                </details>
-                <details>
-                     <summary class="sum3">
-                       Implementations. 
-                     </summary>
-                       <ul>
-                           <li>Straight-forward: Array.
-                           <li>Complex:<a
-                              <a href="https://github.com/gcallah/Indra/blob/master/indra/agent_pop.py">
-                                  A population that can be iterated in many ways.
-                              </a> 
-                       </ul>
-                </details>
+                 <summary class="sum3">
+                 Basic operations. 
+                 </summary>
+                     <ul>
+                         <li>Get iterator.</li>
+                         <li>Get next value.</li>
+                         <li>Detect end of iterables.</li>
+                     </ul>
             </details>
-        </ul> 
+           
+            <details>
+                 <summary class="sum3">
+                       Extended operations. 
+                 </summary>
+                     <ul>
+                         <li>
+                         Rewind? We may not be able to if the 
+                         iterator is exhausted in iterating
+                             through it.
+                         </li>
+                         <li>
+                            Iterate in reverse?
+                         </li>
+                         <li>
+                            Access an arbitrary element? (By index, say.)
+                         </li>
+                     </ul>
+            </details>
+            <details>
+                 <summary class="sum3">
+                   Implementations. 
+                 </summary>
+                   <ul>
+                       <li>Straight-forward: Array.
+                       </li>
+                       <li>Complex:<a
+                          <a href="https://github.com/gcallah/Indra/blob/master/indra/agent_pop.py">
+                              A population that can be iterated in many ways.
+                          </a> 
+                       </li>
+                   </ul>
+            </details>
+        </details>
     </details>
 
     <details>
@@ -440,8 +448,11 @@ Data structures
         Write the recursive "memo-ized" version of Fibonacci that I did not write.
         You may use pseudo-code or actually write real code in... Python, Perl,
         Java, C++... or you suggest a language!
+            </li>
             <li>Write a queue.
+            </li>
             <li>What is the Big-&Theta; order of the naive Fibonacci calculation?
+            </li>
         </ul>
         </p>
     </details>

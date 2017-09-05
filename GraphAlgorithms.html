@@ -70,29 +70,30 @@
                     But it is also used for:
                     </p>
                     <ul>
-                        <li>Task management
-                        <li>Tournament design
-                        <li>Social networks
-                        <li>Map coloring
-                        <li>Voting theory
-                        <li>Cellular telephone networks
-                        <li>Words in a dictionary
+                        <li>Task management</li>
+                        <li>Tournament design</li>
+                        <li>Social networks</li>
+                        <li>Map coloring</li>
+                        <li>Voting theory</li>
+                        <li>Cellular telephone networks</li>
+                        <li>Words in a dictionary</li>
                     </ul>
                     <p>
                     Elements:
                     </p>
                     <ul>
                         <li>Walks: Any wandering about from vertex to vertext
-                            following edges.
+                            following edges.</li>
                         <li>Paths: A walk with no repetition of vertices or
-                            edges.
-                        <li>Cycles: Got back to where we were.
-                        <li>Trees: Connected graphs with no cycles.
-                        <li>Forests: Unconnected trees.
+                            edges.</li>
+                        <li>Cycles: Got back to where we were.</li>
+                        <li>Trees: Connected graphs with no cycles.</li>
+                        <li>Forests: Unconnected trees.</li>
                         <li><a
                                 href="https://en.wikipedia.org/wiki/Tournament_(graph_theory)">
                                 Tournaments
                             </a>
+                        </li>
                     </ul>
 
 
@@ -110,8 +111,8 @@
                     </p>
 
                     <ol>
-                        <li>Adjancency lists
-                        <li>Adjancency matrices
+                        <li>Adjancency lists</li>
+                        <li>Adjancency matrices</li>
                     </ol>
 
                     <p>
@@ -158,9 +159,11 @@
                                 worst as large as adjacency matrix. We use it
                                 for sparse graphs, where E is singificantly
                                 less than V<sup>2</sup>. 
+                            </li>
                             <li>Adjacency matrix is simpler. It also allows
                                 quicker search for whether some specific edge
                                 is present or not.
+                            </li>
                         </ul>
                         <p>
                             Both forms can be used to represent directed,
@@ -193,12 +196,16 @@
                     </p>
                     <ul>
                         <li>Create a class <i>node</i>.
+                        </li>
                         <li><i>node</i> has an instance variable
                             <i>adj_list</i>.
+                        </li>
                         <li>Anything you want to put in a graph should
                             sub-class node.
+                        </li>
                         <li>Voila! You can store any attributes whatsoever with
                             each node.
+                        </li>
                     </ul>
 
                 <h3>
@@ -238,13 +245,17 @@
                             <li>After initialization, BFS never whitens a
                                 vertex. So each Will go on and off the queue at
                                 most once. So queue time is O(V).
+                            </li>
                             <li>The adjacency List for each vertex is scanned
                                 once, when the vertex is dequeued. The length
                                 of all adjacency lists is the number of edges,
                                 E. So this runs in O(E).
+                            </li>
                             <li>The overhead for initialization is O(V).
+                            </li>
                             <li>Thus, we get a running time for BFS of O(V +
                                 E).
+                            </li>
                         </ul>
 
                     <h4>
@@ -303,14 +314,18 @@
                                 G<sub>&pi;</sub>. Edge <i>(u, v)</i> is a tree edge if
                                 <i>v</i> was first discovered by 
                                 exploring edge <i>(u, v)</i>.
+                            </li>
                             <li><b>Back edges</b>:
                                 <br>An edge <i>(u, v)</i> that connects
                                 <i>u</i> to an ancestor <i>v</i>.
+                            </li>
                             <li><b>Forward edges</b>:
                                 <br>Non-tree edge <i>(u, v)</i> that connects
                                 <i>u</i> to an descendant <i>v</i>.
+                            </li>
                             <li><b>Cross edges</b>:
                                 <br>All other edges.
+                            </li>
                         </ol>
                         <p>
                         In DFS, when we first explore <i>(u, v)</i> the color
@@ -318,8 +333,11 @@
                         </p>
                         <ol>
                             <li><b>WHITE:</b> This is a tree edge.
+                            </li>
                             <li><b>GRAY:</b> This is a back edge.
+                            </li>
                             <li><b>BLACK:</b> This is a forward edge or cross edge.
+                            </li>
                         </ol>
 
 
@@ -348,9 +366,12 @@
                     <ol>
                         <li>call DFS(G) to compute finishing times <i>v.f</i>
                             for each vertex <i>v</i>.
+                        </li>
                         <li>as each vertex is finished, insert it into the
                             front of a linked list
+                        </li>
                         <li><b>return</b> the linked list of vertices.
+                        </li>
                     </ol>
 
 
@@ -387,7 +408,7 @@
                     Ruby
                 </a>
                 <br>
-
+                </p>
             <h2>
                 For Further Study
             </h2>
@@ -396,6 +417,7 @@
                         <a href="https://en.wikipedia.org/wiki/Graph_(abstract_data_type)">
                             Graph (abstract data type)
                         </a>
+                    </li>
                 </ul>
 
             <h2>
@@ -405,15 +427,23 @@
                     <li>Master Theorem problems:
                         <ol type="a">
                             <li>T(n) = .2T(n / 2) + 5n
+                            </li>
                             <li>T(n) = 32T(n / 8) + n!
+                            </li>
                             <li>T(n) = &radic;2T(n / 2) + log n
+                            </li>
                             <li>T(n) = 7/2T(n / 2) + n
+                            </li>
                             <li>T(n) = 4T(n / 4) + &radic;n
+                            </li>
                             <li>T(n) = 23T(n / 7) - n<sup>2</sup> log n
+                            </li>
                         </ol>
+                    </li>
                     <li>Work out a better implementation of the graph data
                         structure than I did in the Python code linked to
                         above.
+                    </li>
                     <li>Consider the following graph represented as an
                         adjacency list:
                         <br>
@@ -421,9 +451,13 @@
                         <br>
                         Show the d and &pi; values that result from running BFS
                         on that graph.
+                    </li>
                     <li>Now do the same thing with the above graph for DFS.
+                    </li>
                     <li>Do problem 22.1-6 in the textbook.
+                    </li>
                     <li>Read Chapter 23, section on minimum spanning trees.
+                    </li>
                         
                 </ol>
 
@@ -434,6 +468,7 @@
             <ul>
                 <li>Graphics of list versus matrix representations:
                     https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/representing-graphs
+                </li>
             </ul>
 
 
