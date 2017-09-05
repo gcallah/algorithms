@@ -47,10 +47,13 @@
                 <ul>
                     <li>Lowest cost way to bring a package between two
                         cities.
+                    </li>
                     <li>Most efficient way to connect two components on a
                         circuit board.
+                    </li>
                     <li>Most efficient way to connect two strangers in a
                         social network.
+                    </li>
                 </ul>
                 <p>
                 This problem can be solved using a greedy algorithm.
@@ -133,13 +136,19 @@
                 </p>
                 <ul>
                     <li>Include the edge weighted 1.
+                    </li>
                     <li>Include both edges weighted 2.
+                    </li>
                     <li>Include the edge weighted 3.
+                    </li>
                     <li>Include the upper
                         and lower edges weighted 4.
                         (Not the middle one!)
+                    </li>
                     <li>Include the lone edge weighted 5.
+                    </li>
                     <li>Include the edge weighted 6.
+                    </li>
                 </ul>
                 <p>
                 <img src="graphics/MinSpanTree2.png">
@@ -189,12 +198,16 @@
                 <ul>
                     <li>Place each vertex in its own set. (We now have a
                         <i>forest</i> of one-vertex, unconnected trees.)
+                    </li>
                     <li>We examine edges (<i>u, v</i>) in non-decreasing order.
+                    </li>
                     <li>If <i>u</i> and <i>v</i> are not in the same set (tree), add the
                         edge. (It is safe.)
+                    </li>
                     <li>If <i>u</i> and <i>v</i> are in the same set, adding the edge
                         would create a cycle (by the nature of trees, E = V
                         - 1).
+                    </li>
                 </ul>
 
             <h2>
