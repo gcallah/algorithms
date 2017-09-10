@@ -50,7 +50,7 @@
                     <figure>
                         <iframe style="width: 640; height: 480; border: none;"
                             name="embedded_python_anywhere"
-                            src="https://www.pythonanywhere.com/embedded3/"></iframe>
+                            src="https://www.pythonanywhere.com/embedded3/" scrolling="yes"></iframe>
                         <figcaption>
                             Python console
                         </figcaption>
