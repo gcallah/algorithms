@@ -433,13 +433,10 @@ Data structures
         <p>
         <ul>
             <li>
-        Write the recursive "memo-ized" version of Fibonacci that I did not write.
-        You may use pseudo-code or actually write real code in... Python, Perl,
-        Java, C++... or you suggest a language!
             </li>
-            <li>Write a queue.
+            <li>
             </li>
-            <li>What is the Big-&Theta; order of the naive Fibonacci calculation?
+            <li>
             </li>
         </ul>
         </p>
