@@ -20,167 +20,176 @@
         <summary class="sum2">
             Different asymptotic notations
         </summary>
-        <br>
-        <ul>
-            <li><b>Big O</b>
-            <br>
-            <img src="https://cdn.kastatic.org/ka-cs-algorithms/O_fn.png">
-            <br>
-            <table>
-                <tr>
-                    <th>
-                        Notation
-                    </th>
-                    <th>
-                        Intuition
-                    </th>
-                    <th>
-                        Definition
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <em>f(n) = O(g(n))</em>
-                    </td>
-                    <td>
-                        <em>f</em> is bounded above by <em>g</em>
-                        (up to constant factor) asymptotically
-                    </td>
-                    <td>
-                        <em>f(n) <= k*g(n)</em> for some positive <em>k</em>
-                    </td>
-                </tr>
-            </table>
-            </li>
-            <br>
-            <hr>
-            <li><b>Big &Theta;</b>
-            <br>
-            <img src="https://cdn.kastatic.org/ka-cs-algorithms/theta_fn.png">
-            <br>
-            <table>
-                <tr>
-                    <th>
-                        Notation
-                    </th>
-                    <th>
-                        Intuition
-                    </th>
-                    <th>
-                        Definition
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <em>f(n) = &Theta;(g(n))</em>
-                    </td>
-                    <td>
-                        <em>f</em> is bounded above and below by <em>g</em>
-                        asymptotically
-                    </td>
-                    <td>
-                        <em>k<sub>2</sub>*g(n) <=
-                        f(n) <= k<sub>2</sub>*g(n)</em>
-                        for some positive
-                        <em>k<sub>1</sub></em>,
-                            <em>k<sub>2</sub></em>
-                    </td>
-                </tr>
-            </table>
-            </li>
-            <br>
-            <hr>
-            <li><b>Big &Omega;</b>
-            <br>
-            <img src="https://cdn.kastatic.org/ka-cs-algorithms/Omega_fn.png">
-            <br>
-            <table>
-                <tr>
-                    <th>
-                        Notation
-                    </th>
-                    <th>
-                        Intuition
-                    </th>
-                    <th>
-                        Definition
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <em>f(n) = &Omega;(g(n))</em>
-                    </td>
-                    <td>
-                        <em>f</em> is bounded below by <em>g</em>
-                        asymptotically
-                    </td>
-                    <td>
-                        <em>f(n) >= k*g(n)</em> for some positive <em>k</em>
-                    </td>
-                </tr>
-            </table>
-            </li>
-            <br>
-            <hr>
-            <li><b>Little o</b>
-            <br>
-            <table>
-                <tr>
-                    <th>
-                        Notation
-                    </th>
-                    <th>
-                        Intuition
-                    </th>
-                    <th>
-                        Definition
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <em>f(n) = o(g(n))</em>
-                    </td>
-                    <td>
-                        <em>f</em> is dominated by <em>g</em>
-                        asymptotically
-                    </td>
-                    <td>
-                        <em>f(n) < k*g(n)</em> for every positive <em>k</em>
-                    </td>
-                </tr>
-            </table>
-            </li>
-            <br>
-            <hr>
-            <li><b>Little &omega;</b>
-            <br>
-            <table>
-                <tr>
-                    <th>
-                        Notation
-                    </th>
-                    <th>
-                        Intuition
-                    </th>
-                    <th>
-                        Definition
-                    </th>
-                </tr>
-                <tr>
-                    <td>
-                        <em>f(n) = &omega;(g(n))</em>
-                    </td>
-                    <td>
-                        <em>f</em> dominates <em>g</em>
-                        asymptotically
-                    </td>
-                    <td>
-                        <em>f(n) > k*g(n)</em> for every positive <em>k</em>
-                    </td>
-                </tr>
-            </table>
-            </li>
-        </ul>
+            <details>
+                <summary class="sum3">
+                Big O
+                </summary>
+                <figure class="left">
+                <img src="https://cdn.kastatic.org/ka-cs-algorithms/O_fn.png">
+                </figure>
+                <table>
+                    <tr>
+                        <th>
+                            Notation
+                        </th>
+                        <th>
+                            Intuition
+                        </th>
+                        <th>
+                            Definition
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <em>g(n) = O(f(n))</em>
+                        </td>
+                        <td>
+                            <em>g</em> is bounded above by <em>f</em>
+                            (up to constant factor) asymptotically
+                        </td>
+                        <td>
+                            <em>g(n) <= k*f(n)</em> for some
+                            positive <em>k</em>,
+                            after some <em>n</em>
+                        </td>
+                    </tr>
+                </table>
+            </details>
+
+            <details>
+                <summary class="sum3">
+                Big &Theta;
+                </summary>
+                <figure class="left">
+                <img src="https://cdn.kastatic.org/ka-cs-algorithms/theta_fn.png">
+                </figure>
+                <table>
+                    <tr>
+                        <th>
+                            Notation
+                        </th>
+                        <th>
+                            Intuition
+                        </th>
+                        <th>
+                            Definition
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <em>g(n) = &Theta;(f(n))</em>
+                        </td>
+                        <td>
+                            <em>g</em> is bounded above and below
+                            by <em>f</em> asymptotically
+                        </td>
+                        <td>
+                            <em>k<sub>2</sub>*f(n) <=
+                            g(n) <= k<sub>2</sub>*f(n)</em>
+                            for some positive
+                            <em>k<sub>1</sub></em>,
+                                <em>k<sub>2</sub></em>
+                        </td>
+                    </tr>
+                </table>
+            </details>
+            <details>
+                <summary class="sum3">
+                Big &Omega;
+                </summary>
+                <figure class="left">
+                <img src="https://cdn.kastatic.org/ka-cs-algorithms/Omega_fn.png">
+                </figure>
+                <table>
+                    <tr>
+                        <th>
+                            Notation
+                        </th>
+                        <th>
+                            Intuition
+                        </th>
+                        <th>
+                            Definition
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <em>g(n) = &Omega;(f(n))</em>
+                        </td>
+                        <td>
+                            <em>g</em> is bounded below by <em>f</em>
+                            asymptotically
+                        </td>
+                        <td>
+                            <em>g(n) >= k*f(n)</em>
+                            for some positive <em>k</em>
+                        </td>
+                    </tr>
+                </table>
+            </details>
+            <details>
+                <summary class="sum3">
+                Little o
+                </summary>
+                <table>
+                    <tr>
+                        <th>
+                            Notation
+                        </th>
+                        <th>
+                            Intuition
+                        </th>
+                        <th>
+                            Definition
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <em>g(n) = o(f(n))</em>
+                        </td>
+                        <td>
+                            <em>g</em> is dominated by <em>f</em>
+                            asymptotically
+                        </td>
+                        <td>
+                            <em>g(n) < k*f(n)</em> for
+                            every positive <em>k</em>
+                        </td>
+                    </tr>
+                </table>
+            </details>
+
+            <details>
+                <summary class="sum3">
+                Little &omega;
+                </summary>
+                <table>
+                    <tr>
+                        <th>
+                            Notation
+                        </th>
+                        <th>
+                            Intuition
+                        </th>
+                        <th>
+                            Definition
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <em>g(n) = &omega;(f(n))</em>
+                        </td>
+                        <td>
+                            <em>g</em> dominates <em>f</em>
+                            asymptotically
+                        </td>
+                        <td>
+                            <em>g(n) > k*f(n)</em> for
+                            every positive <em>k</em>
+                        </td>
+                    </tr>
+                </table>
+        </details>
     </details> 
     
     <details>
@@ -221,18 +230,105 @@
     Highest-order term
     </summary>
         <p>
-            More graphics on why we only care about the highest-order
+            Graphs and a table on why we only care about the highest-order
         </p>
         <p>
           <img
           src="https://cdn.kastatic.org/ka-cs-algorithms/6n2_vs_100n%2B300.png"
-            height="300" width="450">
+            height="200" width="300">
           <br>
           <br>
           <img
           src="https://cdn.kastatic.org/ka-cs-algorithms/0.6n2_vs_1000n%2B3000.png"
-            height="300" width="450">
+            height="200" width="300">
         </p>
+        <table>
+            <tr>
+                <th>
+                    <em>n</em>
+                </th>
+                <th>
+                    Fast Alpha machine,
+                    <br />
+                    running C code
+                </th>
+                <th>
+                    TRA-80
+                    <br />
+                    running interpreted Basic
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    10
+                </td>
+                <td>
+                    .6 microsecs.
+                </td>
+                <td>
+                    200 millisecs.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    100
+                </td>
+                <td>
+                    .6 millisecs.
+                </td>
+                <td>
+                    2 secs.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    1000
+                </td>
+                <td>
+                    .6 secs.
+                </td>
+                <td>
+                    20 secs.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    10,000
+                </td>
+                <td>
+                    10 mins.
+                </td>
+                <td>
+                    3.2 mins.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    100,000
+                </td>
+                <td>
+                    7 days
+                </td>
+                <td>
+                    32 mins.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    1,000,000
+                </td>
+                <td>
+                    19 years
+                </td>
+                <td>
+                    5.4 hours
+                </td>
+            </tr>
+        </table>
+        <p>
+        (Table from Jon Bentley, <em>Programming Pearls</em>.)
+        </p>
+
     </details> 
     
     <details>

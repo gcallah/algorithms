@@ -138,11 +138,15 @@ h5 {
 
 figure, figure.toc {
     text-align: center;
-/*    margin: .75em 1.25em .75em 100;  */
 }
 
 figure.toc {
-    margin: 0em 4em 4em 4em;  */
+    margin: 0em 4em 4em 4em;
+}
+
+figure.left {
+    margin: 2em 1em 1em 6em;
+    text-align: left;
 }
 
 figcaption {
