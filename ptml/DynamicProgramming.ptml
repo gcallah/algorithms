@@ -342,12 +342,7 @@
             </code>
         </p>
 
-        <div class="python-console">
-            <iframe style="width: 640; height: 480;"
-                    name="embedded_python_anywhere"
-                    src="https://www.pythonanywhere.com/embedded3/" scrolling="yes">
-            </iframe>
-        </div>
+<!--include python_anywhere.txt -->
 
         <p>
             Now let's run our ext_bottom_up_cut_rod() code.
