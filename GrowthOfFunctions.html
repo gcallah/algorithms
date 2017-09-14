@@ -522,12 +522,12 @@ Data structures
                    Implementations. 
                  </summary>
                    <ul>
-                       <li>Straight-forward: Array.
+                       <li>
+                           Straight-forward: Array.
                        </li>
-                       <li>Complex:<a
-                          <a href="https://github.com/gcallah/Indra/blob/master/indra/agent_pop.py">
-                              A population that can be iterated in many ways.
-                          </a> 
+                       <li>
+                           More complex: Python lists: somewhat like an array,
+                           but also like a linked list.
                        </li>
                    </ul>
             </details>
@@ -538,250 +538,194 @@ Data structures
         <summary class="sum1">
         Homework
         </summary>
-        <p>
-            <ol type="1">
-                <li>What is Big-O notation?
-                    <ol type="a">
-                        <li>It's a function used to measure the size of a variable in the code
-                        <li>It's a measure of the execution of an algorithm given its problem size
-                        <li>It's a function used to detect an event
-                        <li>Both a and c.
-                    </ol>
-                </li>
+        <ol type="1">
 
-                <li>if <em> f(n)=3n<sup>2</sup>+n<sup>3</sup>log(n)</em>,then f(n) is 
-                        <ol type="a">
-                            <li><em>O(n<sup>2</sup>)</em>
-                            <li><em>O(n<sup>3/2</sup>)</em>
-                            <li><em>O(n<sup>3</sup>)</em>
-                            <li><em>O(n<sup>2/3</sup>)</em>
-                        </ol>
-                </li>
+            <li>if f(n) = 3n<sup>2</sup> + n<sup>3</sup>
+                    lg n, then f(n) is 
+                <ol type="a" class="nested">
+                    <li>
+                        O(n<sup>2</sup>)
+                    </li>
+                    <li>
+                        O(n<sup>3/2</sup>)
+                    </li>
+                    <li>
+                        O(n<sup>3</sup>)
+                    </li>
+                    <li>
+                        O(n<sup>2/3</sup>)
+                    </li>
+                </ol>
+            </li>
 
-                <li>Express the formula (n-1)*(n-5) in terms of big-O notation:
-                    <ol type="a">
-                        <li><em>O(n<sup>2</sup>)</em>
-                        <li><em>O(n<sup>3/2</sup>)</em>
-                        <li><em>O(n<sup>3</sup>)</em>
-                        <li><em>O(n<sup>2/3</sup>)</em>
-                    </ol>
-                </li>
+            <li>
+                What is the asymptotic relationship between the functions:
+                x<sup>p</sup>  and k<sup>x</sup>?
+                (Assuming that p &ge; 1 and k &gt; 1 are constants:)
+                <ol type="a" class="nested">
+                    <li>
+                        x<sup>p</sup>
+                        is O(k<sup>x</sup>)
+                    </li>
+                    <li>
+                        k<sup>x</sup>
+                        is O(x<sup>p</sup>)
+                    </li>
+                    <li>
+                        x
+                        is O(k)
+                    </li>
+                    <li>
+                        Both b and c
+                    </li>
+                </ol>
+            </li>
 
-                <li>What is the asymptotic relationship between the functions: x<sup>p</sup>  and k<sup>x</sup>? (Assuming that p >= 1 and k > 1 are constants:)
-                    <ol type="a">
-                        <li><em>x<sup>p</sup> is O(k<sup>x</sup>)</em>
-                        <li><em>k<sup>x</sup> is O(x<sup>p</sup>)</em>
-                        <li><em>x is O(k)</em>
-                        <li>Both b and c
-                    </ol>
-                </li>
+            <li>
+                For functions, n<sup>k</sup> and c<sup>n </sup>,
+                what is the asymptotic relationship between these
+                functions? Assume that k &ge; 1,and c &ge; 1 are constant.
+                <ol type="a" class="nested">
+                    <li>
+                        n<sup>k</sup>
+                        is O(c<sup>n</sup>)
+                    </li>
+                    <li>
+                        n<sup>k</sup>
+                        is &Omega;(c<sup>n</sup>)
+                    </li>
+                    <li>
+                        n<sup>k</sup>
+                        is &Theta;(c<sup>n</sup>)
+                    </li>
+                    <li>
+                        None of the above
+                    </li>
+                </ol>
+            </li>
 
-                <li>For functions, n<sup>k</sup> and c<sup>n </sup>. What is the asymptotic relationship between these functions? Assume that k>=1,and c>=1 are constant
-                    <ol type="a">
-                        <li><em>n<sup>k</sup>is O(c<sup>n</sup>)</em>
-                        <li><em>n<sup>k</sup>is &Omega;(c<sup>n</sup>)</em>
-                        <li><em>n<sup>k</sup>is &Theta;(c<sup>n</sup>)</em>
-                        <li> None of the above
-                    </ol>
-                </li>
-    
-                <li> For the functions <em> lg<sub>n</sub> </em> and <em> log<sub>8</sub>n</em>, what is the asymptotic relationship between these functions?
-                    <ol type="a">
-                        <li><em>lg <sub>n</sub> is O(log<sub>8</sub>n)</em>
-                        <li><em>lg <sub>n</sub> is &Omega;(log<sub>8</sub>n)</em>
-                        <li><em>lg <sub>n</sub> is &Theta;(log<sub>8</sub>n)</em>
-                        <li> None of the above
-                    </ol>
-                </li> 
+            <li>
+                If f(n) = 5 lg n + 2 lg n! + (n<sup>2</sup> + 1) lg n,
+                what is the big-O notation for f(n)?
+                <ol type="a" class="nested">
+                    <li>n</li>
+                    <li>n<sup>2</sup></li>
+                    <li>n lg n</li>
+                    <li>n<sup>2</sup> lg n</li>
+                </ol>
+            </li>
+            
 
-                <li>What is the asymptotic relationship between the function <em>n<sup>3</sup>lgn</em> and <em>3nlog<sub>8</sub>n</em>?
-                    <ol type="a">
-                        <li><em>n<sup>3</sup>lgn is O(3nlog<sub>8</sub>n)</em>
-                        <li><em>n<sup>3</sup>lgn is &Theta;(3nlog<sub>8</sub>n)</em>
-                        <li><em>n<sup>3</sup>lgn is &Omega;(3nlog<sub>8</sub>n)</em>
-                        <li> None of the above
-                    </ol>
-                </li>
+            <li>
+                What is the time complexity for the following piece of code?
+                <pre>
+                <code>
+                 sum = 0;
+                 for (int i = 0; i &lt; n; i++)
+                     for (j = 1; j &lt; n; j = j * 2)
+                         sum += n;
+                </code>
+                </pre>
+                <ol type="a" class="nested">
+                    <li>
+                        O(n<sup>2</sup>)
+                    </li>
+                    <li>
+                        O(n)
+                    </li>
+                    <li>
+                        O(lg n)
+                    </li>
+                    <li>
+                        O(n lg n)
+                    </li>
+                </ol>
+            </li>
 
-                <li><em>f(n)=5log(n)+2log(n!)+(n<sup>2</sup>+1) logn</em> find big-O notation for f(n)
-                    <ol type="a">
-                        <li>n
-                        <li>n<sup>2</sup>
-                        <li>nlogn
-                        <li>n<sup>2</sup>logn
-                    </ol>
-                </li>
-                
+            <li>
+                If f(x) = (x<sup>3</sup> &minus; 1) / (5x + 1) then f(x) is
+                <ol type="a" class="nested">
+                    <li>
+                        O(x<sup>2</sup>)
+                    </li>
+                    <li>
+                        O(x)
+                    </li>
+                    <li>
+                        O(x<sup>3</sup>/5)
+                    </li>
+                    <li>
+                        O(1)
+                    </li>
+                </ol>
+            </li>
 
-                <li>What is the time complexity for the following piece of code?
-                    <xmp>
-                     sum = 0;
-                     for (int i = 0; i < n; i++)
-                     for (j = 1; j < n; j = j*2)
-                     sum += n;
-                    </xmp>
-                    <ol type="a">
-                        <li><em>O(n<sup>2</sup>)</em>
-                        <li><em>O(n)</em>
-                        <li><em>O(log(n))</em>
-                        <li><em>O(nlogn)</em>
-                    </ol>
-                </li>
+            <li>1 + 2 + 3 + 4 ... + n is:
+                <ol type="a" class="nested">
+                    <li>
+                        O(n)
+                    </li>
+                    <li>
+                        O(n<sup>2</sup>)
+                    </li>
+                    <li>
+                        O(3n)
+                    </li>
+                    <li>
+                        O(n<sup>3</sup>)
+                    </li>
+                </ol>
+            </li>
 
-                <li>If f(x) = (x<sup>3</sup> – 1) / (5x + 1) then f(x) is
-                    <ol type="a">
-                        <li><em>O(x<sup>2</sup>)</em>
-                        <li><em>O(x)</em>
-                        <li><em>O(x<sup>3</sup>/5)</em>
-                        <li><em>O(1)</em>
-                    </ol>
-                </li>
+            <li>
+                1 + 2 + 3 + 4 + ... + 100 would be:
+                <ol type="a" class="nested">
+                    <li>
+                        O(1)
+                    </li>
+                    <li>
+                        O(n)
+                    </li>
+                    <li>
+                        O(n<sup>2</sup>)
+                    </li>
+                    <li>
+                        O(3n)
+                    </li>
+                </ol>
+            </li>
 
-                <li>1.1 + 2 + 3 + 4 …. + n would be:
-                    <ol type="a">
-                        <li><em>O(n)</em>
-                        <li><em>O(n<sup>2</sup>)</em>
-                        <li><em>O(3n)</em>
-                        <li><em>O(n<sup>3</sup>)</em>
-                    </ol>
-                </li>
-
-                <li>1 + 2 + 3 + 4 + …. + 100 would be:
-                        <ol type="a">
-                            <li><em>O(1)</em>
-                            <li><em>O(n)</em>
-                            <li><em>O(n<sup>2</sup>)</em>
-                            <li><em>O(3n)</em>
-                        </ol>
-                </li>
-
-                <li> Fill details below
-
-                <style type="text/css">
-                    .tg  {border-collapse:collapse;border-spacing:0;}
-                    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-                    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-                    .tg .tg-yw4l{vertical-align:top}
-                    </style>
-                    <table class="tg">
-                      <tr>
-                        <th class="tg-yw4l">Data Structure</th>
-                        <th class="tg-yw4l" colspan="8">Time Complexity</th>
-                      </tr>
-                      <tr>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l" colspan="4">Average</td>
-                        <td class="tg-yw4l" colspan="4">Worst</td>
-                      </tr>
-                      <tr>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l">Access</td>
-                        <td class="tg-yw4l">Search</td>
-                        <td class="tg-yw4l">Insertion</td>
-                        <td class="tg-yw4l">Deletion</td>
-                        <td class="tg-yw4l">Access</td>
-                        <td class="tg-yw4l">Search</td>
-                        <td class="tg-yw4l">Insertion</td>
-                        <td class="tg-yw4l">Deletion</td>
-                      </tr>
-                      <tr>
-                        <td class="tg-yw4l">Array</td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-yw4l">Stack</td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-yw4l">queue</td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-yw4l">Singly-Linked</td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-yw4l">Doubly-Linked List</td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                        <td class="tg-yw4l"></td>
-                      </tr>
-                    </table>
-                </li>
-
-                <li> What is big O for following code?
-                    <xmp>
-                        void complex(int n)
-                        {
-                            int i, j;
-                            for (i=1; i<=n; i++){
-                                for (j=1; j<=log(i); j++)
-                            }
-                            printf("Algorithms");
-                        }                        
-                    </xmp>
-                </li>
-
-                <li> What is big O for following code?
-                    <xmp>
-                        int complex(int n)
-                        {
-                            if(n <= 1 ) {
-                            return 1;
-                            }
-                            else return(complex(n-1) + complex(n-2));       
+            <li>
+                What is big O for following code?
+                <pre>
+                <code>
+                    void complex(int n)
+                    {
+                        int i, j;
+                        for(i = 1; i &lt; n; i++) {
+                            for(j = 1; j &lt; log(i); j++)
                         }
-                    </xmp>
-                </li>
+                        printf("Algorithms");
+                    }                        
+                </code>
+                </pre>
+            </li>
 
-                <li>What is big O for following code?
-                    <xmp>
-                        void complex(int n)
-                        {
-                            int i;
-                            for(i = n; i > 0; i = i/2){
-                                printf("Algorithms")
-                            }
-                        }                            
-                    </xmp>
-                </li>
-
-
-              </ol>
-        </p>
+            <li>
+                What is big O for following code?
+                <pre>
+                <code>
+                    void complex(int n)
+                    {
+                        int i;
+                        for(i = n; i &gt; 0; i = i/2){
+                            printf("Algorithms")
+                        }
+                    }                            
+                </code>
+                </pre>
+            </li>
+        </ol>
     </details>
 
 

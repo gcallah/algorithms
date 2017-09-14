@@ -510,12 +510,12 @@ Data structures
                    Implementations. 
                  </summary>
                    <ul>
-                       <li>Straight-forward: Array.
+                       <li>
+                           Straight-forward: Array.
                        </li>
-                       <li>Complex:<a
-                          <a href="https://github.com/gcallah/Indra/blob/master/indra/agent_pop.py">
-                              A population that can be iterated in many ways.
-                          </a> 
+                       <li>
+                           More complex: Python lists: somewhat like an array,
+                           but also like a linked list.
                        </li>
                    </ul>
             </details>
@@ -526,16 +526,194 @@ Data structures
         <summary class="sum1">
         Homework
         </summary>
-        <p>
-        <ul>
-            <li>
+        <ol type="1">
+
+            <li>if f(n) = 3n<sup>2</sup> + n<sup>3</sup>
+                    lg n, then f(n) is 
+                <ol type="a" class="nested">
+                    <li>
+                        O(n<sup>2</sup>)
+                    </li>
+                    <li>
+                        O(n<sup>3/2</sup>)
+                    </li>
+                    <li>
+                        O(n<sup>3</sup>)
+                    </li>
+                    <li>
+                        O(n<sup>2/3</sup>)
+                    </li>
+                </ol>
             </li>
+
             <li>
+                What is the asymptotic relationship between the functions:
+                x<sup>p</sup>  and k<sup>x</sup>?
+                (Assuming that p &ge; 1 and k &gt; 1 are constants:)
+                <ol type="a" class="nested">
+                    <li>
+                        x<sup>p</sup>
+                        is O(k<sup>x</sup>)
+                    </li>
+                    <li>
+                        k<sup>x</sup>
+                        is O(x<sup>p</sup>)
+                    </li>
+                    <li>
+                        x
+                        is O(k)
+                    </li>
+                    <li>
+                        Both b and c
+                    </li>
+                </ol>
             </li>
+
             <li>
+                For functions, n<sup>k</sup> and c<sup>n </sup>,
+                what is the asymptotic relationship between these
+                functions? Assume that k &ge; 1,and c &ge; 1 are constant.
+                <ol type="a" class="nested">
+                    <li>
+                        n<sup>k</sup>
+                        is O(c<sup>n</sup>)
+                    </li>
+                    <li>
+                        n<sup>k</sup>
+                        is &Omega;(c<sup>n</sup>)
+                    </li>
+                    <li>
+                        n<sup>k</sup>
+                        is &Theta;(c<sup>n</sup>)
+                    </li>
+                    <li>
+                        None of the above
+                    </li>
+                </ol>
             </li>
-        </ul>
-        </p>
+
+            <li>
+                If f(n) = 5 lg n + 2 lg n! + (n<sup>2</sup> + 1) lg n,
+                what is the big-O notation for f(n)?
+                <ol type="a" class="nested">
+                    <li>n</li>
+                    <li>n<sup>2</sup></li>
+                    <li>n lg n</li>
+                    <li>n<sup>2</sup> lg n</li>
+                </ol>
+            </li>
+            
+
+            <li>
+                What is the time complexity for the following piece of code?
+                <pre>
+                <code>
+                 sum = 0;
+                 for (int i = 0; i &lt; n; i++)
+                     for (j = 1; j &lt; n; j = j * 2)
+                         sum += n;
+                </code>
+                </pre>
+                <ol type="a" class="nested">
+                    <li>
+                        O(n<sup>2</sup>)
+                    </li>
+                    <li>
+                        O(n)
+                    </li>
+                    <li>
+                        O(lg n)
+                    </li>
+                    <li>
+                        O(n lg n)
+                    </li>
+                </ol>
+            </li>
+
+            <li>
+                If f(x) = (x<sup>3</sup> &minus; 1) / (5x + 1) then f(x) is
+                <ol type="a" class="nested">
+                    <li>
+                        O(x<sup>2</sup>)
+                    </li>
+                    <li>
+                        O(x)
+                    </li>
+                    <li>
+                        O(x<sup>3</sup>/5)
+                    </li>
+                    <li>
+                        O(1)
+                    </li>
+                </ol>
+            </li>
+
+            <li>1 + 2 + 3 + 4 ... + n is:
+                <ol type="a" class="nested">
+                    <li>
+                        O(n)
+                    </li>
+                    <li>
+                        O(n<sup>2</sup>)
+                    </li>
+                    <li>
+                        O(3n)
+                    </li>
+                    <li>
+                        O(n<sup>3</sup>)
+                    </li>
+                </ol>
+            </li>
+
+            <li>
+                1 + 2 + 3 + 4 + ... + 100 would be:
+                <ol type="a" class="nested">
+                    <li>
+                        O(1)
+                    </li>
+                    <li>
+                        O(n)
+                    </li>
+                    <li>
+                        O(n<sup>2</sup>)
+                    </li>
+                    <li>
+                        O(3n)
+                    </li>
+                </ol>
+            </li>
+
+            <li>
+                What is big O for following code?
+                <pre>
+                <code>
+                    void complex(int n)
+                    {
+                        int i, j;
+                        for(i = 1; i &lt; n; i++) {
+                            for(j = 1; j &lt; log(i); j++)
+                        }
+                        printf("Algorithms");
+                    }                        
+                </code>
+                </pre>
+            </li>
+
+            <li>
+                What is big O for following code?
+                <pre>
+                <code>
+                    void complex(int n)
+                    {
+                        int i;
+                        for(i = n; i &gt; 0; i = i/2){
+                            printf("Algorithms")
+                        }
+                    }                            
+                </code>
+                </pre>
+            </li>
+        </ol>
     </details>
 
 

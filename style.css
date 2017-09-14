@@ -55,6 +55,10 @@ ol, ul, dl {
     margin: 1em 2.5em 1em 2.5em;
 }
 
+ol.nested, ul.nested, dl.nested {
+    font-size: 1em;
+}
+
 p, summary.sum4 {
     font-size: 1.4em;
     margin: .5em 2.5em .5em 2.5em;
