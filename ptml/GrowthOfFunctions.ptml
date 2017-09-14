@@ -648,7 +648,10 @@ Data structures
                 </ol>
             </li>
 
-            <li>1 + 2 + 3 + 4 ... + n is:
+            <li>The Big-O complexity of 1 + 2 + 3 + 4 ... + n is?
+                (Assume we must add the numbers
+                one at a time, rather than using Gauss's trick to get a closed
+                form for the sum.)
                 <ol type="a" class="nested">
                     <li>
                         O(n)
@@ -667,7 +670,8 @@ Data structures
 
             <li>
                 The Big-O complexity of
-                1 + 2 + 3 + 4 + ... + 100 is? (Assume we must add the numbers
+                1 + 2 + 3 + 4 + ... + 100 is?
+                (Assume we must add the numbers
                 one at a time, rather than using Gauss's trick to get a closed
                 form for the sum.)
                 <ol type="a" class="nested">
