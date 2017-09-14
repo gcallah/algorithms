@@ -239,3 +239,7 @@ p.lead-quote {
     margin: .75em 8em .75em 8em;
 }
 
+.center {
+    margin: 0 auto;
+}
+

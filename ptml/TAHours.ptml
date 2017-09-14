@@ -14,7 +14,7 @@
             TA Office Hours
         </h1>
 
-        <table>
+        <table class="center">
             <tr>
                 <th>
                     TA Name
@@ -24,6 +24,9 @@
                 </th>
                 <th>
                     Location
+                </th>
+                <th>
+                    Email
                 </th>
             </tr>
             <tr>
@@ -36,6 +39,9 @@
                 <td>
                     Metrotech 2, 10.098
                 </td>
+                <td>
+                    ssa428@nyu.edu
+                </td>
             </tr>
             <tr>
                 <td>
@@ -46,6 +52,9 @@
                 </td>
                 <td>
                     Metrotech 2, 10.098
+                </td>
+                <td>
+                    jad752@nyu.edu
                 </td>
             </tr>
             <tr>
@@ -58,6 +67,9 @@
                 <td>
                     Metrotech 2, 10.098
                 </td>
+                <td>
+                    ak6181@nyu.edu
+                </td>
             </tr>
             <tr>
                 <td>
@@ -69,6 +81,9 @@
                 <td>
 		            Metrotech 2, 10.098
                 </td>
+                <td>
+                    prashant.patel@nyu.edu
+                </td>
             </tr>
             <tr>
                 <td>
@@ -79,6 +94,9 @@
                 </td>
                 <td>
                     Metrotech 2, 10.098
+                </td>
+                <td>
+                    xs741@nyu.edu
                 </td>
             </tr>
         </table>
