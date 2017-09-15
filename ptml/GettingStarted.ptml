@@ -22,6 +22,65 @@
                 <summary class="sum1">
                 Insertion Sort
                 </summary>
+
+                <details>
+                    <summary class="sum2">
+                    How Insertion Sort Works
+                    </summary>
+
+                    <ul>
+                        <li>
+                            <b>Input</b>:
+                            A sequence of <i>n</i> numbers 
+                            &lang;
+                            <i>a</i><sub>1</sub>,
+                            <i>a</i><sub>2</sub>, . . .
+                            <i>a</i><sub><i>n</i></sub>
+                            &rang;
+                        </li>
+                        <li>
+                            <b>Output</b>: A permutation (reordering)
+                            &lang;
+                            <i>a</i>'<sub>1</sub>,
+                            <i>a</i>'<sub>2</sub>, . . .
+                            <i>a</i>'<sub><i>n</i></sub>
+                            &rang;
+                            such that
+                            <i>a</i>'<sub>1</sub> &le;
+                            <i>a</i>'<sub>2</sub> &le; . . .
+                            &le; <i>a</i>'<sub><i>n</i></sub>.
+                        </li>
+                    </ul>
+
+                </details>
+
+                <details>
+                    <summary class="sum2">
+                    Loop Invariants
+                    </summary>
+    
+                    <p>
+                    A key idea in proving correctness. We must show
+                    the algorithm is correct at:
+                    </p>
+
+                    <ol>
+                        <li>
+                            <b>Initialization</b>: The invariant is true 
+                            before the loop starts.
+                        </li>
+                        <li>
+                            <b>Maintenance</b>: The invariant is true
+                            at the "top" of the loop each time through.
+                        </li>
+                        <li>
+                            <b>Termination</b>: The invariant is true
+                            when the loop terminates.
+                        </li>
+                    </ol>
+
+                </details>
+
             </details>
 
             <details>
