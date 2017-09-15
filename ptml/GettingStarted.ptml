@@ -20,18 +20,19 @@
 
             <details>
                 <summary class="sum1">
-                Overview
+                Insertion Sort
+                </summary>
+            </details>
+
+            <details>
+                <summary class="sum1">
+                Running code in your browser
                 </summary>
 
-                <details>
-                    <summary class="sum2">
-                    Running code in your browser
-                    </summary>
-
-                    <p>
-                    Here is Python code for a swap routine, which our textbook
-                    uses periodically:
-                    </p>
+                <p>
+                Here is Python code for a swap routine, which our textbook
+                uses periodically:
+                </p>
         <pre>
         
         l = [1, 2, 3]
@@ -43,25 +44,25 @@
         
         </pre>
 
-                    <p>
-                        Paste that code into the Python console below:
-                    </p>
+                <p>
+                    Paste that code into the Python console below:
+                </p>
  
 <!--include python_anywhere.txt -->
 
-                    <p>
-                        Hit return. Then type 'swap(l, 0, 2)' and hit return.
-                        <br />
-                        Then type 'l'.
-                        <br />
-                        <br />
-                        You should see '[3, 2, 1]': you swapped element 0 and
-                        2!
-                    </p>
+                <p>
+                    Hit return. Then type 'swap(l, 0, 2)' and hit return.
+                    <br />
+                    Then type 'l'.
+                    <br />
+                    <br />
+                    You should see '[3, 2, 1]': you swapped element 0 and
+                    2!
+                </p>
 
-                    <p>
-                        Now type in the following:
-                    </p>
+                <p>
+                    Now type in the following:
+                </p>
 
     <pre>
         def bubble_sort(l):
@@ -74,7 +75,6 @@
             return l
     </pre>
 
-                </details>
             </details>
 
             <details>

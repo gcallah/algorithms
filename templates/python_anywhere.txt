@@ -7,3 +7,4 @@
                 Python console
             </figcaption>
         </div>
+
