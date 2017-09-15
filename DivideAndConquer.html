@@ -1,12 +1,12 @@
 <html>
-    <head>
-        <link href="style.css" rel="stylesheet" type="text/css"/>
-        <title>
-            Design and Analysis of Algorithms: Divide and Conquer
-        </title>
-    </head>
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <title>
+        Design and Analysis of Algorithms: Divide and Conquer
+    </title>
+</head>
 
-    <body>
+<body>
     <div id="header">
         <div id="logo">
             <img src="graphics/Julia.png">
@@ -20,185 +20,185 @@
         </div>
     </div>
 
-        <h1>
-            Design and Analysis of Algorithms: Divide and Conquer
-        </h1>
+<h1>
+    Design and Analysis of Algorithms: Divide and Conquer
+</h1>
 
-            <div style="text-align:center">
-                <p>
-                <img
-                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Sierpinski_triangle.svg/250px-Sierpinski_triangle.svg.png">
-                </p>
-            </div>
+<div style="text-align:center">
+    <p>
+        <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Sierpinski_triangle.svg/250px-Sierpinski_triangle.svg.png">
+    </p>
+</div>
 
-            <details>
-            <summary class="sum1">
-                Introduction
-            </summary>
-                <p>
-                What is this?
-                </p>
-                <ul>
-                    <li><b>Divide</b> the problem into a number of sub problems that are
-                        smaller instances of the same problem.
-                    </li>
-                    <li><b>Conquer</b> the sub problems by solving them recursively. If
-                        the subproblem sizes are small enough, however, just solve
-                        the subproblems in a straightforward manner.
-                    </li>
-                    <li><b>Combine</b> the solutions for the sub problems into the
-                        solution for the original problem.
-                    </li>
-                </ul>
-    
-                <figure>
-                    <iframe width="560" height="315"
-                        src="https://www.youtube.com/embed/6SUmp_Cn-SU"
-                        frameborder="0" allowfullscreen></iframe>
-                    <figcaption>
-                        Introduction to divide-and-conquer
-                    </figcaption>
-                </figure>
+<details>
+    <summary class="sum1">
+        Introduction
+    </summary>
+    <p>
+        What is this?
+    </p>
+    <ul>
+        <li><b>Divide</b> the problem into a number of sub problems that are
+            smaller instances of the same problem.
+        </li>
+        <li><b>Conquer</b> the sub problems by solving them recursively. If
+            the subproblem sizes are small enough, however, just solve
+            the subproblems in a straightforward manner.
+        </li>
+        <li><b>Combine</b> the solutions for the sub problems into the
+            solution for the original problem.
+        </li>
+    </ul>
 
-                <details>
-                    <summary class="sum2">
-                    Recurrences
-                    </summary>
-                    <p>
-                    Merge sort recurrence:
-                    <br>
-                    <br>
-                    <img src="graphics/RecEq1.gif">
-                    <br>
-                    <br>
-                    We "solve" these by finding a closed-form equation that
-                    describes the recurrence but without recursion.
-                    <br>
-                    <b>Solution</b>: T(n) = &Theta;(n lg n)
-        
-                    <br>
-                    <br>
-                    <b>Methods</b>:
-                    <br>
-                    </p>
-                    <ul>
-                        <li><b>Substitution method</b>: Guess a solution and then use
-                            induction to prove it.
-                        </li>
-                        <li><b>Recursive-tree method</b>: Convert the recurrence into a
-                            tree whose nodes represent costs incurred at each level.
-                        </li>
-                        <li><b>Master method</b>:
-                            <br>
-                            Solves recurrences of the form:
-                            <br>
-                            T(n) = aT(n / b) + f(n)
-                            <br>
-                            where a &ge; 1, b &gt; 1.
-                        </li>
-                    </ul>
-    
-                    <p>
-                    <br>
-                    <b>Technicalities</b>
-                    <br>
-                    We often omit floors, ceilings, and boundary conditions. For
-                    instance, if n is odd, we may say n / 2 anyway.
-                    </p>
-                </details>
+    <figure>
+        <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/6SUmp_Cn-SU"
+                frameborder="0" allowfullscreen></iframe>
+        <figcaption>
+            Introduction to divide-and-conquer
+        </figcaption>
+    </figure>
 
-            </details>
-    
-    
-            <details>
-                <summary class="sum1">
-                    The maximum-subarray problem
-                </summary>
-                <p>
-                <img
+    <details>
+        <summary class="sum2">
+            Recurrences
+        </summary>
+        <p>
+            Merge sort recurrence:
+            <br>
+            <br>
+            <img src="graphics/RecEq1.gif">
+            <br>
+            <br>
+            We "solve" these by finding a closed-form equation that
+            describes the recurrence but without recursion.
+            <br>
+            <b>Solution</b>: T(n) = &Theta;(n lg n)
+
+            <br>
+            <br>
+            <b>Methods</b>:
+            <br>
+        </p>
+        <ul>
+            <li><b>Substitution method</b>: Guess a solution and then use
+                induction to prove it.
+            </li>
+            <li><b>Recursive-tree method</b>: Convert the recurrence into a
+                tree whose nodes represent costs incurred at each level.
+            </li>
+            <li><b>Master method</b>:
+                <br>
+                Solves recurrences of the form:
+                <br>
+                T(n) = aT(n / b) + f(n)
+                <br>
+                where a &ge; 1, b &gt; 1.
+            </li>
+        </ul>
+
+        <p>
+            <br>
+            <b>Technicalities</b>
+            <br>
+            We often omit floors, ceilings, and boundary conditions. For
+            instance, if n is odd, we may say n / 2 anyway.
+        </p>
+    </details>
+
+</details>
+
+
+<details>
+    <summary class="sum1">
+        The maximum-subarray problem
+    </summary>
+    <p>
+        <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Maximum_Subarray_Visualization.svg/220px-Maximum_Subarray_Visualization.svg.png">
-                <br>
-                <br>
-                Only makes since in an array with both negative and positive
-                values: otherwise the answer is either the whole array or the
-                maximum member.
-                <br>
-                <br>
-                </p>
+        <br>
+        <br>
+        Only makes since in an array with both negative and positive
+        values: otherwise the answer is either the whole array or the
+        maximum member.
+        <br>
+        <br>
+    </p>
 
-                <details>
-                    <summary class="sum2">
-                    Brute-force solution
-                </summary>
-                    <p>
-                    Try every combination of two elements!
-                    <br>
-                    A n choose 2 problem, so order of &Omega;(n<sup>2</sup>).
-                    <br>
-                    n choose 2 will be about 1/2 n<sup>2</sup>, since it equals
-                    n(n - 1) / 2. So we can establish a lower bound by setting c =
-                    1/3, for instance, and n choose 2 will always be bounded from
-                    below by c*n<sup>2</sup>.
-        
-                    </p>
-                </details>
-    
-                <details>
-                    <summary class="sum2">
-                    A transformation
-                </summary>
-    
-                <p>
-                We loon at the problem differently: let's find the nonempty,
-                contiguous subarray of our array whose values have the largest sum.
-                We call this the <b>maximum subarray</b>.
-                </p>
-                </details>
-    
-                <details>
-                    <summary class="sum2">
-                    A solution using divide-and-conquer
-                </summary>
-                <p>
-                To solve this problem, we divide an array A into three subarrays,
-                and ask what is the maximum subarray in each:
-                </p>
-                <ol>
-                    <li>From A[low] to A[midpoint - 1].  </li>
-                    <li>Crossing the mid-point.  </li>
-                    <li>From A[midpoint + 1] to A[high] </li>
-                </ol>
-    
-                <p>
-                Problems 1 and 3 are simply this same problem on a smaller array!
-                Problem 2 can be solved by finding the maximum subarrays in
-                low-to-mid and in mid+1-to-high.
-                <br>
-                <br>
-                The recurrence is the same as for merge sort.
-                </p>
-                </details>
+    <details>
+        <summary class="sum2">
+            Brute-force solution
+        </summary>
+        <p>
+            Try every combination of two elements!
+            <br>
+            A n choose 2 problem, so order of &Omega;(n<sup>2</sup>).
+            <br>
+            n choose 2 will be about 1/2 n<sup>2</sup>, since it equals
+            n(n - 1) / 2. So we can establish a lower bound by setting c =
+            1/3, for instance, and n choose 2 will always be bounded from
+            below by c*n<sup>2</sup>.
 
-                <details>
-                    <summary class="sum2">
-                        Run the Python code
-                    </summary>
- 
-                    <p>
-                        In the console below, type or paste:
-                        <br />
-                    <code>
-                    !git clone https://gist.github.com/25ffc0600a866535adef05c5d8eca34a.git
-                    <br />
-                    cd 25ffc0600a866535adef05c5d8eca34a
-                    <br />
-                    from find_max_subarray import *
-                    <br />
-                    A = [13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7]
-                    <br />
-                    </code>
-                    </p>
- 
+        </p>
+    </details>
+
+    <details>
+        <summary class="sum2">
+            A transformation
+        </summary>
+
+        <p>
+            We loon at the problem differently: let's find the nonempty,
+            contiguous subarray of our array whose values have the largest sum.
+            We call this the <b>maximum subarray</b>.
+        </p>
+    </details>
+
+    <details>
+        <summary class="sum2">
+            A solution using divide-and-conquer
+        </summary>
+        <p>
+            To solve this problem, we divide an array A into three subarrays,
+            and ask what is the maximum subarray in each:
+        </p>
+        <ol>
+            <li>From A[low] to A[midpoint - 1].</li>
+            <li>Crossing the mid-point.</li>
+            <li>From A[midpoint + 1] to A[high]</li>
+        </ol>
+
+        <p>
+            Problems 1 and 3 are simply this same problem on a smaller array!
+            Problem 2 can be solved by finding the maximum subarrays in
+            low-to-mid and in mid+1-to-high.
+            <br>
+            <br>
+            The recurrence is the same as for merge sort.
+        </p>
+    </details>
+
+    <details>
+        <summary class="sum2">
+            Run the Python code
+        </summary>
+
+        <p>
+            In the console below, type or paste:
+            <br/>
+            <code>
+                !git clone https://gist.github.com/25ffc0600a866535adef05c5d8eca34a.git
+                <br/>
+                cd 25ffc0600a866535adef05c5d8eca34a
+                <br/>
+                from find_max_subarray import *
+                <br/>
+                A = [13, -3, -25, 20, -3, -16, -23, 18, 20, -7, 12, -5, -22, 15, -4, 7]
+                <br/>
+            </code>
+        </p>
+
         <div class="python-console">
             <iframe style="width: 640; height: 480;"
                     name="embedded_python_anywhere"
@@ -209,1053 +209,1108 @@
             </figcaption>
         </div>
 
-                    <p>
-                        To run the example from the textbook, type:
-                        <br />
-                        <code>
-                            A
-                            <br />
-                            find_max_subarray(A, 0, 15)
-                        </code>
-                    </p>
-                    <p>
-                        Now you can experiment with the algorithm by typing
-                        in your own array (my_array = [x, y, z])
-                        and running find_max_array(my_array).
-                    </p>
+        <p>
+            To run the example from the textbook, type:
+            <br/>
+            <code>
+                A
+                <br/>
+                find_max_subarray(A, 0, 15)
+            </code>
+        </p>
+        <p>
+            Now you can experiment with the algorithm by typing
+            in your own array (my_array = [x, y, z])
+            and running find_max_array(my_array).
+        </p>
 
-                </details>
+    </details>
 
-                <details>
-                    <summary class="sum2">
-                        Video on maximum subarray problem.
-                    </summary>
+    <details>
+        <summary class="sum2">
+            Video on maximum subarray problem.
+        </summary>
 
-                    <figure>
-                        <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/OexQs_cYgAQ"
-                            frameborder="0" allowfullscreen></iframe>
-                        <figcaption>
-                            Maximum sub-array video
-                        </figcaption>
-                    </figure>
-                </details>
+        <figure>
+            <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/OexQs_cYgAQ"
+                    frameborder="0" allowfullscreen></iframe>
+            <figcaption>
+                Maximum sub-array video
+            </figcaption>
+        </figure>
+    </details>
 
-            </details>
-
-
-            <details>
-            <summary class="sum1">
-                Strassen's algorithm for matrix multiplication
-            </summary>
-
-                <details>
-                    <summary class="sum2">
-                    Recursive Square-Matrix Multiply
-                </summary>
-                <p>
-                    We divide each of our initial matrices into four
-                    sub-matrices, and multiply them. Which we do by dividing
-                    each of them into four...
-                    <br>
-                    <br>
-                    In the base case when each matrix has only one member, we
-                    just multiply them and return the result.
-                    <br>
-                    <br>
-                    So what is our recurrence? Each step except the base case
-                    multiplies eight matrices of size n / 2. So they
-                    contribute 8T(n / 2) to running time. There are also four
-                    matrix additions of matrices containing n<sup>2</sup> / 4
-                    entries -- squared because n specifies an n x n matrix. So
-                    this contributes &Theta;(n<sup>2</sup>) time.
-                    <br>
-                    <br>
-                    So our recurrence is:
-                    <br>
-                    <br>
-                    <img src="graphics/RecEq6.gif">
-                    <br>
-                    <br>
-                    The master method will show us that the solution to this
-                    recurrence is:
-                    <br>
-                    T(n) = &Theta;(n<sup>3</sup>) 
-                </p>
-                </details>
-
-                <details>
-                    <summary class="sum2">
-                    Strassen's Algorithm
-                </summary>
-                <p>
-                <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Strassen_algorithm.svg/800px-Strassen_algorithm.svg.png">
-                <br>
-                <br>
-                    By adding ten additions, we can cut the divide portion of
-                    our algorithm down to seven multiplications instead of
-                    eight.
-                    <br>
-                    <br>
-                    Let's try one!
-                    <br>
-                    <br>
-                    Here is the method:
-                    <br>
-                    <br>
-                    For two matrices:
-                    <br>
-                    <br>
-                    <img src="graphics/RecEq8.gif">
-                    <br>
-                    <br>
-                    Define:
-                    <br>
-                    <br>
-                    P<sub>1</sub> = A(F - H)
-                    <br>
-                    P<sub>2</sub> = H(A + B)
-                    <br>
-                    P<sub>3</sub> = E(C + D)
-                    <br>
-                    P<sub>4</sub> = D(G - E)
-                    <br>
-                    P<sub>5</sub> = (A + D) * (E + H)
-                    <br>
-                    P<sub>6</sub> = (B - D) * (G + H)
-                    <br>
-                    P<sub>7</sub> = (A - C) * (E + F)
-                    <br>
-                    <br>
-                    Then:
-                    <br>
-                    <br>
-                    <img src="graphics/RecEq9.gif">
-                    <br>
-                    <br>
-                    So let's try this example:
-                    <br>
-                    <br>
-                    <img src="graphics/RecEq7.gif">
+</details>
 
 
-                    <br>
-                    <br>
-                    <b>Important Lesson</b>
-                    <br>
-                    <br>
-                    There are often serious trade-offs between set-up time and
-                    aymptotic run-time. One must carefully consider how large
-                    one's inputs are likely to be before opting for a complex
-                    algorithm like Strassen's. On modern hardware optimized for
-                    matrix multiplication, matrix sizes often need to be in the
-                    thousands before Strassen's algorithm yields significant
-                    gains.
-                </p>
-                </details>
-            </details>
+<details>
+    <summary class="sum1">
+        Strassen's algorithm for matrix multiplication
+    </summary>
+
+    <details>
+        <summary class="sum2">
+            Recursive Square-Matrix Multiply
+        </summary>
+        <p>
+            We divide each of our initial matrices into four
+            sub-matrices, and multiply them. Which we do by dividing
+            each of them into four...
+            <br>
+            <br>
+            In the base case when each matrix has only one member, we
+            just multiply them and return the result.
+            <br>
+            <br>
+            So what is our recurrence? Each step except the base case
+            multiplies eight matrices of size n / 2. So they
+            contribute 8T(n / 2) to running time. There are also four
+            matrix additions of matrices containing n<sup>2</sup> / 4
+            entries -- squared because n specifies an n x n matrix. So
+            this contributes &Theta;(n<sup>2</sup>) time.
+            <br>
+            <br>
+            So our recurrence is:
+            <br>
+            <br>
+            <img src="graphics/RecEq6.gif">
+            <br>
+            <br>
+            The master method will show us that the solution to this
+            recurrence is:
+            <br>
+            T(n) = &Theta;(n<sup>3</sup>)
+        </p>
+    </details>
+
+    <details>
+        <summary class="sum2">
+            Run the Python code
+        </summary>
+
+        <p>
+            In the console below, type or paste:
+            <br/>
+            <code>
+                !git clone https://gist.github.com/87e1f86c634c1538062041ca153bc466.git
+                <br/>
+                cd 87e1f86c634c1538062041ca153bc466
+                <br/>
+                from divide_conquer_matrix import *
+                <br/>
+                A = [[1, 3], [7, 5]]
+                <br/>
+                B = [[6, 8], [4, 2]]
+                <br/>
+            </code>
+        </p>
+
+        <div class="python-console">
+            <iframe style="width: 640; height: 480;"
+                    name="embedded_python_anywhere"
+                    src="https://www.pythonanywhere.com/embedded3/" scrolling="yes">
+            </iframe>
+            <figcaption>
+                Python console
+            </figcaption>
+        </div>
+
+        <p>
+            To run the example from the textbook, type:
+            <br/>
+            <code>
+                A,B
+                <br/>
+                square_matrix_multiply(A, B)
+                <br/>
+                square_matrix_multiply_recursive(A, B)
+
+            </code>
+        </p>
+        <p>
+            Now you can experiment with the algorithm by typing
+            in your own Matrix (my_matrix = [x, y, z])
+            and running square_matrix_multiply(a_matrix, b_matrix) or
+            square_matrix_multiply_recursive(a_matrix, b_matrix).
+        </p>
+
+    </details>
+
+    <details>
+        <summary class="sum2">
+            Strassen's Algorithm
+        </summary>
+        <p>
+            <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Strassen_algorithm.svg/800px-Strassen_algorithm.svg.png">
+            <br>
+            <br>
+            By adding ten additions, we can cut the divide portion of
+            our algorithm down to seven multiplications instead of
+            eight.
+            <br>
+            <br>
+            Let's try one!
+            <br>
+            <br>
+            Here is the method:
+            <br>
+            <br>
+            For two matrices:
+            <br>
+            <br>
+            <img src="graphics/RecEq8.gif">
+            <br>
+            <br>
+            Define:
+            <br>
+            <br>
+            P<sub>1</sub> = A(F - H)
+            <br>
+            P<sub>2</sub> = H(A + B)
+            <br>
+            P<sub>3</sub> = E(C + D)
+            <br>
+            P<sub>4</sub> = D(G - E)
+            <br>
+            P<sub>5</sub> = (A + D) * (E + H)
+            <br>
+            P<sub>6</sub> = (B - D) * (G + H)
+            <br>
+            P<sub>7</sub> = (A - C) * (E + F)
+            <br>
+            <br>
+            Then:
+            <br>
+            <br>
+            <img src="graphics/RecEq9.gif">
+            <br>
+            <br>
+            So let's try this example:
+            <br>
+            <br>
+            <img src="graphics/RecEq7.gif">
 
 
-            <details>
-            <summary class="sum1">
-                The substitution method for solving recurrences
-            </summary>
-                <p>
-                    <b>Note:</b> I am presenting these three methods in my
-                    notes in textbook order. But in lectures, I present the
-                    substitution method last, because we can best make sense of
-                    our "guess" for a solution if we understand the other two
-                    methods first. I suggest students tackle recursion-tree,
-                    then master method, and <i>then</i> substitution.
-                </p>
+            <br>
+            <br>
+            <b>Important Lesson</b>
+            <br>
+            <br>
+            There are often serious trade-offs between set-up time and
+            aymptotic run-time. One must carefully consider how large
+            one's inputs are likely to be before opting for a complex
+            algorithm like Strassen's. On modern hardware optimized for
+            matrix multiplication, matrix sizes often need to be in the
+            thousands before Strassen's algorithm yields significant
+            gains.
+        </p>
+    </details>
 
-                <details>
-                <summary class="sum2">
-                    Towers of Hanoi
-                </summary>
-                    <p>
-                    <br>
-                    <img
+
+</details>
+
+
+<details>
+    <summary class="sum1">
+        The substitution method for solving recurrences
+    </summary>
+    <p>
+        <b>Note:</b> I am presenting these three methods in my
+        notes in textbook order. But in lectures, I present the
+        substitution method last, because we can best make sense of
+        our "guess" for a solution if we understand the other two
+        methods first. I suggest students tackle recursion-tree,
+        then master method, and <i>then</i> substitution.
+    </p>
+
+    <details>
+        <summary class="sum2">
+            Towers of Hanoi
+        </summary>
+        <p>
+            <br>
+            <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Tower_of_Hanoi.jpeg/300px-Tower_of_Hanoi.jpeg">
-                    <br>
-                    The monks in a temple have the job of moving all of the
-                    disks on one peg to another, constrained by these rules:
-                    <br>
-					1) Only one disk can be moved at a time.
-                    <br>
-					2) Each move consists of taking the upper disk from 
-					one of the stacks and placing it on top of another stack 
-					i.e. a disk can only be moved if it is the 
-                    uppermost disk on a stack.
-                    <br>
-                    3) No disk may be placed on top of a smaller disk.
-                    <br>
-                    (
-                    <a href="https://en.wikipedia.org/wiki/Tower_of_Hanoi">
-                        Source
-                    </a>
-                    )
-                    <br>
-                    <br>
-                    <img
+            <br>
+            The monks in a temple have the job of moving all of the
+            disks on one peg to another, constrained by these rules:
+            <br>
+            1) Only one disk can be moved at a time.
+            <br>
+            2) Each move consists of taking the upper disk from
+            one of the stacks and placing it on top of another stack
+            i.e. a disk can only be moved if it is the
+            uppermost disk on a stack.
+            <br>
+            3) No disk may be placed on top of a smaller disk.
+            <br>
+            (
+            <a href="https://en.wikipedia.org/wiki/Tower_of_Hanoi">
+                Source
+            </a>
+            )
+            <br>
+            <br>
+            <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Iterative_algorithm_solving_a_6_disks_Tower_of_Hanoi.gif/220px-Iterative_algorithm_solving_a_6_disks_Tower_of_Hanoi.gif">
 
-                    <br>
-                    <br>
-                    Recurrence:
-                    <br>
-                    <img src="graphics/RecEq2.gif">
-                    <br>
-                    <img
+            <br>
+            <br>
+            Recurrence:
+            <br>
+            <img src="graphics/RecEq2.gif">
+            <br>
+            <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Tower_of_Hanoi_recursion_SMIL.svg/220px-Tower_of_Hanoi_recursion_SMIL.svg.png">
-                    <br>
-                    <br>
-                    Why is this the recurrence? Well, to move disk <em>n</em>,
-                    we first move disks 1 to <em>n</em> - 1 to the spare peg,
-                    then move <em>n</em> to the target peg, then move disks 1
-                    to <em>n</em> - 1 to the target peg.
-                    <br>
-                    <br>
-                    So we guess the closed-form solution is something like
-                    2<sup>n</sup>. Why? Well, we multiply by a factor of 2 each
-                    recursion!
-                    <br>
-                    Now, let's try writing out a few elements of the sequence:
-                    <br>
-                    T(0) = 0
-                    <br>
-                    T(1) = 2*0 + 1 = 1
-                    <br>
-                    T(2) = 2*1 + 1 = 3
-                    <br>
-                    T(3) = 2*3 + 1 = 7
-                    <br>
-                    T(4) = 2*7 + 1 = 15
-                    <br>
-                    T(5) = 2*15 + 1 = 31
-                    <br>
-                    So is the answer 2<sup>n</sup> - 1?
-                    <br>
-                    Base case: T(0) = 0 = 2<sup>0</sup> - 1.
-                    <br>
-                    Yes!
-                    <br>
-                    Now induction: we want to show that, <em>if</em> T(n - 1) =
-                    2<sup>(n - 1)</sup> - 1, <em>then</em> T(n) will equal
-                    2<sup>n</sup> - 1.
-                    <br>
-                    How proof by induction works: we have proved our base case.
-                    Now we try to prove that for any n, if for n - 1 (or
-                    sometimes all smaller n) our
-                    hypothesis is true, then it is true for n as well. And since we
-                    have already proved that for n = 0 it is true, that will
-                    mean it will be true for all n whatsoever.
-                    <br>
-                    So we substitute in for n - 1:
-                    <br>
-                    T(n) = 2(2<sup>(n - 1)</sup> - 1) + 1
-                    <br>
-                    = 2 * 2<sup>(n - 1)</sup> - 2 + 1
-                    <br>
-                    = 2<sup>n</sup> - 1
-                    <br>
-                    And we are done!
-                    </p>
-                    </details>
+            <br>
+            <br>
+            Why is this the recurrence? Well, to move disk <em>n</em>,
+            we first move disks 1 to <em>n</em> - 1 to the spare peg,
+            then move <em>n</em> to the target peg, then move disks 1
+            to <em>n</em> - 1 to the target peg.
+            <br>
+            <br>
+            So we guess the closed-form solution is something like
+            2<sup>n</sup>. Why? Well, we multiply by a factor of 2 each
+            recursion!
+            <br>
+            Now, let's try writing out a few elements of the sequence:
+            <br>
+            T(0) = 0
+            <br>
+            T(1) = 2*0 + 1 = 1
+            <br>
+            T(2) = 2*1 + 1 = 3
+            <br>
+            T(3) = 2*3 + 1 = 7
+            <br>
+            T(4) = 2*7 + 1 = 15
+            <br>
+            T(5) = 2*15 + 1 = 31
+            <br>
+            So is the answer 2<sup>n</sup> - 1?
+            <br>
+            Base case: T(0) = 0 = 2<sup>0</sup> - 1.
+            <br>
+            Yes!
+            <br>
+            Now induction: we want to show that, <em>if</em> T(n - 1) =
+            2<sup>(n - 1)</sup> - 1, <em>then</em> T(n) will equal
+            2<sup>n</sup> - 1.
+            <br>
+            How proof by induction works: we have proved our base case.
+            Now we try to prove that for any n, if for n - 1 (or
+            sometimes all smaller n) our
+            hypothesis is true, then it is true for n as well. And since we
+            have already proved that for n = 0 it is true, that will
+            mean it will be true for all n whatsoever.
+            <br>
+            So we substitute in for n - 1:
+            <br>
+            T(n) = 2(2<sup>(n - 1)</sup> - 1) + 1
+            <br>
+            = 2 * 2<sup>(n - 1)</sup> - 2 + 1
+            <br>
+            = 2<sup>n</sup> - 1
+            <br>
+            And we are done!
+        </p>
+    </details>
 
-                    <details>
-                    <summary class="sum2">
-                        Another substitution-method problem
-                    </summary>
-                    
-                    <p>
-                        Let's look at the recurrence:
-                        <br>
-                        T(n) = T(n/3) + T(2n/3) + n
-                        <br>
-                        T(0) = 1
-                        <br>
-                        T(1) = 1
-                        <br>
-                        <br>
-                        This does not have the form the master method
-                        requires. And if we sketch a recursion tree, not every
-                        node is the same on a level, so it is different from
-                        what we usually deal with there. But if we <i>do</i>
-                        diagram a recursion tree, we will see that the work
-                        looks constant at each level, like a master theorem
-                        case 2. And since the function part of the equation is
-                        f(n) = n, let's "guess":
-                        <br>
-                        T(n) <= cn log n                        
-                        <br>
-                        <br>
-                        But that is just our hunch: we have to prove it!
-                        <br>
-                        <br>
-                        Let's look at base cases for our inductive proof.
-                        Use floors for divisions! Is:
-                    </p>
-                    <ul>
-                        <li>T(0) <= c(0 * log 0)  --> nonsense! (There is no log 0.)
-                        <br>
-                        </li>
-                        <li>T(1) <= c(1 * log 1)  --> false! (There is no such c.)
-                        <br>
-                        </li>
-                        <li>T(2) <= c(2 * log 2)  --> true!
-                        <br>
-                        T(2) = T(floor(2/3)) + T(floor(4/3)) + 2 = 1 + 1 + 2 <=
-                        c(2 * log 2) = c(2 * 1)
-                        <br>
-                        So if we set c = 2 (or greater) the inequality holds.
-                        </li>
-                    </ul>
+    <details>
+        <summary class="sum2">
+            Another substitution-method problem
+        </summary>
 
-                    <p>
-                        How many base cases do we need to examine? We will see!
-                        <br>
-                        But we can prove it for any given "small" n > 2 by
-                        setting:
-                        <br>
-                        c &ge; T(n) / n log n
-                    </p>
-
-                    <p>
-                        <b>Recursion step:</b>
-                        <br>
-                        We assume that for k where:
-                        <br>
-                        2 <= k < n
-                        <br>
-                        the claim is true.
-                        <br>
-                        Now, we need to show that if for sub-problems smaller
-                        than n the claim is true, then it is true for n.
-                    </p>
-                </details>
-            </details>
-
-
-            <details>
-            <summary class="sum1">
-                The recursion-tree method for solving recurrences
-            </summary>
-                <p>
-                There are two ways to use this method:
-                </p>
-
-                <ol>
-                    <li>As a way to generate a guess for the substitution
-                        method.
-                    </li>
-                    <li>As a way to generate a rigorous answer by itself.
-                    </li>
-                </ol>
-
-                <p>
-                Analyze the tree:
+        <p>
+            Let's look at the recurrence:
+            <br>
+            T(n) = T(n/3) + T(2n/3) + n
+            <br>
+            T(0) = 1
+            <br>
+            T(1) = 1
+            <br>
+            <br>
+            This does not have the form the master method
+            requires. And if we sketch a recursion tree, not every
+            node is the same on a level, so it is different from
+            what we usually deal with there. But if we <i>do</i>
+            diagram a recursion tree, we will see that the work
+            looks constant at each level, like a master theorem
+            case 2. And since the function part of the equation is
+            f(n) = n, let's "guess":
+            <br>
+            T(n) <= cn log n
+            <br>
+            <br>
+            But that is just our hunch: we have to prove it!
+            <br>
+            <br>
+            Let's look at base cases for our inductive proof.
+            Use floors for divisions! Is:
+        </p>
+        <ul>
+            <li>T(0) <= c(0 * log 0) --> nonsense! (There is no log 0.)
                 <br>
+            </li>
+            <li>T(1) <= c(1 * log 1) --> false! (There is no such c.)
                 <br>
-                <img
+            </li>
+            <li>T(2) <= c(2 * log 2) --> true!
+                <br>
+                T(2) = T(floor(2/3)) + T(floor(4/3)) + 2 = 1 + 1 + 2 <=
+                c(2 * log 2) = c(2 * 1)
+                <br>
+                So if we set c = 2 (or greater) the inequality holds.
+            </li>
+        </ul>
+
+        <p>
+            How many base cases do we need to examine? We will see!
+            <br>
+            But we can prove it for any given "small" n > 2 by
+            setting:
+            <br>
+            c &ge; T(n) / n log n
+        </p>
+
+        <p>
+            <b>Recursion step:</b>
+            <br>
+            We assume that for k where:
+            <br>
+            2 <= k < n
+            <br>
+            the claim is true.
+            <br>
+            Now, we need to show that if for sub-problems smaller
+            than n the claim is true, then it is true for n.
+        </p>
+    </details>
+</details>
+
+
+<details>
+    <summary class="sum1">
+        The recursion-tree method for solving recurrences
+    </summary>
+    <p>
+        There are two ways to use this method:
+    </p>
+
+    <ol>
+        <li>As a way to generate a guess for the substitution
+            method.
+        </li>
+        <li>As a way to generate a rigorous answer by itself.
+        </li>
+    </ol>
+
+    <p>
+        Analyze the tree:
+        <br>
+        <br>
+        <img
                 src="graphics/NSquaredTree1.png">
-                <br>
-                <br>
-                Calculate the work at each level:
-                <br>
-                <br>
-                <img
+        <br>
+        <br>
+        Calculate the work at each level:
+        <br>
+        <br>
+        <img
                 src="graphics/NSquaredTree2.png">
+        <br>
+        <br>
+        This produces the geometric series:
+        <br>
+        <br>
+        <img src="graphics/RecEq4.gif">
+        <br>
+        <br>
+        If we set a = n<sup>2</sup> and r = 1/2, then we have the
+        general sum of a converging geometric series:
+        <br>
+        <br>
+        <img src="graphics/RecEq5.gif">
+        <br>
+        <br>
+        So the solution here is O(n<sup>2</sup>). The amount of work at
+        each level is reduced by a power of two, and so is
+        just a constant factor times the root.
+        <br>
+        <br>
+        <b>Consider these three examples</b>:
+    </p>
+
+    <ol>
+        <li> T(n) = 4T(n/2) + cn
+        </li>
+        <li> T(n)) = 2T(n/2) + cn
+        </li>
+        <li> T(n) = 2T(n/2) + cn<sup>2</sup>
+            <br>
+            (This is the recurrence in the diagram above.)
+        </li>
+    </ol>
+
+    <p>
+        (We assume c > 0.)
+        <br>
+        Let's break down these cases:
+    </p>
+
+
+    <table>
+        <tr>
+            <th colspan="4">
+                <b>T(n) = 4T(n/2) + cn<sup>1</sup></b>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Level
+            </th>
+            <th>
+                # Nodes
+            </th>
+            <th>
+                Work at
                 <br>
+                Node
+            </th>
+            <th>
+                Work at
                 <br>
-                This produces the geometric series:
+                Level
+            </th>
+        </tr>
+        <tr>
+            <td>
+                0
+            </td>
+            <td>
+                1
+            </td>
+            <td>
+                n
+            </td>
+            <td>
+                n
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+                4
+            </td>
+            <td>
+                n/2
+            </td>
+            <td>
+                2n
+            </td>
+        </tr>
+        <tr>
+            <td>
+                2
+            </td>
+            <td>
+                16
+            </td>
+            <td>
+                n/4
+            </td>
+            <td>
+                4n
+            </td>
+        </tr>
+        <tr>
+            <td>
+                3
+            </td>
+            <td>
+                64
+            </td>
+            <td>
+                n/8
+            </td>
+            <td>
+                8n
+            </td>
+        </tr>
+        <tr>
+            <td>
+                i
+            </td>
+            <td>
+                4<sup>i</sup>
+            </td>
+            <td>
+                n/2<sup>i</sup>
+            </td>
+            <td>
+                2<sup>i</sup>n
+            </td>
+        </tr>
+        <tr>
+            <td>
+                h =
                 <br>
+                log<sub>2</sub>n
+            </td>
+            <td>
+                4<sup>h</sup>
+            </td>
+            <td>
+                T(1)
+            </td>
+            <td>
+                4<sup>h</sup>T(1)
+            </td>
+        </tr>
+    </table>
+
+
+    <p>
+        The runtime then is:
+        <br>
+        <img src="graphics/4TRec.gif">
+        <br>
+        h = log<sub>2</sub>n
+        <br>
+        so the first part equals:
+        <br>
+        4<sup>log<sub>2</sub>n</sup> = n<sup>log<sub>2</sub>4</sup>
+        <br>
+        We pull out the n from the sum and it is
+        an increasing geometric series that evaluates to n - 1.
+        So the closed form for the recurrence is:
+        <br>
+        n<sup>2</sup>T(1) + n(n - 1)
+        <br>
+        <br>
+        The very last level dominates, as it already has O(n<sup>2</sup>)
+        complexity.
+    </p>
+    <hr>
+
+    <table>
+        <tr>
+            <th colspan="4">
+                <b>T(n)) = 2T(n/2) + cn<sup>1</sup></b>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Level
+            </th>
+            <th>
+                # Nodes
+            </th>
+            <th>
+                Equ. for
                 <br>
-                <img src="graphics/RecEq4.gif">
+                Node
+            </th>
+            <th>
+                Work
+            </th>
+        </tr>
+        <tr>
+            <td>
+                0
+            </td>
+            <td>
+                1
+            </td>
+            <td>
+                n
+            </td>
+            <td>
+                cn
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+                2
+            </td>
+            <td>
+                n/2
+            </td>
+            <td>
+                cn
+            </td>
+        </tr>
+        <tr>
+            <td>
+                2
+            </td>
+            <td>
+                4
+            </td>
+            <td>
+                n/4
+            </td>
+            <td>
+                cn
+            </td>
+        </tr>
+        <tr>
+            <td>
+                3
+            </td>
+            <td>
+                8
+            </td>
+            <td>
+                n/8
+            </td>
+            <td>
+                cn
+            </td>
+        </tr>
+        <tr>
+            <td>
+                i
+            </td>
+            <td>
+                2<sup>i</sup>
+            </td>
+            <td>
+                n/2<sup>i</sup>
+            </td>
+            <td>
+                cn
+            </td>
+        </tr>
+        <tr>
+            <td>
+                h =
                 <br>
+                log<sub>2</sub>n
+            </td>
+            <td>
+                2<sup>h</sup>
+            </td>
+            <td>
+                T(1)
+            </td>
+            <td>
+                2<sup>h</sup>T(1)
+            </td>
+        </tr>
+    </table>
+
+    <p>
+        And so we get:
+        <br>
+        <img src="graphics/EqCaseRec.gif">
+        <br>
+        2<sup>h</sup> = n.
+        <br>
+        The sum happens log n times, so we have cn * log n.
+        <br>
+        n + n log n
+        <br>
+        n log n dominates.
+        <br>
+        <br>
+        All levels contributed equally.
+    </p>
+
+
+    <hr>
+
+    <table>
+        <tr>
+            <th colspan="4">
+                <b>T(n) = 2T(n/2) + cn<sup>2</sup></b>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Level
+            </th>
+            <th>
+                # Nodes
+            </th>
+            <th>
+                Equ. for
                 <br>
-                If we set a = n<sup>2</sup> and r = 1/2, then we have the
-                general sum of a converging geometric series:
+                Node
+            </th>
+            <th>
+                Work
+            </th>
+        </tr>
+        <tr>
+            <td>
+                0
+            </td>
+            <td>
+                1
+            </td>
+            <td>
+                n<sup>2</sup>
+            </td>
+            <td>
+                n<sup>2</sup>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                1
+            </td>
+            <td>
+                2
+            </td>
+            <td>
+                (n/2)<sup>2</sup>
+            </td>
+            <td>
+                n<sup>2</sup>/2
+            </td>
+        </tr>
+        <tr>
+            <td>
+                2
+            </td>
+            <td>
+                4
+            </td>
+            <td>
+                (n/4)<sup>2</sup>
+            </td>
+            <td>
+                n<sup>2</sup>/4
+            </td>
+        </tr>
+        <tr>
+            <td>
+                3
+            </td>
+            <td>
+                8
+            </td>
+            <td>
+                (n/8)<sup>2</sup>
+            </td>
+            <td>
+                n<sup>2</sup>/8
+            </td>
+        </tr>
+        <tr>
+            <td>
+                i
+            </td>
+            <td>
+                2<sup>i</sup>
+            </td>
+            <td>
+                (n/2<sup>i</sup>)<sup>2</sup>
+            </td>
+            <td>
+                n<sup>2</sup>/2<sup>i</sup>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                h =
                 <br>
-                <br>
-                <img src="graphics/RecEq5.gif">
-                <br>
-                <br>
-                So the solution here is O(n<sup>2</sup>). The amount of work at
-                each level is reduced by a power of two, and so is
-                just a constant factor times the root.
-                <br>
-                <br>
-                <b>Consider these three examples</b>:
-                </p>
+                log<sub>2</sub>n
+            </td>
+            <td>
+                2<sup>h</sup>
+            </td>
+            <td>
+                T(1)
+            </td>
+            <td>
+                2<sup>h</sup>T(1)
+            </td>
+        </tr>
+    </table>
 
-                <ol>
-                    <li> T(n) = 4T(n/2) + cn
-                    </li>
-                    <li> T(n)) = 2T(n/2) + cn
-                    </li>
-                    <li> T(n) = 2T(n/2) + cn<sup>2</sup>
-                        <br>
-                        (This is the recurrence in the diagram above.)
-                    </li>
-                </ol>
+    <p>
+        The runtime then is:
+        <br>
+        <img src="graphics/NSquaredRec.gif">
+        <br>
+        We pull out the n<sup>2</sup> from the sum, and we get a
+        geometric series. Obviously, n<sup>2</sup> dominates.
+        And it is the same as the top level.
+    </p>
+    <hr>
+    <p>
+        These all have the form: T(n) = aT(n / b) + f(n).
+        <br>
+        When we work these out, we see that in our 3 cases:
+    </p>
+    <ol>
+        <li>The recursion is the dominant factor, and the bottom
+            level has the Big-O complexity of the whole recurrence.
+        </li>
+        <li>The recursion and f(n) contribute equally to the run time,
+            and all levels are equal.
+        </li>
+        <li>f(n) dominates, and the top level has the Big-O
+            complexity of the whole recurrence.
+        </li>
+    </ol>
+    <p>
+        This observation leads us to:
+    </p>
+</details>
 
-                <p>
-                    (We assume c > 0.)
-                    <br>
-                    Let's break down these cases:
-                </p>
+<details>
+    <summary class="sum1">
+        The master method for solving recurrences
+    </summary>
 
+    <p>
+        <b>Form</b>: T(n) = aT(n / b) + f(n).
+        <br>
+        Where a &ge; 1 and b &gt; 1 and f(n) asymptotically positive.
+        <br>
+        <br>
+        <b>Three cases</b>
+        <br>
+        Compare n<sup>log<sub>b</sub>a</sup> and f(n):
+    </p>
+    <ol>
+        <li>f(n) = O(n<sup>log<sub>b</sub>a-&epsilon;</sup>),
+            &epsilon; > 0
+            <br><b>Solution</b>: T(n) =
+            &Theta;(n<sup>log<sub>b</sub>a</sup>)
+        </li>
+        <li>f(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>)
+            <br><b>Solution</b>: T(n) =
+            &Theta;(n<sup>log<sub>b</sub>a</sup> lg n)
+        </li>
+        <li>f(n) = &Omega;(n<sup>log<sub>b</sub>a+&epsilon;</sup>),
+            &epsilon; > 0
+            <br><b>Solution</b>: T(n) = &Theta;(f(n))
+        </li>
+    </ol>
 
-                <table>
-                    <tr>
-                        <th colspan="4">
-                            <b>T(n) = 4T(n/2) + cn<sup>1</sup></b>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            Level
-                        </th>
-                        <th>
-                            # Nodes
-                        </th>
-                        <th>
-                            Work at
-                            <br>
-                            Node
-                        </th>
-                        <th>
-                            Work at
-                            <br>
-                            Level
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            0
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            n
-                        </td>
-                        <td>
-                            n
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            4
-                        </td>
-                        <td>
-                            n/2
-                        </td>
-                        <td>
-                            2n
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            2
-                        </td>
-                        <td>
-                            16
-                        </td>
-                        <td>
-                            n/4
-                        </td>
-                        <td>
-                            4n
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            3
-                        </td>
-                        <td>
-                            64
-                        </td>
-                        <td>
-                            n/8
-                        </td>
-                        <td>
-                            8n
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            i
-                        </td>
-                        <td>
-                            4<sup>i</sup>
-                        </td>
-                        <td>
-                            n/2<sup>i</sup>
-                        </td>
-                        <td>
-                            2<sup>i</sup>n
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            h =
-                            <br>
-                            log<sub>2</sub>n
-                        </td>
-                        <td>
-                            4<sup>h</sup>
-                        </td>
-                        <td>
-                            T(1)
-                        </td>
-                        <td>
-                            4<sup>h</sup>T(1)
-                        </td>
-                    </tr>
-                </table>
+    <p>
+        <b>Restrictions:</b>
+    </p>
 
+    <ol>
+        <li>a &ge; 1
+            <br>
+            We must divide the problem into <i>at least</i> one
+            sub-problem.
+            <br>
+            The method will <i>work</i> if <i>a</i> is not an
+            integer, although this doesn't really make sense: how
+            can we have 1.5 sub-problems?
+        </li>
+        <li>b > 1
+            <br>
+            If we don't get <i>smaller</i> sub-problems, we will
+            never finish! (n/b < n)
+            <br>
+        </li>
+        <li><b>Regularity condition</b> for case 3: af(n/b) &le; cf(n)
+            <br>
+            <br>
+            Notice the gap between the red and blue lines:
+            <br>
+            <figure>
+                <img src="graphics/PolynomialLine.svg">
+                <figcaption>
+                    The "polynomial line"
+                </figcaption>
+            </figure>
+            Consider:
+            <br>
+            T(n) = 2T(n/2) + n log n
+            <br>
+            n log n grows faster than n, but not by a polynomial
+            difference:
+            <br>
+            log n is asymptotically < n<sup>&epsilon;</sup> for any
+            &epsilon; > 0
+            <br>
+            <figure>
+                <img src="graphics/RegularityCond.png">
+                <figcaption>
+                    <a
+                            href="https://github.com/gcallah/algorithms/blob/master/RegularityCondition.xlsx">
+                        A spreadsheet
+                    </a>
+                    where you can see this for yourself.
+                </figcaption>
+            </figure>
 
-                <p>
-                    The runtime then is:
-                    <br>
-                    <img src="graphics/4TRec.gif">
-                    <br>
-                    h = log<sub>2</sub>n
-                    <br>
-                    so the first part equals:
-                    <br>
-                    4<sup>log<sub>2</sub>n</sup> = n<sup>log<sub>2</sub>4</sup>
-                    <br>
-                    We pull out the n from the sum and it is 
-                    an increasing geometric series that evaluates to n - 1.
-                    So the closed form for the recurrence is:
-                    <br>
-                    n<sup>2</sup>T(1) + n(n - 1)
-                    <br>
-                    <br>
-                    The very last level dominates, as it already has O(n<sup>2</sup>)
-                    complexity.
-                </p>
-                <hr>
+            <br>
+            <br>
+            <b>Detailed Example:</b>
+            <br>
+            T(n) = 4T(n/2) + (n<sup>2</sup>/log n)
+            <br>
+            <br>
+            The first part gets us n<sup>2</sup>.
+            <br>
+            (n<sup>2</sup>/log n) = O(n<sup>2</sup>)
+            <br>
+            <br>
+            (n<sup>2</sup>/log n) / n<sup>2</sup> = 1 / log n
+            <br>
+            which goes to 0 as n goes to infinity.
 
-                <table>
-                    <tr>
-                        <th colspan="4">
-                            <b>T(n)) = 2T(n/2) + cn<sup>1</sup></b>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            Level
-                        </th>
-                        <th>
-                            # Nodes
-                        </th>
-                        <th>
-                            Equ. for
-                            <br>
-                            Node
-                        </th>
-                        <th>
-                            Work
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            0
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            n
-                        </td>
-                        <td>
-                            cn
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            2
-                        </td>
-                        <td>
-                            n/2
-                        </td>
-                        <td>
-                            cn
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            2
-                        </td>
-                        <td>
-                            4
-                        </td>
-                        <td>
-                            n/4
-                        </td>
-                        <td>
-                            cn
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            3
-                        </td>
-                        <td>
-                            8
-                        </td>
-                        <td>
-                            n/8
-                        </td>
-                        <td>
-                            cn
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            i
-                        </td>
-                        <td>
-                            2<sup>i</sup>
-                        </td>
-                        <td>
-                            n/2<sup>i</sup>
-                        </td>
-                        <td>
-                            cn
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            h =
-                            <br>
-                            log<sub>2</sub>n
-                        </td>
-                        <td>
-                            2<sup>h</sup>
-                        </td>
-                        <td>
-                            T(1)
-                        </td>
-                        <td>
-                            2<sup>h</sup>T(1)
-                        </td>
-                    </tr>
-                </table>
+            <br>
+            <br>
+            But is it
+            <i>polynomially</i> larger than (n<sup>2</sup>/log n),
+            so that we are in case 1? Or, is there an &epsilon; we
+            can subtract from 2 so that n<sup>2-&epsilon;</sup>
+            is still an upper bound for (n<sup>2</sup>/log n)?
+            <br>
 
-                <p>
-                And so we get:
-                <br>
-                <img src="graphics/EqCaseRec.gif">
-                <br>
-                2<sup>h</sup> = n.
-                <br>
-                The sum happens log n times, so we have cn * log n.
-                <br>
-                n + n log n
-                <br>
-                n log n dominates.
-                <br>
-                <br>
-                All levels contributed equally.
-                </p>
+            Is f(n) = O(n<sup>log<sub>b</sub>a-&epsilon;</sup>) ?
+            <br>
+            <br>
+            Let's look at the ratio:
+            <br>
+
+            (n<sup>2</sup>/log n) / n<sup>2-&epsilon;</sup>
+            <br>
+            <br>
+            That yields:
+            <br>
+            n<sup>&epsilon;</sup> / log n &rarr; &infin; as n
+            &rarr; &infin;.
+        </li>
+    </ol>
+
+    <p>
+        <br>
+        <b>Sample problems:</b>
+    </p>
+
+    <ol>
+        <li>T(n) = 2T(n / 4) + n<sup>2</sup>
+        </li>
+        <li>T(n) = 4T(n / 2) + n<sup>2</sup>
+        </li>
+        <li>T(n) = 20T(n / 4) + n
+        </li>
+        <li>T(n) = 3<sup>n</sup>(n / 3) + n<sup>3</sup>
+        </li>
+        <li>T(n) = 8T(n / 2) + 2<sup>n</sup>
+        </li>
+    </ol>
+</details>
 
 
-                <hr>
-
-                <table>
-                    <tr>
-                        <th colspan="4">
-                            <b>T(n) = 2T(n/2) + cn<sup>2</sup></b>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            Level
-                        </th>
-                        <th>
-                            # Nodes
-                        </th>
-                        <th>
-                            Equ. for
-                            <br>
-                            Node
-                        </th>
-                        <th>
-                            Work
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            0
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            n<sup>2</sup>
-                        </td>
-                        <td>
-                            n<sup>2</sup>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            2
-                        </td>
-                        <td>
-                            (n/2)<sup>2</sup>
-                        </td>
-                        <td>
-                            n<sup>2</sup>/2
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            2
-                        </td>
-                        <td>
-                            4
-                        </td>
-                        <td>
-                            (n/4)<sup>2</sup>
-                        </td>
-                        <td>
-                            n<sup>2</sup>/4
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            3
-                        </td>
-                        <td>
-                            8
-                        </td>
-                        <td>
-                            (n/8)<sup>2</sup>
-                        </td>
-                        <td>
-                            n<sup>2</sup>/8
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            i
-                        </td>
-                        <td>
-                            2<sup>i</sup>
-                        </td>
-                        <td>
-                            (n/2<sup>i</sup>)<sup>2</sup>
-                        </td>
-                        <td>
-                            n<sup>2</sup>/2<sup>i</sup>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            h =
-                            <br>
-                            log<sub>2</sub>n
-                        </td>
-                        <td>
-                            2<sup>h</sup>
-                        </td>
-                        <td>
-                            T(1)
-                        </td>
-                        <td>
-                            2<sup>h</sup>T(1)
-                        </td>
-                    </tr>
-                </table>
-
-                <p>
-                    The runtime then is:
-                    <br>
-                    <img src="graphics/NSquaredRec.gif">
-                    <br>
-                    We pull out the n<sup>2</sup> from the sum, and we get a
-                    geometric series. Obviously, n<sup>2</sup> dominates.
-                    And it is the same as the top level.
-                </p>
-                <hr>
-                <p>
-                    These all have the form: T(n) = aT(n / b) + f(n). 
-                    <br>
-                    When we work these out, we see that in our 3 cases:
-                </p>
-                <ol>
-                    <li>The recursion is the dominant factor, and the bottom
-                        level has the Big-O complexity of the whole recurrence.
-                    </li>
-                    <li>The recursion and f(n) contribute equally to the run time,
-                        and all levels are equal.
-                    </li>
-                    <li>f(n) dominates, and the top level has the Big-O
-                        complexity of the whole recurrence.
-                    </li>
-                </ol>
-                <p>
-                    This observation leads us to:
-                </p>
-            </details>
-
-            <details>
-            <summary class="sum1">
-                The master method for solving recurrences
-            </summary>
-    
-                <p>
-                    <b>Form</b>: T(n) = aT(n / b) + f(n). 
-                    <br>
-                    Where a &ge; 1 and b &gt; 1 and f(n) asymptotically positive.
-                    <br>
-                    <br>
-                    <b>Three cases</b>
-                    <br>
-                    Compare n<sup>log<sub>b</sub>a</sup> and f(n):
-                </p>
-                <ol>
-                    <li>f(n) = O(n<sup>log<sub>b</sub>a-&epsilon;</sup>),
-                        &epsilon; > 0
-                        <br><b>Solution</b>: T(n) =
-                        &Theta;(n<sup>log<sub>b</sub>a</sup>)
-                    </li>
-                    <li>f(n) = &Theta;(n<sup>log<sub>b</sub>a</sup>)
-                        <br><b>Solution</b>: T(n) =
-                        &Theta;(n<sup>log<sub>b</sub>a</sup> lg n)
-                    </li>
-                    <li>f(n) = &Omega;(n<sup>log<sub>b</sub>a+&epsilon;</sup>),
-                        &epsilon; > 0
-                        <br><b>Solution</b>: T(n) = &Theta;(f(n))
-                    </li>
-                </ol>
-
-                <p>
-                    <b>Restrictions:</b>
-                </p>
-
-                <ol>
-                    <li>a &ge; 1
-                        <br>
-                        We must divide the problem into <i>at least</i> one
-                        sub-problem.
-                        <br>
-                        The method will <i>work</i> if <i>a</i> is not an
-                        integer, although this doesn't really make sense: how
-                        can we have 1.5 sub-problems?
-                    </li>
-                    <li>b > 1
-                        <br>
-                        If we don't get <i>smaller</i> sub-problems, we will
-                        never finish! (n/b < n)
-                        <br>
-                    </li>
-                    <li><b>Regularity condition</b> for case 3: af(n/b) &le; cf(n)
-                        <br>
-                        <br>
-                        Notice the gap between the red and blue lines:
-                        <br>
-                        <figure>
-                            <img src="graphics/PolynomialLine.svg">
-                            <figcaption>
-                                The "polynomial line"
-                            </figcaption>
-                        </figure>
-                        Consider: 
-                        <br>
-                        T(n) = 2T(n/2) + n log n
-                        <br>
-                        n log n grows faster than n, but not by a polynomial
-                        difference:
-                        <br>
-                        log n is asymptotically < n<sup>&epsilon;</sup> for any
-                        &epsilon; > 0
-                        <br>
-                        <figure>
-                            <img src="graphics/RegularityCond.png">
-                            <figcaption>
-                            <a
-                                href="https://github.com/gcallah/algorithms/blob/master/RegularityCondition.xlsx">
-                                A spreadsheet
-                            </a>
-                            where you can see this for yourself.
-                            </figcaption>
-                        </figure>
-
-                        <br>
-                        <br>
-                        <b>Detailed Example:</b>
-                        <br>
-                        T(n) = 4T(n/2) + (n<sup>2</sup>/log n)
-                        <br>
-                        <br>
-                        The first part gets us n<sup>2</sup>.
-                        <br>
-                        (n<sup>2</sup>/log n) = O(n<sup>2</sup>) 
-                        <br>
-                        <br>
-                        (n<sup>2</sup>/log n) / n<sup>2</sup> = 1 / log n
-                        <br>
-                        which goes to 0 as n goes to infinity.
-                        
-                        <br>
-                        <br>
-                        But is it
-                        <i>polynomially</i> larger than (n<sup>2</sup>/log n),
-                        so that we are in case 1? Or, is there an &epsilon; we
-                        can subtract from 2 so that n<sup>2-&epsilon;</sup>
-                        is still an upper bound for (n<sup>2</sup>/log n)?
-                        <br>
-
-                        Is f(n) = O(n<sup>log<sub>b</sub>a-&epsilon;</sup>) ?
-                        <br>
-                        <br>
-                        Let's look at the ratio:
-                        <br>
-
-                        (n<sup>2</sup>/log n) / n<sup>2-&epsilon;</sup>
-                        <br>
-                        <br>
-                        That yields:
-                        <br>
-                        n<sup>&epsilon;</sup> / log n &rarr; &infin; as n
-                        &rarr; &infin;.
-                    </li>
-                </ol>
-
-                <p>
-                    <br>
-                    <b>Sample problems:</b>
-                </p>
-
-                <ol>
-                    <li>T(n) = 2T(n / 4) + n<sup>2</sup>
-                    </li>
-                    <li>T(n) = 4T(n / 2) + n<sup>2</sup>
-                    </li>
-                    <li>T(n) = 20T(n / 4) + n
-                    </li>
-                    <li>T(n) = 3<sup>n</sup>(n / 3) + n<sup>3</sup>
-                    </li>
-                    <li>T(n) = 8T(n / 2) + 2<sup>n</sup>
-                    </li>
-                </ol>
-            </details>
-    
-    
-            <details>
-                 <summary class="sum1">
-                    Source Code
-                    </summary>
-                <p>
+<details>
+    <summary class="sum1">
+        Source Code
+    </summary>
+    <p>
             
 <a href="https://github.com/gcallah/algorithms/tree/master/Java/DivideAndConquer">Java</a><br>
 <a href="https://github.com/gcallah/algorithms/tree/master/Ruby/DivideAndConquer">Ruby</a><br>
 <a href="https://github.com/gcallah/algorithms/tree/master/Python/DivideAndConquer">Python</a><br>
-                </p>
-            </details>
-    
-            <details>
-                 <summary class="sum1">
-                    For Further Study
-                    </summary>
-                <ul>
-                    <figure>
-                        <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/kDhR4Zm53zc"
-                            frameborder="0" allowfullscreen></iframe>
-                        <figcaption>
-                            MIT: Intro to Divide-and-Conquer
-                        </figcaption>
-                    </figure>
+    </p>
+</details>
 
-                    <li>
-                        <a href="https://en.wikipedia.org/wiki/Master_theorem">
-                            The Master Theorem
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://en.wikipedia.org/wiki/Maximum_subarray_problem">
-                            Maximum Subarray Problem
-                        </a>
-                    </li>
-                    <li>
-                    <a
-                        href="https://www.khanacademy.org/computing/computer-science/algorithms/towers-of-hanoi/a/towers-of-hanoi">
-                        The Towers of Hanoi
-                    </a>
-                    </li>
-                    <li>
-                        <a href="https://en.wikipedia.org/wiki/Strassen_algorithm">
-                            Strassen's Algorithm
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="http://www.csd.uwo.ca/~moreno/CS433-CS9624/Resources/master.pdf">
-                            Practice problems
-                        </a>
-                    </li>
-                </ul>
-            </details>
-            
-            <details>
-                 <summary class="sum1">
-                    Homework
-                </summary>
-                <ol>
-                    <li>Implement the Towers of Hanoi in a programming language of
-                        your choice. Put in test code to count the number of moves.
-                        Print out the number of moves after you have solved the
-                        puzzle. Run the code and show that we have solved 
-                        the recurrence correctly. What you hand in should be 
-                        your source code plus several runs showing your results.
-                    </li>
-                    <li>Implement Strassen's method in a programming language of
-                        your choice.
-                    </li>
-                    <li>A well-known recurrence is the Fibonacci sequence. Please
-                        find the closed form for it, <em>showing how you found
-                        it</em>. (You can easily look up the form online, but
-                        please try to solve this yourself.)
-                    </li>
-                    <li>Find tight asymptotic bounds for the following recurrence:
-                        <br>
-                        <img src="graphics/RecEq3.gif">
-                        <br>
-                    </li>
-                </ol>
-            </details>
+<details>
+    <summary class="sum1">
+        For Further Study
+    </summary>
+    <ul>
+        <figure>
+            <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/kDhR4Zm53zc"
+                    frameborder="0" allowfullscreen></iframe>
+            <figcaption>
+                MIT: Intro to Divide-and-Conquer
+            </figcaption>
+        </figure>
 
-            <details>
-                 <summary class="sum1">
-                Credits
-                </summary>
+        <li>
+            <a href="https://en.wikipedia.org/wiki/Master_theorem">
+                The Master Theorem
+            </a>
+        </li>
+        <li>
+            <a
+                    href="https://en.wikipedia.org/wiki/Maximum_subarray_problem">
+                Maximum Subarray Problem
+            </a>
+        </li>
+        <li>
+            <a
+                    href="https://www.khanacademy.org/computing/computer-science/algorithms/towers-of-hanoi/a/towers-of-hanoi">
+                The Towers of Hanoi
+            </a>
+        </li>
+        <li>
+            <a href="https://en.wikipedia.org/wiki/Strassen_algorithm">
+                Strassen's Algorithm
+            </a>
+        </li>
+        <li>
+            <a
+                    href="http://www.csd.uwo.ca/~moreno/CS433-CS9624/Resources/master.pdf">
+                Practice problems
+            </a>
+        </li>
+    </ul>
+</details>
 
-                <ul>
-                    <li>Recursion-tree diagrams:
-                        http://www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec20-master/lec20.html
-                    </li>
-                </ul>
-            </details>
-    </body>
+<details>
+    <summary class="sum1">
+        Homework
+    </summary>
+    <ol>
+        <li>Implement the Towers of Hanoi in a programming language of
+            your choice. Put in test code to count the number of moves.
+            Print out the number of moves after you have solved the
+            puzzle. Run the code and show that we have solved
+            the recurrence correctly. What you hand in should be
+            your source code plus several runs showing your results.
+        </li>
+        <li>Implement Strassen's method in a programming language of
+            your choice.
+        </li>
+        <li>A well-known recurrence is the Fibonacci sequence. Please
+            find the closed form for it, <em>showing how you found
+                it</em>. (You can easily look up the form online, but
+            please try to solve this yourself.)
+        </li>
+        <li>Find tight asymptotic bounds for the following recurrence:
+            <br>
+            <img src="graphics/RecEq3.gif">
+            <br>
+        </li>
+    </ol>
+</details>
+
+<details>
+    <summary class="sum1">
+        Credits
+    </summary>
+
+    <ul>
+        <li>Recursion-tree diagrams:
+            http://www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec20-master/lec20.html
+        </li>
+    </ul>
+</details>
+</body>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
