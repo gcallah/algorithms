@@ -1,0 +1,4 @@
+In a theoretical analysis of algorithms, we want to discuss running time in nanoseconds.#^False#True
+We will generally consider:#best-case running time#^worst-case running time#memory usage#average-case running time
+We will mostly concern ourselves with an algorithm's behavior#for small inputs#egregiously#^asymptotically#exponentially
+In analyzing an algorithm in terms of <i>n</i>, the number of inputs, we would like to focus on:#the lowest power of <i>n</i>#^the highest power of <i>n</i>#the logarithm of <i>n</>#all of the above
