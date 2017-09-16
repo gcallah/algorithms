@@ -2,7 +2,7 @@
     <head>
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <title>
-            Design and Analyis of Algorithms:  Getting Started
+            Design and Analyis of Algorithms: Getting Started
         </title>
     </head>
 
@@ -21,18 +21,12 @@
     </div>
 
         <h1>
-            Design and Analyis of Algorithms:  Getting Started
+            Design and Analyis of Algorithms: Getting Started
         </h1>
-
-            <div style="text-align:center">
-                <p>
-                <img src="">
-                </p>
-            </div>
 
             <details>
                 <summary class="sum1">
-                Insertion Sort
+                2.1 Insertion Sort
                 </summary>
 
                 <details>
@@ -102,6 +96,152 @@
 
             </details>
 
+        <details>
+            <summary class="sum1">
+                2.2 Analyzing algorithms
+            </summary>
+
+              <details>
+                  <summary class="sum2">
+                  Running time
+                  </summary>
+              
+                  <p>
+                      We surely do not want to talk about actual time
+                      in nanoseconds, as that depends on too
+                      many external things: what other
+                      processes are running, details of the
+                      hardware, compiler switches, etc, etc. 
+                      So instead we come up with a very
+                      primitive <em>abstract machine</em> (RAM=the
+                      Random Access Machine: CPU + directly
+                      addressable memory) which we analyze instead
+                      of a real computer.  Then primitive
+                      operations are memory reads/writes and operations
+                      in the CPU, such as address arithmetic,
+                      additions, multiplications, divisions,
+                      etc. Our idea of "running time" is then
+                      simply the number of operations
+                      performed when the program runs.
+                  </p>
+              </details> 
+              
+              <details>
+                  <summary class="sum2">
+                  More trouble
+                  </summary>
+              
+                  <p>
+                  Even for inputs of a fixed size (saying, your favorite program
+                    sorting 10 numbers), different specific
+                    inputs will produce different performance.
+                    For example, a clever algorithm may
+                    notice that the input is already sorted
+                    and not try sorting it again. So, we
+                    distinguish between best- and worst-case
+                    performance (minimum and maximum number
+                    of operations performed by the algorithm,
+                    over all possible legal inputs of a given size).
+                    (There is also the concept of
+                    "average-case," but it is tricky,
+                    as it requires a definition of what average
+                    means: technically, you need to specify
+                    a <i>distribution</i> of the inputs.
+                    We will mostly stay away from average-case
+                    analysis and focus on the worst case;
+                    we will occasionally look at the best case too.)
+                  </p>
+              </details> 
+                
+              <details>
+                  <summary class="sum2">
+                  Generalized statement of running time
+                  </summary>
+              
+                    <p>
+                      What we really want, is not the running time
+                      (as the number of operations,
+                      say, in the worst case), for a specific
+                      input size, but as a function of the
+                      input size, over all sizes. For example,
+                      it may be that a given sorting
+                      algorithm requires <em>4n<sup>2</sup> + 4n + 24</em>
+                      operations to sort <em>n</em> items.
+                     </p>
+              </details> 
+                
+              <details>
+                  <summary class="sum2">
+                  Asymptotic behavior
+                  </summary>
+              
+                    <p>
+                    In order to make life easier, we will not
+                    be focusing on the exact value of
+                    such function, but on its <i>asymptotic</i> behavior.
+                    </p>
+                    <figure>
+                      <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Comparison_computational_complexity.svg/250px-Comparison_computational_complexity.svg.png">
+                    </figure>
+              </details> 
+                
+              <details>
+                  <summary class="sum2">
+                  Highest power of n
+                  </summary>
+              
+                    <p>
+                    In particular, we want to focus on the highest power of n in any
+                    function expressing the run time of an algorithm. That is because, as
+                    input size grows, that power will dwarf all others in significance.
+                    Consider the contribution of <em>n<sup>2</sup></em>
+                    and <em>n</em> in the runtime of the
+                    sorting algorithm mentioned above for various values of <em>n</em>:
+                    </p>
+              
+                    <table>
+                        <tr>
+                            <th>
+                                n
+                            </th>
+                            <th>
+                                n<sup>2</sup>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>100</td>
+                            <td>10,000</td>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td>1,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>10,000</td>
+                            <td>100,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>100,000</td>
+                            <td>10,000,000,000</td>
+                        </tr>
+                    </table>
+              
+                    <p>
+                    Now consider that Amazon is processing
+                    tens of millions of transactions
+                    per day: of what significance is the
+                    <em>n</em> factor in the performance
+                    of their servers, if they are using an algorithm with an
+                    <em>n<sup>2</sup></em> factor involved to sort them?
+                    </p>
+                </details> 
+            </details> 
+
             <details>
                 <summary class="sum1">
                 Running code in your browser
@@ -169,13 +309,6 @@
                 Source Code
                 </summary>
                 <p>
-            
-<a href="https://github.com/gcallah/algorithms/tree/master/Java/GettingStarted">Java</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/Ruby/GettingStarted">Ruby</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/Go/GettingStarted">Go</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/C++/GettingStarted">C++</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/Python/GettingStarted">Python</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/Clojure/GettingStarted">Clojure</a><br>
                 </p>
             </details>
 
