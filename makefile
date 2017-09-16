@@ -11,7 +11,7 @@ SUBPROJ_FILES = $(shell ls Algocynfas/*.html)
 	python3 utils/html_checker.py $<
 	utils/html_include.awk <$< >$@
 
-website: $(INCS) $(HTMLFILES) $(SUBPROJ_FILES) template
+website: $(INCS) $(HTMLFILES) $(SUBPROJ_FILES) template quizzes
 	./C++/tests.sh
 	./Clojure/tests.sh
 	./Go/tests.sh
@@ -23,7 +23,10 @@ website: $(INCS) $(HTMLFILES) $(SUBPROJ_FILES) template
 	-git commit -a -m "HTML rebuild."
 	git push origin master
 
-local: template $(INCS) $(HTMLFILES)
+quizzes:
+	cd quizzes ; make all
+
+local: template $(INCS) $(HTMLFILES) quizzes
 
 template: $(TEMPLATE_DIR)
 	cd $(TEMPLATE_DIR) ; make all
