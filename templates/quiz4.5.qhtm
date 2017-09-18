@@ -4,7 +4,7 @@
         </summary>
         <ol>
             <li>
-                Using master method (mm), the runtime for T(n)=3T(n/2)+n<sup>2</sup> is:
+                Using master method (mm), the runtime for T(n) = 3T(n/2) + n<sup>2</sup> is:
             </li>
             <ol type="a" class="nested">
                 <li>
@@ -25,7 +25,7 @@
                 </li>
             </ol>
             <li>
-                Using mm, the runtime for T(n) - 2<sup>n</sup>(n/2) + n<sup>n</sup> is:
+                Using mm, the runtime for T(n) = 2<sup>n</sup>(n/2) + n<sup>n</sup> is:
             </li>
             <ol type="a" class="nested">
                 <li>
@@ -45,13 +45,34 @@
                 &Theta;(n<sup>n</sup>)
                 </li>
             </ol>
+            <li>
+                Using mm, the runtime for T(n) = 0.5T(n/2) + 1/n is:
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q3" value="a">
+                &Theta;(.5n)
+                </li>
+                <li>
+                <input type="radio" name="q3" value="b">
+                &Theta;(n)
+                </li>
+                <li>
+                <input type="radio" name="q3" value="c">
+                MM does not apply
+                </li>
+                <li>
+                <input type="radio" name="q3" value="d">
+                &Theta;(1/n)
+                </li>
+            </ol>
         </ol>
         <details>
             <summary class="sum3">
                 Answers
             </summary>
             <p>
-                1. d; 2. b; 
+                1. d; 2. b; 3. c; 
             </p>
         </details>
     </details>

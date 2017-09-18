@@ -1,5 +1,6 @@
 # Need to export as ENV var
 export TEMPLATE_DIR = templates
+QUIZ_DIR = quizzes
 PTML_DIR = ptml
 
 INCS = $(TEMPLATE_DIR)/menu.txt $(TEMPLATE_DIR)/chap_menu.txt $(TEMPLATE_DIR)/lang_menu.txt
@@ -11,7 +12,7 @@ SUBPROJ_FILES = $(shell ls Algocynfas/*.html)
 	python3 utils/html_checker.py $<
 	utils/html_include.awk <$< >$@
 
-website: $(INCS) $(HTMLFILES) $(SUBPROJ_FILES) template quizzes
+website: template tests $(INCS) $(HTMLFILES) $(SUBPROJ_FILES)
 	./C++/tests.sh
 	./Clojure/tests.sh
 	./Go/tests.sh
@@ -23,10 +24,10 @@ website: $(INCS) $(HTMLFILES) $(SUBPROJ_FILES) template quizzes
 	-git commit -a -m "HTML rebuild."
 	git push origin master
 
-quizzes:
-	cd quizzes ; make all
+tests: $(QUIZ_DIR)
+	cd $(QUIZ_DIR) ; make all
 
-local: template $(INCS) $(HTMLFILES) quizzes
+local: template tests $(INCS) $(HTMLFILES)
 
 template: $(TEMPLATE_DIR)
 	cd $(TEMPLATE_DIR) ; make all
