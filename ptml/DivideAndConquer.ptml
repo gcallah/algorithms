@@ -1166,23 +1166,8 @@
         </li>
     </ol>
 
-    <p>
-        <br>
-        <b>Sample problems:</b>
-    </p>
+<!--include quiz4.5.qhtm -->
 
-    <ol>
-        <li>T(n) = 2T(n / 4) + n<sup>2</sup>
-        </li>
-        <li>T(n) = 4T(n / 2) + n<sup>2</sup>
-        </li>
-        <li>T(n) = 20T(n / 4) + n
-        </li>
-        <li>T(n) = 3<sup>n</sup>(n / 3) + n<sup>3</sup>
-        </li>
-        <li>T(n) = 8T(n / 2) + 2<sup>n</sup>
-        </li>
-    </ol>
 </details>
 
 
@@ -1191,7 +1176,7 @@
         Source Code
     </summary>
     <p>
-        <!--include DivideAndConquer_langs.txt -->
+<!--include DivideAndConquer_langs.txt -->
     </p>
 </details>
 

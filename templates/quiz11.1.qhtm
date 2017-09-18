@@ -1,0 +1,57 @@
+    <details>
+        <summary class="sum2">
+            Quiz
+        </summary>
+        <ol>
+            <li>
+                A good use for a direct-address table might be:
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q1" value="a">
+                All answers are fine
+                </li>
+                <li>
+                <input type="radio" name="q1" value="b">
+                Memoization
+                </li>
+                <li>
+                <input type="radio" name="q1" value="c">
+                Bingo
+                </li>
+                <li>
+                <input type="radio" name="q1" value="d">
+                Marking members of a set as present
+                </li>
+            </ol>
+            <li>
+                We can't use direct-address tables when
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q2" value="a">
+                there are a large number of (potential) entries
+                </li>
+                <li>
+                <input type="radio" name="q2" value="b">
+                all answers are fine
+                </li>
+                <li>
+                <input type="radio" name="q2" value="c">
+                we are programming the Sieve of Eratosthenes
+                </li>
+                <li>
+                <input type="radio" name="q2" value="d">
+                we are dealing with zipcodes
+                </li>
+            </ol>
+        </ol>
+        <details>
+            <summary class="sum3">
+                Answers
+            </summary>
+            <p>
+                1. a; 2. a; 
+            </p>
+        </details>
+    </details>
