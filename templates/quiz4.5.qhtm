@@ -1,12 +1,12 @@
     <details>
-        <summary class="sum2">
+        <summary class="sum1">
             Quiz
         </summary>
         <ol>
             <li>
                 Using master method (mm), the runtime for T(n) = 3T(n/2) + n<sup>2</sup> is:
             </li>
-            <ol type="a" class="nested">
+            <ol type="a">
                 <li>
                 <input type="radio" name="q1" value="a">
                 n log n
@@ -27,7 +27,7 @@
             <li>
                 Using mm, the runtime for T(n) = 2<sup>n</sup>(n/2) + n<sup>n</sup> is:
             </li>
-            <ol type="a" class="nested">
+            <ol type="a">
                 <li>
                 <input type="radio" name="q2" value="a">
                 &Theta;(n)
@@ -48,7 +48,7 @@
             <li>
                 Using mm, the runtime for T(n) = 0.5T(n/2) + 1/n is:
             </li>
-            <ol type="a" class="nested">
+            <ol type="a">
                 <li>
                 <input type="radio" name="q3" value="a">
                 &Theta;(.5n)
@@ -68,7 +68,7 @@
             </ol>
         </ol>
         <details>
-            <summary class="sum3">
+            <summary class="sum2">
                 Answers
             </summary>
             <p>

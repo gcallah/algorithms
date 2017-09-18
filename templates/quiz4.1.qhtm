@@ -1,57 +1,49 @@
     <details>
-        <summary class="sum1">
+        <summary class="sum2">
             Quiz
         </summary>
         <ol>
             <li>
-                A good use for a direct-address table might be:
+                The problem with the brute force max-subarray solution is
             </li>
-            <ol type="a">
+            <ol type="a" class="nested">
                 <li>
                 <input type="radio" name="q1" value="a">
-                All answers are fine
+                it is too complicated
                 </li>
                 <li>
                 <input type="radio" name="q1" value="b">
-                Memoization
+                the force used might break the code
                 </li>
                 <li>
                 <input type="radio" name="q1" value="c">
-                Bingo
-                </li>
-                <li>
-                <input type="radio" name="q1" value="d">
-                Marking members of a set as present
+                it is too slow
                 </li>
             </ol>
             <li>
-                We can't use direct-address tables when
+                The three possible arrays containing the maximum sequence are
             </li>
-            <ol type="a">
+            <ol type="a" class="nested">
                 <li>
                 <input type="radio" name="q2" value="a">
-                there are a large number of (potential) entries
+                An array of ints, an array of doubles, and an array of strings
                 </li>
                 <li>
                 <input type="radio" name="q2" value="b">
-                all answers are fine
+                The array from A[0] to the mid-point; an array that crosses the midpoint, and the array from A[midpoint + 1] to the end
                 </li>
                 <li>
                 <input type="radio" name="q2" value="c">
-                we are programming the Sieve of Eratosthenes
-                </li>
-                <li>
-                <input type="radio" name="q2" value="d">
-                we are dealing with zipcodes
+                The whole array, the null array, and the middle array
                 </li>
             </ol>
         </ol>
         <details>
-            <summary class="sum2">
+            <summary class="sum3">
                 Answers
             </summary>
             <p>
-                1. a; 2. a; 
+                1. c; 2. b; 
             </p>
         </details>
     </details>

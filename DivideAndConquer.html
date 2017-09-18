@@ -149,7 +149,7 @@
         </summary>
 
         <p>
-            We loon at the problem differently: let's find the nonempty,
+            We look at the problem differently: let's find the nonempty,
             contiguous subarray of our array whose values have the largest sum.
             We call this the <b>maximum subarray</b>.
         </p>
@@ -240,6 +240,56 @@
                 Maximum sub-array video
             </figcaption>
         </figure>
+    </details>
+
+    <details>
+        <summary class="sum2">
+            Quiz
+        </summary>
+        <ol>
+            <li>
+                The problem with the brute force max-subarray solution is
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q1" value="a">
+                it is too complicated
+                </li>
+                <li>
+                <input type="radio" name="q1" value="b">
+                the force used might break the code
+                </li>
+                <li>
+                <input type="radio" name="q1" value="c">
+                it is too slow
+                </li>
+            </ol>
+            <li>
+                The three possible arrays containing the maximum sequence are
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q2" value="a">
+                An array of ints, an array of doubles, and an array of strings
+                </li>
+                <li>
+                <input type="radio" name="q2" value="b">
+                The array from A[0] to the mid-point; an array that crosses the midpoint, and the array from A[midpoint + 1] to the end
+                </li>
+                <li>
+                <input type="radio" name="q2" value="c">
+                The whole array, the null array, and the middle array
+                </li>
+            </ol>
+        </ol>
+        <details>
+            <summary class="sum3">
+                Answers
+            </summary>
+            <p>
+                1. c; 2. b; 
+            </p>
+        </details>
     </details>
 
 </details>
@@ -1197,14 +1247,14 @@
     </ol>
 
     <details>
-        <summary class="sum2">
+        <summary class="sum1">
             Quiz
         </summary>
         <ol>
             <li>
                 Using master method (mm), the runtime for T(n) = 3T(n/2) + n<sup>2</sup> is:
             </li>
-            <ol type="a" class="nested">
+            <ol type="a">
                 <li>
                 <input type="radio" name="q1" value="a">
                 n log n
@@ -1225,7 +1275,7 @@
             <li>
                 Using mm, the runtime for T(n) = 2<sup>n</sup>(n/2) + n<sup>n</sup> is:
             </li>
-            <ol type="a" class="nested">
+            <ol type="a">
                 <li>
                 <input type="radio" name="q2" value="a">
                 &Theta;(n)
@@ -1246,7 +1296,7 @@
             <li>
                 Using mm, the runtime for T(n) = 0.5T(n/2) + 1/n is:
             </li>
-            <ol type="a" class="nested">
+            <ol type="a">
                 <li>
                 <input type="radio" name="q3" value="a">
                 &Theta;(.5n)
@@ -1266,7 +1316,7 @@
             </ol>
         </ol>
         <details>
-            <summary class="sum3">
+            <summary class="sum2">
                 Answers
             </summary>
             <p>
@@ -1283,6 +1333,10 @@
         Source Code
     </summary>
     <p>
+            
+<a href="https://github.com/gcallah/algorithms/tree/master/Java/DivideAndConquer">Java</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/Ruby/DivideAndConquer">Ruby</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/Python/DivideAndConquer">Python</a><br>
     </p>
 </details>
 

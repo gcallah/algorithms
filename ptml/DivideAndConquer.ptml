@@ -137,7 +137,7 @@
         </summary>
 
         <p>
-            We loon at the problem differently: let's find the nonempty,
+            We look at the problem differently: let's find the nonempty,
             contiguous subarray of our array whose values have the largest sum.
             We call this the <b>maximum subarray</b>.
         </p>
@@ -187,7 +187,7 @@
             </code>
         </p>
 
-        <!--include python_anywhere.txt -->
+<!--include python_anywhere.txt -->
 
         <p>
             To run the example from the textbook, type:
@@ -220,6 +220,8 @@
             </figcaption>
         </figure>
     </details>
+
+<!--include quiz4.1.qhtm -->
 
 </details>
 
@@ -286,7 +288,7 @@
             </code>
         </p>
 
-        <!--include python_anywhere.txt -->
+<!--include python_anywhere.txt -->
 
         <p>
             To run the example from the textbook, type:
