@@ -1,0 +1,2 @@
+Using master method (mm), the runtime for T(n)=3T(n/2)+n2 is:#n log n#&Theta;(n<sup>3/2</sup>)#MM does not apply#^&Theta;(n<sup>2</sup>)
+Using mm, the runtime for T(n) - 2<sup>n</sup>(n/2) + n<sup>n</sup> is:#&Theta(n)#^MM does not apply#&Theta;(2<sup>n</sup>)#&Theta;(n<sup>n</sup>)
