@@ -21,7 +21,7 @@
 
         <details>
             <summary class="sum1">
-                What is a binary search tree?
+                12.1 What is a binary search tree?
             </summary>
 
             <details>
@@ -64,7 +64,7 @@
     
         <details>
             <summary class="sum1">
-                Querying a binary search tree
+                12.2 Querying a binary search tree
             </summary>
             <p>
                 Why do we pass in a node rather than the tree itself?
@@ -163,7 +163,7 @@
     
         <details>
             <summary class="sum1">
-                Insertion and deletion
+                12.3 Insertion and deletion
             </summary>
 
             <details>
@@ -239,7 +239,7 @@
 
         <details>
             <summary class="sum1">
-                Randomly built binary search trees
+                12.4 Randomly built binary search trees
             </summary>
             <p>
                 We insert the keys randomly. (We would have to have all keys at

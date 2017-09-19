@@ -332,9 +332,137 @@
     </details> 
     
     <details>
-    <summary class="sum2">
-    Meaning of constants in O, &Theta; and &Omega; expressions
-    </summary>
+        <summary class="sum2">
+        Notes on log functions.
+        </summary>
+    
+        <p>
+            The textbook uses lg for base-2 logarithms.
+            <b>But</b>... the base doesn't really matter!
+            Why?
+        </p>
+
+        <table>
+            <tr>
+                <th>
+                    <i>n</i>
+                </th>
+                <th>
+                    log base-2
+                </th>
+                <th>
+                    log base-10
+                </th>
+                <th>
+                    Differ by...
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    2
+                </td>
+                <td>
+                    1
+                </td>
+                <td>
+                    .301
+                </td>
+                <td>
+                    3.322
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    10
+                </td>
+                <td>
+                    3.322
+                </td>
+                <td>
+                    1
+                </td>
+                <td>
+                    3.322
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    32
+                </td>
+                <td>
+                    5
+                </td>
+                <td>
+                    1.505
+                </td>
+                <td>
+                    3.322
+                </td>
+            </tr>
+        </table>
+
+        <p>
+        They differ by a constant factor!
+        <br />
+        <b>Log rule</b>: log<sub><i>b</i></sub>(<i>x</i>)
+        = log<sub><i>c</i></sub>(<i>x</i>)
+        / log<sub><i>c</i></sub>(<i>b</i>)
+        <br />
+        So...
+        log<sub>10</sub>(32)
+        = log<sub>2</sub>(32)
+        / log<sub>2</sub>(10)
+        <br />
+        = 5 / 3.322 = 1.505
+        </p>
+
+        <p>
+         Also, let's look at logs versus polynomial growth. Even for very small
+         powers <i>p</i> &gt; 0, <i>x</i><sub><i>p</i></sub> grows faster than 
+         log <i>x</i>. Below we use natural logs:
+        </p>
+
+        <table>
+            <tr>
+                <th>
+                    <i>p</i>
+                </th>
+                <th>
+                    <i>x</i><sup><i>p</i></sup> &gt; log <i>x</i> at
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    .3
+                </td>
+                <td>
+                    379
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    .2
+                </td>
+                <td>
+                    332,105
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    .1
+                </td>
+                <td>
+                    3,430,631,121,407,801
+                </td>
+            </tr>
+        </table>
+
+    </details>
+
+    <details>
+        <summary class="sum2">
+        Meaning of constants in O, &Theta; and &Omega; expressions
+        </summary>
         <p>
         Let's say we posit a search operating in <em>2n + 3</em> time.<br>
         We want to show that this has &Theta;(n) complexity.<br>
@@ -344,8 +472,6 @@
         <br>
         One solution is <em>k<sub>1</sub> = 1</em>, <em>k<sub>2</sub> = 3</em>,
         and <em>n<sub>0</sub> = 4</em>.
-        <br>
-        Let's demonstrate!
         </p>
     </details> 
 
@@ -713,7 +839,7 @@ Data structures
                     void complex(int n)
                     {
                         int i;
-                        for(i = n; i &gt; 0; i = i/2){
+                        for(i = n; i &gt; 1; i = i/2){
                             printf("Algorithms")
                         }
                     }                            

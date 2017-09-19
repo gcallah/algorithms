@@ -100,7 +100,7 @@
 
 <details>
     <summary class="sum1">
-        The maximum-subarray problem
+        4.1 The maximum-subarray problem
     </summary>
     <p>
         <img
@@ -137,7 +137,7 @@
         </summary>
 
         <p>
-            We loon at the problem differently: let's find the nonempty,
+            We look at the problem differently: let's find the nonempty,
             contiguous subarray of our array whose values have the largest sum.
             We call this the <b>maximum subarray</b>.
         </p>
@@ -187,7 +187,7 @@
             </code>
         </p>
 
-        <!--include python_anywhere.txt -->
+<!--include python_anywhere.txt -->
 
         <p>
             To run the example from the textbook, type:
@@ -221,12 +221,14 @@
         </figure>
     </details>
 
+<!--include quiz4.1.qhtm -->
+
 </details>
 
 
 <details>
     <summary class="sum1">
-        Strassen's algorithm for matrix multiplication
+        4.2 Strassen's algorithm for matrix multiplication
     </summary>
 
     <details>
@@ -286,7 +288,7 @@
             </code>
         </p>
 
-        <!--include python_anywhere.txt -->
+<!--include python_anywhere.txt -->
 
         <p>
             To run the example from the textbook, type:
@@ -386,7 +388,7 @@
 
 <details>
     <summary class="sum1">
-        The substitution method for solving recurrences
+        4.3 The substitution method for solving recurrences
     </summary>
     <p>
         <b>Note:</b> I am presenting these three methods in my
@@ -567,7 +569,7 @@
 
 <details>
     <summary class="sum1">
-        The recursion-tree method for solving recurrences
+        4.4 The recursion-tree method for solving recurrences
     </summary>
     <p>
         There are two ways to use this method:
@@ -1044,7 +1046,7 @@
 
 <details>
     <summary class="sum1">
-        The master method for solving recurrences
+        4.5 The master method for solving recurrences
     </summary>
 
     <p>
@@ -1166,23 +1168,8 @@
         </li>
     </ol>
 
-    <p>
-        <br>
-        <b>Sample problems:</b>
-    </p>
+<!--include quiz4.5.qhtm -->
 
-    <ol>
-        <li>T(n) = 2T(n / 4) + n<sup>2</sup>
-        </li>
-        <li>T(n) = 4T(n / 2) + n<sup>2</sup>
-        </li>
-        <li>T(n) = 20T(n / 4) + n
-        </li>
-        <li>T(n) = 3<sup>n</sup>(n / 3) + n<sup>3</sup>
-        </li>
-        <li>T(n) = 8T(n / 2) + 2<sup>n</sup>
-        </li>
-    </ol>
 </details>
 
 
@@ -1191,7 +1178,7 @@
         Source Code
     </summary>
     <p>
-        <!--include DivideAndConquer_langs.txt -->
+<!--include DivideAndConquer_langs.txt -->
     </p>
 </details>
 

@@ -112,7 +112,7 @@
 
 <details>
     <summary class="sum1">
-        The maximum-subarray problem
+        4.1 The maximum-subarray problem
     </summary>
     <p>
         <img
@@ -149,7 +149,7 @@
         </summary>
 
         <p>
-            We loon at the problem differently: let's find the nonempty,
+            We look at the problem differently: let's find the nonempty,
             contiguous subarray of our array whose values have the largest sum.
             We call this the <b>maximum subarray</b>.
         </p>
@@ -209,6 +209,7 @@
             </figcaption>
         </div>
 
+
         <p>
             To run the example from the textbook, type:
             <br/>
@@ -241,12 +242,62 @@
         </figure>
     </details>
 
+    <details>
+        <summary class="sum2">
+            Quiz
+        </summary>
+        <ol>
+            <li>
+                The problem with the brute force max-subarray solution is
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q1" value="a">
+                it is too complicated
+                </li>
+                <li>
+                <input type="radio" name="q1" value="b">
+                the force used might break the code
+                </li>
+                <li>
+                <input type="radio" name="q1" value="c">
+                it is too slow
+                </li>
+            </ol>
+            <li>
+                The three possible arrays containing the maximum sequence are
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q2" value="a">
+                An array of ints, an array of doubles, and an array of strings
+                </li>
+                <li>
+                <input type="radio" name="q2" value="b">
+                The array from A[0] to the mid-point; an array that crosses the midpoint, and the array from A[midpoint + 1] to the end
+                </li>
+                <li>
+                <input type="radio" name="q2" value="c">
+                The whole array, the null array, and the middle array
+                </li>
+            </ol>
+        </ol>
+        <details>
+            <summary class="sum3">
+                Answers
+            </summary>
+            <p>
+                1. c; 2. b; 
+            </p>
+        </details>
+    </details>
+
 </details>
 
 
 <details>
     <summary class="sum1">
-        Strassen's algorithm for matrix multiplication
+        4.2 Strassen's algorithm for matrix multiplication
     </summary>
 
     <details>
@@ -315,6 +366,7 @@
                 Python console
             </figcaption>
         </div>
+
 
         <p>
             To run the example from the textbook, type:
@@ -414,7 +466,7 @@
 
 <details>
     <summary class="sum1">
-        The substitution method for solving recurrences
+        4.3 The substitution method for solving recurrences
     </summary>
     <p>
         <b>Note:</b> I am presenting these three methods in my
@@ -595,7 +647,7 @@
 
 <details>
     <summary class="sum1">
-        The recursion-tree method for solving recurrences
+        4.4 The recursion-tree method for solving recurrences
     </summary>
     <p>
         There are two ways to use this method:
@@ -1072,7 +1124,7 @@
 
 <details>
     <summary class="sum1">
-        The master method for solving recurrences
+        4.5 The master method for solving recurrences
     </summary>
 
     <p>
@@ -1194,23 +1246,85 @@
         </li>
     </ol>
 
-    <p>
-        <br>
-        <b>Sample problems:</b>
-    </p>
+    <details>
+        <summary class="sum1">
+            Quiz
+        </summary>
+        <ol>
+            <li>
+                Using master method (mm), the runtime for T(n) = 3T(n/2) + n<sup>2</sup> is:
+            </li>
+            <ol type="a">
+                <li>
+                <input type="radio" name="q1" value="a">
+                n log n
+                </li>
+                <li>
+                <input type="radio" name="q1" value="b">
+                &Theta;(n<sup>3/2</sup>)
+                </li>
+                <li>
+                <input type="radio" name="q1" value="c">
+                MM does not apply
+                </li>
+                <li>
+                <input type="radio" name="q1" value="d">
+                &Theta;(n<sup>2</sup>)
+                </li>
+            </ol>
+            <li>
+                Using mm, the runtime for T(n) = 2<sup>n</sup>(n/2) + n<sup>n</sup> is:
+            </li>
+            <ol type="a">
+                <li>
+                <input type="radio" name="q2" value="a">
+                &Theta;(n)
+                </li>
+                <li>
+                <input type="radio" name="q2" value="b">
+                MM does not apply
+                </li>
+                <li>
+                <input type="radio" name="q2" value="c">
+                &Theta;(2<sup>n</sup>)
+                </li>
+                <li>
+                <input type="radio" name="q2" value="d">
+                &Theta;(n<sup>n</sup>)
+                </li>
+            </ol>
+            <li>
+                Using mm, the runtime for T(n) = 0.5T(n/2) + 1/n is:
+            </li>
+            <ol type="a">
+                <li>
+                <input type="radio" name="q3" value="a">
+                &Theta;(.5n)
+                </li>
+                <li>
+                <input type="radio" name="q3" value="b">
+                &Theta;(n)
+                </li>
+                <li>
+                <input type="radio" name="q3" value="c">
+                MM does not apply
+                </li>
+                <li>
+                <input type="radio" name="q3" value="d">
+                &Theta;(1/n)
+                </li>
+            </ol>
+        </ol>
+        <details>
+            <summary class="sum2">
+                Answers
+            </summary>
+            <p>
+                1. d; 2. b; 3. c; 
+            </p>
+        </details>
+    </details>
 
-    <ol>
-        <li>T(n) = 2T(n / 4) + n<sup>2</sup>
-        </li>
-        <li>T(n) = 4T(n / 2) + n<sup>2</sup>
-        </li>
-        <li>T(n) = 20T(n / 4) + n
-        </li>
-        <li>T(n) = 3<sup>n</sup>(n / 3) + n<sup>3</sup>
-        </li>
-        <li>T(n) = 8T(n / 2) + 2<sup>n</sup>
-        </li>
-    </ol>
 </details>
 
 
