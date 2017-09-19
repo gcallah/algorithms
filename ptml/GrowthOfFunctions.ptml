@@ -250,12 +250,16 @@
                 <th>
                     Fast Alpha machine,
                     <br />
-                    running C code
+                    C code,
+                    <br />
+                    running O(n<sup>3</sup>) algo.
                 </th>
                 <th>
-                    TRA-80
+                    TRS-80
                     <br />
-                    running interpreted Basic
+                    interpreted Basic,
+                    <br />
+                    running O(n) algo.
                 </th>
             </tr>
             <tr>
