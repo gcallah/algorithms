@@ -32,19 +32,142 @@
 
             <details>
                 <summary class="sum1">
-                    Overview
+                   Overview about Heaps
                 </summary>
+            <details>
+                <summary class="sum2">
+                    What is a heap ? 
+                </summary>
+            <p>
+            Heaps are used in many famous algorithms such as Dijkstra's algorithm for finding the shortest path,
+            the heap sort sorting algorithm, implementing priority queues, and more. Essentially, heaps are the 
+            data structure you want to use when you want to be able to access the maximum or minimum element very
+            quickly.There are many variations of heaps, each offering advantages and tradeoffs.<br>
+
+            <b>Definition</b><br>
+            The (binary) heap data structure is an array object that we can view as a nearly complete binary tree 
+            as shown in the figure below.Each node of the tree corresponds to an element of the array. The tree is 
+            completely filled on all levels except possibly the lowest, which is filled from the left up to a point.
+            <br>
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Heap-as-array.svg/603px-Heap-as-array.svg.png">
+            <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <em>(Heap Image)</em>
+            <br>
+            <br>
+            In simpler terms a heap is a specialized tree-based data structure that satisfies the heap property ie if P is a 
+            parent of C, then the key(the value) of nope P is greater than the key of node C (Max Heap) 
+            </p>
+            
+            </details>
+            <details>
+                <summary class="sum2">
+                    Types of Heaps. 
+                </summary>
+            <p>
+            Three are two types of heaps: <br>
+            1) Max Heap <br>
+            2) Min Heap <br>
+
+            In the max heap the parent nodes are always greater than or equal to those of the children and the root node 
+            is the one with the highest key value. Max heaps are generally used for implementation of Heap sort. 
+            <br>
+            In the case of min heap the keys of the parent nodes are always less than or equal to those of the children 
+            and the lowest key is in the root node. Min heaps are generally used for implementation of priority queues. 
+            </p>
+
+            </details>
+            <details>
+                <summary class="sum2">
+                    Notes about Heaps 
+                </summary>
+            <p>
+             <p>
+                Heap A (not garbage-collected storage) is a nearly complete binary tree.<br>
+                &middot Height of node = # of edges on a longest simple path from the node down to a leaf.<br>
+                &middot Height of heap = height of root = (lg n). A heap can be stored as an array A.<br>
+                &middot Root of tree is A[0].<br>
+                &middot Parent of A[i] = A[&#8970i/2&#8971].<br>
+                &middot Left child of A[i ] = A[2i ].<br>
+                &middot Right child of A[i ] = A[2i + 1].<br>
+                &middot Computing is fast with binary representation implementation.<br>
+                </p>
+            </p>
+            </details>
             </details>
 
             <details>
                 <summary class="sum1">
-                    Heaps
+                    Heap Property
                 </summary>
+            <p>
+            There are two general versions of the heap property: a min-heap property and a max-heap property.
+            </p>
+            <details>
+                <summary class="sum2">
+                    Max Heap Property
+                </summary>
+            <p>
+            If A is an array representation of a heap, then in Max-heap: <br>
+            A[parent[i]] > A[i] <br>
+            which means that a node can't have a greater value than its parent. In a max-heap, the largest element
+             is stored at the root, and the minimum elements are in the leaves.
+            </p>
+            </details>
+
+            <details>
+                <summary class="sum2">
+                    Min Heap Property
+                </summary>
+            <p>
+            If B is an array representation of a heap then, in Min-heap:<br>
+            B[parent[i]] < B[i] <br>
+            which means that a parent node can't have a greater value than its children. Thus, the minimum element is
+             located at the root, and the maximum elements are located in the leaves
+            </p>
+            </details>
+            </details>
+
+            <details>
+            <summary class="sum1">
+                Minimum Functionalities of a heap
+            </summary>
+            <blockquote>
+              <ul>
+              
+              <li><p><strong>Build Heap</strong>: Constructs the heap. Build-Heap is usually implemented using the <code>Insert</code> and <code>Heapify</code> function repeatedly. So starting from an empty heap, 
+               nodes are added with <code>Insert</code> and then <code>Heapify</code> is called to make sure the 
+               heap maintains the heap properties at each step.</p></li>
+
+              <li><p><strong>Heapify</strong>: Used to maintain the heap properties (described in above sections).</p></li>
+
+              <li><p><strong>Insert</strong>: It is important to be able to add elements to the heap. </p></li>
+
+              <li><p><strong>Remove</strong>: It is important to be able to delete elements from the heap. </p></li>
+
+              <li><p><strong>Find Minimum/Maximum</strong> and <strong>Extract Minimum/Maximum</strong>: Depending
+               on the purpose of the heap, the largest or smallest elements are often of interest so these operations
+            are useful to have.</p></li>
+
+              </ul>
+            </blockquote>
+            </details>
+            <details>
+                <summary class="sum1">
+                    Heap Sort
+                </summary>
+            <p>
+            Heapsort is a comparison based sorting algorithm that uses a binary heap data structure. Like mergesort,
+            heapsort has a running time of O(nlogn) and like insertion sort, heapsort sorts in-place so no extra
+            space is needed during the sort. The binary heap data structure allows the heapsort algorithm to take
+            advantage of the heap's heap properties and the heapsort algorithm makes use of the efficient running 
+            time for inserting to and deleting from the heap.
+            </p>
             </details>
 
             <details>
                 <summary class="sum1">
-                    Maintaining the Heap Property
+                    Priority Queue
                 </summary>
             </details>
 
@@ -78,6 +201,7 @@
             </figcaption>
         </div>
 
+
                 <p>
                     To run the example from the textbook, type:
                     <br/>
@@ -106,11 +230,6 @@
                 </summary>
 
                 <p>
-            
-<a href="https://github.com/gcallah/algorithms/tree/master/Java/Heapsort">Java</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/Ruby/Heapsort">Ruby</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/C++/Heapsort">C++</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/Python/Heapsort">Python</a><br>
                 </p>
             </details>
 
