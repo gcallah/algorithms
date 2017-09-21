@@ -1,12 +1,12 @@
     <details>
-        <summary class="sum2">
+        <summary class="sum1">
             Quiz
         </summary>
         <ol>
             <li>
                 The problem with the brute force max-subarray solution is
             </li>
-            <ol type="a" class="nested">
+            <ol type="a">
                 <li>
                 <input type="radio" name="q1" value="a">
                 it is too complicated
@@ -23,7 +23,7 @@
             <li>
                 The three possible arrays containing the maximum sequence are
             </li>
-            <ol type="a" class="nested">
+            <ol type="a">
                 <li>
                 <input type="radio" name="q2" value="a">
                 An array of ints, an array of doubles, and an array of strings
@@ -39,7 +39,7 @@
             </ol>
         </ol>
         <details>
-            <summary class="sum3">
+            <summary class="sum2">
                 Answers
             </summary>
             <p>
