@@ -36,16 +36,17 @@
             The (binary) heap data structure is an array object that we can view as a nearly complete binary tree 
             as shown in the figure below.Each node of the tree corresponds to an element of the array. The tree is 
             completely filled on all levels except possibly the lowest, which is filled from the left up to a point.
-            <br>
-            <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Heap-as-array.svg/603px-Heap-as-array.svg.png">
-            <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <em>(Heap Image)</em>
-            <br>
-            <br>
-            In simpler terms a heap is a specialized tree-based data structure that satisfies the heap property ie if P is a 
-            parent of C, then the key(the value) of nope P is greater than the key of node C (Max Heap) 
+            <br><br><br>
             </p>
+            <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/M3B0UJWS_ag"
+                        frameborder="0" allowfullscreen></iframe>
+                    <figcaption>
+                    Heapify
+                    </figcaption>
+            </figure>
+            
             
             </details>
             <details>
@@ -86,13 +87,25 @@
 
             <details>
                 <summary class="sum1">
-                    6.2 Heap Property
+                    Maintaining the Heap Property
                 </summary>
             <p>
+            Heapify is a procedure for manipulating heap data structures. 
+            It is given an array A and index i into the array.
+            The subtree rooted at the children of A[i] are heap but node A[i]
+            itself may possibly violate the heap property i.e., A[i] < A[2i]
+            or A[i] < A[2i +1]. The procedure 'Heapify' manipulates the tree 
+            rooted at A[i] so it becomes a heap. In other words, 'Heapify' 
+            is let the value at A[i] "float down" in a heap so that subtree 
+            rooted at index i becomes a heap.<br><br>
             There are two general versions of the heap property: a min-heap property and a max-heap property.
             </p>
             <details>
                 <summary class="sum2">
+                    Types of Heap Property
+                </summary>
+                <details>
+                <summary class="sum3">
                     Max Heap Property
                 </summary>
                 <p>
@@ -104,7 +117,7 @@
                 </details>
     
                 <details>
-                    <summary class="sum2">
+                    <summary class="sum3">
                         Min Heap Property
                     </summary>
                 <p>
@@ -114,28 +127,71 @@
                  located at the root, and the maximum elements are located in the leaves
                 </p>
                 </details>
-<!--include quiz6.2.qhtm -->
+            </details>
+            <details>
+                <summary class="sum2">
+                    Outline of the Heapify Procedure 
+                </summary>
+            <p>
+            Heapify picks the largest child key and compare it to the parent
+            key.
+            If parent key is larger than heapify quits, otherwise it swaps the
+            parent key with the largest child key. So that the parent is now
+            becomes larger than its children.It is important to note that swap
+            may 
+            destroy the heap property of the subtree rooted at the largest
+            child node.
+            If this is the case, Heapify calls itself again using largest
+            child node as the new root. <br><br>
+            <code>
+            Heapify (A, i) <br>
+            &nbsp l = left [i]  <br>
+            &nbsp r = right [i]  <br>
+            &nbsp if l <= heap-size [A] and A[l] > A[i]  <br>
+            &nbsp&nbsp&nbsp&nbsp   largest = l  <br>
+            &nbsp else largest = i  <br>
+            &nbsp if r <= heap-size [A] and A[r] > A[largest]  <br>
+            &nbsp&nbsp&nbsp&nbsp  largest = r  <br>
+            &nbsp if largest != i  <br>
+            &nbsp&nbsp&nbsp&nbsp    exchange A[i] with A[largest]  <br>
+            &nbsp&nbsp&nbsp&nbsp    Heapify (A, largest)  <br><br>
+            </code>
+            </p>
+
+            <br><br><br>
+            <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/CAbDbiCfERY"
+                        frameborder="0" allowfullscreen></iframe>
+                    <figcaption>
+                    Heapify
+                    </figcaption>
+            </figure>
+
+
 
             </details>
 
+<!--include quiz6.2.qhtm -->
+            </details>
             <details>
             <summary class="sum1">
-                Minimum Functionalities of a heap
+                Building a heap
             </summary>
             <blockquote>
               <ul>
               
-              <li><p><strong>Build Heap</strong>: Constructs the heap. Build-Heap is usually implemented using the <code>Insert</code> and <code>Heapify</code> function repeatedly. So starting from an empty heap, 
+              <li style="font-size:20px" ><p><strong>Build Heap</strong>: Constructs the heap. Build-Heap is usually implemented using the <code>Insert</code> and <code>Heapify</code> function repeatedly. So starting from an empty heap, 
                nodes are added with <code>Insert</code> and then <code>Heapify</code> is called to make sure the 
                heap maintains the heap properties at each step.</p></li>
 
-              <li><p><strong>Heapify</strong>: Used to maintain the heap properties (described in above sections).</p></li>
+              <li style="font-size:20px" ><p><strong>Heapify</strong>: Used to maintain the heap properties (described in above sections).</p></li>
 
-              <li><p><strong>Insert</strong>: It is important to be able to add elements to the heap. </p></li>
+              <li style="font-size:20px"><p><strong>Insert</strong>: It is important to be able to add elements to the heap. </p></li>
 
-              <li><p><strong>Remove</strong>: It is important to be able to delete elements from the heap. </p></li>
+              <li style="font-size:20px"><p><strong>Remove</strong>: It is important to be able to delete elements from the heap. </p></li>
 
-              <li><p><strong>Find Minimum/Maximum</strong> and <strong>Extract Minimum/Maximum</strong>: Depending
+              <li style="font-size:20px"><p><strong>Find Minimum/Maximum</strong> and <strong>Extract Minimum/Maximum</strong>: Depending
                on the purpose of the heap, the largest or smallest elements are often of interest so these operations
             are useful to have.</p></li>
 
@@ -144,7 +200,7 @@
             </details>
             <details>
                 <summary class="sum1">
-                    Heap Sort
+                    The Heap Sort Algorithm
                 </summary>
             <p>
             Heapsort is a comparison based sorting algorithm that uses a binary heap data structure. Like mergesort,
@@ -153,7 +209,36 @@
             advantage of the heap's heap properties and the heapsort algorithm makes use of the efficient running 
             time for inserting to and deleting from the heap.
             </p>
+            
+
+            <details> 
+                <summary class="sum2">
+                    Implementation
+                </summary>
+            <p>
+            The heap sort algorithm starts by using procedure BUILD-HEAP to build a heap on the input array A[1 . . n]. Since the maximum element of the array stored at the root A[1], it can be put into its correct final position by exchanging it with A[n] (the last element in A). If we now discard node n from the heap than the remaining elements can be made into heap. Note that the new element at the root may violate the heap property. All that is needed to restore the heap property. <br><br>
+            HEAPSORT(A) <br>
+            <code>
+            &nbsp BUILD-MAX-HEAP(A) <br>
+            &nbsp for i = A.length downto 2 <br>
+            &nbsp &nbsp&nbsp&nbsp      exchange A[1] with A[i] <br>
+            &nbsp &nbsp&nbsp&nbsp      A.heap-size = A.head-size - 1 <br>
+            &nbsp &nbsp&nbsp&nbsp      MAX-HEAPIFY(A, 1) <br><br><br>
+            </code>
+            The HEAPSORT procedure takes time O(n lg n), since the call to BUILD_HEAP 
+            takes time O(n) and each of the n -1 calls to Heapify takes time O(lg n).
+            </p>
+            <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/2DmK_H7IdTo"
+                        frameborder="0" allowfullscreen></iframe>
+                    <figcaption>
+                    Heap Sort
+                    </figcaption>
+                </figure> 
             </details>
+            </details>
+
 
             <details>
                 <summary class="sum1">
