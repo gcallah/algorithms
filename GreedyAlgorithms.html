@@ -342,7 +342,7 @@
                     </summary>
 
                     <p>
-                    The algorithm it Is straightforward: find the first compatible 
+                    The algorithm it Is straightforward: find the first compatible
                     activity, then call the algorithm again with the rest of the activity list.
                     <br>
                     <br>
@@ -370,6 +370,52 @@
                 </details>
             </details>
 
+            <h2>
+                            Run the Python code
+                        </h2>
+
+                        <p>
+                            In the console below, type or paste:
+                            <br/>
+                            <code>
+                                !git clone https://gist.github.com/167f4e6856ca05247a10a5fc5fa2a24c.git
+                                <br/>
+                                cd 167f4e6856ca05247a10a5fc5fa2a24c
+                                <br/>
+                                To run the example from the textbook, type:
+                                start=[1,3,0,5,3,5,6,8,8,2,12]
+                                finish=[4,5,6,7,9,9,10,11,12,14,16]
+                                greedy_activity_selector(start,finish)
+                                <br/>
+                            </code>
+                        </p>
+
+        <div class="python-console">
+            <iframe style="width: 640; height: 480;"
+                    name="embedded_python_anywhere"
+                    src="https://www.pythonanywhere.com/embedded3/" scrolling="yes">
+            </iframe>
+            <figcaption>
+                Python console
+            </figcaption>
+        </div>
+
+
+                        <!--p>
+                            To run the example from the textbook, type:
+                            <br/>
+                            <code>
+                                start=[1,3,0,5,3,5,6,8,8,2,12]
+                                finish=[4,5,6,7,9,9,10,11,12,14,16]
+                                <br/>
+                                greedy_activity_selector(start,finish)
+                            </code>
+                        </p-->
+                        <p>
+                            Now you can experiment with the algorithm by typing
+                            in your own start and finish time arrays (start_time = [x, y, z], finish_time = [p, q, r])
+                            and running greedy_activity_selector(start_time,finish_time)
+                        </p>
 
             <details>
                 <summary class="sum1">
@@ -386,7 +432,7 @@
                     </li>
                     <li>Develop a recursive solution.
                     </li>
-                    <li>Show if we make the greedy choice, that only one 
+                    <li>Show if we make the greedy choice, that only one
                         sub-problem remains.
                     </li>
                     <li>Prove that it is always safe to make the greedy
@@ -427,14 +473,14 @@
                     </summary>
 
                     <p>
-                    This is simpler then for dynamic programming 
-                    problems: 
-                    all we need to do is show that a 
+                    This is simpler then for dynamic programming
+                    problems:
+                    all we need to do is show that a
                     greedy choice combined with
                     an optimal solution to the sub problem of the rest of
-                    the data gives us an optimal solution to the 
+                    the data gives us an optimal solution to the
                     original problem.
-                    We use induction to show that making the 
+                    We use induction to show that making the
                     greedy choice at every
                     step produces an optimal solution.
                     </p>
@@ -449,7 +495,7 @@
                     <p>
                     Two knapsack problems:
                     </p>
-    
+
                     <ol>
                         <li>A thief can take entire items from a store or not, and
                             put them in his knapsack.
@@ -458,7 +504,7 @@
                             and put it in his knapsack.
                         </li>
                     </ol>
-    
+
                     <p>
                     The latter can be solved with a greedy algorithm, the former
                     cannot.
@@ -498,7 +544,7 @@
                     </summary>
 
                     <p>
-                    Prefix codes are coding schemes in which no codeword 
+                    Prefix codes are coding schemes in which no codeword
                     is a prefix of a different codeword.
                     <br>
                     This makes decoding easier -- no lookahead.
@@ -507,7 +553,7 @@
                     It means that we never hit two letters on the same path
                     down the tree!
                     </p>
-    
+
                     <table>
                         <tr>
                             <td>
@@ -841,7 +887,7 @@
                     </h4>
 
                     <p>
-                        A subset in I is a <i>basis</i> for a 
+                        A subset in I is a <i>basis</i> for a
                         matroid if it is a <i>maximal</i>
                         subset, which here means it is not contained in any
                         larger subset that is in I.
@@ -916,7 +962,7 @@
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Thread_pool.svg/400px-Thread_pool.svg.png">
                     <br>
                     <br>
-                    The surprise here is that we can 
+                    The surprise here is that we can
                     simply greedily grab tasks in
                     order of increasing deadlines, and our algorithm will work.
                 </p>
@@ -953,7 +999,7 @@
                     </li>
                 </ul>
             </details>
-            
+
             <details>
                 <summary class="sum1">
                     Homework
@@ -961,8 +1007,8 @@
                 <ol>
                     <li id="hw1">
                         Our intuition might tell us that choosing the shortest
-                        subway path from MetroTech Center to Yankee Stadium 
-                        is a simpler problem than choosing a minimum 
+                        subway path from MetroTech Center to Yankee Stadium
+                        is a simpler problem than choosing a minimum
                         spanning tree for all New York subway
                         stations. Yet the latter can be solved with a greedy algorithm,
                         while the first cannot. Why?
