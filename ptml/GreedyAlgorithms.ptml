@@ -921,9 +921,10 @@
                                 <br/>
                                 cd 167f4e6856ca05247a10a5fc5fa2a24c
                                 <br/>
-                                To run the example from the textbook, type:
                                 start=[1,3,0,5,3,5,6,8,8,2,12]
+                                <br/>
                                 finish=[4,5,6,7,9,9,10,11,12,14,16]
+                                <br/>
                                 greedy_activity_selector(start,finish)
                                 <br/>
                             </code>
