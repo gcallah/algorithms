@@ -20,7 +20,7 @@
 
             <details>
                 <summary class="sum1">
-                   Overview about Heaps
+                   Overview
                 </summary>
             <details>
                 <summary class="sum2">
@@ -94,7 +94,7 @@
 
             <details>
                 <summary class="sum1">
-                    Maintaining the Heap Property
+                    Maintaining the heap property
                 </summary>
             <p>
             Heapify is a procedure for manipulating heap data structures. 
@@ -216,7 +216,7 @@
             </details>
             <details>
                 <summary class="sum1">
-                    The Heap Sort Algorithm
+                    The heap sort algorithm
                 </summary>
             <p>
             Heapsort is a comparison based sorting algorithm that uses a binary heap data structure. Like mergesort,
@@ -266,7 +266,7 @@
 
             <details>
                 <summary class="sum1">
-                    Priority Queue
+                    Priority queues
                 </summary>
             <details>
                 <summary class="sum2">
