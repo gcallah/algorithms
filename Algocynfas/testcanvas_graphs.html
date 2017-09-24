@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test for fabric</title>
+
+</head>
+<body>
+
+<canvas id="canvas" width="800" height="800" style="border:1px solid #000000">
+
+
+</canvas>
+<script src="fabric.js"></script>
+    <script src="testfunctions.js">
+
+    </script>
+<script src="./testfunctions.js"></script>
+<script>
+
+    var canvas = new fabric.Canvas('canvas');
+    async function x () {
+  // do not declare another canvas, you've already done so in other block
+  var a10 = await addRoot(10)
+  var a20 = await addNode(a10, 20, 225)
+  var a40 = await addNode(a10, 40, 315)
+  var a30 = await addNode(a20, 30, 270)
+}
+x()
+
+</script>
+
+</body>
+</html>
