@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            Dynamic Programing Video
+        </title>
+    </head>
+
+    <body>
+
+    <div id="header">
+        <div id="logo">
+            <img src="graphics/Julia.png">
+        </div>
+        <div id="user-tools">
+            <a href="index.html">Home</a>
+            &nbsp; &nbsp; 
+            <a href="about.html">About</a>
+            &nbsp; &nbsp;
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </div>
+
+
+        <h1>
+            Dynamic Programing Video
+        </h1>
+            <p>
+            A brief lecture discussing a dynamic programming problem, and the
+            conditions under which one can and cannot use a greedy
+            algorithm.
+            <br />
+            The context of this presentation assumes that students have already
+            been introduced to both dynamic programming and greedy algorithms,
+            but are puzzled as to when one or the other 
+            technique applies (something I have found is a common problem).
+            <br />
+            And the idea that opportunity cost is the differentiator here needs
+            to be refined a bit: I only arrived at this today while preparing
+            this lecture. The refinement is needed because even in the activity
+            selection problem, there is <i>some</i> opportunity cost: you still
+            forego some activities in taking the greedy choice. But the
+            opportunity cost does not "spillover" into other choices. I have
+            begun work on trying to formalize this notion, and will produce a
+            paper stating this relationship more precisely.
+            </p>
+
+            <figure>
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/4l3pXjEXDp0"
+                    frameborder="0" allowfullscreen>
+                </iframe>
+                <figcaption>
+                A dynamic scheduling problem.
+                </figcaption>
+             </figure>
+    </body>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-97026578-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+</html>
