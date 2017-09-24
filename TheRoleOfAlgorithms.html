@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            Design and Analysis of Algorithms, Introduction
+        </title>
+    </head>
+    <body>
+    <div id="header">
+        <div id="logo">
+            <img src="graphics/Julia.png">
+        </div>
+        <div id="user-tools">
+            <a href="index.html">Home</a>
+            &nbsp; &nbsp; 
+            <a href="about.html">About</a>
+            &nbsp; &nbsp;
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </div>
+
+        <h1>
+           Design and Analysis of Algorithms: The Role of Algorithms
+                <a href="#note1">*</a>
+        </h1>
+
+        
+    <details>
+    <summary class="sum1">
+    Introduction
+    </summary>
+      <p>
+      Syllabus: Logistics, grading, exams, homeworks, cheating. 
+      </p>
+    </details> 
+
+    <details>
+    <summary class="sum1">
+    We will study algorithms.
+    </summary>
+      <p>
+      <b>What's an algorithm?</b>
+      A carefully written recipe.<br>
+      We need to agree what steps are allowed in a recipe.<br>
+      We need to agree what problem the recipe is solving, ahead of time.<br>
+      <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Euclid_flowchart.svg/220px-Euclid_flowchart.svg.png">
+      </p>
+    </details> 
+      
+    <details>
+    <summary class="sum1">
+    Important considerations
+    </summary>
+      <p>
+      Things to keep in mind about algorithms (when analyzing and/or designing them):
+      </p>
+          
+    <details>
+    <summary class="sum2">
+    Termination
+    </summary>
+
+    <p>
+          On any legal (meaning, consistent with algorithm specification) input,
+        the procedure you are describing should
+        always eventually stop, or <i>terminate</i>.
+        (In this course we will not talk about
+        algorithms that are intended to run "forever,"
+        such as the scheduler in an operating system.)
+    </p>
+    </details> 
+        
+    <details>
+    <summary class="sum2">
+    Correctness
+    </summary>
+
+    <p>
+        On any legal input, provided the procedure has terminated,
+        the result that it produces has to be correct. Not <em>sometimes</em> correct,
+        not <em>mostly</em> correct, but <em>always</em> correct.
+    </p>
+    </details> 
+        
+    <details>
+    <summary class="sum2">
+    Performance
+    </summary>
+
+    <p>
+        You can measure performance in many different ways.
+        The course will focus on the running time,
+        but there are many others:
+    </p>
+
+        <ul>
+            <li>
+                space (memory use)
+            </li>
+            <li>
+                disk use, amount of disk-memory communication
+            </li>
+            <li>
+                number of processors in a parallel program
+            </li>
+            <li>
+                total amount of work in a parallel program
+            </li>
+            <li>
+                number of cores in a multi-core program
+            </li>
+            <li>
+                total amount of communication in a distributed program
+            </li>
+            <li>
+                power consumed in an algorithm tuned to low-power devices
+            </li>
+            <li>
+                many others
+            </li>
+        </ul>
+
+        <p>
+    
+          So in short, when you describe a recipe for doing something,
+          make sure it always stops,
+          make sure it always produces correct answers,
+          and only after that worry about how
+          efficient it is. (Depending on the algorithm,
+          some or all of these are very
+          easy, and some may not be obvious at all. We will see examples later.)
+        </p>
+        </details> 
+    </details> 
+
+    <p>
+    <a name="note1">* Based on Prof. Boris Aronov's lecture notes. </a>
+    <br>
+    <a name="note2">** Material drawn from Khan Academy and
+       https://en.wikipedia.org/wiki/Big_O_notation.</a>
+    </p>
+    </body>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-97026578-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+</html>

@@ -1,0 +1,11 @@
+# MultithreadedAlgorithms
+## Running Examples
+```
+algorithms/Java$ javac MultithreadedAlgorithms/MultithreadedAlgorithms.java
+algorithms/Java$ java MultithreadedAlgorithms.MultithreadedAlgorithms
+```
+
+## Running tests
+```
+algorithms/Java$ source tests.sh
+```

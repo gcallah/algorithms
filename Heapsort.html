@@ -1,0 +1,582 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            Design and Analysis of Algorithms: Heapsort
+        </title>
+    </head>
+
+    <body>
+    <div id="header">
+        <div id="logo">
+            <img src="graphics/Julia.png">
+        </div>
+        <div id="user-tools">
+            <a href="index.html">Home</a>
+            &nbsp; &nbsp; 
+            <a href="about.html">About</a>
+            &nbsp; &nbsp;
+            <a href="feedback.html">Feedback</a>
+        </div>
+    </div>
+
+        <h1>
+            Design and Analysis of Algorithms: Heapsort
+        </h1>
+
+            <div style="text-align:center">
+                <p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Sorting_heapsort_anim.gif">
+                </p>
+            </div>
+
+            <details>
+                <summary class="sum1">
+                   Overview
+                </summary>
+            <details>
+                <summary class="sum2">
+                    What is a heap ? 
+                </summary>
+            <p>
+            Heaps are used in many famous algorithms such as Dijkstra's 
+            algorithm for finding the shortest path, the heap sort sorting 
+            algorithm, implementing priority queues, and more. Essentially, 
+            heaps are the data structure you want to use when you want to be 
+            able to access the maximum or minimum element very quickly.There 
+            are many variations of heaps, each offering advantages and 
+            tradeoffs.<br>
+
+            <b>Definition</b><br>
+            The (binary) heap data structure is an array object that we can
+            view as a nearly complete binary tree as shown in the figure
+            below.Each node of the tree corresponds to an element of the 
+            array. The tree is completely filled on all levels except 
+            possibly the lowest, which is filled from the left up to a point.
+            <br><br><br>
+            </p>
+            <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/M3B0UJWS_ag"
+                        frameborder="0" allowfullscreen></iframe>
+                    <figcaption>
+                    Heapify
+                    </figcaption>
+            </figure>
+            
+            
+            </details>
+            <details>
+                <summary class="sum2">
+                    Types of Heaps. 
+                </summary>
+            <p>
+            Three are two types of heaps: <br>
+            1) Max Heap <br>
+            2) Min Heap <br>
+
+            In the max heap the parent nodes are always greater than or 
+            equal to those of the children and the root node is the one with
+            the highest key value. 
+            <br>
+            In the case of min heap the keys of the parent nodes are always
+            less than or equal to those of the children and the lowest key is 
+            in the root node. 
+            </p>
+
+            </details>
+            <details>
+                <summary class="sum2">
+                    Notes about Heaps 
+                </summary>
+            <p>
+             <p>
+                Heap A (not garbage-collected storage) is a nearly complete 
+                binary tree.<br>
+                &middot; Height of node = # of edges on a longest simple path
+                from the node down to a leaf.<br>
+                &middot; Height of heap = height of root = (lg n). A heap can
+                be stored as an array A.<br>
+                &middot; Root of tree is A[0].<br>
+                &middot; Parent of A[i] = A[&#8970i/2&#8971].<br>
+                &middot; Left child of A[i ] = A[2i ].<br>
+                &middot; Right child of A[i ] = A[2i + 1].<br>
+                &middot; Computing is fast with binary representation 
+                implementation.<br><br>
+                Here is a table regarding the operations time complexities 
+                of the various heaps.
+                </p>
+            <br>
+            <div style="text-align:left">
+                <p>
+                <img src="https://qph.ec.quoracdn.net/main-qimg-43ccd7b8a1e2179da817f46e462549d7">
+                </p>
+            </div>
+            </p>
+            </details>
+            </details>
+
+            <details>
+                <summary class="sum1">
+                    Maintaining the heap property
+                </summary>
+            <p>
+            Heapify is a procedure for manipulating heap data structures. 
+            It is given an array A and index i into the array.
+            The subtree rooted at the children of A[i] are heap but node A[i]
+            itself may possibly violate the heap property i.e., A[i] < A[2i]
+            or A[i] < A[2i +1]. The procedure 'Heapify' manipulates the tree 
+            rooted at A[i] so it becomes a heap. In other words, 'Heapify' 
+            is let the value at A[i] "float down" in a heap so that subtree 
+            rooted at index i becomes a heap.<br><br>
+            There are two general versions of the heap property: a min-heap 
+            property and a max-heap property.
+            </p>
+            <details>
+                <summary class="sum2">
+                    Types of Heap Property
+                </summary>
+                <details>
+                <summary class="sum3">
+                    Max Heap Property
+                </summary>
+                <p>
+                If A is an array representation of a heap, then in Max-heap: <br>
+                A[parent[i]] > A[i] <br>
+                which means that a node can't have a greater value than its 
+                parent. In a max-heap, the largest element
+                is stored at the root, and the minimum elements are in the
+                leaves.
+                </p>
+                </details>
+    
+                <details>
+                    <summary class="sum3">
+                        Min Heap Property
+                    </summary>
+                <p>
+                If B is an array representation of a heap then, in Min-heap:<br>
+                B[parent[i]] < B[i] <br> which means that a parent node can't 
+                have a greater value than its children. Thus, the minimum 
+                element is located at the root, and the maximum elements are
+                located in the leaves
+                </p>
+                </details>
+            </details>
+            <details>
+                <summary class="sum2">
+                    Outline of the Heapify Procedure 
+                </summary>
+            <p>
+            Heapify picks the largest child key and compare it to the parent
+            key.
+            If parent key is larger than heapify quits, otherwise it swaps the
+            parent key with the largest child key. So that the parent is now
+            becomes larger than its children.It is important to note that swap
+            may 
+            destroy the heap property of the subtree rooted at the largest
+            child node.
+            If this is the case, Heapify calls itself again using largest
+            child node as the new root. <br><br>
+            <code>
+            Heapify (A, i) <br>
+            &nbsp l = left [i]  <br>
+            &nbsp r = right [i]  <br>
+            &nbsp if l <= heap-size [A] and A[l] > A[i]  <br>
+            &nbsp&nbsp&nbsp&nbsp   largest = l  <br>
+            &nbsp else largest = i  <br>
+            &nbsp if r <= heap-size [A] and A[r] > A[largest]  <br>
+            &nbsp&nbsp&nbsp&nbsp  largest = r  <br>
+            &nbsp if largest != i  <br>
+            &nbsp&nbsp&nbsp&nbsp    exchange A[i] with A[largest]  <br>
+            &nbsp&nbsp&nbsp&nbsp    Heapify (A, largest)  <br><br>
+            </code>
+            </p>
+
+            <br><br><br>
+            <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/CAbDbiCfERY"
+                        frameborder="0" allowfullscreen></iframe>
+                    <figcaption>
+                    Build Heap
+                    </figcaption>
+            </figure>
+
+
+
+            </details>
+
+    <details>
+        <summary class="sum1">
+            Quiz
+        </summary>
+        <ol>
+            <li>
+                The max heap property means that
+            </li>
+            <ol type="a">
+                <li>
+                <input type="radio" name="q1" value="a">
+                a node can't have a greater value than its parent
+                </li>
+                <li>
+                <input type="radio" name="q1" value="b">
+                a node must have a value equal to its parent
+                </li>
+                <li>
+                <input type="radio" name="q1" value="c">
+                a node can't have a lesser than its parent
+                </li>
+                <li>
+                <input type="radio" name="q1" value="d">
+                all values must be heaped up in one node
+                </li>
+            </ol>
+        </ol>
+        <details>
+            <summary class="sum2">
+                Answers
+            </summary>
+            <p>
+                1. a; 
+            </p>
+        </details>
+    </details>
+            </details>
+            <details>
+            <summary class="sum1">
+                Building a heap
+            </summary>
+            <blockquote>
+              <ul>
+              
+              <li style="font-size:15px" ><p><strong>Build Heap</strong>: 
+              Constructs the heap. Build-Heap is usually implemented using 
+              the <code>Insert</code> and <code>Heapify</code> function 
+              repeatedly. So starting from an empty heap, 
+              nodes are added with <code>Insert</code> and then 
+              <code>Heapify</code> is called to make sure the 
+              heap maintains the heap properties at each step.</p></li>
+
+              <li style="font-size:15px" ><p><strong>Heapify</strong>: Used to maintain the heap properties (described in above sections).</p></li>
+
+              <li style="font-size:15px"><p><strong>Insert</strong>: Add elements to the heap. </p></li>
+
+              <li style="font-size:15px"><p><strong>Remove</strong>: Delete elements from the heap. </p></li>
+
+              <li style="font-size:15px"><p><strong>Find Minimum/Maximum</strong> and <strong>Extract Minimum/Maximum</strong>: Depending
+               on the purpose of the heap, return the the largest or smallest elements.</p></li>
+
+              </ul>
+            </blockquote>
+            <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/2ihStWiKQTA"
+                        frameborder="0" allowfullscreen></iframe>
+                    <figcaption>
+                    Building a heap
+                    </figcaption>
+            </figure>
+            </details>
+            <details>
+                <summary class="sum1">
+                    The heap sort algorithm
+                </summary>
+            <p>
+            Heapsort is a comparison based sorting algorithm that uses a 
+            binary heap data structure. Like mergesort, heapsort has a running
+            time of O(nlogn) and like insertion sort, heapsort sorts in-place
+            so no extra space is needed during the sort. The binary heap data 
+            structure allows the heapsort algorithm to take advantage of the 
+            heap's heap properties and the heapsort algorithm makes use of the
+            efficient running time for inserting to and deleting from the heap
+            .<br>
+            </p>
+            
+
+            <details> 
+                <summary class="sum2">
+                    Implementation
+                </summary>
+            <p>
+            The heap sort algorithm starts by using procedure BUILD-HEAP to 
+            build a heap on the input array A[1 . . n]. Since the maximum 
+            element of the array stored at the root A[1], it can be put into 
+            its correct final position by exchanging it with A[n] (the last
+            element in A). If we now discard node n from the heap than the
+            remaining elements can be made into heap. Note that the new 
+            element at the root may violate the heap property. All that is 
+            needed to restore the heap property. <br><br>
+            <code>
+            HEAPSORT(A) <br>
+            &nbsp BUILD-MAX-HEAP(A) <br>
+            &nbsp for i = A.length downto 2 <br>
+            &nbsp &nbsp&nbsp&nbsp      exchange A[1] with A[i] <br>
+            &nbsp &nbsp&nbsp&nbsp      A.heap-size = A.head-size - 1 <br>
+            &nbsp &nbsp&nbsp&nbsp      MAX-HEAPIFY(A, 1) <br><br><br>
+            </code>
+            The HEAPSORT procedure takes time O(n lg n), since the call to 
+            BUILD_HEAP takes time O(n) and each of the n -1 calls to Heapify 
+            takes time O(lg n).
+            </p>
+            <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/2DmK_H7IdTo"
+                        frameborder="0" allowfullscreen></iframe>
+                    <figcaption>
+                    Heap Sort
+                    </figcaption>
+                </figure> 
+            </details>
+            </details>
+
+
+            <details>
+                <summary class="sum1">
+                    Priority queues
+                </summary>
+            <details>
+                <summary class="sum2">
+                    Overview of Priority queues
+                </summary>
+            <p>
+            <br>According to wikipedia: A <strong>Priority queue</strong> is an 
+            abstract data type which is like a regular queue or stack data
+            structure, but where additionally each element has a "priority" 
+            associated with it.<br><br>
+            Simply priority queue is an extension of queue with the following
+            properties.<br>
+            1) Every item has a priority associated with it. <br>
+            2) A high priority element is dequeued before an element with low
+            priority <br>
+            3) If two elements have the same priority, they are served 
+            according to their order in the queue <br>
+            </p>
+            <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/-WEku8ZnynU"
+                        frameborder="0" allowfullscreen></iframe>
+                    <figcaption>
+                    Priority Queue
+                    </figcaption>
+                </figure>
+            </details> 
+            <details>
+            <summary class="sum2">
+            		Heap as priority queues
+            </summary>
+            <p>
+            Although heapsort is an excellent algorithm, a good implementation
+            of quick sort which you are gonna learn later is gonna beat 
+            heapsort in practice. The heap data structure has a lot of varied 
+            use but it is most popularly used to implement priority queues.
+            <br><br>
+
+            Heap is generally preferred for priority queue implementation 
+            because heaps provide better performance when compared to priority
+            queues implemented using arrays or linked list. In a Binary Heap, 
+            <code>getHighestPriority()</code> can be implemented in <code> 
+            O(1) time </code>, <code> insert() </code> can be implemented in 
+            <code> O(Logn) </code> time and <code> deleteHighestPriority()
+            </code> can also be implemented in <code> O(Logn) </code> time 
+            as compared to <code> O(n) </code> in case of linked list etc. 
+            </p>
+            </details>
+
+            <details>
+            	<summary class="sum2">
+            		Max Priority Queues
+            	</summary>
+            <p>
+            A max priority queue is priority queue based on max heap and 
+            supports the following operations: <br>
+            1)<code> INSERT(S,x) </code> inserts the element x into the set S,
+            which is equivalent to the operation S = S U {x}. <br>
+            </p>
+            <pre>
+            void insert_value (int Arr[ ], int val){
+    			length = length + 1;
+    			Arr[ length ] = -1;  //assuming all the numbers greater than 0 are to be inserted in queue.
+    			increase_val (Arr, length, val);
+			}
+
+		Complexity: O(log N).
+			</pre>
+            <p>
+			2) <code> MAXIMUM(S) </code> returns the element of S with the 
+			largest key.<br>
+			</p>
+            <pre>
+            int maximum(int Arr[ ]){
+        		return Arr[ 1 ];  //as the maximum element is the root element in the max heap.
+        	}
+
+        Complexity: O(1)
+            </pre>
+            <p>
+            3) <code> EXTRACT-MAX(S) </code> removes and returns the element 
+            of S with the largest key. <br>
+            </p>
+            <pre>
+            int extract_maximum (int Arr[ ]){
+    			if(length == 0){
+    			cout<< "Cannot remove element as queue is empty";
+    			return -1;
+    			}
+    			int max = Arr[1];
+    			Arr[1] = Arr[length];
+    			length = length -1;
+    			max_heapify(Arr, 1);
+    			return max;
+    			}
+
+    	Complexity: O(logN)
+            </pre>
+            <p>
+			4) <code> INCREASE-KEY(S,x,k) </code> increases the value of 
+			element x's key to the new value k, which is assumed to be at 
+			least as large as x's current key value.<br>
+			</p>
+            <pre>
+            void increase_value (int Arr[ ], int i, int val){
+            	if(val < Arr[ i ]){
+            		cout<<"New value is less than current value, can't be inserted";
+            		return;
+            	}
+            	Arr[ i ] = val;
+            	while( i > 1 and Arr[ i/2 ] < Arr[ i ]){
+            		swap|(Arr[ i/2 ], Arr[ i ]);
+            		i = i/2;
+            	}
+            }
+
+        Complexity: O(log N).
+            </pre>
+            </details>
+            <details>
+                <summary class="sum2">
+                    Applications
+                </summary>
+            <p>
+            Some of the applications of the priority queues are as follows<br>
+            <br>
+            1) <strong> Schedule jobs on a shared computer</strong> 
+            : We can use max-priority queues to schedule jobs on a 
+            shared computer. The max-priority queue keeps track of the jobs 
+            to be performed and their relative priorities. When a job is 
+            finished or interrupted, the scheduler selects the 
+            highest-priority job from among those pending by calling
+            <code>EXTRACT-MAX</code>. The scheduler can add a new job to 
+            the queue at any time by calling <code>INSERT</code>. <br>
+
+            2) <strong>Event driven simulator</strong>: A min-priority queue
+            can be used in an event driven simulator.The items in the queue 
+            are events to be simulated, each with an associated time of 
+            occurrence that serves as its key. The events must be simulated 
+            in order of their time of occurrence, because the simulation 
+            of an event can cause other events to be simulated in the future
+            <br>
+
+            3) <strong>Graph Search Algorithms</strong>: Many efficient graph
+            search algorithms such as <code>A* search</code> and 
+            <code>Dijkstra's algorithm </code> use priority queues to know 
+            which nodes to explore next.<br>
+
+            4) <strong>Bandwidth Management</strong>: Priority queues are used
+            to handle data flows on the network. As not all data are of same 
+            importance by prioritizing the important data packets the router 
+            can make sure that the network performs optimally and all the 
+            prioritized traffic is forwarded with the least delay and the 
+            least likelihood of being rejected in case of the router reaching 
+            its max traffic capacity. 
+            
+            </p>
+            </details>
+            </details>
+            <details>
+                <summary class="sum1">
+                    Run the Python code
+                </summary>
+
+                <p>
+                    In the console below, type or paste:
+                    <br/>
+                    <code>
+                        !git clone https://gist.github.com/17b7d4beac379c4e11448a62a9a94a1b.git
+                        <br/>
+                        cd 17b7d4beac379c4e11448a62a9a94a1b
+                        <br/>
+                        from heapsort import *
+                        <br/>
+                        A = [4, 1, 3, 2, 16, 9, 10, 14, 8, 7]
+                        <br/>
+                    </code>
+                </p>
+
+        <div class="python-console">
+            <iframe style="width: 640; height: 480;"
+                    name="embedded_python_anywhere"
+                    src="https://www.pythonanywhere.com/embedded3/" scrolling="yes">
+            </iframe>
+            <figcaption>
+                Python console
+            </figcaption>
+        </div>
+
+
+                <p>
+                    To run the example from the textbook, type:
+                    <br/>
+                    <code>
+                        A
+                        <br/>
+                        # MAX or MIN
+                        <br/>
+                        build_heap(A, MAX)
+                        <br/>
+                        heapsort(A, MAX)
+                    </code>
+                </p>
+                <p>
+                    Now you can experiment with the algorithm by typing
+                    in your own array (my_array = [x, y, z])
+                    and running build_heap(my_array) or
+                    heapsort(a_array, b_array).
+                </p>
+
+            </details>
+
+            <details>
+                <summary class="sum1">
+                    Source Code
+                </summary>
+
+                <p>
+            
+<a href="https://github.com/gcallah/algorithms/tree/master/Java/Heapsort">Java</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/Ruby/Heapsort">Ruby</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/C++/Heapsort">C++</a><br>
+<a href="https://github.com/gcallah/algorithms/tree/master/Python/Heapsort">Python</a><br>
+                </p>
+            </details>
+
+            <h2>
+                For Further Study
+            </h2>
+                <ul>
+                </ul>
+
+            <h2>
+                Homework
+            </h2>
+    </body>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-97026578-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+</html>
