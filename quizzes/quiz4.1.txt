@@ -1,0 +1,2 @@
+The problem with the brute force max-subarray solution is#it is too complicated#the force used might break the code#^it is too slow
+The three possible arrays containing the maximum sequence are#An array of ints, an array of doubles, and an array of strings#^The array from A[0] to the mid-point; an array that crosses the midpoint, and the array from A[midpoint + 1] to the end#The whole array, the null array, and the middle array

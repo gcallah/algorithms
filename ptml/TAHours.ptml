@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            TA Office Hours
+        </title>
+    </head>
+
+    <body>
+
+<!--include menu.txt -->
+
+        <h1>
+            TA Office Hours
+        </h1>
+
+        <table class="center">
+            <tr>
+                <th>
+                    TA Name
+                </th>
+                <th>
+                    Office Hours
+                </th>
+                <th>
+                    Location
+                </th>
+                <th>
+                    Email
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Saniya Alekar
+                </td>
+                <td>
+                    Wednesday, 1:00 - 3:00
+                </td>
+                <td>
+                    Metrotech 2, 10.098
+                </td>
+                <td>
+                    ssa428@nyu.edu
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Jatri Dave
+                </td>
+                <td>
+                    Thursday, 11:00 - 1:00
+                </td>
+                <td>
+                    Metrotech 2, 10.098
+                </td>
+                <td>
+                    jad752@nyu.edu
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Abhishek Kuntal
+                </td>
+                <td>
+                    Tuesday, 1:00 - 2:00
+                </td>
+                <td>
+                    Metrotech 2, 10.098
+                </td>
+                <td>
+                    ak6181@nyu.edu
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Prashant Patel
+                </td>
+                <td>
+                    Monday, 1:00 - 3:00
+                </td>
+                <td>
+		            Metrotech 2, 10.098
+                </td>
+                <td>
+                    prashant.patel@nyu.edu
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Xiaohang Su
+                </td>
+                <td>
+                    Wednesday, 10:00 - 12:00
+                </td>
+                <td>
+                    Metrotech 2, 10.098
+                </td>
+                <td>
+                    xs741@nyu.edu
+                </td>
+            </tr>
+        </table>
+
+    </body>
+<!--include google_analytics.txt -->
+</html>

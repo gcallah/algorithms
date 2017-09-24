@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            Design and Analysis of Algorithms: B-Trees
+        </title>
+    </head>
+
+    <body>
+<!--include menu.txt -->
+        <h1>
+            Design and Analysis of Algorithms: B-Trees
+        </h1>
+
+            <div style="text-align:center">
+                <p>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/B-tree.svg/831px-B-tree.svg.png"
+                height="180" width="600">
+                </p>
+            </div>
+
+            <h2>
+                Overview
+            </h2>
+
+                <p>
+                    Balanced search trees designed to work well on secondary
+                    storage devices.
+                </p>
+
+                <ul>
+                    <li><b>Number of children:</b> A few, or thousands!
+                    </li>
+                    <li>O(lg n) performance.
+                    </li>
+                    <li>If an internal node contains <i>n</i> keys, then it has 
+                    <i>n</i> + 1 children. We make an <i>n</i> + 1 way decision
+                    when reaching this node in search.
+                    </li>
+                </ul>
+
+                <h3>
+                    Data structures on secondary storage
+                </h3>
+
+                    <p>
+                        <b>The big difference:</b> We might be able to perform
+                        100,000 accesses of primary memory in the time ot takes
+                        to find the proper place to start a disk read.
+                    </p>
+    
+                <h2>
+                    Definition of B-trees
+                </h2>
+
+                    <p>
+                    </p>
+
+                    <h3>
+                        The height of a B-tree
+                    </h3>
+
+
+                <h2>
+                    Basic Operations on B-trees
+                </h2>
+
+                    <p>
+                    </p>
+
+                    <h3>
+                        Searching a B-Tree
+                    </h3>
+
+                    <h3>
+                        Creating an empty B-Tree
+                    </h3>
+
+                    <h3>
+                        Inserting a key into a B-Tree
+                    </h3>
+
+                        <h4>
+                            Splitting a node in a B-tree
+                        </h4>
+
+                        <h4>
+                            Inserting a key into a B-Tree
+                            in a single pass down the tree
+                        </h4>
+
+                <h2>
+                    Deleting a key from a B-tree                    
+                </h2>
+
+                    <p>
+                    </p>
+
+
+                <h2>
+                    
+                </h2>
+
+            <h2>
+                Source Code
+            </h2>
+            <p>
+            <a
+                href="https://github.com/gcallah/algorithms/blob/master/Python/b_trees.py">
+                Python
+            </a>
+            <br>
+            </p>
+
+            <h2>
+                For Further Study
+            </h2>
+            
+            <h2>
+                Homework
+            </h2>
+    </body>
+<!--include google_analytics.txt -->
+</html>

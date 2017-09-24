@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            About
+        </title>
+    </head>
+
+    <body>
+
+<!--include menu.txt -->
+
+        <h1>
+            About this site
+        </h1>
+            <p>
+                This site has been developed primarily by Dr. Eugene Callahan
+                at the NYU Tandon School of Engineering for use in the class
+                Design and Analysis of Algorithms. Others working on the site
+                have included Nanda Kalidindi, Prashant Patel, Xiaohang Su,
+                Zebin Xu, Jatri Dave, Abhishek Kuntal, Saniya Alekar,
+                and Robert Dodson.
+                
+                <br />
+                You may re-use any material you wish to so long as you give credit.
+            </p>
+
+    </body>
+<!--include google_analytics.txt -->
+</html>

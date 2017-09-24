@@ -1,11 +1,18 @@
-INCS = menu.txt chap_menu.txt lang_menu.txt 
-HTMLFILES = $(shell ls *.ptml | sed -e 's/ptml/html/g')
+# Need to export as ENV var
+export TEMPLATE_DIR = templates
+QUIZ_DIR = quizzes
+PTML_DIR = ptml
+
+INCS = $(TEMPLATE_DIR)/menu.txt $(TEMPLATE_DIR)/chap_menu.txt $(TEMPLATE_DIR)/lang_menu.txt
+
+HTMLFILES = $(shell ls $(PTML_DIR)/*.ptml | sed -e 's/.ptml/.html/' | sed -e 's/ptml\///')
 SUBPROJ_FILES = $(shell ls Algocynfas/*.html)
- 
-%.html: %.ptml $(INCS)
+
+%.html: $(PTML_DIR)/%.ptml $(INCS)
+	python3 utils/html_checker.py $<
 	utils/html_include.awk <$< >$@
 
-website: $(INCS) $(HTMLFILES) $(SUBPROJ_FILES)
+website: template tests $(INCS) $(HTMLFILES) $(SUBPROJ_FILES)
 	./C++/tests.sh
 	./Clojure/tests.sh
 	./Go/tests.sh
@@ -17,16 +24,14 @@ website: $(INCS) $(HTMLFILES) $(SUBPROJ_FILES)
 	-git commit -a -m "HTML rebuild."
 	git push origin master
 
-local: $(INCS) $(HTMLFILES)
+tests: $(QUIZ_DIR)
+	cd $(QUIZ_DIR) ; make all
 
-lang_menu.txt: lang_chapter_binary.txt
-	./gen_lang_menu.awk <lang_chapter_binary.txt >lang_menu.txt
+local: template tests $(INCS) $(HTMLFILES)
 
-lang_chapter_binary.txt: chapters.txt langs.txt
-	./gen_lang_bin.sh <chapters.txt >lang_chapter_binary.txt
-	
-chap_menu.txt: chapters.txt
-	./gen_chaps.awk <chapters.txt >chap_menu.txt
+template: $(TEMPLATE_DIR)
+	cd $(TEMPLATE_DIR) ; make all
 
 clean:
 	rm $(HTMLFILES)
+	cd $(TEMPLATE_DIR) ; make clean

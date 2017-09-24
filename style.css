@@ -4,6 +4,7 @@ body {
     font-size: 100%;
     color: #333;
     background: #dff;
+    font-family: initial;
 }
 
 table {
@@ -54,6 +55,10 @@ ol, ul, dl {
     margin: 1em 2.5em 1em 2.5em;
 }
 
+ol.nested, ul.nested, dl.nested {
+    font-size: 1em;
+}
+
 p, summary.sum4 {
     font-size: 1.4em;
     margin: .5em 2.5em .5em 2.5em;
@@ -66,6 +71,10 @@ blockquote {
     margin: .75em 4.5em .75em 4.5em;
     padding: 0;
     line-height: 140%;
+}
+
+p.authors {
+    text-align: center;
 }
 
 h1,h2 {
@@ -133,11 +142,15 @@ h5 {
 
 figure, figure.toc {
     text-align: center;
-/*    margin: .75em 1.25em .75em 100;  */
 }
 
 figure.toc {
-    margin: 0em 4em 4em 4em;  */
+    margin: 0em 4em 4em 4em;
+}
+
+figure.left {
+    margin: 2em 1em 1em 6em;
+    text-align: left;
 }
 
 figcaption {
@@ -224,5 +237,9 @@ summary.menu_sum {
 
 p.lead-quote {
     margin: .75em 8em .75em 8em;
+}
+
+.center {
+    margin: 0 auto;
 }
 

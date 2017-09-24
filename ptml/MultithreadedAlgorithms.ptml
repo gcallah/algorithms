@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            Design and Analyis of Algorithms:  Multithreaded Algorithms
+        </title>
+    </head>
+
+    <body>
+<!--include menu.txt -->
+        <h1>
+            Design and Analyis of Algorithms:  Multithreaded Algorithms
+        </h1>
+
+        <details>
+            <summary class="sum1">
+                Overview
+            </summary>
+        </details>
+
+        <details>
+            <summary class="sum1">
+                The basics of dynamic multithreading        
+            </summary>
+
+            <details>
+                <summary class="sum2">
+                    A model for multithreaded execution
+                </summary>
+            </details>
+
+            <details>
+                <summary class="sum2">
+                    Performance measures
+                </summary>
+            </details>
+
+            <details>
+                <summary class="sum2">
+                    Scheduling
+                </summary>
+            </details>
+
+        </details>
+
+        <details>
+            <summary class="sum1">
+               Multithreaded matrix multiplication 
+            </summary>
+        </details>
+
+        <details>
+            <summary class="sum1">
+               Multithreaded merge sort
+            </summary>
+        </details>
+
+        <details>
+            <summary class="sum1">
+                Source Code
+            </summary>
+            <p>
+<!--include MultithreadedAlgorithms_langs.txt -->
+            </p>
+        </details>
+
+        <details>
+            <summary class="sum1">
+                For Further Study
+            </summary>
+                <ul>
+                </ul>
+        </details>
+            
+        <details>
+            <summary class="sum1">
+                Homework
+            </summary>
+        </details>
+    </body>
+<!--include google_analytics.txt -->
+</html>

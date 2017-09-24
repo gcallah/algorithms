@@ -1,0 +1,1 @@
+The max heap property means that#^a node can't have a greater value than its parent#a node must have a value equal to its parent#a node can't have a lesser than its parent#all values must be heaped up in one node

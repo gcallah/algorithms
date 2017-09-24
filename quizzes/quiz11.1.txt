@@ -1,0 +1,2 @@
+A good use for a direct-address table might be:#^All answers are fine#Memoization#Bingo#Marking members of a set as present
+We can't use direct-address tables when#^there are a large number of (potential) entries#all answers are fine#we are programming the Sieve of Eratosthenes#we are dealing with zipcodes

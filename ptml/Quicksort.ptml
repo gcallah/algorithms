@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <title>
+            Design and Analysis of Algorithms: Quicksort
+        </title>
+    </head>
+
+    <body>
+<!--include menu.txt -->
+        <h1>
+            Design and Analysis of Algorithms: Quicksort
+        </h1>
+
+            <div style="text-align:center">
+                <p>
+                <img
+                 src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif">
+                </p>
+            </div>
+
+            <h2>
+                Overview
+            </h2>
+
+
+            <h2>
+                Run the Python code
+            </h2>
+
+            <p>
+                In the console below, type or paste:
+                <br/>
+                <code>
+                    !git clone https://gist.github.com/42aa3fd6e5a06fe46358432f3796cf36.git
+                    <br/>
+                    cd 42aa3fd6e5a06fe46358432f3796cf36
+                    <br/>
+                    from quick_sort import *
+                    <br/>
+                    A = [2, 8, 7, 1, 3, 5, 6, 4]
+                    <br/>
+                </code>
+            </p>
+
+            <!--include python_anywhere.txt -->
+
+            <p>
+                To run the example from the textbook, type:
+                <br/>
+                <code>
+                    A
+                    <br/>
+                    quicksort(A)
+                </code>
+            </p>
+            <p>
+                Now you can experiment with the algorithm by typing
+                in your own array (my_array = [x, y, z])
+                and running quicksort(my_array)
+            </p>
+
+            <h2>
+                Source Code
+            </h2>
+            <p>
+<!--include Quicksort_langs.txt -->
+            </p>
+
+            <h2>
+                For Further Study
+            </h2>
+                <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Quicksort">
+                            Quicksort
+                        </a>.
+                    </li>
+                </ul>
+            
+            <h2>
+                Homework
+            </h2>
+    </body>
+<!--include google_analytics.txt -->
+</html>

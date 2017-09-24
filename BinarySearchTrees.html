@@ -15,6 +15,8 @@
             <a href="index.html">Home</a>
             &nbsp; &nbsp; 
             <a href="about.html">About</a>
+            &nbsp; &nbsp;
+            <a href="feedback.html">Feedback</a>
         </div>
     </div>
 
@@ -31,7 +33,7 @@
 
         <details>
             <summary class="sum1">
-                What is a binary search tree?
+                12.1 What is a binary search tree?
             </summary>
 
             <details>
@@ -74,7 +76,7 @@
     
         <details>
             <summary class="sum1">
-                Querying a binary search tree
+                12.2 Querying a binary search tree
             </summary>
             <p>
                 Why do we pass in a node rather than the tree itself?
@@ -113,7 +115,9 @@
                 the key sought for.
                 <ul>
                     <li>If k &lt; curr.key, recursively call tree search on curr.left.
+                    </li>
                     <li>Else recursively call tree search on curr.right.
+                    </li>
                 </ul>
             </p>
             <p>
@@ -121,10 +125,10 @@
                 <b>Example:</b>
                 <br>Let's search for 4 in the tree above.
                 <ul>
-                    <li>4 &lt; 8; move left
-                    <li>4 &gt; 3; move right
-                    <li>4 &lt; 6; move left
-                    <li>Voila!
+                    <li>4 &lt; 8; move left</li>
+                    <li>4 &gt; 3; move right</li>
+                    <li>4 &lt; 6; move left</li>
+                    <li>Voila!</li>
                 </ul>
             </p>
             </details>
@@ -171,7 +175,7 @@
     
         <details>
             <summary class="sum1">
-                Insertion and deletion
+                12.3 Insertion and deletion
             </summary>
 
             <details>
@@ -185,10 +189,10 @@
                 We will insert 5. (When I say "Insert x," you should take that
                 to be shorthand for "Insert a node with key x.")
                 <ul>
-                    <li>5 &lt; 8, so we move left.
-                    <li>5 &gt; 3, so we move right. 
-                    <li>5 &lt; 6, so we move left.
-                    <li>5 &gt; 4, so we move right and insert. 
+                    <li>5 &lt; 8, so we move left.</li>
+                    <li>5 &gt; 3, so we move right. </li>
+                    <li>5 &lt; 6, so we move left.</li>
+                    <li>5 &gt; 4, so we move right and insert. </li>
                 </ul>
             </p>
             </details>
@@ -202,34 +206,38 @@
                 functions. There are four cases (and z is the node to delete):
             </p>
             <ol>
-                <li>
                 <li>z has no left child. (This handles two cases!)
                     <br>
                     <b>Action:</b> Replace z by its right child, which might be
                     NIL.
+                </li>
                 <li>z has only a left child.
                     <br>
                     <b>Action:</b> Replace z by its left child.
+                </li>
                 <li>z has two children.
                     <br>
                     <b>Action:</b> Find z's successor y, which lies in its
                     right sub-tree.
                     <ul>
                         <li>If y is z's right child, replace z by y.
+                        </li>
                         <li>Otherwise, replace y by its own right child, then
                             replace z by y.
+                        </li>
                     </ul>
+                </li>
 
             </ol>
             <p>
                 Let's walk through deleting 8 in tree 2 above.
             </p>
             <ul>
-                <li>8 has two children, so we are in case 4.
-                <li>The successor of 8 is 9.
-                <li>9 is not the right child of 8.
-                <li>So we replace 9 by 10.
-                <li>Then we replace 8 by 9.
+                <li>8 has two children, so we are in case 4.</li>
+                <li>The successor of 8 is 9.</li>
+                <li>9 is not the right child of 8.</li>
+                <li>So we replace 9 by 10.</li>
+                <li>Then we replace 8 by 9.</li>
             </ul>
             <p>
             The right half of tree 2 now looks like this:
@@ -243,7 +251,7 @@
 
         <details>
             <summary class="sum1">
-                Randomly built binary search trees
+                12.4 Randomly built binary search trees
             </summary>
             <p>
                 We insert the keys randomly. (We would have to have all keys at
@@ -276,12 +284,17 @@
             </code>
             </p>
 
-            <div class="python-console">
-                <iframe style="width: 640; height: 480;"
+        <div class="python-console">
+            <iframe style="width: 640; height: 480;"
                     name="embedded_python_anywhere"
-                    src="https://www.pythonanywhere.com/embedded3/">
-                </iframe>
-            </div>
+                    src="https://www.pythonanywhere.com/embedded3/" scrolling="yes">
+            </iframe>
+            <figcaption>
+                Python console
+            </figcaption>
+        </div>
+
+
         </details>
 
         <details>
@@ -289,14 +302,6 @@
                 Source Code
             </summary>
             <p>
-            
-<a href="https://github.com/gcallah/algorithms/tree/master/Java/BinarySearchTrees">Java</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/Ruby/BinarySearchTrees">Ruby</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/Go/BinarySearchTrees">Go</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/Javascript/BinarySearchTrees">Javascript</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/C++/BinarySearchTrees">C++</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/Python/BinarySearchTrees">Python</a><br>
-<a href="https://github.com/gcallah/algorithms/tree/master/Clojure/BinarySearchTrees">Clojure</a><br>
             </p>
         </details>
 
@@ -309,10 +314,12 @@
                         href="https://www.cs.usfca.edu/~galles/visualization/BST.html">
                         Binary search tree visualizer
                     </a>
+                </li>
                 <li><a
                         href="https://www.khanacademy.org/computer-programming/binary-search-tree-visualization/5765350200442880"> 
                         Khan Academy BST visualizer
                     </a>.
+                </li>
             </ul>
         </details>
             
@@ -323,8 +330,10 @@
             <ol>
                 <li>For the first tree above, write the steps that will take place
                     when we insert 11.
+                </li>
                 <li>Write recursive versions of TREE-MINIMUM and
                     TREE-MAXIMUM.
+                </li>
                 <li>Compare the deletion of the node with key == 8
                     in Tree 2 that takes place following our
                     textbook's algorithm with what the first visualizer linked
@@ -334,21 +343,35 @@
                     what it does: this is called <b>reverse engineering</b>.)
                     If both algorithms always build valid BSTs, is there some
                     reason we should prefer one algorithm or the other?
+                </li>
                 <li>Keys are input to a binary search tree (BST) in the following order:
                         5, 10, 15, 20, 25.
                     Draw the resulting BST.
+                </li>
                 <li>Keys are input to a binary search tree (BST) in the following order:
                         50, 40, 35, 20, 15.
                     Draw the resulting BST.
+                </li>
                 <li>Keys are input in the following order:
                        10, 7, 15, 2, 25, 33, 1, 8, 9.
                     Draw the resulting BST.
                     Trace the process that occurs when inserting key 18.
+                </li>
                 <li>Keys are input in the following order:
                         6, 98, 4, 3, 5, 2, 1, 13, 106, 14, 18, 80.
                     Trace the process by which the successor of 80 will be
                     found.
+                </li>
 
             </ol>
+        </details>
     </body>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-97026578-2', 'auto');
+        ga('send', 'pageview');
+    </script>
 </html>
