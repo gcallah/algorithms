@@ -36,12 +36,26 @@
                 </summary>
             <details>
                 <summary class="sum2">
-                    What is a heap ? 
+                    What is a heap? 
                 </summary>
             <p>
-            Heaps are used in many famous algorithms such as Dijkstra's 
-            algorithm for finding the shortest path, the heap sort sorting 
-            algorithm, implementing priority queues, and more. Essentially, 
+            Heaps are used in many famous algorithms such as:
+            </p>
+            
+            <ul>
+                <li>
+                    Dijkstra's algorithm for finding the shortest path
+                </li>
+                <li>
+                    The heapsort sorting algorithm
+                </li>
+                <li>
+                    Implementing priority queues
+                </li>
+            </ul>
+
+            <p>
+            Essentially, 
             heaps are the data structure you want to use when you want to be 
             able to access the maximum or minimum element very quickly.There 
             are many variations of heaps, each offering advantages and 
@@ -63,56 +77,39 @@
                     Heapify
                     </figcaption>
             </figure>
-            
-            
             </details>
+            
             <details>
                 <summary class="sum2">
-                    Types of Heaps. 
+                    Notes
                 </summary>
             <p>
-            Three are two types of heaps: <br>
-            1) Max Heap <br>
-            2) Min Heap <br>
-
-            In the max heap the parent nodes are always greater than or 
-            equal to those of the children and the root node is the one with
-            the highest key value. 
-            <br>
-            In the case of min heap the keys of the parent nodes are always
-            less than or equal to those of the children and the lowest key is 
-            in the root node. 
+                A heap data structure
+                (not garbage-collected storage) is a nearly complete 
+                binary tree.
             </p>
-
-            </details>
-            <details>
-                <summary class="sum2">
-                    Notes about Heaps 
-                </summary>
-            <p>
-             <p>
-                Heap A (not garbage-collected storage) is a nearly complete 
-                binary tree.<br>
-                &middot; Height of node = # of edges on a longest simple path
+            <ul>
+                <li>
+                Height of node = # of edges on a longest simple path
                 from the node down to a leaf.<br>
-                &middot; Height of heap = height of root = (lg n). A heap can
+                </li>
+                <li>
+                Height of heap = height of root = (lg n). A heap can
                 be stored as an array A.<br>
-                &middot; Root of tree is A[0].<br>
-                &middot; Parent of A[i] = A[&#8970i/2&#8971].<br>
-                &middot; Left child of A[i ] = A[2i ].<br>
-                &middot; Right child of A[i ] = A[2i + 1].<br>
-                &middot; Computing is fast with binary representation 
-                implementation.<br><br>
-                Here is a table regarding the operations time complexities 
-                of the various heaps.
-                </p>
-            <br>
-            <div style="text-align:left">
-                <p>
-                <img src="https://qph.ec.quoracdn.net/main-qimg-43ccd7b8a1e2179da817f46e462549d7">
-                </p>
-            </div>
-            </p>
+                </li>
+                <li>
+                Root of tree is A[0].<br>
+                </li>
+                <li>
+                Parent of A[i] = A[&#8970;i/2&#8971;].<br>
+                </li>
+                <li>
+                Left child of A[i ] = A[2i ].<br>
+                </li>
+                <li>
+                Right child of A[i ] = A[2i + 1].<br>
+                </li>
+            </ul>
             </details>
             </details>
 
