@@ -92,10 +92,10 @@
                 Parent of A[i] = A[&#8970;i/2&#8971;].<br>
                 </li>
                 <li>
-                Left child of A[i ] = A[2i ].<br>
+                Left child of A[i] = A[2i ].<br>
                 </li>
                 <li>
-                Right child of A[i ] = A[2i + 1].<br>
+                Right child of A[i] = A[2i + 1].<br>
                 </li>
             </ul>
             </details>
@@ -109,8 +109,10 @@
             Heapify is a procedure for manipulating heap data structures. 
             It is given an array A and index i into the array.
             The subtree rooted at the children of A[i] are heap but node A[i]
-            itself may possibly violate the heap property i.e., A[i] < A[2i]
-            or A[i] < A[2i +1]. The procedure 'Heapify' manipulates the tree 
+            itself may possibly violate the heap
+            property i.e., A[i] &lt; A[2i]
+            or A[i] &lt; A[2i +1]. The procedure
+            'Heapify' manipulates the tree 
             rooted at A[i] so it becomes a heap. In other words, 'Heapify' 
             is let the value at A[i] "float down" in a heap so that subtree 
             rooted at index i becomes a heap.<br><br>
@@ -127,7 +129,7 @@
                 </summary>
                 <p>
                 If A is an array representation of a heap, then in Max-heap: <br>
-                A[parent[i]] > A[i] <br>
+                A[parent(i)] > A[i] <br>
                 which means that a node can't have a greater value than its 
                 parent. In a max-heap, the largest element
                 is stored at the root, and the minimum elements are in the
@@ -141,7 +143,7 @@
                     </summary>
                 <p>
                 If B is an array representation of a heap then, in Min-heap:<br>
-                B[parent[i]] < B[i] <br> which means that a parent node can't 
+                B[parent(i)] &lt; B[i] <br> which means that a parent node can't 
                 have a greater value than its children. Thus, the minimum 
                 element is located at the root, and the maximum elements are
                 located in the leaves
@@ -155,26 +157,26 @@
             <p>
             Heapify picks the largest child key and compare it to the parent
             key.
-            If parent key is larger than heapify quits, otherwise it swaps the
+            If parent key is larger, then heapify quits, otherwise it swaps the
             parent key with the largest child key. So that the parent is now
-            becomes larger than its children.It is important to note that swap
-            may 
+            becomes larger than its children.
+            It is important to note that swap may 
             destroy the heap property of the subtree rooted at the largest
             child node.
             If this is the case, Heapify calls itself again using largest
             child node as the new root. <br><br>
             <code>
             Heapify (A, i) <br>
-            &nbsp l = left [i]  <br>
-            &nbsp r = right [i]  <br>
-            &nbsp if l <= heap-size [A] and A[l] > A[i]  <br>
-            &nbsp&nbsp&nbsp&nbsp   largest = l  <br>
-            &nbsp else largest = i  <br>
-            &nbsp if r <= heap-size [A] and A[r] > A[largest]  <br>
-            &nbsp&nbsp&nbsp&nbsp  largest = r  <br>
-            &nbsp if largest != i  <br>
-            &nbsp&nbsp&nbsp&nbsp    exchange A[i] with A[largest]  <br>
-            &nbsp&nbsp&nbsp&nbsp    Heapify (A, largest)  <br><br>
+            &nbsp; l = left [i]  <br>
+            &nbsp; r = right [i]  <br>
+            &nbsp; if l <= heap-size [A] and A[l] > A[i]  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;   largest = l  <br>
+            &nbsp; else largest = i  <br>
+            &nbsp; if r <= heap-size [A] and A[r] > A[largest]  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;  largest = r  <br>
+            &nbsp; if largest != i  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;    exchange A[i] with A[largest]  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;    Heapify (A, largest)  <br><br>
             </code>
             </p>
 
@@ -189,11 +191,12 @@
             </figure>
 
 
-
             </details>
 
 <!--include quiz6.2.qhtm -->
+
             </details>
+
             <details>
             <summary class="sum1">
                 Building a heap
