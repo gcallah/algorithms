@@ -836,6 +836,35 @@
     </details>
 </details>
 
+<h2>
+    Run the Python code for the rod cutting problem
+</h2>
+            <p>
+                In the console below, type or paste:
+                <br/>
+                <code>
+                    !git clone https://gist.github.com/a7fd8b6d5aaacaa1010dcea590415f6c.git
+                    <br/>
+                    cd a7fd8b6d5aaacaa1010dcea590415f6c
+                    <br/>
+                    from rod_cut import *
+                    <br/>
+                    prices=[1,5,8,9,10,17,17,20,24,30]
+                    <br/>
+                    rod_len=10
+                    <br/>
+                    cut_rod(prices,rod_len)
+                    <br/>
+                </code>
+            </p>
+
+            <!--include python_anywhere.txt -->
+
+            <p>
+                Now you can experiment with the algorithm by typing
+                in your own prices and rod length and running cut_rod(prices,rod_len)
+            </p>
+
 
 <details>
     <summary class="sum1">
