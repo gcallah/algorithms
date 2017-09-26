@@ -36,12 +36,26 @@
                 </summary>
             <details>
                 <summary class="sum2">
-                    What is a heap ? 
+                    What is a heap? 
                 </summary>
             <p>
-            Heaps are used in many famous algorithms such as Dijkstra's 
-            algorithm for finding the shortest path, the heap sort sorting 
-            algorithm, implementing priority queues, and more. Essentially, 
+            Heaps are used in many famous algorithms such as:
+            </p>
+            
+            <ul>
+                <li>
+                    Dijkstra's algorithm for finding the shortest path
+                </li>
+                <li>
+                    The heapsort sorting algorithm
+                </li>
+                <li>
+                    Implementing priority queues
+                </li>
+            </ul>
+
+            <p>
+            Essentially, 
             heaps are the data structure you want to use when you want to be 
             able to access the maximum or minimum element very quickly.There 
             are many variations of heaps, each offering advantages and 
@@ -63,56 +77,39 @@
                     Heapify
                     </figcaption>
             </figure>
-            
-            
             </details>
+            
             <details>
                 <summary class="sum2">
-                    Types of Heaps. 
+                    Notes
                 </summary>
             <p>
-            Three are two types of heaps: <br>
-            1) Max Heap <br>
-            2) Min Heap <br>
-
-            In the max heap the parent nodes are always greater than or 
-            equal to those of the children and the root node is the one with
-            the highest key value. 
-            <br>
-            In the case of min heap the keys of the parent nodes are always
-            less than or equal to those of the children and the lowest key is 
-            in the root node. 
+                A heap data structure
+                (not garbage-collected storage) is a nearly complete 
+                binary tree.
             </p>
-
-            </details>
-            <details>
-                <summary class="sum2">
-                    Notes about Heaps 
-                </summary>
-            <p>
-             <p>
-                Heap A (not garbage-collected storage) is a nearly complete 
-                binary tree.<br>
-                &middot; Height of node = # of edges on a longest simple path
+            <ul>
+                <li>
+                Height of node = # of edges on a longest simple path
                 from the node down to a leaf.<br>
-                &middot; Height of heap = height of root = (lg n). A heap can
+                </li>
+                <li>
+                Height of heap = height of root = (lg n). A heap can
                 be stored as an array A.<br>
-                &middot; Root of tree is A[0].<br>
-                &middot; Parent of A[i] = A[&#8970i/2&#8971].<br>
-                &middot; Left child of A[i ] = A[2i ].<br>
-                &middot; Right child of A[i ] = A[2i + 1].<br>
-                &middot; Computing is fast with binary representation 
-                implementation.<br><br>
-                Here is a table regarding the operations time complexities 
-                of the various heaps.
-                </p>
-            <br>
-            <div style="text-align:left">
-                <p>
-                <img src="https://qph.ec.quoracdn.net/main-qimg-43ccd7b8a1e2179da817f46e462549d7">
-                </p>
-            </div>
-            </p>
+                </li>
+                <li>
+                Root of tree is A[0].<br>
+                </li>
+                <li>
+                Parent of A[i] = A[&#8970;i/2&#8971;].<br>
+                </li>
+                <li>
+                Left child of A[i] = A[2i ].<br>
+                </li>
+                <li>
+                Right child of A[i] = A[2i + 1].<br>
+                </li>
+            </ul>
             </details>
             </details>
 
@@ -124,8 +121,10 @@
             Heapify is a procedure for manipulating heap data structures. 
             It is given an array A and index i into the array.
             The subtree rooted at the children of A[i] are heap but node A[i]
-            itself may possibly violate the heap property i.e., A[i] < A[2i]
-            or A[i] < A[2i +1]. The procedure 'Heapify' manipulates the tree 
+            itself may possibly violate the heap
+            property i.e., A[i] &lt; A[2i]
+            or A[i] &lt; A[2i +1]. The procedure
+            'Heapify' manipulates the tree 
             rooted at A[i] so it becomes a heap. In other words, 'Heapify' 
             is let the value at A[i] "float down" in a heap so that subtree 
             rooted at index i becomes a heap.<br><br>
@@ -142,7 +141,7 @@
                 </summary>
                 <p>
                 If A is an array representation of a heap, then in Max-heap: <br>
-                A[parent[i]] > A[i] <br>
+                A[parent(i)] > A[i] <br>
                 which means that a node can't have a greater value than its 
                 parent. In a max-heap, the largest element
                 is stored at the root, and the minimum elements are in the
@@ -156,7 +155,7 @@
                     </summary>
                 <p>
                 If B is an array representation of a heap then, in Min-heap:<br>
-                B[parent[i]] < B[i] <br> which means that a parent node can't 
+                B[parent(i)] &lt; B[i] <br> which means that a parent node can't 
                 have a greater value than its children. Thus, the minimum 
                 element is located at the root, and the maximum elements are
                 located in the leaves
@@ -170,26 +169,26 @@
             <p>
             Heapify picks the largest child key and compare it to the parent
             key.
-            If parent key is larger than heapify quits, otherwise it swaps the
+            If parent key is larger, then heapify quits, otherwise it swaps the
             parent key with the largest child key. So that the parent is now
-            becomes larger than its children.It is important to note that swap
-            may 
+            becomes larger than its children.
+            It is important to note that swap may 
             destroy the heap property of the subtree rooted at the largest
             child node.
             If this is the case, Heapify calls itself again using largest
             child node as the new root. <br><br>
             <code>
             Heapify (A, i) <br>
-            &nbsp l = left [i]  <br>
-            &nbsp r = right [i]  <br>
-            &nbsp if l <= heap-size [A] and A[l] > A[i]  <br>
-            &nbsp&nbsp&nbsp&nbsp   largest = l  <br>
-            &nbsp else largest = i  <br>
-            &nbsp if r <= heap-size [A] and A[r] > A[largest]  <br>
-            &nbsp&nbsp&nbsp&nbsp  largest = r  <br>
-            &nbsp if largest != i  <br>
-            &nbsp&nbsp&nbsp&nbsp    exchange A[i] with A[largest]  <br>
-            &nbsp&nbsp&nbsp&nbsp    Heapify (A, largest)  <br><br>
+            &nbsp; l = left [i]  <br>
+            &nbsp; r = right [i]  <br>
+            &nbsp; if l <= heap-size [A] and A[l] > A[i]  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;   largest = l  <br>
+            &nbsp; else largest = i  <br>
+            &nbsp; if r <= heap-size [A] and A[r] > A[largest]  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;  largest = r  <br>
+            &nbsp; if largest != i  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;    exchange A[i] with A[largest]  <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;    Heapify (A, largest)  <br><br>
             </code>
             </p>
 
@@ -204,18 +203,17 @@
             </figure>
 
 
-
             </details>
 
     <details>
-        <summary class="sum1">
+        <summary class="sum2">
             Quiz
         </summary>
         <ol>
             <li>
                 The max heap property means that
             </li>
-            <ol type="a">
+            <ol type="a" class="nested">
                 <li>
                 <input type="radio" name="q1" value="a">
                 a node can't have a greater value than its parent
@@ -235,7 +233,7 @@
             </ol>
         </ol>
         <details>
-            <summary class="sum2">
+            <summary class="sum3">
                 Answers
             </summary>
             <p>
@@ -243,7 +241,9 @@
             </p>
         </details>
     </details>
+
             </details>
+
             <details>
             <summary class="sum1">
                 Building a heap

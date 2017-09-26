@@ -1,12 +1,12 @@
     <details>
-        <summary class="sum1">
+        <summary class="sum2">
             Quiz
         </summary>
         <ol>
             <li>
                 The max heap property means that
             </li>
-            <ol type="a">
+            <ol type="a" class="nested">
                 <li>
                 <input type="radio" name="q1" value="a">
                 a node can't have a greater value than its parent
@@ -26,7 +26,7 @@
             </ol>
         </ol>
         <details>
-            <summary class="sum2">
+            <summary class="sum3">
                 Answers
             </summary>
             <p>
