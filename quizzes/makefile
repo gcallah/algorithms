@@ -4,8 +4,7 @@ QUIZZES = $(shell ls quiz*.txt)
 
 %.qhtm: %.txt
 	../utils/quiz2html.py $< \# >$@
-	cp $@ ../templates
-	git add ../templates/*.qhtm
+	git add $@
 
 %.thtm: %.txt
 	../utils/quiz2test.py $< \# >$@
