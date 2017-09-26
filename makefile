@@ -1,6 +1,6 @@
 # Need to export as ENV var
 export TEMPLATE_DIR = templates
-QUIZ_DIR = quizzes
+export QUIZ_DIR = quizzes
 PTML_DIR = ptml
 
 INCS = $(TEMPLATE_DIR)/menu.txt $(TEMPLATE_DIR)/chap_menu.txt $(TEMPLATE_DIR)/lang_menu.txt
