@@ -121,18 +121,12 @@ def heapify(h, i, heapsize=None, min_or_max=MAX):
 
     l = left(i)
     r = right(i)
-    largest = i
     print("\n*********\nheap in progress = " + str(h[0:heapsize]))
-    print("heapifying with i = " + str(i) + " and " +
-            "left = " + str(l) + "; right = " + str(r)
-            + "; heapsize = " + str(heapsize))
     if l < heapsize and comp(h[l], h[i]):
-        print("Largest was: " + str(h[largest])
-                + " setting largest to: " + str(h[l]))
         largest = l
+    else:
+        largest = i
     if r < heapsize and comp(h[r], h[largest]):
-        print("Largest was: " + str(h[largest])
-                + " setting largest to: " + str(h[r]))
         largest = r
     if largest != i:
         print("Swapping elements " + str(i) + " and " +
@@ -171,8 +165,6 @@ def heapsort(h, min_or_max=MAX):
     heapsize = len(h)
     for i in range(len(h) - 1, 0, -1):
         print("heapsort heap: " + str(h))
-        print("heapsize = " + str(heapsize)
-              + "; i = " + str(i))
         swap(h, 0, i)
         heapsize -= 1
         heapify(h, 0, heapsize, min_or_max)
