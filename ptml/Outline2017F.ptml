@@ -101,6 +101,12 @@
             </li>
 
             <li>
+                <a href="RandomizedAlgorithms.html">
+                Probabilistic Analysis and Randomized Algorithms
+                </a>
+            </li>
+
+            <li>
                 <a href="HashTables.html">
                 Hash Tables
                 </a>
