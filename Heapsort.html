@@ -338,7 +338,7 @@
                 </summary>
             <details>
                 <summary class="sum2">
-                    Overview of Priority queues
+                    Overview
                 </summary>
             <p>
             <br>According to wikipedia: A <strong>Priority queue</strong> is an 
@@ -358,13 +358,13 @@
                         src="https://www.youtube.com/embed/-WEku8ZnynU"
                         frameborder="0" allowfullscreen></iframe>
                     <figcaption>
-                    Priority Queue
+                    Priority queue
                     </figcaption>
                 </figure>
             </details> 
             <details>
             <summary class="sum2">
-            		Heap as priority queues
+            		Heaps as priority queues
             </summary>
             <p>
             Although heapsort is an excellent algorithm, a good implementation
@@ -378,75 +378,76 @@
             queues implemented using arrays or linked list. In a Binary Heap, 
             <code>getHighestPriority()</code> can be implemented in <code> 
             O(1) time </code>, <code> insert() </code> can be implemented in 
-            <code> O(Logn) </code> time and <code> deleteHighestPriority()
-            </code> can also be implemented in <code> O(Logn) </code> time 
+            <code> O(lg n) </code> time and <code> deleteHighestPriority()
+            </code> can also be implemented in <code> O(lg n) </code> time 
             as compared to <code> O(n) </code> in case of linked list etc. 
             </p>
             </details>
 
             <details>
             	<summary class="sum2">
-            		Max Priority Queues
+            		Max priority queues
             	</summary>
             <p>
             A max priority queue is priority queue based on max heap and 
             supports the following operations: <br>
-            1)<code> INSERT(S,x) </code> inserts the element x into the set S,
-            which is equivalent to the operation S = S U {x}. <br>
+            1)<code>max-heap-insert(A, key) </code>
+            inserts the element x into the heap A while maintaining the heap
+            property.
             </p>
             <pre>
-            void insert_value (int Arr[ ], int val){
-    			length = length + 1;
-    			Arr[ length ] = -1;  //assuming all the numbers greater than 0 are to be inserted in queue.
-    			increase_val (Arr, length, val);
-			}
+            max-heap-insert(A, key)
+    			A.heap-size = A.heap-size + 1;
+    			A[A.heap-size] = -Inf;  
+    			heap-increase-key(A, A.heap-size, key);
 
-		Complexity: O(log N).
+		Complexity: O(lg N).
 			</pre>
             <p>
-			2) <code> MAXIMUM(S) </code> returns the element of S with the 
+			2) <code> maximum(S) </code> returns the element of S with the 
 			largest key.<br>
 			</p>
             <pre>
             int maximum(int Arr[ ]){
-        		return Arr[ 1 ];  //as the maximum element is the root element in the max heap.
+        		return Arr[1];  //as the maximum element is the root element in the max heap.
         	}
 
         Complexity: O(1)
             </pre>
             <p>
-            3) <code> EXTRACT-MAX(S) </code> removes and returns the element 
+            3) <code> extract-max(S) </code> removes and returns the element 
             of S with the largest key. <br>
             </p>
             <pre>
-            int extract_maximum (int Arr[ ]){
+            int extract_maximum (int Arr[ ]) {
     			if(length == 0){
-    			cout<< "Cannot remove element as queue is empty";
-    			return -1;
+    			    print("Cannot remove element as queue is empty");
+    			    return -1;
     			}
     			int max = Arr[1];
     			Arr[1] = Arr[length];
     			length = length -1;
     			max_heapify(Arr, 1);
     			return max;
-    			}
+    		}
 
-    	Complexity: O(logN)
+    	Complexity: O(lg n)
             </pre>
             <p>
-			4) <code> INCREASE-KEY(S,x,k) </code> increases the value of 
+			4) <code> increase-key(S,x,k) </code> increases the value of 
 			element x's key to the new value k, which is assumed to be at 
 			least as large as x's current key value.<br>
 			</p>
             <pre>
-            void increase_value (int Arr[ ], int i, int val){
-            	if(val < Arr[ i ]){
-            		cout<<"New value is less than current value, can't be inserted";
+            void increase-key (int Arr[ ], int i, int val){
+            	if(val &lt; Arr[i]){
+            		print("New value is less than current value, can't be
+                    inserted");
             		return;
             	}
-            	Arr[ i ] = val;
-            	while( i > 1 and Arr[ i/2 ] < Arr[ i ]){
-            		swap|(Arr[ i/2 ], Arr[ i ]);
+            	Arr[i] = val;
+            	while( i &gt; 1 and Arr[i/2] &lt; Arr[i]){
+            		swap(Arr[i/2], Arr[i]);
             		i = i/2;
             	}
             }
