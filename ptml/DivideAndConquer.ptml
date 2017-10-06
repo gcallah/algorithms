@@ -1107,7 +1107,9 @@
                 </figcaption>
             </figure>
             <br />
-            The master theorem will not apply in that gap!
+            <br />
+            <b>The master theorem will not apply in that gap!</b>
+            <br />
             <br />
             Consider:
             <br>
