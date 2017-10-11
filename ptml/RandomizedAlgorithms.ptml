@@ -343,7 +343,7 @@
                             <br/>
                             n=18
                             <br/>
-                            greedy_activity_selector(start,finish)
+                            hire_assistant(n,False)
                             <br/>
                         </code>
                     </p>
