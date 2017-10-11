@@ -44,8 +44,8 @@
             candidates in worst-to-best order, so we hire every single one.
             </p>
             </details>
-    
-    
+
+
             <details>
             <summary class="sum2">
                 Probabilistic anaysis
@@ -58,8 +58,8 @@
             <a href="Probability.html">Probability basics</a>.
             </p>
             </details>
-    
-    
+
+
             <details>
             <summary class="sum2">
                 A randomized algorithm
@@ -70,7 +70,7 @@
             prove.
             </p>
             <p>
-            When we randomize the algorithm we speak of an <em>expected 
+            When we randomize the algorithm we speak of an <em>expected
                 running time</em>.
             </p>
             </details>
@@ -282,7 +282,7 @@
              0 if the don't.
              <br>
              <br>
-             Let <em>X</em> count the number of pairs of people who 
+             Let <em>X</em> count the number of pairs of people who
              have the same birthday.
              <br> <br>
              <em>k</em> is the number of people in the room.
@@ -339,7 +339,43 @@
              </p>
             </details>
         </details>
-        
+
+        <h2>
+            Run the Python code for the random algorithm to hire an assistant
+        </h2>
+                    <p>
+                        In the console below, type or paste:
+                        <br/>
+                        <code>
+                            !git clone https://gist.github.com/91e59d2a36937f9be17cee01ddb9588d.git
+                            <br/>
+                            cd 91e59d2a36937f9be17cee01ddb9588d
+                            <br/>
+                            from hire_assistant import *
+                            <br/>
+                            n=18
+                            <br/>
+                            greedy_activity_selector(start,finish)
+                            <br/>
+                        </code>
+                    </p>
+
+        <div class="python-console">
+            <iframe style="width: 640; height: 480;"
+                    name="embedded_python_anywhere"
+                    src="https://www.pythonanywhere.com/embedded3/" scrolling="yes">
+            </iframe>
+            <figcaption>
+                Python console
+            </figcaption>
+        </div>
+
+
+                    <p>
+                        Now you can experiment with the algorithm by changing the value of n
+                        and running hire_assistant(n,False)
+                    </p>
+
         <details>
             <summary class="sum1">
                 Source Code
