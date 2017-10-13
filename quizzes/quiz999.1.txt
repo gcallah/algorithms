@@ -1,1 +1,3 @@
 This is a fake question to demonstrate the system:#False#^True
+Is this a fake quiz?#False#^True
+Are we demonstrating to Abhishek how to enter more questions?#^True#False
