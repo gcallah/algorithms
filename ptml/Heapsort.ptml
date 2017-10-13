@@ -212,13 +212,17 @@
               <code>Heapify</code> is called to make sure the 
               heap maintains the heap properties at each step.</p></li>
 
-              <li style="font-size:15px" ><p><strong>Heapify</strong>: Used to maintain the heap properties (described in above sections).</p></li>
+              <li style="font-size:15px" ><p><strong>Heapify</strong>:
+                  Used to maintain the heap properties (described in above sections).</p></li>
 
-              <li style="font-size:15px"><p><strong>Insert</strong>: Add elements to the heap. </p></li>
+              <li style="font-size:15px"><p><strong>Insert</strong>:
+                  Add elements to the heap. </p></li>
 
-              <li style="font-size:15px"><p><strong>Remove</strong>: Delete elements from the heap. </p></li>
+              <li style="font-size:15px"><p><strong>Remove</strong>:
+                  Delete elements from the heap. </p></li>
 
-              <li style="font-size:15px"><p><strong>Find Minimum/Maximum</strong> and <strong>Extract Minimum/Maximum</strong>: Depending
+              <li style="font-size:15px"><p><strong>Find Minimum/Maximum</strong> and <strong>Extract Minimum/Maximum</strong>:
+                  Depending
                on the purpose of the heap, return the the largest or smallest elements.</p></li>
 
               </ul>
