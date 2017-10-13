@@ -1,0 +1,1 @@
+Linked lists are best suited#for both of above situation#for the size of the structure and the data in the structure are constantly changing#^for relatively permanent collections of data#for none of above situation

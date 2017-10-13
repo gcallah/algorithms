@@ -1,0 +1,36 @@
+    <details>
+        <summary class="sum2">
+            Quiz
+        </summary>
+        <ol>
+            <li>
+                Linked lists are best suited
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q1" value="a">
+                for both of above situation
+                </li>
+                <li>
+                <input type="radio" name="q1" value="b">
+                for the size of the structure and the data in the structure are constantly changing
+                </li>
+                <li>
+                <input type="radio" name="q1" value="c">
+                for relatively permanent collections of data
+                </li>
+                <li>
+                <input type="radio" name="q1" value="d">
+                for none of above situation
+                </li>
+            </ol>
+        </ol>
+        <details>
+            <summary class="sum3">
+                Answers
+            </summary>
+            <p>
+                1. c; 
+            </p>
+        </details>
+    </details>
