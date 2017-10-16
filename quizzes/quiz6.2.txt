@@ -1,1 +1,3 @@
 The max heap property means that#^a node can't have a greater value than its parent#a node must have a value equal to its parent#a node can't have a lesser than its parent#all values must be heaped up in one node
+In a max-heap, element with the greatest key is always in the which node?#first node to the right#^root node#first node to the left#leaf node
+What is the complexity of adding an element to the heap.#O(nlogn)#o(n^2)#^O(logn)#O(n)

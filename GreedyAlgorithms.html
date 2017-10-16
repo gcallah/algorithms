@@ -38,8 +38,9 @@
                 </summary>
 
                 <p>
-                    It is important to recognize that we have been dealing with a
-                    family of problems and solutions to those problems:
+                    It is important to recognize that we have been
+                    dealing with a family of problems and solutions
+                    to those problems:
                 </p>
                 <ul>
                     <li><b>Optimal substructure</b>:
@@ -48,8 +49,9 @@
                     <li><b>Optimal substructure with overlapping sub-problems</b>:
                         <br>Recursion with memoization or dynamic programming.
                     </li>
-                    <li><b>Optimal substructure where only the locally optimal choice
-                            matters</b>:
+                    <li>
+                        <b>Optimal substructure where only the
+                            locally optimal choice matters</b>:
                         <br>Greedy algorithms.
                     </li>
                 </ul>
@@ -296,8 +298,9 @@
                     optimal!
                     <br>
                     <br>
-                    It is straight forward to see that we can solve this problem
-                    with a recursive, memoized algorithm -- we examine each
+                    It is straight forward to see that we
+                    can solve this problem with a recursive,
+                    memoized algorithm -- we examine each
                     possible "cut" of a "middle" lecture, and recursively solve
                     the start-to-middle problem, and the middle-to-end problem.
                     Or we could use a bottom-up dynamic programming algorithm,
@@ -325,7 +328,8 @@
                     The proof that this will give us a maximal set of
                     activities is trivial: Let us suppose <i>a</i><sub>j</sub>
                     is the activity in some set that finishes first, but that
-                    there is a maximal subset A<sub>k</sub> that does <i>not</i> include
+                    there is a maximal subset A<sub>k</sub>
+                    that does <i>not</i> include
                     <i>a</i><sub>j</sub>. We simply remove the first element of
                     A<sub>k</sub> and substitute in <i>a</i><sub>j</sub>. This
                     is guaranteed to be a compatible set of activities, since
@@ -334,6 +338,7 @@
                     that the textbook offers us an example of such sets on page
                     415.)
                     </p>
+
                 </details>
 
                 <details>
@@ -342,17 +347,34 @@
                     </summary>
 
                     <p>
-                    The algorithm it Is straightforward: find the first compatible
-                    activity, then call the algorithm again with the rest of the activity list.
+                    The algorithm is straightforward:
+                    find the first compatible activity, then call
+                    the algorithm again with the rest of the activity list.
                     <br>
                     <br>
-                    One trick worth noting: the authors put a dummy activity in the
-                    first position of the list, so that there is no special first
-                    call of the function.
+                    One trick worth noting:
+                    the authors put a dummy activity in the
+                    first position of the list, so that there
+                    is no special first call of the function.
                     <br>
                     There is a <b>design pattern</b> here: oftentimes, it is
-                    better to modify a data structure than to do special coding for
-                    end cases.
+                    better to modify a data structure than to do
+                    special coding for end cases.
+                    </p>
+                    <p>
+                        <code>
+                        <pre>
+            Recursive-Activity-Selector(s, f, k, n)
+                m = k + 1
+                while m &le; n and s[m] &lt; f[k]
+                    m = m + 1
+                if m &le; n
+                    // + here is set union!
+                    return a[m] + Recursive-Activity-Selector(s, f, m, n)
+                else
+                    return NIL
+                        </pre>
+                        </code>
                     </p>
                 </details>
 
@@ -367,7 +389,23 @@
                     algorithm into an iterative version. The authors discuss tail
                     recursion in this section: let's review what this is.
                     </p>
+                    <p>
+                        <code>
+                        <pre>
+            Greedy-Activity-Selector(s, f)
+                n = s.length
+                A = {a[1]}
+                k = 1
+                for m = 2 to n
+                    if s[m] &gt; f[k]
+                        A = A + {a[m]} // + is set union!
+                        k = m
+                return A
+                        </pre>
+                        </code>
+                    </p>
                 </details>
+
             </details>
 
             <details>
@@ -803,8 +841,9 @@
                     </h4>
                     <p>
                         We are looking at general conditions for <i>independence</i>
-                        of choices. All three problems turn out to be
-                        surprisingly similar. They are all <i>matroids</i>.
+                        of choices. All three situaitons turn out to be
+                        surprisingly similar. They can all
+                        be modeled using <i>matroids</i>.
                         <br>
                         <br>
                         We have a matroid when the following independence
@@ -885,10 +924,13 @@
 
                     <p>
                         This section draws on lectures by Federico Ardila:
-                        <br>
-                        https://www.youtube.com/watch?v=4EvpzV_3RXI
-                        <br>
-                        https://www.youtube.com/watch?v=pe5MaEugAwg&list=PL-XzhVrXIVeSu_b29hbX5xJ0bRThokU8a
+                        <a href="https://www.youtube.com/watch?v=4EvpzV_3RXI">
+                            here
+                        </a>
+                        and 
+                        <a
+                           href="https://www.youtube.com/watch?v=pe5MaEugAwg&list=PL-XzhVrXIVeSu_b29hbX5xJ0bRThokU8a">
+                            here</a>.
                     </p>
                 </details>
 
@@ -920,45 +962,6 @@
                     order of increasing deadlines, and our algorithm will work.
                 </p>
             </details>
-
-            <h2>
-                Run the Python code for greedy activity selector
-            </h2>
-                        <p>
-                            In the console below, type or paste:
-                            <br/>
-                            <code>
-                                !git clone https://gist.github.com/167f4e6856ca05247a10a5fc5fa2a24c.git
-                                <br/>
-                                cd 167f4e6856ca05247a10a5fc5fa2a24c
-                                <br/>
-                                from activity_selector import *
-                                <br/>
-                                start=[1,3,0,5,3,5,6,8,8,2,12]
-                                <br/>
-                                finish=[4,5,6,7,9,9,10,11,12,14,16]
-                                <br/>
-                                greedy_activity_selector(start,finish)
-                                <br/>
-                            </code>
-                        </p>
-
-        <div class="python-console">
-            <iframe style="width: 640; height: 480;"
-                    name="embedded_python_anywhere"
-                    src="https://www.pythonanywhere.com/embedded3/" scrolling="yes">
-            </iframe>
-            <figcaption>
-                Python console
-            </figcaption>
-        </div>
-
-
-                        <p>
-                            Now you can experiment with the algorithm by typing
-                            in your own start and finish time arrays (start_time = [x, y, z], finish_time = [p, q, r])
-                            and running greedy_activity_selector(start_time,finish_time)
-                        </p>
 
             <h2>
                 Source Code
