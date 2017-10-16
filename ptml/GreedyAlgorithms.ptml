@@ -558,6 +558,29 @@
                         </tr>
                         <tr>
                             <th>
+                                Frequency (in 1000s)
+                            </th>
+                            <td>
+                                45
+                            </td>
+                            <td>
+                                13
+                            </td>
+                            <td>
+                                12
+                            </td>
+                            <td>
+                                16
+                            </td>
+                            <td>
+                                9
+                            </td>
+                            <td>
+                                5
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
                                 Codeword
                             </th>
                             <td>
@@ -828,8 +851,9 @@
                         The definition of a matroid
                     </h4>
                     <p>
-                        We are looking at general conditions for <i>independence</i>
-                        of choices. All three situaitons turn out to be
+                        We are looking at general
+                        conditions for <i>independence</i>
+                        of choices. All three situations turn out to be
                         surprisingly similar. They can all
                         be modeled using <i>matroids</i>.
                         <br>
@@ -858,8 +882,8 @@
                         <br>
                         All three situations described above, the vector space,
                         the graph, and the matching problem, turn out to be the
-                        <i>same</i> matroid. (Technically, they are <i>isomorphic</i>
-                        matroids.)
+                        <i>same</i> matroid.
+                        (Technically, they are <i>isomorphic</i> matroids.)
                     </p>
 
                     <h4>
@@ -887,7 +911,8 @@
                         element <i>a</i> of A that can be moved into B, and B
                         will still be independent.
                         <br>
-                        Therefore, it was <i>not</i> a maximal independent subset after
+                        Therefore, it was <i>not</i>
+                        a maximal independent subset after
                         all!
                         <br>
                         <br>
@@ -930,6 +955,14 @@
                         <b>Q</b>: Why do greedy algorithms work on a matroid?
                         <br>
                         <b>A</b>: Independence!
+                    </p>
+                    <p>
+                        We often have a problem that can be considered as
+                        an instance of finding a maximum (or minimum)
+                        weight independent subset in a weighted matroid.
+                        Let us look at <a
+                            href="MinimumSpanningTrees.html#Kruskal">
+                            Kruskal's algorithm</a>.
                     </p>
                 </details>
             </details>

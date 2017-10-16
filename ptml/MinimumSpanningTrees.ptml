@@ -110,7 +110,9 @@
 
 
             <h2>
+                <a id="Kruskal">
                 Kruskal's Algorithm
+                </a>
             </h2>
 
                 <p>
