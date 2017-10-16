@@ -394,38 +394,6 @@
                     </p>
                 </details>
 
-
-                      <details>
-                        <summary class="sum2">
-                        Run the Python code for activity selection
-                        </summary>
-                      <p>
-                                In the console below, type or paste:
-                                <br/>
-                                <code>
-                                    !git clone https://gist.github.com/167f4e6856ca05247a10a5fc5fa2a24c.git
-                                    <br/>
-                                    cd 167f4e6856ca05247a10a5fc5fa2a24c
-                                    <br/>
-                                    from activity_selector import *
-                                    <br/>
-                                    start
-                                    <br/>
-                                    finish
-                                    <br/>
-                                    greedy_activity_selector(start, finish)
-                                    <br/>
-                                </code>
-                            </p>
-
-                            <!--include python_anywhere.txt -->
-
-                            <p>
-                                Now you can experiment with the algorithm by typing
-                                in your own start and finish time arrays (start_time = [x, y, z], finish_time = [p, q, r])
-                                and running greedy_activity_selector(start_time,finish_time)
-                            </p>
-                          </details>
             </details>
 
             <details>
