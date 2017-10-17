@@ -45,13 +45,34 @@
                 we are dealing with zipcodes
                 </li>
             </ol>
+            <li>
+                What is direct addressing?
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q3" value="a">
+                Fewer keys than array positions
+                </li>
+                <li>
+                <input type="radio" name="q3" value="b">
+                Distinct array position for every possible key
+                </li>
+                <li>
+                <input type="radio" name="q3" value="c">
+                Fewer array positions than keys
+                </li>
+                <li>
+                <input type="radio" name="q3" value="d">
+                None of the mentioned
+                </li>
+            </ol>
         </ol>
         <details>
             <summary class="sum3">
                 Answers
             </summary>
             <p>
-                1. a; 2. a; 
+                1. a; 2. a; 3. b; 
             </p>
         </details>
     </details>
