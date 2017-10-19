@@ -407,7 +407,7 @@
                           <br/>
                           from greedy_algorithms import *
                           <br/>
-                          print("start: " + start)
+                          print("start: ", start, "\nfinish: ", finish)
                           <br/>
                           greedy_activity_selector(start, finish)
                           <br/>
