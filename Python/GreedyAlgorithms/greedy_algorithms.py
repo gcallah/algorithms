@@ -15,10 +15,13 @@ This file contains:
     greedy_activity_selector()
 """
 
-start = [1,  3, 0, 5, 3, 5, 6, 8, 8, 2, 12]
-finish = [4,  5, 6, 7, 9, 9, 10, 11, 12, 14, 16]
+smalls = [1]
+smallf = [0, 4]
 
-def recursive_activity_selector(s, f, k, n=None):
+start = [0, 1, 3, 0, 5, 3, 5, 6, 8, 8, 2, 12]
+finish = [0, 4, 5, 6, 7, 9, 9, 10, 11, 12, 14, 16]
+
+def recursive_activity_selector(s, f, k, n):
     """
         Args:
             s: a list of start times
@@ -30,14 +33,13 @@ def recursive_activity_selector(s, f, k, n=None):
             A maximal set of activities that can be scheduled.
             (We use a list to hold the set.)
     """
-    if n is None:
-        assert(len(s) == len(f))  # each start time must match a finish time
-        n = len(s)  # could be len f as well!
     m = k + 1
     while m < n and s[m] < f[k]:  # find an activity starting after our last
                                    # finish
         m = m + 1
     if m < n:
+        print("Adding activity " + str(m) + " that finishes at "
+              + str(f[m]))
         return [m] + recursive_activity_selector(s, f, m, n)
     else:
         return []

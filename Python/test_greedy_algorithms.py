@@ -14,7 +14,7 @@ opt = [1, 4, 8, 11]
 
 class GreedyTestCase(TestCase):
     def test_recursive_activity_selector(self):
-        out = recursive_activity_selector(s, f, 0)
+        out = recursive_activity_selector(s, f, 0, 12)
         self.assertEqual(out, opt)
 
     def test_greedy_activity_selector(self):
