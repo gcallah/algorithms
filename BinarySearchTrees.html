@@ -36,23 +36,6 @@
                 12.1 What is a binary search tree?
             </summary>
 
-            <details>
-            <summary class="sum2">
-                Running time
-            </summary>
-            <p>
-                <b>Worst case:</b> &Theta;(n)
-                <br>
-                This occurs when the tree simply makes one long chain.
-                <br>
-                <br>
-                <b>Average case:</b> &Theta;(lg n)
-                <br>
-                That is because the expected height of a randomly built binary
-                search tree is O(lg n).
-            </p>
-            </details>
-
 
             <details>
             <summary class="sum2">
@@ -70,6 +53,35 @@
             <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <em>(Tree 1)</em>
             </p>
+            </details>
+
+            <details>
+                <summary class="sum2">
+                    Inorder Tree Walk
+                </summary>
+
+                <pre>
+                <code>
+                    Inorder-Tree-Walk(x)
+                        if x != NIL
+                            Inorder-Tree-Walk(x.left)
+                            print x.key
+                            Inorder-Tree-Walk(x.right)
+                </code>
+                </pre>
+                <p>
+                    Compare with:
+                </p>
+                <pre>
+                <code>
+                    Postorder-Tree-Walk(x)
+                        if x != NIL
+                            Postorder-Tree-Walk(x.left)
+                            Postorder-Tree-Walk(x.right)
+                            print x.key
+                </code>
+                </pre>
+
             </details>
         </details>
 
@@ -94,43 +106,69 @@
                 <br>
                 <br>
                 All searching functions (search, minimum, maximum, predecessor,
-                successor) run in <em>O(h)</em> time, where <em>h</em> is the height of
-                the tree.
+                successor) run in <em>O(h)</em> time,
+                where <em>h</em> is the height of the tree.
                 <br>
             </p>
 
             <details>
-            <summary class="sum2">
-                Search
-            </summary>
-            <p>
-                We search by starting with the root node. If it's key is equal
-                to the key for which we are searching, we are done: that is the
-                key we want.
-                <br>
-                On the other hand, if we have a NIL node at hand, we are also done,
-                but have failed to find the key.
-                <br>
-                Finally, if neither is true, we check the key at hand against
-                the key sought for.
-                <ul>
-                    <li>If k &lt; curr.key, recursively call tree search on curr.left.
-                    </li>
-                    <li>Else recursively call tree search on curr.right.
-                    </li>
-                </ul>
-            </p>
-            <p>
-                <br>
-                <b>Example:</b>
-                <br>Let's search for 4 in the tree above.
-                <ul>
-                    <li>4 &lt; 8; move left</li>
-                    <li>4 &gt; 3; move right</li>
-                    <li>4 &lt; 6; move left</li>
-                    <li>Voila!</li>
-                </ul>
-            </p>
+                <summary class="sum2">
+                    Search
+                </summary>
+                <p>
+                    We search by starting with the root node.
+                    If it's key is equal to the key for
+                    which we are searching, we are done: that is the
+                    key we want.
+                    <br>
+                    On the other hand, if we have a NIL node at hand,
+                    we are also done, but have failed to find the key.
+                    <br>
+                    Finally, if neither is true, we check the key
+                    at hand against the key sought for.
+                    <ul>
+                        <li>If k &lt; curr.key, recursively call
+                            tree search on curr.left.
+                        </li>
+                        <li>Else recursively call tree search on curr.right.
+                        </li>
+                    </ul>
+                </p>
+                <figure>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/200px-Binary_search_tree.svg.png">
+                    <figcaption>
+                    </figcaption>
+                </figure>
+                <p>
+                    <br>
+                    <b>Example:</b>
+                    <br>Let's search for 4 in the tree above.
+                    <ul>
+                        <li>4 &lt; 8; move left</li>
+                        <li>4 &gt; 3; move right</li>
+                        <li>4 &lt; 6; move left</li>
+                        <li>Voila!</li>
+                    </ul>
+                </p>
+
+
+                <details>
+                <summary class="sum3">
+                    Running time
+                </summary>
+                <p>
+                    <b>Worst case:</b> &Theta;(n)
+                    <br>
+                    This occurs when the tree simply makes one long chain.
+                    <br>
+                    <br>
+                    <b>Average case:</b> &Theta;(lg n)
+                    <br>
+                    That is because the expected height of a
+                    randomly built binary search tree is O(lg n).
+                </p>
+                </details>
             </details>
 
             
@@ -142,33 +180,49 @@
             <p>
             To find the minimum, we simply walk down the left side of the tree.
             <br>
-            To find the maximum, we simply walk down the right side of the tree.
+            To find the maximum, we simply walk down
+            the right side of the tree.
             </p>
             </details>
 
 
             <details>
-            <summary class="sum2">
-                Successor
-            </summary>
-            <p>
-                Similarly, let's walk through successor for our tree above.
-                <br>
-                <br>
-                Imagine we are seeking the successor of 3. The right tree of
-                three is non-empty. So we simply seek the minimum of that tree,
-                which is the leftmost node in the tree, in this case, 4.
-                <br>
-                <br>
-                On the other hand, take this tree, and start with node 10.
-                <br>
-                <br>
-                <img 
-                src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/BinTree1.png">
-                <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <em>(Tree 2)</em>
-                <br>
-            </p>
+                <summary class="sum2">
+                    Successor
+                </summary>
+                <figure>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/200px-Binary_search_tree.svg.png">
+                    <figcaption>
+                    </figcaption>
+                </figure>
+                <p>
+                    Let's walk through successor for our tree above.
+                    <br>
+                    <br>
+                    Imagine we are seeking the successor
+                    of 3. The right tree of three is non-empty. So we simply
+                    seek the minimum of that tree,
+                    which is the leftmost node in the tree, in this case, 4.
+                    <br>
+                    <br>
+                    On the other hand, take this tree, and start with node 10.
+                </p>
+                <figure>
+                    <img 
+                    src="graphics/BinTree1.png">
+                    <figcaption>
+                    Tree 2
+                    </figcaption>
+                </figure>
+                <p>
+                    <br>
+                    10 has no right child, so its successor must lie further up
+                    the tree. But it is the right hand node of its
+                    parent, so its parent can't be it. However, at the
+                    next move back a generation we move left... and
+                    that's the successor!
+                </p>
             </details>
         </details>
 
@@ -203,49 +257,63 @@
             </summary>
             <p>
                 Deletion is by far the most complicated coding of any of these
-                functions. There are four cases (and z is the node to delete):
+                functions. There are four cases (<i>z</i> is the node to delete):
             </p>
             <ol>
-                <li>z has no left child. (This handles two cases!)
+                <li><i>z</i> has no left child. (This handles two cases!)
                     <br>
-                    <b>Action:</b> Replace z by its right child, which might be
+                    <b>Action:</b> Replace <i>z</i> by its right child,
+                    which might be
                     NIL.
                 </li>
-                <li>z has only a left child.
+                <li><i>z</i> has only a left child.
                     <br>
-                    <b>Action:</b> Replace z by its left child.
+                    <b>Action:</b> Replace <i>z</i> by its left child.
                 </li>
-                <li>z has two children.
+                <li><i>z</i> has two children.
                     <br>
-                    <b>Action:</b> Find z's successor y, which lies in its
+                    <b>Action:</b> Find <i>z</i>'s successor y, which lies in its
                     right sub-tree.
-                    <ul>
-                        <li>If y is z's right child, replace z by y.
+                    <ul class="nested">
+                        <li>If <i>y</i> is <i>z</i>'s right child, replace
+                            <i>z</i> by <i>y</i>.
                         </li>
-                        <li>Otherwise, replace y by its own right child, then
-                            replace z by y.
+                        <li>Otherwise, replace <i>y</i> by its own
+                            right child, then replace <i>z</i> by <i>y</i>.
                         </li>
                     </ul>
                 </li>
 
             </ol>
-            <p>
-                Let's walk through deleting 8 in tree 2 above.
-            </p>
-            <ul>
-                <li>8 has two children, so we are in case 4.</li>
-                <li>The successor of 8 is 9.</li>
-                <li>9 is not the right child of 8.</li>
-                <li>So we replace 9 by 10.</li>
-                <li>Then we replace 8 by 9.</li>
-            </ul>
-            <p>
-            The right half of tree 2 now looks like this:
-            <br>
-            <br>
-                <img 
-                src="https://raw.githubusercontent.com/gcallah/algorithms/master/graphics/BinTree2.png">
-            </p>
+
+            <details>
+                <summary class="sum3">
+                Walk through of delete
+                </summary>
+
+                <figure>
+                    <img src="graphics/BinTree1.png">
+                    <figcaption>
+                    </figcaption>
+                </figure>
+                <p>
+                    Let's walk through deleting 8 in the tree above.
+                </p>
+                <ul>
+                    <li>8 has two children, so we are in case 4.</li>
+                    <li>The successor of 8 is 9.</li>
+                    <li>9 is not the right child of 8.</li>
+                    <li>So we replace 9 by 10.</li>
+                    <li>Then we replace 8 by 9.</li>
+                </ul>
+                <p>
+                The right half of tree 2 now looks like this:
+                <br>
+                <br>
+                    <img 
+                    src="graphics/BinTree2.png">
+                </p>
+                </details>
             </details>
         </details>
 

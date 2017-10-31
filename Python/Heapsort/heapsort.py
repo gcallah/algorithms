@@ -31,6 +31,8 @@ from utils.misc import swap, MAX_SENTINEL, MIN_SENTINEL
 MIN = 0
 MAX = 1
 
+test_arr = [10, 14, 16, 8, 7, 2, 4, 1, 9, 3]
+midterm = [25, 24, 21, 20, 13, 17, 16, 12]
 
 def get_sentinel(min_or_max=MAX):
     """
@@ -121,7 +123,6 @@ def heapify(h, i, heapsize=None, min_or_max=MAX):
 
     l = left(i)
     r = right(i)
-    print("\n*********\nheap in progress = " + str(h[0:heapsize]))
     if l < heapsize and comp(h[l], h[i]):
         largest = l
     else:
@@ -129,8 +130,6 @@ def heapify(h, i, heapsize=None, min_or_max=MAX):
     if r < heapsize and comp(h[r], h[largest]):
         largest = r
     if largest != i:
-        print("Swapping elements " + str(i) + " and " +
-                str(largest))
         swap(h, i, largest)
         heapify(h, largest, heapsize, min_or_max)
 
@@ -162,9 +161,11 @@ def heapsort(h, min_or_max=MAX):
         Performance: O(n lg n)
     """
     build_heap(h, min_or_max)
+    print("After build_heap, h = " + str(h))
     heapsize = len(h)
-    for i in range(len(h) - 1, 0, -1):
-        print("heapsort heap: " + str(h))
+    for i in range(len(h) - 1, -1, -1):
+        print("Looping in heapsort with i = " + str(i)
+              + "; h = " + str(h))
         swap(h, 0, i)
         heapsize -= 1
         heapify(h, 0, heapsize, min_or_max)
