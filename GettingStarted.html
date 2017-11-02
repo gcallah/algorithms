@@ -59,6 +59,26 @@
                     </ul>
 
                     <p>
+                        Insertion sort animation:
+                    </p>
+
+                      <canvas id="canvas" width="500" height="200"
+                          style="border:1px solid #000000"></canvas>
+                      <script src="Algocynfas/fabric.js"></script>
+                      <script src="Algocynfas/common_primitives.js"></script>
+                      <script src="Algocynfas/list_primitives.js"></script>
+                      <script src="Algocynfas/insertion_sort.js"></script>
+                      <script>
+                          var canvas = new fabric.Canvas('canvas');
+                          var list_to_sort = [10, 1, 56, 34,
+                                                97, 88, 23, 12, 5];
+                          sort(list_to_sort)
+                          async function sort(list_to_sort) {
+                              await window.insertionSort(list_to_sort);
+                          }
+                      </script>
+
+                    <p>
                         <b>Pseudo-code</b>: We employ this instead of "real"
                         code. It keeps the "code" language independent,
                         and allows us to express ideas in the simplest way
@@ -132,7 +152,8 @@
                   </summary>
               
                   <p>
-                  Even for inputs of a fixed size (saying, your favorite program
+                    Even for inputs of a fixed size
+                    (say, your favorite program
                     sorting 10 numbers), different specific
                     inputs will produce different performance.
                     For example, a clever algorithm may
@@ -192,12 +213,16 @@
                   </summary>
               
                     <p>
-                    In particular, we want to focus on the highest power of n in any
-                    function expressing the run time of an algorithm. That is because, as
-                    input size grows, that power will dwarf all others in significance.
+                    In particular, we want to focus on the
+                    highest power of n in any
+                    function expressing the run time
+                    of an algorithm. That is because, as
+                    input size grows, that power will
+                    dwarf all others in significance.
                     Consider the contribution of <em>n<sup>2</sup></em>
                     and <em>n</em> in the runtime of the
-                    sorting algorithm mentioned above for various values of <em>n</em>:
+                    sorting algorithm mentioned above
+                    for various values of <em>n</em>:
                     </p>
               
                     <table>
