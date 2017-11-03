@@ -26,21 +26,22 @@
 
 
             <details>
-            <summary class="sum2">
-                Binary Search Tree Property
-            </summary>
-            <blockquote>
-                Let x be a node in a binary search tree. If y is a node in the
-                left subtree of x, then y.key &le; x.key. If y is a node in the
-                right subtree of x, then y.key &ge; x.key.
-            </blockquote>
-            <p>
-
-            <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.svg.png">
-            <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <em>(Tree 1)</em>
-            </p>
+                <summary class="sum2">
+                    Binary Search Tree Property
+                </summary>
+                <p>
+                    <i>
+                    Let x be a node in a binary search tree. If y is a node in the
+                    left subtree of x, then y.key &le; x.key. If y is a node in the
+                    right subtree of x, then y.key &ge; x.key.
+                    </i>
+                </p>
+    
+                <figure>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/300px-Binary_search_tree.svg.png">
+                <em>(Tree 1)</em>
+                </figure>
             </details>
 
             <details>

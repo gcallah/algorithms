@@ -52,7 +52,9 @@
 
                       <canvas id="canvas" width="500" height="200"
                           style="border:1px solid #000000"></canvas>
-                      <script src="Algocynfas/fabric.js"></script>
+                      <script
+src="https://github.com/kangax/fabric.js/blob/master/dist/fabric.js">
+                      </script>
                       <script src="Algocynfas/common_primitives.js"></script>
                       <script src="Algocynfas/list_primitives.js"></script>
                       <script src="Algocynfas/insertion_sort.js"></script>

@@ -273,6 +273,7 @@ M2 = [10, 100, 5]
 M3 = [10, 100, 5, 50]
 M4 = [10, 100, 5, 50, 80]
 clrs_test = [30, 35, 15, 5, 10, 20, 25]  # this is the example from page 376
+midterm = [15, 5, 10, 20, 25]  # we'll use this on the midterm!
 
 
 ########################
