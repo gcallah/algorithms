@@ -62,16 +62,14 @@
                         Insertion sort animation:
                     </p>
 
-                      <canvas id="canvas" width="500" height="200"
+                      <canvas id="insert_sort" width="400" height="200"
                           style="border:1px solid #000000"></canvas>
-                      <script
-src="https://github.com/kangax/fabric.js/blob/master/dist/fabric.js">
-                      </script>
+                      <script src="Algocynfas/fabric.js"></script>
                       <script src="Algocynfas/common_primitives.js"></script>
                       <script src="Algocynfas/list_primitives.js"></script>
                       <script src="Algocynfas/insertion_sort.js"></script>
                       <script>
-                          var canvas = new fabric.Canvas('canvas');
+                          var canvas = new fabric.Canvas('insert_sort');
                           var list_to_sort = [10, 1, 56, 34,
                                                 97, 88, 23, 12, 5];
                           sort(list_to_sort)
