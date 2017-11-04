@@ -44,7 +44,7 @@ th {
 canvas {
     margin: .5em 2em .5em 2em;
     border: .1em dashed black;
-    background: #fde;
+    /*background: #fde;*/
 }
 
 li {
