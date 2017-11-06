@@ -19,9 +19,10 @@
                 </p>
             </div>
 
-            <h2>
-                What is a red-black tree?
-            </h2>
+        <details>
+            <summary class="sum1">
+                13.1 What is a red-black tree?
+            </summary>
 
                 <p>
                     The colors (indeed, using any color at all -- we could call
@@ -29,81 +30,149 @@
                     the creators is that they had red and black pens handy!
                 </p>
 
-                <h3>
+            <details>
+                <summary class="sum2">
                     Red-black properties
-                </h3>
+                </summary>
     
-                    <ol>
-                        <li>Every node is red or black.
-                        </li>
-                        <li>The root is black.
-                        </li>
-                        <li>Every leaf (<i>T.nil</i>) is black.
-                        </li>
-                        <li>If a node is red, then both of its children are
-                            black. (Never two reds in a row while descending!)
-                        </li>
-                        <li>For each node, all paths from the node to its
-                            descendant leaves contain the same number of black
-                            nodes.
-                        </li>
-                    </ol>
+                <ol>
+                    <li>Every node is red or black.
+                    </li>
+                    <li>The root is black.
+                    </li>
+                    <li>Every leaf (<i>T.nil</i>) is black.
+                    </li>
+                    <li>If a node is red, then both of its children are
+                        black. (Never two reds in a row while descending!)
+                    </li>
+                    <li>For each node, all paths from the node to its
+                        descendant leaves contain the same number of black
+                        nodes.
+                    </li>
+                </ol>
 
-                    <p>
-                        And so, a simple way to get an intuition as
-                        to why no leaf is further than
-                        twice as far from the root as the nearest leaf: The
-                        nearest leaf is B levels from the root. Since there is
-                        never more than one R-node between any two B-nodes, at
-                        most, the furthest node can be 2B - 1 levels away from
-                        the root.
-                    </p>
+                <p>
+                    And so, a simple way to get an intuition as
+                    to why no leaf is further than
+                    twice as far from the root as the nearest leaf: The
+                    nearest leaf is B levels from the root. Since there is
+                    never more than one R-node between any two B-nodes, at
+                    most, the furthest node can be 2B - 1 levels away from
+                    the root.
+                </p>
+            </details>
 
-                <h2>
+            <details>
+                <summary class="sum2">
                     Operations on red-black trees
-                </h2>
+                </summary>
+    
+                <p>
+                    <b>Remember:</b> This <i>is</i> a binary search tree.
+                    <br>
+                    So, non-modifying operations such as minimum(),
+                    maximum(), successor(), predecessor(), and search() run
+                    in O(height) time, and so for red-black trees, in O(lg
+                    n) time.
+                    <br>
+                    <br>
+                    But what about insert and delete? They are obviously
+                    trickier. In fact, they are the whole trick: the
+                    red-black properties are just a way of keeping the tree
+                    roughly balanced.
+                </p>
+    
+                <p>
+                    But to get to insert and delete, we need to pass
+                    through rotations on the way.
+                </p>
+            </details>
+        </details>
 
-                    <p>
-                        <b>Remember:</b> This <i>is</i> a binary search tree.
-                        <br>
-                        So, non-modifying operations such as minimum(),
-                        maximum(), successor(), predecessor(), and search() run
-                        in O(height) time, and so for red-black trees, in O(lg
-                        n) time.
-                        <br>
-                        <br>
-                        But what about insert and delete? They are obviously
-                        trickier. In fact, they are the whole trick: the
-                        red-black properties are just a way of keeping the tree
-                        roughly balanced.
-                    </p>
+        <details>
+            <summary class="sum1">
+                13.2 Rotations
+            </summary>
+
+            <details>
+                <summary class="sum2">
+                    Left Rotate
+                </summary>
+                
+                <p>
+                <code>
+                <pre>
+
+                </pre>
+                </code>
+                </p>
+            </details>
+
+            <details>
+                <summary class="sum2">
+                    Right Rotate
+                </summary>
+            </details>
+
+        </details>
 
 
-            <h2>
+        <details>
+            <summary class="sum1">
+                13.3 Insertions
+            </summary>
+
+            <figure>
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/vDHFF4wjWYU"
+                    frameborder="0" allowfullscreen>
+                </iframe>
+                <figcaption>
+                A series of insertions in a red-black tree
+                </figcaption>
+            </figure>
+        </details>
+
+
+        <details>
+            <summary class="sum1">
+                13.4 Deletions
+            </summary>
+        </details>
+
+
+        <details>
+            <summary class="sum1">
                 Source Code
-            </h2>
+            </summary>
 
             <p>
 <!--include RedBlackTrees_langs.txt -->
             </p>
-            <h2>
+        </details>
+
+        <details>
+            <summary class="sum1">
                 For Further Study
-            </h2>
-                <ul>
-                    <li><a
-                href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html">
-                            Red-black tree visualizer
-                        </a>
-                    </li>
-                    <li><a href="https://en.wikipedia.org/wiki/Red–black_tree">
-                            Wikipedia page on red-black trees
-                        </a>.
-                    </li>
-                </ul>
+            </summary>
+            <ul class="nested">
+                <li><a
+            href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html">
+                        Red-black tree visualizer
+                    </a>
+                </li>
+                <li><a href="https://en.wikipedia.org/wiki/Red–black_tree">
+                        Wikipedia page on red-black trees
+                    </a>.
+                </li>
+            </ul>
+        </details>
             
-            <h2>
+        <details>
+            <summary class="sum1">
                 Homework
-            </h2>
+            </summary>
+        </details>
     </body>
 <!--include google_analytics.txt -->
 </html>
