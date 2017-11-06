@@ -112,9 +112,32 @@
                 </summary>
                 
                 <p>
+                    Let's enter 2, 4, 6 in the:
+                    <br />
+                <a
+            href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html">
+                        Red-black tree visualizer
+                    </a>
+                </p>
+                
+                <p>
+                Here's the pseudo-code:
                 <code>
                 <pre>
-
+                Left-Rotate(T, x)
+                    y = x.right
+                    x.right = y.left
+                    if y.left != T.nil
+                        y.left.p = x
+                    y.p = x.p
+                    if x.p == T.nil
+                        T.root = y
+                    elif x == x.p.left
+                        x.p.left = y
+                    else
+                        x.p.right = y
+                    y.left = x
+                    x.p = y
                 </pre>
                 </code>
                 </p>
@@ -124,6 +147,20 @@
                 <summary class="sum2">
                     Right Rotate
                 </summary>
+                
+                <p>
+                    Let's enter 6, 4, 2 in the:
+                    <br />
+                    <a
+            href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html">
+                        Red-black tree visualizer
+                    </a>
+                </p>
+                <p>
+                    <b>Note</b>: In-order walks of the pre- and post-rotate
+                    trees produce the same output.
+                </p>
+
             </details>
 
         </details>
@@ -134,15 +171,35 @@
                 13.3 Insertions
             </summary>
 
-            <figure>
-                <iframe width="560" height="315"
-                    src="https://www.youtube.com/embed/vDHFF4wjWYU"
-                    frameborder="0" allowfullscreen>
-                </iframe>
-                <figcaption>
-                A series of insertions in a red-black tree
-                </figcaption>
-            </figure>
+            <details>
+                <summary class="sum2">
+                    Insert Animation
+                </summary>
+
+                <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/vDHFF4wjWYU"
+                        frameborder="0" allowfullscreen>
+                    </iframe>
+                    <figcaption>
+                    A series of insertions in a red-black tree
+                    </figcaption>
+                </figure>
+            </details>
+            
+            <details>
+                <summary class="sum2">
+                    Code
+                </summary>
+
+                <p>
+                Here's the pseudo-code:
+                <code>
+                <pre>
+                </pre>
+                </code>
+                </p>
+            </details>
         </details>
 
 
