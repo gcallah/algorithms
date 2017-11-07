@@ -184,6 +184,26 @@
                 Here's the pseudo-code:
                 <code>
                 <pre>
+                RB-Insert(T, z)
+                    y = T.nil
+                    x = T.root
+                    while x != T.nil
+                        y = x
+                        if z.key &lt; x.key
+                            x = x.left
+                        else
+                            x = x.right
+                    z.p = y
+                    if y == T.nil
+                        T.root = z
+                    elseif z.key &lt; y.key
+                        y.left = z
+                    else
+                        y.right = z
+                    z.left = T.nil
+                    z.right = T.nil
+                    z.color = RED
+                    RB-Insert-Fixup(T, z)
                 </pre>
                 </code>
                 </p>
