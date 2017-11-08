@@ -433,7 +433,7 @@
             case 2. And since the function part of the equation is
             f(n) = n, let's "guess":
             <br>
-            T(n) <= cn log n
+            T(n) &le; cn log n
             <br>
             <br>
             But that is just our hunch: we have to prove it!
@@ -443,15 +443,15 @@
             Use floors for divisions! Is:
         </p>
         <ul>
-            <li>T(0) <= c(0 * log 0) --> nonsense! (There is no log 0.)
+            <li>T(0) &le; c(0 * log 0) --&gt; nonsense! (There is no log 0.)
                 <br>
             </li>
-            <li>T(1) <= c(1 * log 1) --> false! (There is no such c.)
+            <li>T(1) &le; c(1 * log 1) --&gt; false! (There is no such c.)
                 <br>
             </li>
-            <li>T(2) <= c(2 * log 2) --> true!
+            <li>T(2) &le; c(2 * log 2) --&gt; true!
                 <br>
-                T(2) = T(floor(2/3)) + T(floor(4/3)) + 2 = 1 + 1 + 2 <=
+                T(2) = T(floor(2/3)) + T(floor(4/3)) + 2 = 1 + 1 + 2 &le;
                 c(2 * log 2) = c(2 * 1)
                 <br>
                 So if we set c = 2 (or greater) the inequality holds.
@@ -461,7 +461,7 @@
         <p>
             How many base cases do we need to examine? We will see!
             <br>
-            But we can prove it for any given "small" n > 2 by
+            But we can prove it for any given "small" n &gt; 2 by
             setting:
             <br>
             c &ge; T(n) / n log n
@@ -472,7 +472,7 @@
             <br>
             We assume that for k where:
             <br>
-            2 <= k < n
+            2 &le; k &lt; n
             <br>
             the claim is true.
             <br>
@@ -547,7 +547,7 @@
     </ol>
 
     <p>
-        (We assume c > 0.)
+        (We assume c &gt; 0.)
         <br>
         Let's break down these cases:
     </p>
@@ -977,7 +977,7 @@
     </p>
     <ol>
         <li>f(n) = O(n<sup>log<sub>b</sub>a-&epsilon;</sup>),
-            &epsilon; > 0
+            &epsilon; &gt; 0
             <br><b>Solution</b>: T(n) =
             &Theta;(n<sup>log<sub>b</sub>a</sup>)
         </li>
@@ -986,7 +986,7 @@
             &Theta;(n<sup>log<sub>b</sub>a</sup> lg n)
         </li>
         <li>f(n) = &Omega;(n<sup>log<sub>b</sub>a+&epsilon;</sup>),
-            &epsilon; > 0
+            &epsilon; &gt; 0
             <br><b>Solution</b>: T(n) = &Theta;(f(n))
         </li>
     </ol>
@@ -1005,10 +1005,10 @@
             integer, although this doesn't really make sense: how
             can we have 1.5 sub-problems?
         </li>
-        <li>b > 1
+        <li>b &gt; 1
             <br>
             If we don't get <i>smaller</i> sub-problems, we will
-            never finish! (n/b < n)
+            never finish! (n/b &lt; n)
             <br>
         </li>
         <li><b>Regularity condition</b> for case 3: af(n/b) &le; cf(n)
@@ -1034,8 +1034,8 @@
             n log n grows faster than n, but not by a polynomial
             difference:
             <br>
-            log n is asymptotically < n<sup>&epsilon;</sup> for any
-            &epsilon; > 0
+            log n is asymptotically &lt; n<sup>&epsilon;</sup> for any
+            &epsilon; &gt; 0
             <br>
             <figure>
                 <img src="graphics/RegularityCond.png">

@@ -118,9 +118,12 @@
                 <li> Universe of keys <em>U</em> mapped into slots of a <em>hash table</em>
                 of size <em>m</em> by hash function <em>h</em>.
                 </li>
-                <li> Because <em>size(U) > m</em>, collisions are always possible.
-                <br>Imagine we hash by word length: 'mark' and 'beam' both hash to
-                4. (Stupid hash function, but it illustrates the idea.) We must
+                <li> Because <em>size(U) &gt; m</em>,
+                    collisions are always possible.
+                <br>Imagine we hash by word length:
+                'mark' and 'beam' both hash to
+                4. (Stupid hash function, but it
+                illustrates the idea.) We must
                 resolve this collision somehow.
                 </li>
                 <li> Resolve collisions by chaining:
@@ -238,7 +241,7 @@
                 </li>
                 <li> Multiplication method:
                 <br>h(k) = [m (k A mod 1)],
-                where 0 < A < 1>.
+                where 0 &lt; A &lt; 1.
                 </li>
             </ul>
 

@@ -48,7 +48,7 @@
                             (up to constant factor) asymptotically
                         </td>
                         <td>
-                            <em>g(n) <= k*f(n)</em> for some
+                            <em>g(n) &le; k*f(n)</em> for some
                             positive <em>k</em>,
                             after some <em>n</em>
                         </td>
@@ -84,8 +84,8 @@
                             by <em>f</em> asymptotically
                         </td>
                         <td>
-                            <em>k<sub>2</sub>*f(n) <=
-                            g(n) <= k<sub>2</sub>*f(n)</em>
+                            <em>k<sub>2</sub>*f(n) &le;
+                            g(n) &le; k<sub>2</sub>*f(n)</em>
                             for some positive
                             <em>k<sub>1</sub></em>,
                                 <em>k<sub>2</sub></em>
@@ -121,7 +121,7 @@
                             asymptotically
                         </td>
                         <td>
-                            <em>g(n) >= k*f(n)</em>
+                            <em>g(n) &ge; k*f(n)</em>
                             for some positive <em>k</em>
                         </td>
                     </tr>
@@ -152,7 +152,7 @@
                             asymptotically
                         </td>
                         <td>
-                            <em>g(n) < k*f(n)</em> for
+                            <em>g(n) &lt; k*f(n)</em> for
                             every positive <em>k</em>
                         </td>
                     </tr>
@@ -184,7 +184,7 @@
                             asymptotically
                         </td>
                         <td>
-                            <em>g(n) > k*f(n)</em> for
+                            <em>g(n) &gt; k*f(n)</em> for
                             every positive <em>k</em>
                         </td>
                     </tr>
@@ -472,9 +472,10 @@
         We want to show that this has &Theta;(n) complexity.<br>
         We must find <em>k<sub>1</sub></em>, <em>k<sub>2</sub></em>, 
         and <em>n<sub>0</sub></em>, so that:
-        <em>k<sub>1</sub> * n < 2n + 3 < k<sub>2</sub> * n</em>
+        <em>k<sub>1</sub> * n &lt; 2n + 3 &lt; k<sub>2</sub> * n</em>
         <br>
-        One solution is <em>k<sub>1</sub> = 1</em>, <em>k<sub>2</sub> = 3</em>,
+        One solution is <em>k<sub>1</sub> = 1</em>,
+        <em>k<sub>2</sub> = 3</em>,
         and <em>n<sub>0</sub> = 4</em>.
         </p>
     </details> 
@@ -491,29 +492,35 @@
     Fibonacci numbers
     </summary> 
         <p>
-          The problem of computing, given <em>n >= 0</em>,
+          The problem of computing, given <em>n &ge; 0</em>,
           the <em>n</em><sup>th</sup> Fibonacci number <em>F<sub>n</sub></em>.
       
         </p>
 
         <p>
             The Fibonacci discussion is not in the textbook. 
-        One place where it is presented in a nice way similar to what I will do in class is in
-        section 0.2 of the DasGupta, Papadimitriou, Vazirani <em>Algorithms</em> book.
+        One place where it is presented in a nice way
+        similar to what I will do in class is in
+        section 0.2 of the DasGupta, Papadimitriou,
+        Vazirani <em>Algorithms</em> book.
         </p>
         
         <p>
         Talked about the obvious recursive algorithm;
-        how it is very slow, intuitively due to recomputing the same subproblems. 
-        Proved that the recursion tree grows at least as fast as the Fibonacci sequence itself. 
+        how it is very slow, intuitively due to
+        recomputing the same subproblems. 
+        Proved that the recursion tree grows at
+        least as fast as the Fibonacci sequence itself. 
         </p>
         
         <h4>Sketch of Proof</h4>
         <p>
-        Note that every leaf of the recursion tree returns one. The sum of the value
-        of all of these leaves is going to be the Fibonacci number we return.
-        Therefore, there must be at least as many operations as the Fibonacci number
-        itself.
+        Note that every leaf of the recursion tree
+        returns one. The sum of the value
+        of all of these leaves is going to
+        be the Fibonacci number we return.
+        Therefore, there must be at least
+        as many operations as the Fibonacci number itself.
         </p>
         
         

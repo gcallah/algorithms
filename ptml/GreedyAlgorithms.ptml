@@ -924,13 +924,16 @@
                         {a, b, c} {a, b, d}, {a, b, e} {a, c, d} {a, c, e}
                         <br>
                         <br>
-                        <b>Theorem</b>: Every basis of a matroid is of the same size.
+                        <b>Theorem</b>:
+                        Every basis of a matroid is of the same size.
                         <br>
                         <b>Proof</b>: Let assume that there are some bases
-                        A and B of a matroid such that |B| < |A|.
+                        A and B of a matroid such that |B| &lt; |A|.
                         <br>
-                        Then by the exchange axiom (#3 above), there is some
-                        element <i>a</i> of A that can be moved into B, and B
+                        Then by the exchange axiom (#3 above),
+                        there is some
+                        element <i>a</i> of A that can be moved
+                        into B, and B
                         will still be independent.
                         <br>
                         Therefore, it was <i>not</i>
@@ -941,8 +944,8 @@
                         Translation into the different matroid realms:
                         <br>
                         <br>
-                        The dimension of a vector space is the size of any of
-                        its bases.
+                        The dimension of a vector space is the
+                        size of any of its bases.
                         <br>
                         <br>
                         Every spanning tree has the same number of edges.

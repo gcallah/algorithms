@@ -17,11 +17,14 @@
         <br>
         <p>
         We assume that everyone is familiar with the basic concept of
-        probability (do not want to be very formal): what an EVENT is and what
+        probability (do not want to be very formal):
+        what an EVENT is and what
         Prob(EVENT) is.  For example: We are using a fair die.  The usual,
-        with six sides and numbers 1, 2, 3, 4, 5, 6 on its sides.  We throw it
+        with six sides and numbers 1, 2, 3,
+        4, 5, 6 on its sides.  We throw it
         once.  Then the probability of the event A:"4 came out" is 1/6.  The
-        probability of the event B:"5 came out" is 1/6. The probability of the
+        probability of the event B:"5 came out"
+        is 1/6. The probability of the
         event C:"an even number came out" is 1/2.  Etc.
         </p>
 
@@ -44,14 +47,14 @@
 
         From this comes a crude way to estimate probabilities:
           <em>
-          Prob(A or B) <= Prob(A) + Prob(B)
+          Prob(A or B) &le; Prob(A) + Prob(B)
           </em>
           or more generally:
           <br>
           <br>
           <em>
             Prob(A<sub>1</sub> or A<sub>2</sub> or ... or A<sub>n</sub>)
-            <= sum Prob (A<sub>i</sub>)
+            &le; sum Prob (A<sub>i</sub>)
           </em>
           <br>
           <br>
@@ -190,7 +193,8 @@
              <br>
              <br>
 
-             Let X<sub>i</sub> be the indicator variable of the event "in ith
+             Let X<sub>i</sub> be the indicator
+             variable of the event "in i<sub>th</sub>
              throw we got 1 or 6".
              Then notice that the number of times we get 1 or 6 is
              exactly
@@ -201,7 +205,8 @@
              <br>
              <br>
 
-             and we want the expectation of this.  By linearity of expectations:
+             and we want the expectation of this.
+             By linearity of expectations:
              <br>
              <br>
              <img src="graphics/Lec3Eq2.gif">
