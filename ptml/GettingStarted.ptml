@@ -52,8 +52,11 @@
                         Insertion sort animation:
                     </p>
 
+                    <div
+                        style="width: 400px; height: 200px">
                       <canvas id="insert_sort" width="400" height="200"
                           style="border:1px solid #000000"></canvas>
+                    </div>
                       <script src="Algocynfas/fabric.js"></script>
                       <script src="Algocynfas/common_primitives.js">
                       </script>
