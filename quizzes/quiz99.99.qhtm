@@ -1,0 +1,41 @@
+    <details>
+        <summary class="sum2">
+            Quiz
+        </summary>
+        <ol>
+            <li>
+                What is Prashant's bug?
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q1" value="a">
+                All in his mind.
+                </li>
+                <li>
+                <input type="radio" name="q1" value="b">
+                A real bug.
+                </li>
+            </ol>
+            <li>
+                ?
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q2" value="a">
+                b
+                </li>
+                <li>
+                <input type="radio" name="q2" value="b">
+                a
+                </li>
+            </ol>
+        </ol>
+        <details>
+            <summary class="sum3">
+                Answers
+            </summary>
+            <p>
+                1. a; 2. b; 
+            </p>
+        </details>
+    </details>
