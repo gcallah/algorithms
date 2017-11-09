@@ -24,13 +24,55 @@
                 7 5 1 0 3 2 4 6 8 9
                 </li>
             </ol>
+            <li>
+                Given a binary search tree, which traversal type would print the values in the nodes in sorted order?
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q2" value="a">
+                None of the above
+                </li>
+                <li>
+                <input type="radio" name="q2" value="b">
+                Postorder
+                </li>
+                <li>
+                <input type="radio" name="q2" value="c">
+                Preorder
+                </li>
+                <li>
+                <input type="radio" name="q2" value="d">
+                Inorder
+                </li>
+            </ol>
+            <li>
+                Preorder and in order of a tree is given Inorder — D H B E A I F C J G Preorder -- A B D H E C F I G J K. What will be the post order traversal of the tree?
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q3" value="a">
+                H D E B F I J K G C A
+                </li>
+                <li>
+                <input type="radio" name="q3" value="b">
+                H D E B I F J K G C A
+                </li>
+                <li>
+                <input type="radio" name="q3" value="c">
+                H D E B I F J K C G A
+                </li>
+                <li>
+                <input type="radio" name="q3" value="d">
+                None of the above
+                </li>
+            </ol>
         </ol>
         <details>
             <summary class="sum3">
                 Answers
             </summary>
             <p>
-                1. b; 
+                1. b; 2. d; 3. b; 
             </p>
         </details>
     </details>
