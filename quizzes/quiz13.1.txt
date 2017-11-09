@@ -1,0 +1,1 @@
+The maximum height for a red-black tree is#n#8lg(n + 1)#lg(n)#^2lg(n + 1)
