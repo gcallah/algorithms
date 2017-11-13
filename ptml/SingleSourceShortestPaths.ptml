@@ -2,14 +2,14 @@
     <head>
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <title>
-            Design and Analyis of Algorithms:  Single Source Shortest Paths
+            Design and Analyis of Algorithms: Single Source Shortest Paths
         </title>
     </head>
 
     <body>
 <!--include menu.txt -->
         <h1>
-            Design and Analyis of Algorithms:  Single Source Shortest Paths
+            Design and Analyis of Algorithms: Single Source Shortest Paths
         </h1>
 
             <div style="text-align:center">
@@ -18,30 +18,80 @@
                 </p>
             </div>
 
-            <h2>
-                Overview
-            </h2>
+            <details>
+                <summary class="sum1">
+                Dijkstra's Algorithm
+                </summary >
+                <p>
+                    Discovered by Edsger Dijkstra.
+                </p>
 
-            <h2>
+                <figure>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/57/Dijkstra_Animation.gif">
+                    <figcaption>
+                        Dijkstra's algorithm running
+                    </figcaption>
+                </figure>
+
+                <p>
+                <code>
+                    <pre>
+1  function Dijkstra(Graph, source):
+2
+3      create vertex set Q
+4
+5      for each vertex v in Graph:     // Initialization
+6          dist[v] = INFINITY      // Unknown distance from source to v
+7          prev[v] = UNDEFINED     // Previous node in optimal path from source
+8          add v to Q            // All nodes initially in Q (unvisited nodes)
+9
+10      dist[source] = 0           // Distance from source to source
+11      
+12      while Q is not empty:
+13          u = vertex in Q with min dist[u]  // Node with the least distance
+14                                            // will be selected first
+15          remove u from Q 
+16          
+17          for each neighbor v of u:           // where v is still in Q.
+18              alt = dist[u] + length(u, v)
+19              if alt &lt; dist[v]:      // A shorter path to v has been found
+20                  dist[v] = alt 
+21                  prev[v] = u 
+22
+23      return dist[], prev[] 
+                    </pre>
+                </code>
+                </p>
+            </details>
+
+            <details>
+                <summary class="sum1">
                 Source Code
-            </h2>
-            <p>
-            <a
-                href="https://github.com/gcallah/algorithms/blob/master/Python/">
-                Python
-            </a>
-            <br>
-            </p>
+                </summary>
+                <p>
+                <a
+                    href="https://github.com/gcallah/algorithms/blob/master/Python/">
+                    Python
+                </a>
+                <br>
+                </p>
+            </details>
 
-            <h2>
+            <details>
+                <summary class="sum1">
                 For Further Study
-            </h2>
+                </summary>
                 <ul>
+                    <li>
+                        <a
+                        href="https://www.cs.usfca.edu/~galles/visualization/Dijkstra.html">
+                            Shortest path visualizer
+                        </a>
+                    </li>
                 </ul>
+            </details>
             
-            <h2>
-                Homework
-            </h2>
     </body>
 <!--include google_analytics.txt -->
 </html>
