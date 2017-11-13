@@ -32,13 +32,10 @@
                 </p>
             </div>
 
-            <h2>
-                Topics
-            </h2>
-
-                <h3>
+            <details>
+                <summary class="sum1">
                     Seven Bridges of Ko&#776;nigsberg
-                </h3>
+                </summary>
 
                     <p>
                     <img
@@ -97,12 +94,13 @@
                         </li>
                     </ul>
 
+            </details>
 
 
-
-                <h3>
+            <details>
+                <summary class="sum1">
                     Representations of graphs
-                </h3>
+                </summary>
                     <p>
                     <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Directed.svg/125px-Directed.svg.png">
@@ -152,38 +150,43 @@
                         <br>
                         <br>
                     </p>
-                    <h4>
-                        Trade-offs
-                    </h4>
-                        <ul>
-                            <li>Adjacency list is generally smaller and at
-                                worst as large as adjacency matrix. We use it
-                                for sparse graphs, where E is singificantly
-                                less than V<sup>2</sup>. 
-                            </li>
-                            <li>Adjacency matrix is simpler. It also allows
-                                quicker search for whether some specific edge
-                                is present or not.
-                            </li>
-                        </ul>
-                        <p>
-                            Both forms can be used to represent directed,
-                            undirected, and weighted graphs.
-                            <br>
-                            For weighted graphs, we can store 0 or the weight
-                            in the matrix instead of just 0 or 1. For the list, we
-                            store a tuple (vertex, weight) in the adjancency list of a
-                            vertex.
-                            <br>
-                            For directed graphs, in a list, <i>i</i>, say, would have
-                            an entry for <i>j</i>, but <i>j</i> would not for <i>i</i>.
-                            In a matrix, m[i][j] would be 1, but m[j][i] would
-                            be 0.
-                        </p>
 
-                    <h4>
+                    <details>
+                        <summary class="sum2">
+                            Trade-offs
+                        </summary>
+                            <ul>
+                                <li>Adjacency list is generally smaller and at
+                                    worst as large as adjacency matrix. We use it
+                                    for sparse graphs, where E is singificantly
+                                    less than V<sup>2</sup>. 
+                                </li>
+                                <li>Adjacency matrix is simpler. It also allows
+                                    quicker search for whether some specific edge
+                                    is present or not.
+                                </li>
+                            </ul>
+                            <p>
+                                Both forms can be used to represent directed,
+                                undirected, and weighted graphs.
+                                <br>
+                                For weighted graphs, we can store 0 or the weight
+                                in the matrix instead of just 0 or 1.
+                                For the list, we store a tuple (vertex, weight)
+                                in the adjancency list of a vertex.
+                                <br>
+                                For directed graphs, in a list, <i>i</i>,
+                                say, would have an entry for <i>j</i>,
+                                but <i>j</i> would not for <i>i</i>.
+                                In a matrix, m[i][j] would be 1,
+                                but m[j][i] would be 0.
+                            </p>
+                    </details>
+
+                <details>
+                    <summary class="sum2">
                         Representing attributes
-                    </h4>
+                    </summary>
                     <p>
                     For pseudo-code, we just represent attribute <i>f</i> of
                     edge <i>(u, v)</i> as <i>(u, v).f</i>. (<i>f</i> might
@@ -208,10 +211,14 @@
                             each node.
                         </li>
                     </ul>
+                </details>
+            </details>
 
-                <h3>
+            <details>
+                <summary class="sum1">
                     Breadth-first search
-                </h3>
+                </summary>
+            
                     <p>
                         <img
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Breadth-first-tree.svg/300px-Breadth-first-tree.svg.png">
@@ -238,38 +245,53 @@
                         They are colored black when all of their adjacent vertices
                         have been discovered.
                     </p>
-                    <h4>
+                <details>
+                    <summary class="sum2">
                         Analysis
-                    </h4>
+                    </summary>
 
-                        <ul>
-                            <li>After initialization, BFS never whitens a
-                                vertex. So each will go on and off the queue at
-                                most once. So queue time is O(V).
-                            </li>
-                            <li>The adjacency List for each vertex is scanned
-                                once, when the vertex is dequeued. The length
-                                of all adjacency lists is the number of edges,
-                                E. So this runs in O(E).
-                            </li>
-                            <li>The overhead for initialization is O(V).
-                            </li>
-                            <li>Thus, we get a running time for BFS of O(V +
-                                E).
-                            </li>
-                        </ul>
+                    <ul>
+                        <li>After initialization, BFS never whitens a
+                            vertex. So each will go on and off the queue at
+                            most once. So queue time is O(V).
+                        </li>
+                        <li>The adjacency List for each vertex is scanned
+                            once, when the vertex is dequeued. The length
+                            of all adjacency lists is the number of edges,
+                            E. So this runs in O(E).
+                        </li>
+                        <li>The overhead for initialization is O(V).
+                        </li>
+                        <li>Thus, we get a running time for BFS of O(V +
+                            E).
+                        </li>
+                    </ul>
+                </details>
 
-                    <h4>
+                <details>
+                    <summary class="sum2">
                         Shortest paths
-                    </h4>
+                    </summary>
                     <p>
                     Breadth-first search computes shortest path distances.
                     </p>
 
+                    <p>
+                    <b>Lemma 22.1</b>
+                    <br />
+                    For any edge (u, v) &isin; E,
+                    <br />
+                    &delta;(s, v) &le; &delta;(s, u) + 1
+                    </p>
 
-                <h3>
+                </details>
+            </details>
+
+
+            <details>
+                <summary class="sum1">
                     Depth-first search
-                </h3>
+                </summary>
 
                     <p>
                         <img
@@ -293,16 +315,19 @@
     
                     </p>
 
-                    <h4>
+                <details>
+                    <summary class="sum2">
                         Properties of depth-first search
-                    </h4>
+                    </summary>
                         <p>
                             <b>Running time</b>: O(V + E) 
                         </p>
+                </details>
 
-                    <h4>
+                <details>
+                    <summary class="sum2">
                         Classification of edges
-                    </h4>
+                    </summary>
 
                         <p>
                         Types of edges:
@@ -340,11 +365,14 @@
                             <li><b>BLACK:</b> This is a forward edge or cross edge.
                             </li>
                         </ol>
+                </details>
+            </details>
 
 
-                <h3>
+            <details>
+                <summary class="sum1">
                     Topological sort
-                </h3>
+                </summary>
                     <p>
                     <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Directed_acyclic_graph_2.svg/180px-Directed_acyclic_graph_2.svg.png">
@@ -374,30 +402,34 @@
                         <li><b>return</b> the linked list of vertices.
                         </li>
                     </ol>
+            </details>
 
 
-                <h3>
+            <details>
+                <summary class="sum1">
                     Strongly connected components
-                </h3>
-                    <p>
-                        <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Graph_Condensation.svg/330px-Graph_Condensation.svg.png">
-    
-                        <br>
-                        <br>
-                        These are components of directed graphs that can each
-                        be reached from the other.
-                        <br>
-                        Many advanced graph algorithms rely on de-composing a
-                        graph into strongly directed components, and then
-                        processing those, and then combining the results:
-                        <i>divide-and-conquer</i>!
-                    </p>
+                </summary>
+                <p>
+                    <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Graph_Condensation.svg/330px-Graph_Condensation.svg.png">
+
+                    <br>
+                    <br>
+                    These are components of directed graphs that can each
+                    be reached from the other.
+                    <br>
+                    Many advanced graph algorithms rely on de-composing a
+                    graph into strongly directed components, and then
+                    processing those, and then combining the results:
+                    <i>divide-and-conquer</i>!
+                </p>
+            </details>
 
 
-            <h2>
+        <details>
+            <summary class="sum1">
                 Source Code
-            </h2>
+            </summary>
                 <p>
                 <a
                     href="https://github.com/gcallah/algorithms/blob/master/Python/GraphAlgorithms/">
@@ -410,9 +442,12 @@
                 </a>
                 <br>
                 </p>
-            <h2>
+        </details>
+
+        <details>
+            <summary class="sum1">
                 For Further Study
-            </h2>
+            </summary>
                 <ul>
                     <li>
                         <a href="https://en.wikipedia.org/wiki/Graph_(abstract_data_type)">
@@ -420,15 +455,18 @@
                         </a>
                     </li>
                 </ul>
+        </details>
 
-            <h2>
+        <details>
+            <summary class="sum1">
                 Credits
-            </h2>
+            </summary>
             <ul>
                 <li>Graphics of list versus matrix representations:
                     https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/representing-graphs
                 </li>
             </ul>
+        </details>
 
 
     </body>
