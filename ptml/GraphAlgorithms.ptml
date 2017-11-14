@@ -242,7 +242,7 @@
                             vertex. So each will go on and off the queue at
                             most once. So queue time is O(V).
                         </li>
-                        <li>The adjacency List for each vertex is scanned
+                        <li>The adjacency list for each vertex is scanned
                             once, when the vertex is dequeued. The length
                             of all adjacency lists is the number of edges,
                             E. So this runs in O(E).
@@ -410,6 +410,20 @@
                     processing those, and then combining the results:
                     <i>divide-and-conquer</i>!
                 </p>
+
+                <p>
+                    Algorithm:
+                </p>
+
+                <ol>
+                    <li>
+                        Call DFS(G) to compute finish times for each vertex.
+                    </li>
+                    <li>
+                        Compute 
+                    </li>
+                </ol>
+
             </details>
 
 
