@@ -1,3 +1,6 @@
 [submodule "Algocynfas"]
 	path = Algocynfas
 	url = https://github.com/gcallah/Algocynfas.git
+[submodule "utils"]
+	path = utils
+	url = https://github.com/gcallah/utils
