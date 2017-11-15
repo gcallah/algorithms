@@ -22,6 +22,8 @@ This file contains:
 
 from utils.misc import swap
 
+quicktest  = [87, 90, 21, 56, 24, 1, 9, 16, 63, 2]
+
 swaps = 0
 
 def hoare_partition(l, p, r):
@@ -66,30 +68,23 @@ def partition(l, p, r, prnt=True):
     global swaps
     x = l[r]
     if prnt:
-        print("Checking print flag; = " + str(prnt))
         print("Partition: Our pivot element x = " + str(x))
     i = p - 1
     for j in range(p, r):
         if l[j] <= x:
             i += 1
-            if prnt:
-                print("i = " + str(i) + " and j = " + str(j))
             if i != j:
                 if prnt:
                     print("Swapping elements " + str(l[i]) + " and "
                           + str(l[j]))
                 swap(l, i, j)
                 swaps += 1
-                if prnt:
-                    print("Swaps = " + str(swaps))
     if (i + 1) != r:
         if prnt:
             print("Swapping elements " + str(l[i + 1]) + " and "
                   + str(l[r]))
         swap(l, i + 1, r)
         swaps += 1
-        if prnt:
-            print("Swaps = " + str(swaps))
     return i + 1
 
 def quicksort(l, p=None, r=None, partf=partition, prnt=True):
