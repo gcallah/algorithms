@@ -83,8 +83,15 @@
 
                     <h3>
                     <a
-                        href="MidTermFall2016.html">
+                        href="tests/MidTermFall2016.html">
                         Mid-Term Exam Fall 2016
+                    </a>
+                    </h3>
+
+                    <h3>
+                    <a
+                        href="tests/MidTermFall2017.pdf">
+                        Mid-Term Exam Fall 2017
                     </a>
                     </h3>
 
