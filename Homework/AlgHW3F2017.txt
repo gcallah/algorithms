@@ -1,0 +1,22 @@
+﻿Homework 3: Dynamic and Greedy Programming
+
+
+Note: ^ means “raise to the power”.
+[NOTE ANY OTHER UNUSUAL NOTATION UP HERE!]
+
+
+[HERE ARE EXAMPLES OF THE FORMATS: YOU MUST FOLLOW THE FORMAT EXACTLY! IT IS A DUMB-ASSED COMPUTER THAT HAS TO READ THESE.]
+
+
+1. (2 points) Question?
+a. Wrong answer
+*b. Correct answer
+c. Wrong answer
+d. Wrong answer
+
+
+2. (1 point) All Xs are Ys.
+*False
+
+
+4. (4 points) Some longer problem.

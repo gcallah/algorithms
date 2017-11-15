@@ -1,0 +1,86 @@
+﻿Homework 2: Divide-and-Conquer and Heapsort
+
+
+Note: ^ means “raise to the power”.
+
+
+1. (2 points) What is the Big-O of 3T(n/3) + 3n^4?
+*a. O(n^4) 
+b. O(n^3)
+c. O(n!)
+d. O(n^⅓)
+
+
+2. Given an input array A = [4, 1, 3, 2, 16, 9, 10, 14, 17, 6], how is the array transformed by build_min_heap?
+a. [4, 2, 3, 1, 14, 9, 10, 17, 6, 16]
+b. [1, 2, 3, 6, 14, 9, 10, 17, 4, 16]
+*c. [1, 2, 3, 14, 4, 9, 10, 17, 16, 6]
+d. [1, 4, 3, 2, 14, 9, 10, 17, 6, 16]
+
+
+3. (1 point) All recurrences can be handled by the master theorem.
+*False
+
+
+4. (4 points) Trace through the heapsort of [6, 3, 8, 12, 1, 2, 34, 5, 7]. Show the array after buildheap and after each heapify.
+
+
+5. (4 points) Give at least two recurrences for each:
+1 - f(n) = Theta(lg n)
+2 - f(n) = Theta(n)
+3 - f(n) = Theta(n^2 lg n)
+And for each one, choose a recurrence you wrote and list the work done at the first few levels of the recurrence tree.
+
+
+6. (2 points) According to the master method, the recurrence T(n) = 4T(n / 2) + n^2 is
+*a. Big-Theta(n^2)
+b. Big-Theta( (n^2) / 3)
+c. Big-Theta(n^2 lg n)
+d. Master method not applicable
+
+
+7. (2 points) According to the master method, the recurrence T(n) = 3T(n / 3)  + n lg n is
+a. Big-Theta(n)
+b. Big-Theta(n / 3)
+c. Big-Theta(n lg n)
+*d. Master method not applicable
+
+
+
+
+8. (3 points) What is the reason for decrementing loop index i in line 2 of BUILD-MAX-HEAP from A.length / 2 to 1 rather than increasing it from 1 to A.length / 2?
+
+
+9. (2 points) What is the time complexity of finding the minimum item in a max heap of size n?
+1. O(1)
+2. O(lg n)
+3. *O(n) 
+4. None of the above 
+
+
+10. (1 point) Which of the following algorithms is NOT a divide & conquer algorithm? 
+1. Binary search
+2. *Heap Sort
+3. Quick Sort
+4. Strassen’s matrix multiplication
+
+
+12. (2 points) The time complexity of heapsort is O(n lg n) because: 
+1. *We do a O(lg n) operation n times.
+2. We do a O(n) operation lg n times.
+3. The master theorem gives that answer.
+4. None of the above.
+
+
+13. (2 points) Consider a max heap, represented by the array: [40, 30, 20, 10, 15, 16, 17, 8, 4] Now consider that a value 37 is inserted into this heap. After insertion and heapification, the new heap is:
+1. [40, 30, 20, 10, 15, 16, 17, 8, 4, 37]
+2. [40, 30, 20, 10, 37, 16, 17, 8, 4, 15]
+3. *[40, 37, 20, 10, 30, 16, 17, 8, 4, 15]
+4. [40, 37, 20, 10, 15, 16, 17, 8, 4, 30]
+
+
+14. (2 points) According to the master method, the recurrence T(n) = .5T(n / 2)  + n^2 is
+a. Big-Theta(n)
+b. Big-Theta(n^2)
+c. Big-Theta(n lg n)
+*d. Master method not applicable
