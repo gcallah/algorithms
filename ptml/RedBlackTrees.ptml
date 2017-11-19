@@ -36,30 +36,55 @@
                 </summary>
     
                 <ol>
-                    <li>Every node is red or black.
+                    <li>
+                        Every node is red or black.
                     </li>
-                    <li>The root is black.
+                    <li>
+                        The root is black.
                     </li>
-                    <li>Every leaf (<i>T.nil</i>) is black.
+                    <li>
+                        Every leaf (<i>T.nil</i>) is black.
                     </li>
-                    <li>If a node is red, then both of its children are
+                    <li>
+                        If a node is red, then both of its children are
                         black. (Never two reds in a row while descending!)
                     </li>
-                    <li>For each node, all paths from the node to its
+                    <li>
+                        For each node, all paths from the node to its
                         descendant leaves contain the same number of black
                         nodes.
                     </li>
                 </ol>
 
                 <p>
+                    <b>T.nil</b>: This is simply a space saving device: every
+                    "leaf" node of an ordinary BST gets left and right child
+                    pointers to a special node, <i>T.nil</i>, and the root node
+                    of the tree has its parent point to this as well.
+                </p>
+
+                <p>
                     And so, a simple way to get an intuition as
                     to why no leaf is further than
                     twice as far from the root as the nearest leaf: The
-                    nearest leaf is B levels from the root. Since there is
-                    never more than one R-node between any two B-nodes, at
-                    most, the furthest node can be 2B - 1 levels away from
+                    nearest leaf at the least <i>bh</i> levels from the root.
+                    (The black-height of every node is the same.)
+                    Since there is never more than one R-node
+                    between any two B-nodes, at
+                    most, the furthest node can be 2B levels away from
                     the root.
+                    <br />
+                    So we get:
+                    <br />
+                    A red-black tree with <i>n</i> internal nodes has height at
+                    most 2 lg(<i>n</i> + 1).
                 </p>
+                <figure>
+                    <img src="graphics/RedBlackUnbalanced.png">
+                    <figcaption>
+                        A maximally unbalanced red-black tree
+                    </figcaption>
+                </figure>
             </details>
 
             <details>
@@ -149,6 +174,7 @@
                 <p>
                     <b>Note</b>: In-order walks of the pre- and post-rotate
                     trees produce the same output.
+                    It is still a BST!
                 </p>
 
             </details>
