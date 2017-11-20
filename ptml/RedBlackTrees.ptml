@@ -63,28 +63,37 @@
                     of the tree has its parent point to this as well.
                 </p>
 
-                <p>
-                    And so, a simple way to get an intuition as
-                    to why no leaf is further than
-                    twice as far from the root as the nearest leaf: The
-                    nearest leaf at the least <i>bh</i> levels from the root.
-                    (The black-height of every node is the same.)
-                    Since there is never more than one R-node
-                    between any two B-nodes, at
-                    most, the furthest node can be 2B levels away from
-                    the root.
-                    <br />
-                    So we get:
-                    <br />
-                    A red-black tree with <i>n</i> internal nodes has height at
-                    most 2 lg(<i>n</i> + 1).
-                </p>
-                <figure>
-                    <img src="graphics/RedBlackUnbalanced.png">
-                    <figcaption>
-                        A maximally unbalanced red-black tree
-                    </figcaption>
-                </figure>
+                <details>
+                    <summary class="sum3">
+                        How Red-Black Trees Solve the BST Problem
+                    </summary>
+                    <p>
+                        And so, a simple way to get an intuition as
+                        to why no leaf is further than
+                        twice as far from the root as the nearest leaf: The
+                        nearest leaf at the least <i>bh</i> levels from the root.
+                        (The black-height of every node is the same.)
+                        Since there is never more than one R-node
+                        between any two B-nodes, at
+                        most, the furthest node can be 2B levels away from
+                        the root.
+                        <br />
+                        So we get:
+                        <br />
+                        A red-black tree with <i>n</i> internal nodes has height at
+                        most 2 lg(<i>n</i> + 1).
+                    </p>
+                    <figure>
+                        <img src="graphics/RedBlackBalance.png"
+                            height="300" width="480">
+                        <figcaption>
+                            How a red-black tree ensures balance
+                            <br />
+                            (Source:
+                            http://www.geeksforgeeks.org/red-black-tree-set-1-introduction-2/)
+                        </figcaption>
+                    </figure>
+                </details>
             </details>
 
             <details>
@@ -123,6 +132,34 @@
 
             <details>
                 <summary class="sum2">
+                    Right Rotate
+                </summary>
+                
+                <p>
+                    Let's enter 6, 4, 2 in the:
+                    <br />
+                    <a
+            href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html">
+                        Red-black tree visualizer
+                    </a>
+                </p>
+                <p>
+                    <b>Note</b>: In-order walks of the pre- and post-rotate
+                    trees produce the same output.
+                    It is still a BST!
+                </p>
+
+                <figure>
+                    <img src="graphics/RedBlackRightRotate.png"
+                        height="280" width="500">
+                    <figcaption>
+                        A right rotation
+                    </figcaption>
+                </figure>
+            </details>
+
+            <details>
+                <summary class="sum2">
                     Left Rotate
                 </summary>
                 
@@ -158,27 +195,6 @@
                 </p>
             </details>
 
-            <details>
-                <summary class="sum2">
-                    Right Rotate
-                </summary>
-                
-                <p>
-                    Let's enter 6, 4, 2 in the:
-                    <br />
-                    <a
-            href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html">
-                        Red-black tree visualizer
-                    </a>
-                </p>
-                <p>
-                    <b>Note</b>: In-order walks of the pre- and post-rotate
-                    trees produce the same output.
-                    It is still a BST!
-                </p>
-
-            </details>
-
         </details>
 
 
@@ -210,6 +226,14 @@
 
                 <p>
                 Here's the pseudo-code:
+                </p>
+
+                <details>
+                    <summary class="sum3">
+                        Insert
+                    </summary>
+
+                <p>
                 <code>
                 <pre>
                 RB-Insert(T, z)
@@ -235,7 +259,96 @@
                 </pre>
                 </code>
                 </p>
+                </details>
+
+                <details>
+                    <summary class="sum3">
+                        After Insert Fixup
+                    </summary>
+
+                <p>
+                <code>
+                <pre>
+                RB-Insert-Fixup(T, z)
+                    while z.p.color == RED
+                        if z.p == z.p.p.left
+                            y = z.p.p.right
+                            if y.color == RED
+                                z.p.color = BLACK
+                                y.color = BLACK
+                                z.p.p.color = RED
+                                z = z.p.p
+                            else
+                                if z == z.p.right
+                                    z = z.p
+                                    Left-Rotate(T, z)
+                                z.p.color = BLACK
+                                z.p.p.color = RED
+                                Right-Rotate(T, z.p.p)
+                        else // same as if with right and left reversed
+                            ...
+                    T.root.color = BLACK
+                </pre>
+                </code>
+                </p>
+                </details>
+
             </details>
+
+            <details>
+                <summary class="sum2">
+                    Fixup loop invariant
+                </summary>
+                <ol class="nested">
+                    <li>
+                        Node <i>z</i> is red.
+                    </li>
+                    <li>
+                        If <i>z</i>.<i>p</i> is the root, then
+                        <i>z</i>.<i>p</i> is black.
+                    </li>
+                    <li>
+                        If the tree violates any red-black properties, then 
+                        it violates at most one. That one will be either:
+                        <ul class="nested">
+                            <li>
+                                Property 2, because <i>z</i> is the root and is red,
+                                or
+                            </li>
+                            <li>
+                                Property 4, because <i>z</i> and
+                                <i>z</i>.<i>p</i> are both red.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <p>
+                    Each loop iteration we do one of two things: either we move
+                    up the tree, 
+                </p>
+
+            </details>
+
+            <details>
+                <summary class="sum2">
+                    Analysis
+                </summary>
+
+                <p>
+                    The insert code itself (without fixup)
+                    takes O(lg <i>n</i>) time, just like for a BST.
+                    <br />
+                    In fixup, the rotations occur in constant time.
+                    <br />
+                    We move up the tree while fixing, and this happens at most 
+                    lg <i>n</i> times.
+                    <br />
+                    Therefore, insert is O(lg <i>n</i>).
+                </p>
+            </details>
+
+<!--include quiz13.3.qhtm -->
         </details>
 
 
