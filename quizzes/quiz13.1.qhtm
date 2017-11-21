@@ -24,13 +24,72 @@
                 2lg(n + 1)
                 </li>
             </ol>
+            <li>
+                A red-black tree is
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q2" value="a">
+                a type of binary search tree
+                </li>
+                <li>
+                <input type="radio" name="q2" value="b">
+                a minimum spanning tree
+                </li>
+                <li>
+                <input type="radio" name="q2" value="c">
+                a B-tree
+                </li>
+            </ol>
+            <li>
+                The goal of red-black trees is to
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q3" value="a">
+                keep a BST balanced
+                </li>
+                <li>
+                <input type="radio" name="q3" value="b">
+                minimize insert time in a BST
+                </li>
+                <li>
+                <input type="radio" name="q3" value="c">
+                minimize delete time in a BST
+                </li>
+                <li>
+                <input type="radio" name="q3" value="d">
+                minimize search time in a BST
+                </li>
+            </ol>
+            <li>
+                Given the properties of a red-black tree, one can never have
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q4" value="a">
+                a root node that is black
+                </li>
+                <li>
+                <input type="radio" name="q4" value="b">
+                nil leaf nodes
+                </li>
+                <li>
+                <input type="radio" name="q4" value="c">
+                two black nodes linked
+                </li>
+                <li>
+                <input type="radio" name="q4" value="d">
+                two red nodes linked
+                </li>
+            </ol>
         </ol>
         <details>
             <summary class="sum3">
                 Answers
             </summary>
             <p>
-                1. d; 
+                1. d; 2. a; 3. a; 4. d; 
             </p>
         </details>
     </details>

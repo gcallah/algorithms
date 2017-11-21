@@ -1,1 +1,4 @@
 The maximum height for a red-black tree is#n#8lg(n + 1)#lg(n)#^2lg(n + 1)
+A red-black tree is#^a type of binary search tree#a minimum spanning tree#a B-tree
+The goal of red-black trees is to#^keep a BST balanced#minimize insert time in a BST#minimize delete time in a BST#minimize search time in a BST
+Given the properties of a red-black tree, one can never have#a root node that is black#nil leaf nodes#two black nodes linked#^two red nodes linked

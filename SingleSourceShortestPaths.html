@@ -33,6 +33,67 @@
 
             <details>
                 <summary class="sum1">
+                24.0 Introduction
+                </summary >
+
+
+                <details>
+                    <summary class="sum2">
+                        Cycles
+                    </summary>
+
+                    <p>
+                    A shortest path (if it exists)
+                    can always be achieved cycle free:
+                    </p>
+                    <ul>
+                        <li>
+                            If there is a negative-weight cycle, no answer is
+                            possible.
+                        </li>
+                        <li>
+                            If there is a positive-weight cycle, it can be
+                            eliminated to produce a shorter path.
+                        </li>
+                        <li>
+                            A zero-weight cycle can be eliminated to produce
+                            a path of the same cost.
+                        </li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary class="sum2">
+                        Relaxation
+                    </summary>
+
+                    <p>
+                        Why the funny name for a move that "tightens up"
+                        the distance to v?
+                        <br />
+                        It is historical, coming from "relaxing" the triangle
+                        constraint on the distance between <i>u</i> and
+                        <i>v</i>.
+                    </p>
+
+                    <p>
+                    <code>
+                        <pre>
+                        Relax(u, v, w)
+                            if v.d &gt; u.d + w(u, v)
+                                v.d = u.d + w(u, v)
+                                v.pred = u
+                        </pre>
+                    </code>
+                    </p>
+
+                </details>
+
+
+            </details>
+
+            <details>
+                <summary class="sum1">
                 Dijkstra's Algorithm
                 </summary >
                 <p>

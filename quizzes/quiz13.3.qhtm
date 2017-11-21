@@ -1,0 +1,53 @@
+    <details>
+        <summary class="sum2">
+            Quiz
+        </summary>
+        <ol>
+            <li>
+                Why do we left rotate at line 12 of RB-Insert-Fixup?
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q1" value="a">
+                z is its parent's left child, which means the tree is growing to the left
+                </li>
+                <li>
+                <input type="radio" name="q1" value="b">
+                because z's parent is the right child of z's grandparent
+                </li>
+                <li>
+                <input type="radio" name="q1" value="c">
+                because z's grandparent is RED
+                </li>
+            </ol>
+            <li>
+                Line 4 of RB-Insert-Fixup, where the color of y is checked, is determining
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q2" value="a">
+                the color of z's niece
+                </li>
+                <li>
+                <input type="radio" name="q2" value="b">
+                the color of z's grandparent
+                </li>
+                <li>
+                <input type="radio" name="q2" value="c">
+                the color of z's uncle
+                </li>
+                <li>
+                <input type="radio" name="q2" value="d">
+                the color of z's parent
+                </li>
+            </ol>
+        </ol>
+        <details>
+            <summary class="sum3">
+                Answers
+            </summary>
+            <p>
+                1. a; 2. c; 
+            </p>
+        </details>
+    </details>
