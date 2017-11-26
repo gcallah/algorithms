@@ -356,6 +356,33 @@
             <summary class="sum1">
                 13.4 Deletions
             </summary>
+
+            <details>
+                <summary class="sum2">
+                    Red-Black Deletion Video
+                </summary>
+
+                <ul>
+                    <li>
+                        Red node
+                    </li>
+                    <li>
+                        Black node with red child
+                    </li>
+                    <li>
+                        Black node with black children
+                    </li>
+                </ul>
+
+                <figure>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/CTvfzU_uNKE" frameborder="0" allowfullscreen>
+                    </iframe>
+                    <figcaption>
+                        Red-Black Tree Deletion
+                    </figcaption>
+                </figure>
+            </details>
+
         </details>
 
 

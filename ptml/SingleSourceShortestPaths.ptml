@@ -81,7 +81,36 @@
 
             <details>
                 <summary class="sum1">
-                Dijkstra's Algorithm
+                    24.1 Bellman-Ford algorithm
+                </summary>
+
+                <details>
+                    <summary class="sum2">
+                        Bellman-Ford videos
+                    </summary>
+
+                    <figure>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/obWXjtg0L64" frameborder="0" allowfullscreen>
+                        </iframe>
+                        <figcaption>
+                            Bellman-Ford in 5 minutes
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/rPsCRxTDwnQ" frameborder="0" allowfullscreen>
+                        </iframe>
+                        <figcaption>
+                            Bellman-Ford with a negative weight cycle
+                        </figcaption>
+                    </figure>
+                </details>
+
+            </details>
+
+            <details>
+                <summary class="sum1">
+                24.3 Dijkstra's Algorithm
                 </summary >
                 <p>
                     Discovered by Edsger Dijkstra.

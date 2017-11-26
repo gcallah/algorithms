@@ -77,18 +77,6 @@
             </li>
 
             <li>
-                <a href="RedBlackTrees.html">
-                Red-Black Trees
-                </a>
-            </li>
-
-            <li>
-                <a href="AugmentingDataStructures.html">
-                Augmenting Data Structures
-                </a>
-            </li>
-
-            <li>
                 <a href="GraphAlgorithms.html">
                 Graph Algorithms
                 </a>
@@ -97,6 +85,24 @@
             <li>
                 <a href="MinimumSpanningTrees.html">
                 Minimum Spanning Trees
+                </a>
+            </li>
+
+            <li>
+                <a href="SingleSourceShortestPaths.html">
+                Single Source Shortest Paths
+                </a>
+            </li>
+
+            <li>
+                <a href="RedBlackTrees.html">
+                Red-Black Trees
+                </a>
+            </li>
+
+            <li>
+                <a href="AugmentingDataStructures.html">
+                Augmenting Data Structures
                 </a>
             </li>
 
