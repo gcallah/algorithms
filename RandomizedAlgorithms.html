@@ -281,7 +281,33 @@
              Randomized algorithms
              </summary>
              <p>
+                In average-case analysis, we consider run-time over a
+                probability distribution of inputs.
+                <br />
+                So, for Hire-Assistant, if we get candidates in order
+                (with higher numbers meaning better):
+                <br />
+                A<sub>1</sub> = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                <br />
+                we hire all 10 candidates. If we get:
+                <br />
+                A<sub>2</sub> = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+                <br />
+                we hire only once. And if our input is:
+                <br />
+                A<sub>3</sub> = [5, 2, 1, 8, 4, 7, 10, 9, 3, 6]
+                <br />
+                we hire three times.
+                So A<sub>1</sub> is very expensive input, A<sub>2</sub>
+                is very cheap, and A<sub>3</sub> is in between.
+             </p>
 
+             <p>
+                On the other hand, if we have a randomized algorithm,
+                we can't say anything about how "good" A<sub>1</sub>,
+                A<sub>2</sub>, and A<sub>3</sub> are as inputs: they are
+                randomized before the hire code runs. <i>No particular input 
+                elicits worst-case behavior</i>.
              </p>
 
 
@@ -301,6 +327,11 @@
                     sort A, using P as sort keys
                  </pre>
              </code>
+             </p>
+
+             <p>
+                We cube <i>n</i> to get at least 1 - 1/<i>n</i>^3
+                probability that all enties are unique.
              </p>
 
 
@@ -413,9 +444,52 @@
 
 
             <details>
-             <summary class="sum2">
-             Balls and bins
-             </summary>
+                <summary class="sum2">
+                Balls and bins
+                </summary>
+
+                <figure>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Assortment_of_40_mm_table_tennis_balls.jpg"
+                    height="240" width="360">
+                    <figcaption>
+                    </figcaption>
+                </figure>
+
+                <p>
+                    <i>b</i>: number of bins.
+                    <br />
+                    <i>n</i>: number of balls.
+                    <br />
+                    <i>Expected balls in a given bin?</i>: <i>n</i> / <i>b</i>
+                    <br />
+                    <i>Expected tosses until a given bin contains a ball?</i>:
+                        <i>b</i>
+                    <br />
+                    <i>How many balls must we toss until we expect that every
+                        bin contains at least one ball?</i>
+                    <br />
+                    Call a ball falling in an empty bin a "hit." 
+                    <br />
+                    First toss is a guaranteed hit!
+                    <br />
+                    For the next stage, we have <i>i</i> - 1 bins
+                    containing balls, and <i>b</i> - <i>i</i> + 1 bins
+                    empty.
+                    <br />
+                    So for <i>i</i>th stage, the probability of a hit is:
+                    <br />
+                    (<i>b</i> - <i>i</i> + 1) / <i>b</i>
+                    So, for 6 bins, the expected tosses to fill the next bin
+                    are:
+                    <br />
+                    E(n<sub>2</sub>) = 6 / 5
+                    <br />
+                    E(n<sub>3</sub>) = 6 / 4
+                    <br />
+                    E(n<sub>4</sub>) = 6 / 3
+                    <br />
+                </p>
+
             </details>
 
 
