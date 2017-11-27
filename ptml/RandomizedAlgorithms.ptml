@@ -19,77 +19,122 @@
         <br>
 
         <details>
-        <summary class="sum1">
-            The hiring problem
-        </summary>
+            <summary class="sum1">
+                The hiring problem
+            </summary>
+
+            <p>
+                Here's the algorithm:
+            </p>
+
+            <p>
+            <code>
+                <pre>
+                Hire-Assistant(n)
+                    best = 0
+                    for i = 1 to n
+                        interview candidate i
+                        if i is better than best
+                            best = i
+                            hire(i)
+                </pre>
+            </code>
+            </p>
 
             <details>
-            <summary class="sum2">
-                Worst-case analysis
-            </summary>
-            <p>
-            The worst case: the employment agency sets us up, and sends us
-            candidates in worst-to-best order, so we hire every single one.
-            </p>
+                <summary class="sum2">
+                    Worst-case analysis
+                </summary>
+                <p>
+                The worst case: the employment agency sets us up, and sends us
+                candidates in worst-to-best order, so we hire every single one.
+                </p>
             </details>
 
 
             <details>
-            <summary class="sum2">
-                Probabilistic anaysis
-            </summary>
-            <p>
-            We use probability theory to find an <em>average-case running
-                time</em>.
-            <br>
-            <br>
-            <a href="Probability.html">Probability basics</a>.
-            </p>
+                <summary class="sum2">
+                    Probabilistic anaysis
+                </summary>
+                <p>
+                We use probability theory to find an <em>average-case running
+                time</em>. This is the average over some likely distribution of
+                inputs.
+                <br />
+                <i>If</i> we don't know our likely inputs, we can't use
+                probabilistic analysis.
+                </p>
+
+                <p>
+                See also: 
+                <a href="Probability.html">Probability basics</a>.
+                </p>
             </details>
 
 
             <details>
-            <summary class="sum2">
-                A randomized algorithm
-            </summary>
-            <p>
-            We best the employment agency by shuffling their list of candidates,
-            and seeing them in random order: we get a much lower average cost, as we shall
-            prove.
-            </p>
-            <p>
-            When we randomize the algorithm we speak of an <em>expected
+                <summary class="sum2">
+                    A randomized algorithm
+                </summary>
+                <p>
+                We best the employment agency by shuffling
+                their list of candidates, and seeing them
+                in random order: we get a much lower average
+                cost, as we shall prove.
+                </p>
+
+                <p>
+                An algorithm is <i><b>randomized</b></i> if its behavior is
+                controlled not only by its inputs but also by a <i><b>
+                random-number generator</b></i> .
+                <br />
+                Random(m, n) returns with equal probability an integer between
+                <i>m</i> and <i>n</i> inclusive. So Random(2, 4) returns either
+                2, 3, or 4, each with probability 1/3.
+                </p>
+
+                <p>
+                When we randomize the algorithm we speak of an <em>expected
                 running time</em>.
-            </p>
+                <br />
+                <i>Average-case running time</i>: the probability distribution
+                is over inputs.
+                <br />
+                <i>Expected running time</i>: the algorithm itself makes
+                random choices.
+                </p>
+
             </details>
 
             <details>
-            <summary class="sum2">
-                  Run the Python code for the random algorithm to hire an assistant
-            </summary>
-                          <p>
-                              In the console below, type or paste:
-                              <br/>
-                              <code>
-                                  !git clone https://gist.github.com/91e59d2a36937f9be17cee01ddb9588d.git
-                                  <br/>
-                                  cd 91e59d2a36937f9be17cee01ddb9588d
-                                  <br/>
-                                  from hire_assistant import *
-                                  <br/>
-                                  n=18
-                                  <br/>
-                                  hire_assistant(n,False)
-                                  <br/>
-                              </code>
-                          </p>
+                <summary class="sum2">
+                  Run the Python code for the random
+                  algorithm to hire an assistant
+                </summary>
+                 <p>
+                     In the console below, type or paste:
+                     <br/>
+                     <code>
+                         !git clone https://gist.github.com/91e59d2a36937f9be17cee01ddb9588d.git
+                         <br/>
+                         cd 91e59d2a36937f9be17cee01ddb9588d
+                         <br/>
+                         from hire_assistant import *
+                         <br/>
+                         n=18
+                         <br/>
+                         hire_assistant(n,False)
+                         <br/>
+                     </code>
+                 </p>
 
-                          <!--include python_anywhere.txt -->
+                 <!--include python_anywhere.txt -->
 
-                          <p>
-                              Now you can experiment with the algorithm by changing the value of n
-                              and running hire_assistant(n,False)
-                          </p>
+                 <p>
+                     Now you can experiment with the algorithm
+                     by changing the value of n
+                     and running hire_assistant(n, False)
+                 </p>
             </details>
 
         </details>
@@ -120,16 +165,14 @@
              <p>
              If X is an indicator variable for A, then
              <br> <br>
-             <em>
                  Exp[X] = Prob[X=1] = Prob[A happens]
-             </em>
-             .
+             
              <br> <br>
              This easily follows from the definition:
-             <br> <br>
-             <em>
-                 Exp[X] = 1 * Prob[X=1] + 0 * Prob[X=0] = Prob[X=1] = Prob[A happens]
-             </em>
+             <br>
+             <br>
+                 Exp[X] = 1 * Prob[X=1] + 0 * Prob[X=0] =
+                 Prob[X=1] = Prob[A happens]
              <br>
              <br>
 
@@ -154,7 +197,8 @@
              <br>
              <br>
 
-             and we want the expectation of this.  By linearity of expectations:
+             and we want the expectation of this.
+             By linearity of expectations:
              <br>
              <br>
              <img

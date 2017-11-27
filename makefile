@@ -21,7 +21,7 @@ website: template tests $(INCS) $(HTMLFILES) $(SUBPROJ_FILES)
 	./Ruby/tests.sh
 	cd Python; ./tests.sh
 	cd ..
-	-git commit -a -m "HTML rebuild."
+	-git commit -a -m "Website rebuild."
 	git push origin master
 
 tests: $(QUIZ_DIR)
