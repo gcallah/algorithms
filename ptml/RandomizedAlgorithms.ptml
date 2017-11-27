@@ -128,7 +128,7 @@
 
             <details>
              <summary class="sum2">
-             Useful properties of indicator variables:
+             Useful properties of indicator variables
              </summary>
 
              <p>
@@ -256,8 +256,6 @@
              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Integral_Test.svg/250px-Integral_Test.svg.png">
              </p>
              <p>
-             And what is that <em>O(1)</em> about?
-             <br>It means that the sum - ln n is always bounded by a constant.
 
              </p>
             </details>
@@ -392,28 +390,24 @@
              <br> <br>
              <em>k</em> is the number of people in the room.
              <br> <br>
-             <img
-             src=
-             "graphics/RandEq6.gif">
+             <img src= "graphics/RandEq6.gif">
              <br> <br>
              Take expectations and apply linearity of expectation:
              <br> <br>
-             <img
-             src=
-             "graphics/RandEq7.gif">
+             <img src= "graphics/RandEq7.gif">
              <br> <br>
-             <img
-             src=
-             "graphics/RandEq8.gif">
+             <img src= "graphics/RandEq8.gif">
              <br> <br>
-             <img
-             src=
-             "graphics/RandEq9.gif">
+             <img src= "graphics/RandEq9.gif">
              <br> <br>
-             <img
-             src=
-             "graphics/RandEq10.gif">
+             <img src= "graphics/RandEq10.gif">
              <br>
+             <br>
+             So we need:
+             <br />
+             <i>k</i><sup>2</sup> &ge; 2n
+             <br>
+             For 365 days in a year, square root of 730 &asymp; 27.
              <br>
              So we are looking at <em>&Theta;(n<sup>1/2</sup>)</em>,
              asymptotically speaking.
@@ -466,15 +460,19 @@
                     <br />
                     E(n<sub>4</sub>) = 6 / 3
                     <br />
+                    (Some math equations to be filled in!)
+                    <br />
+                    And we get <i>b</i> ln <i>b</i> for the expected number of
+                    tosses until each bin has at least one ball in it.
                 </p>
 
             </details>
 
 
             <details>
-             <summary class="sum2">
-             Streaks
-             </summary>
+                <summary class="sum2">
+                Streaks
+                </summary>
             </details>
 
 
