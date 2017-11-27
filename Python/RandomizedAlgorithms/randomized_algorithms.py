@@ -22,7 +22,7 @@ import math
 import random
 
 
-def hire_assistant(n, suppress_msgs=False):
+def randomized_hire_assistant(n, suppress_msgs=False):
     """
         We have to interview a new assistant every day. If the interviewee is
         better than the current assistant, we fire the old, bring in the new.
@@ -42,7 +42,8 @@ def hire_assistant(n, suppress_msgs=False):
     random.shuffle(candidates)
     for candidate in candidates:
         if not suppress_msgs:
-            print("Comparing candidates " + str(candidate) + " and " + str(best))
+            print("Comparing candidates " + str(candidate) + " and "
+                  + str(best))
         cost_i += ICOST
         if candidate > best:
             if not suppress_msgs:

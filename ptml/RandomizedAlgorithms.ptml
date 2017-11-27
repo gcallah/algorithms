@@ -106,37 +106,6 @@
 
             </details>
 
-            <details>
-                <summary class="sum2">
-                  Run the Python code for the random
-                  algorithm to hire an assistant
-                </summary>
-                 <p>
-                     In the console below, type or paste:
-                     <br/>
-                     <code>
-                         !git clone https://gist.github.com/91e59d2a36937f9be17cee01ddb9588d.git
-                         <br/>
-                         cd 91e59d2a36937f9be17cee01ddb9588d
-                         <br/>
-                         from hire_assistant import *
-                         <br/>
-                         n=18
-                         <br/>
-                         hire_assistant(n,False)
-                         <br/>
-                     </code>
-                 </p>
-
-                 <!--include python_anywhere.txt -->
-
-                 <p>
-                     Now you can experiment with the algorithm
-                     by changing the value of n
-                     and running hire_assistant(n, False)
-                 </p>
-            </details>
-
         </details>
 
 
@@ -307,9 +276,52 @@
              <summary class="sum2">
              Randomly permuting arrays
              </summary>
-             <p>
 
+             <p>
+             <code>
+                 <pre>
+                 Permute-By-Sorting(A)
+                    n = A.length
+                    let P[1..n] be a new array
+                    for i = 1 to n
+                        P[i] = Random(1, n^3)
+                    sort A, using P as sort keys
+                 </pre>
+             </code>
              </p>
+
+
+            </details>
+
+            <details>
+                <summary class="sum2">
+                  Run the Python code for the randomized
+                  algorithm to hire an assistant
+                </summary>
+                 <p>
+                     In the console below, type or paste:
+                     <br/>
+                     <code>
+                         !git clone https://gist.github.com/91e59d2a36937f9be17cee01ddb9588d.git
+                         <br/>
+                         cd 91e59d2a36937f9be17cee01ddb9588d
+                         <br/>
+                         from hire_assistant import *
+                         <br/>
+                         n=18
+                         <br/>
+                         hire_assistant(n,False)
+                         <br/>
+                     </code>
+                 </p>
+
+                 <!--include python_anywhere.txt -->
+
+                 <p>
+                     Now you can experiment with the algorithm
+                     by changing the value of n
+                     and running hire_assistant(n, False)
+                 </p>
             </details>
         </details>
 
