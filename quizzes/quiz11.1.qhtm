@@ -55,7 +55,7 @@
                 </li>
                 <li>
                 <input type="radio" name="q3" value="b">
-                Distinct array position for every possible key
+                Every key specifies a distinct array position
                 </li>
                 <li>
                 <input type="radio" name="q3" value="c">
