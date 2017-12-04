@@ -540,6 +540,56 @@
                         Red-Black Tree Deletion
                     </figcaption>
                 </figure>
+
+                <p>
+                    RB-Delete is going to rely on RB-Transplant:
+                </p>
+
+                <p>
+                <code>
+                    <pre>
+                    RB-Transplant(t, u, v)
+                        if u.p == T.nil
+                            T.root = v
+                        elsif u == u.p.left
+                            u.p.left = v
+                        else
+                            u.p.right = v
+                        v.p = u.p
+                    </pre>
+                </code>
+                </p>
+
+                <p>
+                    And this will only be called on nodes for which it will
+                    work: we don't call it on a node with two children asking
+                    that one of them be its replacement without finding a
+                    min or max, for instance.
+                    <br />
+                    So here is RB-Delete:
+                </p>
+
+                <p>
+                <code>
+                    <pre>
+                    RB-Delete(T, x)
+                    </pre>
+                </code>
+                </p>
+
+                <p>
+                    And here is RB-Delete-Fixup:
+                </p>
+
+                <p>
+                <code>
+                    <pre>
+                    RB-Delete-Fixup(T, x)
+                    </pre>
+                </code>
+                </p>
+
+
             </details>
 
         </details>
