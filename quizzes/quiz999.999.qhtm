@@ -1,0 +1,28 @@
+    <details>
+        <summary class="sum2">
+            Quiz
+        </summary>
+        <ol>
+            <li>
+                How does this work?
+            </li>
+            <ol type="a" class="nested">
+                <li>
+                <input type="radio" name="q1" value="a">
+                Very well!
+                </li>
+                <li>
+                <input type="radio" name="q1" value="b">
+                Badly
+                </li>
+            </ol>
+        </ol>
+        <details>
+            <summary class="sum3">
+                Answers
+            </summary>
+            <p>
+                1. a; 
+            </p>
+        </details>
+    </details>

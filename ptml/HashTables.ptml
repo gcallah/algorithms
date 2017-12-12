@@ -490,6 +490,25 @@
             <summary class="sum1">
             11.5 Perfect hashing
             </summary>
+
+            <p>
+                We can get even better perfromance with a fixed hash table --
+                think of reserved words in a programming language, or the
+                index of a CD -- by <i>perfect hashing</i>.
+                <br />
+                We proceed as in hashing with chaining, but then, instead of a
+                linked list, each hash slot gets a hash table
+                <i>m</i><sub><i>j</i></sub> of size <i>n</i><sup>2</sup>, where
+                <i>n</i> is the number of elements expected to hash to slot
+                <i>j</i>.
+                <br />
+                The probability of geetting a collision is much like the
+                birthday problem: when the table size is the square of the 
+                expected number of entries, the probability of collisions 
+                is &lt; 1/2. So we can just try hash functions until we find
+                one that produces no collisions.
+            </p>
+
         </details>
 
         <details>
