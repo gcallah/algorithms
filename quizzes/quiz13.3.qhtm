@@ -4,7 +4,7 @@
         </summary>
         <ol>
             <li>
-                Why do we left rotate at line 12 of RB-Insert-Fixup?
+                Why do we left rotate at line 11 of RB-Insert-Fixup?
             </li>
             <ol type="a" class="nested">
                 <li>

@@ -1,2 +1,2 @@
-Why do we left rotate at line 12 of RB-Insert-Fixup?#^z is its parent's right child, which means the tree is growing to the left#because z's parent is the right child of z's grandparent#because z's grandparent is RED
+Why do we left rotate at line 11 of RB-Insert-Fixup?#^z is its parent's right child, which means the tree is growing to the left#because z's parent is the right child of z's grandparent#because z's grandparent is RED
 Line 4 of RB-Insert-Fixup, where the color of y is checked, is determining#the color of z's niece#the color of z's grandparent#^the color of z's uncle#the color of z's parent
