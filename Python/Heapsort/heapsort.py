@@ -33,6 +33,7 @@ MAX = 1
 
 test_arr = [10, 14, 16, 8, 7, 2, 4, 1, 9, 3]
 midterm = [25, 24, 21, 20, 13, 17, 16, 12]
+final = [84, 12, 16, 96, 2, 8, 18, 24]
 
 def get_sentinel(min_or_max=MAX):
     """

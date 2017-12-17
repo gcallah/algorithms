@@ -9,7 +9,7 @@
             <ol type="a" class="nested">
                 <li>
                 <input type="radio" name="q1" value="a">
-                z is its parent's left child, which means the tree is growing to the left
+                z is its parent's right child, which means the tree is growing to the left
                 </li>
                 <li>
                 <input type="radio" name="q1" value="b">
