@@ -33,6 +33,7 @@ class Tree():
     def __str__(self):
         return "Binary tree with root of " + str(self.root)
 
+
 class Node():
     """
     The nodes in our binary search tree.
@@ -100,7 +101,8 @@ def inorder_tree_walk(x, l=None):
         print(str(x.key))
         inorder_tree_walk(x.right, l)
     return l
-    
+
+
 def tree_search(x, k):
     """
         Recursively searches a binary tree for a particular key.
