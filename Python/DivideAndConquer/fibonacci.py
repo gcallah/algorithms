@@ -41,6 +41,8 @@ def naive_fib(n, first_call=True):
     else:
         ops += 5  # one for the addition, two for the function calls
                   # and two for the subtractions
+        if n == 4:
+            print("Calling naive with n == 4")
         return naive_fib(n - 1, False) + naive_fib(n - 2, False)
 
 
