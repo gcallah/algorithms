@@ -536,11 +536,14 @@
     </p>
 
     <ol>
-        <li> T(n) = 4T(n/2) + cn
+        <li>
+            <i>T</i>(<i>n</i>) = 4<i>T</i>(<i>n</i>/2) + <i>cn</i>
         </li>
-        <li> T(n)) = 2T(n/2) + cn
+        <li>
+            <i>T</i>(<i>n</i>) = 2<i>T</i>(<i>n</i>/2) + <i>cn</i>
         </li>
-        <li> T(n) = 2T(n/2) + cn<sup>2</sup>
+        <li>
+            <i>T</i>(<i>n</i>) = 2<i>T</i>(<i>n</i>/2) + <i>cn</i><sup>2</sup>
             <br>
             (This is the recurrence in the diagram above.)
         </li>
@@ -556,7 +559,8 @@
     <table>
         <tr>
             <th colspan="4">
-                <b>T(n) = 4T(n/2) + cn<sup>1</sup></b>
+                <b><i>T</i>(<i>n</i>) = 4<i>T</i>(<i>n</i>/2)
+                    + <i>cn</i><sup>1</sup></b>
             </th>
         </tr>
         <tr>
@@ -692,7 +696,8 @@
     <table>
         <tr>
             <th colspan="4">
-                <b>T(n)) = 2T(n/2) + cn<sup>1</sup></b>
+                <b><i>T</i>(<i>n</i>) = 2<i>T</i>(<i>n</i>/2)
+                    + <i>cn</i><sup>1</sup></b>
             </th>
         </tr>
         <tr>
@@ -806,11 +811,9 @@
         <br>
         2<sup>h</sup> = n.
         <br>
-        The sum happens log n times, so we have cn * log n.
+        The sum happens log <i>n</i> times, so we have <i>cn</i> * log <i>n</i>.
         <br>
-        n + n log n
-        <br>
-        n log n dominates.
+        <i>n</i> + <i>n</i> log <i>n</i>
         <br>
         <br>
         All levels contributed equally.
@@ -822,7 +825,8 @@
     <table>
         <tr>
             <th colspan="4">
-                <b>T(n) = 2T(n/2) + cn<sup>2</sup></b>
+                <b><i>T</i>(<i>n</i>) = 2<i>T</i>(<i>n</i>/2)
+                    + <i>cn</i><sup>2</sup></b>
             </th>
         </tr>
         <tr>
