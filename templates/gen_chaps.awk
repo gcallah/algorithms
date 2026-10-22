@@ -14,7 +14,7 @@ BEGIN {
     templ = "ChapTemplate.txt"
 
     # Did not use daa and create_pg ? maybe remove those later on?
-    # daa = "Design and Analyis of Algorithms: "
+    # daa = "Design and Analysis of Algorithms: "
     # create_pg = "../utils/create_page.py"
 
     print indent2 "<div class=\"part-grid\">" > menu   # not cumulative!
