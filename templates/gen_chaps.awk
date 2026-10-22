@@ -37,7 +37,7 @@ END {
     sect_nm = split_on_caps($2)
     print indent3 "<section class=\"part-card part-" $1 "\">" >> menu
     print indent4 "<img class=\"part-icon\" src=\"graphics/parts/" $1 \
-        ".svg\" alt=\"\">" >> menu
+        ".svg\" width=\"52\" height=\"52\" alt=\"\">" >> menu
     print indent4 "<h2>" >> menu
     print indent5 "<span class=\"part-num\">Part " $1 "</span>" >> menu
     print indent5 sect_nm >> menu

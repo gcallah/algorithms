@@ -36,6 +36,7 @@
                 </p>
             </div>
             <img class="hero-art" src="graphics/hero.svg"
+                 width="560" height="400"
                  alt="A weighted graph with a highlighted shortest path">
         </section>
 
