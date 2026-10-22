@@ -101,3 +101,6 @@ video
 
 # Intellij IDEA ignore
 .idea/
+# Superset workspace runtime state
+.superset/.port
+.superset/.server.pid
