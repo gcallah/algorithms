@@ -313,6 +313,12 @@ p.lead-quote {
     color: var(--navy);
 }
 
+p.footnotes {
+    margin-top: 3rem;
+    font-size: .9rem;
+    color: var(--teal);
+}
+
 .center {
     margin: 0 auto;
 }

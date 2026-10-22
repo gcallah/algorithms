@@ -104,3 +104,6 @@ video
 # Superset workspace runtime state
 .superset/.port
 .superset/.server.pid
+
+# site artwork lives here; not a packaging dir
+!graphics/parts/
