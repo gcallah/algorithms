@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1">
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <title>
             Design and Analysis of Algorithms
@@ -10,91 +13,100 @@
     <body>
 
 <!--include menu.txt -->
-        <h1 class="toc-head">
-            Design and Analysis of Algorithms
-        </h1>
-            <figure class="toc-fig">
-                <img
-                 src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Finite_subdivision_of_a_radial_link.png"
-                height="160" width="160"><img
-                 src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Finite_subdivision_of_a_radial_link.png"
-                height="160" width="160"><img
-                 src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Finite_subdivision_of_a_radial_link.png"
-                height="160" width="160"><img
-                 src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Finite_subdivision_of_a_radial_link.png"
-                height="160" width="160">
-                <figcaption>
-                "The best programs are written so that computing
-                machines can perform them quickly and so that
-                human beings can understand them clearly. A
-                programmer is ideally an essayist who works with
-                traditional aesthetic and literary forms as well
-                as mathematical concepts, to communicate the way
-                that an algorithm works and to convince a reader
-                that the results will be correct." -- Donald Knuth
-                </figcaption>
-            </figure>
+        <section class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">
+                    Following Cormen, Leiserson, Rivest, and Stein
+                </p>
+                <h1 class="toc-head">
+                    Design and Analysis of Algorithms
+                </h1>
+                <p class="hero-lead">
+                    Lecture notes, visualizations, and implementations in
+                    Python, C++, Java, Go, Ruby, JavaScript, and Clojure
+                    for every part of the textbook.
+                </p>
+                <p class="hero-actions">
+                    <a class="button primary" href="#chapters">
+                        Browse the chapters
+                    </a>
+                    <a class="button" href="https://github.com/gcallah/algorithms">
+                        View on GitHub
+                    </a>
+                </p>
+            </div>
+            <img class="hero-art" src="graphics/hero.svg"
+                 alt="A weighted graph with a highlighted shortest path">
+        </section>
 
-            <div style="text-align:center">
+        <figure class="toc-fig quote-card">
+            <img
+             src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Finite_subdivision_of_a_radial_link.png"
+             height="160" width="160" alt="Finite subdivision of a radial link">
+            <figcaption>
+            "The best programs are written so that computing
+            machines can perform them quickly and so that
+            human beings can understand them clearly. A
+            programmer is ideally an essayist who works with
+            traditional aesthetic and literary forms as well
+            as mathematical concepts, to communicate the way
+            that an algorithm works and to convince a reader
+            that the results will be correct."
+            <cite>Donald Knuth</cite>
+            </figcaption>
+        </figure>
 
-                <hr>
+        <h2 id="chapters" class="section-head">
+            Chapters
+        </h2>
 
 <!--include chap_menu.txt  -->
 
-                <hr>
-                <h2>
-                    Other Material
-                </h2>
-                    <h3>
-                    <a href="Outline2017F.html">
-                        Course Outline Fall 2017
-                    </a>
-                    </h3>
+        <h2 class="section-head">
+            Other Material
+        </h2>
+        <div class="link-grid">
+            <a class="link-card" href="Outline2017F.html">
+                <span class="tag">Fall 2017</span>
+                Course Outline
+            </a>
+            <a class="link-card" href="TAHours.html">
+                <span class="tag">Fall 2017</span>
+                TA Hours
+            </a>
+            <a class="link-card" href="Homework/Fall2017/index.html">
+                <span class="tag">Fall 2017</span>
+                Homework with answers
+            </a>
+            <a class="link-card" href="tests/index.html">
+                <span class="tag">Archive</span>
+                Past Tests
+            </a>
+            <a class="link-card" href="AlgorithmMuseum.html">
+                <span class="tag">Exhibit</span>
+                The Algorithm Museum
+            </a>
+            <a class="link-card" href="GreedyVsDynamic/index.html">
+                <span class="tag">Comparison</span>
+                Greedy Versus Dynamic Programming
+            </a>
+            <a class="link-card" href="https://gcallah.github.io/Algocynfas/">
+                <span class="tag">Project</span>
+                Algocynfas
+            </a>
+            <a class="link-card" href="https://github.com/gcallah/algorithms">
+                <span class="tag">Source</span>
+                GitHub Repository
+            </a>
+        </div>
 
-                    <h3>
-                    <a href="TAHours.html">
-                        TA Hours Fall 2017
-                    </a>
-                    </h3>
-
-                    <h3>
-                    <a href="Homework/Fall2017/index.html">
-                        Homework with answers, Fall 2017
-                    </a>
-                    </h3>
-
-                    <h3>
-                    <a
-                        href="tests/index.html">
-                        Past Tests
-                    </a>
-                    </h3>
-
-                    <h3>
-                    <a href="AlgorithmMuseum.html">
-                        The Algorithm Museum
-                    </a>
-                    </h3>
-
-                    <h3>
-                    <a href="GreedyVsDynamic/index.html">
-                        Greedy Versus Dynamic Programming
-                    </a>
-                    </h3>
-
-                    <h3>
-                        <a href="https://gcallah.github.io/Algocynfas/">
-                        Algocynfas
-                        </a>
-                    </h3>
-
-                    <h3>
-                    <a href="https://github.com/gcallah/algorithms">
-                        GitHub Repository
-                    </a>
-                    </h3>
-
-            </div>
+        <footer class="site-footer">
+            <p>
+                Design and Analysis of Algorithms &middot;
+                <a href="about.html">About</a> &middot;
+                <a href="feedback.html">Feedback</a>
+            </p>
+        </footer>
 
     </body>
 <!--include google_analytics.txt -->

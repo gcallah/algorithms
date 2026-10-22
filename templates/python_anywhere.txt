@@ -1,5 +1,5 @@
         <div class="python-console">
-            <iframe style="width: 640; height: 480;"
+            <iframe style="width: 640px; height: 480px;"
                     name="embedded_python_anywhere"
                     src="https://www.pythonanywhere.com/embedded3/" scrolling="yes">
             </iframe>
